@@ -1525,7 +1525,7 @@ let getKills = () => {
         : destruction < 50 ? "💣"
         : destruction < 75 ? "👺"
         : destruction < 100 ? "🌶️" : "💯"
-        ) + " " + (!killCountTexts.length ? "A true pacifist" :
+        ) + " " + (!killCountTexts.length ? "A true pacifist, (OMG IS THAT AN UNDERTALE REFERE-)" :
                     killCountTexts.length == 1 ? killCountTexts.join(" and ") :
                     killCountTexts.slice(0, -1).join(", ") + " and " + killCountTexts[killCountTexts.length - 1])
     );
