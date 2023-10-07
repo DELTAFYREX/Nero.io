@@ -1394,9 +1394,9 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let yo = y;
         let ticker = 0;
         let colorIndex = 10;
-        let columnCount = Math.max(3, Math.ceil(gui.upgrades.length / 4));
+        let columnCount = Math.max(6, Math.ceil(gui.upgrades.length / 4));
         let clickableRatio = global.canvas.height / global.screenHeight / global.ratio;
-        upgradeSpin += 0.01;
+        upgradeSpin += 0.03;
         for (let i = 0; i < gui.upgrades.length; i++) {
             let model = gui.upgrades[i];
             if (y > yo) yo = y;

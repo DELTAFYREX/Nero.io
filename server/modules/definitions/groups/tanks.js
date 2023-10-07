@@ -1433,8 +1433,8 @@ exports.doubleTwin = {
     ],
 };
 exports.revolutionist = {
-    PARENT: [exports.genericTank],
-    LABEL: 'Revolutionist',
+    PARENT: ["genericTank"],
+    LABEL: "Revolutionist",
     DANGER: 6,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
