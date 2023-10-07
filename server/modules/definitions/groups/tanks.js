@@ -943,20 +943,19 @@ exports.autoTurret = {
         },
     ],
 };
-exports.turretringtest = {
-    PARENT: ["genericTank"],
-    LABEL: "Turret",
-    SHAPE: 3,
-    BODY: {
-        FOV: 0.8,
-    },
-    COLOR: 16,
-      TURRETS: [
-        {
-            POSITION: [11, 0, 0, 0, 360, 1],
-            TYPE: "pillboxTurret",
-        },
-    ],
+exports.turretBase = {
+    LABEL: "Base",
+    SHAPE: 136,
+    COLOR: 9,
+    FACING_TYPE: "autospin",
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "autoTurret",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "autoTurret",
+    }]
 };
 exports.droneAutoTurret = {
     PARENT: ["genericTank"],
@@ -1397,29 +1396,6 @@ exports.single = {
         },
     ],
 };
-exports.singletest = {
-    PARENT: ["genericTank"],
-    LABEL: "Single",
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet",
-            },
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-        },
-    ],
-        TURRETS: [
-        {
-            POSITION: [11, 0, 0, 0, 360, 1],
-            TYPE: "pillboxTurret",
-        },
-    ],
-};
-
 // TWIN UPGRADES
 exports.doubleTwin = {
     PARENT: ["genericTank"],
@@ -1455,6 +1431,24 @@ exports.doubleTwin = {
             },
         },
     ],
+};
+exports.revolutionist = {
+    PARENT: [exports.genericTank],
+    LABEL: 'Revolutionist',
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 0, 0],
+        TYPE: "turretBase",
+    },
+  ],
 };
 exports.tripleShot = {
     PARENT: ["genericTank"],
