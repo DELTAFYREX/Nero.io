@@ -147,7 +147,7 @@ input.checkbox {
 }
 
 #playerNameInput {
-    padding: 10px;
+    padding: 0px;
     font-size: larger;
 }
 
@@ -219,7 +219,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
-    height: 340px;
+    height: 400px;
     padding: 10px;
     overflow: hidden;
     display: inline-block;
