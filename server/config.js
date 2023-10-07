@@ -34,7 +34,7 @@ module.exports = {
     
     // Shape of the arena.
     // Can be "rect" or "circle".
-    ARENA_TYPE: "rect",
+    ARENA_TYPE: "circle",
 
     // The tiles that the room consist of.
 /*    ROOM_SETUP: [
@@ -56,9 +56,9 @@ module.exports = {
     ], */
       ROOM_SETUP: [
         [ "roid", "norm", "norm", "roid"],
-        [ "norm", "norm", "nest", "norm"],
         [ "norm", "nest", "norm", "norm"],
-        [ "roid", "norm", "norm", "roid"],
+        [ "norm", "norm", "nest", "norm"],
+        [ "roid", "norm", "norm", "roid"]
         ],
 
     // Tile count in a row
@@ -123,7 +123,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 8,
+    BOTS: 2,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
