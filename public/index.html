@@ -20,6 +20,7 @@
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
         <input id="chatInput" type="text" maxlength="256" hidden=true>
+            <canvas id="gameCanvas" tabindex="1"></canvas>
     </div>
     <div id="mainWrapper">
         <div id="startMenuWrapper">
@@ -27,6 +28,18 @@
                 <div class="startMenuHolder">
                   <center>Nero.io runs on Open Source Arras.<br>For more info, visit <a href="https://github.com/Taureon/aps-plus-plus">the APS++ GitHub Repository by Taureon</a></center>
                 </div>
+    <div id="wrapperWrapper">
+        <div id="mainWrapper">
+            <div id="startMenuWrapper">
+                <div id="startMenu">
+                    <div class="startMenuHolder" style="padding-right: 18px;">
+                        <iframe onclick="window.open('https://discord.gg/mCWzZDJF');"
+                            src="https://discord.com/widget?id=1004907608018264094&theme=dark"
+                            style="width: 100%; height: 80%;" allowtransparency="true" frameborder="0"></iframe>
+                        <div class="bottomHolder">
+                                              </div>
+                    </div>
+
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
                         <div class="slider" id="startMenuSlidingContent">
@@ -39,6 +52,11 @@
                             <input type="text" autofocus tabindex="1" spellcheck="false" placeholder="This is the tale of" id="playerNameInput" maxlength="24" />
                             <input type="text" class="conceal" tabindex="3" placeholder="Insert token here" id="playerKeyInput" maxlength="64" />
                         </div>
+
+                            </div>
+                                                  <div style="position: relative; bottom: -10px;">
+                        <button id="startButton" tabindex="2">Play</button>
+                    </div>
                         <div class="slider" id="startMenuSlidingTrigger">
                             <h3 class="nopadding">view options/help 🡲</h3>
                         </div>
@@ -96,6 +114,7 @@
                     <div style="position: relative; bottom: -10px;">
                         <button id="startButton" tabindex="2">Play</button>
                     </div>
+
                 </div>
                 <div class="startMenuHolder shrinkable">
                     <span class="titleSpan">Changelog</span>
