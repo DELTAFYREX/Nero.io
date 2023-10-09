@@ -27,14 +27,14 @@ module.exports = {
     // Room
     
     // Room width in grid units
-    WIDTH: 3000,
+    WIDTH: 400,
     
     // Room height in grid units
-    HEIGHT: 3000,
+    HEIGHT: 400,
     
     // Shape of the arena.
     // Can be "rect" or "circle".
-    ARENA_TYPE: "rect",
+    ARENA_TYPE: "circle",
 
     // The tiles that the room consist of.
 /*    ROOM_SETUP: [
@@ -55,10 +55,10 @@ module.exports = {
         [ "norm", "norm", "norm", "norm", "norm", "norm", "roid", "roid", "roid", "norm", "norm", "norm", "norm", "norm", "norm" ]
     ], */
       ROOM_SETUP: [
-        [ "rock", "norm", "norm", "rock"],
-        [ "norm", "nest", "roid", "norm"],
-        [ "norm", "roid", "nest", "norm"],
-        [ "rock", "norm", "norm", "rock"]
+        [ "roid", "norm", "norm", "roid"],
+        [ "norm", "nest", "norm", "norm"],
+        [ "norm", "norm", "nest", "norm"],
+        [ "roid", "norm", "norm", "roid"]
         ],
 
     // Tile count in a row
