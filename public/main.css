@@ -228,7 +228,7 @@ div {
 
 .sliderHolder {
     width: 350px;
-    height: 285px;
+    height: 380px;
     overflow: hidden;
 }
 
@@ -370,7 +370,7 @@ update {
 }
 
 #bottomHolder {
-    width: 370px;
+    width: 380px;
     display: grid;
     grid-template-columns: auto auto auto;
 }
