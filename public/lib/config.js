@@ -7,7 +7,7 @@ const config = {
         deathBlurAmount: 3,
         darkBorders: false,
         fancyAnimations: true,
-        colors: 'normal',
+        colors: 'nero',
         pointy: true,
         fontSizeBoost: 1.4,
         fontStrokeRatio: 4.5,
