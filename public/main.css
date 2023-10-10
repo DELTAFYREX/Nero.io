@@ -226,7 +226,21 @@ div {
     display: inline-block;
     vertical-align: text-top;
 }
-
+a.menuTab {
+  float: right;
+  height: 13px;
+  font: 13px Ubuntu;
+  padding: 6px 10px 7px 10px;
+  border-radius: 5px 5px 0 0;
+  color: #ffffff !important;
+  text-decoration: none;
+  margin-right: 10px;
+}
+a.menuTab.??? {
+  background: #FFFFFF  url("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2022_06_23_11e_Kleki.png?v=1675997243695") 3px 2px/23px no-repeat;
+  padding: 6px 10px 7px 28px;
+      animation:pfpDefault 800ms linear both;
+}
 .sliderHolder {
     width: 350px;
     height: 285px;
@@ -272,11 +286,6 @@ table {
 .menuTabs {
   height: 26px;
   margin: 0 8px;
-}
-a.menuTab.??? {
-  background: #FFFFFF  url("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2022_06_23_11e_Kleki.png?v=1675997243695") 3px 2px/23px no-repeat;
-  padding: 6px 10px 7px 28px;
-      animation:pfpDefault 800ms linear both;
 }
 update {
     color: #D83848;
