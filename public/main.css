@@ -230,8 +230,8 @@ a.menuTab {
   float: right;
   height: 13px;
   font: 13px Ubuntu;
+  border-radius: 0px 0px 5px 5px;
   padding: 6px 10px 7px 10px;
-  border-radius: 5px 5px 0 0;
   color: #ffffff !important;
   text-decoration: none;
   margin-right: 10px;
