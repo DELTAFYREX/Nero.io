@@ -65,9 +65,16 @@ canvas {
     text-align: center;
     font-size: xx-large;
     font-weight: bolder;
-
 }
-
+#gameName:active {
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bolder;
+    animation:pfpDefault 800ms linear both;
+}
 h2 {
     font-size: small;
     color: #000000;
@@ -312,12 +319,17 @@ table {
     cursor: pointer;
     height: 15px;
 }
+#startMenuSlidingTrigger:hover > h3 {
+  color: #323232;
+  opacity: 0.8
+}
 #startMenuSlidingTrigger:active > h3 {
   color: #323232;
      animation:pfpDefault 800ms linear both;
 }
-#startMenuSlidingTrigger:hover {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+#startMenuSlidingTrigger:hover > h3 > i.arrow {
+  border-color: #323232;
 }
 .menuTabs {
   height: 26px;
@@ -402,7 +414,6 @@ update {
     font-size: larger;
     color: white;
       animation:pfpDefault 800ms linear both;
-
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     background: #B9E87E;
