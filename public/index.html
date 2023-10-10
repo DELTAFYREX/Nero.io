@@ -16,7 +16,33 @@
     <meta name="msapplication-TileColor" content="#8abc3f">
     <meta name="theme-color" content="#8abc3f">
 </head>
-      <script>
+    <!-- Music and Audio -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+var hover = new Audio();
+hover.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Water.wav?v=1675463658042");
+function PlaySound1() {
+  hover.load();   
+    hover.play();
+}
+  </script>
+    <script>
+var slap = new Audio();
+slap.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/(Audio)%20videoplayback.m4a?v=1675999054321");
+function PlaySound68() {
+  slap.load();   
+    slap.play();
+}
+  </script>
+  <script>
+var playbuttonsound = new Audio();
+playbuttonsound.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/op1.wav?v=1675463613542");
+function PlaySound69() {
+  playbuttonsound.load();   
+    playbuttonsound.play();
+}
+</script>
+    <script>
 var animevoice = new Audio();
 animevoice.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/destroids%20rise.wav?v=1675463027422");
 function PlaySound5() {
@@ -25,13 +51,42 @@ function PlaySound5() {
 }
 </script>
       <script>
-var slap = new Audio();
-slap.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/(Audio)%20videoplayback.m4a?v=1675999054321");
-function PlaySound68() {
-  slap.load();   
-    slap.play();
+var music2 = new Audio();
+ const pmusic = ["https://cdn.glitch.me/f80d3eec-1e99-4b8c-b120-79a55addacf9/galaxy%20disorder.wav?v=1675465458899", "https://cdn.glitch.me/f80d3eec-1e99-4b8c-b120-79a55addacf9/Khronobytes.wav?v=1675465650296", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Color%20Zen%20song.mp3?v=1675465709467", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/On%20The%20Edge.mp3?v=1675465898995"];
+var rand = pmusic[~~(Math.random() * pmusic.length)];
+music2.src = (rand);
+function PlayMusic() {
+  music2.load();   
+    music2.play();
 }
+</script>
+    <script>   
+   function switchAudio() {
+      if (document.getElementById("optSound").checked === true) {
+           music2.play()
+    music2.addEventListener('ended', function() {this.currentTime = 0; this.play();}, false);
+     } else if (document.getElementById("optSound").checked === false) {
+          music2.pause()
+            }
+         return; } 
   </script>
+       <script>
+var gears = new Audio();
+gears.src = ("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/gear.wav");
+function PlaySound3() {
+    gears.play();
+}
+</script> 
+    <script>
+var click = new Audio();
+click.src = ("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg");
+function PlaySound() {
+  click.load();   
+    click.play();
+}
+</script>
+      <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
+    <!-- Main Code-->
 <body oncontextmenu="return false" id="mainBody">
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
@@ -39,8 +94,11 @@ function PlaySound68() {
     </div>
     <div id="mainWrapper">
         <div id="startMenuWrapper">
-          <div class="menuTabs">
-          <a class="menuTab ???" onclick="PlaySound68()" onmouseover="PlaySound68()" title=":{]'4*($812904sdfas0fasdfasdfasdfhsdfonaen*&$#(*nhH*)($H0::{}|;..0$*((*)$afds&!@)(*#$@&2)fhea)'}" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽</a>
+      <div class="menuTabs">
+        <a class="menuTab discord" onclick="PlaySound()" onmouseover="PlaySound1()" title="Join the Discord server!" href="https://discord.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the client's source code" href="https://glitch.com/neroio" target="_blank" rel="noopener noreferrer">View Client Source</a>
+        <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the server's source code" href="https://glitch.com/dfxserver" target="_blank" rel="noopener noreferrer">View Server Source</a>
+        <a class="menuTab ???" onclick="PlaySound68()" onmouseover="PlaySound68()" title=":{]'4*($812904sdfas0fasdfasdfasdfhsdfonaen*&$#(*nhH*)($H0::{}|;..0$*((*)$afds&!@)(*#$@&2)fhea)'}" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽</a>
       </div>
             <div id="startMenu">
                 <div class="startMenuHolder">
