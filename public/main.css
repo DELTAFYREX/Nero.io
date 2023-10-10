@@ -65,6 +65,7 @@ canvas {
     text-align: center;
     font-size: xx-large;
     font-weight: bolder;
+
 }
 
 h2 {
@@ -413,6 +414,23 @@ update {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+}
+.icon {
+  display: block;
+  width: 96px;
+  padding-top: 4px;
+  height: 96px;
+  padding-bottom: -3px;
+  border-radius: 50%;
+   animation:pfpDefault 800ms linear both;
+}
+
+.icon:hover {
+     animation:pfpHoverOn 800ms linear both;
+}
+
+.icon:active {
+     animation:pfpDefault 400ms linear both;
 }
 
 #startButton:active,
