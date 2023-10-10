@@ -17,7 +17,44 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
 //         document.getElementById("patchNotes").innerHTML += `<div><b>${changelog[0][0].slice(1).trim()}</b>: ${changelog[0].slice(1).join(":") || "Update lol"}<ul>${changelog.slice(1).map((line) => `<li>${line.slice(1).trim()}</li>`).join("")}</ul><hr></div>`;
 //     }
 // });
+     //just some code to make the sound work
+      var playbuttonsound = new Audio();
+      playbuttonsound.src =
+        "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/op1.wav?v=1675463613542";
+      function PlaySound69() {
+        playbuttonsound.play();
+      }
+      var clicked = false;
 
+      var slap = new Audio();
+      slap.src =
+        "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/(Audio)%20videoplayback.m4a?v=1675999054321";
+      function PlaySound68() {
+        slap.play();
+      }
+      var clicked = false;
+
+      var clicksound = new Audio();
+      clicksound.src =
+        "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg";
+      function PlaySound210() {
+        clicksound.play();
+      }
+      var clicked = false;
+
+      function doSomething() {
+        if (clicked) {
+          var optionclicksound = new Audio();
+           optionclicksound.src =
+            "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/cancel.wav";
+          optionclicksound.load();
+           optionclicksound.play();
+        } else {
+           clicksound.load();
+           clicksound.play();
+        }
+        clicked = !clicked;
+      }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
@@ -36,7 +73,7 @@ fetch("changelog.html", { cache: "no-cache" })
         console.error(error);
     }
 });
-
+  
 class Animation {
     constructor(start, to, smoothness = 0.05) {
         this.start = start;
