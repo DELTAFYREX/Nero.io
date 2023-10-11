@@ -938,6 +938,100 @@ exports['Team' + TEAM_ENEMIES] = {
 };
 exports.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
+//wait whats stuff
+exports.placeableWall = {
+    PARENT: ["rock"],
+    LABEL: "Wall",
+    SIZE: 25,
+    SHAPE: 4,
+    CLEAR_ON_MASTER_UPGRADE: true,
+
+};
+exports.wallPlacerThing = {
+    PARENT: ["genericTank"],
+    SHAPE:0,
+    MIRROR_MASTER_ANGLE: true,
+    INTANGIBLE: true,
+  DRAW_SELF:false,
+    COLOR: 16,
+      CLEAR_ON_MASTER_UPGRADE: true,
+      BODY: {
+        ACCELERATION: 0.1,
+        SPEED: true,
+        HEALTH: 340282366920938463463374607431768211455,
+        RESIST: 1,
+        SHIELD: 340282366920938463463374607431768211455,
+        REGEN: 340282366920938463463374607431768211455,
+        DAMAGE: false,
+        PENETRATION: true,
+        RANGE: true,
+        FOV: true,
+        SHOCK_ABSORB: 340282366920938463463374607431768211455,
+        RECOIL_MULTIPLIER: false,
+        DENSITY: 340282366920938463463374607431768211455,
+        STEALTH: true,
+        PUSHABILITY: false,
+        HETERO: false,
+    },
+    MOTION_TYPE: "withMouse",
+   GUNS: [
+       {
+            POSITION: [16, 20, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([{reload:40, speed:0, maxSpeed:0}]),
+                TYPE: "placeableWall",
+                COLOR: 16,
+                LABEL: "",
+                STAT_CALCULATOR: 0,
+                WAIT_TO_CYCLE: false,
+                AUTOFIRE: false,
+                SYNCS_SKILLS: false,
+                MAX_CHILDREN: 0,
+                ALT_FIRE: false,
+                NEGATIVE_RECOIL: false,
+              DRAW_FILL:false,
+              BORDERLESS:true,
+            },
+        },
+    ],
+
+};
+exports.wallPlacer = {
+    PARENT: ["genericTank"],
+    LABEL: "Messin' Around",
+    BODY: {
+        ACCELERATION: base.ACCEL * 1,
+        SPEED: base.SPEED * 1,
+        HEALTH: base.HEALTH * 1,
+        DAMAGE: base.DAMAGE * 1,
+        PENETRATION: base.PENETRATION * 1,
+        SHIELD: base.SHIELD * 1,
+        REGEN: base.REGEN * 1,
+        FOV: base.FOV * 1,
+        DENSITY: base.DENSITY * 1,
+        PUSHABILITY: 1,
+        HETERO: 3,
+    },
+    GUNS: [
+       {
+            POSITION: [16, 20, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
+                TYPE: "wallPlacerThing",
+                COLOR: 16,
+                LABEL: "",
+                STAT_CALCULATOR: 0,
+                WAIT_TO_CYCLE: false,
+                AUTOFIRE: false,
+                SYNCS_SKILLS: false,
+                MAX_CHILDREN: 1,
+                ALT_FIRE: false,
+                NEGATIVE_RECOIL: false,
+            },
+        },
+    ],
+};
+
 // DEV "UPGRADE PATHS"
 exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "spectator", "miscEntities", "eggGenerator", "bosses", "fun", "levels", "teams", "revolutionist"];
     exports.miscEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
@@ -954,4 +1048,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "spectator", "miscEntiti
         exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "tgsBoss"];
     exports.oldTanks.UPGRADES_TIER_0 = ["oldSpreadshot", "oldBentBoomer", "quadBuilder", "weirdSpike", "master", "oldCommander", "blunderbuss", "oldRimfire"];
     exports.scrappedTanks.UPGRADES_TIER_0 = ["autoTrapper", "oldDreadnought", "mender", "prodigy"];
-    exports.fun.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "diamondShape", "rotatedTrap", "mummifier", "colorMan", "miscTest", "auraBasic", "auraHealer", "trplnrsTestTank", "weirdAutoBasic", "ghoster", "switcheroo"];
+    exports.fun.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "diamondShape", "rotatedTrap", "mummifier", "colorMan", "miscTest", "auraBasic", "auraHealer", "trplnrsTestTank", "weirdAutoBasic", "ghoster", "switcheroo", "wallPlacer"];
+//so like i kinda want to organize everything
+//ill do this later
+//nvm

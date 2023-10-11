@@ -1510,6 +1510,12 @@ class Entity extends EventEmitter {
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
                 break;
+            case "withMouse":
+                this.x = this.source.x + this.master.control.target.x;
+                this.y = this.source.y + this.master.control.target.y;
+                this.velocity.x = this.source.velocity.x;
+                this.velocity.y = this.source.velocity.y;
+                break;
             case 'assembler':
                 this.alpha -= 0.02;
                 this.SIZE += 0.17;
