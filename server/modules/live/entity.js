@@ -1551,8 +1551,8 @@ class Entity extends EventEmitter {
             case "spin":
                 this.facing += 0.05 / roomSpeed;
                 break;
-                case "hadron":
-                this.facing += (this.master.control.alt ? -.035 : .035) / room.speed;
+            case "hadron":
+                if (this.control.alt) {this.facing += .035} : {this.facing += .035 / room.speed}; 
                 break;
             case "fastspin":
                 this.facing += 0.1 / roomSpeed;
