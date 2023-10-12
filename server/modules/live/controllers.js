@@ -248,15 +248,29 @@ class io_alwaysFire extends IO {
     }
 }
 class io_Hadron extends IO {
-    constructor(body) {
-        super(body)
+    constructor(b, opts = {}) {
+        super(b)
+        this.a = opts.startAngle || 0;
+        this.speed = opts.speed ?? 0.04;
+        this.onlyWhenIdle = opts.onlyWhenIdle;
+        this.independent = opts.independent;
     }
-    think() {
-        return {
-            fire: true,
+    think(input) {
+        if (this.onlyWhenIdle && input.target) {
+            this.a = Math.atan2(input.target.y, input.target.x);
+            return input;
         }
+        this.a += this.speed;
+        let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
     }
-}
+  }
 class io_targetSelf extends IO {
     constructor(body) {
         super(body)
@@ -717,8 +731,8 @@ let ioTypes = {
     zoom: io_zoom,
     doNothing: io_doNothing,
     listenToPlayer: io_listenToPlayer,
-    alwaysFire: io_Hadron,
-    Hadron: io_alwaysFire,
+    alwaysFire: io_alwaysFire,
+    Hadron: io_Hadron,
     mapAltToFire: io_mapAltToFire,
     mapFireToAlt: io_mapFireToAlt,
 
