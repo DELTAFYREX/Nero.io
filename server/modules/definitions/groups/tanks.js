@@ -959,6 +959,20 @@ exports.turretBase = {
         TYPE: "autoTurret",
     }]
 };
+exports.hadronturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9',
+    COLOR: 12,
+    CONTROLLERS: [["hadron", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "autoTurret",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "autoTurret",
+    }]
+};
 exports.droneAutoTurret = {
     PARENT: ["genericTank"],
     LABEL: "Turret",
@@ -1449,6 +1463,24 @@ exports.revolutionist = {
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBase",
+    },
+  ],
+};
+exports.hadron = {
+    PARENT: ["genericTank"],
+    LABEL: "Hadron",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "hadronturretBase",
     },
   ],
 };

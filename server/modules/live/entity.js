@@ -1504,6 +1504,9 @@ class Entity extends EventEmitter {
                 this.accel.null();
                 this.blend = ref.blend;
                 break;
+                case "hadron":
+                this.facing += (this.master.control.alt ? -.035 : .035) / room.speed;
+                break;
             case "withMaster":
                 this.x = this.source.x;
                 this.y = this.source.y;
