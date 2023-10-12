@@ -945,6 +945,9 @@ exports.placeableWall = {
     SIZE: 25,
     SHAPE: 4,
     CLEAR_ON_MASTER_UPGRADE: true,
+  TEAM: TEAM_ENEMIES,
+      VARIES_IN_SIZE: false,
+
 
 };
 exports.wallPlacerThing = {
@@ -976,9 +979,9 @@ exports.wallPlacerThing = {
     MOTION_TYPE: "withMouse",
    GUNS: [
        {
-            POSITION: [16, 20, 1, 0, 0, 0, 0],
+            POSITION: [0, 20, 1, 10, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([{reload:40, speed:0, maxSpeed:0}]),
+                SHOOT_SETTINGS: combineStats([{reload:10, speed:0, maxSpeed:0, shudder:0.0001, spray:0.0001}]),
                 TYPE: "placeableWall",
                 COLOR: 16,
                 LABEL: "",
