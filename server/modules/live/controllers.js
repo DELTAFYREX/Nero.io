@@ -247,6 +247,16 @@ class io_alwaysFire extends IO {
         }
     }
 }
+class io_Hadron extends IO {
+    constructor(body) {
+        super(body)
+    }
+    think() {
+        return {
+            fire: true,
+        }
+    }
+}
 class io_targetSelf extends IO {
     constructor(body) {
         super(body)
@@ -707,7 +717,8 @@ let ioTypes = {
     zoom: io_zoom,
     doNothing: io_doNothing,
     listenToPlayer: io_listenToPlayer,
-    alwaysFire: io_alwaysFire,
+    alwaysFire: io_Hadron,
+    Hadron: io_alwaysFire,
     mapAltToFire: io_mapAltToFire,
     mapFireToAlt: io_mapFireToAlt,
 
