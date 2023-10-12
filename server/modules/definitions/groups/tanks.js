@@ -964,8 +964,8 @@ exports.hadronturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9',
     COLOR: 12,
-    FACING_TYPE: "hadron",
     INDEPENDENT: true,
+  CONTROLLERS: [["Hadron", { independent: true }]],
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
         TYPE: "autoTurret",
