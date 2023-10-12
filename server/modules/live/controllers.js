@@ -637,6 +637,30 @@ class io_spin extends IO {
         };
     }
 }
+class io_epecial_spin extends IO {
+    constructor(b, opts = {}) {
+        super(b)
+        this.a = opts.startAngle || 0;
+        this.speed = opts.speed ?? 0.04;
+        this.onlyWhenIdle = opts.onlyWhenIdle;
+        this.independent = opts.independent;
+    }
+    think(input) {
+        if (this.onlyWhenIdle && input.target) {
+            this.a = Math.atan2(input.target.y, input.target.x);
+            return input;
+        }
+        this.a += this.speed;
+        let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+    }
+}
 class io_fleeAtLowHealth extends IO {
     constructor(b) {
         super(b)
@@ -708,7 +732,7 @@ let ioTypes = {
     doNothing: io_doNothing,
     listenToPlayer: io_listenToPlayer,
     alwaysFire: io_alwaysFire,
-    Hadron: io_Hadron,
+   Hadron: io_epecial_spin,
     mapAltToFire: io_mapAltToFire,
     mapFireToAlt: io_mapFireToAlt,
 

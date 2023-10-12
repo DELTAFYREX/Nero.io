@@ -949,7 +949,8 @@ exports.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9',
     COLOR: 9,
-    CONTROLLERS: [["spin", { independent: true }]],
+    FACING_TYPE: "autospin",
+   // CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
