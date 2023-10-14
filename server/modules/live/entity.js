@@ -1776,6 +1776,10 @@ class Entity extends EventEmitter {
             this.damageRecieved = 0;
             return 0;
         }
+      if (this.godmode) {
+            this.damageRecieved = 0;
+            return 0;
+        }
         // Life-limiting effects
         if (this.settings.diesAtRange) {
             this.range -= 1 / roomSpeed;
