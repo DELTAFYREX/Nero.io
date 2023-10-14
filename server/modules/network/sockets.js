@@ -537,6 +537,9 @@ function incoming(message, socket) {
     break;
                case "spawnWall": { // Spawn entities at mouse
                     if (player.body != null && socket.permissions) {
+                      snapToGrip = function(val,gridSize){
+    return gridSize * Math.round(val/gridSize);
+};
                                 let loc = {
                                     x: player.target.x + player.body.x,
                                     y: player.target.y + player.body.y
