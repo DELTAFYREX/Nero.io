@@ -543,7 +543,7 @@ function incoming(message, socket) {
                                 {
                                     let o; {
                                         o = new Entity(loc);
-                                        o.define(Class.wall);
+                                        o.define(Class.placeableWall);
                                     }
                                 }
                             } break;} break;
