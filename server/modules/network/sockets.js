@@ -535,20 +535,19 @@ function incoming(message, socket) {
                             } break;
                }
     break;
-              case "placeWall2": { // Kill what your mouse is over //watchThis
-                 if (player.body != null && socket.permissions) {
-                                entities.forEach(o => {
-                                    if (o !== player.body != null && util.getDistance(o, {
-                                        x: player.target.x + player.body.x,
-                                        y: player.target.y + player.body.y
-                                    }) < o.size * 1.3) {
-                                        o.kill();
-                                       o.destroy();
+                 case "randomTestKey": { // Spawn entities at mouse
+                    if (player.body != null && socket.permissions) {
+                                let loc = {
+                                    x: (30 * Math.round((player.target.x + player.body.x - 15)/30))+15,
+                                    y: (30 * Math.round((player.target.y + player.body.y - 15)/30))+15,
+                                };
+                                {
+                                    let o; {
+                                        o = new Entity(loc);
+                                        o.define(Class.placeableWallSmall);
                                     }
-                                });
-                            } break;
-               }
-    break;
+                                }
+                            } break;} break;
                case "spawnWall": { // Spawn entities at mouse
                     if (player.body != null && socket.permissions) {
                                 let loc = {
@@ -562,7 +561,7 @@ function incoming(message, socket) {
                                     }
                                 }
                             } break;} break;
-         case "randomTestKey":
+         case "nullallalallalala":
                 if (player.body != null && socket.permissions) {
                     player.body.sendMessage("turi ip ip ip")
              } break;  

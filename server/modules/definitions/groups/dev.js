@@ -947,8 +947,15 @@ exports.placeableWall = {
     CLEAR_ON_MASTER_UPGRADE: true,
   TEAM: TEAM_ENEMIES,
       VARIES_IN_SIZE: false,
-
-
+};
+exports.placeableWallSmall = {
+    PARENT: ["rock"],
+    LABEL: "Wall",
+    SIZE: 15,
+    SHAPE: 4,
+    CLEAR_ON_MASTER_UPGRADE: true,
+  TEAM: TEAM_ENEMIES,
+      VARIES_IN_SIZE: false,
 };
 exports.wallPlacerThing = {
     PARENT: ["genericTank"],
