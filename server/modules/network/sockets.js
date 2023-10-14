@@ -538,8 +538,8 @@ function incoming(message, socket) {
                case "spawnWall": { // Spawn entities at mouse
                     if (player.body != null && socket.permissions) {
                                 let loc = {
-                                    x: player.target.x + player.body.x,
-                                    y: player.target.y + player.body.y
+                                    x: 30 * Math.round((player.target.x + player.body.x)/30),
+                                    y: 30 * Math.round((player.target.y + player.body.y)/30),
                                 };
                                 {
                                     let o; {
