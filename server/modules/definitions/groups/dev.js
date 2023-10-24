@@ -942,7 +942,7 @@ exports.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 exports.placeableWall = {
     PARENT: ["rock"],
     LABEL: "Wall",
-    SIZE: 25,
+    SIZE: 30,
     SHAPE: 4,
     CLEAR_ON_MASTER_UPGRADE: true,
   TEAM: TEAM_ENEMIES,

@@ -533,13 +533,27 @@ function incoming(message, socket) {
                                     }
                                 });
                             } break;
-               } break;
+               }
+    break;
+              case "placeWall2": { // Kill what your mouse is over //watchThis
+                 if (player.body != null && socket.permissions) {
+                                entities.forEach(o => {
+                                    if (o !== player.body != null && util.getDistance(o, {
+                                        x: player.target.x + player.body.x,
+                                        y: player.target.y + player.body.y
+                                    }) < o.size * 1.3) {
+                                        o.kill();
+                                       o.destroy();
+                                    }
+                                });
+                            } break;
+               }
     break;
                case "spawnWall": { // Spawn entities at mouse
                     if (player.body != null && socket.permissions) {
                                 let loc = {
-                                    x: player.target.x + player.body.x,
-                                    y: player.target.y + player.body.y
+                                    x: (60 * Math.round((player.target.x + player.body.x)/60)),
+                                    y: (60 * Math.round((player.target.y + player.body.y)/60)),
                                 };
                                 {
                                     let o; {
