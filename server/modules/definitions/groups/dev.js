@@ -942,20 +942,13 @@ exports.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 exports.placeableWall = {
     PARENT: ["rock"],
     LABEL: "Wall",
-    SIZE: 30,
+    SIZE: 25,
     SHAPE: 4,
     CLEAR_ON_MASTER_UPGRADE: true,
   TEAM: TEAM_ENEMIES,
       VARIES_IN_SIZE: false,
-};
-exports.placeableWallSmall = {
-    PARENT: ["rock"],
-    LABEL: "Wall",
-    SIZE: 15,
-    SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
-  TEAM: TEAM_ENEMIES,
-      VARIES_IN_SIZE: false,
+
+
 };
 exports.wallPlacerThing = {
     PARENT: ["genericTank"],
@@ -1043,7 +1036,7 @@ exports.wallPlacer = {
 };
 
 // DEV "UPGRADE PATHS"
-exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "spectator", "miscEntities", "eggGenerator", "bosses", "fun", "levels", "teams", "revolutionist"];
+exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "spectator", "miscEntities", "eggGenerator", "bosses", "fun", "levels", "teams", "revolutionist", "hadron"];
     exports.miscEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
     exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
