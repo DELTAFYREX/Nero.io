@@ -7,3 +7,8 @@
                         <a class="link discord"   href="https://discord.gg/kvCAZfUCjy">Our Discord</a>
                         <a class="link developer" href="https://github.com/Taureon/">Main Developer</a>
                         <a class="link github"    href="https://github.com/Taureon/aps-plus-plus">Template Source</a>
+                                                <a class="link github"    href="https://github.com/Taureon/aps-plus-plus/issues">Report Bugs</a>
+
+        <a class="menuTab discord" onclick="PlaySound()" onmouseover="PlaySound1()" title="Join the APS++ Discord server! (this is not the nero.io discord server)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">APS++ Discord</a>
+
+                  <center>Nero.io runs on Open Source Arras. For more info, <br>visit <a href="https://github.com/Taureon/aps-plus-plus">the APS++ GitHub Repository by Taureon</a> Or Join The Discord With The Widget In The Top Right</center>
