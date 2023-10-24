@@ -1504,9 +1504,6 @@ class Entity extends EventEmitter {
                 this.accel.null();
                 this.blend = ref.blend;
                 break;
-                case "hadron":
-                this.facing += (this.master.control.alt ? -.035 : .035) / room.speed;
-                break;
             case "withMaster":
                 this.x = this.source.x;
                 this.y = this.source.y;
@@ -1550,9 +1547,6 @@ class Entity extends EventEmitter {
                 break;
             case "spin":
                 this.facing += 0.05 / roomSpeed;
-                break;
-            case "hadron":
-                if (!this.control.alt) this.facing += 0.035 / roomSpeed;
                 break;
             case "fastspin":
                 this.facing += 0.1 / roomSpeed;
@@ -1779,6 +1773,10 @@ class Entity extends EventEmitter {
     }
     contemplationOfMortality() {
         if (this.invuln) {
+            this.damageRecieved = 0;
+            return 0;
+        }
+      if (this.godmode) {
             this.damageRecieved = 0;
             return 0;
         }
