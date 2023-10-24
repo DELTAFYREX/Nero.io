@@ -548,19 +548,37 @@ function incoming(message, socket) {
                                     }
                                 }
                             } break;} break;
-               case "spawnWall": { // Spawn entities at mouse
-                    if (player.body != null && socket.permissions) {
-                                let loc = {
-                                    x: (60 * Math.round((player.target.x + player.body.x)/60)),
-                                    y: (60 * Math.round((player.target.y + player.body.y)/60)),
+                     case "spawnWall": { // Spawn entities at mouse
+if (player.body != null && socket.permissions) {
+                                    entities.forEach(o => {
+                                    if (o !== player.body != null /*&& global.canKill != false*/ && o.label === "Wall" && util.getDistance(o, {
+                                        x: player.target.x + player.body.x,
+                                        y: player.target.y + player.body.y
+                                    }) < o.size) {
+                                        o.kill();
+                                       o.destroy();
+                                       global.canPlaceWall = false;
+                                    }; //else {   global.canKill = true;}
+                                });
+                             if (player.body != null && socket.permissions && global.canPlaceWall != false)   { 
+                           let loc = {
+                                    x: (30 * Math.round((player.target.x + player.body.x+15)/30))-15,
+                                    y: (30 * Math.round((player.target.y + player.body.y+15)/30))-15,
                                 };
                                 {
-                                    let o; {
-                                        o = new Entity(loc);
-                                        o.define(Class.placeableWall);
-                                    }
-                                }
-                            } break;} break;
+                                    let e; {                                      
+                   e = new Entity(loc);
+            //  global.canPlaceWall = false;
+       //  global.canKill = false;
+        e.define(Class.wall);
+        e.TEAM = TEAM_ROOM;
+				e.SIZE = 45;
+				}
+				e.protect();
+				e.life();
+        }break;} else {global.canPlaceWall = true  }
+} break;
+} break;
          case "nullallalallalala":
                 if (player.body != null && socket.permissions) {
                     player.body.sendMessage("turi ip ip ip")
