@@ -20,7 +20,7 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
   
   window.onload = choosePic;
 
-var myPix = new Array();
+var myPix = new Array("girb.jpg", "othergirb.jpg");
 
 function choosePic() {
      var randomNum = Math.floor(Math.random() * myPix.length);
