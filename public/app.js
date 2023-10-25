@@ -20,12 +20,12 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
   
   window.onload = choosePic;
 
-var myPix = new Array("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4073e372df1399336a01c51052a1bbd8.jpg?v=1698238869623","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/6avWH55.jpg?v=1698237916390");
+var myPix = new Array();
 
 function choosePic() {
-     var randomPicNum = Math.floor(Math.random() * myPix.length);
-     document.getElementById("myPicture").src = myPix[randomPicNum];
-  
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     document.getElementById("myPicture").src = myPix[randomNum];
+}
      //just some code to make the sound work
       var playbuttonsound = new Audio();
       playbuttonsound.src =
