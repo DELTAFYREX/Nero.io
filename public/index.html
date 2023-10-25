@@ -105,7 +105,6 @@ function PlaySound() {
                 <div class="startMenuHolder">
 <script type="text/javascript">
 <!--
- var imlocation = "images/";
  var currentdate = 0;
  var image_number = 0;
  function ImageArray (n) {
@@ -115,8 +114,8 @@ function PlaySound() {
    }
  }
  image = new ImageArray(2)
- image[0] = '/girb.jpg'
- image[1] = '/othergirb.jpg'
+ image[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/girb.jpg?v=1698237916390'
+ image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623'
  var rand = 60/image.length
  function randomimage() {
  	currentdate = new Date()
@@ -124,7 +123,7 @@ function PlaySound() {
  	image_number = Math.floor(image_number/rand)
  	return(image[image_number])
  }
- document.write("<img src='" + imlocation + randomimage()+ "'>");
+ document.write("<img src='" + randomimage()+ "'>");
 //-->
 </script>                        <div class="bottomHolder">
                                               </div>
