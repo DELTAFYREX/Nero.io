@@ -103,8 +103,30 @@ function PlaySound() {
           </div>
             <div id="startMenu">
                 <div class="startMenuHolder">
-                  <img src="images/spacer.gif" style="width: 100%; height: 80%;" id="myPicture" alt="some image">
-                        <div class="bottomHolder">
+<script type="text/javascript">
+<!--
+ var imlocation = "images/";
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(2)
+ image[0] = '/girb.jpg'
+ image[1] = '/othergirb.jpg'
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+ document.write("<img src='" + imlocation + randomimage()+ "'>");
+//-->
+</script>                        <div class="bottomHolder">
                                               </div>
                   <center>Nero.io runs on Open Source Arras. For more info, <br>visit <a href="https://github.com/Taureon/aps-plus-plus">the APS++ GitHub Repository by Taureon</a> Or Join The Discord With The Widget In The Top Right</center>
                 </div>

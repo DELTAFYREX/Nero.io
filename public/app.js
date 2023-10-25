@@ -17,15 +17,6 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
 //         document.getElementById("patchNotes").innerHTML += `<div><b>${changelog[0][0].slice(1).trim()}</b>: ${changelog[0].slice(1).join(":") || "Update lol"}<ul>${changelog.slice(1).map((line) => `<li>${line.slice(1).trim()}</li>`).join("")}</ul><hr></div>`;
 //     }
 // });
-  
-  window.onload = choosePic;
-
-var myPix = new Array("girb.jpg", "othergirb.jpg");
-
-function choosePic() {
-     var randomNum = Math.floor(Math.random() * myPix.length);
-     document.getElementById("myPicture").src = myPix[randomNum];
-}
      //just some code to make the sound work
       var playbuttonsound = new Audio();
       playbuttonsound.src =
