@@ -779,30 +779,10 @@ function drawHealth(x, y, instance, ratio, alpha) {
             var name = instance.name.substring(7, instance.name.length + 1);
             var namecolor = instance.name.substring(0, 7);
             ctx.globalAlpha = alpha;
-                  // TODO: make these use oblivion's gradient system
-                if (instance.name.includes("U S A")) {
-                    drawText("U", x - 14, y - realSize - 30, 16, color.red, "center");
-                    drawText("S", x, y - realSize - 30, 16, color.guiwhite, "center");
-                    drawText("A", x + 14, y - realSize - 30, 16, color.blue, "center");
-                } else if (instance.name.includes("Trans Rights")) {
-                    drawText("T", x - 50, y - realSize - 30, 16, "#5BCEF5", "center");
-                    drawText("r", x - 41, y - realSize - 30, 16, "#F5A8B4", "center");
-                    drawText("a", x - 32, y - realSize - 30, 16, "#FFFFFF", "center");
-                    drawText("n", x - 23, y - realSize - 30, 16, "#F5A8B4", "center");
-                    drawText("s", x - 14, y - realSize - 30, 16, "#5BCEF5", "center");
-                    drawText("", x - 5, y - realSize - 30, 16, "#5BCEF5", "center");
-                    drawText("R", x + 5, y - realSize - 30, 16, "#5BCEF5", "center");
-                    drawText("i", x + 14, y - realSize - 30, 16, "#F5A8B4", "center");
-                    drawText("g", x + 23, y - realSize - 30, 16, "#FFFFFF", "center");
-                    drawText("h", x + 32, y - realSize - 30, 16, "#FFFFFF", "center");
-                    drawText("t", x + 41, y - realSize - 30, 16, "#F5A8B4", "center");
-                    drawText("s", x + 50, y - realSize - 30, 16, "#5BCEF5", "center");
-                } else {
             drawText(name, x, y - realSize - 30, 16, namecolor, "center");
             drawText(util.handleLargeNumber(instance.score, 1), x, y - realSize - 16, 8, namecolor, "center");
             ctx.globalAlpha = 1;
         }
-      }
     }
 }
 // Start animation
