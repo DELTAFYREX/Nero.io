@@ -107,35 +107,6 @@ fetch("changelog.html", { cache: "no-cache" })
         console.error(error);
     }
 });
-      function _loadImage(image, cache) {
-        const img = new Image();
-        img.src = image[0];
-        img.ready = false;
-        img.onload = function () {
-            img.ready = true;
-            //console.log(`Image "${image[1]} loaded."`);
-            cache[image[1]] = img;
-        };
-    }
-    const _imageCache = (function loadImages() {
-        const cache = {};
-        let i = 0;
-        for (let image of [ // MUST BE PNG
-            ["./images/lratio.png", "lratio"],
-        ]) {
-            setTimeout(() => {
-                if (image[2]) {
-                    let file = image[0].split(".png")[0]
-                    for (let i = 0; i < image[2]; i++) {
-                        _loadImage([`${file}-${i}.png`, `${image[1]}-${i}`], cache)
-                    }
-                } else {
-                    _loadImage(image, cache)
-                }
-            }, 5 * i++);
-        };
-        return (cache);
-    })();
 class Animation {
     constructor(start, to, smoothness = 0.05) {
         this.start = start;
@@ -649,14 +620,7 @@ function drawPoly(context, centerX, centerY, radius, sides, angle = 0, borderles
             let theta = (i / sides) * 2 * Math.PI + angle;
             context.lineTo(centerX + radius * Math.cos(theta), centerY + radius * Math.sin(theta));
         }
-    } else if (sides > 10000) {
-      switch (sides) {
-      case 10001:
-          if (!_imageCache.lratio || !_imageCache.lratio.ready) break;
-          context.drawImage(_imageCache.lratio, -radius, -radius, radius * 2, radius * 2);
-          break;
-      }
-}
+    } 
     context.closePath();
     if (!borderless) context.stroke();
     if (fill) context.fill();
@@ -815,21 +779,7 @@ function drawHealth(x, y, instance, ratio, alpha) {
             var name = instance.name.substring(7, instance.name.length + 1);
             var namecolor = instance.name.substring(0, 7);
             ctx.globalAlpha = alpha;
-            drawText(name, x, y - realSize - 30, 16, namecolor, "center");
-            drawText(util.handleLargeNumber(instance.score, 1), x, y - realSize - 16, 8, namecolor, "center");
-            ctx.globalAlpha = 1;
-                          drawText(instance.score > 0 ? _util._handleLargeNumber(instance.score) : "", x, y - realSize - 16 * nameRatio, 8 * nameRatio, "#E4EBE7", "center", false, 1, stroke, ctx, font);
-                switch (fill.charAt(0)) {
-                    case "!":
-                        let data = _util._getSpecialNameInfoById(Number(instance.nameColor.substring(1)));
-                        fill = data[0];
-                        stroke = data[1];
-                        font = data[2];
-                        imageRatio = data[3];
-                        badge = data[4];
-                        break;
-                }
-                          // TODO: make these use oblivion's gradient system
+                  // TODO: make these use oblivion's gradient system
                 if (instance.name.includes("U S A")) {
                     drawText("U", x - 14, y - realSize - 30, 16, color.red, "center");
                     drawText("S", x, y - realSize - 30, 16, color.guiwhite, "center");
@@ -848,15 +798,13 @@ function drawHealth(x, y, instance, ratio, alpha) {
                     drawText("t", x + 41, y - realSize - 30, 16, "#F5A8B4", "center");
                     drawText("s", x + 50, y - realSize - 30, 16, "#5BCEF5", "center");
                 } else {
-                    drawText(instance.name, x, y - realSize - 30 * nameRatio, 16 * nameRatio, fill, "center", false, 1, stroke, ctx, font);
-                };
-                if (badge && _imageCache[badge] && _imageCache[badge].ready) {
-                    let size = 18 * nameRatio * imageRatio;
-                    ctx.drawImage(_imageCache[badge], x - size * 1.1 - measureText(instance.name, 16 * nameRatio, false, font) / 2, y - realSize - 30 * nameRatio - size * 0.75, size, size);
-                }
-                ctx.globalAlpha = 1;
-            }
-        } 
+            drawText(name, x, y - realSize - 30, 16, namecolor, "center");
+            drawText(util.handleLargeNumber(instance.score, 1), x, y - realSize - 16, 8, namecolor, "center");
+            ctx.globalAlpha = 1;
+        }
+      }
+    }
+}
 // Start animation
 window.requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || (callback => setTimeout(callback, 1000 / 60));
 window.cancelAnimFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
