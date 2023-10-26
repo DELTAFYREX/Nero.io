@@ -2,7 +2,6 @@ const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard } = re
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 const generics = require('./generics.js');
 const g = require('../gunvals.js');
-makeAnimTank('ab', 'a', exports.basic, exports.ranger);
 // Whatever the hell is needed
 exports.missile = {
     PARENT: ["bullet"],
