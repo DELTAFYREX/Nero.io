@@ -690,7 +690,183 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity, auraColor) => {
         ]
     };
 }
+if (!global.structuredClone) global.structuredClone = obj => JSON.parse(JSON.stringify(obj));
+const makeAnimTank = (exportName, name, frame1, frame31, options = {}) => {
+    let duration = options.duration || 20;
+    let prop = options.prop != null ? options.prop : true;
+    let gunPositionA = options.gunPositionA || false;
+    let gunPositionB = options.gunPositionB || false;
+    let turretPositionA = options.turretPositionA || false;
+    let turretPositionB = options.turretPositionB || false;
+    options.gunProps = options.gunProps || [];
+    exports[`${exportName}0`] = structuredClone(frame1);
+    exports[`${exportName}0`].GUNS = structuredClone(frame1.GUNS || []);
+    exports[`${exportName}0`].TURRETS = frame1.TURRETS || [];
+    exports[`${exportName}0`].LABEL = name;
+    exports[`${exportName}31`] = structuredClone(frame31);
+    exports[`${exportName}31`].GUNS = structuredClone(frame31.GUNS || []);
+    exports[`${exportName}31`].TURRETS = frame31.TURRETS || [];
+    exports[`${exportName}31`].LABEL = name;
+    if (frame1.GUNS) for (let i = 0; i < frame1.GUNS.length; i++) {
+        if (frame1.GUNS[i].PROPERTIES != undefined) {
+            if (frame1.GUNS[i].PROPERTIES.TYPE != undefined) {
+                exports[`${exportName}0`].GUNS[i].PROPERTIES.TYPE = frame1.GUNS[i].PROPERTIES.TYPE;
+            }
+        }
+    }
 
+    if (frame31.GUNS) for (let i = 0; i < frame31.GUNS.length; i++) {
+        if (frame31.GUNS[i].PROPERTIES != undefined) {
+            if (frame31.GUNS[i].PROPERTIES.TYPE != undefined) {
+                exports[`${exportName}31`].GUNS[i].PROPERTIES.TYPE = frame31.GUNS[i].PROPERTIES.TYPE;
+            }
+        }
+    }
+
+    let gunsA = exports[`${exportName}0`].GUNS;
+    let gunsB = exports[`${exportName}31`].GUNS;
+    let turretsA = exports[`${exportName}0`].TURRETS;
+    let turretsB = exports[`${exportName}31`].TURRETS;
+    for (let i = 1; i < 31; i++) {
+        exports[`${exportName}${i}`] = {
+            PARENT: [exports.genericTank],
+            LABEL: name,
+            GUNS: [],
+            TURRETS: [],
+            IS_USED: true
+        }
+        for (let j = 0; j < Math.max(gunsA.length, gunsB.length); j++) {
+            if (j < Math.min(gunsA.length, gunsB.length)) {
+                exports[`${exportName}${i}`].GUNS.push({
+                    POSITION: [
+                        gunsA[j].POSITION[0] * (1 - i / 31) + gunsB[j].POSITION[0] * (i / 31),
+                        gunsA[j].POSITION[1] * (1 - i / 31) + gunsB[j].POSITION[1] * (i / 31),
+                        gunsA[j].POSITION[2] * (1 - i / 31) + gunsB[j].POSITION[2] * (i / 31),
+                        gunsA[j].POSITION[3] * (1 - i / 31) + gunsB[j].POSITION[3] * (i / 31),
+                        gunsA[j].POSITION[4] * (1 - i / 31) + gunsB[j].POSITION[4] * (i / 31),
+                        gunsA[j].POSITION[5] * (1 - i / 31) + gunsB[j].POSITION[5] * (i / 31),
+                        0
+                    ],
+                    PROPERTIES: {
+                        SKIN: gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.SKIN || null : null,
+                        COLOR: options.gunProps.includes(j) ? 245 + i : gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.COLOR || null : null,
+                        COLOR_UNMIX: gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.COLOR_UNMIX || null : null
+                    }
+                });
+            } else if (gunsA.length > gunsB.length) {
+                exports[`${exportName}${i}`].GUNS.push({
+                    POSITION: [
+                        gunsA[j].POSITION[0] * (1 - i / 31),
+                        gunsA[j].POSITION[1] * (1 - i / 31),
+                        gunsA[j].POSITION[2] * (1 - i / 31),
+                        gunsA[j].POSITION[3] * (1 - i / 31),
+                        gunsA[j].POSITION[4] * (1 - i / 31),
+                        gunsA[j].POSITION[5],
+                        0
+                    ],
+                    PROPERTIES: {
+                        SKIN: gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.SKIN || null : null,
+                        COLOR: options.gunProps.includes(j) ? 245 + i : gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.COLOR || null : null,
+                        COLOR_UNMIX: gunsA[j].PROPERTIES ? gunsA[j].PROPERTIES.COLOR_UNMIX || null : null
+                    }
+                });
+            } else {
+                exports[`${exportName}${i}`].GUNS.push({
+                    POSITION: [
+                        gunsB[j].POSITION[0] * (i / 31),
+                        gunsB[j].POSITION[1] * (i / 31),
+                        gunsB[j].POSITION[2] * (i / 31),
+                        gunsB[j].POSITION[3] * (i / 31),
+                        gunsB[j].POSITION[4] * (i / 31),
+                        gunsB[j].POSITION[5],
+                        0
+                    ],
+                    PROPERTIES: {
+                        SKIN: gunsB[j].PROPERTIES ? gunsB[j].PROPERTIES.SKIN || null : null,
+                        COLOR: options.gunProps.includes(j) ? 245 + i : gunsB[j].PROPERTIES ? gunsB[j].PROPERTIES.COLOR || null : null,
+                        COLOR_UNMIX: gunsB[j].PROPERTIES ? gunsB[j].PROPERTIES.COLOR_UNMIX || null : null
+                    }
+                });
+            }
+        }
+        if (prop) exports[`${exportName}${i}`].GUNS.push({
+            POSITION: [14, 3.5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: 245 + i
+            }
+        });
+        let posA = turretPositionA ? turretPositionA : turretsA;
+        let posB = turretPositionB ? turretPositionB : turretsB;
+        for (let j = 0; j < Math.max(posA.length, posB.length); j++) {
+            if (j < Math.min(posA.length, posB.length)) {
+                exports[`${exportName}${i}`].TURRETS.push({
+                    POSITION: [
+                        posA[j].POSITION[0] * (1 - i / 31) + posB[j].POSITION[0] * (i / 31),
+                        posA[j].POSITION[1] * (1 - i / 31) + posB[j].POSITION[1] * (i / 31),
+                        posA[j].POSITION[2] * (1 - i / 31) + posB[j].POSITION[2] * (i / 31),
+                        posA[j].POSITION[3] * (1 - i / 31) + posB[j].POSITION[3] * (i / 31),
+                        0,
+                        posA[j].POSITION[5]
+                    ],
+                    TYPE: [posA[j].TYPE, {
+                        INDEPENDENT: true,
+                        CONTROLLERS: []
+                    }]
+                });
+            } else if (posA.length > posB.length) {
+                exports[`${exportName}${i}`].TURRETS.push({
+                    POSITION: [
+                        posA[j].POSITION[0] * (1 - i / 31),
+                        posA[j].POSITION[1] * (1 - i / 31),
+                        posA[j].POSITION[2] * (1 - i / 31),
+                        posA[j].POSITION[3] * (1 - i / 31),
+                        0,
+                        posA[j].POSITION[5]
+                    ],
+                    TYPE: [posA[j].TYPE, {
+                        INDEPENDENT: true,
+                        CONTROLLERS: []
+                    }]
+                });
+            } else {
+                exports[`${exportName}${i}`].TURRETS.push({
+                    POSITION: [
+                        posB[j].POSITION[0] * (i / 31),
+                        posB[j].POSITION[1] * (i / 31),
+                        posB[j].POSITION[2] * (i / 31),
+                        posB[j].POSITION[3] * (i / 31),
+                        0,
+                        posB[j].POSITION[5]
+                    ],
+                    TYPE: [posB[j].TYPE, {
+                        INDEPENDENT: true,
+                        CONTROLLERS: []
+                    }]
+                });
+            }
+        }
+    }
+    if (prop) {
+        exports[`${exportName}0`].GUNS.push({
+            POSITION: [14, 3.5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: 245
+            }
+        });
+        exports[`${exportName}31`].GUNS.push({
+            POSITION: [14, 3.5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                COLOR: 276
+            }
+        });
+    }
+    exports[`${exportName}0`].ON_ALT = (me, entities) => {
+        animate(me, exportName, 31, duration, true, 0, entities);
+    };
+    exports[`${exportName}31`].ON_ALT = (me, entities) => {
+        animate(me, exportName, 31, duration, false, 0, entities);
+    }
+}
 //unfinished lolo
 exports.makeLabyrinthShape = (type) => {
     let output = exports.dereference(type);

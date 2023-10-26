@@ -239,7 +239,6 @@ for (let tier of [ "", "Egg", "Square", "Triangle", "Pentagon", "BetaPentagon", 
 
 compileMatrix(generatorMatrix);
 compileMatrix(gemRelicMatrix);
-
 // Tensor = N-Dimensional Array, BASICALLY
 let labyTensor = [];
 for (let tier = 0; tier < 6; tier++) {
@@ -743,7 +742,6 @@ exports.vanquisher = {
             SHOOT_SETTINGS: combineStats([g.trap, g.block]),
             TYPE: "setTrap"
         }
-
     //launcher
     },{
         POSITION: [10, 9, 1, 9, 0, 90, 0],
