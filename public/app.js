@@ -107,7 +107,35 @@ fetch("changelog.html", { cache: "no-cache" })
         console.error(error);
     }
 });
-  
+      function _loadImage(image, cache) {
+        const img = new Image();
+        img.src = image[0];
+        img.ready = false;
+        img.onload = function () {
+            img.ready = true;
+            //console.log(`Image "${image[1]} loaded."`);
+            cache[image[1]] = img;
+        };
+    }
+    const _imageCache = (function loadImages() {
+        const cache = {};
+        let i = 0;
+        for (let image of [ // MUST BE PNG
+            ["./resources/IED.png", "ied"],
+        ]) {
+            setTimeout(() => {
+                if (image[2]) {
+                    let file = image[0].split(".png")[0]
+                    for (let i = 0; i < image[2]; i++) {
+                        _loadImage([`${file}-${i}.png`, `${image[1]}-${i}`], cache)
+                    }
+                } else {
+                    _loadImage(image, cache)
+                }
+            }, 5 * i++);
+        };
+        return (cache);
+    })();
 class Animation {
     constructor(start, to, smoothness = 0.05) {
         this.start = start;
@@ -627,7 +655,7 @@ function drawPoly(context, centerX, centerY, radius, sides, angle = 0, borderles
           if (!_imageCache.do_not_open_at_any_cost || !_imageCache.do_not_open_at_any_cost.ready) break;
           context.drawImage(_imageCache.do_not_open_at_any_cost, -radius, -radius, radius * 2, radius * 2);
           break;
-
+      }
 }
     context.closePath();
     if (!borderless) context.stroke();
