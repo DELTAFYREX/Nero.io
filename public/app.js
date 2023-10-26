@@ -621,7 +621,14 @@ function drawPoly(context, centerX, centerY, radius, sides, angle = 0, borderles
             let theta = (i / sides) * 2 * Math.PI + angle;
             context.lineTo(centerX + radius * Math.cos(theta), centerY + radius * Math.sin(theta));
         }
-    }
+    } else if (sides > 10000) {
+      switch (sides) {
+      case 10001:
+          if (!_imageCache.do_not_open_at_any_cost || !_imageCache.do_not_open_at_any_cost.ready) break;
+          context.drawImage(_imageCache.do_not_open_at_any_cost, -radius, -radius, radius * 2, radius * 2);
+          break;
+
+}
     context.closePath();
     if (!borderless) context.stroke();
     if (fill) context.fill();
