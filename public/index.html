@@ -87,6 +87,14 @@ function PlaySound() {
     click.play();
 }
 </script>
+    <script>
+var startloadsound = new Audio();
+startloadsound.src = ("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg");
+function PlaySound69() {
+  startloadsound.load();   
+    startloadsound.play();
+}
+</script>
       <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
     <!-- Main Code-->
 <body oncontextmenu="return false" id="mainBody">
@@ -202,8 +210,8 @@ imgsizething = 'style="width: 100%; height: 88%;"'
                             </table>
                         </div>
                     </div>
-                    <div style="position: relative; bottom: -10px;">
-                        <button id="startButton" onmouseover="PlaySound()" onclick="PlaySound69()" title="Load Into The Game" tabindex="2">Play</button>
+                    <div style="position: relative; bottom: -10px;" onclick="PlaySound69()">
+                        <button id="startButton" onmouseover="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
                     </div>
                 </div>
                       
