@@ -117,7 +117,7 @@ exports.bosses = {
 };
 exports.fun = {
     PARENT: ["menu"],
-    LABEL: "Fun",
+    LABEL: "Dev Funny",
 };
 exports.bosses = {
     PARENT: ["menu"],
@@ -187,7 +187,18 @@ exports.miscTanks = {
     PARENT: ["menu"],
     LABEL: "Exclusive Tanks",
 };
-
+exports.testingtanks = {
+    PARENT: ["menu"],
+    LABEL: "Tests",
+};
+exports.FTB = {
+    PARENT: ["menu"],
+    LABEL: "Funny Haha",
+};
+exports.funny = {
+    PARENT: ["menu"],
+    LABEL: "Exclusive Tanks",
+};
 // GENERATORS
 function compileMatrix(matrix, matrix2Entrance) {
     let matrixWidth = matrix[0].length,
@@ -1078,10 +1089,10 @@ exports.wallPlacer = {
 
 // DEV "UPGRADE PATHS"
 exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
-exports.miscTanks.UPGRADES_TIER_0 = ["oldTanks", "scrappedTanks", "healer"];
-exports.tools.UPGRADES_TIER_0 = ["levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
-exports.beta.UPGRADES_TIER_0 = ["revolutionist", "auraBasic", "auraHealer"];
-exports.ait.UPGRADES_TIER_0 = ["matchEntities", "bosses"];
+exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
+exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
+exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "auraBasic", "auraHealer"];
+exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.matchEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
@@ -1096,7 +1107,7 @@ exports.ait.UPGRADES_TIER_0 = ["matchEntities", "bosses"];
         exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "tgsBoss"];
     exports.oldTanks.UPGRADES_TIER_0 = ["oldSpreadshot", "oldBentBoomer", "quadBuilder", "weirdSpike", "master", "oldCommander", "blunderbuss", "oldRimfire"];
     exports.scrappedTanks.UPGRADES_TIER_0 = ["autoTrapper", "oldDreadnought", "mender", "prodigy"];
-    exports.fun.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "diamondShape", "rotatedTrap", "mummifier", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic", "ghoster", "switcheroo"];
+    exports.funny.UPGRADES_TIER_0 = ["developer", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "diamondShape", "rotatedTrap", "mummifier", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic", "ghoster", "switcheroo"];
 //so like i kinda want to organize everything
 //ill do this later
 //nvm
