@@ -972,6 +972,25 @@ exports.rockturretBase = {
         TYPE: ["shieldblock", { independent: true }]
     }]
 };
+exports.obstacleTurret = {
+    LABEL: "Shield",
+    DAMAGE_CLASS: 1,
+    SHAPE: 0,
+    BODY: {
+        PUSHABILITY: 0,
+        HEALTH: 1e4,
+        REGEN: 1000,
+        DAMAGE: 1,
+        RESIST: 10000,
+        STEALTH: 1,
+        DENSITY: 10000
+    },
+    VALUE: 0,
+    COLOR: 34,
+    SYNC_SKILLS: true,
+    SYNC_TURRET_SKILLS: true,
+    HITS_OWN_TYPE: "shield"
+};
 exports.droneAutoTurret = {
     PARENT: ["genericTank"],
     LABEL: "Turret",
