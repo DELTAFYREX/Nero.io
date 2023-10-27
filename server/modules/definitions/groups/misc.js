@@ -50,7 +50,12 @@ exports.wall = {
     SIZE: 25,
     SHAPE: 4,
 };
-
+exports.sheildblock = {
+    PARENT: ["rock"],
+    LABEL: "RevoShield",
+    SIZE: 5,
+    SHAPE: -7,
+};
 // DOMINATORS
 exports.dominationBody = {
     LABEL: "",
