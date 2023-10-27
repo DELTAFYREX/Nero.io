@@ -1107,7 +1107,7 @@ exports.homingBullet = {
     CAN_GO_OUTSIDE_ROOM: true,
 };
 exports.hiveprobe = {
-  PARENT: [exports.genericTank],
+  PARENT: ["genericTank"],
   LABEL: "Probe",
   TYPE: "drone",
   HITS_OWN_TYPE: "hardWithBuffer",
@@ -1190,12 +1190,21 @@ exports.weirdSpikeBody2 = {
     INDEPENDENT: true,
 };
 exports.mindindicator = {
-    PARENT: ["genericTank"
+    PARENT: ["genericTank"],
     LABEL: "",
-    TYPE: "bullet",
     SHAPE: 0,
-    CONTROLLERS: ['doNothing'], 
+    CONTROLLERS: ["doNothing"], 
     COLOR: 9,
+};
+exports.decoTurretHive = {
+    PARENT: ["genericTank"],
+    LABEL: "",
+    BODY: {
+        FOV: 0.8
+    },
+    COLOR: 3,
+    DANGER: -999,
+    SHAPE: 1,
 };
 // BASIC TANK AND STARTING UPGRADES
 exports.basic = {
