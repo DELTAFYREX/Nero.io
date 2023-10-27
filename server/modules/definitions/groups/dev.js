@@ -64,6 +64,34 @@ exports.developer = {
         },
     ],
 };
+exports.tools = {
+  PARENT: ["developer"],
+  LABEL: "Tools",
+  GUNS: [
+        {
+            /*** LENGTH WIDTH     ASPECT        X             Y         ANGLE     DELAY */
+            POSITION: [18, 10, -1.4, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+                TYPE: "developerBullet",
+            },
+        },
+    ],
+},
+exports.ait = {
+  PARENT: ["developer"],
+  LABEL: "AIT",
+  GUNS: [
+          {
+            /*** LENGTH WIDTH     ASPECT        X             Y         ANGLE     DELAY */
+            POSITION: [18, 10, -1.4, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+                TYPE: "developerBullet",
+            },
+        },
+    ],
+},
 exports.spectator = {
     PARENT: ["menu"],
     LABEL: "Spectator",
@@ -139,9 +167,9 @@ exports.scrappedTanks = {
     PARENT: ["menu"],
     LABEL: "Scrapped Tanks",
 };
-exports.miscEntities = {
+exports.matchEntities = {
     PARENT: ["menu"],
-    LABEL: "Misc Entities",
+    LABEL: "Match Entities",
 };
 exports.dominators = {
     PARENT: ["menu"],
@@ -1041,8 +1069,10 @@ exports.wallPlacer = {
 };
 
 // DEV "UPGRADE PATHS"
-exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "spectator", "miscEntities", "eggGenerator", "bosses", "fun", "levels", "teams", "revolutionist"];
-    exports.miscEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
+exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "miscEntities", "bosses", "fun", "revolutionist"];
+exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
+exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
+    exports.matchEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
     exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
         exports.sentries.UPGRADES_TIER_0 = ["sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap"];
