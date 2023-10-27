@@ -1093,23 +1093,23 @@ exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "
 exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
 exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "auraBasic", "auraHealer"];
 exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
-    exports.matchEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
-        exports.dominators.UPGRADES_TIER_0 = ["dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
-        exports.bosses.UPGRADES_TIER_0 = ["", "sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
-        exports.sentries.UPGRADES_TIER_0 = ["sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap"];
-        exports.elites.UPGRADES_TIER_0 = ["eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "sprayerLegion"];
-        exports.mysticals.UPGRADES_TIER_0 = ["sorcerer", "summoner", "enchantress", "exorcistor"];
-        exports.nesters.UPGRADES_TIER_0 = ["nestKeeper", "nestWarden", "nestGuardian"];
-        exports.rogues.UPGRADES_TIER_0 = ["roguePalisade", "rogueArmada", "alviss", "tyr", "fiolnir"];
-        exports.terrestrials.UPGRADES_TIER_0 = ["ares", "gersemi", "ezekiel", "eris", "selene"];
-        exports.celestials.UPGRADES_TIER_0 = ["paladin", "freyja", "zaphkiel", "nyx", "theia"];
-        exports.eternals.UPGRADES_TIER_0 = ["ragnarok", "kronos"];
-        exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "tgsBoss"];
+    exports.matchEntities.UPGRADES_TIER_0 = ["ait", "baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
+        exports.dominators.UPGRADES_TIER_0 = ["matchEntities", "dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
+        exports.bosses.UPGRADES_TIER_0 = ["ait", "sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
+        exports.sentries.UPGRADES_TIER_0 = ["bosses", "sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap"];
+        exports.elites.UPGRADES_TIER_0 = ["bosses", "eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "sprayerLegion"];
+        exports.mysticals.UPGRADES_TIER_0 = ["bosses", "sorcerer", "summoner", "enchantress", "exorcistor"];
+        exports.nesters.UPGRADES_TIER_0 = ["bosses", "nestKeeper", "nestWarden", "nestGuardian"];
+        exports.rogues.UPGRADES_TIER_0 = ["bosses", "roguePalisade", "rogueArmada", "alviss", "tyr", "fiolnir"];
+        exports.terrestrials.UPGRADES_TIER_0 = ["bosses", "ares", "gersemi", "ezekiel", "eris", "selene"];
+        exports.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia"];
+        exports.eternals.UPGRADES_TIER_0 = ["bosses", "ragnarok", "kronos"];
+        exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "tgsBoss"];
     exports.oldTanks.UPGRADES_TIER_0 = ["oldSpreadshot", "oldBentBoomer", "quadBuilder", "weirdSpike", "master", "oldCommander", "blunderbuss", "oldRimfire"];
     exports.scrappedTanks.UPGRADES_TIER_0 = ["autoTrapper", "oldDreadnought", "mender", "prodigy"];
-    exports.fun.UPGRADES_TIER_0 = ["developer", "funny", "FTB", "testingTanks"];
+    exports.fun.UPGRADES_TIER_0 = ["developer", "funny", "FTB", "testingtanks"];
     exports.funny.UPGRADES_TIER_0 = ["fun", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "ghoster", "switcheroo"];
-    exports.testingTanks.UPGRADES_TIER_0 = ["fun", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic"];
+    exports.testingtanks.UPGRADES_TIER_0 = ["fun", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic"];
 //so like i kinda want to organize everything
 //ill do this later
 //nvm
