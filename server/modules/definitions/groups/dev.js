@@ -65,7 +65,7 @@ exports.developer = {
     ],
 };
 exports.tools = {
-  PARENT: ["developer"],
+  PARENT: ["menu"],
   LABEL: "Tools",
   GUNS: [
         {
@@ -79,7 +79,7 @@ exports.tools = {
     ],
 },
 exports.ait = {
-  PARENT: ["developer"],
+  PARENT: ["menu"],
   LABEL: "AIT",
   GUNS: [
           {
@@ -178,6 +178,14 @@ exports.dominators = {
 exports.sentries = {
     PARENT: ["menu"],
     LABEL: "Sentries",
+};
+exports.beta = {
+    PARENT: ["menu"],
+    LABEL: "Beta Tanks",
+};
+exports.miscTanks = {
+    PARENT: ["menu"],
+    LABEL: "Exclusive Tanks",
 };
 
 // GENERATORS
@@ -1069,12 +1077,13 @@ exports.wallPlacer = {
 };
 
 // DEV "UPGRADE PATHS"
-exports.developer.UPGRADES_TIER_0 = ["basic", "healer", "miscEntities", "bosses", "fun", "revolutionist"];
+exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
+exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
 exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
 exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.matchEntities.UPGRADES_TIER_0 = ["baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
-    exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
+        exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
         exports.sentries.UPGRADES_TIER_0 = ["sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap"];
         exports.elites.UPGRADES_TIER_0 = ["eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "sprayerLegion"];
         exports.mysticals.UPGRADES_TIER_0 = ["sorcerer", "summoner", "enchantress", "exorcistor"];
