@@ -958,6 +958,20 @@ exports.turretBase = {
         TYPE: "autoTurret",
     }]
 };
+exports.rockturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: ["shieldblock", { independent: true }]
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: ["shieldblock", { independent: true }]
+    }]
+};
 exports.droneAutoTurret = {
     PARENT: ["genericTank"],
     LABEL: "Turret",
@@ -1459,13 +1473,13 @@ exports.revolutionistrock = {
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            TYPE: "rock",
+            TYPE: "bullet",
         },
     },
           ],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "rock",
+        TYPE: "rockturretBase",
     },
   ],
 };
