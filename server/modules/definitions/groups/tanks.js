@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeCeption } = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 const generics = require('./generics.js');
 const g = require('../gunvals.js');
@@ -1483,7 +1483,7 @@ exports.tripleShot = {
         },
     ],
 };
-
+exports.revoception = makeCeption(exports.revolutionist, "revoception");
 // DOUBLE TWIN UPGRADES
 exports.tripleTwin = {
     PARENT: ["genericTank"],

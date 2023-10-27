@@ -1091,7 +1091,7 @@ exports.wallPlacer = {
 exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
 exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
 exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
-exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "auraBasic", "auraHealer"];
+exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "revoception", "auraBasic", "auraHealer"]
 exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.matchEntities.UPGRADES_TIER_0 = ["ait", "baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["matchEntities", "dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
@@ -1112,4 +1112,4 @@ exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.testingtanks.UPGRADES_TIER_0 = ["fun", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic"];
 //so like i kinda want to organize everything
 //ill do this later
-//nvm
+//nvm,
