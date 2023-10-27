@@ -1672,7 +1672,7 @@ const gameDrawDisconnected = () => {
     clearScreen(gameDraw.mixColors(color.red, color.guiblack, 0.3), 0.25);
     let shift = animations.disconnected.get();
     ctx.translate(0, -shift * global.screenHeight);
-    drawText("Disconnected💀", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
+    drawText("Disconnected", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
     drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, "center");
     ctx.translate(0, shift * global.screenHeight);
 };

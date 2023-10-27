@@ -1142,7 +1142,7 @@ exports.hiveprobe = {
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
-        TYPE: exports.bullet
+        TYPE: "bullet"
       }
     }
   ],
@@ -1150,7 +1150,7 @@ exports.hiveprobe = {
     {
       /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [25, 0, 0, 0, 360, 0],
-      TYPE: exports.mindindicator
+      TYPE: "mindindicator"
     }
   ]
 };
@@ -1188,6 +1188,14 @@ exports.weirdSpikeBody2 = {
     COLOR: 9,
     SHAPE: 3,
     INDEPENDENT: true,
+};
+exports.mindindicator = {
+    PARENT: ["genericTank"
+    LABEL: "",
+    TYPE: "bullet",
+    SHAPE: 0,
+    CONTROLLERS: ['doNothing'], 
+    COLOR: 9,
 };
 // BASIC TANK AND STARTING UPGRADES
 exports.basic = {
@@ -3173,7 +3181,7 @@ exports.octoTank = {
     ],
 };
 exports.hivemind = {
-  PARENT: [exports.genericTank],
+  PARENT: ["genericTank"],
   LABEL: "Hivemind",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
@@ -3182,14 +3190,14 @@ exports.hivemind = {
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic]),
-        TYPE: exports.bullet
+        TYPE: "bullet"
       }
     },
     {
       POSITION: [0, 20, 1, 0, 0, 90, 3],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: exports.hiveprobe,
+        TYPE: "hiveprobe",
         MAX_CHILDREN: 1
       }
     },
@@ -3197,7 +3205,7 @@ exports.hivemind = {
       POSITION: [0, 20, 1, 0, 0, 270, 3.5],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: exports.hiveprobe,
+        TYPE: "hiveprobe",
         MAX_CHILDREN: 1
       }
     }
@@ -3206,11 +3214,11 @@ exports.hivemind = {
     {
       /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [25, 0, 0, 0, 360, 0],
-      TYPE: exports.mindindicator
+      TYPE: "mindindicator"
     },  {
       /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [32, 0, 0, 0, 360, 0],
-      TYPE: exports.decoTurretHive
+      TYPE: "decoTurretHive"
     }
   ]
 };
