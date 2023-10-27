@@ -1433,6 +1433,18 @@ exports.doubleTwin = {
         },
     ],
 };
+exports.bulletception = {
+  PARENT:["bullet"],
+  MOTION_TYPE: "accel",
+      GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+  ],
+};
 exports.revolutionist = {
     PARENT: ["genericTank"],
     LABEL: "Revolutionist",
@@ -1441,7 +1453,7 @@ exports.revolutionist = {
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            TYPE: "bullet",
+            TYPE: "bulletception",
         },
     },
           ],
