@@ -1106,7 +1106,54 @@ exports.homingBullet = {
     },
     CAN_GO_OUTSIDE_ROOM: true,
 };
-
+exports.hiveprobe = {
+  PARENT: [exports.genericTank],
+  LABEL: "Probe",
+  TYPE: "drone",
+  HITS_OWN_TYPE: "hardWithBuffer",
+  DRAW_HEALTH: true,
+  BODY: {
+    FOV: 0.5,
+    SPEED: 3,
+    ACCELERATION: 0.4,
+    HEALTH: 2.5,
+    SHIELD: 0,
+    DAMAGE: 1.2,
+    RESIST: 1,
+    PENETRATION: 1,
+    DENSITY: 0.4
+  },
+  AI: {
+    BLIND: true
+  },
+  CLEAR_ON_MASTER_UPGRADE: true,
+  GIVE_KILL_MESSAGE: false,
+  ACCEPTS_SCORE: false,
+  CONTROLLERS: [
+    "nearestDifferentMaster",
+    "mapAltToFire",
+    "minion",
+    "canRepel",
+    "hangOutNearMaster"
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: exports.bullet
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: exports.mindindicator
+    }
+  ]
+};
 exports.smasherBody = {
     LABEL: "",
     CONTROLLERS: [["spin", { independent: true }]],
@@ -1142,7 +1189,6 @@ exports.weirdSpikeBody2 = {
     SHAPE: 3,
     INDEPENDENT: true,
 };
-
 // BASIC TANK AND STARTING UPGRADES
 exports.basic = {
     PARENT: ["genericTank"],
@@ -3062,7 +3108,6 @@ exports.auto3 = {
         },
     ],
 };
-
 // HEXA TANK UPGRADES
 exports.octoTank = {
     PARENT: ["genericTank"],
@@ -3126,6 +3171,48 @@ exports.octoTank = {
             },
         },
     ],
+};
+exports.hivemind = {
+  PARENT: [exports.genericTank],
+  LABEL: "Hivemind",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: exports.bullet
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 90, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: exports.hiveprobe,
+        MAX_CHILDREN: 1
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 270, 3.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: exports.hiveprobe,
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: exports.mindindicator
+    },  {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [32, 0, 0, 0, 360, 0],
+      TYPE: exports.decoTurretHive
+    }
+  ]
 };
 exports.cyclone = {
     PARENT: ["genericTank"],
