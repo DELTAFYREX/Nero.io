@@ -1154,6 +1154,26 @@ exports.hiveprobe = {
     }
   ]
 };
+exports.clonerprobe = {
+  PARENT: ["hiveprobe"],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: "bullet"
+      }
+    }
+  ],
+    TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [22, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+}
 exports.smasherBody = {
     LABEL: "",
     CONTROLLERS: [["spin", { independent: true }]],
@@ -3284,16 +3304,12 @@ exports.hivemind = {
       /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [25, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
-    },  {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [32, 0, 0, 0, 360, 0],
-      TYPE: "decoTurretHive"
     }
   ]
 };
 exports.cloner = {
   PARENT: ["genericTank"],
-  LABEL: "Hivemind",
+  LABEL: "Cloner",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
     {
@@ -3308,7 +3324,7 @@ exports.cloner = {
       POSITION: [0, 20, 1, 0, 0, 180, 3],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: "hiveprobe",
+        TYPE: "clonerprobe",
         MAX_CHILDREN: 1
       }
     }
@@ -3316,12 +3332,8 @@ exports.cloner = {
   TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [25, 0, 0, 0, 360, 0],
+      POSITION: [22, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
-    },  {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [32, 0, 0, 0, 360, 0],
-      TYPE: "decoTurretHive"
     }
   ]
 };
