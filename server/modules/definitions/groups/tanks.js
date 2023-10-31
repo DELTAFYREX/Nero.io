@@ -1460,6 +1460,22 @@ exports.single = {
         },
     ],
 };
+exports.lancer = {
+    PARENT: ["genericTank"],
+    LABEL: "Lancer",
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+        },
+    ],
+};
 // TWIN UPGRADES
 exports.doubleTwin = {
     PARENT: ["genericTank"],
@@ -1528,7 +1544,7 @@ exports.revolutionist = {
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            TYPE: "bulletception",
+            TYPE: "bullet",
         },
     },
           ],
@@ -2450,6 +2466,38 @@ exports.armsman = makeHybrid(exports.rifle, "Armsman");
 exports.minigun = {
     PARENT: ["genericTank"],
     LABEL: "Minigun",
+    DANGER: 6,
+    BODY: {
+        FOV: 1.2,
+    },
+    GUNS: [
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [21, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+};
+exports.minilaser = {
+    PARENT: ["genericTank"],
+    LABEL: "Plasma SMG",
     DANGER: 6,
     BODY: {
         FOV: 1.2,
