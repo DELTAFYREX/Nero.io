@@ -1497,7 +1497,7 @@ exports.doubleTwin = {
     ],
 };
 exports.bulletception = {
-  PARENT:["bullet"],
+  PARENT: ["bullet"],
   MOTION_TYPE: "accel",
       GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
@@ -1508,6 +1508,18 @@ exports.bulletception = {
     },
   ],
 };
+exports.laser = {
+  PARENT: ["bullet"],
+  SHAPE: -1,
+  BODY: {
+        PENETRATION: 1.1,
+        SPEED: 4.5,
+        RANGE: 100,
+        DENSITY: 1.05,
+        HEALTH: 0.155,
+        DAMAGE: 5.2,
+    }
+}
 exports.revolutionist = {
     PARENT: ["genericTank"],
     LABEL: "Revolutionist",
