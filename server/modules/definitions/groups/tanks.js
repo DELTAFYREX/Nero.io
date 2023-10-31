@@ -1528,12 +1528,12 @@ exports.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
   BODY: {
-        PENETRATION: 1.1,
-        SPEED: 4.5,
+        PENETRATION: 0.93,
+        SPEED: 5.2,
         RANGE: 100,
-        DENSITY: 1.05,
-        HEALTH: 0.155,
-        DAMAGE: 5.2,
+        DENSITY: 1,
+        HEALTH: 0.1512,
+        DAMAGE: 4.8,
     }
 }
 exports.revolutionist = {
@@ -2507,21 +2507,21 @@ exports.minilaser = {
             /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
                 TYPE: "laser",
             },
         },
