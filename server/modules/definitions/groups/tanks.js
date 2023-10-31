@@ -5164,6 +5164,16 @@ exports.assemblerEffect = {
     },
     ALPHA: 0.8
 };
+exports.testEffect = {
+    PARENT: ['trap'],
+    MOTION_TYPE: 'assembler',
+    LABEL: '',
+    BODY: {
+        DAMAGE: 0,
+        RANGE: 10
+    },
+    ALPHA: 0.8
+};
 exports.assemblerDot = {
     LABEL: '',
     SHAPE: -4,
