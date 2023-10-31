@@ -1465,7 +1465,7 @@ exports.lancer = {
     LABEL: "Lancer",
     GUNS: [
         {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            POSITION: [26, 8, -2, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "bullet",
@@ -2507,22 +2507,22 @@ exports.minilaser = {
             /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                TYPE: "laser",
             },
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                TYPE: "laser",
             },
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.morereload]),
+                TYPE: "laser",
             },
         },
     ],
