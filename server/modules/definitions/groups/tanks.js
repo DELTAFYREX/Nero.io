@@ -1528,12 +1528,12 @@ exports.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
   BODY: {
-        PENETRATION: 0.93,
+        PENETRATION: 0.7,
         SPEED: 5.2,
         RANGE: 100,
-        DENSITY: 1,
-        HEALTH: 0.1512,
-        DAMAGE: 4.8,
+        DENSITY: 0.85,
+        HEALTH: 0.1,
+        DAMAGE: 4.65,
     }
 }
 exports.revolutionist = {
@@ -2507,21 +2507,21 @@ exports.minilaser = {
             /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
@@ -3272,6 +3272,40 @@ exports.hivemind = {
     },
     {
       POSITION: [0, 20, 1, 0, 0, 270, 3.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "hiveprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    },  {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [32, 0, 0, 0, 360, 0],
+      TYPE: "decoTurretHive"
+    }
+  ]
+};
+exports.cloner = {
+  PARENT: ["genericTank"],
+  LABEL: "Hivemind",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 180, 3],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
         TYPE: "hiveprobe",
