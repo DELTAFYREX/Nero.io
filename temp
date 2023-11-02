@@ -41,3 +41,28 @@
                     ctx.drawImage(_imageCache[badge], x - size * 1.1 - measureText(instance.name, 16 * nameRatio, false, font) / 2, y - realSize - 30 * nameRatio - size * 0.75, size, size);
                 }
                 ctx.globalAlpha = 1;
+                
+                      <script type="text/javascript">
+<!--
+ var currentdate2 = 0;
+ var image_number2 = 0;
+ function ImageArray2 (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image2 = new ImageArray2(2)
+ image2[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-11-2-9-17-44.gif?v=1698926638489'
+ image2[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-11-2-9-22-40.gif?v=1698926631574'
+ var rand2 = 100/image2.length
+ function randomimage2() {
+ 	currentdate2 = new Date()
+ 	image_number2 = currentdate2.getSeconds()
+ 	image_number2 = Math.floor(image_number2/rand2)
+ 	return(image2[image_number2])
+ }
+imgsizething2 = 'style="width: 100%; height: 100%;"'
+ document.write("<img src='" + randomimage2()+ "'" + imgsizething2 + ">");
+//-->
+</script>   
