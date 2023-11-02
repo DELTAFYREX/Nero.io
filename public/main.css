@@ -36,11 +36,10 @@ body {
     -moz-user-select: none;
     user-select: none;
 }
-
 body {
     font-family: Ubuntu;
     font-size: 14px;
-    background-image: url("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/futuristic-technological-grid-background-digital-futurist-cyber-space-design-cyberpunk-technology-virtual-reality-science-fiction-matrix-science-light-perspective-wallpaper-illustration-free-vector.jpg?v=1695385401120");
+    background-image: url(backroundimagenumber);
     background-color: #484848;
 }
 
