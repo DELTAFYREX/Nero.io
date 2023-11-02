@@ -41,4 +41,3 @@
                     ctx.drawImage(_imageCache[badge], x - size * 1.1 - measureText(instance.name, 16 * nameRatio, false, font) / 2, y - realSize - 30 * nameRatio - size * 0.75, size, size);
                 }
                 ctx.globalAlpha = 1;
-          
