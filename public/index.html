@@ -99,6 +99,30 @@ function PlaySound69() {
     <!-- Main Code-->
 <body oncontextmenu="return false" id="mainBody">
     <div id="gameAreaWrapper">
+      <script type="text/javascript">
+<!--
+ var currentdate2 = 0;
+ var image_number2 = 0;
+ function ImageArray2 (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image2 = new ImageArray2(2)
+ image2[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-11-2-9-17-44.gif?v=1698926638489'
+ image2[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623'
+ var rand2 = 100/image2.length
+ function randomimage2() {
+ 	currentdate2 = new Date()
+ 	image_number2 = currentdate2.getSeconds()
+ 	image_number2 = Math.floor(image_number2/rand2)
+ 	return(image2[image_number2])
+ }
+imgsizething2 = 'style="width: 100%; height: 100%;"'
+ document.write("<img src='" + randomimage2()+ "'" + imgsizething2 + ">");
+//-->
+</script>   
         <canvas id="gameCanvas" tabindex="1"></canvas>
         <input id="chatInput" type="text" maxlength="256" hidden=true>
     </div>
@@ -135,7 +159,7 @@ function PlaySound69() {
  image[10] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_26_0ml_Kleki.png?v=1698336267088'
  image[11] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/freddy.gif?v=1698336453397'
  image[12] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/asda.gif?v=1698336433205'
- var rand = 60/image.length
+ var rand = 30/image.length
  function randomimage() {
  	currentdate = new Date()
  	image_number = currentdate.getSeconds()
