@@ -5969,7 +5969,7 @@ exports.paramedic = {
     ],
     STAT_NAMES: statnames.heal,
 };
-exports.autoBasic = makeAuto(exports.doubleTwin, "Auto-Basic");
+exports.autoBasic = makeAuto(exports.basic, "Auto-Basic");
 exports.autoTwin = makeAuto(exports.twin, "Auto-Twin");
 exports.autoMach = makeAuto(exports.machineGun, "Auto-Mach");
 exports.autoSniper = makeAuto(exports.sniper, "Auto-Sniper");
@@ -5981,7 +5981,7 @@ exports.autoCloner = makeAuto(exports.cloner, "Auto-Cloner");
 
 
 // TANK UPGRADE PATHS
-exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", /*"desmos"*/];
+exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic"/*, "desmos"*/];
     exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"];
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
