@@ -116,6 +116,23 @@ exports.makeGuard = (type, name = -1) => {
     output.LABEL = name == -1 ? type.LABEL + " Guard" : name;
     return output;
 }
+exports.makeMulti = (type, count, name = -1, startRotation = 0) => {
+    let greekNumbers = ',Double ,Triple ,Quad ,Penta ,Hexa ,Septa ,Octo ,Nona ,Deca ,Hendeca ,Dodeca ,Trideca ,Tetradeca ,Pentadeca ,Hexadeca ,Septadeca ,Octadeca ,Nonadeca ,Icosa ,Henicosa ,Doicosa ,Triaicosa ,Tetraicosa ,Pentaicosa ,Hexaicosa ,Septaicosa ,Octoicosa ,Nonaicosa ,Triaconta '.split(','),
+        output = exports.dereference(type),
+        shootyBois = output.GUNS,
+        fraction = 360 / count;
+    output.GUNS = [];
+    for (let gun of type.GUNS) {
+        for (let i = 0; i < count; i++) {
+            let newgun = exports.dereference(gun);
+            newgun.POSITION[5] += startRotation + fraction * i;
+            if (gun.PROPERTIES) newgun.PROPERTIES.TYPE = gun.PROPERTIES.TYPE;
+            output.GUNS.push(newgun);
+        };
+    }
+    output.LABEL = name == -1 ? (greekNumbers[count - 1] || (count + ' ')) + type.LABEL : name;
+    return output;
+}
 exports.makeConq = (type, name = -1) => {
     let output = exports.dereference(type),
     cannons = [{
@@ -170,23 +187,6 @@ exports.addBackGunner = (type, name = -1) => {
     }];
     output.GUNS = type.GUNS == null ? cannons : type.GUNS.concat(cannons);
     output.LABEL = name == -1 ? type.LABEL : name;
-    return output;
-}
-exports.makeMulti = (type, count, name = -1, startRotation = 0) => {
-    let greekNumbers = ',Double ,Triple ,Quad ,Penta ,Hexa ,Septa ,Octo ,Nona ,Deca ,Hendeca ,Dodeca ,Trideca ,Tetradeca ,Pentadeca ,Hexadeca ,Septadeca ,Octadeca ,Nonadeca ,Icosa ,Henicosa ,Doicosa ,Triaicosa ,Tetraicosa ,Pentaicosa ,Hexaicosa ,Septaicosa ,Octoicosa ,Nonaicosa ,Triaconta '.split(','),
-        output = exports.dereference(type),
-        shootyBois = output.GUNS,
-        fraction = 360 / count;
-    output.GUNS = [];
-    for (let gun of type.GUNS) {
-        for (let i = 0; i < count; i++) {
-            let newgun = exports.dereference(gun);
-            newgun.POSITION[5] += startRotation + fraction * i;
-            if (gun.PROPERTIES) newgun.PROPERTIES.TYPE = gun.PROPERTIES.TYPE;
-            output.GUNS.push(newgun);
-        };
-    }
-    output.LABEL = name == -1 ? (greekNumbers[count - 1] || (count + ' ')) + type.LABEL : name;
     return output;
 }
 exports.makeBird = (type, name = -1, color) => {
