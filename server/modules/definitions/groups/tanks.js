@@ -5969,9 +5969,19 @@ exports.paramedic = {
     ],
     STAT_NAMES: statnames.heal,
 };
+exports.autoBasic = makeAuto(exports.doubleTwin, "Auto-Basic");
+exports.autoTwin = makeAuto(exports.twin, "Auto-Twin");
+exports.autoMach = makeAuto(exports.machineGun, "Auto-Mach");
+exports.autoSniper = makeAuto(exports.sniper, "Auto-Sniper");
+exports.autoFlank = makeAuto(exports.flankGuard, "Auto-Flank");
+exports.autoDirector = makeAuto(exports.director, "Auto-Director");
+exports.autoPound = makeAuto(exports.pounder, "Auto-Pounder");
+exports.autoTrapper = makeAuto(exports.trapper, "Auto-Trapper");
+exports.autoCloner = makeAuto(exports.cloner, "Auto-Cloner");
+
 
 // TANK UPGRADE PATHS
-exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"];
+exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", /*"desmos"*/];
     exports.basic.UPGRADES_TIER_2 = ["smasher"];
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -6017,6 +6027,8 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"];
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"];
 
-    exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
+    exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
+
+    /*exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
         exports.helix.UPGRADES_TIER_3 = ["triplex"];
-        exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
+        exports.volute.UPGRADES_TIER_3 = ["sidewinder"]; */
