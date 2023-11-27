@@ -1544,6 +1544,132 @@ exports.bulletception = {
     },
   ],
 };
+exports.desmos = {
+    PARENT: ["genericTank"],
+    LABEL: "Desmos",
+    DANGER: 5,
+    TOOLTIP: "[DEV NOTE] The Desmos is not finished yet. This tank is currently just a mockup.",
+    GUNS: [
+        {
+            POSITION: [20, 10, 0.8, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.75, 10, 2.125, 1.25, -6.25, 90, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.75, 10, 2.125, 1.25, 6.25, -90, 0],
+        },
+    ],
+};
+exports.volute = {
+    PARENT: ["genericTank"],
+    LABEL: "Volute",
+    DANGER: 6,
+    TOOLTIP: "[DEV NOTE] The Volute is not finished yet. This tank is currently just a mockup.",
+    GUNS: [
+        {
+            POSITION: [20, 13, 0.8, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [4.75, 10, 2.125, 1.25, -6.375, 90, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [4.75, 10, 2.125, 1.25, 6.375, -90, 0],
+        },
+    ],
+};
+exports.helix = {
+    PARENT: ["genericTank"],
+    LABEL: "Helix",
+    DANGER: 6,
+    TOOLTIP: "[DEV NOTE] The Helix is not finished yet. This tank is currently just a mockup.",
+    GUNS: [
+        {
+            POSITION: [20, 8, 0.75, 0, -5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [20, 8, 0.75, 0, 5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.625, 7.5, 2.75, 5.75, -6.75, 90, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.625, 7.5, 2.75, 5.75, 6.75, -90, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [6, 8, 0.25, 10.5, 0, 0, 0],
+        },
+    ],
+};
+exports.triplex = {
+    PARENT: ["genericTank"],
+    LABEL: "Triplex",
+    DANGER: 7,
+    TOOLTIP: "[DEV NOTE] The Triplex is not finished yet. This tank is currently just a mockup.",
+    GUNS: [
+        {
+            POSITION: [18, 10, 0.7, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 10, 0.7, 0, 0, 45, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 10, 0.7, 0, 0, -45, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.75, 10, 2.125, 1, -4.25, 10, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [3.75, 10, 2.125, 1, 4.25, -10, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [5, 6, 0.5, 10.5, 0, 22.5, 0],
+        },
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [5, 6, 0.5, 10.5, 0, -22.5, 0],
+        },
+    ],
+};
+exports.quadruplex = makeMulti(exports.desmos, 4, "Quadruplex", 45);
 exports.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
@@ -5845,7 +5971,7 @@ exports.paramedic = {
 };
 
 // TANK UPGRADE PATHS
-exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper"/* "desmos"*/];
+exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"];
     exports.basic.UPGRADES_TIER_2 = ["smasher"];
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -5879,7 +6005,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"];
         exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
-    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher"];
+    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "volute"];
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
         exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct"];
         exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun"];
@@ -5891,6 +6017,6 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"];
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"];
 
-    /*exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"],
-        exports.helix.UPGRADES_TIER_3 = ["triplex"],
-        exports.volute.UPGRADES_TIER_3 = ["sidewinder"],*/
+    exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
+        exports.helix.UPGRADES_TIER_3 = ["triplex"];
+        exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
