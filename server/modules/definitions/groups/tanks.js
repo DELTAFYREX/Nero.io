@@ -5970,6 +5970,7 @@ exports.paramedic = {
     STAT_NAMES: statnames.heal,
 };
 exports.autoBasic = makeAuto(exports.basic, "Auto-Basic");
+
 exports.autoTwin = makeAuto(exports.twin, "Auto-Twin");
 exports.autoMach = makeAuto(exports.machineGun, "Auto-Mach");
 exports.autoSniper = makeAuto(exports.sniper, "Auto-Sniper");
@@ -5987,12 +5988,18 @@ exports.autoRifle = makeAuto(exports.rifle, "Auto-Rifle");
 exports.autoMini = makeAuto(exports.minigun, "Auto-Minigun");
 exports.autoSprayer = makeAuto(exports.sprayer, "Auto-Sprayer");
 
-exports.auto = makeAuto(exports., "Auto-");
-exports.auto = makeAuto(exports., "Auto-");
+exports.autoHexaTank = makeAuto(exports.hexaTank, "Auto-HexaTank");
+exports.autoAuto3 = makeAuto(exports.auto3, "Auto-Auto3");
 
-exports.auto = makeAuto(exports., "Auto-");
+exports.autoUnderseer = makeAuto(exports.underseer, "Auto-Underseer");
 
-exports.auto = makeAuto(exports., "Auto-");
+exports.autoDestroy = makeAuto(exports.destroyer, "Auto-Destroyer");
+exports.autoArtillery = makeAuto(exports.artillery, "Auto-Artillery");
+exports.autoLaunch = makeAuto(exports.launcher, "Auto-Launcher");
+
+exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
+exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
+
 
 
 
@@ -6047,6 +6054,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
 
     exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist"];
     exports.autoBasic.UPGRADES_TIER_3 = ["autoCloner"];
+    exports.a
 
 
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
