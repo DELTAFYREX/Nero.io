@@ -943,6 +943,24 @@ exports.autoTurret = {
         },
     ],
 };
+exports.autoTurretNerf = {
+    PARENT: ["genericTank"],
+    LABEL: "TurretWeak",
+    CONTROLLERS: ["onlyAcceptInArc", "nearestDifferentMaster"],
+    BODY: {
+        FOV: 0.8,
+    },
+    COLOR: 16,
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.morerecoil, g.turret, g.weak, g.weak]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+};
 // ??? it still dont spin i think lol
 exports.turretBase = {
     LABEL: "Base",

@@ -616,7 +616,7 @@ exports.makeAuto = (type, name = -1, options = {}) => {
 }
 exports.makeCeption = (type, name = -1, options = {}) => {
     let turret = {
-        type: "autoTurret",
+        type: "autoTurretNerf",
         size: 12.5,
         independent: true,
     };
