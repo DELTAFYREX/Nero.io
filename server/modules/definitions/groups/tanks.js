@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption} = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf} = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 const generics = require('./generics.js');
 const g = require('../gunvals.js');
@@ -6002,15 +6002,15 @@ exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
 exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
 
 
-exports.basicCeption = makeCeption(exports.basic, "Basic-Ception");
+exports.basicCeption = makeCeptionNerf(exports.basic, "Basic-Ception");
 
-exports.twinCeption = makeCeption(exports.twin, "Twin-Ception");
-exports.snipeCeption = makeCeption(exports.sniper, "Snipe-Ception");
-exports.machCeption = makeCeption(exports.machineGun, "Mach-Ception");
-exports.flankCeption = makeCeption(exports.flankGuard, "Flank-Ception");
-exports.directCeption = makeCeption(exports.director, "Direct-Ception");
-exports.poundCeption = makeCeption(exports.pounder, "Pound-Ception");
-exports.trapCeption = makeCeption(exports.trapper, "Trap-Ception");
+exports.twinCeption = makeCeptionNerf(exports.twin, "Twin-Ception");
+exports.snipeCeption = makeCeptionNerf(exports.sniper, "Snipe-Ception");
+exports.machCeption = makeCeptionNerf(exports.machineGun, "Mach-Ception");
+exports.flankCeption = makeCeptionNerf(exports.flankGuard, "Flank-Ception");
+exports.directCeption = makeCeptionNerf(exports.director, "Direct-Ception");
+exports.poundCeption = makeCeptionNerf(exports.pounder, "Pound-Ception");
+exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 
 
 

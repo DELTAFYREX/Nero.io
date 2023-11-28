@@ -657,6 +657,49 @@ exports.makeCeption = (type, name = -1, options = {}) => {
     output.DANGER = type.DANGER + 1;
     return output;
 }
+exports.makeCeptionNerf = (type, name = -1, options = {}) => {
+    let turret = {
+        type: "autoTurret",
+        size: 12.5,
+        independent: true,
+    };
+    if (options.type != null) {
+        turret.type = options.type;
+    }
+    if (options.size != null) {
+        turret.size = options.size;
+    }
+    if (options.independent != null) {
+        turret.independent = options.independent;
+    }
+    let output = exports.dereference(type);
+    let autogun = {
+        /********* SIZE X Y ANGLE ARC */
+        POSITION: [turret.size, 0, 0, 180, 360, 1],
+        TYPE: [
+            type,
+            {
+                CONTROLLERS: ["nearestDifferentMaster"],
+                INDEPENDENT: turret.independent,
+            },
+        ],
+    };
+    if (type.GUNS != null) {
+        output.GUNS = type.GUNS;
+    }
+    if (type.TURRETS == null) {
+        output.TURRETS = [autogun];
+    } else {
+        output.TURRETS = [...type.TURRETS, autogun];
+    }
+    if (name == -1) {
+        output.LABEL = type.LABEL + "-Ception";
+    } else {
+        output.LABEL = name;
+    }
+    output.DANGER = type.DANGER + 1;
+    return output;
+}
 exports.makeDeco = (shape = 0, color = 16) => {
     return {
         PARENT: ["genericTank"],
