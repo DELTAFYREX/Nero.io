@@ -753,10 +753,20 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, rot 
             drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - (g.aspect === 1 ? position * 2 : 0)), (drawSize * g.width) / 2, g.aspect, g.angle + rot, borderless, fill);
         }
       }
-    } else {
+    } else if (m.shape > 999) {
+                        context.save();
+                        context.beginPath();
+                        context.translate(m.centerX, m.centerY);
+                        context.rotate(m.angle);
+                        if (!window.frames) {
+                            window.frames = {}
+                        }
+        switch (m.shape) {
+          case 1001:
           if (!_imageCache.ied || !_imageCache.ied.ready) break;
-          context.drawImage(_imageCache.ied, -radius * 1.5, -radius * 2.5, radius * 3, radius * 5);
+          context.drawImage(_imageCache.ied, -m.radius * 1.5, -m.radius * 2.5, m.radius * 3, m.radius * 5);
             break;
+      }
     }
     // Draw turrets above us
     for (let i = 0; i < m.turrets.length; i++) {

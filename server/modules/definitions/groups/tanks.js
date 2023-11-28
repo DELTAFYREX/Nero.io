@@ -1485,6 +1485,7 @@ exports.healer = {
 exports.single = {
     PARENT: ["genericTank"],
     LABEL: "Single",
+    SHAPE: 1001,
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
