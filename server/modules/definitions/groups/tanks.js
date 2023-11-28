@@ -5979,6 +5979,20 @@ exports.autoPound = makeAuto(exports.pounder, "Auto-Pounder");
 exports.autoTrap = makeAuto(exports.trapper, "Auto-Trapper");
 exports.autoCloner = makeAuto(exports.cloner, "Auto-Cloner");
 
+exports.autoTripleShot = makeAuto(exports.tripleShot, "Auto-Triple Shot");
+
+exports.autoHunter = makeAuto(exports.hunter, "Auto-Hunter");
+exports.autoRifle = makeAuto(exports.rifle, "Auto-Rifle");
+
+exports.autoMini = makeAuto(exports.minigun, "Auto-Minigun");
+exports.autoSprayer = makeAuto(exports.sprayer, "Auto-Sprayer");
+
+exports.auto = makeAuto(exports., "Auto-");
+exports.auto = makeAuto(exports., "Auto-");
+exports.auto = makeAuto(exports., "Auto-");
+
+
+
 
 // TANK UPGRADE PATHS
 exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic"/*, "desmos"*/];
