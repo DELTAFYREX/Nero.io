@@ -5989,7 +5989,11 @@ exports.autoSprayer = makeAuto(exports.sprayer, "Auto-Sprayer");
 
 exports.auto = makeAuto(exports., "Auto-");
 exports.auto = makeAuto(exports., "Auto-");
+
 exports.auto = makeAuto(exports., "Auto-");
+
+exports.auto = makeAuto(exports., "Auto-");
+
 
 
 
