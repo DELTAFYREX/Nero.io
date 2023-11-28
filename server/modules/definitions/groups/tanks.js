@@ -6001,12 +6001,12 @@ exports.autoLaunch = makeAuto(exports.launcher, "Auto-Launcher");
 exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
 exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
 
-exports.twinCeption = makeCeption(exports.twin, "Twin-Ception");
 
+exports.basicCeption = makeCeption(exports.basic, "Basic-Ception");
 
 exports.twinCeption = makeCeption(exports.twin, "Twin-Ception");
-exports.machCeption = makeCeption(exports.machineGun, "Mach-Ception");
 exports.snipeCeption = makeCeption(exports.sniper, "Snipe-Ception");
+exports.machCeption = makeCeption(exports.machineGun, "Mach-Ception");
 exports.flankCeption = makeCeption(exports.flankGuard, "Flank-Ception");
 exports.directCeption = makeCeption(exports.director, "Direct-Ception");
 exports.poundCeption = makeCeption(exports.pounder, "Pound-Ception");
@@ -6062,7 +6062,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"];
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"];
 
-    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist"];
+    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
         exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
         exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank"];
         exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle"];
@@ -6072,6 +6072,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch"];
         exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard"];
         exports.revolutionist.UPGRADES_TIER_3 = ["autoRevolutionist"];
+        exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
 
 
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
