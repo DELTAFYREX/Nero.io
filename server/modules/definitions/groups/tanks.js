@@ -6053,8 +6053,15 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"];
 
     exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist"];
-    exports.autoBasic.UPGRADES_TIER_3 = ["autoCloner"];
-    exports.a
+        exports.autoBasic.UPGRADES_TIER_3 = ["autoCloner"];
+        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank"];
+        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssasin", "autoHunter", "autoMini", "autoRifle"];
+        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer"];
+        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper"];
+        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner"];
+        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", ""];
+        exports.autoTrap.UPGRADES_TIER_3 = [""];
+        exports.revolutionist.UPGRADES_TIER_3 = [""];
 
 
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
