@@ -734,25 +734,15 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, rot 
         }
     }
     // Draw body
-    if (m.shape < 1000) {
     context.globalAlpha = 1;
     gameDraw.setColor(context, gameDraw.mixColors(gameDraw.modifyColor(instance.color, baseColor), render.status.getColor(), render.status.getBlend()));
     drawPoly(context, xx, yy, (drawSize / m.size) * m.realSize, m.shape, rot, m.borderless, m.drawFill);
-          } else if (m.sides === 101) {
-                        context.save();
-                        context.beginPath();
-                        context.translate(xx, yy);
-                        context.rotate(m.angle);
-                        if (!window.frames) {
-                            window.frames = {}
-                        }
-        switch (m.shape) {
-          case 1001:
-          if (!_imageCache.ied || !_imageCache.ied.ready) break;
-          context.drawImage(_imageCache.ied, -(drawSize / m.size) * m.realSize * 1.5, -(drawSize / m.size) * m.realSize * 2.5, (drawSize / m.size) * m.realSize * 3, (drawSize / m.size) * m.realSize * 5);
-            break;
-      }
-    }
+    if (m. === 101) {
+      if (!_imageCache.ied || !_imageCache.ied.ready) {
+      context.drawImage(_imageCache.ied, -radius * 1.5, -radius * 2.5, radius * 3, radius * 5);
+      }       
+    }    
+}
     // Draw guns above us
     context.lineWidth = Math.max(config.graphical.mininumBorderChunk, ratio * config.graphical.borderChunk);
     for (let i = 0; i < m.guns.length; i++) {
