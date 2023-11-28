@@ -677,7 +677,7 @@ exports.makeCeptionNerf = (type, name = -1, options = {}) => {
         /********* SIZE X Y ANGLE ARC */
         POSITION: [turret.size, 0, 0, 180, 360, 1],
         TYPE: [
-            type,
+            "bullet",
             {
                 CONTROLLERS: ["nearestDifferentMaster"],
                 INDEPENDENT: turret.independent,
