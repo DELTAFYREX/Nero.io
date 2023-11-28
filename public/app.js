@@ -17,6 +17,35 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
 //         document.getElementById("patchNotes").innerHTML += `<div><b>${changelog[0][0].slice(1).trim()}</b>: ${changelog[0].slice(1).join(":") || "Update lol"}<ul>${changelog.slice(1).map((line) => `<li>${line.slice(1).trim()}</li>`).join("")}</ul><hr></div>`;
 //     }
 // });
+      function _loadImage(image, cache) {
+        const img = new Image();
+        img.src = image[0];
+        img.ready = false;
+        img.onload = function () {
+            img.ready = true;
+            //console.log(`Image "${image[1]} loaded."`);
+            cache[image[1]] = img;
+        };
+    }
+    const _imageCache = (function loadImages() {
+        const cache = {};
+        let i = 0;
+        for (let image of [ // MUST BE PNG
+            ["./images/lratio.png", "ied"],
+        ]) {
+            setTimeout(() => {
+                if (image[2]) {
+                    let file = image[0].split(".png")[0]
+                    for (let i = 0; i < image[2]; i++) {
+                        _loadImage([`${file}-${i}.png`, `${image[1]}-${i}`], cache)
+                    }
+                } else {
+                    _loadImage(image, cache)
+                }
+            }, 5 * i++);
+        };
+        return (cache);
+    })();
      //just some code to make the sound work
       var playbuttonsound = new Audio();
       playbuttonsound.src =
@@ -706,6 +735,7 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, rot 
     }
     // Draw body
     context.globalAlpha = 1;
+  if (m.shape === !1001) {
     gameDraw.setColor(context, gameDraw.mixColors(gameDraw.modifyColor(instance.color, baseColor), render.status.getColor(), render.status.getBlend()));
     drawPoly(context, xx, yy, (drawSize / m.size) * m.realSize, m.shape, rot, m.borderless, m.drawFill);
     // Draw guns above us
@@ -722,6 +752,11 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, rot 
             gameDraw.setColor(context, gameDraw.mixColors(gunColor, render.status.getColor(), render.status.getBlend()));
             drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length / 2 - (g.aspect === 1 ? position * 2 : 0)), (drawSize * g.width) / 2, g.aspect, g.angle + rot, borderless, fill);
         }
+      }
+    } else {
+          if (!_imageCache.ied || !_imageCache.ied.ready) break;
+          context.drawImage(_imageCache.ied, -radius * 1.5, -radius * 2.5, radius * 3, radius * 5);
+            break;
     }
     // Draw turrets above us
     for (let i = 0; i < m.turrets.length; i++) {
