@@ -737,12 +737,6 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, rot 
     context.globalAlpha = 1;
     gameDraw.setColor(context, gameDraw.mixColors(gameDraw.modifyColor(instance.color, baseColor), render.status.getColor(), render.status.getBlend()));
     drawPoly(context, xx, yy, (drawSize / m.size) * m.realSize, m.shape, rot, m.borderless, m.drawFill);
-    if (m. === 101) {
-      if (!_imageCache.ied || !_imageCache.ied.ready) {
-      context.drawImage(_imageCache.ied, -radius * 1.5, -radius * 2.5, radius * 3, radius * 5);
-      }       
-    }    
-}
     // Draw guns above us
     context.lineWidth = Math.max(config.graphical.mininumBorderChunk, ratio * config.graphical.borderChunk);
     for (let i = 0; i < m.guns.length; i++) {
