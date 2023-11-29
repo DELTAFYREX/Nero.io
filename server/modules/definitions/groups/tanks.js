@@ -964,7 +964,7 @@ exports.autoTurretNerf = {
 // ??? it still dont spin i think lol
 exports.turretBase = {
     LABEL: "Base",
-    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9',
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
