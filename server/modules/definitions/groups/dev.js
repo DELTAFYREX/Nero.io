@@ -691,6 +691,23 @@ exports.switcheroo = {
         }
     }]
 }
+exports.bombtesting = {
+    PARENT: ["genericTank"],
+    LABEL: "bomb thing",
+    SHAPE: 1,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "microbomb",
+            },
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+        },
+    ],
+};
     exports.microbombDecor = {
         PARENT: 'genericTank',
         SHAPE: 'M 0.2758 -2.3635 C 0.172 -2.6062 -0.172 -2.6062 -0.2758 -2.3635 L -0.6786 -1.4216 C -1.2084 -1.1683 -1.575 -0.6272 -1.575 0 C -1.575 0.6272 -1.2084 1.1683 -0.6786 1.4217 L -0.2758 2.3635 C -0.172 2.6062 0.172 2.6062 0.2758 2.3635 L 0.6786 1.4217 C 1.2084 1.1683 1.575 0.6272 1.575 0 C 1.575 -0.6272 1.2084 -1.1683 0.6786 -1.4216 L 0.2758 -2.3635 L 0.046 -2.2652 L 0.2758 -2.3635 Z',
@@ -1153,7 +1170,7 @@ exports.wallPlacer = {
 exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
 exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
 exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
-exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "revoception", "auraBasic", "auraHealer", "hivemind", "cloner", "minilaser"]
+exports.beta.UPGRADES_TIER_0 = ["developer", "auraBasic", "auraHealer", "bombtesting", "minilaser"]
 exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.matchEntities.UPGRADES_TIER_0 = ["ait", "baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["matchEntities", "dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
@@ -1170,7 +1187,7 @@ exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.oldTanks.UPGRADES_TIER_0 = ["miscTanks", "oldSpreadshot", "oldBentBoomer", "quadBuilder", "weirdSpike", "master", "oldCommander", "blunderbuss", "oldRimfire"];
     exports.scrappedTanks.UPGRADES_TIER_0 = ["miscTanks", "autoTrapper", "oldDreadnought", "mender", "prodigy"];
     exports.fun.UPGRADES_TIER_0 = ["developer", "funny", "FTB", "testingtanks"];
-    exports.funny.UPGRADES_TIER_0 = ["fun", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "ghoster", "switcheroo"];
+    exports.funny.UPGRADES_TIER_0 = ["fun", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "ghoster", "switcheroo", "revoception"];
     exports.testingtanks.UPGRADES_TIER_0 = ["fun", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic"];
 //so like i kinda want to organize everything
 //ill do this later
