@@ -6024,10 +6024,11 @@ exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
 exports.basicCeption = makeCeptionNerf(exports.basic, "Basic-Ception");
 
 exports.twinCeption = makeCeptionNerf(exports.twin, "Twin-Ception");
+exports.twinCeption.BODY = { SPEED: base.SPEED };
 exports.snipeCeption = makeCeptionNerf(exports.sniper, "Snipe-Ception");
 exports.machCeption = makeCeptionNerf(exports.machineGun, "Mach-Ception");
 exports.flankCeption = makeCeptionNerf(exports.flankGuard, "Flank-Ception");
-exports.directCeption = makeCeptionNerf(exports.director, "Direct-Ception");
+exports.directCeption = makeCeptionNerf(exports.director, "Drone-Ception");
 exports.poundCeption = makeCeptionNerf(exports.pounder, "Pound-Ception");
 exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 
@@ -6083,13 +6084,13 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
 
     exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
         exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
-        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank"];
-        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle"];
-        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer"];
-        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper"];
-        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner"];
-        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch"];
-        exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard"];
+        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"];
+        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"];
+        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"];
+        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"];
+        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"];
+        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"];
+        exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"];
         exports.revolutionist.UPGRADES_TIER_3 = ["autoRevolutionist"];
         exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
 
