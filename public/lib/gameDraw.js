@@ -1,38 +1,6 @@
 import { config } from "./config.js";
 import { color } from "./color.js";
-    function _loadImage(image, cache) {
-        const img = new Image();
-        img.src = image[0];
-        img.ready = false;
-        img.onload = function () {
-            img.ready = true;
-            //console.log(`Image "${image[1]} loaded."`);
-            cache[image[1]] = img;
-        };
-    }
-    const _imageCache = (function loadImages() {
-        const cache = {};
-        let i = 0;
-        for (let image of [ // MUST BE PNG
-            ["./images/lratio.png", "ied"]
-        ]) {
-            setTimeout(() => {
-                if (image[2]) {
-                    let file = image[0].split(".png")[0]
-                    for (let i = 0; i < image[2]; i++) {
-                        _loadImage([`${file}-${i}.png`, `${image[1]}-${i}`], cache)
-                    }
-                } else {
-                    _loadImage(image, cache)
-                }
-            }, 5 * i++);
-        };
-        return (cache);
-    })();
-    let _getSearchFromUrl = (thing) => {
-        const url = new URL(window.location)
-        return url.searchParams.get(thing)
-    }
+
 var gameDraw = {
     color: null,
     /** https://gist.github.com/jedfoster/7939513 **/
@@ -426,10 +394,6 @@ var gameDraw = {
             case 41:
             case "tree":
                 return "#267524";
-            case 101:
-            if (!_imageCache.ied || !_imageCache.ied.ready) break;
-              context.drawImage(_imageCache.ied, -radius, -radius, radius * 2, radius * 2);
-                                break;
         }
     },
     getColorDark: (givenColor) => {
