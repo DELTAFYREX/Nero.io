@@ -1012,7 +1012,14 @@ exports.homingBullet = {
     },
     CAN_GO_OUTSIDE_ROOM: true
 }
-
+exports.mindindicator = {
+    PARENT: [exports.genericTank],
+    LABEL: '',
+    TYPE: 'bullet',
+    SHAPE: 0,
+    CONTROLLERS: ['doNothing'], 
+    COLOR: 9,
+};
 // Bodies
 exports.smasherBody = {
     LABEL: "",
