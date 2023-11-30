@@ -42,6 +42,8 @@ exports.developer = {
         DENSITY: 20,
         FOV: 2,
     },
+    RESET_CHILDREN: true,
+    INVISIBLE: [0, 0],
     SHAPE: [
         [-1, -0.8],
         [-0.8, -1],
@@ -64,34 +66,6 @@ exports.developer = {
         },
     ],
 };
-exports.tools = {
-  PARENT: ["menu"],
-  LABEL: "Tools",
-  GUNS: [
-        {
-            /*** LENGTH WIDTH     ASPECT        X             Y         ANGLE     DELAY */
-            POSITION: [18, 10, -1.4, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                TYPE: "developerBullet",
-            },
-        },
-    ],
-},
-exports.ait = {
-  PARENT: ["menu"],
-  LABEL: "AIT",
-  GUNS: [
-          {
-            /*** LENGTH WIDTH     ASPECT        X             Y         ANGLE     DELAY */
-            POSITION: [18, 10, -1.4, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-                TYPE: "developerBullet",
-            },
-        },
-    ],
-},
 exports.spectator = {
     PARENT: ["menu"],
     LABEL: "Spectator",
@@ -110,95 +84,136 @@ exports.spectator = {
         SHIELD: 1e100,
         REGEN: 1e100,
     },
+    GUNS: [],
 };
+
 exports.bosses = {
     PARENT: ["menu"],
     LABEL: "Bosses",
-};
-exports.fun = {
-    PARENT: ["menu"],
-    LABEL: "Dev Funny",
-};
-exports.bosses = {
-    PARENT: ["menu"],
-    LABEL: "Bosses",
-};
-exports.terrestrials = {
-    PARENT: ["menu"],
-    LABEL: "Terrestrials",
-};
-exports.celestials = {
-    PARENT: ["menu"],
-    LABEL: "Celestials",
-};
-exports.eternals = {
-    PARENT: ["menu"],
-    LABEL: "Eternals",
-};
-exports.devBosses = {
-    PARENT: ["menu"],
-    LABEL: "Developers",
-};
-exports.elites = {
-    PARENT: ["menu"],
-    LABEL: "Elites",
-};
-exports.mysticals = {
-    PARENT: ["menu"],
-    LABEL: "Mysticals",
-};
-exports.nesters = {
-    PARENT: ["menu"],
-    LABEL: "Nesters",
-};
-exports.rogues = {
-    PARENT: ["menu"],
-    LABEL: "Rogues",
-};
-exports.otherTanks = {
-    PARENT: ["menu"],
-    LABEL: "Tanks",
-};
-exports.oldTanks = {
-    PARENT: ["menu"],
-    LABEL: "Old Tanks",
-};
-exports.scrappedTanks = {
-    PARENT: ["menu"],
-    LABEL: "Scrapped Tanks",
-};
-exports.matchEntities = {
-    PARENT: ["menu"],
-    LABEL: "Match Entities",
-};
-exports.dominators = {
-    PARENT: ["menu"],
-    LABEL: "Dominators",
 };
 exports.sentries = {
     PARENT: ["menu"],
     LABEL: "Sentries",
+    COLOR: "pink",
+    UPGRADE_COLOR: "pink",
+    SHAPE: 3.5,
+    TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "genericEntity",
+        },
+    ],
 };
-exports.beta = {
+exports.elites = {
     PARENT: ["menu"],
-    LABEL: "Beta Tanks",
+    LABEL: "Elites",
+    COLOR: "pink",
+    UPGRADE_COLOR: "pink",
+    SHAPE: 3.5,
 };
-exports.miscTanks = {
+exports.mysticals = {
     PARENT: ["menu"],
-    LABEL: "Exclusive Tanks",
+    LABEL: "Mysticals",
+    COLOR: "gold",
+    UPGRADE_COLOR: "gold",
+    SHAPE: 4,
 };
-exports.testingtanks = {
+exports.nesters = {
     PARENT: ["menu"],
-    LABEL: "Tests",
+    LABEL: "Nesters",
+    COLOR: "purple",
+    UPGRADE_COLOR: "purple",
+    SHAPE: 5.5,
 };
-exports.FTB = {
+exports.rogues = {
     PARENT: ["menu"],
-    LABEL: "FTB Tanks",
+    LABEL: "Rogues",
+    COLOR: "darkGrey",
+    UPGRADE_COLOR: "darkGrey",
+    SHAPE: 6,
 };
-exports.funny = {
+exports.rammers = {
     PARENT: ["menu"],
-    LABEL: "Miscellaneous",
+    LABEL: "Rammers",
+    COLOR: "teal",
+    UPGRADE_COLOR: "teal",
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody",
+        },
+    ],
 };
+exports.terrestrials = {
+    PARENT: ["menu"],
+    LABEL: "Terrestrials",
+    COLOR: "orange",
+    UPGRADE_COLOR: "orange",
+    SHAPE: 7,
+};
+exports.celestials = {
+    PARENT: ["menu"],
+    LABEL: "Celestials",
+    COLOR: "lightGreen",
+    UPGRADE_COLOR: "lightGreen",
+    SHAPE: 9,
+};
+exports.eternals = {
+    PARENT: ["menu"],
+    LABEL: "Eternals",
+    COLOR: "teal",
+    UPGRADE_COLOR: "teal",
+    SHAPE: 11,
+};
+exports.devBosses = {
+    PARENT: ["menu"],
+    LABEL: "Developers",
+    COLOR: "lightGreen",
+    UPGRADE_COLOR: "rainbow",
+    SHAPE: 4,
+};
+
+exports.tanks = {
+    PARENT: ["menu"],
+    LABEL: "Tanks",
+};
+exports.unavailable = {
+    PARENT: ["menu"],
+    LABEL: "Unavailable",
+};
+exports.dominators = {
+    PARENT: ["menu"],
+    LABEL: "Dominators",
+    TURRETS: [
+        {
+            POSITION: [22, 0, 0, 0, 360, 0],
+            TYPE: "dominationBody",
+        },
+    ],
+};
+exports.sanctuaries = {
+    PARENT: ["menu"],
+    LABEL: "Sanctuaries",
+    TURRETS: [
+        {
+            POSITION: [22, 0, 0, 0, 360, 0],
+            TYPE: "dominationBody",
+        },
+        {
+            POSITION: [13, 0, 0, 0, 360, 1],
+            TYPE: "healerSymbol",
+        },
+    ],
+};
+exports.funTanks = {
+    PARENT: ["menu"],
+    LABEL: "Fun Tanks",
+};
+exports.testingTanks = {
+    PARENT: ["menu"],
+    LABEL: "Testing Tanks",
+};
+
 // GENERATORS
 function compileMatrix(matrix, matrix2Entrance) {
     let matrixWidth = matrix[0].length,
@@ -208,19 +223,9 @@ function compileMatrix(matrix, matrix2Entrance) {
             LABEL = str[0].toUpperCase() + str.slice(1).replace(/[A-Z]/g, m => ' ' + m) + " Generator",
             code = str + 'Generator';
         exports[code] = matrix[y][x] = {
-            PARENT: ["genericTank"],
+            PARENT: "spectator",
             LABEL,
             SKILL_CAP: [31, 0, 0, 0, 0, 0, 0, 0, 0, 31],
-            ALPHA: [0, 0],
-            IGNORED_BY_AI: true,
-            BODY: {
-                SPEED: 5,
-                FOV: 2.5,
-                DAMAGE: 0,
-                HEALTH: 1e100,
-                SHIELD: 1e100,
-                REGEN: 1e100,
-            },
             TURRETS: [{
                 POSITION: [5 + y * 2, 0, 0, 0, 0, 1],
                 TYPE: str,
@@ -259,9 +264,9 @@ function connectMatrix(matrix, matrix2Entrance) {
         right  = matrix[y     ][right];
 
         matrix[y][x].UPGRADES_TIER_0 = [
-            "basic"     ,  top    , "developer",
+            "developer" ,  top    , "spectator",
              left       ,  center ,  right      ,
-            "spectator" ,  bottom ,  matrix2Entrance
+            "basic"     ,  bottom ,  matrix2Entrance
         ];
     }
 }
@@ -286,6 +291,7 @@ for (let tier of [ "", "Egg", "Square", "Triangle", "Pentagon", "BetaPentagon", 
 
 compileMatrix(generatorMatrix);
 compileMatrix(gemRelicMatrix);
+
 // Tensor = N-Dimensional Array, BASICALLY
 let labyTensor = [];
 for (let tier = 0; tier < 6; tier++) {
@@ -297,19 +303,9 @@ for (let tier = 0; tier < 6; tier++) {
                 LABEL = str[0].toUpperCase() + str.slice(1).replace(/\d/, d => ["", "Beta", "Alpha", "Omega", "Gamma", "Delta"][d]).replace(/[A-Z]/g, m => ' ' + m) + " Generator",
                 code = str + 'Generator';
             column.push(exports[code] = {
-                PARENT: ["genericTank"],
+                PARENT: "spectator",
                 LABEL,
                 SKILL_CAP: [31, 0, 0, 0, 0, 0, 0, 0, 0, 31],
-                ALPHA: [0, 0],
-                IGNORED_BY_AI: true,
-                BODY: {
-                    SPEED: 5,
-                    FOV: 2.5,
-                    DAMAGE: 0,
-                    HEALTH: 1e100,
-                    SHIELD: 1e100,
-                    REGEN: 1e100,
-                },
                 TURRETS: [{
                     POSITION: [5 + tier * 2, 0, 0, 0, 0, 1],
                     TYPE: str,
@@ -358,9 +354,9 @@ for (let x = 0; x < tensorWidth; x++) for (let y = 0; y < tensorHeight; y++) for
     back   = labyTensor[y     ][x    ][back ];
 
     labyTensor[y][x][z].UPGRADES_TIER_0 = [
-        "basic"     ,  top                , "developer",
+        "developer" ,  top                , "spectator",
          left       ,  center             ,  right     ,
-        "spectator" ,  bottom             , "eggGenerator",
+        "basic"     ,  bottom             , "eggGenerator",
          front      , "PowerGemGenerator" ,  back
     ];
 }
@@ -379,7 +375,7 @@ exports.rotatedTrap = {
 
 exports.mummyHat = {
     SHAPE: 4.5,
-    COLOR: 10
+    COLOR: -1
 };
 exports.mummy = {
     PARENT: ["drone"],
@@ -428,38 +424,38 @@ exports.colorMan = {
     PARENT: ["genericTank"],
     LABEL: "Testing Animated Colors",
     SHAPE: 4,
-    COLOR: 36,
+    COLOR: "rainbow",
     TURRETS: [{
         POSITION: [20, -20, -20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 20 }
+        TYPE: { SHAPE: 4, COLOR: "animatedBlueRed" }
     },{
         POSITION: [20,  0 , -20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 21 }
+        TYPE: { SHAPE: 4, COLOR: "animatedBlueGrey" }
     },{
         POSITION: [20,  20, -20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 22 }
+        TYPE: { SHAPE: 4, COLOR: "animatedGreyBlue" }
     },{
         POSITION: [20, -20,  0 , 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 23 }
+        TYPE: { SHAPE: 4, COLOR: "animatedRedGrey" }
     },{
         POSITION: [20,  20,  0 , 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 29 }
+        TYPE: { SHAPE: 4, COLOR: "animatedGreyRed" }
     },{
         POSITION: [20,  20,  20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 24 }
+        TYPE: { SHAPE: 4, COLOR: "animatedLesbian" }
     },{
         POSITION: [20,  0 ,  20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 37 }
+        TYPE: { SHAPE: 4, COLOR: "animatedTrans" }
     },{
         POSITION: [20,  20,  20, 0, 0, 1],
-        TYPE: { SHAPE: 4, COLOR: 38 }
+        TYPE: { SHAPE: 4, COLOR: "animatedBi" }
     }]
 };
 
 exports.miscTestHelper2 = {
     PARENT: ["genericTank"],
     LABEL: "Turret Reload Test 3",
-    TURRET_FACES_CLIENT: true,
+    MIRROR_MASTER_ANGLE: true,
     COLOR: -1,
     GUNS: [
         {
@@ -475,7 +471,7 @@ exports.miscTestHelper2 = {
 exports.miscTestHelper = {
     PARENT: ["genericTank"],
     LABEL: "Turret Reload Test 2",
-    TURRET_FACES_CLIENT: true,
+    //MIRROR_MASTER_ANGLE: true,
     COLOR: {
         BASE: -1,
         BRIGHTNESS_SHIFT: 15,
@@ -492,7 +488,7 @@ exports.miscTestHelper = {
     ],
     TURRETS: [
         {
-          POSITION: [20, 0, 20, 0, 0, 1],
+          POSITION: [20, 0, 20, 30, 0, 1],
           TYPE: "miscTestHelper2",
         }
     ]
@@ -500,7 +496,7 @@ exports.miscTestHelper = {
 exports.miscTest = {
     PARENT: ["genericTank"],
     LABEL: "Turret Reload Test",
-    COLOR: 1,
+    COLOR: "teal",
     GUNS: [
         {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
@@ -512,11 +508,163 @@ exports.miscTest = {
     ],
     TURRETS: [
         {
-            POSITION: [20, 0, 20, 0, 0, 1],
+            POSITION: [20, 0, 20, 30, 0, 1],
             TYPE: "miscTestHelper",
         }
     ]
 };
+exports.mmaTest2 = {
+    PARENT: ["genericTank"],
+    MIRROR_MASTER_ANGLE: true,
+    GUNS: [{
+            POSITION: [40, 4, 1, -20, 0, 0, 0],
+        }],
+}
+exports.mmaTest1 = {
+    PARENT: ["genericTank"],
+    COLOR: -1,
+    // Somehow, removing the gun below causes a crash when the tank is chosen ??????
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+        }
+    ],
+    TURRETS: [
+        {
+            POSITION: [10, 0, 0, 0, 360, 1],
+            TYPE: "mmaTest2",
+        }
+    ]
+}
+exports.mmaTest = {
+    PARENT: ["genericTank"],
+    LABEL: "Mirror Master Angle Test",
+    TURRETS: [
+        {
+            POSITION: [10, 0, 0, 0, 360, 1],
+            TYPE: "mmaTest2",
+        },
+        {
+            POSITION: [20, 0, 20, 0, 360, 1],
+            TYPE: "mmaTest1",
+        },
+    ]
+}
+
+exports.vulnturrettest_turret = {
+    PARENT: "genericTank",
+    HITS_OWN_TYPE: 'hard',
+    LABEL: 'Shield',
+    COLOR: 'teal',
+}
+
+exports.vulnturrettest = {
+    PARENT: ["genericTank"],
+    LABEL: "Vulurable Turret Test",
+    TOOLTIP: 'warning: vuln turrets aren\'t done yet',
+    BODY: {
+        FOV: 2,
+    },
+    DANGER: 6,
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet'
+        }
+    }],
+    TURRETS: (() => {
+        let output = []
+        for (let i = 0; i < 10; i++) {
+            output.push({
+                POSITION: {SIZE: 20, X: 40, ANGLE: (360/10)*i},
+                TYPE: "vulnturrettest_turret",
+                VULNERABLE: true
+            })
+        }
+        return output
+    })(),
+};
+
+// unfinished
+exports.alphaGunTest = {
+    PARENT: "basic",
+    LABEL: "Alpha Gun Test",
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            ALPHA: 0.5
+        }
+    }]
+}
+
+exports.onTest = {
+    PARENT: 'genericTank',
+    LABEL: '`ON` property test',
+    TOOLTIP: [
+        'Refer to exports.onTest to know more ',
+        'On collide is a bit buggy right now, please use other methods until its fixed'
+    ],
+    ON: [{
+        event: "fire",
+        handler: ({ body, gun }) => {
+            switch (gun.identifier) {
+                case 'mainGun':
+                    body.sendMessage('fired main gun')
+                    break;
+                case 'secondaryGun':
+                    body.sendMessage('fired secondary gun')
+                    break;
+            }
+        }
+    }, {
+        event: "altFire",
+        handler: ({ body, gun }) => {
+            body.sendMessage('fired alt gun')
+        }
+    }, {
+        event: "death",
+        handler: ({ body, killers, killTools }) => {
+            body.sendMessage('you died')
+        }
+    }, {
+        event: "collide",
+        handler: ({ instance, other }) => {
+            instance.sendMessage('collide!')
+        }
+    }, {
+        event: "damage",
+        handler: ({ body, damageInflictor, damageTool }) => {
+            body.SIZE += damageInflictor[0].SIZE / 2
+            damageInflictor[0].kill()
+        }
+    }],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'mainGun'
+        }
+    }, {
+        POSITION: { ANGLE: 90 },
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            ALT_FIRE: true
+        }
+    }, {
+        POSITION: { ANGLE: 180, DELAY: 0.5 },
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'secondaryGun'
+        }
+    }]
+}
+
 exports.auraBasicGen = addAura();
 exports.auraBasic = {
     PARENT: ["genericTank"],
@@ -532,8 +680,9 @@ exports.auraBasic = {
     ],
     TURRETS: [
         {
-            POSITION: [14, 0, 0, 0, 0, 1],
+            POSITION: [18, 0, 0, 0, 0, 0],
             TYPE: "auraBasicGen",
+            VULNERABLE: true,
         }
     ],
 };
@@ -562,73 +711,10 @@ exports.auraHealer = {
     ],
 };
 
-exports.trplnrsTestTank = {
-    PARENT: ['genericTank'],
-    LABEL: "Trplnr's Test Tank",
-    COLOR: 'teal',
-    GUNS: [
-    {
-        POSITION: [18, 10, 0.75, -5, 0, 0, 0],
-        PROPERTIES: {
-            COLOR: 'lavender',
-            SHOOT_SETTINGS: combineStats([g.basic, g.anni, {reload: 20}]),
-            TYPE: 'bullet',
-        }
-    },
-    {
-        POSITION: [10, 6, 1, 0, 14, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {size: 0.8, reload: 5}]),
-            TYPE: 'swarm'
-        }
-    }, {
-        POSITION: [10, 6, 1, 0, -14, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {size: 0.8, reload: 5}]),
-            TYPE: 'swarm'
-        }
-    }, {
-        POSITION: [10, 6, 1, 0, 14, 180, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {size: 1.2, recoil: 1.5, reload: 0.8}]),
-            TYPE: 'bullet'
-        }
-    }, {
-        POSITION: [10, 6, 1, 0, -14, 180, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {size: 1.2, recoil: 1.5, reload: 0.8}]),
-            TYPE: 'bullet'
-        }
-    }, {
-        POSITION: [18, 8, 1, 0, 0, 90, 0],
-        PROPERTIES: {
-            COLOR: 'black'
-        }
-    }, {
-        POSITION: [18, 8, 1, 0, 0, 270, 0],
-        PROPERTIES: {
-            COLOR: 'black'
-        }
-    }],
-    TURRETS: [{
-        POSITION: [15, 12.5, 12.5, 0, 0, 0],
-        TYPE: { SHAPE: 4, COLOR: 'black', TURRET_FACES_CLIENT: true }
-    }, {
-        POSITION: [15, 12.5, -12.5, 0, 0, 0],
-        TYPE: { SHAPE: 4, COLOR: 'black', TURRET_FACES_CLIENT: true }
-    }, {
-        POSITION: [15, -12.5, -12.5, 0, 0, 0],
-        TYPE: { SHAPE: 4, COLOR: 'black', TURRET_FACES_CLIENT: true }
-    }, {
-        POSITION: [15, -12.5, 12.5, 0, 0, 0],
-        TYPE: { SHAPE: 4, COLOR: 'black', TURRET_FACES_CLIENT: true }
-    }]
-}
-
 exports.ghoster_ghostForm = {
     PARENT: ['genericTank'],
     TOOLTIP: 'You are now in ghost form, roam around and find your next target. Will turn back in 5 seconds',
-    LABEL: 'Ghoster - Ghost Form',
+    LABEL: 'Ghoster',
     BODY: {
         SPEED: 20,
         ACCELERATION: 10,
@@ -648,24 +734,29 @@ exports.ghoster = {
         SPEED: base.SPEED,
         ACCELERATION: base.ACCEL,
     },
-    GUNS: [{
-        POSITION: {WIDTH: 20, LENGTH: 20},
-        PROPERTIES: {
-            TYPE: 'bullet',
-            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.anni]),
-            ON_FIRE: ({body}) => {
+    ON: [
+        {
+            event: 'fire',
+            handler: ({ body }) => {
                 body.define(Class.ghoster_ghostForm)
-                setTimeout(() => { 
+                setTimeout(() => {
                     body.SPEED = 1e-99
                     body.ACCEL = 1e-99
                     body.FOV *= 2
                     body.alpha = 1
                 }, 2000)
-                setTimeout(() => { 
-                    body.SPEED = base.SPEED 
-                    body.define(Class.ghoster) 
+                setTimeout(() => {
+                    body.SPEED = base.SPEED
+                    body.define(Class.ghoster)
                 }, 2500)
             }
+        }
+    ],
+    GUNS: [{
+        POSITION: {WIDTH: 20, LENGTH: 20},
+        PROPERTIES: {
+            TYPE: 'bullet',
+            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.anni]),
         }
     }],
     ALPHA: 1,
@@ -676,18 +767,25 @@ exports.switcheroo = {
     LABEL: 'Switcheroo',
     UPGRADES_TIER_0: [],
     RESET_UPGRADE_MENU: true,
-    GUNS: [{
-        POSITION: {},
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: 'bullet',
-            ON_FIRE: ({ body, globalMasterStore: store }) => {
+    ON: [
+        {
+            event: "fire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
                 store.switcheroo_i ??= 0;
                 store.switcheroo_i++;
                 store.switcheroo_i %= 6;
                 body.define(Class.basic.UPGRADES_TIER_1[store.switcheroo_i]);
                 setTimeout(() => body.define("switcheroo"), 6000);
             }
+        }
+    ],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun'
         }
     }]
 }
@@ -696,20 +794,20 @@ exports.switcheroo = {
 exports.florr_tank_eye = {
     PARENT: "genericTank",
     BORDERLESS: true,
-    TURRET_FACES_CLIENT: true,
+    MIRROR_MASTER_ANGLE: true,
     SHAPE: 'M 0 -1.5 C -1 -1.5 -1 1.5 0 1.5 C 1 1.5 1 -1.5 0 -1.5'
 }
 exports.florr_tank_smile = {
     PARENT: "genericTank",
     COLOR: 'black',
     BORDERLESS: true,
-    TURRET_FACES_CLIENT: true,
+    MIRROR_MASTER_ANGLE: true,
     SHAPE: 'M 5 1.5 C 3 -2.5 -3 -2.5 -5 1.5 L -4 2 C -2 -1.5 2 -1.5 4 2 L 5 1.5'
 }
 exports.florr_tank = {
     PARENT: "genericTank",
     COLOR: 'yellow',
-    LABEL: 'Whirlwind',
+    LABEL: 'Flower',
     STAT_NAMES: {
         BODY_DAMAGE: 'Flower Thorns',
         BULLET_SPEED: 'Petal Speed',
@@ -730,7 +828,7 @@ exports.florr_tank = {
                     LENGTH: 1, 
                     X: -2, 
                     ANGLE: (360/8)*i, 
-                    DELAY: i <= 8 ? 1 : i <= 16 ? 2 : i <= 24 ? 3 : i <= 32 ? 4 : 5
+                    DELAY: i < 8 ? 1 : i < 16 ? 2 : i < 24 ? 3 : i < 32 ? 4 : 5
                 },
                 PROPERTIES: {
                     TYPE: 'bullet',
@@ -763,7 +861,109 @@ exports.florr_tank = {
         }
     ]
 }
+//wait whats stuff
+exports.placeableWall = {
+    PARENT: ["rock"],
+    LABEL: "Wall",
+    SIZE: 30,
+    SHAPE: 4,
+    CLEAR_ON_MASTER_UPGRADE: true,
+  TEAM: TEAM_ENEMIES,
+      VARIES_IN_SIZE: false,
+};
+exports.placeableWallSmall = {
+    PARENT: ["rock"],
+    LABEL: "Wall",
+    SIZE: 15,
+    SHAPE: 4,
+    CLEAR_ON_MASTER_UPGRADE: true,
+  TEAM: TEAM_ENEMIES,
+      VARIES_IN_SIZE: false,
+};
+exports.wallPlacerThing = {
+    PARENT: ["genericTank"],
+    SHAPE:0,
+    MIRROR_MASTER_ANGLE: true,
+    INTANGIBLE: true,
+  DRAW_SELF:false,
+    COLOR: 16,
+      CLEAR_ON_MASTER_UPGRADE: true,
+      BODY: {
+        ACCELERATION: 0.1,
+        SPEED: true,
+        HEALTH: 340282366920938463463374607431768211455,
+        RESIST: 1,
+        SHIELD: 340282366920938463463374607431768211455,
+        REGEN: 340282366920938463463374607431768211455,
+        DAMAGE: false,
+        PENETRATION: true,
+        RANGE: true,
+        FOV: true,
+        SHOCK_ABSORB: 340282366920938463463374607431768211455,
+        RECOIL_MULTIPLIER: false,
+        DENSITY: 340282366920938463463374607431768211455,
+        STEALTH: true,
+        PUSHABILITY: false,
+        HETERO: false,
+    },
+    MOTION_TYPE: "withMouse",
+   GUNS: [
+       {
+            POSITION: [0, 20, 1, 10, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([{reload:10, speed:0, maxSpeed:0, shudder:0.0001, spray:0.0001}]),
+                TYPE: "placeableWall",
+                COLOR: 16,
+                LABEL: "",
+                STAT_CALCULATOR: 0,
+                WAIT_TO_CYCLE: false,
+                AUTOFIRE: false,
+                SYNCS_SKILLS: false,
+                MAX_CHILDREN: 0,
+                ALT_FIRE: false,
+                NEGATIVE_RECOIL: false,
+              DRAW_FILL:false,
+              BORDERLESS:true,
+            },
+        },
+    ],
 
+};
+exports.wallPlacer = {
+    PARENT: ["genericTank"],
+    LABEL: "Messin' Around",
+    BODY: {
+        ACCELERATION: base.ACCEL * 1,
+        SPEED: base.SPEED * 1,
+        HEALTH: base.HEALTH * 1,
+        DAMAGE: base.DAMAGE * 1,
+        PENETRATION: base.PENETRATION * 1,
+        SHIELD: base.SHIELD * 1,
+        REGEN: base.REGEN * 1,
+        FOV: base.FOV * 1,
+        DENSITY: base.DENSITY * 1,
+        PUSHABILITY: 1,
+        HETERO: 3,
+    },
+    GUNS: [
+       {
+            POSITION: [16, 20, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
+                TYPE: "wallPlacerThing",
+                COLOR: 16,
+                LABEL: "",
+                STAT_CALCULATOR: 0,
+                WAIT_TO_CYCLE: false,
+                AUTOFIRE: false,
+                SYNCS_SKILLS: false,
+                MAX_CHILDREN: 1,
+                ALT_FIRE: false,
+                NEGATIVE_RECOIL: false,
+            },
+        },
+    ],
+};
 exports.vanquisher = {
     PARENT: ["genericTank"],
     DANGER: 8,
@@ -789,6 +989,7 @@ exports.vanquisher = {
             SHOOT_SETTINGS: combineStats([g.trap, g.block]),
             TYPE: "setTrap"
         }
+
     //launcher
     },{
         POSITION: [10, 9, 1, 9, 0, 90, 0],
@@ -895,7 +1096,7 @@ exports.godbasic = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic]),
                 TYPE: "bullet",
-                COLOR: 16,
+                COLOR: "grey",
                 LABEL: "",
                 STAT_CALCULATOR: 0,
                 WAIT_TO_CYCLE: false,
@@ -941,10 +1142,10 @@ exports.weirdAutoBasic = {
 
 exports.levels = {
     PARENT: ["menu"],
-    LABEL: "Levels",
-    UPGRADES_TIER_0: ["developer"]
+    LABEL: "Level Switcher",
+    UPGRADES_TIER_0: []
 };
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 12; i++) {
     let LEVEL = i * c.TIER_MULTIPLIER;
     exports["level" + LEVEL] = {
         PARENT: ["levels"],
@@ -956,8 +1157,8 @@ for (let i = 0; i < 15; i++) {
 
 exports.teams = {
     PARENT: ["menu"],
-    LABEL: "Teams",
-    UPGRADES_TIER_0: ["developer"]
+    LABEL: "Team Switcher",
+    UPGRADES_TIER_0: []
 };
 for (let i = 1; i <= 8; i++) {
     let TEAM = i;
@@ -972,144 +1173,46 @@ for (let i = 1; i <= 8; i++) {
 exports['Team' + TEAM_ROOM] = {
     PARENT: ["teams"],
     TEAM: TEAM_ROOM,
-    COLOR: 3,
+    COLOR: "yellow",
     LABEL: "Room Team"
 };
 exports['Team' + TEAM_ENEMIES] = {
     PARENT: ["teams"],
     TEAM: TEAM_ENEMIES,
-    COLOR: 3,
+    COLOR: "yellow",
     LABEL: "Enemies Team"
 };
 exports.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
-//wait whats stuff
-exports.placeableWall = {
-    PARENT: ["rock"],
-    LABEL: "Wall",
-    SIZE: 30,
-    SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
-  TEAM: TEAM_ENEMIES,
-      VARIES_IN_SIZE: false,
-};
-exports.placeableWallSmall = {
-    PARENT: ["rock"],
-    LABEL: "Wall",
-    SIZE: 15,
-    SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
-  TEAM: TEAM_ENEMIES,
-      VARIES_IN_SIZE: false,
-};
-exports.wallPlacerThing = {
-    PARENT: ["genericTank"],
-    SHAPE:0,
-    MIRROR_MASTER_ANGLE: true,
-    INTANGIBLE: true,
-  DRAW_SELF:false,
-    COLOR: 16,
-      CLEAR_ON_MASTER_UPGRADE: true,
-      BODY: {
-        ACCELERATION: 0.1,
-        SPEED: true,
-        HEALTH: 340282366920938463463374607431768211455,
-        RESIST: 1,
-        SHIELD: 340282366920938463463374607431768211455,
-        REGEN: 340282366920938463463374607431768211455,
-        DAMAGE: false,
-        PENETRATION: true,
-        RANGE: true,
-        FOV: true,
-        SHOCK_ABSORB: 340282366920938463463374607431768211455,
-        RECOIL_MULTIPLIER: false,
-        DENSITY: 340282366920938463463374607431768211455,
-        STEALTH: true,
-        PUSHABILITY: false,
-        HETERO: false,
-    },
-    MOTION_TYPE: "withMouse",
-   GUNS: [
-       {
-            POSITION: [0, 20, 1, 10, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([{reload:10, speed:0, maxSpeed:0, shudder:0.0001, spray:0.0001}]),
-                TYPE: "placeableWall",
-                COLOR: 16,
-                LABEL: "",
-                STAT_CALCULATOR: 0,
-                WAIT_TO_CYCLE: false,
-                AUTOFIRE: false,
-                SYNCS_SKILLS: false,
-                MAX_CHILDREN: 0,
-                ALT_FIRE: false,
-                NEGATIVE_RECOIL: false,
-              DRAW_FILL:false,
-              BORDERLESS:true,
-            },
-        },
-    ],
-
-};
-exports.wallPlacer = {
-    PARENT: ["genericTank"],
-    LABEL: "Messin' Around",
-    BODY: {
-        ACCELERATION: base.ACCEL * 1,
-        SPEED: base.SPEED * 1,
-        HEALTH: base.HEALTH * 1,
-        DAMAGE: base.DAMAGE * 1,
-        PENETRATION: base.PENETRATION * 1,
-        SHIELD: base.SHIELD * 1,
-        REGEN: base.REGEN * 1,
-        FOV: base.FOV * 1,
-        DENSITY: base.DENSITY * 1,
-        PUSHABILITY: 1,
-        HETERO: 3,
-    },
-    GUNS: [
-       {
-            POSITION: [16, 20, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
-                TYPE: "wallPlacerThing",
-                COLOR: 16,
-                LABEL: "",
-                STAT_CALCULATOR: 0,
-                WAIT_TO_CYCLE: false,
-                AUTOFIRE: false,
-                SYNCS_SKILLS: false,
-                MAX_CHILDREN: 1,
-                ALT_FIRE: false,
-                NEGATIVE_RECOIL: false,
-            },
-        },
-    ],
+exports.testing = {
+    PARENT: ["menu"],
+    LABEL: "Testing"
 };
 
-// DEV "UPGRADE PATHS"
-exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
-exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
-exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
-exports.beta.UPGRADES_TIER_0 = ["developer", "revolutionist", "revoception", "auraBasic", "auraHealer", "hivemind", "cloner", "minilaser"]
-exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
-    exports.matchEntities.UPGRADES_TIER_0 = ["ait", "baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
-        exports.dominators.UPGRADES_TIER_0 = ["matchEntities", "dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
-        exports.bosses.UPGRADES_TIER_0 = ["ait", "sentries", "elites", "mysticals", "nesters", "rogues", "terrestrials", "celestials", "eternals", "devBosses"];
-        exports.sentries.UPGRADES_TIER_0 = ["bosses", "sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap"];
-        exports.elites.UPGRADES_TIER_0 = ["bosses", "eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "sprayerLegion"];
-        exports.mysticals.UPGRADES_TIER_0 = ["bosses", "sorcerer", "summoner", "enchantress", "exorcistor"];
-        exports.nesters.UPGRADES_TIER_0 = ["bosses", "nestKeeper", "nestWarden", "nestGuardian"];
-        exports.rogues.UPGRADES_TIER_0 = ["bosses", "roguePalisade", "rogueArmada", "alviss", "tyr", "fiolnir"];
-        exports.terrestrials.UPGRADES_TIER_0 = ["bosses", "ares", "gersemi", "ezekiel", "eris", "selene"];
-        exports.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia"];
-        exports.eternals.UPGRADES_TIER_0 = ["bosses", "ragnarok", "kronos"];
-        exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "tgsBoss"];
-    exports.oldTanks.UPGRADES_TIER_0 = ["miscTanks", "oldSpreadshot", "oldBentBoomer", "quadBuilder", "weirdSpike", "master", "oldCommander", "blunderbuss", "oldRimfire"];
-    exports.scrappedTanks.UPGRADES_TIER_0 = ["miscTanks", "autoTrapper", "oldDreadnought", "mender", "prodigy"];
-    exports.fun.UPGRADES_TIER_0 = ["developer", "funny", "FTB", "testingtanks"];
-    exports.funny.UPGRADES_TIER_0 = ["fun", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "ghoster", "switcheroo"];
-    exports.testingtanks.UPGRADES_TIER_0 = ["fun", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "trplnrsTestTank", "weirdAutoBasic"];
-//so like i kinda want to organize everything
-//ill do this later
-//nvm,
+exports.addons = {
+    PARENT: "menu",
+    LABEL: "Addon Entities",
+    UPGRADES_TIER_0: []
+};
+
+exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", "eggGenerator", "testing", "addons"];
+    exports.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "spectator", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
+        exports.unavailable.UPGRADES_TIER_0 = ["healer"];
+        exports.dominators.UPGRADES_TIER_0 = ["destroyerDominator", "gunnerDominator", "trapperDominator"];
+        exports.sanctuaries.UPGRADES_TIER_0 = ["sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
+
+    exports.bosses.UPGRADES_TIER_0 = ["sentries", "elites", "mysticals", "nesters", "rogues", "rammers", "terrestrials", "celestials", "eternals", "devBosses"];
+        exports.sentries.UPGRADES_TIER_0 = ["sentrySwarm", "sentryGun", "sentryTrap", "shinySentrySwarm", "shinySentryGun", "shinySentryTrap", "sentinelMinigun", "sentinelLauncher", "sentinelCrossbow"];
+        exports.elites.UPGRADES_TIER_0 = ["eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "guardian", "defender", "sprayerLegion"];
+        exports.mysticals.UPGRADES_TIER_0 = ["sorcerer", "summoner", "enchantress", "exorcistor", "shaman"];
+        exports.nesters.UPGRADES_TIER_0 = ["nestKeeper", "nestWarden", "nestGuardian"];
+        exports.rogues.UPGRADES_TIER_0 = ["roguePalisade", "rogueArmada", "alviss", "tyr", "fiolnir"];
+	    exports.rammers.UPGRADES_TIER_0 = ["bob", "nemesis"];
+        exports.terrestrials.UPGRADES_TIER_0 = ["ares", "gersemi", "ezekiel", "eris", "selene"];
+        exports.celestials.UPGRADES_TIER_0 = ["paladin", "freyja", "zaphkiel", "nyx", "theia", "atlas", "rhea", "alviss", "tyr", "fiolnir"];
+        exports.eternals.UPGRADES_TIER_0 = ["ragnarok", "kronos"];
+        exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
+
+    exports.testing.UPGRADES_TIER_0 = ["funTanks", "testingTanks"];
+        exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", ["developer", "developer"]];
+        exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss"];
