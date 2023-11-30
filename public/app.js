@@ -1654,7 +1654,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let ticker = 0;
         let upgradeNum = 0;
         let colorIndex = 10;
-        let columnCount = Math.max(3, Math.ceil(gui.upgrades.length / 4));
+        let columnCount = Math.max(5, Math.ceil(gui.upgrades.length / 4));
         let clickableRatio = global.canvas.height / global.screenHeight / global.ratio;
         let lastBranch = -1;
         upgradeSpin += 0.01;
