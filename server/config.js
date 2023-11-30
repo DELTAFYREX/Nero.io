@@ -6,7 +6,7 @@ module.exports = {
     host: "neroio2.glitch.me",
 
     // Which port to run the web server on.
-    port: 3000,
+    port: 26303,
 
     // Ticks per second. 1 is 30 tps, 2 is 60, etc.
     // Has physics side effecs.
