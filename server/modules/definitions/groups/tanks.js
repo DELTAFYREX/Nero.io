@@ -1503,7 +1503,7 @@ exports.hivemind = {
   ]
 };
 exports.cloner = {
-  PARENT: "genericTank",
+  PARENT: ["genericTank"],
   LABEL: "Cloner",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
