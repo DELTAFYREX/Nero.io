@@ -812,7 +812,7 @@ exports.droneAutoTurret = {
     ],
 }
 exports.hiveprobe = {
-  PARENT: ["genericTank"],
+  PARENT: "genericTank",
   LABEL: "Probe",
   TYPE: "drone",
   HITS_OWN_TYPE: "hardWithBuffer",
@@ -860,7 +860,7 @@ exports.hiveprobe = {
   ]
 };
 exports.clonerprobe = {
-  PARENT: ["hiveprobe"],
+  PARENT: "hiveprobe",
   GUNS: [
     {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
