@@ -138,7 +138,7 @@ function incoming(message, socket) {
                     util.log("[WARNING] A socket failed to verify with the token: " + key);
                 }
                 socket.key = key;
-            }
+            }f
             socket.verified = true;
             util.log("Clients: " + clients.length);
             break;

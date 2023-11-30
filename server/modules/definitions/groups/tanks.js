@@ -664,6 +664,18 @@ exports.bansheegun = {
         },
     ],
 }
+exports.laser = {
+  PARENT: ["bullet"],
+  SHAPE: -1,
+  BODY: {
+        PENETRATION: 0.7,
+        SPEED: 5.2,
+        RANGE: 100,
+        DENSITY: 0.85,
+        HEALTH: 0.1,
+        DAMAGE: 4.65,
+    }
+}
 exports.auto4gun = {
     PARENT: "autoTankGun",
     BODY: {
@@ -770,6 +782,23 @@ exports.autoTurret = {
         },
     ],
 }
+exports.autoTurretNerf = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    BODY: {
+        FOV: 0.8,
+    },
+    COLOR: "grey",
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.weak, g.basic, g.morerecoil, g.turret]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
 exports.droneAutoTurret = {
     PARENT: "autoTurret",
     GUNS: [
@@ -782,6 +811,75 @@ exports.droneAutoTurret = {
         },
     ],
 }
+exports.hiveprobe = {
+  PARENT: ["genericTank"],
+  LABEL: "Probe",
+  TYPE: "drone",
+  HITS_OWN_TYPE: "hardWithBuffer",
+  DRAW_HEALTH: true,
+  BODY: {
+    FOV: 0.5,
+    SPEED: 3,
+    ACCELERATION: 0.4,
+    HEALTH: 2.5,
+    SHIELD: 0,
+    DAMAGE: 1.2,
+    RESIST: 1,
+    PENETRATION: 1,
+    DENSITY: 0.4
+  },
+  AI: {
+    BLIND: true
+  },
+  CLEAR_ON_MASTER_UPGRADE: true,
+  GIVE_KILL_MESSAGE: false,
+  ACCEPTS_SCORE: false,
+  CONTROLLERS: [
+    "nearestDifferentMaster",
+    "mapAltToFire",
+    "minion",
+    "canRepel",
+    "hangOutNearMaster"
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: "bullet"
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
+exports.clonerprobe = {
+  PARENT: ["hiveprobe"],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: "bullet"
+      }
+    }
+  ],
+    TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [22, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+}
+
 exports.autoSmasherTurret = {
     PARENT: "autoTurret",
     GUNS: [
@@ -1340,6 +1438,93 @@ exports.pentaShot = {
         }
     ]
 }
+exports.revolutionist = {
+    PARENT: ["genericTank"],
+    LABEL: "Revolutionist",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBase",
+    },
+  ],
+};
+exports.revoception = makeCeption(exports.revolutionist, "revoception");
+exports.hivemind = {
+  PARENT: ["genericTank"],
+  LABEL: "Hivemind",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 90, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "hiveprobe",
+        MAX_CHILDREN: 1
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 270, 3.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "hiveprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [25, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
+exports.cloner = {
+  PARENT: ["genericTank"],
+  LABEL: "Cloner",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 180, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "clonerprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [22, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
 exports.spreadshot = {
     PARENT: "genericTank",
     LABEL: "Spreadshot",
@@ -2360,7 +2545,38 @@ exports.overgunner = makeOver({
         },
     ],
 });
-
+exports.minilaser = {
+    PARENT: ["genericTank"],
+    LABEL: "Plasma SMG",
+    DANGER: 6,
+    BODY: {
+        FOV: 1.2,
+    },
+    GUNS: [
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [21, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                TYPE: "laser",
+            },
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                TYPE: "laser",
+            },
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                TYPE: "laser",
+            },
+        },
+    ],
+};
 // Sprayer upgrades
 exports.redistributor = {
     PARENT: ["genericTank"],
@@ -5303,53 +5519,69 @@ exports.poundCeption = makeCeptionNerf(exports.pounder, "Pound-Ception");
 exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 
 
-// Upgrade paths
-exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"];
-    exports.basic.UPGRADES_TIER_2 = ["smasher"];
+
+// TANK UPGRADE PATHS
+exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic"/*, "desmos"*/];
+    exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"];
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
-    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "helix"];
+    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin"];
         exports.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"];
         exports.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"];
-        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "triplex"];
+        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot"];
 
-    exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle"];
+    exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"];
         exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
         exports.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single"];
-        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual"];
-        exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman"];
+        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual","autoHunter"];
+        exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"];
 
-    exports.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer"];
-        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture"];
+    exports.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach"];
+        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "autoMini"];
         exports.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"];
-        exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal"];
+        exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"];
 
-    exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper"];
-        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
-        exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper"];
+    exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"];
+        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin"];
+        exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank"];
         exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"];
-        exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee"];
+        exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "autoAuto3"];
 
-    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner"];
+    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "autoDirector"];
         exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese"];
         exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"];
         exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"];
-        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor"];
+        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"];
         exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
-    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "volute"];
+    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound"/*, "volute"*/];
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
-        exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct"];
-        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun"];
-        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun"];
+        exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"];
+        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery"];
+        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "sidewinder", "fieldGun", "autoLaunch"];
 
-    exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard"];
+    exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap"];
         exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"];
         exports.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror"];
-        exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect"];
-        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark"];
+        exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"];
+        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"];
 
-    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
+    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
+        exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
+        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"];
+        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"];
+        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"];
+        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"];
+        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"];
+        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"];
+        exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"];
+        exports.revolutionist.UPGRADES_TIER_3 = ["autoRevolutionist"];
+        exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
+
+
+    exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
+
+    exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
+        exports.helix.UPGRADES_TIER_3 = ["triplex"];
         exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
-        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
