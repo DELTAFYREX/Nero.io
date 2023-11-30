@@ -126,6 +126,45 @@ class Canvas {
             case global.KEY_SUICIDE:
                 this.socket.talk('1');
                 break;
+            case global.KEY_TELEPORT:
+                this.socket.talk('testTeleport');
+                break;
+            case global.KEY_SMALLER_TANK:
+                this.socket.talk('smallerTank');
+                break;
+            case global.KEY_BIGGER_TANK:
+                this.socket.talk('biggerTank');
+                break;
+            case global.KEY_SMALLER_FOV:
+                this.socket.talk('smallerFOV');
+                break;
+            case global.KEY_BIGGER_FOV:
+                this.socket.talk('biggerFOV');
+                break;
+            case global.KEY_GOD_MODE:
+                this.socket.talk('godmodeButton');
+                break;
+            case global.KEY_INVISIBLE:
+                this.socket.talk('invisibility');
+                break;
+            case global.KEY_CAN_BE_ON_LEADERBOARD:
+                this.socket.talk('canBeOnLeaderboard');
+                break;
+            case global.KEY_STRONG:
+                this.socket.talk('keyStrong');
+                break;
+            case global.KEY_WATCH_THIS:
+                this.socket.talk('watchThis');
+                break;
+            case global.KEY_DRAG:
+                this.socket.talk('drag');
+                break;
+            case global.KEY_SPAWN_WALL:
+                this.socket.talk('spawnWall');
+                break;
+            case global.KEY_RANDOM_TEST:
+                this.socket.talk('randomTestKey');
+                break;
         }
         if (!event.repeat) {
             switch (event.keyCode) {
