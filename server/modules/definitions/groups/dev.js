@@ -691,86 +691,6 @@ exports.switcheroo = {
         }
     }]
 }
-exports.bombtesting = {
-    PARENT: ["genericTank"],
-    LABEL: "bomb thing",
-    SHAPE: 1,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "microbomb",
-            },
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
-        },
-    ],
-};
-    exports.microbombDecor = {
-        PARENT: 'genericTank',
-        SHAPE: 'M 0.2758 -2.3635 C 0.172 -2.6062 -0.172 -2.6062 -0.2758 -2.3635 L -0.6786 -1.4216 C -1.2084 -1.1683 -1.575 -0.6272 -1.575 0 C -1.575 0.6272 -1.2084 1.1683 -0.6786 1.4217 L -0.2758 2.3635 C -0.172 2.6062 0.172 2.6062 0.2758 2.3635 L 0.6786 1.4217 C 1.2084 1.1683 1.575 0.6272 1.575 0 C 1.575 -0.6272 1.2084 -1.1683 0.6786 -1.4216 L 0.2758 -2.3635 L 0.046 -2.2652 L 0.2758 -2.3635 Z',
-        COLOR: 'black',
-        CONTROLLERS: [['spin', {independent: true}]]
-    }
-    exports.microbombFragment = {
-        PARENT: 'bullet',
-        SHAPE: 'M 1.3525 0.5905 C 1.4077 0.5905 1.4528 0.5457 1.4491 0.4906 C 1.425 0.1394 1.2748 -0.1927 1.0243 -0.4432 C 0.7501 -0.7174 0.3782 -0.8714 -0.0095 -0.8714 C -0.3972 -0.8714 -0.7691 -0.7174 -1.0432 -0.4432 C -1.2938 -0.1927 -1.444 0.1394 -1.468 0.4906 C -1.4718 0.5457 -1.4267 0.5905 -1.3714 0.5905 L -0.0095 0.5905 H 1.3525 Z',
-        LABEL: 'Microbomb Fragment',
-        FACING_TYPE: 'smoothWithMotion',
-        SIZE: 5,
-        COLOR: "veryLightGrey",
-        BODY: {
-            DAMAGE: 70,
-            DENSITY: 5,
-            HEALTH: 0.01,
-            PUSHABILITY: 0,
-            ACCELERATION: 0.015
-        },
-    }
-    exports.microbomb = {
-        PARENT: 'bullet',
-        LABEL: 'Microbomb',
-        SIZE: 5,
-        COLOR: "veryLightGrey",
-        TURRETS: [{
-            POSITION: { SIZE: 22.5 },
-            TYPE: 'microbombDecor'
-        }],
-        ON: [{
-            event: 'damage',
-            handler: ({body}) => {
-                for (let i = 0; i < 30; i++) {
-                    if (body == null) break;
-                    setTimeout(() => {
-                        body.alpha = 0.5
-                    }, i * 100)
-                    setTimeout(() => {
-                        body.alpha = 1
-                    }, i * 200)
-                }
-                setTimeout(() => {
-                    if (body == null) return
-                    body.kill()
-                })
-            }
-        },
-        {
-            event: 'death',
-            handler: ({body}) => {
-                for (let i = 0; i < 2; i++) {
-                    let frag = new Entity(body)
-                    frag.team = body.team
-                    frag.define('microbombFragment')
-                    frag.velocity.x = ran.randomAngle() * (Math.random() > 0.5 ? -2 : 2)
-                    frag.velocity.y = ran.randomAngle() * (Math.random() > 0.5 ? -2 : 2)
-                    frag.life()
-                }
-            }
-        }]
-    }
-
 // FUN
 exports.florr_tank_eye = {
     PARENT: "genericTank",
@@ -1170,7 +1090,7 @@ exports.wallPlacer = {
 exports.developer.UPGRADES_TIER_0 = ["basic", "fun", "beta", "ait", "miscTanks", "tools"];
 exports.miscTanks.UPGRADES_TIER_0 = ["developer", "oldTanks", "scrappedTanks", "healer"];
 exports.tools.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "wallPlacer", "spectator"];
-exports.beta.UPGRADES_TIER_0 = ["developer", "auraBasic", "auraHealer", "bombtesting", "minilaser"]
+exports.beta.UPGRADES_TIER_0 = ["developer", "auraBasic", "auraHealer", "minilaser"]
 exports.ait.UPGRADES_TIER_0 = ["developer", "matchEntities", "bosses"];
     exports.matchEntities.UPGRADES_TIER_0 = ["ait", "baseProtector", "dominators", "mothership", "arenaCloser", "antiTankMachineGun"];
         exports.dominators.UPGRADES_TIER_0 = ["matchEntities", "dominator", "destroyerDominator", "gunnerDominator", "trapperDominator"];
