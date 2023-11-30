@@ -971,7 +971,7 @@ exports.wallPlacer = {
 exports.imagetest = {
     PARENT: "genericTank",
     LABEL: "Imagery",
-    SHAPE: 4,
+    SHAPE: 'https://cdn.glitch.global/0d2f1653-f6af-49fe-b907-92ebbedb353f/62f643a0-4a36-4247-9f69-a278ccae72be.image.png?v=1682517311632',
     DANGER: 7,
     GUNS: [
         {
