@@ -71,7 +71,7 @@ module.exports = ({ Class }) => {
 	    EXTRA_SKILL: 28,
 		MAX_CHILDREN, GUNS, TURRETS
 	};
-	Class.funTanks.UPGRADES_TIER_0.push("abomination");
+	Class.addons.UPGRADES_TIER_0.push("abomination");
 
 	console.log('[exampleAddon] The Amalgamation has been created..');
 };

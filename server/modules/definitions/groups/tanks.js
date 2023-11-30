@@ -811,7 +811,7 @@ exports.droneAutoTurret = {
         },
     ],
 }
-/*exports.hiveprobe = {
+exports.hiveprobe = {
   PARENT: ["genericTank"],
   LABEL: "Probe",
   TYPE: "drone",
@@ -843,7 +843,7 @@ exports.droneAutoTurret = {
   ],
   GUNS: [
     {
-      LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
@@ -853,7 +853,7 @@ exports.droneAutoTurret = {
   ],
   TURRETS: [
     {
-        SIZE     X       Y     ANGLE    ARC
+      /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [25, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
@@ -863,7 +863,7 @@ exports.clonerprobe = {
   PARENT: ["hiveprobe"],
   GUNS: [
     {
-       LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
@@ -873,13 +873,13 @@ exports.clonerprobe = {
   ],
     TURRETS: [
     {
-      SIZE     X       Y     ANGLE    ARC
+      /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [22, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
 }
-*/
+
 exports.autoSmasherTurret = {
     PARENT: "autoTurret",
     GUNS: [
@@ -1012,14 +1012,14 @@ exports.homingBullet = {
     },
     CAN_GO_OUTSIDE_ROOM: true
 }
-/*exports.mindindicator = {
+exports.mindindicator = {
     PARENT: 'exports.genericTank',
     LABEL: '',
     TYPE: 'bullet',
     SHAPE: 0,
     CONTROLLERS: ['doNothing'], 
     COLOR: 9,
-};*/
+};
 // Bodies
 exports.smasherBody = {
     LABEL: "",
@@ -1464,13 +1464,13 @@ exports.revolutionist = {
   ],
 };
 exports.revoception = makeCeption(exports.revolutionist, "revoception");
-/*exports.hivemind = {
+exports.hivemind = {
   PARENT: "genericTank",
   LABEL: "Hivemind",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
     {
-       LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic]),
@@ -1496,7 +1496,7 @@ exports.revoception = makeCeption(exports.revolutionist, "revoception");
   ],
   TURRETS: [
     {
-      SIZE     X       Y     ANGLE    ARC
+      /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [25, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
@@ -1508,7 +1508,7 @@ exports.cloner = {
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
     {
-      LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic]),
@@ -1526,12 +1526,12 @@ exports.cloner = {
   ],
   TURRETS: [
     {
-      SIZE     X       Y     ANGLE    ARC
+      /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [22, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
-};*/
+};
 exports.spreadshot = {
     PARENT: "genericTank",
     LABEL: "Spreadshot",
@@ -5529,7 +5529,7 @@ exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 
 // TANK UPGRADE PATHS
 exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos"];
-    exports.basic.UPGRADES_TIER_2 = ["smasher"/*, "cloner"*/];
+    exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"];
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
@@ -5575,7 +5575,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"];
 
     exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
-        exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher"/*, "autoCloner"*/];
+        exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
         exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"];
         exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"];
         exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"];
@@ -5587,7 +5587,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
 
 
-    /*exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];*/
+    exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
 
     exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
         exports.helix.UPGRADES_TIER_3 = ["triplex"];
