@@ -213,6 +213,10 @@ exports.testingTanks = {
     PARENT: ["menu"],
     LABEL: "Testing Tanks",
 };
+exports.beta = {
+    PARENT: ["menu"],
+    LABEL: "Beta Tanks",
+};
 
 // GENERATORS
 function compileMatrix(matrix, matrix2Entrance) {
@@ -964,6 +968,25 @@ exports.wallPlacer = {
         },
     ],
 };
+exports.imagetest = {
+    PARENT: "genericTank",
+    LABEL: "Imagery",
+    SHAPE: 4,
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
+
 exports.vanquisher = {
     PARENT: ["genericTank"],
     DANGER: 8,
@@ -1196,8 +1219,9 @@ exports.addons = {
 };
 
 exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", "eggGenerator", "testing", "addons"];
-    exports.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "spectator", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
+    exports.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "beta", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.unavailable.UPGRADES_TIER_0 = ["healer"];
+        exports.beta.UPGRADES_TIER_0 = ["minilaser"];
         exports.dominators.UPGRADES_TIER_0 = ["destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
@@ -1215,4 +1239,4 @@ exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "
 
     exports.testing.UPGRADES_TIER_0 = ["funTanks", "testingTanks"];
         exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", ["developer", "developer"]];
-        exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss"];
+        exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest"];
