@@ -1013,7 +1013,7 @@ exports.homingBullet = {
     CAN_GO_OUTSIDE_ROOM: true
 }
 exports.mindindicator = {
-    PARENT: [exports.genericTank],
+    PARENT: 'exports.genericTank',
     LABEL: '',
     TYPE: 'bullet',
     SHAPE: 0,
@@ -1446,7 +1446,7 @@ exports.pentaShot = {
     ]
 }
 exports.revolutionist = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Revolutionist",
     DANGER: 6,
     GUNS: [{
@@ -1465,7 +1465,7 @@ exports.revolutionist = {
 };
 exports.revoception = makeCeption(exports.revolutionist, "revoception");
 exports.hivemind = {
-  PARENT: ["genericTank"],
+  PARENT: "genericTank",
   LABEL: "Hivemind",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
@@ -1503,7 +1503,7 @@ exports.hivemind = {
   ]
 };
 exports.cloner = {
-  PARENT: ["genericTank"],
+  PARENT: "genericTank",
   LABEL: "Cloner",
   //CONTROLLERS: ['nearestDifferentMaster'],
   GUNS: [
@@ -2553,7 +2553,7 @@ exports.overgunner = makeOver({
     ],
 });
 exports.minilaser = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Plasma SMG",
     DANGER: 6,
     BODY: {
@@ -2626,7 +2626,7 @@ exports.redistributor = {
     ],
 }
 exports.phoenix = makeBird({
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     DANGER: 7,
     GUNS: [
         {
@@ -2703,7 +2703,7 @@ exports.focal = {
 
 // Flank Guard upgrades
 exports.hexaTank = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Hexa Tank",
     DANGER: 6,
     GUNS: [
@@ -2752,7 +2752,7 @@ exports.hexaTank = {
     ],
 }
 exports.triAngle = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Tri-Angle",
     BODY: {
         HEALTH: 0.8 * base.HEALTH,
@@ -2794,7 +2794,7 @@ exports.triAngle = {
     ],
 }
 exports.auto3 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Auto-3",
     DANGER: 6,
     FACING_TYPE: "autospin",
@@ -2879,7 +2879,7 @@ exports.octoTank = {
     ],
 }
 exports.cyclone = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Cyclone",
     DANGER: 7,
     GUNS: [
@@ -3032,7 +3032,7 @@ exports.cyclone = {
 
 // Tri-Angle upgrades
 exports.fighter = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Fighter",
     BODY: {
         DENSITY: 0.6 * base.DENSITY,
