@@ -120,9 +120,6 @@ class Canvas {
             case global.KEY_BECOME:
                 this.socket.talk('H');
                 break;
-            case global.KEY_PING:
-                this.socket.talk('showDebugPing');
-                break;
             case global.KEY_MAX_STAT:
                 global.statMaxing = true;
                 break;
