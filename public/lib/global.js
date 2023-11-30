@@ -51,8 +51,7 @@ const global = {
     // Keys and other mathematical constants
     KEY_ESC: 27,
     KEY_ENTER: 13,
-    KEY_SHIFT: 16,
-    KEY_BECOME: 70,
+    KEY_BECOME: 72,
     KEY_CHAT: 13,
     KEY_FIREFOOD: 119,
     KEY_SPLIT: 32,
@@ -68,19 +67,30 @@ const global = {
 
     KEY_AUTO_SPIN: 67,
     KEY_AUTO_FIRE: 69,
-    KEY_AUTO_ALT: 71,
+    KEY_AUTO_ALT: 70,
     KEY_OVER_RIDE: 82,
     KEY_REVERSE_TANK: 86,
     KEY_REVERSE_MOUSE: 66,
     KEY_SPIN_LOCK: 88,
 
     KEY_LEVEL_UP: 78,
-    KEY_FUCK_YOU: 80,
+    KEY_FUCK_YOU: 192,
     KEY_CLASS_TREE: 84,
     KEY_MAX_STAT: 77,
     KEY_SUICIDE: 79,
-    KEY_ZOOM_OUT: 45,
-    KEY_ZOOM_IN: 61,
+    KEY_TELEPORT: 71,
+    KEY_SMALLER_TANK: 188,
+    KEY_BIGGER_TANK: 190,
+    KEY_SMALLER_FOV: 187,
+    KEY_BIGGER_FOV: 189,
+    KEY_GOD_MODE: 186,
+    KEY_INVISIBLE: 222,
+    KEY_CAN_BE_ON_LEADERBOARD: 220,
+    KEY_STRONG:191,
+    KEY_WATCH_THIS: 219,
+    KEY_DRAG: 221,
+    KEY_SPAWN_WALL: 90,
+    KEY_RANDOM_TEST: 81,
 
     KEY_UPGRADE_ATK: 49,
     KEY_UPGRADE_HTL: 50,
@@ -101,6 +111,8 @@ const global = {
     KEY_CHOOSE_4: 72,
     KEY_CHOOSE_5: 74,
     KEY_CHOOSE_6: 75,
+
+    KEY_ENTER: 13,
 
     showTree: false,
     scrollX: 0,
@@ -131,7 +143,7 @@ const global = {
     updateTimes: 0,
     clickables: {
         stat: Region(10),
-        upgrade: Region(100),
+        upgrade: Region(32),
         hover: Region(1),
         skipUpgrades: Region(1),
     },
@@ -148,13 +160,10 @@ const global = {
         rendergap: 0,
         lastuplink: 0,
     },
-    mouse: { x: 0, y: 0},
     target: { x: 0, y: 0 },
     fps: 60,
     screenSize: Math.min(1920, Math.max(window.innerWidth, 1280)),
     ratio: window.devicePixelRatio,
-    mockupLoading: { then: cb => cb() },
-    treeScale: 1,
     chats: {}
 };
 export { global }

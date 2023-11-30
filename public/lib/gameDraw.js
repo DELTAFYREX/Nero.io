@@ -1,5 +1,4 @@
-
-import { settings } from "./settings.js";
+import { config } from "./config.js";
 import { color } from "./color.js";
 
 var gameDraw = {
@@ -30,6 +29,7 @@ var gameDraw = {
     },
     hslToRgb: (h, s, l) => {
         let r, g, b;
+
         if (s === 0) {
             r = g = b = l; // achromatic
         } else {
@@ -338,18 +338,17 @@ var gameDraw = {
                 return gameDraw.animatedColor.grey_red;
             case 25:
             case "mustard":
-                return gameDraw.color.mustard;
+                return "#C49608";
             case 26:
             case "darkOrange":
-            case "tangerine":
-                return gameDraw.color.tangerine;
+                return "#EC7B0F";
             case 27:
             case "brown":
-                return gameDraw.color.brown;
+                return "#895918";
             case 28:
             case "cyan":
             case "turquoise":
-                return gameDraw.color.cyan;
+                return "#13808E";
             case 29:
             case "animatedLesbian":
                 return gameDraw.animatedColor.lesbian;
@@ -398,8 +397,8 @@ var gameDraw = {
         }
     },
     getColorDark: (givenColor) => {
-        let dark = settings.graphical.neon ? gameDraw.color.white : gameDraw.color.black;
-        if (settings.graphical.darkBorders) return dark;
+        let dark = config.graphical.neon ? gameDraw.color.white : gameDraw.color.black;
+        if (config.graphical.darkBorders) return dark;
         return gameDraw.mixColors(givenColor, dark, gameDraw.color.border);
     },
     getZoneColor: (cell, real) => {
@@ -448,7 +447,7 @@ var gameDraw = {
         }
     },
     setColor: (context, givenColor) => {
-        if (settings.graphical.neon) {
+        if (config.graphical.neon) {
             context.fillStyle = gameDraw.getColorDark(givenColor);
             context.strokeStyle = givenColor;
         } else {

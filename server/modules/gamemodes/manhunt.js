@@ -21,7 +21,6 @@ class ManHunt {
         // get new leader
         let leader = this.getLeader();
         if (this.leaderIDs.includes(leader.id)) return;
-        this.leaderIDs.push(leader.id);
 
         // apply buffs to them
         leader.color = getTeamColor(TEAM_GREEN);

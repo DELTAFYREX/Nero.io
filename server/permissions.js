@@ -4,7 +4,6 @@ module.exports = [
         "discordID": "0",
         "nameColor": "#ffffff",
         "class": "developer",
-        "infiniteLevelUp": true,
         "name": "unnamed#0000",
         "note": "note here"
     },
@@ -13,7 +12,6 @@ module.exports = [
         "discordID": "0",
         "nameColor": "#ffffff",
         "class": "developer",
-        "infiniteLevelUp": true,
         "name": "unnamed#0000",
         "note": "note here"
     },
@@ -22,7 +20,6 @@ module.exports = [
         "discordID": "0",
         "nameColor": "#ffffff",
         "class": "developer",
-        "infiniteLevelUp": true,
         "name": "unnamed#0000",
         "note": "note here"
     },
