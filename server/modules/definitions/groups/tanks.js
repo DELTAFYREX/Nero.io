@@ -5529,10 +5529,10 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
-    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin"];
+    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix"];
         exports.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"];
         exports.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"];
-        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot"];
+        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot", "triplex"];
 
     exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"];
         exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
@@ -5558,7 +5558,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"];
         exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
-    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound"/*, "volute"*/];
+    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"];
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
         exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"];
         exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery"];
