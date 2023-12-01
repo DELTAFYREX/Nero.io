@@ -970,19 +970,16 @@ exports.wallPlacer = {
 };
 exports.imagetest = {
     PARENT: "genericTank",
-    LABEL: "Imagery",
-    SHAPE: 'https://cdn.glitch.global/0d2f1653-f6af-49fe-b907-92ebbedb353f/62f643a0-4a36-4247-9f69-a278ccae72be.image.png?v=1682517311632',
+    LABEL: "Papyrus",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
     GUNS: [
         {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
+                TYPE: "spaghetti"
             }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
     ]
 }
