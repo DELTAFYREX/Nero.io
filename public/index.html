@@ -126,7 +126,7 @@ function PlaySound69() {
  image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623'
  image[2] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/84812d435b246f4edffe887c5f755008.jpg?v=1698318627584'
  image[3] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/lratio?v=1698318622958'
- image[4] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159'
+ image[4] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/dancing-rainbow-neon-stickman-rainbow.gif?v=1699014596160'
  image[5] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159'
  image[6] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159'
  image[7] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817'
@@ -152,7 +152,7 @@ function PlaySound69() {
 var save = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159'
 imgsizething = 'style="width: 100%; height: 88%;"'
     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
-    document.write("<video id='" + save + "'" + imgsizething + " controls ></video>");
+    document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
    } else {
    document.write("<img src='" + save + "'" + imgsizething + ">");
  }
@@ -165,7 +165,14 @@ imgsizething = 'style="width: 100%; height: 88%;"'
                 <div class="startMenuHolder">
                     <div class="sliderHolder">
                         <div class="slider" id="startMenuSlidingContent">
+                          <script>
+                    if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
+                      document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
+                       } else {
+                      document.write("<img src='" + save + "'" + imgsizething + ">");
+                      }
               <center><img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_10_0rf_Kleki.png?v=1696964288611" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="arras icon"></center>
+                          </script>
                           <h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 < /h1>
                             <div id="serverName">
                                 <h4 class="nopadding">Loading...</h4>
