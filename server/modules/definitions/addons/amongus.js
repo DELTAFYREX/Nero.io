@@ -80,7 +80,7 @@ module.exports = ({ Class }) => {
 			},
 		],  
 	}
-	Class.developer.UPGRADES_TIER_0.push("OSAmongus_crewmatebase");
+	Class.addons.UPGRADES_TIER_0.push("OSAmongus_crewmatebase");
 	Class.OSAmongus_crewmatebase.UPGRADES_TIER_0 = [];
 	const colors = [
 	"red",
