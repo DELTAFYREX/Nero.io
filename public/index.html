@@ -121,7 +121,7 @@ function PlaySound69() {
      this[i] = ' '
    }
  }
- image = new ImageArray(15)
+ image = new ImageArray(16)
  image[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/girb.jpg?v=1698237916390'
  image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623'
  image[2] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/84812d435b246f4edffe887c5f755008.jpg?v=1698318627584'
@@ -145,8 +145,13 @@ function PlaySound69() {
  	image_number = Math.floor(image_number/rand)
  	return(image[image_number])
  }
+var save = randomimage()
 imgsizething = 'style="width: 100%; height: 88%;"'
- document.write("<img src='" + randomimage()+ "'" + imgsizething + ">");
+    if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
+    document.write("<video src='" + save + "'" + imgsizething + "></video>");
+   } else {
+   document.write("<img src='" + save+ "'" + imgsizething + ">");
+ }
 //-->
 </script>         
                   <div class="bottomHolder">
@@ -157,7 +162,7 @@ imgsizething = 'style="width: 100%; height: 88%;"'
                     <div class="sliderHolder">
                         <div class="slider" id="startMenuSlidingContent">
               <center><img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_10_0rf_Kleki.png?v=1696964288611" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="arras icon"></center>
-                          <h1 onclick="PlaySound5()", id="gameName">Nero.io 2</h1>
+                          <h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 < /h1>
                             <div id="serverName">
                                 <h4 class="nopadding">Loading...</h4>
                             </div>
