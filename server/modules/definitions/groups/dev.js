@@ -805,9 +805,8 @@ exports.pisseroo = {
                 store.pisseroo_i ??= 0;
                 store.pisseroo_i++;
                 store.pisseroo_i %= 4;
-                PlaySound200();
                 body.define(Class.winsor0.UPGRADES_TIER_0[store.pisseroo_i]);
-                setTimeout(() => body.define("pisseroo"), 6000);
+                setTimeout(() => body.define("pisseroo"), 3000);
             }
         }
     ],
@@ -1029,6 +1028,7 @@ exports.winsor0 = {
 exports.winsor1 = {
     PARENT: "genericTank",
     LABEL: "Winsor has no Friends 🧐",
+    SIZE: 30,
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144411762_LAYER.jpg?v=1701714034323',
     DANGER: 7,
     GUNS: [
@@ -1044,6 +1044,7 @@ exports.winsor1 = {
 exports.winsor2 = {
     PARENT: "genericTank",
     LABEL: "Winsor has no Brain 🧐🧐",
+    SIZE: 30,
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144409218_LAYER.jpg?v=1701714037274',
     DANGER: 7,
     GUNS: [
@@ -1059,6 +1060,7 @@ exports.winsor2 = {
 exports.winsor3 = {
     PARENT: "genericTank",
     LABEL: "Winsor has no Muscle 🧐🧐🧐",
+    SIZE: 30,
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144406913_LAYER.jpg?v=1701714040278',
     DANGER: 7,
     GUNS: [
@@ -1074,6 +1076,7 @@ exports.winsor3 = {
 exports.winsor4 = {
     PARENT: "genericTank",
     LABEL: "And Winsor certainly, has no Bitches 🧐🧐🧐🧐",
+    SIZE: 30,
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144358408_LAYER.jpg?v=1701714043765',
     DANGER: 7,
     GUNS: [
