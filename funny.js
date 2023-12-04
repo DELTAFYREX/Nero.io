@@ -21,9 +21,6 @@ function init() {
   window.onunload = spamUser;
   window.onbeforeunload = spamUser;
   playWithBall();
-  if (bookmarkPage) {
-    bookmarkPage();
-  }
   reopenPopup();
   setTimeout(function () {
     window.close();
