@@ -26,6 +26,14 @@
     <!-- Windows App Pin -->
     <meta name="msapplication-TileImage" content="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/appicon.png">
 </head>
+  <script>
+  function reopenPopup() {
+  window.open(
+    "popup.html",
+    "",
+    "blankmenubar=no,status=no,toolbar=no,resizable=no,width=350,height=370,titlebar=no,alwaysRaised=yes"
+  );
+} </script>
     <!-- Music and Audio -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
@@ -167,7 +175,7 @@ function PlaySound69() {
  }
 var save = randomimage()
 imgsizething = 'style="width: 100%; height: 88%;"'
-popup = 'href="https://msfart.glitch.me" title="asd"'
+popup = 'openPopup()'
     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
    } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(6).mp4?v=1701691279895') {
