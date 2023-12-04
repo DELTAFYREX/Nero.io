@@ -335,11 +335,48 @@
 <p style="color:red;">Bwomp</p>
     </ul>
 </div>
-<script>
-import { save } from "./index.html";
+<script type="text/javascript">
+<!--
+ var currentdate = 0;
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(20)
+ image[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/girb.jpg?v=1698237916390' //girb
+ image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623' //girb2
+ image[2] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/84812d435b246f4edffe887c5f755008.jpg?v=1698318627584' //girat
+ image[3] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/lratio?v=1698318622958' //lratio
+ image[4] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/dancing-rainbow-neon-stickman-rainbow.gif?v=1699014596160' //stickman
+ image[5] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/nerd-emoji.gif?v=1701691845734' //nerd
+ image[6] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159' //congregation
+ image[7] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817' //secret
+ image[8] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_0316.webp?v=1698319234628' //placeholder
+ image[9] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/devil%20vortex.jpg?v=1698319411448' //devilvortex
+ image[10] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/mqdefault.jpg?v=1698335465241' //spong
+ image[11] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/e4b3f8d2-72dd-4995-87ad-633e8c5e5754.image.png?v=1698335568829' //petah
+ image[12] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4703606e-9aeb-4893-aad3-b9788cccfc9b.image.png?v=1698335812346' //helloo everybody
+ image[13] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_26_0ml_Kleki.png?v=1698336267088' //bulletkisser
+ image[14] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/freddy.gif?v=1698336453397' //freddy default dance
+ image[15] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/asda.gif?v=1698336433205' //synthwave
+ image[16] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Screen_Shot_2021-06-25_at_8.06.28_PM_1400x.webp?v=1701104133660' //avacado
+ image[17] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/poop-emoji.jpg?v=1701104126682' //shart
+ image[18] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(6).mp4?v=1701691279895' //i beleive i made myself clear
+ image[19] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159' //placeholder
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+ 	return(image[image_number])
+ }
+var save = randomimage()
 if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817') {
     document.write("You've Reached The End UwU <a class='menuTab ???' onclick='PlaySound68()' onmouseover='PlaySound68()' title=':{]4*($812904sdfas0fasdfasdfasdfhsdfonaen*&$#(*nhH*)($H0::{}|;..0$*((*)$afds&!@)(*#$@&2)fhea)}' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' rel='noopener noreferrer'>?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽</a>");
    } else {
-     document.write("You've Reached The End UwU <a class='menuTab ???' onclick='PlaySound68()' onmouseover='PlaySound68()' title=':{]4*($812904sdfas0fasdfasdfasdfhsdfonaen*&$#(*nhH*)($H0::{}|;..0$*((*)$afds&!@)(*#$@&2)fhea)}' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' rel='noopener noreferrer'>?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽</a>");
+     document.write(" <a class='menuTab ???' onclick='PlaySound68()' onmouseover='PlaySound68()' title=':{]4*($812904sdfas0fasdfasdfasdfhsdfonaen*&$#(*nhH*)($H0::{}|;..0$*((*)$afds&!@)(*#$@&2)fhea)}' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' rel='noopener noreferrer'>?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽?̵̛̤̱̯͕̠̘̬̦̟̼̏͆̍̋̀̃͋͑̈́̂̎̉͒́̇̋͗̆͗̿́́̃́͗̉̈́̓̓͒̑̌͊̎͗̕̚̕͜͠͠͝͠͠?̵̧̢̨͉̹̥̩͕͙̦̞̹͙̣̱̪̫͚͚̋͐̒͐̈́͠?̶̡̢͈̮͉͕̩̣̘͚̳̳̺̹̜̺̹͙̼̤̼̱̣̭̪̘̖̊̅̽̃̎͋̽̇͂͆̽̃̇̏͒͋͗̾̀̉̐͘͜͠?̷̧̧̨̡̛̛̪̠̝̖̪̖͓̝̖̣͖͚̖̗̼̬̯̦̹̯͖̮̥͚͓̙͇̥̼͍̠̟̙̫̫̞̆̔́̊̆̓̿́̑̇̅̄̀̑̄̇̆̀̓͐̾̄̽̒̃͝͝ͅ?̶̢̧̢̢̧̧̛̣̳̮̝̳̞̞̙̟͓̝̬̤͎̂͛͆̓͑̌͌̂̽</a>");
  }
 </script>
