@@ -1279,7 +1279,6 @@ function drawUpgradeTree(spacing, alcoveSize) {
         global.treeScale = 1;
         return;
     }
-
     if (lastGuiType != gui.type) {
         let m = util.getEntityImageFromMockup(gui.type), // The mockup that corresponds to the player's tank
             rootName = m.rerootUpgradeTree, // The upgrade tree root of the player's tank
@@ -1501,6 +1500,10 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     drawText("Level " + gui.__s.getLevel() + " " + gui.class, x + len / 2, y + height / 2 + 1, height - 2.5, color.guiwhite, "center", true);
     height = 16;
     y -= height + vspacing;
+  
+    if (gui.class === "Winsor") {
+      PlaySound68();
+    }
 
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);

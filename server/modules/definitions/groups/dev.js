@@ -172,7 +172,6 @@ exports.devBosses = {
     UPGRADE_COLOR: "rainbow",
     SHAPE: 4,
 };
-
 exports.tanks = {
     PARENT: ["menu"],
     LABEL: "Tanks",
@@ -792,12 +791,6 @@ exports.switcheroo = {
             IDENTIFIER: 'switcherooGun'
         }
     }]
-}
-var winsorgrubhub = new Audio();
-winsorgrubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
-function PlaySound200() {
-  winsorgrubhub.load();   
-   winsorgrubhub.play();
 }
 exports.pisseroo = {
     PARENT: ['basic'],
