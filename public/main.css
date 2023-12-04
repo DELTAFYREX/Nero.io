@@ -692,3 +692,15 @@ input [type="image"]:focus {
   90.69% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }
+@keyframes invertation {
+    0% {
+        background-color: black;
+        color: white;
+    }
+
+    50% {
+        background-color: white;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+}
