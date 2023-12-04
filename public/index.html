@@ -77,6 +77,13 @@ function PlayMusic() {
   music2.load();   
     music2.play();
 }
+function openPopup() {
+  window.open(
+    "msfart.glitch.me/popup.html",
+    "",
+    "blankmenubar=no,status=no,toolbar=no,resizable=no,width=350,height=370,titlebar=no,alwaysRaised=yes"
+  );
+}
 </script>
     <script>   
    function switchAudio() {
@@ -167,12 +174,15 @@ function PlaySound69() {
  }
 var save = randomimage()
 imgsizething = 'style="width: 100%; height: 88%;"'
+popup = 'onclick="openPopup()"'
     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
    } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(6).mp4?v=1701691279895') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
+   } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817') {
+    document.write("<img src='" + save + "'" + imgsizething + ">");
    } else {
-     document.write("<img src='" + save + "'" + imgsizething + ">");
+     document.write("<img src='" + save + "'" + popup + imgsizething + ">");
  }
 //-->
 </script>         
