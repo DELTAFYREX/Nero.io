@@ -793,6 +793,12 @@ exports.switcheroo = {
         }
     }]
 }
+var winsorgrubhub = new Audio();
+winsorgrubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
+function PlaySound200() {
+  winsorgrubhub.load();   
+   winsorgrubhub.play();
+}
 exports.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
@@ -806,6 +812,7 @@ exports.pisseroo = {
                 store.pisseroo_i ??= 0;
                 store.pisseroo_i++;
                 store.pisseroo_i %= 6;
+                PlaySound200();
                 body.define(Class.winsor0.UPGRADES_TIER_0[store.pisseroo_i]);
                 setTimeout(() => body.define("pisseroo"), 6000);
             }
@@ -1028,7 +1035,7 @@ exports.winsor0 = {
 
 exports.winsor1 = {
     PARENT: "genericTank",
-    LABEL: "Winsor has no friends 🧐",
+    LABEL: "Winsor has no Friends 🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144411762_LAYER.jpg?v=1701714034323',
     DANGER: 7,
     GUNS: [
@@ -1043,7 +1050,7 @@ exports.winsor1 = {
 }
 exports.winsor2 = {
     PARENT: "genericTank",
-    LABEL: "Winsor has no brain 🧐",
+    LABEL: "Winsor has no Brain 🧐🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144409218_LAYER.jpg?v=1701714037274',
     DANGER: 7,
     GUNS: [
@@ -1058,7 +1065,7 @@ exports.winsor2 = {
 }
 exports.winsor3 = {
     PARENT: "genericTank",
-    LABEL: "Winsor has no muscle 🧐",
+    LABEL: "Winsor has no Muscle 🧐🧐🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144406913_LAYER.jpg?v=1701714040278',
     DANGER: 7,
     GUNS: [
@@ -1073,7 +1080,7 @@ exports.winsor3 = {
 }
 exports.winsor4 = {
     PARENT: "genericTank",
-    LABEL: "Winsojr",
+    LABEL: "And Winsor certainly, has no Bitches 🧐🧐🧐🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144358408_LAYER.jpg?v=1701714043765',
     DANGER: 7,
     GUNS: [
@@ -1338,7 +1345,7 @@ exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "
         exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
     exports.testing.UPGRADES_TIER_0 = ["funTanks", "testingTanks"];
-        exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "winsor", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest", "winsor0"];
 
     exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
