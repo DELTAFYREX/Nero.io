@@ -793,7 +793,7 @@ exports.switcheroo = {
         }
     }]
 }
-exports.winsor = {
+exports.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
     UPGRADES_TIER_0: [],
@@ -803,10 +803,10 @@ exports.winsor = {
             event: "fire",
             handler: ({ body, globalMasterStore: store, gun }) => {
                 if (gun.identifier != 'pisserooGun') return
-                store.switcheroo_i ??= 0;
-                store.switcheroo_i++;
-                store.switcheroo_i %= 6;
-                body.define(Class.winsor0.UPGRADES_TIER_1[store.switcheroo_i]);
+                store.pisseroo_i ??= 0;
+                store.pisseroo_i++;
+                store.pisseroo_i %= 6;
+                body.define(Class.winsor0.UPGRADES_TIER_0[store.pisseroo_i]);
                 setTimeout(() => body.define("pisseroo"), 6000);
             }
         }
@@ -1028,7 +1028,7 @@ exports.winsor0 = {
 
 exports.winsor1 = {
     PARENT: "genericTank",
-    LABEL: "W4insor",
+    LABEL: "Winsor has no friends 🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144411762_LAYER.jpg?v=1701714034323',
     DANGER: 7,
     GUNS: [
@@ -1043,7 +1043,7 @@ exports.winsor1 = {
 }
 exports.winsor2 = {
     PARENT: "genericTank",
-    LABEL: "Winsjor",
+    LABEL: "Winsor has no brain 🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144409218_LAYER.jpg?v=1701714037274',
     DANGER: 7,
     GUNS: [
@@ -1058,7 +1058,7 @@ exports.winsor2 = {
 }
 exports.winsor3 = {
     PARENT: "genericTank",
-    LABEL: "Wfinsor",
+    LABEL: "Winsor has no muscle 🧐",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144406913_LAYER.jpg?v=1701714040278',
     DANGER: 7,
     GUNS: [
