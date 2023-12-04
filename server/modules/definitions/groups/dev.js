@@ -793,6 +793,33 @@ exports.switcheroo = {
         }
     }]
 }
+exports.winsor = {
+    PARENT: ['basic'],
+    LABEL: 'Winsor',
+    UPGRADES_TIER_0: [],
+    RESET_UPGRADE_MENU: true,
+    ON: [
+        {
+            event: "fire",
+            handler: ({ body, globalMasterStore: store, gun }) => {
+                if (gun.identifier != 'switcherooGun') return
+                store.switcheroo_i ??= 0;
+                store.switcheroo_i++;
+                store.switcheroo_i %= 6;
+                body.define(Class.winsor0.UPGRADES_TIER_1[store.switcheroo_i]);
+                setTimeout(() => body.define("switcheroo"), 6000);
+            }
+        }
+    ],
+    GUNS: [{
+        POSITION: {},
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: 'bullet',
+            IDENTIFIER: 'switcherooGun'
+        }
+    }]
+}
 
 // FUN
 exports.florr_tank_eye = {
@@ -979,6 +1006,82 @@ exports.imagetest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "spaghetti"
+            }
+        }
+    ]
+}
+exports.winsor0 = {
+    PARENT: "genericTank",
+    LABEL: "Winsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+
+exports.winsor1 = {
+    PARENT: "genericTank",
+    LABEL: "Winsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+exports.winsor2 = {
+    PARENT: "genericTank",
+    LABEL: "Winsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+exports.winsor3 = {
+    PARENT: "genericTank",
+    LABEL: "Winsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
+exports.winsor4 = {
+    PARENT: "genericTank",
+    LABEL: "Winsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
             }
         }
     ]
@@ -1237,3 +1340,5 @@ exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "
     exports.testing.UPGRADES_TIER_0 = ["funTanks", "testingTanks"];
         exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest"];
+
+    exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"]
