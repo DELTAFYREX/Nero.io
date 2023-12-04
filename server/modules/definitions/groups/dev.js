@@ -802,12 +802,12 @@ exports.winsor = {
         {
             event: "fire",
             handler: ({ body, globalMasterStore: store, gun }) => {
-                if (gun.identifier != 'switcherooGun') return
+                if (gun.identifier != 'pisserooGun') return
                 store.switcheroo_i ??= 0;
                 store.switcheroo_i++;
                 store.switcheroo_i %= 6;
                 body.define(Class.winsor0.UPGRADES_TIER_1[store.switcheroo_i]);
-                setTimeout(() => body.define("switcheroo"), 6000);
+                setTimeout(() => body.define("pisseroo"), 6000);
             }
         }
     ],
@@ -816,7 +816,7 @@ exports.winsor = {
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: 'bullet',
-            IDENTIFIER: 'switcherooGun'
+            IDENTIFIER: 'pisserooGun'
         }
     }]
 }
@@ -1012,7 +1012,7 @@ exports.imagetest = {
 }
 exports.winsor0 = {
     PARENT: "genericTank",
-    LABEL: "Winsor",
+    LABEL: "Wi3nsor",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
     GUNS: [
@@ -1028,8 +1028,8 @@ exports.winsor0 = {
 
 exports.winsor1 = {
     PARENT: "genericTank",
-    LABEL: "Winsor",
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    LABEL: "W4insor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144411762_LAYER.jpg?v=1701714034323',
     DANGER: 7,
     GUNS: [
         {
@@ -1043,8 +1043,8 @@ exports.winsor1 = {
 }
 exports.winsor2 = {
     PARENT: "genericTank",
-    LABEL: "Winsor",
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    LABEL: "Winsjor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144409218_LAYER.jpg?v=1701714037274',
     DANGER: 7,
     GUNS: [
         {
@@ -1058,8 +1058,8 @@ exports.winsor2 = {
 }
 exports.winsor3 = {
     PARENT: "genericTank",
-    LABEL: "Winsor",
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    LABEL: "Wfinsor",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144406913_LAYER.jpg?v=1701714040278',
     DANGER: 7,
     GUNS: [
         {
@@ -1073,8 +1073,8 @@ exports.winsor3 = {
 }
 exports.winsor4 = {
     PARENT: "genericTank",
-    LABEL: "Winsor",
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    LABEL: "Winsojr",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/IMG_20231204_144358408_LAYER.jpg?v=1701714043765',
     DANGER: 7,
     GUNS: [
         {
@@ -1338,7 +1338,7 @@ exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "
         exports.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
     exports.testing.UPGRADES_TIER_0 = ["funTanks", "testingTanks"];
-        exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", ["developer", "developer"]];
-        exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest"];
+        exports.funTanks.UPGRADES_TIER_0 = ["florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "winsor", ["developer", "developer"]];
+        exports.testingTanks.UPGRADES_TIER_0 = ["diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest", "winsor0"];
 
-    exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"]
+    exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
