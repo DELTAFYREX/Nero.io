@@ -805,7 +805,6 @@ exports.pisseroo = {
                 store.pisseroo_i ??= 0;
                 store.pisseroo_i++;
                 store.pisseroo_i %= 6;
-                PlaySound200();
                 body.define(Class.winsor0.UPGRADES_TIER_0[store.pisseroo_i]);
                 setTimeout(() => body.define("pisseroo"), 6000);
             }

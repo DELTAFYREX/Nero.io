@@ -66,7 +66,12 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       var smallaudio3 = new Audio(
         "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/socket.wav"
       );
-
+var fard = new Audio();
+fard.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/62640b13-df2b-47d8-a06e-fb63b7fbb06e.mp3?v=1699272890577");
+function PlaySound170() {
+  fard.load();   
+   fard.play();
+}
       smallaudio3.loop = false;
       function PlaySound212() {
         smallaudio3.loop = false;
@@ -1502,7 +1507,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     y -= height + vspacing;
   
     if (gui.class === "Winsor") {
-      PlaySound68();
+      PlaySound170();
     }
 
     // Draw the %-of-leader bar
