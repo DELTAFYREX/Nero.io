@@ -66,17 +66,17 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       var smallaudio3 = new Audio(
         "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/socket.wav"
       );
-var fard = new Audio();
-fard.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/62640b13-df2b-47d8-a06e-fb63b7fbb06e.mp3?v=1699272890577");
-function PlaySound170() {
-  fard.load();   
-   fard.play();
-}
       smallaudio3.loop = false;
       function PlaySound212() {
         smallaudio3.loop = false;
         smallaudio3.play();
       }
+  var grubhub = new Audio();
+grubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
+function PlaySound169() {
+  grubhub.load();   
+   grubhub.play();
+}
   var smallaudio5 = new Audio();
   smallaudio5.src =
     "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/poka.wav";
@@ -1507,7 +1507,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     y -= height + vspacing;
   
     if (gui.class === "Winsor") {
-      PlaySound170();
+      PlaySound169();
     }
 
     // Draw the %-of-leader bar
