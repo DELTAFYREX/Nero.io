@@ -7,6 +7,11 @@ const { combineStats, makeDeco, makeAuto, makeCeption } = require('../facilitato
 const g = require('../gunvals');
 
 module.exports = ({ Class }) => {
+  
+  	// This addon is enabled by default.
+	// If you want to disable, uncomment the line below.
+  //return console.log('[revolutionistPack.js] Addon disabled by default');
+  
   exports.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -20,7 +25,8 @@ module.exports = ({ Class }) => {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
         TYPE: "autoTurret",
     }]
-};exports.revolutionist = {
+};
+exports.revolution = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
     DANGER: 6,
@@ -37,8 +43,9 @@ module.exports = ({ Class }) => {
         TYPE: "turretBase",
     },
   ],
+  UPGRADES_TIER_0: ["revoceptionist", "autorevol"]
 };
-  exports.autorevol = makeCeption(exports.revolutionist, "Auto-Revolutionist");
-exports.revoception = makeCeption(exports.revolutionist, "Revo-Ceptionist");
-    Class.addons.UPGRADES_TIER_0.push('Revolutionist');
+  exports.autorevol = makeCeption(exports.revolution, "Auto-Revolutionist");
+exports.revoceptionist = makeCeption(exports.revolution, "Revo-Ception");
+    Class.addons.UPGRADES_TIER_0.push('revolution');
 }

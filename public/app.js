@@ -274,7 +274,7 @@ window.onload = async () => {
         document.getElementById("optBorders").value = "nero";
     }
     // Game start stuff
-    document.getElementById("startButton").onclick = () => startGame(); PlaySound69();
+    document.getElementById("startButton").onclick = () => startGame();
     document.onkeydown = (e) => {
         var key = e.which || e.keyCode;
         if (key === global.KEY_ENTER && (global.dead || !global.gameStart)) {
@@ -353,6 +353,7 @@ function calculateTarget() {
 }
 // This starts the game and sets up the websocket
 function startGame() {
+    PlaySound69();
     // Get options
     util.submitToLocalStorage("optFancy");
     util.submitToLocalStorage("centerTank");
