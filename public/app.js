@@ -274,7 +274,7 @@ window.onload = async () => {
         document.getElementById("optBorders").value = "nero";
     }
     // Game start stuff
-    document.getElementById("startButton").onclick = () => startGame();
+    document.getElementById("startButton").onclick = () => startGame(); PlaySound69();
     document.onkeydown = (e) => {
         var key = e.which || e.keyCode;
         if (key === global.KEY_ENTER && (global.dead || !global.gameStart)) {

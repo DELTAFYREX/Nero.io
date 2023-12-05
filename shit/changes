@@ -430,3 +430,83 @@ exports.turretBase = {
         TYPE: "autoTurret",
     }]
 };
+
+    if (gui.class === "Winsor") {
+      PlaySound169();
+    }
+         //just some code to make the sound work
+      var playbuttonsound = new Audio();
+      playbuttonsound.src =
+        "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/op1.wav?v=1675463613542";
+      function PlaySound69() {
+        playbuttonsound.play();
+      }
+      var clicked = false;
+
+      var slap = new Audio();
+      slap.src =
+        "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/(Audio)%20videoplayback.m4a?v=1675999054321";
+      function PlaySound68() {
+        slap.play();
+      }
+      var clicked = false;
+
+      var clicksound = new Audio();
+      clicksound.src =
+        "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg";
+      function PlaySound210() {
+        clicksound.play();
+      }
+      var clicked = false;
+
+      function doSomething() {
+        if (clicked) {
+          var optionclicksound = new Audio();
+           optionclicksound.src =
+            "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/cancel.wav";
+          optionclicksound.load();
+           optionclicksound.play();
+        } else {
+           clicksound.load();
+           clicksound.play();
+        }
+        clicked = !clicked;
+      }
+      var smallaudio2 = new Audio();
+      smallaudio2.src =
+        "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/error.ogg";
+      function PlaySound211() {
+        smallaudio2.play();
+      }
+      var smallaudio3 = new Audio(
+        "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/socket.wav"
+      );
+      smallaudio3.loop = false;
+      function PlaySound212() {
+        smallaudio3.loop = false;
+        smallaudio3.play();
+      }
+  var grubhub = new Audio();
+grubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
+function PlaySound169() {
+  grubhub.load();   
+   grubhub.play();
+}
+  var smallaudio5 = new Audio();
+  smallaudio5.src =
+    "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/poka.wav";
+  function PlaySound214() {
+    smallaudio5.play();
+  }
+  var smallaudio6 = new Audio();
+  smallaudio6.src =
+    "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/finish.wav";
+  function PlaySound215() {
+    smallaudio6.play();
+  }
+  var camerasound = new Audio();
+  camerasound.src =
+    "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/camera.wav";
+  function PlaySound213() {
+    camerasound.play();
+  };
