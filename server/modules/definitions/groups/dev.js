@@ -206,7 +206,7 @@ exports.sanctuaries = {
 };
 exports.funTanks = {
     PARENT: ["menu"],
-    LABEL: "Fun Tanks",
+    LABEL: "Misc",
 };
 exports.testingTanks = {
     PARENT: ["menu"],
@@ -1314,6 +1314,14 @@ exports.testing = {
     PARENT: ["menu"],
     LABEL: "Testing"
 };
+exports.utilities = {
+    PARENT: ["menu"],
+    LABEL: "Utilities"
+};
+exports.AIT = {
+    PARENT: ["menu"],
+    LABEL: "AIT"
+};
 
 exports.addons = {
     PARENT: "menu",
@@ -1321,9 +1329,10 @@ exports.addons = {
     UPGRADES_TIER_0: []
 };
 
-exports.developer.UPGRADES_TIER_0 = ["tanks", "bosses", "spectator", "levels", "teams", "eggGenerator", "testing", "addons"];
-    exports.tanks.UPGRADES_TIER_0 = ["basic", "unavailable", "beta", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
-        exports.unavailable.UPGRADES_TIER_0 = ["healer"];
+exports.developer.UPGRADES_TIER_0 = ["tanks", "AIT", "spectator", "levels", "teams", "eggGenerator", "testing", "addons"];
+    exports.tanks.UPGRADES_TIER_0 = ["developer", "basic", "funTanks", "unavailable", "beta"];
+        exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTinkMachineGun", "arenaCloser"];
+        exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer"];
         exports.beta.UPGRADES_TIER_0 = ["minilaser"];
         exports.dominators.UPGRADES_TIER_0 = ["destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
