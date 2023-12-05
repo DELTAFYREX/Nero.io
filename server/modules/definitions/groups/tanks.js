@@ -857,7 +857,7 @@ exports.hiveprobe = {
   TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [25, 0, 0, 0, 360, 0],
+      POSITION: [27, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
@@ -877,7 +877,7 @@ exports.clonerprobe = {
     TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [22, 0, 0, 0, 360, 0],
+      POSITION: [24, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
@@ -1016,7 +1016,7 @@ exports.homingBullet = {
     CAN_GO_OUTSIDE_ROOM: true
 }
 exports.mindindicator = {
-    SHAPE: 'M 0 -1.05 A 1 1 0 0 0 0 1.05 A 1 1 0 0 0 0 -1.05 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
 };
 // Bodies
@@ -1496,7 +1496,7 @@ exports.hivemind = {
   TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [28, 0, 0, 0, 360, 0],
+      POSITION: [27, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
@@ -1526,7 +1526,7 @@ exports.cloner = {
   TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [25, 0, 0, 0, 360, 0],
+      POSITION: [24, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
