@@ -32,11 +32,11 @@ module.exports = ({ Class }) => {
     Class.solarioTurret1 = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: 3,
+    COLOR: 13,
+    SHAPE: 0,
     BODY: {
         FOV: 0.8,
     },
-    COLOR: "grey",
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
@@ -50,11 +50,11 @@ module.exports = ({ Class }) => {
       Class.solarioTurret2 = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: 3,
+    COLOR: 13,
+    SHAPE: 3,
     BODY: {
         FOV: 0.8,
     },
-    COLOR: "grey",
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
@@ -68,11 +68,11 @@ module.exports = ({ Class }) => {
       Class.solarioTurret3 = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: 3,
+    SHAPE: 4,
+    COLOR: 13,
     BODY: {
         FOV: 0.8,
     },
-    COLOR: "grey",
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
@@ -86,11 +86,11 @@ module.exports = ({ Class }) => {
       Class.solarioTurret4 = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: 3,
+    COLOR: 13,
+    SHAPE: 6,
     BODY: {
         FOV: 0.8,
     },
-    COLOR: "grey",
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
@@ -118,21 +118,21 @@ module.exports = ({ Class }) => {
     Class.solarioturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: 9,
+    COLOR: 3,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: "revoautoTurret",
+        TYPE: "solarioTurret1",
+    }, {
+        POSITION: [4.65, 9.85, 0, 180, 220, 1],
+        TYPE: "solarioTurret2",
     }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "revoautoTurret",
+        TYPE: "solarioTurret3",
     }, {
-        POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "revoautoTurret",
-    }, {
-        POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "revoautoTurret",
+        POSITION: [4.65, 9.85, 0, 0, 220, 1],
+        TYPE: "solarioTurret4",
     }]
 };
 Class.revolution = {
@@ -156,7 +156,7 @@ Class.revolution = {
 Class.solario = {
     PARENT: "genericTank",
     LABEL: "Solario",
-    COLOR: 3,
+    COLOR: 13,
     SIZE: 10,
     DANGER: 6,
     GUNS: [{
@@ -177,5 +177,5 @@ Class.solario = {
     Class.revoceptionist = makeCeption(Class.revolution, "Revo-Ception");
   	Class.revolution.UPGRADES_TIER_0 = [];
     Class.addons.UPGRADES_TIER_0.push('revolution');
-    Class.revolution.UPGRADES_TIER_0.push('revoceptionist', 'autorevol');
+    Class.revolution.UPGRADES_TIER_0.push('revoceptionist', 'autorevol', 'solario');
 }
