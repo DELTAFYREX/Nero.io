@@ -1339,10 +1339,10 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.elites.UPGRADES_TIER_0 = ["bosses", "eliteDestroyer", "eliteGunner", "eliteSprayer", "eliteBattleship", "eliteSpawner", "eliteTrapGuard", "eliteSpinner", "eliteSkimmer", "legionaryCrasher", "guardian", "defender", "sprayerLegion"];
         exports.mysticals.UPGRADES_TIER_0 = ["bosses", "sorcerer", "summoner", "enchantress", "exorcistor", "shaman"];
         exports.nesters.UPGRADES_TIER_0 = ["bosses", "nestKeeper", "nestWarden", "nestGuardian"];
-        exports.rogues.UPGRADES_TIER_0 = ["bosses", "roguePalisade", "rogueArmada", "alviss", "tyr", "fiolnir"];
+        exports.rogues.UPGRADES_TIER_0 = ["bosses", "roguePalisade", "rogueArmada", "tyr", "fiolnir"];
 	    exports.rammers.UPGRADES_TIER_0 = ["bosses", "bob", "nemesis"];
         exports.terrestrials.UPGRADES_TIER_0 = ["bosses", "ares", "gersemi", "ezekiel", "eris", "selene"];
-        exports.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia", "atlas", "rhea", "alviss", "tyr", "fiolnir"];
+        exports.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia", "atlas", "rhea", "tyr", "fiolnir"];
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "ragnarok", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
