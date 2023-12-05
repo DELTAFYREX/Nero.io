@@ -43,9 +43,9 @@ exports.revolution = {
         TYPE: "turretBase",
     },
   ],
-  UPGRADES_TIER_0: ["revoceptionist", "autorevol"]
 };
-  exports.autorevol = makeCeption(exports.revolution, "Auto-Revolutionist");
-exports.revoceptionist = makeCeption(exports.revolution, "Revo-Ception");
+    exports.autorevol = makeAuto(exports.revolution, "Auto-Revolutionist");
+    exports.revoceptionist = makeCeption(exports.revolution, "Revo-Ception");
+    Class.revolution.UPGRADES_TIER_0 = ["revoceptionist", "autorevol"];
     Class.addons.UPGRADES_TIER_0.push('revolution');
 }
