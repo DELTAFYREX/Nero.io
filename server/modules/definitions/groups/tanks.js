@@ -796,7 +796,7 @@ exports.autoTurretNerf = {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.weak, g.basic, g.morerecoil, g.turret]),
+                SHOOT_SETTINGS: combineStats([g.weak, g.basic, g.morerecoil, g.turret, g.auto]),
                 TYPE: "bullet",
             },
         },
