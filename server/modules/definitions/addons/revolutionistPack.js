@@ -12,7 +12,7 @@ module.exports = ({ Class }) => {
 	// If you want to disable, uncomment the line below.
   //return console.log('[revolutionistPack.js] Addon disabled by default');
   
-  exports.turretBase = {
+  Class.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -26,7 +26,7 @@ module.exports = ({ Class }) => {
         TYPE: "autoTurret",
     }]
 };
-exports.revolution = {
+Class.revolution = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
     DANGER: 6,
@@ -45,11 +45,13 @@ exports.revolution = {
   ],
 };
   
-    exports.autorevol = makeAuto(exports.revolution, "Auto-Revolutionist");
+    Class.autorevol = makeAuto(Class.revolution, "Auto-Revolutionist");
   
-    exports.revoceptionist = makeCeption(exports.revolution, "Revo-Ception");
+    Class.revoceptionist = makeCeption(Class.revolution, "Revo-Ception");
+  
+  	Class.revolution.UPGRADES_TIER_0 = [];
   
     Class.addons.UPGRADES_TIER_0.push('revolution');
   
-    Class.revolution.UPGRADES_TIER_0 ["revoceptionist", "autorevol"];
+    Class.revolution.UPGRADES_TIER_0.push('revoceptionist', 'autorevol');
 }
