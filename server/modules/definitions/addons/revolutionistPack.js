@@ -163,7 +163,8 @@ Class.solario = {
     PARENT: "genericTank",
     LABEL: "Solario",
     COLOR: 13,
-    SIZE: 10,
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_05_0sn_Kleki.png?v=1701808881532',
+    SIZE: 15,
     DANGER: 6,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
