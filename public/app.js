@@ -268,10 +268,10 @@ window.onload = async () => {
     util.retrieveFromLocalStorage("autoLevelUp");
     // Set default theme
     if (document.getElementById("optColors").value === "") {
-        document.getElementById("optColors").value = "normal";
+        document.getElementById("optColors").value = "nero";
     }
     if (document.getElementById("optBorders").value === "") {
-        document.getElementById("optBorders").value = "normal";
+        document.getElementById("optBorders").value = "nero";
     }
     // Game start stuff
     document.getElementById("startButton").onclick = () => startGame();
@@ -375,6 +375,9 @@ function startGame() {
         case "normal":
             settings.graphical.darkBorders = settings.graphical.neon = false;
             break;
+        case "nero":
+            settings.graphical.darkBorders = settings.graphical.neon = false;
+            break;
         case "dark":
             settings.graphical.darkBorders = true;
             settings.graphical.neon = false;
@@ -389,7 +392,7 @@ function startGame() {
     }
     util.submitToLocalStorage("optColors");
     let a = document.getElementById("optColors").value;
-    color = color[a === "" ? "normal" : a];
+    color = color[a === "" ? "nero" : a];
     gameDraw.color = color;
     // Other more important stuff
     let playerNameInput = document.getElementById("playerNameInput");

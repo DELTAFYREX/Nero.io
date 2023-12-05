@@ -1327,7 +1327,7 @@ exports.addons = {
 
 exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"];
     exports.tanks.UPGRADES_TIER_0 = ["developer", "funTanks", "beta", "unavailable", "testingTanks"];
-        exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTinkMachineGun", "arenaCloser"];
+        exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer"];
         exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser"];
