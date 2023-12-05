@@ -19,11 +19,12 @@ module.exports = ({ Class }) => {
         FOV: 0.8,
     },
     COLOR: "grey",
+        CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -32,6 +33,7 @@ module.exports = ({ Class }) => {
     Class.solarioTurret1 = {
     PARENT: "genericTank",
     LABEL: "Turret",
+    CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
     COLOR: 13,
     SHAPE: 0,
     BODY: {
@@ -41,7 +43,7 @@ module.exports = ({ Class }) => {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -49,6 +51,7 @@ module.exports = ({ Class }) => {
 }
       Class.solarioTurret2 = {
     PARENT: "genericTank",
+            CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
     LABEL: "Turret",
     COLOR: 13,
     SHAPE: 3,
@@ -59,7 +62,7 @@ module.exports = ({ Class }) => {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -68,6 +71,8 @@ module.exports = ({ Class }) => {
       Class.solarioTurret3 = {
     PARENT: "genericTank",
     LABEL: "Turret",
+          CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
+
     SHAPE: 4,
     COLOR: 13,
     BODY: {
@@ -77,7 +82,7 @@ module.exports = ({ Class }) => {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -86,6 +91,7 @@ module.exports = ({ Class }) => {
       Class.solarioTurret4 = {
     PARENT: "genericTank",
     LABEL: "Turret",
+            CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
     COLOR: 13,
     SHAPE: 6,
     BODY: {
@@ -95,7 +101,7 @@ module.exports = ({ Class }) => {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -118,7 +124,7 @@ module.exports = ({ Class }) => {
     Class.solarioturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: 3,
+    COLOR: 13,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
