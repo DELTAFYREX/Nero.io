@@ -9,7 +9,7 @@ var color = {
           vlgrey: "#E8EBF7",
           lgrey: "#CCC8BE",
           guiwhite: "#F0F0F0",
-          black: "#271A2B",
+          black: "#484848",
           blue: "#52A8EB",
           green: "#8ABC3F",
           red: "#FC4E51",
@@ -21,7 +21,7 @@ var color = {
           white: "#F0F8FA",
           guiblack: "#000000",
           paletteSize: 10,
-          border: 0.3
+          border: 0.65
     },
     "normal": {
         "teal": "#7ADBBC",
