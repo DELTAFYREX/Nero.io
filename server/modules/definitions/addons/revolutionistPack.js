@@ -115,6 +115,26 @@ module.exports = ({ Class }) => {
         TYPE: "revoautoTurret",
     }]
 };
+    Class.solarioturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "revoautoTurret",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revoautoTurret",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revoautoTurret",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revoautoTurret",
+    }]
+};
 Class.revolution = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
@@ -149,7 +169,7 @@ Class.solario = {
           ],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBase",
+        TYPE: "solarioturretBase",
     },
   ],
 };
