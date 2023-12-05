@@ -6,7 +6,7 @@ module.exports = {
     host: "neroio2.glitch.me",
 
     // Which port to run the web server on.
-    port: 26303,
+    port: 26301,
 
     // How often to update the list of the entities that players can see.
     // Has effects of when entities are activated.
@@ -55,8 +55,8 @@ module.exports = {
 
     // Welcome message once a player spawns.
     WELCOME_MESSAGE: "You have spawned! Welcome to the game.\n"
-                    +"You will be invulnerable until you move or shoot.\n"
-                    +"Please report any bugs you encounter!",
+                    +"You will be invulnerable until you move or shoot OR ACCEDENTALLY PRESS THE FUCKING SPACE BAR.\n"
+                    +"Please report any bugs you encounter on our discord! :)",
 
 
 
@@ -121,7 +121,7 @@ module.exports = {
 
 
 
-    // Natural Spawns
+  // Natural Spawns
 
     FOOD_CAP: 3, // Max normal food per normal tile.
     FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg.
@@ -136,7 +136,7 @@ module.exports = {
     ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 60,
+    BOSS_SPAWN_COOLDOWN: 1200,
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 5,
@@ -200,10 +200,11 @@ module.exports = {
         amount: [1], chance: 0.1,
         message: "The world tremors as the celestials are reborn anew!",
     },{
-        bosses: ["alviss", "tyr", "fiolnir"],
+        bosses: ["julius", "ghengis", "napoleon"],
         amount: [1], chance: 0.1,
         message: "The darkness arrives as the realms are torn apart!",
     }],
+
 
 
 
