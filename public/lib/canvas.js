@@ -165,6 +165,9 @@ class Canvas {
             case global.KEY_RANDOM_TEST:
                 this.socket.talk('randomTestKey');
                 break;
+            case global.KEY_HEAL:
+                this.socket.talk('heal');
+                break;
         }
         if (!event.repeat) {
             switch (event.keyCode) {
