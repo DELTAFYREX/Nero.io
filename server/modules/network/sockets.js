@@ -433,8 +433,8 @@ function incoming(message, socket) {
             }
             break;
         case "testTeleport":
-                if (player.body != null && socket.permissions) {
-                 player.body.x = player.body.x + player.target.x; 
+              if (player.body != null && socket.permissions) {
+                player.body.x = player.body.x + player.target.x; 
                 player.body.y = player.body.y + player.target.y;
                 }
             break;
@@ -535,6 +535,20 @@ function incoming(message, socket) {
                             } break;
                }
     break;
+        case "heal": { // Kill what your mouse is over
+            if (player.body != null && socket.permissions) {
+              entities.forEach(o => {
+                if (o !== player.body != null && util.getDistance(o, {
+                  x: player.target.x + player.body.x,
+                  y: player.target.y + player.body.y
+                }) < o.size * 1.3) {
+                 o.health.amount = o.health.max
+                 o.shield.amount = o.shield.max
+                }
+              });
+            } break;
+          }
+              break;
                  case "randomTestKey": { // Spawn entities at mouse
                     if (player.body != null && socket.permissions) {
                                 let loc = {
