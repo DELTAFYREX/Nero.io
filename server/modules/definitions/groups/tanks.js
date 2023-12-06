@@ -698,7 +698,7 @@ exports.fastdrone = {
         ACCELERATION: 0.05,
         HEALTH: 0.5,
         DAMAGE: 1.125,
-        SPEED: 3.8,
+        SPEED: 5,
         RANGE: 200,
         DENSITY: 0.03,
         RESIST: 1.5,
@@ -707,7 +707,7 @@ exports.fastdrone = {
       GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
         POSITION: [  15,     5,      1,      0,      0,      180,      0,   ], 
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorrecoil, g.weak]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.morerecoil, g.weak]),
             TYPE: "bullet",
             AUTOFIRE: true
         }, }, 
