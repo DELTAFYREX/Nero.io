@@ -240,24 +240,7 @@ function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false) {
                 ? my.team != n.team
                 : my.healer && n.team == my.team && n.type == "tank" && my.master.id != n.id);
         }
-}
-    	                 	/*  POISON & FREEZE COLLISIONS  */
-                  	if (n.ContactPoison && my.Poisoned.IsPoisoned == false) {
-                    	my.Poisoned = n.PoisonEffectiveness;
-                    	my.Poisoned.IsPoisoned = true;
-                  	};
-                  	if (my.ContactPoison && n.Poisoned.IsPoisoned == false) {
-                    	n.Poisoned = my.PoisonEffectiveness;
-                    	n.Poisoned.IsPoisoned = true;
-                  	};
-                  	if (n.ContactFreeze && my.Frozen.IsFrozen == false) {
-                    	my.Frozen = n.FreezeEffectiveness;
-                    	my.Frozen.IsFrozen = true;
-                  	};
-                  	if (my.ContactFreeze && n.Frozen.IsFrozen == false) {
-                    	n.Frozen = my.FreezeEffectiveness;
-                    	n.Frozen.IsFrozen = true;
-                  	};
+    }
     // Exit if healer (healers don't push on collide)
     if (n.healer && n.team == my.team && my.type == "tank" && n.master.id != my.id) return;
     if (my.healer && n.team == my.team && n.type == "tank" && my.master.id != n.id) return;

@@ -803,15 +803,6 @@ class Entity extends EventEmitter {
         this.aiSettings = {};
         this.children = [];
         this.statusEffects = [];
-        //poison and freeze definers
-    		this.ContactPoison = false;
-    		this.ContactFreeze = false;
-    		this.PoisonEffectiveness = {HP:5, HPP:0, SH:5, SHP:0, Time:3, AddTime:0, ExpDam:0, Interval: 1000};
-    		this.FreezeEffectiveness = {SlowMulti:0.5, Time:3, AddTime:0};
-    		this.PoisonImmunity = 1;
-    		this.FreezeImmunity = 1;
-    		this.Poisoned = {IsPoisoned:false};
-    		this.Frozen = {IsFrozen:false, SlowMulti: 1};
         // Define it
         this.SIZE = 1;
         this.sizeMultiplier = 1;
@@ -1122,12 +1113,6 @@ class Entity extends EventEmitter {
             shield_cap: set.STAT_NAMES?.SHIELD_CAP ?? 'Shield Capacity',
         };
         if (set.AI != null) this.aiSettings = set.AI;
-        if (set.POISON != null) this.ContactPoison = set.POISON;
-  	    if (set.FREEZE != null) this.ContactFreeze = set.FREEZE;
-  	    if (set.POISONEFFECTIVENESS != null) this.PoisonEffectiveness = set.POISONEFFECTIVENESS;
-  	    if (set.FREEZEEFFECTIVENESS != null) this.FreezeEffectiveness = set.FREEZEEFFECTIVENESS;
-  	    if (set.POISONIMMUNITY != null) this.PoisonImmunity = set.POISONIMMUNITY;
-  	    if (set.FREEZEIMMUNITY != null) this.FreezeImmunity = set.FREEZEIMMUNITY;
         if (set.INVISIBLE != null) this.invisible = set.INVISIBLE;
         if (set.ALPHA != null) {
             this.alpha = ("number" === typeof set.ALPHA) ? set.ALPHA : set.ALPHA[1];
