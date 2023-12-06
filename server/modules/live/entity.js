@@ -1122,24 +1122,12 @@ class Entity extends EventEmitter {
             shield_cap: set.STAT_NAMES?.SHIELD_CAP ?? 'Shield Capacity',
         };
         if (set.AI != null) this.aiSettings = set.AI;
-         	if (set.POISON != null) {
-        	this.ContactPoison = set.POISON;
-    	}
-  	if (set.FREEZE != null) {
-        	this.ContactFreeze = set.FREEZE;
-    	}
-  	if (set.POISONEFFECTIVENESS != null) {
-        	this.PoisonEffectiveness = set.POISONEFFECTIVENESS;
-    	}
-  	if (set.FREEZEEFFECTIVENESS != null) {
-        	this.FreezeEffectiveness = set.FREEZEEFFECTIVENESS;
-    	}
-  	if (set.POISONIMMUNITY != null) {
-        	this.PoisonImmunity = set.POISONIMMUNITY;
-    	}
-  	if (set.FREEZEIMMUNITY != null) {
-        	this.FreezeImmunity = set.FREEZEIMMUNITY;
-    	}
+        if (set.POISON != null) this.ContactPoison = set.POISON;
+  	    if (set.FREEZE != null) this.ContactFreeze = set.FREEZE;
+  	    if (set.POISONEFFECTIVENESS != null) this.PoisonEffectiveness = set.POISONEFFECTIVENESS;
+  	    if (set.FREEZEEFFECTIVENESS != null) this.FreezeEffectiveness = set.FREEZEEFFECTIVENESS;
+  	    if (set.POISONIMMUNITY != null) this.PoisonImmunity = set.POISONIMMUNITY;
+  	    if (set.FREEZEIMMUNITY != null) this.FreezeImmunity = set.FREEZEIMMUNITY;
         if (set.INVISIBLE != null) this.invisible = set.INVISIBLE;
         if (set.ALPHA != null) {
             this.alpha = ("number" === typeof set.ALPHA) ? set.ALPHA : set.ALPHA[1];
