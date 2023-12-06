@@ -1019,7 +1019,7 @@ exports.wallPlacer = {
     ],
 };
 exports.uzisoprailgun = {
-  PARENT: [exports.genericTank],
+  PARENT: "genericTank",
   LABEL: "UZI's OP Railgun",
   DANGER: 7,
   LEVEL: 9999999999999999999999,
@@ -1034,30 +1034,30 @@ exports.uzisoprailgun = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [1, 7.5, 0, 30, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
-        TYPE: exports.operlazerbeam
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
+        TYPE: "operlazerbeam"
       }
     },
     {
       POSITION: [1, 7.5, 0, 15, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
-        TYPE: exports.operlazerbeam
+        TYPE: "operlazerbeam"
       }
     },
     {
       POSITION: [1, 7.5, 0, 20, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
-        TYPE: exports.operlazerbeam
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
+        TYPE: "operlazerbeam"
       }
       },
     {
       POSITION: [1, 7.5, 0, 25, 0, 0, 0],
 
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
-        TYPE: exports.operlazerbeam
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
+        TYPE: "operlazerbeam"
       }
     },
     {
