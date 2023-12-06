@@ -1322,7 +1322,7 @@ exports.AIT = {
 exports.addons = {
     PARENT: "menu",
     LABEL: "Addon Entities",
-    UPGRADES_TIER_0: []
+    UPGRADES_TIER_0: ["developer"]
 };
 
 exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"];

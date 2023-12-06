@@ -689,6 +689,41 @@ exports.laser = {
         DAMAGE: 4.65,
     }
 }
+exports.fastdrone = {
+  PARENT: "drone",  
+  LABEL: 'Drone',
+    BODY: {
+        PENETRATION: 1.2,
+        PUSHABILITY: 0.6,
+        ACCELERATION: 0.05,
+        HEALTH: 0.5,
+        DAMAGE: 1.125,
+        SPEED: 3.8,
+        RANGE: 200,
+        DENSITY: 0.03,
+        RESIST: 1.5,
+        FOV: 0.8,
+    },
+      GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  15,     5,      1,      0,      0,      180,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorrecoil, g.weak]),
+            TYPE: exports.bullet,
+            LABEL: '',                  // def
+            STAT_CALCULATOR: 0,         // def
+            WAIT_TO_CYCLE: false,       // def
+            AUTOFIRE: false,            // def
+            SYNCS_SKILLS: false,        // def         
+            MAX_CHILDREN: 0,            // def  
+            ALT_FIRE: false,            // def 
+            NEGATIVE_RECOIL: false,     // def
+        }, }, 
+    ],
+    HITS_OWN_TYPE: 'hard',
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    BUFF_VS_FOOD: true,
+};
 exports.auto4gun = {
     PARENT: "autoTankGun",
     BODY: {
@@ -3515,7 +3550,28 @@ exports.bigCheese = {
         },
     ],
 }
-
+    exports.dictator = {
+        PARENT: ["genericTank"],
+        LABEL: "Dictator",  
+        STAT_NAMES: statnames.drone,
+        DANGER: 5,
+        SHAPE: 8,
+        BODY: {
+            ACCELERATION: base.ACCEL * 0.75,
+            FOV: base.FOV * 1.1,
+        },
+        MAX_CHILDREN: 4,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                    TYPE: "fastdrone",
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: gunCalcNames.drone,
+                }, },
+        ],
+    };
 // Overseer upgrades
 exports.overlord = {
     PARENT: ["genericTank"],
