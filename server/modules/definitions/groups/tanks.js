@@ -1818,6 +1818,51 @@ exports.assassin = {
         }
     ]
 }
+exports.railgun = {
+    PARENT: "genericTank",
+    DANGER: 6,
+    LABEL: "Railgun",
+    BODY: {
+        SPEED: 0.85 * base.SPEED,
+        FOV: 1.4 * base.FOV
+    },
+    GUNS: [
+          {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [1, 7.5, 0, 30, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: "bullet"
+      }
+    }, {
+      POSITION: [1, 7.5, 0, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast]),
+                TYPE: "bullet"
+            }
+        },    {
+      POSITION: [1, 7.5, 0, 20, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: "bullet"
+      }
+      },
+    {
+      POSITION: [1, 7.5, 0, 25, 0, 0, 0],
+
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [30, 1, 0, 10, 5, 0, 0]
+    },
+    {
+      POSITION: [30, 1, 0, 10, -5, 0, 0]
+    }
+    ]
+}
 exports.hunter = {
     PARENT: "genericTank",
     LABEL: "Hunter",
