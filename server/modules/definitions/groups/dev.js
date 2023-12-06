@@ -1330,7 +1330,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 

@@ -708,15 +708,8 @@ exports.fastdrone = {
         POSITION: [  15,     5,      1,      0,      0,      180,      0,   ], 
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorrecoil, g.weak]),
-            TYPE: exports.bullet,
-            LABEL: '',                  // def
-            STAT_CALCULATOR: 0,         // def
-            WAIT_TO_CYCLE: false,       // def
-            AUTOFIRE: false,            // def
-            SYNCS_SKILLS: false,        // def         
-            MAX_CHILDREN: 0,            // def  
-            ALT_FIRE: false,            // def 
-            NEGATIVE_RECOIL: false,     // def
+            TYPE: "bullet",
+            AUTOFIRE: true
         }, }, 
     ],
     HITS_OWN_TYPE: 'hard',
@@ -1831,7 +1824,7 @@ exports.railgun = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [1, 7.5, 0, 30, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
         TYPE: "bullet"
       }
     }, {
@@ -1843,7 +1836,7 @@ exports.railgun = {
         },    {
       POSITION: [1, 7.5, 0, 20, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
         TYPE: "bullet"
       }
       },
@@ -1851,7 +1844,7 @@ exports.railgun = {
       POSITION: [1, 7.5, 0, 25, 0, 0, 0],
 
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
         TYPE: "bullet"
       }
     },
