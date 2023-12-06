@@ -619,6 +619,10 @@ class Gun {
                 out.PENETRATION = Math.max(1, shoot.pen * (0.5 * (sk.pen - 1) + 1));
                 out.HEALTH /= shoot.pen * sk.pen;
                 break;
+            case "explode":
+                this.SIZE += 10;
+                this.DAMAGE += 3;
+                break;
             case "trap":
             case "block":
                 out.PUSHABILITY = 1 / Math.pow(sk.pen, 0.5);
@@ -1750,6 +1754,10 @@ class Entity extends EventEmitter {
                 this.maxSpeed = this.topSpeed;
                 this.damp = -0.025;
                 break;
+            case "explode":
+                this.SIZE += 10;
+                this.DAMAGE += 3;
+                break;
             case "swarm":
                 this.maxSpeed = this.topSpeed;
                 let l =
@@ -1878,10 +1886,6 @@ class Entity extends EventEmitter {
                 break;
             case "noFacing":
                 this.facing = 0;
-                break;
-            case "spin":
-                this.SIZE += 10;
-                this.DAMAGE += 3;                
                 break;
             case "bound":
                 let givenangle,
