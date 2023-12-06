@@ -144,26 +144,6 @@ exports.rammers = {
         },
     ],
 };
-exports.operlazerbeam = {
-    LABEL: 'lazerbeam',
-    TYPE: 'bullet',
-    SHAPE: -1,
-    SIZE: 10,
-    ACCEPTS_SCORE: true,
-    BODY: {
-        PENETRATION: 10,
-        SPEED: 30,
-        RANGE: 155,
-        DENSITY: 1.25,
-        HEALTH: 10,
-        DAMAGE: 12,
-        PUSHABILITY: 0.3,
-    },
-    FACING_TYPE: 'smoothWithMotion',
-    CAN_GO_OUTSIDE_ROOM: true,
-    HITS_OWN_TYPE: 'never',
-    DIE_AT_RANGE: true,
-};
 exports.terrestrials = {
     PARENT: ["menu"],
     LABEL: "Terrestrials",
