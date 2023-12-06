@@ -147,10 +147,6 @@ exports.rammers = {
 exports.operlazerbeam = {
     LABEL: 'lazerbeam',
     TYPE: 'bullet',
-    MOTION_TYPE: 'explode',
-    FACING_TYPE: 'smoothWithMotion',
-    CAN_GO_OUTSIDE_ROOM: true,
-    HITS_OWN_TYPE: 'never',
     SHAPE: -1,
     SIZE: 10,
     ACCEPTS_SCORE: true,
@@ -1018,56 +1014,6 @@ exports.wallPlacer = {
         },
     ],
 };
-exports.uzisoprailgun = {
-  PARENT: "genericTank",
-  LABEL: "UZI's OP Railgun",
-  DANGER: 7,
-  LEVEL: 9999999999999999999999,
-  SCORE: 9999999999999999999999,
-  BODY: {
-                ACCELERATION: base.ACCEL * 0.6,
-                SPEED: base.SPEED * 0.85,
-                FOV: base.FOV * 3,
-            },
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [1, 7.5, 0, 30, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
-        TYPE: "operlazerbeam"
-      }
-    },
-    {
-      POSITION: [1, 7.5, 0, 15, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
-        TYPE: "operlazerbeam"
-      }
-    },
-    {
-      POSITION: [1, 7.5, 0, 20, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
-        TYPE: "operlazerbeam"
-      }
-      },
-    {
-      POSITION: [1, 7.5, 0, 25, 0, 0, 0],
-
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
-        TYPE: "operlazerbeam"
-      }
-    },
-    {
-      POSITION: [30, 1, 0, 10, 5, 0, 0]
-    },
-    {
-      POSITION: [30, 1, 0, 10, -5, 0, 0]
-    }
-  ],
-};
 exports.imagetest = {
     PARENT: "genericTank",
     LABEL: "Papyrus",
@@ -1420,7 +1366,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "ragnarok", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "uzisoprailgun", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest", "winsor0"];
 
     exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
