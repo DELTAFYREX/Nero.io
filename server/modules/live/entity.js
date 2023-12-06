@@ -1879,6 +1879,10 @@ class Entity extends EventEmitter {
             case "noFacing":
                 this.facing = 0;
                 break;
+            case "spin":
+                this.SIZE += 10;
+                this.DAMAGE += 3;                
+                break;
             case "bound":
                 let givenangle,
                     reduceIndependence = false,

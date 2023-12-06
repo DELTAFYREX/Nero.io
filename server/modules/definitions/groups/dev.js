@@ -144,6 +144,30 @@ exports.rammers = {
         },
     ],
 };
+exports.operlazerbeam = {
+    LABEL: 'lazerbeam',
+    TYPE: 'bullet',
+    MOTION_TYPE: 'opexplode',
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    SHAPE: -1,
+    SIZE: 10,
+    ACCEPTS_SCORE: true,
+    BODY: {
+        PENETRATION: 10,
+        SPEED: 30,
+        RANGE: 155,
+        DENSITY: 1.25,
+        HEALTH: 10,
+        DAMAGE: 12,
+        PUSHABILITY: 0.3,
+    },
+    FACING_TYPE: 'smoothWithMotion',
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: 'never',
+    DIE_AT_RANGE: true,
+};
 exports.terrestrials = {
     PARENT: ["menu"],
     LABEL: "Terrestrials",
@@ -993,6 +1017,56 @@ exports.wallPlacer = {
             },
         },
     ],
+};
+exports.uzisoprailgun = {
+  PARENT: [exports.genericTank],
+  LABEL: "UZI's OP Railgun",
+  DANGER: 7,
+  LEVEL: 9999999999999999999999,
+  SCORE: 9999999999999999999999,
+  BODY: {
+                ACCELERATION: base.ACCEL * 0.6,
+                SPEED: base.SPEED * 0.85,
+                FOV: base.FOV * 3,
+            },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [1, 7.5, 0, 30, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: exports.operlazerbeam
+      }
+    },
+    {
+      POSITION: [1, 7.5, 0, 15, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.op, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload, g.morereload]),
+        TYPE: exports.operlazerbeam
+      }
+    },
+    {
+      POSITION: [1, 7.5, 0, 20, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: exports.operlazerbeam
+      }
+      },
+    {
+      POSITION: [1, 7.5, 0, 25, 0, 0, 0],
+
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake]),
+        TYPE: exports.operlazerbeam
+      }
+    },
+    {
+      POSITION: [30, 1, 0, 10, 5, 0, 0]
+    },
+    {
+      POSITION: [30, 1, 0, 10, -5, 0, 0]
+    }
+  ],
 };
 exports.imagetest = {
     PARENT: "genericTank",
