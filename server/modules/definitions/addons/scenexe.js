@@ -57,7 +57,7 @@ const baseScenexe = {
  */
 module.exports = ({ Class, Config }) => {
 
-    //return console.log('Addon [scenexe.js] is disabled')
+    return console.log('Addon [scenexe.js] is disabled')
     
     Config.SPAWN_CLASS = ['SCENEXEnode', 'SCENEXEbase']
     Class.SCENEXEnode = {
