@@ -551,6 +551,7 @@ exports.gunchip = {
 }
 exports.spaghetti = {
   PARENT: "bullet",
+  SHOOT_ON_DEATH: true,
   SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/afg-spaghetti-alla-assassina-1-19ef-superJumbo.jpg?v=1701450288242",
       GUNS: [
         {
