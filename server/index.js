@@ -226,8 +226,6 @@ const gameloop = () => {
                 my.life();
                 logs.life.mark();
                 // Apply friction.
-                poison(my);
-                freeze(my);
                 my.friction();
                 my.confinementToTheseEarthlyShackles();
                 logs.selfie.set();
