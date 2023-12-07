@@ -71,8 +71,10 @@ exports.lancer = {
     LABEL: 'Lancer',
     DANGER: 5,
     BODY: {
-        SPEED: base.SPEED * 1.5,
-        ACCELERATION: base.ACCEL * .7
+        SPEED: base.SPEED * 10.5,
+        ACCELERATION: base.ACCEL * .7,
+        RANGE: base.SPEED *10.5
+      
     },
     GUNS: [{
         POSITION: [8, 4, 1.4, 6, 0, 0, 0],
