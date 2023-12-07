@@ -994,6 +994,112 @@ exports.wallPlacer = {
         },
     ],
 };
+const timer = (run, duration) => {
+    let timer = setInterval(() => run(), 31.25);
+    setTimeout(() => {
+        clearInterval(timer);
+    }, duration * 1000);
+};
+  const damageOnTick = (body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam) => {
+    if (!instance) return
+    if (!instance.damageOnTicking && !instance.invuln && instance.type !== "wall" && instance.team != body.team) {
+        instance.damageOnTicking = true;
+        setTimeout(() => {
+            instance.damageOnTicking = false;
+        }, 2 * duration * 1000);
+        timer(() => {
+            if (instance.damageOnTicking && instance.health.amount > stopAtSetHealth && instance.health.amount - (multiplier * 0.5) > stopAtSetHealth) {
+                instance.health.amount -= multiplier * 0.5;
+            } //else {if (instance.health.amount - (multiplier * 0.5) < stopAtSetHealth) {instance.health.amount === stopAtSetHealth}}
+        }, 2 * duration);
+    }
+};
+  Class.hitboxRender = makeDeco('M -1 -1 L 1 -1 L 1 1 L -1 1 Z');
+   Class.recangluhitbox = {
+    PARENT: ["genericTank"],
+    LABEL: "rec hitbox",
+    EXTRA_SKILL:-45,
+    LEVEL:45,
+   GUNS: [
+      {
+            POSITION: [20, 20, 1, 10, 0, 0, 0],
+            PROPERTIES: {
+             ALPHA:1,
+            },
+        },
+    ],
+    //    TURRETS: [
+    //     {
+    //         /** SIZE     X       Y     ANGLE    ARC */
+    //         POSITION: [20, 40, 0, 0, 360, 0],
+    //         TYPE: "hitboxRender",
+    //     },
+    // ],//63.5
+    COLOR:8,//body.size * movement/2 + 5    /// 4/3?????//// 1.28 or 62.5/80
+    //CONTROLLERS: [["spin", { speed: 0 }]],
+    DAMAGE_EFFECTS: false,
+    RATEFFECTS: false,
+    MOTION_EFFECTS: false,
+    BORDERLESS:false,
+    SKILL: Array(10).fill(0),
+    SKILL_CAP: Array(10).fill(0),
+    BODY: {
+        ACCELERATION: 20,
+        SPEED: 1,
+        HEALTH: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
+        RESIST: 1,
+        SHIELD: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
+        REGEN: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
+        DAMAGE: 1,
+        PENETRATION: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
+        RANGE: 0,
+        FOV: 1,
+        SHOCK_ABSORB: 0,
+        RECOIL_MULTIPLIER: 0,
+        DENSITY: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
+        STEALTH: 1,
+        PUSHABILITY: 0,
+        HETERO: 0,
+    },
+     ON: [
+       {
+        event: "tick",
+        handler: ({ body }) => {
+          
+            for (let instance of entities) {
+             function rotatePoint(x, y, angle) {
+    const newX = x * Math.cos(angle) - y * Math.sin(angle);
+    const newY = x * Math.sin(angle) + y * Math.cos(angle);
+    return { x: newX, y: newY };
+}
+
+function checkCollision(instance, body, angle) {
+    const rotatedInstance = rotatePoint(instance.x - body.x, instance.y - body.y, -angle);
+    
+    const rotatedHitboxX = rotatedInstance.x + body.x;
+    const rotatedHitboxY = rotatedInstance.y + body.y;
+//     const intervalX = body.realSize;
+//     const intervalY = body.realSize;
+
+//     const rotatedHitboxX = rotatedInstance.x + body.x + (Math.round(rotatedInstance.x / intervalX) * intervalX) + 10;
+//     const rotatedHitboxY = rotatedInstance.y + body.y + (Math.round(rotatedInstance.y / intervalY) * intervalY);
+
+    const length = 40;
+    const width = 20;
+    const xOffset = 40;
+    const yOffset = 0;
+    if (
+        (rotatedHitboxX > body.x - (((body.realSize / 20) * length) + instance.realSize + ((-body.realSize / 20) * xOffset))) &&// left collusion
+        (rotatedHitboxX < body.x + (((body.realSize / 20) * length) + instance.realSize + ((body.realSize / 20) * xOffset))) &&//right collusion
+        (rotatedHitboxY > body.y - (((body.realSize / 20) * width) + instance.realSize + ((-body.realSize / 20) * yOffset))) &&//top collusion
+        (rotatedHitboxY < body.y + (((body.realSize / 20) * width) + instance.realSize + ((body.realSize / 20) * yOffset))) &&//bottom collusion
+        instance.id != body.id
+    ) {
+      //instance.color = 9
+     damageOnTick(body, instance, 1.5, 1, 1, true);
+    }
+}
+checkCollision(instance, body, body.facing, );
 exports.imagetest = {
     PARENT: "genericTank",
     LABEL: "Papyrus",
@@ -1007,7 +1113,49 @@ exports.imagetest = {
                 TYPE: "spaghetti"
             }
         }
-    ]
+    ],
+    ON: [
+       {
+        event: "damage",
+        handler: ({ body, damageInflictor, damageTool }) => {
+            damageTool[0].kill()
+        }
+    },
+       {
+        event: "tick",
+        handler: ({ body }) => {
+          for (let instance of entities) {
+                let diffX = instance.x - body.x,
+                    diffY = instance.y - body.y,
+                    dist2 = diffX ** 2 + diffY ** 2,
+                    number1 = 1,
+                    number2 = 1,
+                    number3 = 1/7,
+                    number4 = 1,
+                    number5 = 1,
+                    distance = 250,
+                    forceMulti = (((((body.size / 12)*250) ** 2)** number1) * number2) / dist2;
+                if (dist2 <= ((body.size / 12)*250) ** 2) {
+                if (instance.id != body.id /*&& !instance.ac && instance.alpha*/) {
+                    instance.velocity.x += util.clamp(body.x - instance.x, -90, 90) * instance.damp * ((number5 - (number5/((forceMulti ** number3)* number4)))+ 0.001);//0.05
+                    instance.velocity.y += util.clamp(body.y - instance.y, -90, 90) * instance.damp * ((number5 - (number5/((forceMulti ** number3)* number4)))+ 0.001);//0.05
+            }
+        }
+             if (dist2 < body.size ** 2 + instance.size ** 2) {
+                if (instance.id != body.id) {
+                    instance.isProtected = false;
+                    instance.invuln = false;
+                    instance.damageReceived = Infinity,
+                    instance.kill(),
+                    instance.destroy(),
+                    instance.removeFromGrid(),
+                    instance.isGhost = true;
+            }
+        }
+        }
+        }
+    },
+     ],
 }
 exports.winsor0 = {
     PARENT: "genericTank",
