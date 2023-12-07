@@ -1823,37 +1823,36 @@ exports.railgun = {
     GUNS: [
           {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [1, 7.5, 1, 30, 0, 0, 0],
+      POSITION: [1, 6.5, 1, 25, 0, 0, 0.4],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
-        TYPE: "bullet"
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.weak]),
+        TYPE: "speedBullet"
       }
     }, {
-      POSITION: [1, 7.5, 1, 15, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast]),
-                TYPE: "speedBullet"
+      POSITION: [1, 6.5, 1, 10, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.weak]),
+        TYPE: "speedBullet"
             }
         },    {
-      POSITION: [1, 7.5, 1, 20, 0, 0, 0],
+      POSITION: [1, 6.5, 1, 15, 0, 0, 0.2],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
-        TYPE: "bullet"
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.weak]),
+        TYPE: "speedBullet"
       }
       },
     {
-      POSITION: [1, 7.5, 1, 25, 0, 0, 0],
-
+      POSITION: [1, 6.5, 1, 20, 0, 0, 0.3],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
-        TYPE: "bullet"
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.weak]),
+        TYPE: "speedBullet"
       }
     },
     {
-      POSITION: [30, 1, 1, 10, 5, 0, 0]
+      POSITION: [20, 2.5, 1, 10, 4, 0, 0]
     },
     {
-      POSITION: [30, 1, 1, 10, -5, 0, 0]
+      POSITION: [20, 2.5, 1, 10, -4, 0, 0]
     }
     ]
 }
