@@ -1095,7 +1095,7 @@ function checkCollision(instance, body, angle) {
         (rotatedHitboxY < body.y + (((body.realSize / 20) * width) + instance.realSize + ((body.realSize / 20) * yOffset))) &&//bottom collusion
         instance.id != body.id
     ) {
-      instance.color = 9
+      //instance.color = 9
      damageOnTick(body, instance, 1.5, 1, 1, true);
     }
 }

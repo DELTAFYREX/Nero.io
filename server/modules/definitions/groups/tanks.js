@@ -1971,6 +1971,7 @@ exports.stalker = {
 exports.autoAssassin = makeAuto(exports.assassin)
 exports.single = {
     PARENT: "genericTank",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159',
     LABEL: "Single",
     DANGER: 7,
     GUNS: [

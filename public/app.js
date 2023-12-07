@@ -582,7 +582,7 @@ function isImageURL(url) {
         const ext = path.split('.').pop().toLowerCase(); // Get the lowercase file extension
 
         // List of common image file extensions
-        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
+        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg', 'mp4'];
 
         return imageExtensions.includes(ext) || parsedUrl.protocol == 'data:';
     } catch (error) {
