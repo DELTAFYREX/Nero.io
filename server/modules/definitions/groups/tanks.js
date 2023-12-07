@@ -1832,7 +1832,7 @@ exports.railgun = {
       POSITION: [1, 7.5, 0, 15, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast]),
-                TYPE: "bullet"
+                TYPE: "speedbullet"
             }
         },    {
       POSITION: [1, 7.5, 0, 20, 0, 0, 0],
