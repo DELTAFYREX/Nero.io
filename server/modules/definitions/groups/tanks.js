@@ -682,11 +682,11 @@ exports.laser = {
   SHAPE: -1,
   BODY: {
         PENETRATION: 0.7,
-        SPEED: 5.2,
+        SPEED: 5.8,
         RANGE: 100,
         DENSITY: 0.85,
-        HEALTH: 0.1,
-        DAMAGE: 4.65,
+        HEALTH: 0.15,
+        DAMAGE: 4.55,
     },
   BUFF_VS_FOOD: true,
 }
