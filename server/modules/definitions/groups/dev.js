@@ -72,7 +72,7 @@ exports.lancerbullet = {
       BODY: {
         SPEED: ((base.SPEED * 5) + (base.SPEED * 8.5)),
         ACCELERATION: base.ACCEL * 0.7,
-        RANGE: ((base.SPEED * 5) + (base.SPEED * 8.5))
+        RANGE: 0 + ((base.SPEED * 5) + (base.SPEED * 8.5))
   },
 }
 exports.lancer = {
@@ -89,6 +89,9 @@ exports.lancer = {
             AUTOFIRE: true,
             SHOOT_SETTINGS: combineStats([g.lance]),
             TYPE: "lancerbullet",
+              SPEED: ((base.SPEED * 5) + (base.SPEED * 8.5)),
+              ACCELERATION: base.ACCEL * 0.7,
+              RANGE: base.SPEED * 5 + base.SPEED * 8.5,
             //ALPHA: 0,
             LABEL: 'Lance'
             }
