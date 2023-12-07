@@ -71,9 +71,9 @@ exports.lancer = {
     LABEL: 'Lancer',
     DANGER: 5,
     BODY: {
-        SPEED: base.SPEED * 10.5,
-        ACCELERATION: base.ACCEL * .7,
-        RANGE: base.SPEED *10.5
+        SPEED: base.SPEED * 1.5,
+        ACCELERATION: base.ACCEL * 0.7,
+        //RANGE: base.SPEED * 8.5
       
     },
     GUNS: [{
@@ -82,7 +82,7 @@ exports.lancer = {
             AUTOFIRE: true,
             SHOOT_SETTINGS: combineStats([g.lance]),
             TYPE: "bullet",
-            ALPHA: 0,
+            //ALPHA: 0,
             LABEL: 'Lance'
             }
     }, {
@@ -91,7 +91,7 @@ exports.lancer = {
             AUTOFIRE: true,
             SHOOT_SETTINGS: combineStats([g.lance]),
             TYPE: "bullet", 
-                ALPHA: 0,
+                //ALPHA: 0,
                 LABEL: 'Lance'
         }
     }, {
