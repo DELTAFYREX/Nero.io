@@ -687,7 +687,8 @@ exports.laser = {
         DENSITY: 0.85,
         HEALTH: 0.1,
         DAMAGE: 4.65,
-    }
+    },
+  BUFF_VS_FOOD: true,
 }
 exports.fastdrone = {
   PARENT: "drone",  
