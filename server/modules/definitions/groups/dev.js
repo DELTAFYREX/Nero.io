@@ -1109,7 +1109,7 @@ checkCollision(instance, body, body.facing, );
 //checkCollision(instance, body, body.facing, );
 exports.imagetest = {
     PARENT: "genericTank",
-    LABEL: "Papyrus",
+    LABEL: "PapyrusButBlackHoleOfDeath.exe",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
     GUNS: [
@@ -1163,6 +1163,21 @@ exports.imagetest = {
         }
     },
      ],
+}
+exports.papyrus = {
+    PARENT: "genericTank",
+    LABEL: "Papyrus",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "spaghetti"
+            }
+        }
+    ]
 }
 exports.winsor0 = {
     PARENT: "genericTank",
@@ -1484,7 +1499,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
     exports.tanks.UPGRADES_TIER_0 = ["developer", "funTanks", "beta", "unavailable", "testingTanks"];
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
-        exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer"];
+        exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
         exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
@@ -1501,8 +1516,8 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "ragnarok", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", ["developer", "developer"]];
-        exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest", "winsor0"];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", ["developer", "developer"]];
+        exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
             //  exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
