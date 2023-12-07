@@ -66,6 +66,36 @@ exports.developer = {
         },
     ],
 };
+exports.lancer = {
+    PARENT: "genericTank",
+    LABEL: 'Lancer',
+    DANGER: 5,
+    BODY: {
+        SPEED: base.SPEED * 1.5,
+        ACCELERATION: base.ACCEL * .7
+    },
+    GUNS: [{
+        POSITION: [8, 4, 1.4, 6, 0, 0, 0],
+        PROPERTIES: {
+            AUTOFIRE: true,
+            SHOOT_SETTINGS: combineStats([g.lance]),
+            TYPE: "bullet",
+            ALPHA: 0,
+            LABEL: 'Lance'
+            }
+    }, {
+        POSITION: [8, 4, 1.4, 8.5, 0, 0, 0],
+        PROPERTIES: {
+            AUTOFIRE: true,
+            SHOOT_SETTINGS: combineStats([g.lance]),
+            TYPE: "bullet", 
+                ALPHA: 0,
+                LABEL: 'Lance'
+        }
+    }, {
+        POSITION: [25, .3, -55, 0, 0, 0, 0]
+    }],
+};
 exports.spectator = {
     PARENT: ["menu"],
     LABEL: "Spectator",
@@ -1500,7 +1530,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun", "lancer"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
