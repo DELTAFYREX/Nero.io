@@ -68,10 +68,11 @@ exports.developer = {
 };
 exports.lancerbullet = {
     PARENT: "bullet",
+      SIZE: ((base.SPEED * 5) + (base.SPEED * 8.5)),
       BODY: {
-        SPEED: base.SPEED * 1.5,
+        SPEED: ((base.SPEED * 5) + (base.SPEED * 8.5)),
         ACCELERATION: base.ACCEL * 0.7,
-        RANGE: base.SPEED * base.SPEED * 8.5
+        RANGE: ((base.SPEED * 5) + (base.SPEED * 8.5))
   },
 }
 exports.lancer = {
