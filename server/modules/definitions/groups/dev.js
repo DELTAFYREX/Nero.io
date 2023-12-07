@@ -1,4 +1,4 @@
-const { combineStats, addAura } = require('../facilitators.js');
+const { combineStats, addAura, makeDeco } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -1014,8 +1014,8 @@ const timer = (run, duration) => {
         }, 2 * duration);
     }
 };
-  Class.hitboxRender = makeDeco('M -1 -1 L 1 -1 L 1 1 L -1 1 Z');
-   Class.recangluhitbox = {
+  exports.hitboxRender = makeDeco('M -1 -1 L 1 -1 L 1 1 L -1 1 Z');
+   exports.recangluhitbox = {
     PARENT: ["genericTank"],
     LABEL: "rec hitbox",
     EXTRA_SKILL:-45,
@@ -1061,7 +1061,7 @@ const timer = (run, duration) => {
         PUSHABILITY: 0,
         HETERO: 0,
     },
-     ON: [
+      ON: [
        {
         event: "tick",
         handler: ({ body }) => {
@@ -1100,6 +1100,13 @@ function checkCollision(instance, body, angle) {
     }
 }
 checkCollision(instance, body, body.facing, );
+              
+            }
+            }
+        }
+     ],
+};
+//checkCollision(instance, body, body.facing, );
 exports.imagetest = {
     PARENT: "genericTank",
     LABEL: "Papyrus",
@@ -1497,4 +1504,5 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "imagetest", "winsor0"];
 
-    exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
+        //the "winsor" tank needs this to function, it worked before the "ON" thing was added
+            //  exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
