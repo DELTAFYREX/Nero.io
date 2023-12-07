@@ -1823,26 +1823,26 @@ exports.railgun = {
     GUNS: [
           {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [1, 7.5, 0, 30, 0, 0, 0],
+      POSITION: [1, 7.5, 1, 30, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
         TYPE: "bullet"
       }
     }, {
-      POSITION: [1, 7.5, 0, 15, 0, 0, 0],
+      POSITION: [1, 7.5, 1, 15, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast]),
-                TYPE: "speedbullet"
+                TYPE: "speedBullet"
             }
         },    {
-      POSITION: [1, 7.5, 0, 20, 0, 0, 0],
+      POSITION: [1, 7.5, 1, 20, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
         TYPE: "bullet"
       }
       },
     {
-      POSITION: [1, 7.5, 0, 25, 0, 0, 0],
+      POSITION: [1, 7.5, 1, 25, 0, 0, 0],
 
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.fake, g.one_third_reload, g.fast]),
@@ -1850,10 +1850,10 @@ exports.railgun = {
       }
     },
     {
-      POSITION: [30, 1, 0, 10, 5, 0, 0]
+      POSITION: [30, 1, 1, 10, 5, 0, 0]
     },
     {
-      POSITION: [30, 1, 0, 10, -5, 0, 0]
+      POSITION: [30, 1, 1, 10, -5, 0, 0]
     }
     ]
 }
