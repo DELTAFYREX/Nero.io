@@ -1095,7 +1095,7 @@ function checkCollision(instance, body, angle) {
         (rotatedHitboxY < body.y + (((body.realSize / 20) * width) + instance.realSize + ((body.realSize / 20) * yOffset))) &&//bottom collusion
         instance.id != body.id
     ) {
-      //instance.color = 9
+      instance.color = 9
      damageOnTick(body, instance, 1.5, 1, 1, true);
     }
 }
@@ -1520,4 +1520,5 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
-            //  exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
+              exports.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
+              exports.papyrus.UPGRADES_TIER_0 = ["imagetest"];
