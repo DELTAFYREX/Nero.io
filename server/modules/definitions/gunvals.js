@@ -1,5 +1,3 @@
-const { gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('./constants.js');
-
 module.exports = {
     // Misc
     blank: { reload: 1, recoil: 1, shudder: 1, size: 1, health: 1, damage: 1, pen: 1, speed: 1, maxSpeed: 1, range: 1, density: 1, spray: 1, resist: 1 },
@@ -146,6 +144,5 @@ module.exports = {
     halfrange: { range: 0.5 },
     acc: { shudder: 0.1 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, damage: 3, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
-    noRandom: { shudder: 0, spray: 0 },
-    lance: { reload: 6, recoil: 0, shudder: 0.1, size: 1, health: 0.1, damage: 1, pen: 1.2, speed: 1, maxSpeed: 1, range: 0.125, density: 1, spray: 0, resist: 1},
+    noRandom: { shudder: 0, spray: 0 }
 }
