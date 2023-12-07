@@ -66,14 +66,22 @@ exports.developer = {
         },
     ],
 };
+exports.lancerbullet = {
+    PARENT: "bullet",
+      BODY: {
+        SPEED: base.SPEED * 1.5,
+        ACCELERATION: base.ACCEL * 0.7,
+        RANGE: base.SPEED * base.SPEED * 8.5
+  },
+}
 exports.lancer = {
     PARENT: "genericTank",
     LABEL: 'Lancer',
     DANGER: 5,
     BODY: {
-        SPEED: base.SPEED * 1.5,
+        SPEED: base.SPEED * 1,
         ACCELERATION: base.ACCEL * 0.7,
-        //RANGE: base.SPEED * 8.5
+        RANGE: base.SPEED * base.SPEED * 4
       
     },
     GUNS: [{
@@ -81,7 +89,7 @@ exports.lancer = {
         PROPERTIES: {
             AUTOFIRE: true,
             SHOOT_SETTINGS: combineStats([g.lance]),
-            TYPE: "bullet",
+            TYPE: "lancerbullet",
             //ALPHA: 0,
             LABEL: 'Lance'
             }
