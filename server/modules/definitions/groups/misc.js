@@ -1320,6 +1320,9 @@ exports.antiTankMachineGun = {
 exports.tracker3gun = {
   PARENT: ["genericTank"],
   LABEL: "",
+  AI: {
+        NO_LEAD: true,
+  },
   COLOR: "timeGem",
   IGNORE_SHAPES: true,
   BODY: {
