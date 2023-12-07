@@ -68,12 +68,6 @@ exports.developer = {
 };
 exports.lancerbullet = {
     PARENT: "bullet",
-      SIZE: ((base.SPEED * 5) + (base.SPEED * 8.5)),
-      BODY: {
-        SPEED: ((base.SPEED * 5) + (base.SPEED * 8.5)),
-        ACCELERATION: base.ACCEL * 0.7,
-        RANGE: 0 + ((base.SPEED * 5) + (base.SPEED * 8.5))
-  },
 }
 exports.lancer = {
     PARENT: "genericTank",
@@ -87,11 +81,8 @@ exports.lancer = {
         POSITION: [8, 4, 1.4, 6, 0, 0, 0],
         PROPERTIES: {
             AUTOFIRE: true,
-            SHOOT_SETTINGS: combineStats([g.lance]),
+            SHOOT_SETTINGS: combineStats([g.lancer]),
             TYPE: "lancerbullet",
-              SPEED: ((base.SPEED * 5) + (base.SPEED * 8.5)),
-              ACCELERATION: base.ACCEL * 0.7,
-              RANGE: base.SPEED * 5 + base.SPEED * 8.5,
             //ALPHA: 0,
             LABEL: 'Lance'
             }
@@ -99,7 +90,7 @@ exports.lancer = {
         POSITION: [8, 4, 1.4, 8.5, 0, 0, 0],
         PROPERTIES: {
             AUTOFIRE: true,
-            SHOOT_SETTINGS: combineStats([g.lance]),
+            SHOOT_SETTINGS: combineStats([g.lancer]),
             TYPE: "bullet", 
                 //ALPHA: 0,
                 LABEL: 'Lance'
