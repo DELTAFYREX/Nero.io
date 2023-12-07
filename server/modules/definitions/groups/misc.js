@@ -1321,6 +1321,7 @@ exports.tracker3gun = {
   PARENT: ["genericTank"],
   LABEL: "",
   COLOR: "timeGem",
+  IGNORE_SHAPES: true,
   BODY: {
     FOV: 3,
   },

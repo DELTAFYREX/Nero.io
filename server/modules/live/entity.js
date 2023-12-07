@@ -1067,6 +1067,7 @@ class Entity extends EventEmitter {
             this.addController(toAdd);
         }
         if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
+        if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
         if (set.MOTION_TYPE != null) this.motionType = set.MOTION_TYPE;
         if (set.FACING_TYPE != null) this.facingType = set.FACING_TYPE;
         if (set.MIRROR_MASTER_ANGLE != null) this.settings.mirrorMasterAngle = set.MIRROR_MASTER_ANGLE
