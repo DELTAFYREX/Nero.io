@@ -1329,9 +1329,10 @@ exports.tracker3gun = {
     FOV: 3,
   },
   CONTROLLERS: [
-    "canRepel",
-    "onlyAcceptInArc",
-    "mapAltToFire",
+//    "canRepel",
+//    "onlyAcceptInArc",
+//    "mapAltToFire",
+    "mapTargetToGoal",
     "nearestDifferentMaster",
   ],
   GUNS: [
@@ -1343,6 +1344,7 @@ exports.tracker3gun = {
       POSITION: [10, 10, -2, 20, 0, 0, 0],
     },
   ],
+  HAS_NO_MASTER: true,
 };
 exports.tracker3 = {
   PARENT: ["genericTank"],
