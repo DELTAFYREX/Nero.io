@@ -5535,6 +5535,7 @@ exports.surgeon = {
                 MAX_CHILDREN: 2,
                 SHOOT_SETTINGS: combineStats([g.trap, g.block, g.slow]),
                 TYPE: "surgeonPillbox",
+              
                 SYNCS_SKILLS: true,
             },
         },
