@@ -727,29 +727,19 @@ function drawPoly(context, centerX, centerY, radius, sides, angle = 0, borderles
 }
 function drawTrapezoid(context, x, y, length, height, aspect, angle, borderless, fill, alpha, position) {
     let h = [];
-    let h = [];
     h = aspect > 0 ? [height * aspect, height] : [height, -height * aspect];
-    h = aspect > 0 ? [height * aspect, height] : [height, -height * aspect];
-    // Construct a trapezoid at angle 0
+
     // Construct a trapezoid at angle 0
     let points = [],
-    let points = [],
-        sinT = Math.sin(angle),
         sinT = Math.sin(angle),
         cosT = Math.cos(angle);
-        cosT = Math.cos(angle);
-    points.push([0, h[1]]);
     points.push([-position, h[1]]);
-    points.push([length * 2, h[0]]);
     points.push([length * 2 - position, h[0]]);
-    points.push([length * 2, -h[0]]);
     points.push([length * 2 - position, -h[0]]);
-    points.push([0, -h[1]]);
     points.push([-position, -h[1]]);
     context.globalAlpha = alpha;
-
+    
     // Rotate it to the new angle via vector rotation
-    context.globalAlpha = alpha;
     context.beginPath();
     for (let point of points) {
         let newX = point[0] * cosT - point[1] * sinT + x,
@@ -791,9 +781,9 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
     // Draw turrets beneath us
     for (let i = 0; i < source.turrets.length; i++) {
         let t = source.turrets[i];
-        source.turrets[i].lerpedFacing == undefined
-            ? (source.turrets[i].lerpedFacing = source.turrets[i].facing)
-            : (source.turrets[i].lerpedFacing = util.lerpAngle(source.turrets[i].lerpedFacing, source.turrets[i].facing, 0.1, true));
+        t.lerpedFacing == undefined
+            ? (t.lerpedFacing = t.facing)
+            : (t.lerpedFacing = util.lerpAngle(t.lerpedFacing, t.facing, 0.1, true));
         if (!t.layer) {
             let ang = t.direction + t.angle + rot,
                 len = t.offset * drawSize,
@@ -801,9 +791,9 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
             if (t.mirrorMasterAngle || turretsObeyRot) {
                 facing = rot + t.angle;
             } else {
-                facing = source.turrets[i].lerpedFacing;
+                facing = t.lerpedFacing;
             }
-            drawEntity(baseColor, xx + len * Math.cos(ang), yy + len * Math.sin(ang), t, ratio, 1, (drawSize / ratio / t.size) * t.sizeFactor, lineWidthMult, facing, turretsObeyRot, context, source.turrets[i], render);
+            drawEntity(baseColor, xx + len * Math.cos(ang), yy + len * Math.sin(ang), t, ratio, 1, (drawSize / ratio / t.size) * t.sizeFactor, lineWidthMult, facing, turretsObeyRot, context, t, render);
         }
     }
     // Draw guns below us
@@ -819,7 +809,7 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
                 borderless = g.borderless,
                 fill = g.drawFill;
             gameDraw.setColor(context, gameDraw.mixColors(gunColor, render.status.getColor(), blend));
-            drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length - positions[i]) / 2, (drawSize * g.width) / 2, g.aspect, g.angle + rot, borderless, fill, alpha);
+            drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * g.length / 2, drawSize * g.width / 2, g.aspect, g.angle + rot, borderless, fill, alpha, drawSize * positions[i]);
         }
     }
     // Draw body
@@ -859,7 +849,7 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
                 borderless = g.borderless,
                 fill = g.drawFill;
             gameDraw.setColor(context, gameDraw.mixColors(gunColor, render.status.getColor(), blend));
-            drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * (g.length - positions[i]) / 2, (drawSize * g.width) / 2, g.aspect, g.angle + rot, borderless, fill, alpha);
+            drawTrapezoid(context, xx + drawSize * gx, yy + drawSize * gy, drawSize * g.length / 2, drawSize * g.width / 2, g.aspect, g.angle + rot, borderless, fill, alpha, drawSize * positions[i]);
         }
     }
     // Draw turrets above us
@@ -872,9 +862,9 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
             if (t.mirrorMasterAngle || turretsObeyRot) {
                 facing = rot + t.angle;
             } else {
-                facing = source.turrets[i].lerpedFacing;
+                facing = t.lerpedFacing;
             }
-            drawEntity(baseColor, xx + len * Math.cos(ang), yy + len * Math.sin(ang), t, ratio, 1, (drawSize / ratio / t.size) * t.sizeFactor, lineWidthMult, facing, turretsObeyRot, context, source.turrets[i], render);
+            drawEntity(baseColor, xx + len * Math.cos(ang), yy + len * Math.sin(ang), t, ratio, 1, (drawSize / ratio / t.size) * t.sizeFactor, lineWidthMult, facing, turretsObeyRot, context, t, render);
         }
     }
     if (assignedContext == false && context != ctx && context.canvas.width > 0 && context.canvas.height > 0) {
@@ -1838,7 +1828,7 @@ const gameDrawDead = () => {
         picture = util.getEntityImageFromMockup(gui.type, gui.color),
         baseColor = picture.color;
     drawEntity(baseColor, (xx - 190 - len / 2 + 0.5) | 0, (yy - 10 + 0.5) | 0, picture, 1.5, 1, (0.5 * scale) / picture.realSize, 1, -Math.PI / 4, true);
-    drawText("That pond it seems me many multiplied of fishes. Let us amuse rather to the fishing.", x, y - 80, 8, color.guiwhite, "center");
+    drawText("If you need instructions on how to get through the hotels, check out the enclosed instruction book.", x, y - 80, 8, color.guiwhite, "center");
     drawText("Level " + gui.__s.getLevel() + " " + picture.name, x - 170, y - 30, 24, color.guiwhite);
     drawText("Final score: " + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
     drawText("⌚ Survived for " + util.timeForHumans(Math.round(global.finalLifetime.get())), x - 170, y + 55, 16, color.guiwhite);
