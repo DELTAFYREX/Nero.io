@@ -39,7 +39,7 @@ module.exports = {
     dual: { reload: 2, shudder: 0.8, health: 1.5, speed: 1.3, maxSpeed: 1.1, resist: 1.25 },
     rifle: { reload: 0.8, recoil: 0.8, shudder: 1.5, health: 0.8, damage: 0.8, pen: 0.9, spray: 2 },
     blunderbuss: { recoil: 0.1, shudder: 0.5, health: 0.4, damage: 0.2, pen: 0.4, spray: 0.5 },
-    railgun: { reload: 2, health: 0.7, damage: 0.6, pen: 0.8 },
+    railgun: { reload: 2, health: 0.85, damage: 0.5, pen: 0.9 },
 
     // Machine guns
     mach: { reload: 0.5, recoil: 0.8, shudder: 1.7, health: 0.7, damage: 0.7, maxSpeed: 0.8, spray: 2.5 },

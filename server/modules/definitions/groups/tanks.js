@@ -1817,7 +1817,7 @@ exports.railgun = {
     DANGER: 6,
     LABEL: "Railgun",
     BODY: {
-        SPEED: 0.85 * base.SPEED,
+        SPEED: 0.9 * base.SPEED,
         FOV: 1.25 * base.FOV
     },
     GUNS: [
