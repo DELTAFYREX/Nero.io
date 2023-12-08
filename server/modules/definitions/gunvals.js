@@ -143,6 +143,7 @@ module.exports = {
     lowpower: { shudder: 2, health: 0.5, damage: 0.5, pen: 0.7, spray: 0.5, resist: 0.7 },
     notdense: { density: 0.1 },
     halfrange: { range: 0.5 },
+    doublerange: { range: 2 },
     acc: { shudder: 0.1 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, damage: 3, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noRandom: { shudder: 0, spray: 0 }
