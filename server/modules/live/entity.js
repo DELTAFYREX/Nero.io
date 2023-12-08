@@ -1067,7 +1067,6 @@ class Entity extends EventEmitter {
             this.addController(toAdd);
         }
         if (set.IGNORED_BY_AI != null) this.ignoredByAi = set.IGNORED_BY_AI;
-        if (set.IGNORE_SHAPES != null) this.ignoreshapes = set.IGNORE_SHAPES;
         if (set.MOTION_TYPE != null) this.motionType = set.MOTION_TYPE;
         if (set.FACING_TYPE != null) this.facingType = set.FACING_TYPE;
         if (set.MIRROR_MASTER_ANGLE != null) this.settings.mirrorMasterAngle = set.MIRROR_MASTER_ANGLE
@@ -2183,6 +2182,13 @@ class Entity extends EventEmitter {
     protect() {
         entitiesToAvoid.push(this);
         this.isProtected = true;
+    }
+    say(message, duration = c.CHAT_MESSAGE_DURATION) {
+        let id = player.body.id;
+        if (!chats[id]) {
+            chats[id] = [];
+        }
+        chats[id].unshift({ message, expires: Date.now() + duration });
     }
     sendMessage(message) {} // Dummy
     setKillers(killers) {} // Dummy

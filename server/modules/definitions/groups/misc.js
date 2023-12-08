@@ -1320,19 +1320,14 @@ exports.antiTankMachineGun = {
 exports.tracker3gun = {
   PARENT: ["genericTank"],
   LABEL: "",
-  AI: {
-        NO_LEAD: true,
-  },
   COLOR: "timeGem",
-  IGNORE_SHAPES: true,
   BODY: {
     FOV: 3,
   },
   CONTROLLERS: [
-//    "canRepel",
-//    "onlyAcceptInArc",
-//    "mapAltToFire",
-    "mapTargetToGoal",
+    "canRepel",
+    "onlyAcceptInArc",
+    "mapAltToFire",
     "nearestDifferentMaster",
   ],
   GUNS: [
@@ -1344,7 +1339,6 @@ exports.tracker3gun = {
       POSITION: [10, 10, -2, 20, 0, 0, 0],
     },
   ],
-  HAS_NO_MASTER: true,
 };
 exports.tracker3 = {
   PARENT: ["genericTank"],
