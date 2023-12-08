@@ -1866,6 +1866,7 @@ const gameDrawDisconnected = () => {
     let shift = animations.disconnected.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText("Disconnected", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
+    drawText("(This Means The Dev's Working On The Game)", global.screenWidth / 3, global.screenHeight / 3, 40, color.lgreen, "center");
     drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, "center");
     ctx.translate(0, shift * global.screenHeight);
 };
