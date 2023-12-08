@@ -5535,7 +5535,7 @@ exports.surgeon = {
                 MAX_CHILDREN: 2,
                 SHOOT_SETTINGS: combineStats([g.trap, g.block, g.slow]),
                 TYPE: "surgeonPillbox",
-              
+                STAT_CALCULATOR: gunCalcNames.block,
                 SYNCS_SKILLS: true,
             },
         },
@@ -5662,7 +5662,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"];
 
     exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"];
-        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin"];
+        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
         exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank"];
         exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"];
         exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "autoAuto3"];
@@ -5678,7 +5678,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
         exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"];
         exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery"];
-        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "sidewinder", "fieldGun", "autoLaunch"];
+        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "autoLaunch"];
 
     exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap"];
         exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"];
@@ -5702,5 +5702,5 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
 
     exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
-        exports.helix.UPGRADES_TIER_3 = ["triplex"];
+        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
         exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
