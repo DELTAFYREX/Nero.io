@@ -200,7 +200,6 @@ function getMockups() {
     global.mockupLoading = new Promise(Resolve => {
         util.pullJSON("mockups").then(data => {
             global.mockups = data;
-            generateTankTree(global.mockups.find((r) => r.name === "Basic").index);
             console.log('Mockups loading complete.');
             Resolve();
         });
@@ -333,6 +332,8 @@ global.player = {
     lasty: global.player.y,
     cx: 0,
     cy: 0,
+    screenx: 0,
+    screeny: 0,
     target: calculateTarget(),
     name: "",
     lastUpdate: 0,
@@ -582,7 +583,7 @@ function isImageURL(url) {
         const ext = path.split('.').pop().toLowerCase(); // Get the lowercase file extension
 
         // List of common image file extensions
-        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg', 'mp4'];
+        const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp', 'svg'];
 
         return imageExtensions.includes(ext) || parsedUrl.protocol == 'data:';
     } catch (error) {
@@ -724,18 +725,28 @@ function drawPoly(context, centerX, centerY, radius, sides, angle = 0, borderles
     if (fill) context.fill();
     context.lineJoin = "round";
 }
-function drawTrapezoid(context, x, y, length, height, aspect, angle, borderless, fill, alpha) {
+function drawTrapezoid(context, x, y, length, height, aspect, angle, borderless, fill, alpha, position) {
+    let h = [];
     let h = [];
     h = aspect > 0 ? [height * aspect, height] : [height, -height * aspect];
-
+    h = aspect > 0 ? [height * aspect, height] : [height, -height * aspect];
+    // Construct a trapezoid at angle 0
     // Construct a trapezoid at angle 0
     let points = [],
+    let points = [],
+        sinT = Math.sin(angle),
         sinT = Math.sin(angle),
         cosT = Math.cos(angle);
+        cosT = Math.cos(angle);
     points.push([0, h[1]]);
+    points.push([-position, h[1]]);
     points.push([length * 2, h[0]]);
+    points.push([length * 2 - position, h[0]]);
     points.push([length * 2, -h[0]]);
+    points.push([length * 2 - position, -h[0]]);
     points.push([0, -h[1]]);
+    points.push([-position, -h[1]]);
+    context.globalAlpha = alpha;
 
     // Rotate it to the new angle via vector rotation
     context.globalAlpha = alpha;
