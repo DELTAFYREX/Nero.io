@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker} = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 const generics = require('./generics.js');
 const g = require('../gunvals.js');
@@ -5403,6 +5403,7 @@ exports.autoSmasher = makeAuto(exports.smasher, "Auto-Smasher", {
     size: 11,
 })
 exports.autoSmasher.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
+exports.trackerSmasher = makeAuto(exports.smasher, "Scanner");
 exports.landmine = {
     PARENT: "genericSmasher",
     LABEL: "Landmine",

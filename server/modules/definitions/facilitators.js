@@ -615,6 +615,58 @@ exports.makeAuto = (type, name = -1, options = {}) => {
     output.DANGER = type.DANGER + 1;
     return output;
 }
+exports.makeTracker = (type, name = -1, options = {}) => {
+    let turret = {
+        type: "tracker3gun",
+        size: 10,
+        independent: true,
+        color: 16,
+        angle: 180,
+    };
+    if (options.type != null) {
+        turret.type = options.type;
+    }
+    if (options.size != null) {
+        turret.size = options.size;
+    }
+    if (options.independent != null) {
+        turret.independent = options.independent;
+    }
+    if (options.color != null) {
+        turret.color = options.color;
+    }
+    if (options.angle != null) {
+        turret.angle = options.angle;
+    }
+    let output = exports.dereference(type);
+    let autogun = {
+        /*********    SIZE                             X             Y         ANGLE        ARC */
+        POSITION: [turret.size, 0, 0, turret.angle, 360, 1],
+        TYPE: [
+            turret.type,
+            {
+                CONTROLLERS: ["nearestDifferentMaster"],
+                INDEPENDENT: turret.independent,
+                COLOR: turret.color,
+            },
+        ],
+    };
+    if (type.GUNS != null) {
+        output.GUNS = type.GUNS;
+    }
+    if (type.TURRETS == null) {
+        output.TURRETS = [autogun];
+    } else {
+        output.TURRETS = [...type.TURRETS, autogun];
+    }
+    if (name == -1) {
+        output.LABEL = "Auto-" + type.LABEL;
+    } else {
+        output.LABEL = name;
+    }
+    output.DANGER = type.DANGER + 1;
+    return output;
+}
 exports.makeCeption = (type, name = -1, options = {}) => {
     let turret = {
         type: "autoTurret",
