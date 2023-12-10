@@ -1181,6 +1181,7 @@ exports.papyrus = {
 }
 exports.winsor0 = {
     PARENT: "genericTank",
+    damageOnTick(body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam),
     LABEL: "Wi3nsor",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
@@ -1502,7 +1503,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "minilaser", "dictator", "railgun", "trackerSmasher"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 

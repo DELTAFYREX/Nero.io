@@ -5403,7 +5403,7 @@ exports.autoSmasher = makeAuto(exports.smasher, "Auto-Smasher", {
     size: 11,
 })
 exports.autoSmasher.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
-exports.trackerSmasher = makeAuto(exports.smasher, "Scanner");
+exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
 exports.landmine = {
     PARENT: "genericSmasher",
     LABEL: "Landmine",

@@ -1987,10 +1987,11 @@ class Entity extends EventEmitter {
         }
     }
     contemplationOfMortality() {
-        if (this.invuln) {
+    if (this.invuln || this.godmode) {
             this.damageRecieved = 0;
             return 0;
         }
+
         if (this.damageRecieved > 0) {
             let damageInflictor = []
             let damageTool = []
