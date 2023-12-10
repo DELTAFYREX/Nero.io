@@ -1181,7 +1181,6 @@ exports.papyrus = {
 }
 exports.winsor0 = {
     PARENT: "genericTank",
-    damageOnTick(body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam),
     LABEL: "Wi3nsor",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
