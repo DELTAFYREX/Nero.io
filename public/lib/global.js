@@ -118,6 +118,7 @@ const global = {
     KEY_CHOOSE_6: 75,
 
     showTree: false,
+    showDebug: !1,
     scrollX: 0,
     realScrollX: 0,
     // Canvas

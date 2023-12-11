@@ -126,7 +126,7 @@ class Canvas {
                 this.socket.talk('1');
                 break;
             case global.KEY_PING:
-                  this.app.showDebug = !0;
+                  global.showDebug = !1;
                   break;
             case global.KEY_TELEPORT:
                 this.socket.talk('testTeleport');
@@ -197,7 +197,7 @@ class Canvas {
                     this.socket.talk('t', 5);
                     break;
                 case global.KEY_PING:
-                    this.app.showDebug = !1;
+                    global.showDebug = !0;
                     break;
                 case global.KEY_SPIN_LOCK:
                     this.spinLock = !this.spinLock;
