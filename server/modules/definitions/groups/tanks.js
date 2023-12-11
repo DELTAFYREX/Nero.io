@@ -5326,6 +5326,30 @@ exports.autoLaunch = makeAuto(exports.launcher, "Auto-Launcher");
 exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
 exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
 
+// Auto tanks
+exports.autoDouble = makeAuto(exports.doubleTwin, "Auto-Double")
+exports.autoAssassin = makeAuto(exports.assassin)
+exports.autoGunner = makeAuto(exports.gunner);
+exports.autoTriAngle = makeAuto(exports.triAngle)
+exports.autoOverseer = makeAuto(exports.overseer)
+exports.autoCruiser = makeAuto(exports.cruiser)
+exports.autoSpawner = makeAuto(exports.spawner)
+exports.autoBuilder = makeAuto(exports.builder)
+exports.autoSmasher = makeAuto({
+    PARENT: "genericSmasher",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        }
+    ],
+    SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
+}, "Auto-Smasher", {
+    type: "autoSmasherTurret",
+    size: 11,
+})
+
 
 exports.basicCeption = makeCeptionNerf(exports.basic, "Basic-Ception");
 
