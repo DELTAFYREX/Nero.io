@@ -64,7 +64,9 @@ class Canvas {
                 if (global.showTree) this.treeScrollSpeedMultiplier = 5;
                 else this.socket.cmd.set(6, true);
                 break;
-
+            case global.KEY_PING:
+                global.showDebug = !1;
+                break;
             case global.KEY_ENTER:
                 // Enter to respawn
                 if (global.died) {
@@ -180,9 +182,6 @@ class Canvas {
                 case global.KEY_OVER_RIDE:
                     this.socket.talk('t', 2);
                     break;
-                case global.KEY_PING:
-                    global.showDebug = !0;
-                    break;
                 case global.KEY_REVERSE_MOUSE: //client side only, no server effects except message
                     this.inverseMouse = !this.inverseMouse;
                     this.socket.talk('t', 3);
@@ -248,9 +247,6 @@ class Canvas {
                 global.scrollVelocityY = 0;
             case global.KEY_UP:
                 this.socket.cmd.set(0, false);
-                break;
-            case global.KEY_PING:
-                global.showDebug = !1;
                 break;
             case global.KEY_DOWN_ARROW:
                 global.scrollVelocityY = 0;
