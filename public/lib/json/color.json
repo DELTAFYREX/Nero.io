@@ -1,5 +1,5 @@
 {
-        "nero": {
+      "nero": {
           "teal": "#9EFFE0",
           "lgreen": "#87FF8D",
           "orange": "#FFB675",
@@ -20,6 +20,10 @@
           "dgrey": "#726F6F",
           "white": "#F0F8FA",
           "guiblack": "#000000",
+          "mustard": "#c49608",
+          "tangerine": "#ec7b0f",
+          "brown": "#895918",
+          "cyan": "#13808e",
           "paletteSize": 10,
           "border": 0.65
     },
