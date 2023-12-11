@@ -1401,7 +1401,6 @@ exports.tripleTwin = makeMulti({
         }
     ]
 }, 3)
-exports.autoDouble = makeAuto(exports.doubleTwin, "Auto-Double")
 exports.hewnDouble = {
     PARENT: "genericTank",
     LABEL: "Hewn Double",
@@ -2009,7 +2008,6 @@ exports.stalker = {
         }
     ]
 }
-exports.autoAssassin = makeAuto(exports.assassin)
 exports.single = {
     PARENT: "genericTank",
     LABEL: "Single",
@@ -2510,7 +2508,6 @@ exports.vulture = makeBird({
 }, "Vulture")
 
 // Gunner upgrades
-exports.autoGunner = makeAuto(exports.gunner);
 exports.nailgun = {
     PARENT: ["genericTank"],
     LABEL: "Nailgun",
@@ -3094,7 +3091,6 @@ exports.booster = {
         },
     ],
 }
-exports.autoTriAngle = makeAuto(exports.triAngle)
 exports.surfer = {
     PARENT: ["genericTank"],
     LABEL: "Surfer",
@@ -3712,7 +3708,6 @@ exports.fortress = {
         },
     ],
 }
-exports.autoCruiser = makeAuto(exports.cruiser)
 
 // Underseer upgrades
 exports.necromancer = {
@@ -3863,7 +3858,6 @@ exports.factory = {
         },
     ],
 }
-exports.autoSpawner = makeAuto(exports.spawner)
 
 // Pounder upgrades
 exports.destroyer = {
@@ -4456,7 +4450,6 @@ exports.construct = {
         },
     ],
 }
-exports.autoBuilder = makeAuto(exports.builder)
 exports.engineer = {
     PARENT: ["genericTank"],
     DANGER: 7,
@@ -5098,11 +5091,6 @@ exports.spike = {
         },
     ],
 }
-exports.autoSmasher = makeAuto(exports.smasher, "Auto-Smasher", {
-    type: "autoSmasherTurret",
-    size: 11,
-})
-exports.autoSmasher.SKILL_CAP = [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
 exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
 exports.landmine = {
     PARENT: "genericSmasher",
