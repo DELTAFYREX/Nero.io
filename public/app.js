@@ -341,8 +341,8 @@ global.player = {
     nameColor: "#ffffff",
 };
 function calculateTarget() {
-    global.target.x = global.mouse.x * global.ratio - (global.player.screenx / global.screenWidth * window.canvas.width + window.canvas.width / 2);
-    global.target.y = global.mouse.y * global.ratio - (global.player.screeny / global.screenHeight * window.canvas.height + window.canvas.height / 2);
+    global.target.x = global.mouse.x - (global.player.screenx / global.screenWidth * window.canvas.width + window.canvas.width / 2);
+    global.target.y = global.mouse.y - (global.player.screeny / global.screenHeight * window.canvas.height + window.canvas.height / 2);
     if (window.canvas.reverseDirection) {
         global.target.x *= -1;
         global.target.y *= -1;
@@ -1289,6 +1289,7 @@ function drawUpgradeTree(spacing, alcoveSize) {
         global.treeScale = 1;
         return;
     }
+  
     if (lastGuiType != gui.type) {
         let m = util.getEntityImageFromMockup(gui.type), // The mockup that corresponds to the player's tank
             rootName = m.rerootUpgradeTree, // The upgrade tree root of the player's tank
@@ -1716,6 +1717,28 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
         drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
         global.clickables.skipUpgrades.place(0, (buttonX - m / 2) * clickableRatio, buttonY * clickableRatio, m * clickableRatio, h * clickableRatio);
+    	
+        // Upgrade tooltip
+        let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
+        if (upgradeHoverIndex > -1) {
+            let picture = util.getEntityImageFromMockup(gui.upgrades[upgradeHoverIndex][2], gui.color);
+            if (picture.upgradeTooltip.length > 0) {
+                let boxWidth = Math.max(measureText(picture.name, alcoveSize / 10), measureText(picture.upgradeTooltip, alcoveSize / 15)),
+                    boxX = global.mouse.x * global.screenWidth / window.canvas.width + 2,
+                    boxY = global.mouse.y * global.screenHeight / window.canvas.height + 2,
+                    boxPadding = 6,
+                    splitTooltip = picture.upgradeTooltip.split("\n"),
+                    textY = boxY + boxPadding + alcoveSize / 10;
+                gameDraw.setColor(ctx, color.dgrey);
+                drawGuiRect(boxX, boxY, boxWidth + boxPadding * 3, alcoveSize * (splitTooltip.length + 1) / 10 + boxPadding * 3, false);
+                drawGuiRect(boxX, boxY, boxWidth + boxPadding * 3, alcoveSize * (splitTooltip.length + 1) / 10 + boxPadding * 3, true);
+                drawText(picture.name, boxX + boxPadding * 1.5, textY, alcoveSize / 10, color.guiwhite);
+                for (let t of splitTooltip) {
+                    textY += boxPadding + alcoveSize / 15
+                    drawText(t, boxX + boxPadding * 1.5, textY, alcoveSize / 15, color.guiwhite);
+                }
+            }
+        }
     } else {
         global.canUpgrade = false;
         global.clickables.upgrade.hide();
