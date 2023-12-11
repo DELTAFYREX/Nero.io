@@ -65,7 +65,7 @@ class Canvas {
                 else this.socket.cmd.set(6, true);
                 break;
             case global.KEY_PING:
-                global.showDebug = !1;
+                global.showDebug = !0;
                 break;
             case global.KEY_ENTER:
                 // Enter to respawn
@@ -247,6 +247,9 @@ class Canvas {
                 global.scrollVelocityY = 0;
             case global.KEY_UP:
                 this.socket.cmd.set(0, false);
+                break;
+            case global.KEY_PING:
+                global.showDebug = !1;
                 break;
             case global.KEY_DOWN_ARROW:
                 global.scrollVelocityY = 0;

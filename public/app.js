@@ -1602,9 +1602,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     }
     //minimap stuff ends here
     //debug stuff
-    if (global.showDebug = !0) y += 14 * 3;
+    if (!global.showDebug) y += 14 * 3;
     // Text
-    if (global.showDebug = !1) {
+    if (global.showDebug) {
         drawText("Nero-Arras Host Client", x + len, y - 50 - 5 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
