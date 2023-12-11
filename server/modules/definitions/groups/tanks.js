@@ -3541,6 +3541,45 @@ exports.commander = makeMulti({
         }
     ]
 }, 3, "Commander")
+
+// Cruiser upgrades
+exports.carrier = {
+    PARENT: ["genericTank"],
+    LABEL: "Carrier",
+    DANGER: 7,
+    STAT_NAMES: statnames.swarm,
+    FACING_TYPE: "locksFacing",
+    BODY: {
+        FOV: base.FOV * 1.2,
+    },
+    GUNS: [
+        {
+            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [7, 8, 0.6, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 8, 0.6, 7, 2, 30, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 8, 0.6, 7, -2, -30, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+    ],
+}
 exports.battleship = {
     PARENT: ["genericTank"],
     LABEL: "Battleship",
