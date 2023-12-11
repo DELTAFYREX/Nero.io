@@ -3337,9 +3337,8 @@ exports.cruiser = {
         },
     ],
 }
-exports.underseer = {
-    PARENT: ["genericTank"],
-    LABEL: "Underseer",
+exports.underseer = makeMulti({
+    PARENT: "genericTank",
     DANGER: 6,
     STAT_NAMES: statnames.drone,
     BODY: {
@@ -3349,27 +3348,17 @@ exports.underseer = {
     MAX_CHILDREN: 14,
     GUNS: [
         {
-            POSITION: [5.25, 12, 1.2, 8, 0, 90, 0],
+            POSITION: [5.25, 12, 1.2, 8, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
                 TYPE: "sunchip",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.necro,
-            },
-        },
-        {
-            POSITION: [5.25, 12, 1.2, 8, 0, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
-                TYPE: "sunchip",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.necro,
-            },
-        },
-    ],
-}
+            }
+        }
+    ]
+}, 2, "Underseer", 90)
 exports.spawner = {
     PARENT: ["genericTank"],
     LABEL: "Spawner",
@@ -3471,9 +3460,8 @@ exports.bigCheese = {
         ],
     };
 // Overseer upgrades
-exports.overlord = {
-    PARENT: ["genericTank"],
-    LABEL: "Overlord",
+exports.overlord = makeMulti({
+    PARENT: "genericTank",
     DANGER: 7,
     STAT_NAMES: statnames.drone,
     BODY: {
@@ -3483,39 +3471,6 @@ exports.overlord = {
     MAX_CHILDREN: 8,
     GUNS: [
         {
-            POSITION: [6, 12, 1.2, 8, 0, 90, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.drone,
-                WAIT_TO_CYCLE: true,
-            },
-        },
-        {
-            POSITION: [6, 12, 1.2, 8, 0, 180, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.drone,
-                WAIT_TO_CYCLE: true,
-            },
-        },
-        {
-            POSITION: [6, 12, 1.2, 8, 0, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.drone,
-                WAIT_TO_CYCLE: true,
-            },
-        },
-        {
             POSITION: [6, 12, 1.2, 8, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.over]),
@@ -3523,15 +3478,13 @@ exports.overlord = {
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.drone,
-                WAIT_TO_CYCLE: true,
-            },
-        },
-    ],
-}
-exports.autoOverseer = makeAuto(exports.overseer)
-exports.overdrive = {
-    PARENT: ["genericTank"],
-    LABEL: "Overdrive",
+                WAIT_TO_CYCLE: true
+            }
+        }
+    ]
+}, 4, "Overlord", 90)
+exports.overdrive = makeMulti({
+    PARENT: "genericTank",
     DANGER: 7,
     STAT_NAMES: statnames.drone,
     BODY: {
@@ -3546,7 +3499,7 @@ exports.overdrive = {
     ],
     GUNS: [
         {
-            POSITION: [6, 12, 1.2, 8, 0, 90, 0],
+            POSITION: [6, 12, 1.2, 8, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.over]),
                 TYPE: "turretedDrone",
@@ -3554,26 +3507,13 @@ exports.overdrive = {
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.drone,
                 WAIT_TO_CYCLE: true,
-                MAX_CHILDREN: 4,
-            },
-        },
-        {
-            POSITION: [6, 12, 1.2, 8, 0, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                TYPE: "turretedDrone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.drone,
-                WAIT_TO_CYCLE: true,
-                MAX_CHILDREN: 4,
-            },
-        },
-    ],
-}
-exports.commander = {
-    PARENT: ["genericTank"],
-    LABEL: "Commander",
+                MAX_CHILDREN: 4
+            }
+        }
+    ]
+}, 2, "Overdrive", 90)
+exports.commander = makeMulti({
+    PARENT: "genericTank",
     STAT_NAMES: statnames.drone,
     DANGER: 7,
     BODY: {
@@ -3581,7 +3521,6 @@ exports.commander = {
     },
     GUNS: [
         {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [8, 11, 1.3, 6, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.commander]),
@@ -3593,95 +3532,15 @@ exports.commander = {
             },
         },
         {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [8, 11, 1.3, 6, 0, 120, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.commander]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 2,
-                STAT_CALCULATOR: gunCalcNames.drone,
-            },
-        },
-        {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [8, 11, 1.3, 6, 0, 240, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.commander]),
-                TYPE: "drone",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                MAX_CHILDREN: 2,
-                STAT_CALCULATOR: gunCalcNames.drone,
-            },
-        },
-        {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [7, 7.5, 0.6, 7, 0, 60, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-        {
             POSITION: [7, 7.5, 0.6, 7, 0, 180, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: "swarm",
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
-        },
-        {
-            POSITION: [7, 7.5, 0.6, 7, 0, 300, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-}
-
-// Cruiser upgrades
-exports.carrier = {
-    PARENT: ["genericTank"],
-    LABEL: "Carrier",
-    DANGER: 7,
-    STAT_NAMES: statnames.swarm,
-    FACING_TYPE: "locksFacing",
-    BODY: {
-        FOV: base.FOV * 1.2,
-    },
-    GUNS: [
-        {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [7, 8, 0.6, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-        {
-            POSITION: [7, 8, 0.6, 7, 2, 30, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-        {
-            POSITION: [7, 8, 0.6, 7, -2, -30, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battle, g.carrier]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-}
+        }
+    ]
+}, 3, "Commander")
 exports.battleship = {
     PARENT: ["genericTank"],
     LABEL: "Battleship",
@@ -3903,9 +3762,8 @@ exports.maleficitor = {
         },
     ],
 }
-exports.infestor = {
-    PARENT: ["genericTank"],
-    LABEL: "Infestor",
+exports.infestor = makeMulti({
+    PARENT: "genericTank",
     DANGER: 7,
     STAT_NAMES: statnames.drone,
     BODY: {
@@ -3914,49 +3772,27 @@ exports.infestor = {
     MAX_CHILDREN: 20,
     GUNS: [
         {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [7.25, 6, 1.2, 6, -5, 90, 0],
+            POSITION: [7.25, 6, 1.2, 6, -5, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
                 TYPE: "eggchip",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.necro,
-            },
+                STAT_CALCULATOR: gunCalcNames.necro
+            }
         },
         {
-            POSITION: [7.25, 6, 1.2, 6, 5, 90, 0],
+            POSITION: [7.25, 6, 1.2, 6, 5, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
                 TYPE: "eggchip",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.necro,
-            },
-        },
-        {
-            POSITION: [7.25, 6, 1.2, 6, -5, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
-                TYPE: "eggchip",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.necro,
-            },
-        },
-        {
-            POSITION: [7.25, 6, 1.2, 6, 5, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
-                TYPE: "eggchip",
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-                STAT_CALCULATOR: gunCalcNames.necro,
-            },
-        },
-    ],
-}
-
+                STAT_CALCULATOR: gunCalcNames.necro
+            }
+        }
+    ]
+}, 2, "Infestor", 90)
 // Spawner upgrades
 exports.factory = {
     PARENT: ["genericTank"],
@@ -4403,7 +4239,7 @@ exports.swarmer = {
     LABEL: "Swarmer",
     GUNS: [
         {
-            POSITION: [14, 14, -1.2, 5, 0, 0, 0],
+            POSITION: [15, 14, -1.2, 5, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.hive]),
                 TYPE: "hive",
