@@ -1610,7 +1610,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 2 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
-        drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
+        drawText("Server Speed: " + (100 * gui.fps).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.7", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
@@ -1719,27 +1719,20 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
         global.clickables.skipUpgrades.place(0, (buttonX - m / 2) * clickableRatio, buttonY * clickableRatio, m * clickableRatio, h * clickableRatio);
     	
-    // Upgrade tooltip
+        // Upgrade tooltip
         let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
         if (upgradeHoverIndex > -1) {
             let picture = util.getEntityImageFromMockup(gui.upgrades[upgradeHoverIndex][2], gui.color);
             if (picture.upgradeTooltip.length > 0) {
-                let boxWidth = measureText(picture.name, alcoveSize / 10),
+                let boxWidth = Math.max(measureText(picture.name, alcoveSize / 10), measureText(picture.upgradeTooltip, alcoveSize / 15)),
                     boxX = global.mouse.x * global.screenWidth / window.canvas.width + 2,
                     boxY = global.mouse.y * global.screenHeight / window.canvas.height + 2,
                     boxPadding = 6,
                     splitTooltip = picture.upgradeTooltip.split("\n"),
                     textY = boxY + boxPadding + alcoveSize / 10;
-                
-                // Tooltip box width
-                for (let line of splitTooltip) boxWidth = Math.max(boxWidth, measureText(line, alcoveSize / 15));
-
-                // Draw tooltip box
                 gameDraw.setColor(ctx, color.dgrey);
-                ctx.lineWidth /= 1.5;
                 drawGuiRect(boxX, boxY, boxWidth + boxPadding * 3, alcoveSize * (splitTooltip.length + 1) / 10 + boxPadding * 3, false);
                 drawGuiRect(boxX, boxY, boxWidth + boxPadding * 3, alcoveSize * (splitTooltip.length + 1) / 10 + boxPadding * 3, true);
-                ctx.lineWidth *= 1.5;
                 drawText(picture.name, boxX + boxPadding * 1.5, textY, alcoveSize / 10, color.guiwhite);
                 for (let t of splitTooltip) {
                     textY += boxPadding + alcoveSize / 15
@@ -1753,7 +1746,6 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         global.clickables.skipUpgrades.hide();
     }
 }
-  
 const gameDrawAlive = (ratio, drawRatio) => {
     let GRAPHDATA = 0;
     // Prep stuff
