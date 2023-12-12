@@ -36,7 +36,6 @@ body {
     -moz-user-select: none;
     user-select: none;
 }
-
 body {
     font-family: Ubuntu;
     font-size: 14px;
@@ -251,7 +250,7 @@ a.menuTab {
   font: 13px Ubuntu;
   border-radius: 0px 0px 5px 5px;
   padding: 6px 10px 7px 10px;
-  color: #ffffff !important;
+  color: #FFFFFF !important;
   text-decoration: none;
   margin-right: 10px;
 }
@@ -260,16 +259,38 @@ a.menuTab.discord {
       animation:pfpDefault 800ms linear both;
   background: #7289DA url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/svg0.svg") 4px 3px/21px no-repeat;
 }
-  a.menuTab.catto {
-      background: #f00 url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/coder.png") 8px 6px no-repeat;
+a.menuTab.catto {
+  background: #FF0000 url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/coder.png") 8px 6px no-repeat;
   padding: 6px 10px 7px 28px;
-        animation:pfpDefault 800ms linear both;
+      border-bottom: 2px solid #c91a1a;
+    box-shadow: inset 0 -2px #c91a1a;
+    -webkit-box-shadow: inset 0 -2px #c91a1a;
+      animation:pfpDefault 800ms linear both;
 }
+a.menuTab.catto:active,
+a.menuTab.catto:hover {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 a.menuTab.stat {
   background: #1E8449  url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/play.png") 3px 2px/23px no-repeat;
   padding: 6px 10px 7px 28px;
+        border-bottom: 2px solid #156637;
+    box-shadow: inset 0 -2px #156637;
+    -webkit-box-shadow: inset 0 -2px #156637;
       animation:pfpDefault 800ms linear both;
 }
+a.menuTab.stat:active,
+a.menuTab.stat:hover {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 a.menuTab.??? {
   background: #FFFFFF  url("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2022_06_23_11e_Kleki.png?v=1675997243695") 3px 2px/23px no-repeat;
   padding: 6px 10px 7px 28px;
@@ -447,7 +468,7 @@ update {
 #startButton:active,
 #startButton:hover {
     top: 1px;
-    background: #8ABC3F;
+    background: #B9E87E;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
