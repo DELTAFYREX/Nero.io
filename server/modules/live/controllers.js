@@ -764,19 +764,45 @@ class io_whirlwind extends IO {
   }
 }
 class io_hadron extends IO {
-  constructor(body) {
-    super(body);
-    this.angle = 0
-  }
-  
-  think(input) {
-  if (input.alt){
-                this.facing += 0.02 / c.runSpeed;
+    constructor(b, opts = {}) {
+        super(b)
+        this.a = opts.startAngle || 0;
+        this.speed = opts.speed ?? 0.04;
+        this.onlyWhenIdle = opts.onlyWhenIdle;
+        this.independent = opts.independent;
     }
-    else{
-                this.facing += 0.02 / c.runSpeed;
+    think(input) {
+      if (input.alt){
+        if (this.onlyWhenIdle && input.target) {
+            this.a = (-1) * Math.atan2(input.target.y, input.target.x);
+            return input;
+        }
+        this.a += (-1) * this.speed / (-1) * c.runSpeed;
+        let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
+        return {
+            target: {
+                x: (-1) * Math.cos(this.a + offset),
+                y: (-1) * Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+      }else{
+                if (this.onlyWhenIdle && input.target) {
+            this.a = Math.atan2(input.target.y, input.target.x);
+            return input;
+        }
+        this.a += this.speed / c.runSpeed;
+        let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
+        return {
+            target: {
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
+            },
+            main: true,
+        };
+      }
+      
     }
-  }
 }
 class io_orbit extends IO {
   constructor(body) {
