@@ -5812,20 +5812,25 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese"];
         exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"];
         exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"];
-        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"];
+        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "prophet", "autoUnderseer"];
         exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
 
     exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"];
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
         exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"];
-        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery"];
-        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "autoLaunch"];
+        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "munition", "autoArtillery"];
+        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "vortex", "autoLaunch"];
 
     exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap"];
         exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"];
         exports.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror"];
         exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"];
-        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"];
+        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "whirlGuard", "autoTrapGuard"];
+
+    exports.whirlwind.UPGRADES_TIER_2 = ["tornado", "hurricane"];
+        exports.whirlwind.UPGRADES_TIER_3 = ["hexaWhirl", "munition", "whirl3", "whirlGuard", "prophet", "vortex"];
+        exports.tornado.UPGRADES_TIER_3 = ["megaTornado", "tempest", "thunderbolt"];
+        exports.hurricane.UPGRADES_TIER_3 = ["typhoon", "blizzard"];
 
     exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
         exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
@@ -5842,6 +5847,6 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
 
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
 
-    exports.desmos.UPGRADES_TIER_2 = ["helix", "volute"];
-        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
+    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
         exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
+        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];

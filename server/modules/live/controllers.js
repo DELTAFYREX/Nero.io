@@ -719,7 +719,7 @@ class io_formulaTarget extends IO {
         };
     }
 }
-class io_orbit extends IO {
+class io_orbitOld extends IO {
     constructor (b, opts = {}) {
         super(b);
         this.radius = opts.radius || 3;
@@ -728,6 +728,7 @@ class io_orbit extends IO {
     think (input) {
         let distance = this.body.master.size * this.radius,
             angle = this.spin + Math.atan2(this.body.master.y - this.body.y, this.body.master.x - this.body.x);
+      
         //this.body.x = this.body.master.x + distance * Math.cos(angle);
         //this.body.y = this.body.master.y + distance * Math.sin(angle);
         let goalRelative = new Vector(this.body.master.x + distance * Math.cos(angle) - this.body.x, this.body.master.y + distance * Math.sin(angle) - this.body.y),
