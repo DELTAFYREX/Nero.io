@@ -2672,13 +2672,15 @@ exports.minilaser = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
-        },        
+            },
+        },
         {
-            POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
+            POSITION: [24, 1, 1, 0, 0, 0, 2 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                COLOR: 'red',
+                SHOOT_SETTINGS: combineStats([g.fake]),
                 TYPE: "laser",
-          },
+            },
         }
     ],
 };
