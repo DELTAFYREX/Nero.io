@@ -774,10 +774,10 @@ class io_hadron extends IO {
     think(input) {
       if (input.alt){
         if (this.onlyWhenIdle && input.target) {
-            this.a = (-1) * Math.atan2(input.target.y, input.target.x);
+            this.a = Math.atan2(input.target.y, input.target.x);
             return input;
         }
-        this.a += (-1) * this.speed / (-1) * c.runSpeed;
+        this.a += this.speed / c.runSpeed;
         let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
         return {
             target: {
