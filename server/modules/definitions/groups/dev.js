@@ -1,4 +1,4 @@
-const { combineStats, addAura, makeDeco } = require('../facilitators.js');
+const { combineStats, addAura, makeDeco, makeTracker } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -1475,6 +1475,108 @@ exports.testDesmos = {
         }
     }]
 };
+exports.nesthivedronething = makeTracker({
+    LABEL: "Drone Of The Nest",
+    BODY: {  
+    FOV: 0.7,
+    },
+    PARENT: "hexaWhirl",
+    TEAM: TEAM_ENEMIES,
+    COLOR: "yellow",
+      GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 120, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 240, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 60, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 180, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [18, 8, 1, 0, 0, 300, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
+    ],
+};
+})
 exports.tooltipTank = {
     PARENT: 'genericTank',
     LABEL: "Tooltip Test",
@@ -1560,7 +1662,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "tooltipTank"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
