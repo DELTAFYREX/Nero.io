@@ -512,7 +512,7 @@ exports.satellite = {
     SHAPE: 0,
     LAYER: 13,
     CONTROLLERS: ['orbit'],
-    FACING_TYPE: "smoothToTarget",
+    FACING_TYPE: "spin",
     BODY: {
         PENETRATION: 1.2,
         PUSHABILITY: 0.6,
@@ -529,6 +529,10 @@ exports.satellite = {
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
     MOTION_TYPE: 'motor'
+}
+exports.squareSatellite = {
+    PARENT: "satellite",
+    SHAPE: 4
 }
 
 // Sunchips
@@ -1304,7 +1308,6 @@ exports.whirlwind = {
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
     STAT_NAMES: statnames.whirlwind,
-    TOOLTIP: "[DEV NOTE] The Whirlwind is still under construction and may not function as intended!",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -1312,7 +1315,7 @@ exports.whirlwind = {
         }
     ],
     AI: {
-        SPEED: 2,
+        SPEED: 2.125,
     },
     GUNS: (() => {
         let output = []
@@ -1320,7 +1323,7 @@ exports.whirlwind = {
             output.push({
                 POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([{reload: 3, damage: 1.75}]),
+                    SHOOT_SETTINGS: combineStats([g.satellite]),
                     TYPE: ["satellite", {ANGLE: i * 60}],
                     MAX_CHILDREN: 1,  
                     AUTOFIRE: true,  
@@ -1336,7 +1339,7 @@ exports.desmos = {
     PARENT: "genericTank",
     LABEL: "Desmos",
     STAT_NAMES: statnames.desmos,
-    TOOLTIP: "[DEV NOTE] The Desmos is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Desmos does not function yet yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [20, 10, 0.8, 0, 0, 0, 0],
@@ -4810,7 +4813,7 @@ exports.tornado = {
     PARENT: ["genericTank"],
     LABEL: "Tornado",
     DANGER: 6,
-    TOOLTIP: "[DEV NOTE] The Tornado is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Tornado does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [11, 0, 0, 0, 360, 1],
@@ -4824,7 +4827,7 @@ exports.megaTornado = {
     PARENT: ["genericTank"],
     LABEL: "Mega Tornado",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Mega Tornado is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Mega Tornado does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [16, 0, 0, 0, 360, 1],
@@ -4876,7 +4879,6 @@ exports.hurricane = {
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
     STAT_NAMES: statnames.whirlwind,
-    TOOLTIP: "[DEV NOTE] The Hurricane is still under construction and may not function as intended!",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -4892,7 +4894,7 @@ exports.hurricane = {
             output.push({ 
                 POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([{reload: 3, damage: 1.75}]), 
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
                     TYPE: ["satellite", {ANGLE: i * 45}], 
                     MAX_CHILDREN: 1,   
                     AUTOFIRE: true,  
