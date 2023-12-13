@@ -1026,6 +1026,7 @@ class Entity extends EventEmitter {
         if (set.LAYER != null) this.layerID = set.LAYER;
         if (set.index != null) this.index = set.index.toString();
         if (set.NAME != null) this.name = set.NAME;
+        if (set.ANGLE != null) this.angle = set.ANGLE;
         if (set.LABEL != null) this.label = set.LABEL;
         if (set.UPGRADE_LABEL != null) this.upgradeLabel = set.UPGRADE_LABEL;
         if (set.UPGRADE_TOOLTIP != null) this.upgradeTooltip = set.UPGRADE_TOOLTIP;
