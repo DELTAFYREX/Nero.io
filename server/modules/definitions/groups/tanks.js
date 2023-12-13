@@ -4843,7 +4843,7 @@ exports.tempest = {
     PARENT: ["genericTank"],
     LABEL: "Tempest",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Tempest is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Tempest does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -4861,7 +4861,7 @@ exports.thunderbolt = {
     PARENT: ["genericTank"],
     LABEL: "Thunderbolt",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Thunderbolt is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Thunderbolt does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [11, 0, 0, 0, 360, 1],
@@ -4916,7 +4916,6 @@ exports.typhoon = {
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
     STAT_NAMES: statnames.whirlwind,
-    TOOLTIP: "[DEV NOTE] The Typhoon is not finished yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -4932,7 +4931,7 @@ exports.typhoon = {
             output.push({ 
                 POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([{reload: 3, damage: 1.75}]), 
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
                     TYPE: ["satellite", {ANGLE: i * 36}], 
                     MAX_CHILDREN: 1,   
                     AUTOFIRE: true,  
@@ -4952,7 +4951,7 @@ exports.blizzard = {
     PARENT: ["genericTank"],
     LABEL: "Blizzard",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Blizzard is not finished yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Blizzard does not function yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -4968,7 +4967,6 @@ exports.hexaWhirl = {
     PARENT: ["genericTank"],
     LABEL: "Hexa Whirl",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Hexa Whirl is not finished yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -5018,6 +5016,54 @@ exports.hexaWhirl = {
                 TYPE: "bullet",
             },
         },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
     ],
 };
 exports.munition = {
@@ -5030,7 +5076,6 @@ exports.munition = {
             TYPE: "tornadoDeco",
         },
     ],
-    TOOLTIP: "[DEV NOTE] The Munition is not finished yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [17, 3, 1, 0, -6, -7, 0.25],
@@ -5056,14 +5101,68 @@ exports.munition = {
                 LABEL: "Heavy",
             },
         },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
     ],
 };
 exports.whirl3 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Whirl-3",
     DANGER: 7,
     FACING_TYPE: "autospin",
-    TOOLTIP: "[DEV NOTE] The Whirl-3 is not finished yet. This tank is currently just a mockup.",
+    ANGLE: 90,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.mixed,
+    AI: {
+        SPEED: 2,
+    },
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -5082,13 +5181,30 @@ exports.whirl3 = {
             TYPE: "autoTankGun",
         },
     ],
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 4; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 90}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true,
+                    HAS_NO_RECOIL: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.whirlGuard = {
     PARENT: ["genericTank"],
     LABEL: "Whirl Guard",
     STAT_NAMES: statnames.mixed,
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Whirl Guard is not finished yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -5114,6 +5230,54 @@ exports.whirlGuard = {
                 STAT_CALCULATOR: gunCalcNames.trap,
             },
         },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
     ],
 };
 exports.prophet = {
@@ -5125,8 +5289,6 @@ exports.prophet = {
         SPEED: 0.9 * base.SPEED,
     },
     SHAPE: 4,
-    MAX_CHILDREN: 14,
-    TOOLTIP: "[DEV NOTE] The Phophet is not finished yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -5142,6 +5304,7 @@ exports.prophet = {
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.necro,
+                MAX_CHILDREN: 7,
             },
         },
         {
@@ -5152,8 +5315,57 @@ exports.prophet = {
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.necro,
+                MAX_CHILDREN: 7,
             },
         },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["squareSatellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["squareSatellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["squareSatellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["squareSatellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
     ],
 };
 exports.vortex = {
@@ -5163,7 +5375,6 @@ exports.vortex = {
         FOV: base.FOV * 1.1,
     },
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Vortex is not finished yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [9, 0, 0, 0, 360, 1],
@@ -5183,6 +5394,54 @@ exports.vortex = {
                 STAT_CALCULATOR: gunCalcNames.sustained,
             },
         },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 0}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 90}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 180}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: {WIDTH: 8, LENGTH: 1, DELAY: 0.25},
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.satellite]), 
+                TYPE: ["satellite", {ANGLE: 270}], 
+                MAX_CHILDREN: 1,   
+                AUTOFIRE: true,  
+                SYNCS_SKILLS: false,
+                WAIT_TO_CYCLE: true,
+                HAS_NO_RECOIL: true
+            }
+        }
     ],
 };
 
