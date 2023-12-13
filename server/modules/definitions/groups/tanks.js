@@ -1624,7 +1624,6 @@ exports.revolutionist = {
 exports.hadron = {
     PARENT: "genericTank",
     LABEL: "Hadron",
-    CONTROLLERS: ["hadron"],
     DANGER: 6,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],

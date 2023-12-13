@@ -771,10 +771,10 @@ class io_hadron extends IO {
   
   think(input) {
   if (input.alt){
-    this.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / 180;
+    this.body.facing + -1;
     }
     else{
-    this.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / -180;
+    this.body.facing + 1;
     }
   }
 }
