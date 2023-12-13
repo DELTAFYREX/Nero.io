@@ -777,17 +777,17 @@ class io_hadron extends IO {
             this.a = Math.atan2(input.target.y, input.target.x);
             return input;
         }
-        this.a += this.speed / c.runSpeed;
+        this.a += (-1) * this.speed / c.runSpeed;
         let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
         return {
             target: {
-                x: (-1) * Math.cos(this.a + offset),
-                y: (-1) * Math.sin(this.a + offset),
+                x: Math.cos(this.a + offset),
+                y: Math.sin(this.a + offset),
             },
             main: true,
         };
-      }else{
-                if (this.onlyWhenIdle && input.target) {
+              }else{
+      if (this.onlyWhenIdle && input.target) {
             this.a = Math.atan2(input.target.y, input.target.x);
             return input;
         }
@@ -800,8 +800,7 @@ class io_hadron extends IO {
             },
             main: true,
         };
-      }
-      
+      } 
     }
 }
 class io_orbit extends IO {

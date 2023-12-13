@@ -723,6 +723,10 @@ exports.autoTankGun = {
 }
 exports.bansheegun = {
     PARENT: "autoTankGun",
+    
+}
+exports.bansheegun = {
+    PARENT: "autoTankGun",
     BODY: {
         FOV: 2,
     },
