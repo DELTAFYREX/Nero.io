@@ -1575,7 +1575,6 @@ exports.nesthivedronething = makeTracker({
             }
         }
     ],
-};
 })
 exports.tooltipTank = {
     PARENT: 'genericTank',
