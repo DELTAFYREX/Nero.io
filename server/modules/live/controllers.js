@@ -771,7 +771,7 @@ class io_hadron extends IO {
   }
   
   think(input) {
-    if(input.alt){
+  if (input.alt && input.target) {
     this.body.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / 180;
     }
     else{
