@@ -766,16 +766,15 @@ class io_whirlwind extends IO {
 class io_hadron extends IO {
   constructor(body) {
     super(body);
-    this.body.dist = 40
-    this.body.angle = 0
+    this.angle = 0
   }
   
   think(input) {
-  if (input.alt && input.target) {
-    this.body.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / 180;
+  if (input.alt){
+    this.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / 180;
     }
     else{
-    this.body.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / -180;
+    this.angle += (this.body.skill.spd * 2 + this.body.aiSettings.SPEED) * Math.PI / -180;
     }
   }
 }
