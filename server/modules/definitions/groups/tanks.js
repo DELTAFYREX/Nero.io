@@ -728,12 +728,12 @@ exports.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
   BODY: {
-        PENETRATION: 0.7,
+        PENETRATION: 1.15,
         SPEED: 5.8,
         RANGE: 100,
-        DENSITY: 0.85,
-        HEALTH: 0.15,
-        DAMAGE: 4.55,
+        DENSITY: 0.9,
+        HEALTH: 0.155,
+        DAMAGE: 5.6,
     },
   BUFF_VS_FOOD: true,
 }
@@ -2672,8 +2672,14 @@ exports.minilaser = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
-            },
-        },
+        },        
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                TYPE: "laser",
+          },
+        }
     ],
 };
 // Sprayer upgrades
@@ -6044,7 +6050,7 @@ exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 // TANK UPGRADE PATHS
 exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "whirlwind", "autoBasic", "desmos"];
     exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"];
-        exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine"];
+        exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"];
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
     exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix"];
@@ -6055,11 +6061,11 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
     exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"];
         exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
         exports.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single"];
-        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "dual","autoHunter"];
+        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"];
         exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"];
 
     exports.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach"];
-        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "autoMini"];
+        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"];
         exports.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"];
         exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"];
 
@@ -6070,7 +6076,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "whirl3", "autoAuto3"];
 
     exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "autoDirector"];
-        exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese"];
+        exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "dictator"];
         exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"];
         exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"];
         exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "prophet", "autoUnderseer"];
