@@ -208,10 +208,10 @@ exports.turretBase = {
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: "autoTankGun",
+        TYPE: "revogun",
     }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "autoTankGun",
+        TYPE: "revogun",
     }]
 };
 exports.hadronturretBase = {
@@ -221,10 +221,10 @@ exports.hadronturretBase = {
     CONTROLLERS: ["hadron"],
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: "autoTankGun",
+        TYPE: "revogun",
     }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "autoTankGun",
+        TYPE: "revogun",
     }]
 };
 exports.hyperspinmissile = {
@@ -721,9 +721,9 @@ exports.autoTankGun = {
         },
     ],
 }
-exports.bansheegun = {
+exports.revogun = {
     PARENT: "autoTankGun",
-    
+    CONTROLLERS: ["nearestDifferentMaster"],
 }
 exports.bansheegun = {
     PARENT: "autoTankGun",
