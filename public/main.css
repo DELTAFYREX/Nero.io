@@ -81,6 +81,17 @@ h2 {
     text-align: center;
 }
 
+options_header {
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
+    font-size: small;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 h3 {
     font-size: small;
     color: #484848;

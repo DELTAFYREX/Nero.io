@@ -211,6 +211,7 @@ popup = ' onclick="openPopup()" '
                         </div>
                         <div class="slider">
                             <br>
+                              <options_header>Advanced Controls:</options_header><br>
                             <table>
                                 <tr> <td><b>E</b> - auto-fire</td>     <td><b>C</b> - auto-spin</td> </tr>
                                 <tr> <td><b>R</b> - disable AI</td>    <td><b>N</b> - level up</td> </tr>
@@ -311,10 +312,10 @@ popup = ' onclick="openPopup()" '
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
             if (clicked) {
-                $(this).html('<h3 class="nopadding">close options/help 🡶</h3>');
+                $(this).html('<h3 class="nopadding">close options ▾</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
-                $(this).html('<h3 class="nopadding">view options/help 🡲</h3>');
+                $(this).html('<h3 class="nopadding">view options ▸</h3>');
                 $(".slider").css({ "top": 0 });
             }
         });
