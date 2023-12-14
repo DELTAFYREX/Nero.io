@@ -1325,14 +1325,15 @@ exports.whirlwind = {
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
     STAT_NAMES: statnames.whirlwind,
+    TOOLTIP: "[DEV NOTE] We are aware of an issue dramatically affecting satellite speed when upgrading.",
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "whirlwindDeco"
         }
     ],
     AI: {
-        SPEED: 2.125,
+        SPEED: 2,
     },
     GUNS: (() => {
         let output = []
@@ -1356,13 +1357,12 @@ exports.desmos = {
     PARENT: "genericTank",
     LABEL: "Desmos",
     STAT_NAMES: statnames.desmos,
-    TOOLTIP: "[DEV NOTE] The Desmos does not function yet yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [20, 10, 0.8, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: "bullet"
+                TYPE: ["bullet", {MOTION_TYPE: "desmos"}]
             }
         },
         {
@@ -1407,6 +1407,59 @@ exports.healer = {
         }
     ]
 }
+exports.master = {
+    PARENT: "genericTank",
+    LABEL: "Master",
+    BODY: {
+        HEALTH: base.HEALTH * 0.4,
+        SHIELD: base.SHIELD * 0.4,
+        DENSITY: base.DENSITY * 0.3,
+    },
+    DANGER: 8,
+    GUNS: [
+        {
+            POSITION: [18, 16, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "masterBullet",
+                MAX_CHILDREN: 5,
+                DESTROY_OLDEST_CHILD: true,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, 1, 220, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 210, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        },
+    ],
+};
 
 // Twin upgrades
 exports.doubleTwin = makeMulti({
@@ -2838,7 +2891,7 @@ exports.hexaTank = makeMulti({
     ]
 }, 3, "Hexa Tank")
 exports.triAngle = {
-    PARENT: "genericTank",
+    PARENT: ["genericTank"],
     LABEL: "Tri-Angle",
     BODY: {
         HEALTH: 0.8 * base.HEALTH,
@@ -2880,7 +2933,7 @@ exports.triAngle = {
     ],
 }
 exports.auto3 = {
-    PARENT: "genericTank",
+    PARENT: ["genericTank"],
     LABEL: "Auto-3",
     DANGER: 6,
     FACING_TYPE: "autospin",
@@ -3578,7 +3631,7 @@ exports.battleship = {
     STAT_NAMES: statnames.swarm,
     FACING_TYPE: "locksFacing",
     BODY: {
-        FOV: 1.2 * base.FOV,
+        FOV: 1.2 * base.FOV
     },
     GUNS: [
         {
@@ -3587,8 +3640,8 @@ exports.battleship = {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
                 TYPE: "swarm",
                 STAT_CALCULATOR: gunCalcNames.swarm,
-                LABEL: "Guided",
-            },
+                LABEL: "Guided"
+            }
         },
         {
             POSITION: [7, 7.5, 0.6, 7, -4, 90, 0.5],
@@ -3596,8 +3649,8 @@ exports.battleship = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
-                LABEL: "Autonomous",
-            },
+                LABEL: "Autonomous"
+            }
         },
         {
             POSITION: [7, 7.5, 0.6, 7, 4, 270, 0],
@@ -3605,8 +3658,8 @@ exports.battleship = {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
                 TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
-                LABEL: "Autonomous",
-            },
+                LABEL: "Autonomous"
+            }
         },
         {
             POSITION: [7, 7.5, 0.6, 7, -4, 270, 0.5],
@@ -3614,10 +3667,10 @@ exports.battleship = {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.battle]),
                 TYPE: "swarm",
                 STAT_CALCULATOR: gunCalcNames.swarm,
-                LABEL: "Guided",
-            },
-        },
-    ],
+                LABEL: "Guided"
+            }
+        }
+    ]
 }
 exports.fortress = {
     PARENT: ["genericTank"],
@@ -3717,7 +3770,6 @@ exports.necromancer = {
     MAX_CHILDREN: 14,
     GUNS: [
         {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [5.25, 12, 1.2, 8, 0, 90, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone, g.sunchip]),
@@ -3791,6 +3843,7 @@ exports.maleficitor = {
         },
     ],
 }
+
 exports.infestor = makeMulti({
     PARENT: "genericTank",
     DANGER: 7,
@@ -4289,7 +4342,6 @@ exports.rocketeer = {
         },
     ],
 }
-
 // Trapper upgrades
 exports.builder = {
     PARENT: "genericTank",
@@ -4310,9 +4362,9 @@ exports.builder = {
                 SHOOT_SETTINGS: combineStats([g.trap, g.block]),
                 TYPE: "setTrap",
                 STAT_CALCULATOR: gunCalcNames.block
-            },
-        },
-    ],
+            }
+        }
+    ]
 }
 exports.triTrapper = makeMulti({
     PARENT: "genericTank",
@@ -4333,7 +4385,7 @@ exports.triTrapper = makeMulti({
     ]
 }, 3, "Tri-Trapper")
 exports.trapGuard = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Trap Guard",
     STAT_NAMES: statnames.mixed,
     DANGER: 6,
@@ -4342,8 +4394,8 @@ exports.trapGuard = {
             POSITION: [20, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.flank]),
-                TYPE: "bullet",
-            },
+                TYPE: "bullet"
+            }
         },
         {
             POSITION: [13, 8, 1, 0, 0, 180, 0],
@@ -4353,21 +4405,21 @@ exports.trapGuard = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap]),
                 TYPE: "trap",
-                STAT_CALCULATOR: gunCalcNames.trap,
-            },
-        },
-    ],
+                STAT_CALCULATOR: gunCalcNames.trap
+            }
+        }
+    ]
 }
 
 // Builder upgrades
 exports.construct = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Constructor",
     STAT_NAMES: statnames.trap,
     DANGER: 7,
     BODY: {
         SPEED: 0.7 * base.SPEED,
-        FOV: 1.15 * base.FOV,
+        FOV: 1.15 * base.FOV
     },
     GUNS: [
         {
@@ -4379,9 +4431,9 @@ exports.construct = {
                 SHOOT_SETTINGS: combineStats([g.trap, g.block, g.construct]),
                 TYPE: "setTrap",
                 STAT_CALCULATOR: gunCalcNames.block
-            },
-        },
-    ],
+            }
+        }
+    ]
 }
 exports.engineer = {
     PARENT: ["genericTank"],
@@ -4461,8 +4513,8 @@ exports.assembler = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.trap, g.block]),
                 TYPE: 'assemblerTrap',
+                MAX_CHILDREN: 8,
                 STAT_CALCULATOR: gunCalcNames.block,
-                MAX_CHILDREN: 8
             }
         }
     ],
@@ -4474,7 +4526,6 @@ exports.assembler = {
         }
     ]
 }
-
 // Tri-Trapper upgrades
 exports.hexaTrapper = makeAuto({
     PARENT: ["genericTank"],
@@ -4853,30 +4904,76 @@ exports.bulwark = {
 exports.tornadoDeco = makeDeco(4);
 exports.tornadoDeco.CONTROLLERS = [["spin", { independent: true }]];
 exports.tornado = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Tornado",
     DANGER: 6,
-    TOOLTIP: "[DEV NOTE] The Tornado does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
-            POSITION: [11, 0, 0, 0, 360, 1],
+            POSITION: [10, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
+    ANGLE: 90,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 4; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 12, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite, g.pound]), 
+                    TYPE: ["satellite", {ANGLE: i * 90}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.megaTornadoDeco = makeDeco([[0,-1],[0.5,0],[0,1],[-0.5,0]])
 exports.megaTornadoDeco.CONTROLLERS = [["spin", { independent: true }]];
 exports.megaTornado = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Mega Tornado",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Mega Tornado does not function yet yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [16, 0, 0, 0, 360, 1],
             TYPE: "megaTornadoDeco",
         },
     ],
+    ANGLE: 180,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 2; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 16, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite, g.pound, g.destroy]), 
+                    TYPE: ["satellite", {ANGLE: i * 180}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.tempestDeco1 = makeDeco(3);
 exports.tempestDeco1.CONTROLLERS = [["spin", { independent: true }]];
@@ -4886,14 +4983,14 @@ exports.tempest = {
     PARENT: ["genericTank"],
     LABEL: "Tempest",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Tempest does not function yet yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Tempest does not function yet. This tank is currently just a mockup.",
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tempestDeco1",
         },
         {
-            POSITION: [4.5, 0, 0, 180, 360, 1],
+            POSITION: [4, 0, 0, 180, 360, 1],
             TYPE: "tempestDeco2",
         },
     ],
@@ -4904,13 +5001,37 @@ exports.thunderbolt = {
     PARENT: ["genericTank"],
     LABEL: "Thunderbolt",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Thunderbolt does not function yet yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Thunderbolt does not function yet. This tank is currently just a mockup.",
     TURRETS: [
         {
-            POSITION: [11, 0, 0, 0, 360, 1],
+            POSITION: [10, 0, 0, 0, 360, 1],
             TYPE: "thunderboltDeco",
         },
     ],
+    ANGLE: 90,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    AI: {
+        SPEED: 2.5, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 4; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 12, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite, g.pound]), 
+                    TYPE: ["satellite", {ANGLE: i * 90}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.hurricaneDeco = makeDeco(8);
 exports.hurricaneDeco.CONTROLLERS = [["spin", { independent: true }]];
@@ -4924,12 +5045,12 @@ exports.hurricane = {
     STAT_NAMES: statnames.whirlwind,
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "hurricaneDeco",
         },
     ],
     AI: {
-        SPEED: 0.125, 
+        SPEED: 2, 
     }, 
     GUNS: (() => { 
         let output = []
@@ -4961,12 +5082,12 @@ exports.typhoon = {
     STAT_NAMES: statnames.whirlwind,
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "typhoonDeco",
         },
     ],
     AI: {
-        SPEED: 0.0625/8, 
+        SPEED: 2, 
     }, 
     GUNS: (() => { 
         let output = []
@@ -4997,11 +5118,11 @@ exports.blizzard = {
     TOOLTIP: "[DEV NOTE] The Blizzard does not function yet. This tank is currently just a mockup.",
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "blizzardDeco1",
         },
         {
-            POSITION: [6.5, 0, 0, 180, 360, 1],
+            POSITION: [6, 0, 0, 180, 360, 1],
             TYPE: "blizzardDeco2",
         },
     ],
@@ -5010,9 +5131,16 @@ exports.hexaWhirl = {
     PARENT: ["genericTank"],
     LABEL: "Hexa Whirl",
     DANGER: 7,
+    ANGLE: 45,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.mixed,
+    AI: {
+        SPEED: 2, 
+    }, 
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
@@ -5113,9 +5241,16 @@ exports.munition = {
     PARENT: ["genericTank"],
     DANGER: 7,
     LABEL: "Munition",
+    ANGLE: 45,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.mixed,
+    AI: {
+        SPEED: 2,
+    },
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
@@ -5208,7 +5343,7 @@ exports.whirl3 = {
     },
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
         {
@@ -5246,11 +5381,17 @@ exports.whirl3 = {
 exports.whirlGuard = {
     PARENT: ["genericTank"],
     LABEL: "Whirl Guard",
+    ANGLE: 45,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
     STAT_NAMES: statnames.mixed,
+    AI: {
+        SPEED: 2,
+    },
     DANGER: 7,
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
@@ -5327,14 +5468,20 @@ exports.prophet = {
     PARENT: ["genericTank"],
     LABEL: "Prophet",
     DANGER: 7,
-    STAT_NAMES: statnames.drone,
+    ANGLE: 45,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.mixed,
     BODY: {
         SPEED: 0.9 * base.SPEED,
+    },
+    AI: {
+        SPEED: 2,
     },
     SHAPE: 4,
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
@@ -5417,10 +5564,17 @@ exports.vortex = {
     BODY: {
         FOV: base.FOV * 1.1,
     },
+    ANGLE: 45,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.mixed,
+    AI: {
+        SPEED: 2,
+    },
     DANGER: 7,
     TURRETS: [
         {
-            POSITION: [9, 0, 0, 0, 360, 1],
+            POSITION: [8, 0, 0, 0, 360, 1],
             TYPE: "tornadoDeco",
         },
     ],
@@ -5488,20 +5642,18 @@ exports.vortex = {
     ],
 };
 
-
 // Desmos upgrades
 exports.volute = {
     PARENT: ["genericTank"],
     LABEL: "Volute",
     DANGER: 6,
     STAT_NAMES: statnames.desmos,
-    TOOLTIP: "[DEV NOTE] The Volute is not finished yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [20, 13, 0.8, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pound]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos, g.pound]),
+                TYPE: ["bullet", {MOTION_TYPE: "desmos"}]
             },
         },
         {
@@ -5519,20 +5671,19 @@ exports.helix = {
     LABEL: "Helix",
     DANGER: 6,
     STAT_NAMES: statnames.desmos,
-    TOOLTIP: "[DEV NOTE] The Helix is not finished yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [20, 8, 0.75, 0, -5, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {invert: false}]}]
             },
         },
         {
             POSITION: [20, 8, 0.75, 0, 5, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {invert: true}]}]
             },
         },
         {
@@ -5580,27 +5731,26 @@ exports.triplex = {
     LABEL: "Triplex",
     DANGER: 7,
     STAT_NAMES: statnames.desmos,
-    TOOLTIP: "[DEV NOTE] The Triplex is not finished yet. This tank is currently just a mockup.",
     GUNS: [
         {
             POSITION: [18, 10, 0.7, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.desmos]),
                 TYPE: "bullet",
             },
         },
         {
-            POSITION: [18, 10, 0.7, 0, 0, 45, 0],
+            POSITION: [18, 10, 0.7, 0, 0, 45, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: "desmos"}]
             },
         },
         {
-            POSITION: [18, 10, 0.7, 0, 0, -45, 0],
+            POSITION: [18, 10, 0.7, 0, 0, -45, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.bent, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {invert: true}]}]
             },
         },
         {
@@ -5621,7 +5771,66 @@ exports.triplex = {
         },
     ],
 }
-exports.quadruplex = makeMulti(exports.desmos, 4, "Quadruplex", 45)
+exports.quadruplex = {
+    PARENT: ["genericTank"],
+    LABEL: "Quadruplex",
+    DANGER: 7,
+    STAT_NAMES: statnames.desmos,
+    GUNS: [
+        {
+            POSITION: [20, 10, 0.8, 0, 0, 45, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {amplitude: 25}]}]
+            }
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, -6.25, 135, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, 6.25, -45, 0]
+        },
+        {
+            POSITION: [20, 10, 0.8, 0, 0, -45, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {amplitude: 25, invert: true}]}]
+            }
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, -6.25, 45, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, 6.25, -135, 0]
+        },
+        {
+            POSITION: [20, 10, 0.8, 0, 0, 135, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {period: 7, amplitude: 10}]}]
+            }
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, -6.25, -135, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, 6.25, 45, 0]
+        },
+        {
+            POSITION: [20, 10, 0.8, 0, 0, -135, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["bullet", {MOTION_TYPE: ["desmos", {period: 7, amplitude: 10, invert: true}]}]
+            }
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, -6.25, -45, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 1.25, 6.25, 135, 0]
+        },
+    ],
+}
 
 // Smasher upgrades
 exports.megaSmasher = {
