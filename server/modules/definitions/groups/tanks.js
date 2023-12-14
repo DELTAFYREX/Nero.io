@@ -6008,8 +6008,8 @@ exports.surgeon = {
                 MAX_CHILDREN: 2,
                 SHOOT_SETTINGS: combineStats([g.trap, g.block, g.slow]),
                 TYPE: "surgeonPillbox",
-                STAT_CALCULATOR: gunCalcNames.block,
                 SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.block
             },
         },
         {
@@ -6066,6 +6066,7 @@ exports.paramedic = {
     ],
     STAT_NAMES: statnames.heal,
 }
+
 // Bird tanks
 exports.falcon = makeBird({
     PARENT: "genericTank",
@@ -6318,7 +6319,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
     exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"];
         exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
         exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "hexaWhirl", "autoHexaTank"];
-        exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"];
+        exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture", "master"];
         exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "whirl3", "autoAuto3"];
 
     exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "autoDirector"];
