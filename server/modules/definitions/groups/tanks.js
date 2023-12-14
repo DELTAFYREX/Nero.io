@@ -443,6 +443,97 @@ exports.rocketeerMissile = {
         },
     ],
 }
+exports.masterBullet = {
+    PARENT: "missile",
+    FACING_TYPE: "veryfastspin",
+    MOTION_TYPE: "motor",
+    HAS_NO_RECOIL: true,
+    DIE_AT_RANGE: false,
+    GUNS: [
+        {
+            /*** LENGTH    WIDTH     ASPECT        X             Y         ANGLE     DELAY */
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.flank,
+                    g.tri,
+                    g.trifront,
+                    g.tonsmorrecoil,
+                    g.weak,
+                    g.morereload,
+                ]),
+                TYPE: "bullet",
+                LABEL: "Front",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.flank,
+                    g.tri,
+                    g.thruster,
+                    g.weak,
+                    g.morereload,
+                ]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, 1, 220, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.flank,
+                    g.tri,
+                    g.thruster,
+                    g.weak,
+                    g.morereload,
+                ]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.flank,
+                    g.tri,
+                    g.thruster,
+                    g.weak,
+                    g.morereload,
+                ]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 210, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.flank,
+                    g.tri,
+                    g.thruster,
+                    g.weak,
+                    g.morereload,
+                ]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+    ],
+};
 
 // Healer Projectiles
 exports.surgeonPillboxTurret = {
@@ -515,9 +606,10 @@ exports.surgeonPillbox = {
         },
     ],
 }
+
 // Drones
 exports.turretedDrone = makeAuto(generics.drone)
-exports.satellite = {
+exports.satellite = { 
     LABEL: "Satellite",
     TYPE: "drone",
     ACCEPTS_SCORE: false,
@@ -702,6 +794,7 @@ exports.assemblerTrap = {
     ],
     HITS_OWN_TYPE: 'assembler'
 }
+
 // Auto Guns
 exports.autoTankGun = {
     PARENT: "genericTank",
@@ -1333,22 +1426,22 @@ exports.whirlwind = {
         }
     ],
     AI: {
-        SPEED: 2,
-    },
-    GUNS: (() => {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
         let output = []
-        for (let i = 0; i < 6; i++) {
-            output.push({
+        for (let i = 0; i < 6; i++) { 
+            output.push({ 
                 POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.satellite]),
-                    TYPE: ["satellite", {ANGLE: i * 60}],
-                    MAX_CHILDREN: 1,  
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 60}], 
+                    MAX_CHILDREN: 1,   
                     AUTOFIRE: true,  
                     SYNCS_SKILLS: false,
                     WAIT_TO_CYCLE: true
                 }
-            })
+            }) 
         }
         return output
     })()
@@ -1361,7 +1454,7 @@ exports.desmos = {
         {
             POSITION: [20, 10, 0.8, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
                 TYPE: ["bullet", {MOTION_TYPE: "desmos"}]
             }
         },
@@ -1382,7 +1475,7 @@ exports.smasher = {
             POSITION: [21.5, 0, 0, 0, 360, 0],
             TYPE: "smasherBody"
         }
-    ],
+    ]
 }
 exports.healer = {
     PARENT: "genericTank",
@@ -3031,7 +3124,7 @@ exports.cyclone = makeMulti({
 
 // Tri-Angle upgrades
 exports.fighter = {
-    PARENT: "genericTank",
+    PARENT: ["genericTank"],
     LABEL: "Fighter",
     BODY: {
         DENSITY: 0.6 * base.DENSITY,
@@ -3843,7 +3936,6 @@ exports.maleficitor = {
         },
     ],
 }
-
 exports.infestor = makeMulti({
     PARENT: "genericTank",
     DANGER: 7,
@@ -3875,6 +3967,7 @@ exports.infestor = makeMulti({
         }
     ]
 }, 2, "Infestor", 90)
+
 // Spawner upgrades
 exports.factory = {
     PARENT: ["genericTank"],
@@ -4342,6 +4435,7 @@ exports.rocketeer = {
         },
     ],
 }
+
 // Trapper upgrades
 exports.builder = {
     PARENT: "genericTank",
@@ -4526,6 +4620,7 @@ exports.assembler = {
         }
     ]
 }
+
 // Tri-Trapper upgrades
 exports.hexaTrapper = makeAuto({
     PARENT: ["genericTank"],
@@ -4900,6 +4995,7 @@ exports.bulwark = {
         },
     ],
 }
+
 // Whirlwind upgrades
 exports.tornadoDeco = makeDeco(4);
 exports.tornadoDeco.CONTROLLERS = [["spin", { independent: true }]];
