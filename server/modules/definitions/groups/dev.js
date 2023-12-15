@@ -367,7 +367,6 @@ for (let x = 0; x < tensorWidth; x++) for (let y = 0; y < tensorHeight; y++) for
 
 exports.diamondShape = {
     PARENT: ["basic"],
-    SHOOT_ON_DEATH: true,
     LABEL: "Rotated Body",
     SHAPE: 4.5
 };
