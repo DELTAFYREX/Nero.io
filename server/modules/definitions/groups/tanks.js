@@ -306,15 +306,6 @@ exports.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
-    BODY: {
-        PUSHABILITY: 0,
-        HEALTH: 10000,
-        SHIELD: 10000,
-        REGEN: 1000,
-        DAMAGE: 1,
-        RESIST: 100,
-        STEALTH: 1,
-    },
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
@@ -382,6 +373,15 @@ exports.fastdrone = {
     DRAW_HEALTH: false,
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
+};
+exports.revoorbitdrone = {
+  PARENT: "drone",  
+  LABEL: 'Drone',
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBase",
+    },
+  ],
 };
 exports.autoTurretNerf = {
     PARENT: "genericTank",
@@ -5830,6 +5830,27 @@ exports.railgun = {
     ]
 }
 exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
+exports.revodirector = {
+    PARENT: "genericTank",
+    LABEL: "Director",
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "revoorbitdrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                MAX_CHILDREN: 6
+            }
+        }
+    ]
+}
 
 // Auto tanks
 exports.autoBasic = makeAuto(exports.basic, "Auto-Basic");
