@@ -463,6 +463,20 @@ exports.mindindicator = {
     SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
 };
+exports.spaghetti = {
+  PARENT: "bullet",
+  SHOOT_ON_DEATH: true,
+  SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/afg-spaghetti-alla-assassina-1-19ef-superJumbo.jpg?v=1701450288242",
+      GUNS: [
+        {
+            POSITION: [2, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
 
 // Healer Projectiles
 exports.surgeonPillboxTurret = {
@@ -615,20 +629,7 @@ exports.gunchip = {
     NECRO: [-2],
     SHAPE: -2
 }
-exports.spaghetti = {
-  PARENT: "bullet",
-  SHOOT_ON_DEATH: true,
-  SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/afg-spaghetti-alla-assassina-1-19ef-superJumbo.jpg?v=1701450288242",
-      GUNS: [
-        {
-            POSITION: [2, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
-            }
-        }
-    ]
-}
+
 // Minions
 exports.minion = {
     PARENT: "genericTank",
@@ -990,6 +991,7 @@ exports.homingBullet = {
     },
     CAN_GO_OUTSIDE_ROOM: true
 }
+
 // Decorations
 exports.overdriveDeco = makeDeco(4)
 exports.whirlwindDeco = makeDeco(6)
@@ -1979,7 +1981,6 @@ exports.crossbow = {
     ]
 }
 
-
 // Machine Gun upgrades
 exports.minigun = {
     PARENT: "genericTank",
@@ -2249,26 +2250,14 @@ exports.redistributor = {
         {
             POSITION: [26, 7, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.lowpower,
-                    g.mach,
-                    g.morerecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.lowpower, g.mach, g.morerecoil]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [23, 10, 1, 0, 0, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.lowpower,
-                    g.mach,
-                    g.morerecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.lowpower, g.mach, g.morerecoil]),
                 TYPE: "bullet",
             },
         },
@@ -2289,14 +2278,7 @@ exports.atomizer = {
         {
             POSITION: [5, 7.5, 1.3, 18.5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.lowpower,
-                    g.mach,
-                    g.morerecoil,
-                    g.atomizer,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.lowpower, g.mach, g.morerecoil, g.atomizer]),
                 TYPE: "bullet",
             },
         },
@@ -2317,13 +2299,7 @@ exports.focal = {
         {
             POSITION: [25, 7, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.lowpower,
-                    g.mach,
-                    g.morerecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.lowpower, g.mach, g.morerecoil]),
                 TYPE: "bullet",
             },
         },
@@ -2371,13 +2347,7 @@ exports.triAngle = {
         {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.flank,
-                    g.tri,
-                    g.trifront,
-                    g.tonsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil]),
                 TYPE: "bullet",
                 LABEL: "Front",
             },
@@ -2449,48 +2419,28 @@ exports.cyclone = makeMulti({
         {
             POSITION: [15, 3.5, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.twin,
-                    g.puregunner,
-                    g.hurricane
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.hurricane]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [15, 3.5, 1, 0, 0, 30, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.twin,
-                    g.puregunner,
-                    g.hurricane
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.hurricane]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [15, 3.5, 1, 0, 0, 60, 0.25],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.twin,
-                    g.puregunner,
-                    g.hurricane
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.hurricane]),
                 TYPE: "bullet"
             }
         },
         {
             POSITION: [15, 3.5, 1, 0, 0, 90, 0.75],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.twin,
-                    g.puregunner,
-                    g.hurricane
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.puregunner, g.hurricane]),
                 TYPE: "bullet"
             }
         }
@@ -2562,13 +2512,7 @@ exports.booster = {
             /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.flank,
-                    g.tri,
-                    g.trifront,
-                    g.tonsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil]),
                 TYPE: "bullet",
                 LABEL: "Front",
             },
@@ -3704,13 +3648,7 @@ exports.skimmer = {
         {
             POSITION: [17, 15, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.pound,
-                    g.arty,
-                    g.arty,
-                    g.skim,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.arty, g.skim]),
                 TYPE: "missile",
                 STAT_CALCULATOR: gunCalcNames.sustained,
             },
@@ -3731,15 +3669,7 @@ exports.twister = {
         {
             POSITION: [17, 14, -1.4, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.pound,
-                    g.arty,
-                    g.arty,
-                    g.skim,
-                    g.morespeed,
-                    g.one_third_reload,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.arty, g.arty, g.skim, g.morespeed, g.one_third_reload]),
                 TYPE: "spinmissile",
                 STAT_CALCULATOR: gunCalcNames.sustained,
             },
@@ -3774,12 +3704,7 @@ exports.rocketeer = {
         {
             POSITION: [10, 12.5, -0.7, 10, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.pound,
-                    g.launcher,
-                    g.rocketeer,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.launcher, g.rocketeer]),
                 TYPE: "rocketeerMissile",
                 STAT_CALCULATOR: gunCalcNames.sustained,
             },
@@ -4185,28 +4110,14 @@ exports.gunnerTrapper = {
         {
             POSITION: [19, 2, 1, 0, -2.5, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.power,
-                    g.twin,
-                    g.tonsmorrecoil,
-                    g.lotsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.tonsmorrecoil, g.lotsmorrecoil]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [19, 2, 1, 0, 2.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.power,
-                    g.twin,
-                    g.tonsmorrecoil,
-                    g.lotsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.tonsmorrecoil, g.lotsmorrecoil]),
                 TYPE: "bullet",
             },
         },
@@ -4430,10 +4341,10 @@ exports.tempestDeco1.CONTROLLERS = [["spin", { independent: true }]];
 exports.tempestDeco2 = makeDeco(3);
 exports.tempestDeco2.CONTROLLERS = [["spin", { independent: true, speed: 0.025 }]];
 exports.tempest = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Tempest",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Tempest does not function yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Tempest does not function as intended yet!",
     TURRETS: [
         {
             POSITION: [8, 0, 0, 0, 360, 1],
@@ -4444,6 +4355,30 @@ exports.tempest = {
             TYPE: "tempestDeco2",
         },
     ],
+    ANGLE: 120,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 3; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 12, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite, g.pound]), 
+                    TYPE: ["satellite", {ANGLE: i * 120}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.thunderboltDeco = makeDeco(4);
 exports.thunderboltDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.1 }]];
@@ -4451,7 +4386,6 @@ exports.thunderbolt = {
     PARENT: ["genericTank"],
     LABEL: "Thunderbolt",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Thunderbolt does not function yet. This tank is currently just a mockup.",
     TURRETS: [
         {
             POSITION: [10, 0, 0, 0, 360, 1],
@@ -4562,10 +4496,10 @@ exports.blizzardDeco1.CONTROLLERS = [["spin", { independent: true }]];
 exports.blizzardDeco2 = makeDeco(5);
 exports.blizzardDeco2.CONTROLLERS = [["spin", { independent: true, speed: 0.025 }]];
 exports.blizzard = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Blizzard",
     DANGER: 7,
-    TOOLTIP: "[DEV NOTE] The Blizzard does not function yet. This tank is currently just a mockup.",
+    TOOLTIP: "[DEV NOTE] The Blizzard does not function as intended yet!",
     TURRETS: [
         {
             POSITION: [8, 0, 0, 0, 360, 1],
@@ -4576,6 +4510,30 @@ exports.blizzard = {
             TYPE: "blizzardDeco2",
         },
     ],
+    ANGLE: 72,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 5; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 72}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
 };
 exports.hexaWhirl = {
     PARENT: ["genericTank"],
@@ -5397,14 +5355,7 @@ exports.ambulance = {
         {
             POSITION: [18, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.flank,
-                    g.tri,
-                    g.trifront,
-                    g.tonsmorrecoil,
-                    g.healer,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil, g.healer]),
                 TYPE: "healerBullet",
                 LABEL: "Front",
             },
@@ -5617,30 +5568,14 @@ exports.overgunner = makeOver({
         {
             POSITION: [19, 2, 1, 0, -2.5, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.power,
-                    g.twin,
-                    g.slow,
-                    g.flank,
-                    g.lotsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [19, 2, 1, 0, 2.5, 0, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([
-                    g.basic,
-                    g.gunner,
-                    g.power,
-                    g.twin,
-                    g.slow,
-                    g.flank,
-                    g.lotsmorrecoil,
-                ]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.power, g.twin, g.slow, g.flank, g.lotsmorrecoil]),
                 TYPE: "bullet",
             },
         },
