@@ -5856,6 +5856,32 @@ exports.revodirector = {
                 MAX_CHILDREN: 6
             }
         }
+    ],
+      TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBasenoguns",
+    },
+  ],
+}
+exports.directdrive = {
+    PARENT: "genericTank",
+    LABEL: "DirectorDrive",
+    STAT_NAMES: statnames.drone,
+    BODY: {
+        FOV: base.FOV * 1.1
+    },
+    GUNS: [
+        {
+            POSITION: [6, 11, 1.3, 7, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.drone]),
+                TYPE: "turreteddrone",
+                AUTOFIRE: true,
+                SYNCS_SKILLS: true,
+                STAT_CALCULATOR: gunCalcNames.drone,
+                MAX_CHILDREN: 6
+            }
+        }
     ]
 }
 
