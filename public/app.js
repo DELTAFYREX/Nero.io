@@ -1289,7 +1289,7 @@ function drawUpgradeTree(spacing, alcoveSize) {
         global.treeScale = 1;
         return;
     }
-  
+
     if (lastGuiType != gui.type) {
         let m = util.getEntityImageFromMockup(gui.type), // The mockup that corresponds to the player's tank
             rootName = m.rerootUpgradeTree, // The upgrade tree root of the player's tank
@@ -1718,8 +1718,8 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
         drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
         global.clickables.skipUpgrades.place(0, (buttonX - m / 2) * clickableRatio, buttonY * clickableRatio, m * clickableRatio, h * clickableRatio);
-    	
-    // Upgrade tooltip
+
+        // Upgrade tooltip
         let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
         if (upgradeHoverIndex > -1) {
             let picture = util.getEntityImageFromMockup(gui.upgrades[upgradeHoverIndex][2], gui.color);
@@ -1753,7 +1753,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         global.clickables.skipUpgrades.hide();
     }
 }
-  
+
 const gameDrawAlive = (ratio, drawRatio) => {
     let GRAPHDATA = 0;
     // Prep stuff
