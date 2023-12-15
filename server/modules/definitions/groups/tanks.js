@@ -5875,7 +5875,7 @@ exports.directdrive = {
             POSITION: [6, 11, 1.3, 7, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.drone]),
-                TYPE: "turreteddrone",
+                TYPE: "turretedDrone",
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.drone,
@@ -5983,12 +5983,13 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture", "master"];
         exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "whirl3", "autoAuto3"];
 
-    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "autoDirector"];
+    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "directdrive", "autoDirector"];
         exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "dictator"];
         exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"];
         exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"];
         exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "prophet", "autoUnderseer"];
         exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
+        exports.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"];
 
     exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"];
         exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
