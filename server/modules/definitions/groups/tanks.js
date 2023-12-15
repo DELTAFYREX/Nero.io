@@ -300,6 +300,170 @@ exports.masterBullet = {
     ],
 };
 
+//delta projectiles/turrets
+// ??? it still dont spin i think lol
+exports.turretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revogun",
+    }]
+};
+exports.hadronturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 'red',
+    CONTROLLERS: ["hadron"],
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revogun",
+    }]
+};
+exports.revogun = {
+    PARENT: "autoTankGun",
+    CONTROLLERS: ["nearestDifferentMaster"],
+}
+exports.laser = {
+  PARENT: ["bullet"],
+  SHAPE: -1,
+  BODY: {
+        PENETRATION: 1.15,
+        SPEED: 5.8,
+        RANGE: 100,
+        DENSITY: 0.9,
+        HEALTH: 0.155,
+        DAMAGE: 5.6,
+    },
+  BUFF_VS_FOOD: true,
+}
+exports.fastdrone = {
+  PARENT: "drone",  
+  LABEL: 'Drone',
+    BODY: {
+        PENETRATION: 1.2,
+        PUSHABILITY: 0.6,
+        ACCELERATION: 0.05,
+        HEALTH: 0.5,
+        DAMAGE: 3.125,
+        SPEED: 6,
+        RANGE: 200,
+        DENSITY: 0.03,
+        RESIST: 1.5,
+        FOV: 0.8,
+    },
+      GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+        POSITION: [  15,     5,      1,      0,      0,      180,      0,   ], 
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.muchmorerecoil, g.muchmorerecoil, g.weak]),
+            TYPE: "bullet",
+            AUTOFIRE: true
+        }, }, 
+    ],
+    HITS_OWN_TYPE: 'hard',
+    DRAW_HEALTH: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    BUFF_VS_FOOD: true,
+};
+exports.autoTurretNerf = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    BODY: {
+        FOV: 0.8,
+    },
+    COLOR: "grey",
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.weak, g.fake, g.basic, g.morerecoil, g.turret, g.auto]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+exports.hiveprobe = {
+  PARENT: "genericTank",
+  LABEL: "Probe",
+  TYPE: "drone",
+  HITS_OWN_TYPE: "hardWithBuffer",
+  DRAW_HEALTH: true,
+  BODY: {
+    FOV: 0.5,
+    SPEED: 3,
+    ACCELERATION: 0.4,
+    HEALTH: 2.5,
+    SHIELD: 0,
+    DAMAGE: 1.2,
+    RESIST: 1,
+    PENETRATION: 1,
+    DENSITY: 0.4
+  },
+  AI: {
+    BLIND: true
+  },
+  CLEAR_ON_MASTER_UPGRADE: true,
+  GIVE_KILL_MESSAGE: false,
+  ACCEPTS_SCORE: false,
+  CONTROLLERS: [
+    "nearestDifferentMaster",
+    "mapAltToFire",
+    "minion",
+    "canRepel",
+    "hangOutNearMaster"
+  ],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: "bullet"
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [27, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
+exports.clonerprobe = {
+  PARENT: "hiveprobe",
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        TYPE: "bullet"
+      }
+    }
+  ],
+    TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [24, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+}
+exports.mindindicator = {
+    SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+};
+
 // Healer Projectiles
 exports.surgeonPillboxTurret = {
     PARENT: "genericTank",
@@ -579,10 +743,6 @@ exports.autoTankGun = {
         },
     ],
 }
-exports.revogun = {
-    PARENT: "autoTankGun",
-    CONTROLLERS: ["nearestDifferentMaster"],
-}
 exports.bansheegun = {
     PARENT: "autoTankGun",
     BODY: {
@@ -599,47 +759,6 @@ exports.bansheegun = {
         },
     ],
 }
-exports.laser = {
-  PARENT: ["bullet"],
-  SHAPE: -1,
-  BODY: {
-        PENETRATION: 1.15,
-        SPEED: 5.8,
-        RANGE: 100,
-        DENSITY: 0.9,
-        HEALTH: 0.155,
-        DAMAGE: 5.6,
-    },
-  BUFF_VS_FOOD: true,
-}
-exports.fastdrone = {
-  PARENT: "drone",  
-  LABEL: 'Drone',
-    BODY: {
-        PENETRATION: 1.2,
-        PUSHABILITY: 0.6,
-        ACCELERATION: 0.05,
-        HEALTH: 0.5,
-        DAMAGE: 3.125,
-        SPEED: 6,
-        RANGE: 200,
-        DENSITY: 0.03,
-        RESIST: 1.5,
-        FOV: 0.8,
-    },
-      GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-        POSITION: [  15,     5,      1,      0,      0,      180,      0,   ], 
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.muchmorerecoil, g.muchmorerecoil, g.weak]),
-            TYPE: "bullet",
-            AUTOFIRE: true
-        }, }, 
-    ],
-    HITS_OWN_TYPE: 'hard',
-    DRAW_HEALTH: false,
-    CLEAR_ON_MASTER_UPGRADE: true,
-    BUFF_VS_FOOD: true,
-};
 exports.auto4gun = {
     PARENT: "autoTankGun",
     BODY: {
@@ -722,23 +841,6 @@ exports.autoTurret = {
         },
     ],
 }
-exports.autoTurretNerf = {
-    PARENT: "genericTank",
-    LABEL: "Turret",
-    BODY: {
-        FOV: 0.8,
-    },
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [22, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.weak, g.fake, g.basic, g.morerecoil, g.turret, g.auto]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-}
 exports.droneAutoTurret = {
     PARENT: "autoTurret",
     GUNS: [
@@ -751,75 +853,6 @@ exports.droneAutoTurret = {
         },
     ],
 }
-exports.hiveprobe = {
-  PARENT: "genericTank",
-  LABEL: "Probe",
-  TYPE: "drone",
-  HITS_OWN_TYPE: "hardWithBuffer",
-  DRAW_HEALTH: true,
-  BODY: {
-    FOV: 0.5,
-    SPEED: 3,
-    ACCELERATION: 0.4,
-    HEALTH: 2.5,
-    SHIELD: 0,
-    DAMAGE: 1.2,
-    RESIST: 1,
-    PENETRATION: 1,
-    DENSITY: 0.4
-  },
-  AI: {
-    BLIND: true
-  },
-  CLEAR_ON_MASTER_UPGRADE: true,
-  GIVE_KILL_MESSAGE: false,
-  ACCEPTS_SCORE: false,
-  CONTROLLERS: [
-    "nearestDifferentMaster",
-    "mapAltToFire",
-    "minion",
-    "canRepel",
-    "hangOutNearMaster"
-  ],
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [18, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
-        TYPE: "bullet"
-      }
-    }
-  ],
-  TURRETS: [
-    {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [27, 0, 0, 0, 360, 0],
-      TYPE: "mindindicator"
-    }
-  ]
-};
-exports.clonerprobe = {
-  PARENT: "hiveprobe",
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [18, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
-        TYPE: "bullet"
-      }
-    }
-  ],
-    TURRETS: [
-    {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [24, 0, 0, 0, 360, 0],
-      TYPE: "mindindicator"
-    }
-  ]
-}
-
 exports.autoSmasherTurret = {
     PARENT: "autoTurret",
     GUNS: [
@@ -957,10 +990,6 @@ exports.homingBullet = {
     },
     CAN_GO_OUTSIDE_ROOM: true
 }
-exports.mindindicator = {
-    SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: 9,
-};
 // Decorations
 exports.overdriveDeco = makeDeco(4)
 exports.whirlwindDeco = makeDeco(6)
@@ -1468,111 +1497,6 @@ exports.pentaShot = {
         }
     ]
 }
-exports.revolutionist = {
-    PARENT: "genericTank",
-    LABEL: "Revolutionist",
-    DANGER: 6,
-    GUNS: [{
-        POSITION: [20, 8, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            TYPE: "bullet",
-        },
-    },
-          ],
-    TURRETS: [{
-        POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBase",
-    },
-  ],
-};
-exports.hadron = {
-    PARENT: "genericTank",
-    LABEL: "Hadron",
-    DANGER: 6,
-    GUNS: [{
-        POSITION: [20, 8, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
-            TYPE: "bullet",
-        },
-    },
-          ],
-    TURRETS: [{
-        POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "hadronturretBase",
-    },
-  ],
-};
-exports.revoception = makeCeption(exports.revolutionist, "revoception");
-exports.hivemind = {
-  PARENT: "genericTank",
-  LABEL: "Hivemind",
-  //CONTROLLERS: ['nearestDifferentMaster'],
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [18, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
-        TYPE: "bullet"
-      }
-    },
-    {
-      POSITION: [0, 20, 1, 0, 0, 90, 3],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: "hiveprobe",
-        MAX_CHILDREN: 1
-      }
-    },
-    {
-      POSITION: [0, 20, 1, 0, 0, 270, 3.5],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: "hiveprobe",
-        MAX_CHILDREN: 1
-      }
-    }
-  ],
-  TURRETS: [
-    {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [27, 0, 0, 0, 360, 0],
-      TYPE: "mindindicator"
-    }
-  ]
-};
-exports.cloner = {
-  PARENT: ["genericTank"],
-  LABEL: "Cloner",
-  //CONTROLLERS: ['nearestDifferentMaster'],
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [18, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
-        TYPE: "bullet"
-      }
-    },
-    {
-      POSITION: [0, 20, 1, 0, 0, 180, 3],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: "clonerprobe",
-        MAX_CHILDREN: 1
-      }
-    }
-  ],
-  TURRETS: [
-    {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [24, 0, 0, 0, 360, 0],
-      TYPE: "mindindicator"
-    }
-  ]
-};
 exports.spreadshot = {
     PARENT: "genericTank",
     LABEL: "Spreadshot",
@@ -1747,50 +1671,6 @@ exports.assassin = {
         {
             POSITION: [5, 8, -1.4, 8, 0, 0, 0]
         }
-    ]
-}
-exports.railgun = {
-    PARENT: "genericTank",
-    DANGER: 6,
-    LABEL: "Railgun",
-    BODY: {
-        SPEED: 0.9 * base.SPEED,
-        FOV: 1.25 * base.FOV
-    },
-    GUNS: [
-          {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [1, 6.5, 1, 25, 0, 0, 0.15],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.fast, g.railgun]),
-        TYPE: "bullet"
-      }
-    }, {
-      POSITION: [1, 6.5, 1, 10, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
-        TYPE: "bullet"
-            }
-        },    {
-      POSITION: [1, 6.5, 1, 15, 0, 0, 0.05],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
-        TYPE: "bullet"
-      }
-      },
-    {
-      POSITION: [1, 6.5, 1, 20, 0, 0, 0.1],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.railgun]),
-        TYPE: "bullet"
-      }
-    },
-    {
-      POSITION: [22, 1.9, 1, 5, 4, 0, 0]
-    },
-    {
-      POSITION: [22, 1.9, 1, 5, -4, 0, 0]
-    }
     ]
 }
 exports.hunter = {
@@ -3069,28 +2949,7 @@ exports.bigCheese = {
         },
     ],
 }
-    exports.dictator = {
-        PARENT: ["genericTank"],
-        LABEL: "Dictator",  
-        STAT_NAMES: statnames.drone,
-        DANGER: 5,
-        SHAPE: 8,
-        BODY: {
-            ACCELERATION: base.ACCEL * 0.75,
-            FOV: base.FOV * 1.1,
-        },
-        MAX_CHILDREN: 4,
-        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.drone, g.over]),
-                    TYPE: "fastdrone",
-                    AUTOFIRE: true,
-                    SYNCS_SKILLS: true,
-                    STAT_CALCULATOR: gunCalcNames.drone,
-                }, },
-        ],
-    };
+
 // Overseer upgrades
 exports.overlord = makeMulti({
     PARENT: "genericTank",
@@ -5466,7 +5325,6 @@ exports.spike = {
         },
     ],
 }
-exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
 exports.landmine = {
     PARENT: "genericSmasher",
     LABEL: "Landmine",
@@ -5856,8 +5714,180 @@ exports.minilaser = {
         }
     ],
 };
+exports.revolutionist = {
+    PARENT: "genericTank",
+    LABEL: "Revolutionist",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBase",
+    },
+  ],
+};
+exports.hadron = {
+    PARENT: "genericTank",
+    LABEL: "Hadron",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "hadronturretBase",
+    },
+  ],
+};
+exports.revoception = makeCeption(exports.revolutionist, "revoception");
+exports.hivemind = {
+  PARENT: "genericTank",
+  LABEL: "Hivemind",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 90, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "hiveprobe",
+        MAX_CHILDREN: 1
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 270, 3.5],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "hiveprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [27, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
+exports.cloner = {
+  PARENT: ["genericTank"],
+  LABEL: "Cloner",
+  //CONTROLLERS: ['nearestDifferentMaster'],
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 180, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "clonerprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [24, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+};
+    exports.dictator = {
+        PARENT: ["genericTank"],
+        LABEL: "Dictator",  
+        STAT_NAMES: statnames.drone,
+        DANGER: 5,
+        SHAPE: 8,
+        BODY: {
+            ACCELERATION: base.ACCEL * 0.75,
+            FOV: base.FOV * 1.1,
+        },
+        MAX_CHILDREN: 4,
+        GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+            POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                    TYPE: "fastdrone",
+                    AUTOFIRE: true,
+                    SYNCS_SKILLS: true,
+                    STAT_CALCULATOR: gunCalcNames.drone,
+                }, },
+        ],
+    };
+exports.railgun = {
+    PARENT: "genericTank",
+    DANGER: 6,
+    LABEL: "Railgun",
+    BODY: {
+        SPEED: 0.9 * base.SPEED,
+        FOV: 1.25 * base.FOV
+    },
+    GUNS: [
+          {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [1, 6.5, 1, 25, 0, 0, 0.15],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.fast, g.railgun]),
+        TYPE: "bullet"
+      }
+    }, {
+      POSITION: [1, 6.5, 1, 10, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
+        TYPE: "bullet"
+            }
+        },    {
+      POSITION: [1, 6.5, 1, 15, 0, 0, 0.05],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
+        TYPE: "bullet"
+      }
+      },
+    {
+      POSITION: [1, 6.5, 1, 20, 0, 0, 0.1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.railgun]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [22, 1.9, 1, 5, 4, 0, 0]
+    },
+    {
+      POSITION: [22, 1.9, 1, 5, -4, 0, 0]
+    }
+    ]
+}
+exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
 
-
+// Auto tanks
 exports.autoBasic = makeAuto(exports.basic, "Auto-Basic");
 exports.autoRevolutionist = makeAuto(exports.revolutionist, "Auto-Revolutionist");
 
@@ -5890,7 +5920,6 @@ exports.autoLaunch = makeAuto(exports.launcher, "Auto-Launcher");
 exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
 exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
 
-// Auto tanks
 exports.autoDouble = makeAuto(exports.doubleTwin, "Auto-Double")
 exports.autoAssassin = makeAuto(exports.assassin)
 exports.autoGunner = makeAuto(exports.gunner);
