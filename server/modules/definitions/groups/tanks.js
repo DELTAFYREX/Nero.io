@@ -316,6 +316,13 @@ exports.turretBase = {
         TYPE: "revogun",
     }]
 };
+exports.turretBasenoguns = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+};
 exports.hadronturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5832,7 +5839,7 @@ exports.railgun = {
 exports.trackerSmasher = makeTracker(exports.smasher, "Scanner");
 exports.revodirector = {
     PARENT: "genericTank",
-    LABEL: "Director",
+    LABEL: "Solar System",
     STAT_NAMES: statnames.drone,
     BODY: {
         FOV: base.FOV * 1.1
@@ -5983,7 +5990,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"];
         exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"];
         exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"];
-        exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "autoRevolutionist"];
+        exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"];
         exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
 
 

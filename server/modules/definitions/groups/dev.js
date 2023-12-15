@@ -367,6 +367,7 @@ for (let x = 0; x < tensorWidth; x++) for (let y = 0; y < tensorHeight; y++) for
 
 exports.diamondShape = {
     PARENT: ["basic"],
+    SHOOT_ON_DEATH: true,
     LABEL: "Rotated Body",
     SHAPE: 4.5
 };
@@ -1608,7 +1609,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "revodirector"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
