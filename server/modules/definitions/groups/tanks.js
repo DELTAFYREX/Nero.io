@@ -306,6 +306,15 @@ exports.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
+    BODY: {
+        PUSHABILITY: 0,
+        HEALTH: 10000,
+        SHIELD: 10000,
+        REGEN: 1000,
+        DAMAGE: 1,
+        RESIST: 100,
+        STEALTH: 1,
+    },
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
