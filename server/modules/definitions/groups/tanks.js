@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 const generics = require('./generics.js');
 const g = require('../gunvals.js');
@@ -245,6 +245,60 @@ exports.rocketeerMissile = {
         },
     ],
 }
+exports.masterBullet = {
+    PARENT: "missile",
+    FACING_TYPE: "veryfastspin",
+    MOTION_TYPE: "motor",
+    HAS_NO_RECOIL: false,
+    DIE_AT_RANGE: false,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.trifront, g.tonsmorrecoil]),
+                TYPE: "bullet",
+                LABEL: "Front",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, -1, 140, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [13, 8, 1, 0, 1, 220, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 210, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flank, g.tri, g.thruster]),
+                TYPE: "bullet",
+                LABEL: "Thruster",
+                AUTOFIRE: true,
+            },
+        },
+    ],
+};
 
 //delta projectiles/turrets
 // ??? it still dont spin i think lol

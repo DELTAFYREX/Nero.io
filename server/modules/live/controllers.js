@@ -695,6 +695,7 @@ class io_wanderAroundMap extends IO {
         }
     }
 }
+
 // returns deviation from origin angle in radians
 let io_formulaTarget_sineDefault = (frame, body) => Math.sin(frame / 30);
 class io_formulaTarget extends IO {
@@ -710,6 +711,7 @@ class io_formulaTarget extends IO {
         // if (this.updateOriginAngle) {
         //     this.originAngle = this.masterAngle ? b.master.facing : getTheGunThatSpawnedMe("how do i do that????").angle;
         // }
+      
         let angle = this.originAngle + this.formula(this.frame += 1 / c.runSpeed, this.body);
         return {
             goal: {
