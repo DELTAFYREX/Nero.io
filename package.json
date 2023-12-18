@@ -1,5 +1,5 @@
 {
-  "name": "arras",
+  "name": "Open Source Arras",
   "version": "1.0.0",
   "main": "server/index.js",
   "scripts": {
@@ -11,10 +11,10 @@
     "build": "node standaloneClient/build minify"
   },
   "dependencies": {
-    "ws": "^8.13.0"
+    "ws": "^8.15.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "10.x"
   },
   "license": "GPL-3.0"
 }
