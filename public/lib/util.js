@@ -155,7 +155,6 @@ const util = {
             if (!rerootUpgradeTree.includes(root))
                 rerootUpgradeTree.push(root);
         }
-        turrets.sort(a => a.layer);
         return {
             time: 0,
             index: index,
@@ -210,7 +209,6 @@ const util = {
                     return {
                         color: g.color,
                         alpha: g.alpha,
-                        strokeWidth: g.strokeWidth,
                         borderless: g.borderless, 
                         drawFill: g.drawFill,
                         drawAbove: g.drawAbove,

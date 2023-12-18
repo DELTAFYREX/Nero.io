@@ -565,8 +565,8 @@ exports.vulnturrettest_turret = {
 
 exports.vulnturrettest = {
     PARENT: ["genericTank"],
-    LABEL: "Vulnerable Turrets",
-    TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",
+    LABEL: "Vulurable Turret Test",
+    TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",    
     BODY: {
         FOV: 2,
     },
@@ -591,33 +591,7 @@ exports.vulnturrettest = {
     })(),
 };
 
-exports.turretLayerTesting = {
-    PARENT: 'genericTank',
-    LABEL: 'Turret Layer Testing',
-    TURRETS: [
-        {
-            POSITION: [20, 10, 10, 0, 0, 2],
-            TYPE: ["basic", {COLOR: "lightGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, 10, 5, 0, 0, 2],
-            TYPE: ["basic", {COLOR: "grey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, 10, -5, 0, 0, 1],
-            TYPE: ["basic", {COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, -10, -5, 0, 0, -2],
-            TYPE: ["basic", {COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, -10, 5, 0, 0, -1],
-            TYPE: ["basic", {COLOR: "grey", MIRROR_MASTER_ANGLE: true}]
-        },
-    ]
-}
-
+// unfinished
 exports.alphaGunTest = {
     PARENT: "basic",
     LABEL: "Translucent Guns",
@@ -627,21 +601,6 @@ exports.alphaGunTest = {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: 'bullet',
             ALPHA: 0.5
-        }
-    }]
-}
-
-// unfinished
-exports.strokeWidthTest = {
-    PARENT: "basic",
-    LABEL: "Stroke Width Test",
-    STROKE_WIDTH: 2,
-    GUNS: [{
-        POSITION: {},
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: 'bullet',
-            STROKE_WIDTH: 0.5
         }
     }]
 }
@@ -932,7 +891,6 @@ exports.florr_tank = {
         }
     ]
 }
-
 //wait whats stuff
 exports.placeableWall = {
     PARENT: ["rock"],
