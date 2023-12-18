@@ -1391,7 +1391,10 @@ class Entity extends EventEmitter {
                 this.rerootUpgradeTree += finalRoot.substring(0, finalRoot.length - 2);
             }
             this.maxChildren = null; // Required because it just doesn't work out otherwise - overlord-triplet would make the triplet inoperable at 8 drones, etc
-        }
+        }          
+        // Turret layer ordering
+        this.turrets.sort(this.turretSort);
+      
         // Batch upgrades
         if (this.batchUpgrades && emitEvent) {
             this.tempUpgrades = [];
@@ -1409,6 +1412,9 @@ class Entity extends EventEmitter {
             this.chooseUpgradeFromBranch(numBranches); // Recursively build upgrade options
         }
     }
+            turretSort(a, b) {
+              return a.bound.layer - b.bound.layer;
+            }
     chooseUpgradeFromBranch(remaining) {
         if (remaining > 0) { // If there's more to select
             let branchUgrades = this.tempUpgrades[this.defs.length - remaining];
@@ -1628,6 +1634,7 @@ class Entity extends EventEmitter {
             twiggle: forceTwiggle.includes(this.facingType) || (this.facingType === "locksFacing" && this.control.alt),
             layer: this.layerID ? this.layerID : this.bond != null ? this.bound.layer : this.type === "wall" ? 11 : this.type === "food" ? 10 : this.type === "tank" ? 5 : this.type === "crasher" ? 1 : 0,
             color: this.color,
+            strokeWidth: this.strokeWidth,
             borderless: this.borderless,
             drawFill: this.drawFill,
             name: (this.nameColor || "#FFFFFF") + this.name,
