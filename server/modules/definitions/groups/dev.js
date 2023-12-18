@@ -711,6 +711,26 @@ exports.onTest = {
     }]
 }
 
+exports.auraBasicGen = addAura();
+exports.auraBasic = {
+    PARENT: ["genericTank"],
+    LABEL: "Aura Basic",
+    TURRETS: [
+        {
+            POSITION: [14, 0, 0, 0, 0, 1],
+            TYPE: "auraBasicGen"
+        }
+    ],
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+};
 exports.auraHealerGen = addAura(-1);
 exports.auraHealer = {
     PARENT: ["genericTank"],
@@ -841,7 +861,7 @@ exports.pisseroo = {
     }]
 }
 
-/*/ FUN
+// FUN
 exports.florr_tank_eye = {
     PARENT: "genericTank",
     BORDERLESS: true,
@@ -912,7 +932,7 @@ exports.florr_tank = {
         }
     ]
 }
-/*/
+
 //wait whats stuff
 exports.placeableWall = {
     PARENT: ["rock"],
@@ -1646,7 +1666,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", /*/"florr_tank",/*/"vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "tooltipTank"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
