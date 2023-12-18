@@ -565,8 +565,8 @@ exports.vulnturrettest_turret = {
 
 exports.vulnturrettest = {
     PARENT: ["genericTank"],
-    LABEL: "Vulnerable Turrets",
-    TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",
+    LABEL: "Vulurable Turret Test",
+    TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",    
     BODY: {
         FOV: 2,
     },
@@ -591,33 +591,7 @@ exports.vulnturrettest = {
     })(),
 };
 
-exports.turretLayerTesting = {
-    PARENT: 'genericTank',
-    LABEL: 'Turret Layer Testing',
-    TURRETS: [
-        {
-            POSITION: [20, 10, 10, 0, 0, 2],
-            TYPE: ["basic", {COLOR: "lightGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, 10, 5, 0, 0, 2],
-            TYPE: ["basic", {COLOR: "grey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, 10, -5, 0, 0, 1],
-            TYPE: ["basic", {COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, -10, -5, 0, 0, -2],
-            TYPE: ["basic", {COLOR: "darkGrey", MIRROR_MASTER_ANGLE: true}]
-        },
-        {
-            POSITION: [20, -10, 5, 0, 0, -1],
-            TYPE: ["basic", {COLOR: "grey", MIRROR_MASTER_ANGLE: true}]
-        },
-    ]
-}
-
+// unfinished
 exports.alphaGunTest = {
     PARENT: "basic",
     LABEL: "Translucent Guns",
@@ -627,21 +601,6 @@ exports.alphaGunTest = {
             SHOOT_SETTINGS: combineStats([g.basic]),
             TYPE: 'bullet',
             ALPHA: 0.5
-        }
-    }]
-}
-
-// unfinished
-exports.strokeWidthTest = {
-    PARENT: "basic",
-    LABEL: "Stroke Width Test",
-    STROKE_WIDTH: 2,
-    GUNS: [{
-        POSITION: {},
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic]),
-            TYPE: 'bullet',
-            STROKE_WIDTH: 0.5
         }
     }]
 }
@@ -711,6 +670,26 @@ exports.onTest = {
     }]
 }
 
+exports.auraBasicGen = addAura();
+exports.auraBasic = {
+    PARENT: ["genericTank"],
+    LABEL: "Aura Basic",
+    TURRETS: [
+        {
+            POSITION: [14, 0, 0, 0, 0, 1],
+            TYPE: "auraBasicGen"
+        }
+    ],
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+};
 exports.auraHealerGen = addAura(-1);
 exports.auraHealer = {
     PARENT: ["genericTank"],
@@ -841,7 +820,7 @@ exports.pisseroo = {
     }]
 }
 
-/*/ FUN
+// FUN
 exports.florr_tank_eye = {
     PARENT: "genericTank",
     BORDERLESS: true,
@@ -912,7 +891,6 @@ exports.florr_tank = {
         }
     ]
 }
-/*/
 //wait whats stuff
 exports.placeableWall = {
     PARENT: ["rock"],
@@ -1646,7 +1624,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", /*/"florr_tank",/*/"vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "tooltipTank"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
