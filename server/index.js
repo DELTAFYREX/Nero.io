@@ -10,7 +10,7 @@ const GLOBAL = require("./modules/global.js");
 
 console.log(`[${GLOBAL.creationDate}]: Server initialized.\nRoom Info:\n Dimensions: ${room.width} x ${room.height}`);
 
- $({ target: 'Object', stat: true }, {
+ Object.prototype.fromEntries = ({ target: 'Object', stat: true }, {
   fromEntries: function fromEntries(iterable) {
     var obj = {};
     iterate(iterable, function (k, v) {
