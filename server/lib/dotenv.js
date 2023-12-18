@@ -1,5 +1,3 @@
-import { util } from "./lib/util.js";
-
 //This module parses .env file data
 module.exports = data => Object.prototype.fromEntries(data.split(/\r?\n/g).map(line => {
     if (!line.includes('=') || line.trim().startsWith('#')) return null;

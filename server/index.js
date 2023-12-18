@@ -10,16 +10,6 @@ const GLOBAL = require("./modules/global.js");
 
 console.log(`[${GLOBAL.creationDate}]: Server initialized.\nRoom Info:\n Dimensions: ${room.width} x ${room.height}`);
 
- Object.prototype.fromEntries = ({ target: 'Object', stat: true }, {
-  fromEntries: function fromEntries(iterable) {
-    var obj = {};
-    iterate(iterable, function (k, v) {
-      createProperty(obj, k, v);
-    }, { AS_ENTRIES: true });
-    return obj;
-  }
-});
-
 // Let's get a cheaper array removal thing
 Array.prototype.remove = function (index) {
     if (index === this.length - 1) return this.pop();
