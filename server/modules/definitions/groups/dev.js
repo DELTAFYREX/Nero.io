@@ -515,9 +515,10 @@ exports.devtesttemplate = {
         }
     ]
 }
-exports.bullet = {
+exports.aimassistbullet = {
     LABEL: "Bullet",
-    TYPE: "bullet",
+    TYPE: "swarm",
+    CONTROLLERS: ["AimAssist"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
@@ -528,7 +529,7 @@ exports.bullet = {
         DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
-    FACING_TYPE: "smoothWithMotion",
+    MOTION_TYPE: "aimassisting",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
@@ -536,14 +537,13 @@ exports.bullet = {
 exports.aimassisttest = {
     PARENT: "genericTank",
     LABEL: "Single",
-    CONTROLLERS: ["AimAssist"],
     DANGER: 7,
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
+                TYPE: "aimassistbullet"
             }
         },
         {

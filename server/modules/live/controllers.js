@@ -786,7 +786,7 @@ class io_AimAssist extends IO {
             x: body.master.control.target.x + body.master.x,
             y: body.master.control.target.y + body.master.y,
         }
-        this.countdown = 5
+        this.countdown = 1
     }
     think() {
         if (this.countdown) {
