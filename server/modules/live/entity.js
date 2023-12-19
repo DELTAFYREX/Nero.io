@@ -1797,33 +1797,12 @@ class Entity extends EventEmitter {
                 }
                 break;
             case "aimassisting":
-                this.maxSpeed = 9999;
-                let l =
-                    util.getDistance(
-                        {
-                            x: 0,
-                            y: 0,
-                        },
-                        g
-                    ) + 1;
-                if (gactive && l > this.size) {
-                    let XvelDesired = (9999 * g.x) / l,
-                        YvelDesired = (9999 * g.y) / l,
-                        turning = Math.sqrt(
-                            (9999 * Math.max(1, this.range) + 1) / a
-                        );
-                    engine = {
-                        x: (XvelDesired - this.velocity.x) / Math.max(10, turning),
-                        y: (YvelDesired - this.velocity.y) / Math.max(10, turning),
-                    };
-                } else {
-                    if (this.velocity.length < this.topSpeed) {
+                      let XvelDesired = (this.topSpeed * g.x),
+                            YvelDesired = (this.topSpeed * g.y);
                         engine = {
-                            x: (this.velocity.x * a) / 40,
-                            y: (this.velocity.y * a) / 40,
+                            x: (XvelDesired - this.velocity.x) * a,
+                            y: (YvelDesired - this.velocity.y) * a,
                         };
-                    }
-                }
                 break;
             case "chase":
                 if (gactive) {

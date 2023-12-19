@@ -515,6 +515,23 @@ exports.devtesttemplate = {
         }
     ]
 }
+exports.oppenheimer = {
+    PARENT: "genericTank",
+    LABEL: "Oppen Heimer",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "flare"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
 exports.aimassistbullet = {
     LABEL: "Bullet",
     TYPE: "swarm",
@@ -1719,7 +1736,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         exports.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", ["developer", "developer"]];
+        exports.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "nesthivedronething", "oppenheimer", ["developer", "developer"]];
         exports.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "tooltipTank"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
