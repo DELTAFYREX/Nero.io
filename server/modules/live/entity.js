@@ -1797,12 +1797,10 @@ class Entity extends EventEmitter {
                 }
                 break;
             case "aimassisting":
-                      let XvelDesired = (this.topSpeed * g.x),
-                            YvelDesired = (this.topSpeed * g.y);
-                        engine = {
-                            x: (XvelDesired - this.velocity.x) * a,
-                            y: (YvelDesired - this.velocity.y) * a,
-                        };
+                this.x = this.source.x;
+                this.y = this.source.y;
+                this.velocity.x = this.source.velocity.x;
+                this.velocity.y = this.source.velocity.y;
                 break;
             case "chase":
                 if (gactive) {

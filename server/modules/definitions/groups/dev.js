@@ -535,7 +535,6 @@ exports.oppenheimer = {
 exports.aimassistbullet = {
     LABEL: "Bullet",
     TYPE: "swarm",
-    CONTROLLERS: ["AimAssist"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
