@@ -1663,6 +1663,7 @@ class Entity extends EventEmitter {
     }
     upgrade(number) {
         let old = this
+        //this.reset()
         if (
             number < this.upgrades.length &&
             this.level >= this.upgrades[number].level
@@ -1797,8 +1798,8 @@ class Entity extends EventEmitter {
                 }
                 break;
             case "aimassisting":
-                this.body.x = this.master.target.x;
-                this.body.y = this.master.target.y;
+                this.x = this.body.x + input.target.x;
+                this.y = this.body.y + input.target.y;
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
                 break;
