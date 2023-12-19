@@ -5865,7 +5865,7 @@ exports.revodirector = {
 }
 exports.directdrive = {
     PARENT: "genericTank",
-    LABEL: "DirectorDrive",
+    LABEL: "Direcdrive",
     STAT_NAMES: statnames.drone,
     BODY: {
         FOV: base.FOV * 1.1
