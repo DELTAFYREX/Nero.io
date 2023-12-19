@@ -1797,10 +1797,8 @@ class Entity extends EventEmitter {
                 }
                 break;
             case "aimassisting":
-                this.x = this.master.control.target.x;
-                this.y = this.master.control.target.y;
-                this.velocity.x = this.source.velocity.x;
-                this.velocity.y = this.source.velocity.y;
+                this.body.x = this.master.x;
+                this.body.y = this.master.y;
                 break;
             case "chase":
                 if (gactive) {
