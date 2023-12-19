@@ -498,6 +498,59 @@ exports.miscTestHelper = {
         }
     ]
 };
+exports.devtesttemplate = {
+    PARENT: "genericTank",
+    LABEL: "Single",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
+exports.bullet = {
+    LABEL: "Bullet",
+    TYPE: "bullet",
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 1,
+        SPEED: 3.75,
+        RANGE: 90,
+        DENSITY: 1.25,
+        HEALTH: 0.165,
+        DAMAGE: 6,
+        PUSHABILITY: 0.3,
+    },
+    FACING_TYPE: "smoothWithMotion",
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: "never",
+    DIE_AT_RANGE: true,
+};
+exports.aimassisttest = {
+    PARENT: "genericTank",
+    LABEL: "Single",
+    CONTROLLERS: ["AimAssist"],
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+}
 exports.miscTest = {
     PARENT: ["genericTank"],
     LABEL: "Turret Reload",
@@ -1650,7 +1703,7 @@ exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addo
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks", "revodirector"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "aimassisttest"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
