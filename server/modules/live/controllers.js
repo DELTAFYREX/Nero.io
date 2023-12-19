@@ -789,17 +789,9 @@ class io_AimAssist extends IO {
         this.countdown = 1
     }
     think() {
-        if (this.countdown) {
-            if (util.getDistance(this.body, this.myGoal) < 1) {
-                this.countdown--;
-            }
-            return {
-                goal: {
-                    x: this.myGoal.x,
-                    y: this.myGoal.y,
-                },
-            }
-        }
+    let master = this.body.master.master;
+    this.body.x = master.control.target.x;
+    this.body.y = master.control.target.x;
     }
 }
 class io_orbit extends IO {
