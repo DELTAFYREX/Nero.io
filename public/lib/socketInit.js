@@ -1,4 +1,4 @@
-simport { global } from "./global.js";
+import { global } from "./global.js";
 import { util } from "./util.js";
 import { settings } from "./settings.js";
 import { protocol } from "./protocol.js";
