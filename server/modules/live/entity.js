@@ -1797,12 +1797,12 @@ class Entity extends EventEmitter {
                     }
                 }
                 break;
-            case "aimassisting":
+            /*case "aimassisting":
                 this.x = this.body.x + input.target.x;
                 this.y = this.body.y + input.target.y;
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
-                break;
+                break;*/
             case "chase":
                 if (gactive) {
                     let l = util.getDistance({ x: 0, y: 0, }, g);

@@ -783,15 +783,15 @@ class io_AimAssist extends IO {
     constructor(body) {
         super(body)
         this.myGoal = {
-            x: body.master.control.target.x + body.master.x,
-            y: body.master.control.target.y + body.master.y,
+            x: this.body.x + input.target.x,
+            y: this.body.y + input.target.y,
         }
         this.countdown = 1
     }
     think() {
     let master = this.body.master.master;
-    this.body.x = master.control.target.x;
-    this.body.y = master.control.target.x;
+    this.body.x = this.body.x + input.target.x;
+    this.body.y = this.body.x + input.target.x;
     }
 }
 class io_orbit extends IO {
