@@ -1291,7 +1291,8 @@ class Entity extends EventEmitter {
                 o.bindToMaster(def.POSITION, this, def.VULNERABLE);
             }
         }
-        if (set.ON != null) this.onDef = set.ON
+        if (set.ON != null) this.onDef = set.ON;
+        this.reverseTargetWithTank = set.REVERSE_TARGET_WITH_TANK ?? false;
         if (set.mockup != null) {
             this.mockup = set.mockup;
         }
@@ -1592,7 +1593,7 @@ class Entity extends EventEmitter {
         // Initalize.
         this.activation.update();
         this.facing = this.bond.facing + this.bound.angle;
-        this.facingType = "bound";
+        this.facingType = ["bound"];
         this.motionType = ["bound"];
         this.move();
     }
@@ -1639,7 +1640,7 @@ class Entity extends EventEmitter {
             mirrorMasterAngle: this.settings.mirrorMasterAngle ?? false,
             perceptionAngleIndependence: this.perceptionAngleIndependence, //vfacing: this.vfacing,
             defaultAngle: this.firingArc[0],
-            twiggle: forceTwiggle.includes(this.facingType) || (this.facingType === "locksFacing" && this.control.alt),
+            twiggle: forceTwiggle.includes(this.facingType[0]) || (this.facingType[0] === "locksFacing" && this.control.alt),
             layer: this.layerID ? this.layerID : this.bond != null ? this.bound.layer : this.type === "wall" ? 11 : this.type === "food" ? 10 : this.type === "tank" ? 5 : this.type === "crasher" ? 1 : 0,
             color: this.color,
             strokeWidth: this.strokeWidth,
@@ -1670,8 +1671,7 @@ class Entity extends EventEmitter {
         return suc;
     }
     upgrade(number) {
-        let old = this
-        //this.reset()
+        let old = this;
         if (
             number < this.upgrades.length &&
             this.level >= this.upgrades[number].level
@@ -1805,12 +1805,6 @@ class Entity extends EventEmitter {
                     }
                 }
                 break;
-            /*case "aimassisting":
-                this.x = this.body.x + input.target.x;
-                this.y = this.body.y + input.target.y;
-                this.velocity.x = this.source.velocity.x;
-                this.velocity.y = this.source.velocity.y;
-                break;*/
             case "chase":
                 if (gactive) {
                     let l = util.getDistance({ x: 0, y: 0, }, g);
@@ -1888,32 +1882,35 @@ class Entity extends EventEmitter {
             tactive = t.x !== 0 || t.y !== 0,
             oldFacing = this.facing,
             oldVFacing = this.vfacing;
+        let type = this.facingType[0],
+            args = this.facingType[1] ?? {};
         switch (this.facingType) {
             case "autospin":
-                this.facing += 0.02 / c.runSpeed;
+                this.facing += (args.speed ?? 0.02) / c.runSpeed;
                 break;
             case "turnWithSpeed":
                 this.facing += ((this.velocity.length / 90) * Math.PI) / c.runSpeed;
                 break;
             case "spin":
-                this.facing += 0.05 / c.runSpeed;
+                this.facing += (args.speed ?? 0.05) / c.runSpeed;
                 break;
             case "fastspin":
-                this.facing += 0.1 / c.runSpeed;
+                this.facing += (args.speed ?? 0.1) / c.runSpeed;
                 break;
             case "veryfastspin":
-                this.facing += 1 / c.runSpeed;
+                this.facing += (args.speed ?? 1) / c.runSpeed;
                 break;
             case "withMotion":
                 this.facing = this.velocity.direction;
                 break;
             case "smoothWithMotion":
             case "looseWithMotion":
-                this.facing += util.loopSmooth(this.facing, this.velocity.direction, 4 / c.runSpeed);
+                this.facing += util.loopSmooth(this.facing, this.velocity.direction, (args.speed ?? 4) / c.runSpeed);
+                this.facing = Math.atan2(t.y * reverse, t.x * reverse);
                 break;
             case "withTarget":
             case "toTarget":
-                this.facing = Math.atan2(t.y, t.x);
+                let reverse = this.reverseTargetWithTank ? 1 : this.reverseTank;
                 break;
             case "locksFacing":
                 if (!this.control.alt) this.facing = Math.atan2(t.y, t.x);
@@ -1921,15 +1918,15 @@ class Entity extends EventEmitter {
             case "looseWithTarget":
             case "looseToTarget":
             case "smoothToTarget":
-                this.facing += util.loopSmooth(this.facing, Math.atan2(t.y, t.x), 4 / c.runSpeed);
+                this.facing += util.loopSmooth(this.facing, Math.atan2(t.y, t.x), (args.speed ?? 4) / c.runSpeed);
                 break;
             case "noFacing":
-                this.facing = 0;
+                this.facing = args.angle ?? 0;
                 break;
             case "bound":
                 let givenangle,
                     reduceIndependence = false,
-                    slowness = this.settings.mirrorMasterAngle ? 1 : 4 / c.runSpeed;
+                    slowness = this.settings.mirrorMasterAngle ? 1 : (args.slowness ?? 4) / c.runSpeed;
                 if (this.control.main) {
                     givenangle = Math.atan2(t.y, t.x);
                     let diff = util.angleDifference(givenangle, this.firingArc[0]);
@@ -1966,6 +1963,7 @@ class Entity extends EventEmitter {
             this.vfacing = util.angleDifference(oldFacing, this.facing) * c.runSpeed;
         }
     }
+
     takeSelfie() {
         this.flattenedPhoto = null;
         this.photo = this.settings.drawShape
