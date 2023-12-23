@@ -781,7 +781,7 @@ const socketInit = port => {
                 if (commands[i]) o += Math.pow(2, i);
             }
             let ratio = util.getRatio();
-            socket.talk('C', Math.round(global.target.x / ratio), Math.round(global.target.y / ratio), o);
+            socket.talk('C', Math.round(global.target.x / ratio), Math.round(global.target.y / ratio), global.reverseTank, o);
         },
         check: () => flag,
         getMotion: () => ({
@@ -982,6 +982,7 @@ const socketInit = port => {
                 }
                 window.animations.deathScreen.reset();
                 global.died = true;
+                global.reverseTank = false;
                 window.onbeforeunload = () => false;
                 break;
             case 'K': // kicked

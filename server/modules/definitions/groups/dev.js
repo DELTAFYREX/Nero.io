@@ -2,7 +2,7 @@ const { combineStats, addAura, makeDeco, makeTracker } = require('../facilitator
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
-// TESTBED TANKS
+// Menus
 exports.menu = {
     PARENT: ["genericTank"],
     LABEL: "",
@@ -218,7 +218,7 @@ exports.beta = {
     LABEL: "Beta Tanks",
 };
 
-// GENERATORS
+// Generators
 function compileMatrix(matrix, matrix2Entrance) {
     let matrixWidth = matrix[0].length,
         matrixHeight = matrix.length;
@@ -365,6 +365,7 @@ for (let x = 0; x < tensorWidth; x++) for (let y = 0; y < tensorHeight; y++) for
     ];
 }
 
+// Testing tanks
 exports.diamondShape = {
     PARENT: ["basic"],
     LABEL: "Rotated Body",
