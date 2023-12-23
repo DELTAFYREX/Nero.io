@@ -793,19 +793,25 @@ class io_hadron extends IO {
     }
 }
 class io_AimAssist extends IO {
-    constructor(body) {
-        super(body)
-        this.myGoal = {
-            x: this.body.x + input.target.x,
-            y: this.body.y + input.target.y,
-        }
-        this.countdown = 1
-    }
-    think() {
-    let master = this.body.master.master;
-    this.body.x = this.body.x + input.target.x;
-    this.body.y = this.body.x + input.target.x;
-    }
+  constructor(body) {
+    super(body);
+  }
+
+  think(input) { 
+    this.body.velocity.x = 0;
+    this.body.velocity.y = 0;
+    if (!input.fire && !input.target) {
+    this.body.x = this.body.source.x; 
+    this.body.y = this.body.source.y;
+    } 
+    if (input.fire && input.target) {
+    this.body.x = this.body.x + input.target.x; 
+    this.body.y = this.body.y + input.target.y;
+    } 
+    // else if (input.alt) {
+    //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
+    // }
+  }
 }
 class io_orbit extends IO {
     constructor(body, opts = {}) {
