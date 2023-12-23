@@ -1890,7 +1890,7 @@ class Entity extends EventEmitter {
             oldVFacing = this.vfacing;
         let type = this.facingType[0],
             args = this.facingType[1] ?? {};
-        switch (this.facingType) {
+        switch (type) {
             case "autospin":
                 this.facing += (args.speed ?? 0.02) / c.runSpeed;
                 break;
@@ -1912,11 +1912,11 @@ class Entity extends EventEmitter {
             case "smoothWithMotion":
             case "looseWithMotion":
                 this.facing += util.loopSmooth(this.facing, this.velocity.direction, (args.speed ?? 4) / c.runSpeed);
-                this.facing = Math.atan2(t.y * reverse, t.x * reverse);
                 break;
             case "withTarget":
             case "toTarget":
                 let reverse = this.reverseTargetWithTank ? 1 : this.reverseTank;
+                this.facing = Math.atan2(t.y * reverse, t.x * reverse);
                 break;
             case "locksFacing":
                 if (!this.control.alt) this.facing = Math.atan2(t.y, t.x);

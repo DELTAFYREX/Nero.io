@@ -555,6 +555,7 @@ exports.aimassistbullet = {
 exports.aimassisttest = {
     PARENT: "genericTank",
     LABEL: "Single",
+    CONTROLLERS: ["AimAssist"],
     DANGER: 7,
     GUNS: [
         {
