@@ -1715,13 +1715,49 @@ exports.addons = {
     LABEL: "Addon Entities",
     UPGRADES_TIER_0: ["developer"]
 };
+exports.whirlwindDeco = makeDeco(6)
+exports.whirlwindDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]]
+exports.whirlwind = {
+    PARENT: "genericTank",
+    LABEL: "Whirlwind",
+    ANGLE: 60,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    TURRETS: [
+        {
+            POSITION: [8, 0, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco"
+        }
+    ],
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 6; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 60}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
 
 exports.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"];
     exports.tanks.UPGRADES_TIER_0 = ["developer", "funTanks", "beta", "unavailable", "testingTanks"];
         exports.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         exports.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"];
         exports.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        exports.beta.UPGRADES_TIER_0 = ["tanks", "aimassisttest"];
+        exports.beta.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind"];
         exports.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         exports.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 

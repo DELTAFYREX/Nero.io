@@ -4996,73 +4996,68 @@ exports.trapCeption = makeCeptionNerf(exports.trapper, "Trap-Ception");
 
 
 // TANK UPGRADE PATHS
-exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos"];
-    exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"];
-        exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"];
+exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos"]
+    exports.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
+        exports.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"]
         exports.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
 
-    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix"];
-        exports.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"];
-        exports.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"];
-        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot", "triplex"];
+    exports.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix"]
+        exports.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
+        exports.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
+        exports.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot", "triplex"]
 
-    exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"];
-        exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"];
-        exports.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single"];
-        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"];
-        exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"];
+    exports.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"]
+        exports.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
+        exports.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "single"]
+        exports.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
+        exports.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
-    exports.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach"];
-        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"];
-        exports.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"];
-        exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"];
+    exports.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach"]
+        exports.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"]
+        exports.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
+        exports.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"]
 
-    exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"];
-        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"];
-        exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "hexaWhirl", "autoHexaTank"];
-        exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture", "master"];
-        exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "whirl3", "autoAuto3"];
+    exports.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"]
+        exports.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
+        exports.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank"]
+        exports.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
+        exports.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "autoAuto3"]
 
-    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "directdrive", "autoDirector"];
-        exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "dictator"];
-        exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"];
-        exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"];
-        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "prophet", "autoUnderseer"];
-        exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"];
-        exports.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"];
+    exports.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "directdrive", "autoDirector"]
+        exports.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "dictator"]
+        exports.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
+        exports.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
+        exports.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
+        exports.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
+        exports.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"]
 
-    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"];
-        exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"];
-        exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"];
-        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "munition", "autoArtillery"];
-        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "vortex", "autoLaunch"];
+    exports.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"]
+        exports.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
+        exports.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"]
+        exports.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery"]
+        exports.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "autoLaunch"]
 
-    exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap"];
-        exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"];
-        exports.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror"];
-        exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"];
-        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "whirlGuard", "autoTrapGuard"];
+    exports.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap"]
+        exports.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"]
+        exports.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror"]
+        exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"]
+        exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"]
 
-    exports.whirlwind.UPGRADES_TIER_2 = ["tornado", "hurricane"];
-        exports.whirlwind.UPGRADES_TIER_3 = ["hexaWhirl", "munition", "whirl3", "whirlGuard", "prophet", "vortex"];
-        exports.tornado.UPGRADES_TIER_3 = ["megaTornado", "tempest", "thunderbolt"];
-        exports.hurricane.UPGRADES_TIER_3 = ["typhoon", "blizzard"];
-
-    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"];
-        exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"];
-        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"];
-        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"];
-        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"];
-        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"];
-        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"];
-        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"];
-        exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"];
-        exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"];
-        exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"];
+    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"]
+        exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
+        exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"]
+        exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"]
+        exports.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"]
+        exports.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"]
+        exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
+        exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
+        exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"]
+        exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"]
+        exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
 
-    exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"];
+    exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
-    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"];
-        exports.volute.UPGRADES_TIER_3 = ["sidewinder"];
-        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"];
+    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"]
+        exports.volute.UPGRADES_TIER_3 = ["sidewinder"]
+        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]

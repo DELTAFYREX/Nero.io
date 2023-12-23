@@ -795,6 +795,7 @@ class Entity extends EventEmitter {
             color: "#FFFFFF",
             amount: 0,
         };
+        this.reverseTank = 1;
         // Objects
         this.skill = new Skill();
         this.health = new HealthType(1, "static", 0);
@@ -980,6 +981,12 @@ class Entity extends EventEmitter {
             listenToPlayer = this.controllers.shift();
         }
         if (!Array.isArray(newIO)) newIO = [newIO];
+          for (let io of newIO) {
+            for (let i in this.controllers) {
+                let oldIO = this.controllers[i];
+                if (io.constructor === oldIO.constructor) this.controllers.splice(i, 1);
+            }
+        }
         this.controllers = newIO.concat(this.controllers);
         if (listenToPlayer) this.controllers.unshift(listenToPlayer);
     }
@@ -1076,6 +1083,7 @@ class Entity extends EventEmitter {
         if (set.MOTION_TYPE != null) this.motionType = set.MOTION_TYPE;
         if (typeof this.motionType == "string") this.motionType = [this.motionType];
         if (set.FACING_TYPE != null) this.facingType = set.FACING_TYPE;
+        if (typeof this.facingType == "string") this.facingType = [this.facingType];
         if (set.MIRROR_MASTER_ANGLE != null) this.settings.mirrorMasterAngle = set.MIRROR_MASTER_ANGLE
         if (set.DRAW_HEALTH != null) this.settings.drawHealth = set.DRAW_HEALTH;
         if (set.DRAW_SELF != null) this.settings.drawShape = set.DRAW_SELF;
