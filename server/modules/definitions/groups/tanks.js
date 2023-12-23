@@ -4937,6 +4937,8 @@ exports.autoDirector = makeAuto(exports.director, "Auto-Director");
 exports.autoPound = makeAuto(exports.pounder, "Auto-Pounder");
 exports.autoTrap = makeAuto(exports.trapper, "Auto-Trapper");
 exports.autoCloner = makeAuto(exports.cloner, "Auto-Cloner");
+exports.autoDesmos = makeAuto(exports.desmos, "Auto-Desmos");
+
 
 exports.autoTripleShot = makeAuto(exports.tripleShot, "Auto-Triple Shot");
 
@@ -4957,6 +4959,11 @@ exports.autoLaunch = makeAuto(exports.launcher, "Auto-Launcher");
 
 exports.autoTriTrapper = makeAuto(exports.triTrapper, "Auto-Tri Trapper");
 exports.autoTrapGuard = makeAuto(exports.trapGuard, "Auto-TrapGuard");
+
+exports.autoVolute = makeAuto(exports.volute, "Auto-Volute");
+exports.autoHelix = makeAuto(exports.helix, "Auto-Helix");
+
+
 
 exports.autoDouble = makeAuto(exports.doubleTwin, "Auto-Double")
 exports.autoAssassin = makeAuto(exports.assassin)
@@ -5043,7 +5050,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper"]
         exports.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard"]
 
-    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "revolutionist", "basicCeption"]
+    exports.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "revolutionist", "basicCeption"]
         exports.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
         exports.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"]
         exports.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"]
@@ -5052,12 +5059,13 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
         exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"]
+        exports.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHe"]
         exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"]
         exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
 
     exports.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
-    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix"]
-        exports.volute.UPGRADES_TIER_3 = ["sidewinder"]
-        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex"]
+    exports.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos"]
+        exports.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute"]
+        exports.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHelix"]
