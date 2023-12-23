@@ -5059,7 +5059,7 @@ exports.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "
         exports.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         exports.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
         exports.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"]
-        exports.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHe"]
+        exports.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix"]
         exports.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"]
         exports.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
