@@ -211,15 +211,15 @@ Class.sanctuaries = {
         },
     ],
 };
-Class.funTanks = {
+Class.overpowered = {
     PARENT: ["menu"],
-    LABEL: "Misc",
+    LABEL: "Dev Funny",
 };
-Class.testingTanks = {
+Class.features = {
     PARENT: "menu",
     LABEL: "Features",
 };
-Class.beta = {
+Class.testing = {
     PARENT: ["menu"],
     LABEL: "Beta Tanks",
 };
@@ -1587,11 +1587,11 @@ Class.whirlwind = {
 }
 
 Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"];
-    Class.tanks.UPGRADES_TIER_0 = ["developer", "funTanks", "beta", "unavailable", "testingTanks"];
+    Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"];
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"];
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        Class.beta.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind"];
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3"];
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
@@ -1607,8 +1607,9 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
-        Class.funTanks.UPGRADES_TIER_0 = ["tanks", "florr_tank", "vanquisher", "armyOfOne", "godbasic", "maximumOverdrive", "mummifier", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", "tracker3", "pisseroo", "papyrus", "oppenheimer", ["developer", "developer"]];
-        Class.testingTanks.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "testLayeredBoss", "tooltipTank"];
+        Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer"]
+
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
               Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
