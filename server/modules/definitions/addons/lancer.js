@@ -1,6 +1,25 @@
-const { combineStats, makeAuto } = require('../facilitators.js');
-const { gunCalcNames, smshskl } = require('../constants.js');
-const g = require('../gunvals.js');
+const {
+  combineStats,
+  makeAuto,
+  makeCeption,
+  makeBiSwarming,
+  makeSwarming,
+  makeHybrid,
+  makeOver,
+  makeDeco,
+  makeGuard,
+  makeBird,
+  makeMulti,
+} = require("../facilitators.js");
+const {
+  base,
+  statnames,
+  gunCalcNames,
+  dfltskl,
+  smshskl,
+} = require("../constants.js");
+const generics = require("../groups/generics.js");
+const g = require("../gunvals.js");
 
 // This addon is disabled by default.
 // You can also disable addons by not making them end with '.js'
@@ -8,7 +27,7 @@ const g = require('../gunvals.js');
 return console.log('[lancer.js] Addon disabled by default');
 
 
-exports.lancer = {
+Class.lancer = {
   PARENT: "genericTank",
   LABEL: "Lancer",
   BODY: {
@@ -37,8 +56,8 @@ exports.lancer = {
     }
   ]
 }
-exports.autolancer = makeAuto(exports.lancer, "Auto-Lancer");
-exports.trilancer = {
+Class.autolancer = makeAuto(Class.lancer, "Auto-Lancer");
+Class.trilancer = {
   PARENT: "genericTank",
   LABEL: "Tri-Lancer",
   BODY: {
@@ -89,7 +108,7 @@ exports.trilancer = {
     }
   ]
 }
-exports.hexalancer = {
+Class.hexalancer = {
   PARENT: "genericTank",
   LABEL: "Hexa Lancer",
   BODY: {
@@ -173,7 +192,7 @@ exports.hexalancer = {
     }
   ]
 }
-exports.hedgehog = {
+Class.hedgehog = {
   PARENT: "genericTank",
   LABEL: "Hedgehog",
   BODY: {
@@ -268,9 +287,9 @@ exports.hedgehog = {
     }
   ]
 }
-exports.autohedgehog = makeAuto(exports.hedgehog, "Auto-Hedgehog");
-exports.lancebrid = makeHybrid(exports.lancer, "Lancebrid");
-exports.chasseur = {
+Class.autohedgehog = makeAuto(Class.hedgehog, "Auto-Hedgehog");
+Class.lancebrid = makeHybrid(Class.lancer, "Lancebrid");
+Class.chasseur = {
   PARENT: "genericTank",
   LABEL: "Chasseur",
   BODY: {
@@ -299,8 +318,8 @@ exports.chasseur = {
     }
   ]
 }
-exports.autochasseur = makeAuto(exports.chasseur, "Auto-Chasseur");
-exports.trichasseur = {
+Class.autochasseur = makeAuto(Class.chasseur, "Auto-Chasseur");
+Class.trichasseur = {
   PARENT: "genericTank",
   LABEL: "Tri-Chasseur",
   BODY: {
@@ -351,8 +370,8 @@ exports.trichasseur = {
     }
   ]
 }
-exports.autotrichasseur = makeAuto(exports.trichasseur, "Auto-Tri-Chasseur");
-exports.spiny = {
+Class.autotrichasseur = makeAuto(Class.trichasseur, "Auto-Tri-Chasseur");
+Class.spiny = {
   PARENT: "genericTank",
   LABEL: "Spiny",
   BODY: {
@@ -436,7 +455,7 @@ exports.spiny = {
     }
   ]
 }
-exports.tripleur = {
+Class.tripleur = {
   PARENT: "genericTank",
   LABEL: "Tripleur",
   BODY: {
@@ -487,7 +506,7 @@ exports.tripleur = {
     }
   ]
 }
-exports.trailblazer = {
+Class.trailblazer = {
   PARENT: "genericTank",
   LABEL: "Trailblazer",
   BODY: {
@@ -526,7 +545,7 @@ exports.trailblazer = {
     }
   ]
 }
-exports.flazer = {
+Class.flazer = {
   PARENT: "genericTank",
   LABEL: "Flazer",
   BODY: {
@@ -572,7 +591,7 @@ exports.flazer = {
     }
   ]
 }
-exports.jouster = {
+Class.jouster = {
   PARENT: "genericTank",
   LABEL: "Jouster",
   BODY: {
@@ -601,48 +620,50 @@ exports.jouster = {
     }
   ]
 }
-exports.joustebrid = makeHybrid(exports.jouster, "Joustebrid");
-exports.autojoustebrid = makeAuto(exports.joustebrid, "Auto-Joustebrid");
+Class.joustebrid = makeHybrid(Class.jouster, "Joustebrid");
+Class.autojoustebrid = makeAuto(Class.joustebrid, "Auto-Joustebrid");
 
-exports.jouster.UPGRADES_TIER_2 = [
+Class.jouster.UPGRADES_TIER_2 = [
   "lancer",
   "joustebrid",
   "smasher",
 ];
-exports.lancer.UPGRADES_TIER_3 = [
+Class.lancer.UPGRADES_TIER_3 = [
   "chasseur",
   "lancebrid",
   "trilancer",
   "autolancer",
 ];
-exports.chasseur.UPGRADES_TIER_3 = [
+Class.chasseur.UPGRADES_TIER_3 = [
   "tripleur",
   "autochasseur",
   "trichasseur",
 ];
-exports.joustebrid.UPGRADES_TIER_3 = [
+Class.joustebrid.UPGRADES_TIER_3 = [
   "lancebrid",
   "autojoustebrid",
 ];
-exports.trilancer.UPGRADES_TIER_4 = [
+Class.trilancer.UPGRADES_TIER_4 = [
   "hexalancer",
   "trailblazer",
   "trichasseur",
 ];
-exports.autolancer.UPGRADES_TIER_3 = [
+Class.autolancer.UPGRADES_TIER_3 = [
   "autochasseur",
 ];
-exports.trichasseur.UPGRADES_TIER_5 = [
+Class.trichasseur.UPGRADES_TIER_5 = [
   "spiny",
   "autotrichasseur",
 ];
-exports.hexalancer.UPGRADES_TIER_5 = [
+Class.hexalancer.UPGRADES_TIER_5 = [
   "hedgehog",
   "spiny",
 ];
-exports.trailblazer.UPGRADES_TIER_5 = [
+Class.trailblazer.UPGRADES_TIER_5 = [
   "flazer",
 ];
-exports.hedgehog.UPGRADES_TIER_6 = [
+Class.hedgehog.UPGRADES_TIER_6 = [
   "autohedgehog",
 ];
+
+Class.addons.UPGRADES_TIER_0.push("jouster");
