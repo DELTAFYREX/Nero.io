@@ -570,6 +570,7 @@ exports.makeTriSwarming = (type, name = -1) => {
 
 // AUTO FUNCTIONS
 exports.makeAuto = (type, name = -1, options = {}) => {
+    type = ensureIsClass(type);
     let turret = {
         type: "autoTurret",
         size: 10,
@@ -594,7 +595,6 @@ exports.makeAuto = (type, name = -1, options = {}) => {
     }
     let output = exports.dereference(type);
     let autogun = {
-        /*********    SIZE                             X             Y         ANGLE        ARC */
         POSITION: [turret.size, 0, 0, turret.angle, 360, 1],
         TYPE: [
             turret.type,
@@ -717,6 +717,7 @@ exports.makeCeption = (type, name = -1, options = {}) => {
     return output;
 }
 exports.makeCeptionNerf = (type, name = -1, options = {}) => {
+    type = ensureIsClass(type);
     let turret = {
         type: "autoTurretNerf",
         size: 12.5,
@@ -761,7 +762,7 @@ exports.makeCeptionNerf = (type, name = -1, options = {}) => {
 }
 exports.makeDeco = (shape = 0, color = 16) => {
     return {
-        PARENT: ["genericTank"],
+        PARENT: "genericTank",
         SHAPE: shape,
         COLOR: color,
     };
@@ -796,6 +797,64 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) =
         ]
     };
 }
+class LayeredBoss {
+    constructor(identifier, NAME, PARENT = "celestial", SHAPE = 9, COLOR = 0, trapTurretType = "baseTrapTurret", trapTurretSize = 6.5, layerScale = 5, BODY, SIZE, VALUE) {
+        this.identifier = identifier ?? NAME.charAt(0).toLowerCase() + NAME.slice(1);
+        this.layerID = 0;
+        Class[this.identifier] = {
+            PARENT, SHAPE, NAME, COLOR, BODY, SIZE, VALUE,
+            UPGRADE_LABEL: NAME,
+            UPGRADE_COLOR: COLOR,
+            TURRETS: Array(SHAPE).fill().map((_, i) => ({
+                POSITION: [trapTurretSize, 9, 0, 360 / SHAPE * (i + 0.5), 180, 0],
+                TYPE: trapTurretType,
+            })),
+        };
+        this.layerScale = layerScale;
+        this.shape = SHAPE;
+        this.layerSize = 20;
+    }
+
+    addLayer({gun, turret}, decreaseSides = true, layerScale, MAX_CHILDREN) {
+        this.layerID++;
+        this.shape -= decreaseSides ? 2 : 0;
+        this.layerSize -= layerScale ?? this.layerScale;
+        let layer = {
+            PARENT: "genericTank",
+            SHAPE: this.shape,
+            COLOR: -1,
+            INDEPENDENT: true,
+            CONTROLLERS: [["spin", { independent: true, speed: 0.02 / c.runSpeed * (this.layerID % 2 ? -1 : 1) }]],
+            MAX_CHILDREN, 
+            GUNS: [],
+            TURRETS: [],
+        };
+        if (gun) {
+            for (let i = 0; i < this.shape; i++) {
+                layer.GUNS.push({
+                    POSITION: gun.POSITION.map(n => n ?? 360 / this.shape * (i + 0.5)),
+                    PROPERTIES: gun.PROPERTIES,
+                });
+            }
+        }
+        if (turret) {
+            for (let i = 0; i < this.shape; i++) {
+                layer.TURRETS.push({
+                    POSITION: turret.POSITION.map(n => n ?? 360 / this.shape * (i + 0.5)),
+                    TYPE: turret.TYPE,
+                });
+            }
+        }
+
+        Class[this.identifier + "Layer" + this.layerID] = layer;
+        Class[this.identifier].TURRETS.push({
+            POSITION: [this.layerSize, 0, 0, 0, 360, 1],
+            TYPE: this.identifier + "Layer" + this.layerID,
+        });
+    }
+}
+exports.LayeredBoss = LayeredBoss;
+
 
 //unfinished lolo
 exports.makeLabyrinthShape = (type) => {
