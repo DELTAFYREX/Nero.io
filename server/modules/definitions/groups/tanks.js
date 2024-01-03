@@ -4610,21 +4610,21 @@ Class.minilaser = {
             /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2 / 3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.mini, g.doublereload, g.one_third_reload]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.doublereload, g.one_third_reload]),
                 TYPE: "laser",
             },
         },
@@ -4645,7 +4645,7 @@ Class.revolutionist = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
     },
@@ -4663,7 +4663,7 @@ Class.hadron = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
     },
@@ -4757,7 +4757,7 @@ Class.cloner = {
         GUNS: [ { /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
             POSITION: [   6,     12,    1.2,     8,      0,      0,      0,   ], 
                 PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.drone, g.over]),
+                    SHOOT_SETTINGS: combineStats([g.drone, g.overseer]),
                     TYPE: "fastdrone",
                     AUTOFIRE: true,
                     SYNCS_SKILLS: true,
@@ -4855,6 +4855,12 @@ Class.directdrive = {
                 MAX_CHILDREN: 6
             }
         }
+    ],
+      TURRETS: [
+        {
+            POSITION: [9, 0, 0, 0, 360, 1],
+            TYPE: "overdriveDeco",
+        },
     ]
 }
 
