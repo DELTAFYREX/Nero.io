@@ -1,5 +1,5 @@
 
-module.exports = ({ Class }) => {
+module.Class = ({ Class }) => {
 
 	//UNCOMMENT LINE 11 TO DISABLE
 	//return

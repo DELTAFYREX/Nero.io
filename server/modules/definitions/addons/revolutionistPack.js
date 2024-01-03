@@ -6,7 +6,7 @@
 const { combineStats, makeDeco, makeAuto, makeCeption } = require('../facilitators');
 const g = require('../gunvals');
 
-module.exports = ({ Class }) => {
+module.Class = ({ Class }) => {
   
   	// This addon is enabled by default.
 	// If you want to disable, uncomment the line below.

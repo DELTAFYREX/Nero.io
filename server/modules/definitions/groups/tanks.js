@@ -4778,13 +4778,13 @@ Class.railgun = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [1, 6.5, 1, 25, 0, 0, 0.15],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.fast, g.railgun]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.one_third_reload, g.fast, g.fast, g.fast, g.fast, g.railgun]),
         TYPE: "bullet"
       }
     }, {
       POSITION: [1, 6.5, 1, 10, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.one_third_reload, g.fast, g.fast, g.railgun]),
         TYPE: "bullet"
             }
         },    {
@@ -4797,7 +4797,7 @@ Class.railgun = {
     {
       POSITION: [1, 6.5, 1, 20, 0, 0, 0.1],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.fast, g.railgun]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.one_third_reload, g.fast, g.fast, g.fast, g.railgun]),
         TYPE: "bullet"
       }
     },
