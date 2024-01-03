@@ -112,7 +112,8 @@ h3 {
 
 h4 {
     font-size: small;
-    color: #8ABC3F;
+    color: #1B3353;
+    /*color: #8ABC3F;*/
     text-align: center;
 }
 
@@ -142,6 +143,7 @@ ul {
 
 input {
     text-align: center;
+    font-family: Ubuntu;
     width: 100%;
     padding: 10px;
     border: solid 1px #dcdcdc;
@@ -167,8 +169,8 @@ input.checkbox {
 }
 
 #playerNameInput {
-    padding: 0px;
-    font-size: xx-large;
+    padding: 10px;
+    font-size: large;
 }
 
 #playerKeyInput {
