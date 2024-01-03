@@ -1,6 +1,3 @@
-
-module.Class = ({ Class }) => {
-
 	//UNCOMMENT LINE 11 TO DISABLE
 	//return
 	console.log('[AMONG US CREWMATE] Addon running');
@@ -109,4 +106,3 @@ module.Class = ({ Class }) => {
 	
 	Class.OSAmongus_crewmatebase.UPGRADES_TIER_0.push("OSAmongus_" + colors[i] + "crewmate");
 }
-};

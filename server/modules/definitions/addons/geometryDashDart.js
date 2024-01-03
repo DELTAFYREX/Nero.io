@@ -1,7 +1,6 @@
 const { combineStats, makeDeco } = require('../facilitators');
 const g = require('../gunvals');
 
-module.Class = ({ Class }) => {
     Class.geometryDash_square = makeDeco(4, 'blue');
     Class.geometryDash_square.MIRROR_MASTER_ANGLE = true;
 
@@ -71,4 +70,3 @@ module.Class = ({ Class }) => {
     }
 
     Class.addons.UPGRADES_TIER_0.push('geometryDash');
-}

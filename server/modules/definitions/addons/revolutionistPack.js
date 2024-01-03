@@ -6,7 +6,6 @@
 const { combineStats, makeDeco, makeAuto, makeCeption } = require('../facilitators');
 const g = require('../gunvals');
 
-module.Class = ({ Class }) => {
   
   	// This addon is enabled by default.
 	// If you want to disable, uncomment the line below.
@@ -185,4 +184,3 @@ Class.solario = {
   	Class.revolution.UPGRADES_TIER_0 = [];
     Class.addons.UPGRADES_TIER_0.push('revolution');
     Class.revolution.UPGRADES_TIER_0.push('revoceptionist', 'autorevol', 'solario');
-}
