@@ -109,5 +109,33 @@ module.exports = {
     halfrange: { range: 0.5 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, damage: 3, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noSpread: { shudder: 0, spray: 0 },
-    one_third_reload: { reload: 0.333333333334 }
+
+    // Recoil
+    tonsmorrecoil: { recoil: 4 },
+    lotsmorrecoil: { recoil: 1.8 },
+    muchmorerecoil: { recoil: 1.35 },
+    morerecoil: { recoil: 1.15 },
+    halfrecoil: { recoil: 0.5 },
+
+    // Reload
+    halfreload: { reload: 2 },
+    lessreload: { reload: 1.5 },
+    one_third_reload: { reload: 1.333 },
+    morereload: { reload: 0.75 },
+    doublereload: { reload: 0.5 },
+
+    // Speed
+    fast: { speed: 1.2 },
+    veryfast: { speed: 2.5 },
+    morespeed: { speed: 1.3, maxSpeed: 1.3 },
+    bitlessspeed: { speed: 0.93, maxSpeed: 0.93 },
+    slow: { speed: 0.7, maxSpeed: 0.7 },
+    halfspeed: { speed: 0.5, maxSpeed: 0.5 },
+
+    // Misc 2
+    lancer: { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 },
+    celeslower: { size: 0.5 },
+    notdense: { density: 0.1 },
+    doublerange: { range: 2 },
+    acc: { shudder: 0.1 },
 }
