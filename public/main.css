@@ -103,11 +103,18 @@ h3 {
     width: 100%;
     height: 20px;
     box-sizing: border-box;
-    background: #b1d5fc;
-    border-bottom: 2px solid #70b5ff;
-    box-shadow: inset 0 -2px #70b5ff;
+    background: #5e83cc;
+    border-bottom: 2px solid #456cba;
+    box-shadow: inset 0 -2px #456cba;
     border: 0;
     opacity: 1
+}
+h3:hover {
+    top: 1px;
+    background: #70b5ff;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 h4 {
