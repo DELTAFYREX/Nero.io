@@ -21,8 +21,6 @@ const {
 const generics = require("../groups/generics.js");
 const g = require("../gunvals.js");
 
-module.Class = ({ Class }) => {
-
 Class.lancer = {
   PARENT: "genericTank",
   LABEL: "Lancer",
@@ -663,5 +661,3 @@ Class.hedgehog.UPGRADES_TIER_6 = [
 ];
 
 Class.addons.UPGRADES_TIER_0.push("jouster");
-
-}

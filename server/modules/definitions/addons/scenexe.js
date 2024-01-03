@@ -55,9 +55,9 @@ const baseScenexe = {
  * @param {Object} params
  * @param {import("../../../..").Tanks} params.Class
  */
-module.exports = ({ Class, Config }) => {
+module.Class = ({ Class, Config }) => {
 
-    return console.log('Addon [scenexe.js] is disabled')
+    //return console.log('Addon [scenexe.js] is disabled')
     
     Config.SPAWN_CLASS = ['SCENEXEnode', 'SCENEXEbase']
     Class.SCENEXEnode = {
