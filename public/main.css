@@ -214,7 +214,8 @@ div {
 }
 
 .serverSelector tr.selected {
-    color: #8ABC3F;
+    color: #1B3353;
+    /*color: #8ABC3F;*/
     cursor: default;
 }
 
@@ -343,9 +344,8 @@ table {
     cursor: pointer;
     height: 15px;
 }
-#startMenuSlidingTrigger:hover > h3 {
-  color: #323232;
-  opacity: 0.8
+#startMenuSlidingTrigger:hover {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 #startMenuSlidingTrigger:active > h3 {
   color: #323232;
@@ -430,6 +430,7 @@ update {
 }
 
 #startButton {
+    font-family: Ubuntu;
     position: relative;
     margin: auto;
     width: 100%;
@@ -440,12 +441,16 @@ update {
       animation:pfpDefault 800ms linear both;
     text-align: center;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    background: #B9E87E;
+    background: #335099;
+    /*background: #A9D86D;*/
     border: 0;
-    border-bottom: 2px solid #8ABC3F;
+    border-bottom: 2px solid #1B3353;
+    /*border-bottom: 2px solid #8ABC3F;*/
     cursor: pointer;
-    -webkit-box-shadow: inset 0 -2px #8ABC3F;
-    box-shadow: inset 0 -2px #8ABC3F;
+    -webkit-box-shadow: inset 0 -2px #1B3353;
+    /*-webkit-box-shadow: inset 0 -2px #8ABC3F;*/
+    box-shadow: inset 0 -2px #1B3353;
+    /*box-shadow: inset 0 -2px #8ABC3F;*/
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -471,7 +476,8 @@ update {
 #startButton:active,
 #startButton:hover {
     top: 1px;
-    background: #B9E87E;
+    background: #1B3353;
+    /*background: #8ABC3F;*/
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
