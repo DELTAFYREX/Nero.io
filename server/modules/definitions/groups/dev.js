@@ -878,7 +878,7 @@ Class.ghoster = {
         POSITION: {WIDTH: 20, LENGTH: 20},
         PROPERTIES: {
             TYPE: 'bullet',
-            SHOOT_SETTINGS: combineStats([g.basic, g.pound, g.destroy, g.anni]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, g.annihilator]),
         }
     }],
     ALPHA: 1,
@@ -1547,7 +1547,7 @@ Class.AIT = {
 Class.addons = {
     PARENT: "menu",
     LABEL: "Addon Entities",
-    UPGRADES_TIER_0: ["developer"]
+    UPGRADES_TIER_0: []
 };
 Class.whirlwindDeco = makeDeco(6)
 Class.whirlwindDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]]
