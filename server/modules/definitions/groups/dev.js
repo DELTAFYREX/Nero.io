@@ -560,16 +560,16 @@ Class.oppenheimer = {
     ]
 }
 Class.aimassistbullet = {
+    PARENT: "bullet",
     LABEL: "Bullet",
-    TYPE: "swarm",
     CONTROLLERS: ["AimAssist"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
         SPEED: 3.75,
         RANGE: 90,
-        DENSITY: 1.25,
-        HEALTH: 0.165,
+        DENSITY: 5.25,
+        HEALTH: 5,
         DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
@@ -580,8 +580,7 @@ Class.aimassistbullet = {
 };
 Class.aimassisttest = {
     PARENT: "genericTank",
-    LABEL: "Single",
-    CONTROLLERS: ["AimAssist"],
+    LABEL: "Aim Assist",
     DANGER: 7,
     GUNS: [
         {
