@@ -346,7 +346,7 @@ exports.autoTurretNerf = {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.weak, g.fake, g.basic, g.morerecoil, g.turret, g.auto]),
+                SHOOT_SETTINGS: combineStats([g.weak, g.fake, g.basic, g.morerecoil, g.turret, g.autoTurret]),
                 TYPE: "bullet",
             },
         },
@@ -387,7 +387,7 @@ exports.hiveprobe = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowPower]),
         TYPE: "bullet"
       }
     }
@@ -407,7 +407,7 @@ exports.clonerprobe = {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.lowpower]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lowPower]),
         TYPE: "bullet"
       }
     }
@@ -4790,7 +4790,7 @@ Class.railgun = {
         },    {
       POSITION: [1, 6.5, 1, 15, 0, 0, 0.05],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assass, g.one_third_reload, g.fast, g.fast, g.railgun]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, g.one_third_reload, g.fast, g.fast, g.railgun]),
         TYPE: "bullet"
       }
       },
