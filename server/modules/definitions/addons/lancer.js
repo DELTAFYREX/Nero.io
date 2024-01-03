@@ -21,11 +21,7 @@ const {
 const generics = require("../groups/generics.js");
 const g = require("../gunvals.js");
 
-// This addon is disabled by default.
-// You can also disable addons by not making them end with '.js'
-// If you want to enable, simply make the line below just not run.
-return console.log('[lancer.js] Addon disabled by default');
-
+module.Class = ({ Class }) => {
 
 Class.lancer = {
   PARENT: "genericTank",
@@ -667,3 +663,5 @@ Class.hedgehog.UPGRADES_TIER_6 = [
 ];
 
 Class.addons.UPGRADES_TIER_0.push("jouster");
+
+}
