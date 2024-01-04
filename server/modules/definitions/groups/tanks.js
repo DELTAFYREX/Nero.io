@@ -301,6 +301,20 @@ exports.subverterturretBase = {
         TYPE: "revogun",
     }]
 };
+exports.shieldturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        TYPE: "placeableWall",
+    }, {
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        TYPE: "placeableWall",
+    }]
+};
 exports.revogun = {
     PARENT: "autoTankGun",
     CONTROLLERS: ["nearestDifferentMaster"],
@@ -4737,6 +4751,24 @@ Class.hadron = {
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "hadronturretBase",
     }
+  ],
+};
+Class.shieldtest = {
+    PARENT: "genericTank",
+    LABEL: "shield testing",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "shieldturretBase",
+    },
   ],
 };
 Class.revoception = makeCeption(Class.revolutionist, "revoception");
