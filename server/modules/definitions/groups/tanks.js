@@ -249,15 +249,15 @@ Class.rocketeerMissile = {
 // ??? it still dont spin i think lol
 exports.turretBase = {
     LABEL: "Base",
-    SHAPE: 'M 0 -1.03 A 1 1 0 0 0 0 1.03 A 1 1 0 0 0 0 -1.03 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "revogun",
     }, {
-        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
         TYPE: "revogun",
     }]
 };
@@ -274,10 +274,10 @@ exports.hadronturretBase = {
     COLOR: 'red',
     CONTROLLERS: ["hadron"],
     TURRETS: [{
-        POSITION: [4.65, 10.8, 0, 90, 220, 1],
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "revogun",
     }, {
-        POSITION: [4.65, 10.8, 0, 270, 220, 1],
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
         TYPE: "revogun",
     }]
 };
