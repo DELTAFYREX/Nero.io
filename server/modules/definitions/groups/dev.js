@@ -562,7 +562,7 @@ Class.oppenheimer = {
 Class.aimassistbullet = {
     PARENT: "bullet",
     LABEL: "Bullet",
-    CONTROLLERS: ["AimAssist"],
+    //CONTROLLERS: ["AimAssist"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
@@ -573,7 +573,7 @@ Class.aimassistbullet = {
         DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
-    //MOTION_TYPE: "aimassisting",
+    MOTION_TYPE: "aimassist",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
@@ -587,12 +587,17 @@ Class.aimassisttest = {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "aimassistbullet"
+                TYPE: "bullet",
             }
         },
         {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "aimassistbullet",
+                HAS_NO_RECOIL: true
         }
+      },
     ]
 }
 Class.mmaTest2 = {
