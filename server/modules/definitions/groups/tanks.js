@@ -254,10 +254,10 @@ exports.turretBase = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        POSITION: [4.65, 12, 0, 90, 220, 1],
         TYPE: "revogun",
     }, {
-        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        POSITION: [4.65, 20, 0, 270, 220, 1],
         TYPE: "revogun",
     }]
 };
