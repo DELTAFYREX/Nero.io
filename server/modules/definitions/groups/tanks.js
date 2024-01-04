@@ -254,10 +254,10 @@ exports.turretBase = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 12, 0, 90, 220, 1],
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "revogun",
     }, {
-        POSITION: [4.65, 20, 0, 270, 220, 1],
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
         TYPE: "revogun",
     }]
 };
@@ -278,6 +278,26 @@ exports.hadronturretBase = {
         TYPE: "revogun",
     }, {
         POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        TYPE: "revogun",
+    }]
+};
+exports.subverterturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 10.5, 0, 180, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 10.5, 0, 0, 220, 1],
         TYPE: "revogun",
     }]
 };
@@ -4657,6 +4677,24 @@ Class.revolutionist = {
     },
   ],
 };
+Class.subverter = {
+    PARENT: "genericTank",
+    LABEL: "Subverter",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "subverterturretBase",
+    },
+  ],
+};
 Class.hadron = {
     PARENT: "genericTank",
     LABEL: "Hadron",
@@ -4999,7 +5037,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix"]
-        Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "autoRevolutionist"]
+        Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "autoRevolutionist"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
 

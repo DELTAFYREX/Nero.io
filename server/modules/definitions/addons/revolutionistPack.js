@@ -23,7 +23,7 @@ const g = require('../gunvals');
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.autoTurret, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -42,7 +42,7 @@ const g = require('../gunvals');
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.autoTurret, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -61,7 +61,7 @@ const g = require('../gunvals');
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.autoTurret, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -81,7 +81,7 @@ const g = require('../gunvals');
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.autoTurret, g.power]),
                 TYPE: "bullet",
             },
         },
@@ -100,13 +100,13 @@ const g = require('../gunvals');
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.auto, g.power]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.gunner, g.turret, g.autoTurret, g.power]),
                 TYPE: "bullet",
             },
         },
     ],
 }
-  Class.turretBase = {
+  Class.revoturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -147,14 +147,14 @@ Class.revolution = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
     },
           ],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBase",
+        TYPE: "revoturretBase",
     },
   ],
 };
@@ -168,7 +168,7 @@ Class.solario = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
     },
