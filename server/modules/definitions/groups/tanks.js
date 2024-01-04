@@ -4699,14 +4699,22 @@ Class.equilibrium = {
     PARENT: "genericTank",
     LABEL: "Equilibrium",
     DANGER: 6,
-    GUNS: [{
-        POSITION: [20, 8, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
-            TYPE: "bullet",
+    GUNS: [
+        {
+            POSITION: [20, 8, 1, 0, 5.5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.twin]),
+                TYPE: "bullet"
+            }
         },
-    },
-          ],
+        {
+            POSITION: [20, 8, 1, 0, -5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.twin]),
+                TYPE: "bullet"
+            }
+        }
+    ],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBase",
@@ -4732,6 +4740,7 @@ Class.hadron = {
   ],
 };
 Class.revoception = makeCeption(Class.revolutionist, "revoception");
+Class.revobrid = makeHybrid(Class.revolutionist, "Audioboard");
 Class.hivemind = {
   PARENT: "genericTank",
   LABEL: "Hivemind",
