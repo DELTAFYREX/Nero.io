@@ -1626,7 +1626,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 2 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
-        drawText("pissass: " + [Math.round(global.finalKills[0].get()), 1], x + len, y - 50 + 1 * 14, 10, color.guiwhite, "right");
+        drawText("pissass: " + global.finalKills, x + len, y - 50 + 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.7", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
