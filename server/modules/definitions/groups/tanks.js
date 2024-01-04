@@ -4695,6 +4695,24 @@ Class.subverter = {
     },
   ],
 };
+Class.equilibrium = {
+    PARENT: "genericTank",
+    LABEL: "Equilibrium",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBase",
+    },
+  ],
+};
 Class.hadron = {
     PARENT: "genericTank",
     LABEL: "Hadron",
