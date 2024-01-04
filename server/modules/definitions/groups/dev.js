@@ -950,6 +950,7 @@ Class.placeableWall = {
     SIZE: 30,
     SHAPE: 4,
     CLEAR_ON_MASTER_UPGRADE: true,
+      INDEPENDENT: true
   TEAM: TEAM_ENEMIES,
       VARIES_IN_SIZE: false,
 };
