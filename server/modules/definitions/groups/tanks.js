@@ -4671,7 +4671,13 @@ Class.hadron = {
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "hadronturretBase",
-    },
+    }, {
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "revogun",
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "revogun",
+    }
   ],
 };
 Class.revoception = makeCeption(Class.revolutionist, "revoception");
