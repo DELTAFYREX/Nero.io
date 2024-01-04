@@ -967,7 +967,7 @@ Class.wallPlacerThing = {
     SHAPE:0,
     MIRROR_MASTER_ANGLE: true,
     INTANGIBLE: true,
-  DRAW_SELF:false,
+  DRAW_SELF: false,
     COLOR: 16,
       CLEAR_ON_MASTER_UPGRADE: true,
       BODY: {
@@ -988,7 +988,7 @@ Class.wallPlacerThing = {
         PUSHABILITY: false,
         HETERO: false,
     },
-    MOTION_TYPE: "withMouse",
+    MOTION_TYPE: "aimassist",
    GUNS: [
        {
             POSITION: [0, 20, 1, 10, 0, 0, 0],
