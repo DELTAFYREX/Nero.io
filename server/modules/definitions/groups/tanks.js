@@ -272,7 +272,7 @@ exports.hadronturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 'red',
-    CONTROLLERS: ["hadron"],
+    CONTROLLERS: [["hadron", { independent: true }]],
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
         TYPE: "revogun",

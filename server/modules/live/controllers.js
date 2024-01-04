@@ -774,12 +774,12 @@ class io_hadron extends IO {
         let offset = (this.independent && this.body.bond != null) ? this.body.bound.angle : 0;
         return {
             target: {
-                x: Math.cos(this.a + offset),
-                y: Math.sin(this.a + offset),
+                x: Math.cos(this.a - offset),
+                y: Math.sin(this.a - offset)
             },
             main: true,
         };
-              }else{
+    } else {
       if (this.onlyWhenIdle && input.target) {
             this.a = Math.atan2(input.target.y, input.target.x);
             return input;
