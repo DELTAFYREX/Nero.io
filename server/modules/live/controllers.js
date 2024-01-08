@@ -820,26 +820,22 @@ class io_AimAssist extends IO {
 class io_AimAssistLock extends IO {
     constructor(body) {
         super(body)
-        this.myGoal = {
-            x: body.master.control.target.x + body.master.x,
-            y: body.master.control.target.y + body.master.y,
-        }
-        this.countdown = 5
+        this.turnwise = 1
     }
   think(input) { 
       if (input.alt) {
-        if (this.countdown) {
-            if (util.getDistance(this.body, this.myGoal) < 1) {
-                this.countdown--;
-            }
-            return {
-                goal: {
-                    x: this.myGoal.x,
-                    y: this.myGoal.y,
-                },
-            }
+         if (this.body.aiSettings.reverseDirection && ran.chance(0.005)) {
+            this.turnwise = -1 * this.turnwise;
         }
-    } else {
+        if (input.target != null && (input.alt || input.main)) {
+            let sizeFactor = Math.sqrt(this.body.master.size / this.body.master.SIZE)
+            let leash = 82 * sizeFactor
+            let orbit = 140 * sizeFactor
+            let repel = 142 * sizeFactor
+            let goal
+            let power = 1
+            let target = new Vector(input.target.x, input.target.y)
+          } else {
     this.body.velocity.x = 0;
     this.body.velocity.y = 0;
     if (!input.fire && !input.target) {
@@ -854,6 +850,7 @@ class io_AimAssistLock extends IO {
     //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
     // }
     }
+    }   
   }
 }
 class io_orbit extends IO {
