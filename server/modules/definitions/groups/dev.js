@@ -562,7 +562,7 @@ Class.oppenheimer = {
 Class.aimassistbullet = {
     PARENT: "bullet",
     LABEL: "Bullet",
-    CONTROLLERS: ["AimAssistLock", "mapTargetToGoalAlt", "nearestDifferentMasterAlt"],
+    CONTROLLERS: ["mapTargetToGoalAlt", "nearestDifferentMasterAlt"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
@@ -573,7 +573,7 @@ Class.aimassistbullet = {
         DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
-    MOTION_TYPE: "aimassist",
+    MOTION_TYPE: "aimassistlock",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
