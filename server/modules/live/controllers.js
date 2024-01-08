@@ -834,21 +834,24 @@ class io_AimAssistLock extends IO {
             let goal
             let power = 1
             let target = new Vector(input.target.x, input.target.y)
-        } else {
-          if (input.alt) {
-            this.body.velocity.x = 0;
-            this.body.velocity.y = 0;
-            if (!input.fire && !input.target) {
-              this.body.x = this.body.source.x; 
-              this.body.y = this.body.source.y;
-            } 
-            if (input.fire && input.target) {
-              this.body.x = this.body.x + input.target.x; 
-              this.body.y = this.body.y + input.target.y;
-            } 
-            // else if (input.alt) {
-              //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
-            // }
+            if (input.alt) {
+    this.body.velocity.x = 0;
+    this.body.velocity.y = 0;
+    if (!input.fire && !input.target) {
+    this.body.x = this.body.source.x; 
+    this.body.y = this.body.source.y;
+    } 
+    if (input.fire && input.target) {
+    this.body.x = this.body.x + input.target.x; 
+    this.body.y = this.body.y + input.target.y;
+    } 
+    // else if (input.alt) {
+    //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
+    // }
+    }
+            return {
+                goal: goal,
+                power: power,
             }
         }
     }
