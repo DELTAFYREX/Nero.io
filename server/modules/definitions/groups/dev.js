@@ -562,7 +562,7 @@ Class.oppenheimer = {
 Class.aimassistbullet = {
     PARENT: "bullet",
     LABEL: "Bullet",
-    CONTROLLERS: ["mapTargetToGoalAlt", "nearestDifferentMasterAlt"],
+    CONTROLLERS: ["mapTargetToGoalAlt", "nearestDifferentMaster"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
