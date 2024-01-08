@@ -1900,7 +1900,17 @@ const gameDrawDisconnected = () => {
     let shift = animations.disconnected.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText("Disconnected", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
-    drawText("(This Either Means The Dev's Working On The Game Or The Server Ended)", global.screenWidth / 2, global.screenHeight / 1.8, 20, color.lgreen, "center");
+    drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, "center");
+    ctx.translate(0, shift * global.screenHeight);
+};
+const gameDrawError = () => {
+    let ratio = util.getScreenRatio();
+    scaleScreenRatio(ratio, true);
+    clearScreen(gameDraw.mixColors(color.red, color.guiblack, 0.2), 0.35);
+    let shift = animations.error.get();
+    ctx.translate(0, -shift * global.screenHeight);
+    drawText("There has been an error!", global.screenWidth / 2, global.screenHeight / 2 - 50, 50, color.guiwhite, "center");
+    drawText("(This Either Means The Dev's Working On The Game Or Its Bugged)", global.screenWidth / 2, global.screenHeight / 1.8, 20, color.lgreen, "center");
     drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, "center");
     ctx.translate(0, shift * global.screenHeight);
 };
