@@ -818,57 +818,28 @@ class io_AimAssist extends IO {
   }
 }
 class io_AimAssistLock extends IO {
-  constructor(body) {
-    super(body);
-    this.accountForMovement = opts.accountForMovement || true;
-    this.targetLock = undefined;
-    this.tick = ran.irandom(30);
-    this.lead = 0;
-    this.validTargets = this.buildList(body.fov);
-    this.oldHealth = body.health.display();
+    constructor(body) {
+        super(body)
+        this.myGoal = {
+            x: body.master.control.target.x + body.master.x,
+            y: body.master.control.target.y + body.master.y,
+        }
+        this.countdown = 5
     }
-    validate(e, m, mm, sqrRange, sqrRangeMaster) {
-        return (e.health.amount > 0) &&
-        (!e.master.master.ignoredByAi) &&
-        (e.master.master.team !== this.body.master.master.team) &&
-        (e.master.master.team !== TEAM_ROOM) &&
-        (!isNaN(e.dangerValue)) &&
-        (!e.invuln && !e.master.master.passive && !this.body.master.master.passive) &&
-        (this.body.aiSettings.seeInvisible || this.body.isArenaCloser || e.alpha > 0.5) &&
-        (!e.bond) &&
-        (e.type === "miniboss" || e.type === "tank" || e.type === "crasher" || (!this.body.aiSettings.IGNORE_SHAPES && e.type === 'food')) &&
-        (this.body.aiSettings.BLIND || ((e.x - m.x) * (e.x - m.x) < sqrRange && (e.y - m.y) * (e.y - m.y) < sqrRange)) &&
-        (this.body.aiSettings.SKYNET || ((e.x - mm.x) * (e.x - mm.x) < sqrRangeMaster && (e.y - mm.y) * (e.y - mm.y) < sqrRangeMaster));
-    }
-    buildList(range) {
-        // Establish whom we judge in reference to
-        let mostDangerous = 0,
-            keepTarget = false;
-        // Filter through everybody...
-        let out = entities.filter(e =>
-            // Only look at those within our view, and our parent's view, not dead, not invisible, not our kind, not a bullet/trap/block etc
-            this.validate(e, this.body, this.body.master.master, range * range, range * range * 4 / 3)
-        ).filter((e) => {
-            // Only look at those within range and arc (more expensive, so we only do it on the few)
-            if (this.body.firingArc == null || this.body.aiSettings.view360 || Math.abs(util.angleDifference(util.getDirection(this.body, e), this.body.firingArc[0])) < this.body.firingArc[1]) {
-                mostDangerous = Math.max(e.dangerValue, mostDangerous);
-                return true;
-            }
-        }).filter((e) => {
-            // Only return the highest tier of danger
-            if (this.body.aiSettings.farm || e.dangerValue === mostDangerous) {
-                if (this.targetLock && e.id === this.targetLock.id) keepTarget = true;
-                return true;
-            }
-        });
-        // Reset target if it's not in there
-        if (!keepTarget) this.targetLock = undefined;
-        return out;
-    }
-
   think(input) { 
-    if (input.alt) {
-    }
+      if (input.alt) {
+        if (this.countdown) {
+            if (util.getDistance(this.body, this.myGoal) < 1) {
+                this.countdown--;
+            }
+            return {
+                goal: {
+                    x: this.myGoal.x,
+                    y: this.myGoal.y,
+                },
+            }
+        }
+    } else {
     this.body.velocity.x = 0;
     this.body.velocity.y = 0;
     if (!input.fire && !input.target) {
@@ -882,6 +853,7 @@ class io_AimAssistLock extends IO {
     // else if (input.alt) {
     //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
     // }
+    }
   }
 }
 class io_orbit extends IO {
