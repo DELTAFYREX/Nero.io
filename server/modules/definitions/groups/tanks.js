@@ -247,7 +247,7 @@ Class.rocketeerMissile = {
 
 //delta projectiles/turrets
 // ??? it still dont spin i think lol
-exports.turretBase = {
+Class.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -261,14 +261,14 @@ exports.turretBase = {
         TYPE: "revogun",
     }]
 };
-exports.turretBasenoguns = {
+Class.turretBasenoguns = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
 };
-exports.hadronturretBase = {
+Class.hadronturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 'red',
@@ -281,7 +281,7 @@ exports.hadronturretBase = {
         TYPE: "revogun",
     }]
 };
-exports.subverterturretBase = {
+Class.subverterturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -301,7 +301,7 @@ exports.subverterturretBase = {
         TYPE: "revogun",
     }]
 };
-exports.shieldturretBase = {
+Class.shieldturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -315,12 +315,12 @@ exports.shieldturretBase = {
         TYPE: "placeableWall",
     }]
 };
-exports.revogun = {
+Class.revogun = {
     PARENT: "autoTankGun",
     CONTROLLERS: ["nearestDifferentMaster"],
     INDEPENDENT: true,
 }
-exports.laser = {
+Class.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
   BODY: {
@@ -333,7 +333,7 @@ exports.laser = {
     },
   BUFF_VS_FOOD: true,
 }
-exports.fastdrone = {
+Class.fastdrone = {
   PARENT: "drone",  
   LABEL: 'Drone',
     BODY: {
@@ -361,7 +361,7 @@ exports.fastdrone = {
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
 };
-exports.revoorbitdrone = {
+Class.revoorbitdrone = {
   PARENT: "drone",  
   LABEL: 'Drone',
     TURRETS: [{
@@ -370,7 +370,7 @@ exports.revoorbitdrone = {
     },
   ],
 };
-exports.autoTurretNerf = {
+Class.autoTurretNerf = {
     PARENT: "genericTank",
     LABEL: "Turret",
     BODY: {
@@ -387,7 +387,7 @@ exports.autoTurretNerf = {
         },
     ],
 }
-exports.hiveprobe = {
+Class.hiveprobe = {
   PARENT: "genericTank",
   LABEL: "Probe",
   TYPE: "drone",
@@ -435,7 +435,7 @@ exports.hiveprobe = {
     }
   ]
 };
-exports.clonerprobe = {
+Class.clonerprobe = {
   PARENT: "hiveprobe",
   GUNS: [
     {
@@ -455,11 +455,12 @@ exports.clonerprobe = {
     }
   ]
 }
-exports.mindindicator = {
+Class.autoclonerprobe = makeAuto(Class.clonerprobe)
+Class.mindindicator = {
     SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
 };
-exports.spaghetti = {
+Class.spaghetti = {
   PARENT: "bullet",
   SHOOT_ON_DEATH: true,
   SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/afg-spaghetti-alla-assassina-1-19ef-superJumbo.jpg?v=1701450288242",
@@ -547,7 +548,7 @@ Class.surgeonPillbox = {
 }
 
 // Drones
-Class.turretedDrone = makeAuto('drone')
+Class.turretedDrone = makeAuto('drone', "Auto-Drone", {type: 'droneAutoTurret'})
 
 // Sunchips
 Class.sunchip = {
@@ -803,6 +804,25 @@ Class.autoTurret = {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.droneAutoTurret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    CONTROLLERS: ['nearestDifferentMaster'],
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
                 TYPE: "bullet",
             },
         },
@@ -1709,7 +1729,7 @@ Class.xHunter = {
             }
         },
         {
-            POSITION: [5, 11.5, -1.25, 7, 0, 0, 0]
+            POSITION: [5, 12, -1.2, 7, 0, 0, 0]
         }
     ]
 }
@@ -2318,7 +2338,7 @@ Class.fighter = {
         {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
                 TYPE: "bullet",
                 LABEL: "Front",
             },
@@ -4973,7 +4993,34 @@ Class.autoFlank = makeAuto(Class.flankGuard, "Auto-Flank");
 Class.autoDirector = makeAuto(Class.director, "Auto-Director");
 Class.autoPound = makeAuto(Class.pounder, "Auto-Pounder");
 Class.autoTrap = makeAuto(Class.trapper, "Auto-Trapper");
-Class.autoCloner = makeAuto(Class.cloner, "Auto-Cloner");
+Class.autoCloner = makeAuto({
+  PARENT: "genericTank",
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet"
+      }
+    },
+    {
+      POSITION: [0, 20, 1, 0, 0, 180, 3],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
+        TYPE: "autoclonerprobe",
+        MAX_CHILDREN: 1
+      }
+    }
+  ],
+  TURRETS: [
+    {
+      /*  SIZE     X       Y     ANGLE    ARC */
+      POSITION: [24, 0, 0, 0, 360, 0],
+      TYPE: "mindindicator"
+    }
+  ]
+}, "Auto-Cloner");
 Class.autoDesmos = makeAuto(Class.desmos, "Auto-Desmos");
 
 
