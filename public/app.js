@@ -1630,7 +1630,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 2 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
-        drawText("pissass: " + getKills, x + len, y - 50 + 1 * 14, 10, color.guiwhite, "right");
+        drawText("pissass: " + killcountscore, x + len, y - 50 + 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.7", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
@@ -1824,7 +1824,9 @@ let getKills = () => {
         " polygons destroyed": [Math.round(global.finalKills[3].get()), 0.05],
     }, killCountTexts = [];
     let destruction = 0;
-    let killcountscore = Math.round(global.finalKills[0].get());
+    let killcountscore = { 
+        " kills": [Math.round(global.finalKills[0].get()), 1]
+    };
     for (let key in finalKills) {
         if (finalKills[key][0]) {
             destruction += finalKills[key][0] * finalKills[key][1];

@@ -566,11 +566,11 @@ Class.aimassistbullet = {
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
-        SPEED: 3.75,
+        SPEED: 99999,
         RANGE: 90,
         DENSITY: 5.25,
         HEALTH: 5,
-        DAMAGE: 6,
+        DAMAGE: 0,
         PUSHABILITY: 0.3,
     },
     MOTION_TYPE: "aimassist",
