@@ -1941,18 +1941,24 @@ function animloop() {
         global.metrics.lag = global.time - global.player.time;
     }
     ctx.translate(0.5, 0.5);
-    if (global.gameStart) {
-        gameDrawAlive(ratio, util.getScreenRatio());
-    } else if (!global.disconnected) {
-        gameDrawBeforeStart();
+    try {
+        if (global.gameStart) {
+            gameDrawAlive(ratio, util.getScreenRatio());
+        } else if (!global.disconnected) {
+            gameDrawBeforeStart();
+        }
+        if (global.died) {
+            gameDrawDead();
+        }
+        if (global.disconnected) {
+            gameDrawDisconnected();
+        }
+        ctx.translate(-0.5, -0.5);
+    } catch (e) {
+        gameDrawError();
+        ctx.translate(-0.5, -0.5);
+        throw Error(e);
     }
-    if (global.died) {
-        gameDrawDead();
-    }
-    if (global.disconnected) {
-        gameDrawDisconnected();
-    }
-    ctx.translate(-0.5, -0.5);
 }
 
 })(util, global, settings, Canvas, color, gameDraw, socketStuff);
