@@ -1836,32 +1836,22 @@ class Entity extends EventEmitter {
                 this.y = this.source.y + this.master.control.target.y;
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
-            } else {  this.maxSpeed = this.topSpeed;
-                let l =
-                    util.getDistance(
-                        {
-                            x: 0,
-                            y: 0,
-                        },
-                        g
-                    ) + 1;
-                if (gactive && l > this.size) {
-                    let XvelDesired = (this.topSpeed * g.x) / l,
-                        YvelDesired = (this.topSpeed * g.y) / l,
-                        turning = Math.sqrt(
-                            (this.topSpeed * Math.max(1, this.range) + 1) / a
-                        );
-                    engine = {
-                        x: (XvelDesired - this.velocity.x) / Math.max(5, turning),
-                        y: (YvelDesired - this.velocity.y) / Math.max(5, turning),
-                    };
-                } else {
-                    if (this.velocity.length < this.topSpeed) {
+            } else {                  
+              if (gactive) {
+                    let l = util.getDistance({ x: 0, y: 0, }, g);
+                    if (l > this.size * 2) {
+                        this.maxSpeed = this.topSpeed;
+                        let XvelDesired = (this.topSpeed * g.x) / l,
+                            YvelDesired = (this.topSpeed * g.y) / l;
                         engine = {
-                            x: (this.velocity.x * a) / 20,
-                            y: (this.velocity.y * a) / 20,
+                            x: (XvelDesired - this.velocity.x) * a,
+                            y: (YvelDesired - this.velocity.y) * a,
                         };
+                    } else {
+                        this.maxSpeed = 0;
                     }
+                } else {
+                    this.maxSpeed = 0;
                 }
             };
                 break;
