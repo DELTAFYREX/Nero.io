@@ -1830,6 +1830,12 @@ class Entity extends EventEmitter {
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
                 break;
+            case "aimassistlock":
+                this.x = this.source.x + this.master.control.target.x;
+                this.y = this.source.y + this.master.control.target.y;
+                this.velocity.x = this.source.velocity.x;
+                this.velocity.y = this.source.velocity.y;
+                break;
             case "drift":
                 this.maxSpeed = 0;
                 engine = {

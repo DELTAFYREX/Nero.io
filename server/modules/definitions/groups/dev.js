@@ -562,7 +562,7 @@ Class.oppenheimer = {
 Class.aimassistbullet = {
     PARENT: "bullet",
     LABEL: "Bullet",
-    //CONTROLLERS: ["AimAssist"],
+    CONTROLLERS: ["AimAssist"],
     ACCEPTS_SCORE: false,
     BODY: {
         PENETRATION: 1,
@@ -570,10 +570,10 @@ Class.aimassistbullet = {
         RANGE: 90,
         DENSITY: 5.25,
         HEALTH: 5,
-        DAMAGE: 0,
+        DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
-    MOTION_TYPE: "aimassist",
+    //MOTION_TYPE: "aimassist",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
@@ -595,7 +595,8 @@ Class.aimassisttest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "aimassistbullet",
-                HAS_NO_RECOIL: true
+                HAS_NO_RECOIL: true,
+                AUTOFIRE: true
         }
       },
     ]
