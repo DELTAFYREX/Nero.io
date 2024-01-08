@@ -822,9 +822,8 @@ class io_AimAssistLock extends IO {
         super(body)
         this.turnwise = 1
     }
-  think(input) { 
-      if (input.alt) {
-         if (this.body.aiSettings.reverseDirection && ran.chance(0.005)) {
+    think(input) {
+        if (this.body.aiSettings.reverseDirection && ran.chance(0.005)) {
             this.turnwise = -1 * this.turnwise;
         }
         if (input.target != null && (input.alt || input.main)) {
@@ -835,23 +834,24 @@ class io_AimAssistLock extends IO {
             let goal
             let power = 1
             let target = new Vector(input.target.x, input.target.y)
-          } else {
-    this.body.velocity.x = 0;
-    this.body.velocity.y = 0;
-    if (!input.fire && !input.target) {
-    this.body.x = this.body.source.x; 
-    this.body.y = this.body.source.y;
-    } 
-    if (input.fire && input.target) {
-    this.body.x = this.body.x + input.target.x; 
-    this.body.y = this.body.y + input.target.y;
-    } 
-    // else if (input.alt) {
-    //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
-    // }
+        } else {
+          if (input.alt) {
+            this.body.velocity.x = 0;
+            this.body.velocity.y = 0;
+            if (!input.fire && !input.target) {
+              this.body.x = this.body.source.x; 
+              this.body.y = this.body.source.y;
+            } 
+            if (input.fire && input.target) {
+              this.body.x = this.body.x + input.target.x; 
+              this.body.y = this.body.y + input.target.y;
+            } 
+            // else if (input.alt) {
+              //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
+            // }
+            }
+        }
     }
-    }   
-  }
 }
 class io_orbit extends IO {
     constructor(body, opts = {}) {
