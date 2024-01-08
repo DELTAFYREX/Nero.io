@@ -619,8 +619,8 @@ class io_nearestDifferentMasterAlt extends IO {
                     x: diff.x + this.lead * radial.x,
                     y: diff.y + this.lead * radial.y,
                 },
-                fire: false,
-                main: false
+                fire: true,
+                main: true
             };
         }
         return {};
@@ -975,7 +975,7 @@ class io_AimAssistLock extends IO {
         super(body)
     }
     think(input) {
-    if (!input.alt) {
+    if (!input.alt && input.target) {
     this.body.x = this.body.x + input.target.x; 
     this.body.y = this.body.y + input.target.y;
     } 

@@ -574,6 +574,7 @@ Class.aimassistbullet = {
         PUSHABILITY: 0.3,
     },
     //MOTION_TYPE: "aimassist",
+    MOTION_TYPE: "swarm",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
