@@ -573,8 +573,7 @@ Class.aimassistbullet = {
         DAMAGE: 6,
         PUSHABILITY: 0.3,
     },
-    //MOTION_TYPE: "aimassist",
-    MOTION_TYPE: "swarm",
+    MOTION_TYPE: "aimassist",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
@@ -589,6 +588,7 @@ Class.aimassisttest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "bullet",
+                HAS_NO_RECOIL: true,
             }
         },
         {
@@ -597,7 +597,6 @@ Class.aimassisttest = {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "aimassistbullet",
                 HAS_NO_RECOIL: true,
-                AUTOFIRE: true,  
             }
       },
     ]

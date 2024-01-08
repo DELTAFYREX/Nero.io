@@ -620,7 +620,7 @@ class io_nearestDifferentMasterAlt extends IO {
                     y: diff.y + this.lead * radial.y,
                 },
                 fire: true,
-                main: true
+                main: false
             };
         }
         return {};
