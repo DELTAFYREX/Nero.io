@@ -76,7 +76,7 @@ class Canvas {
                 }
 
                 // or to talk instead
-                if (this.chatInput.hidden) {
+                if (this.chatInput.hidden && global.gameStart) {
                     this.chatInput.hidden = false;
                     this.chatInput.focus();
                     break;
@@ -281,6 +281,7 @@ class Canvas {
         }
     }
     mouseDown(mouse) {
+        if (!this.socket) return;
         let primaryFire = 4,
             secondaryFire = 6;
         if (this.inverseMouse) [primaryFire, secondaryFire] = [secondaryFire, primaryFire];
@@ -310,6 +311,7 @@ class Canvas {
         }
     }
     mouseUp(mouse) {
+        if (!this.socket) return;
         let primaryFire = 4,
             secondaryFire = 6;
         if (this.inverseMouse) [primaryFire, secondaryFire] = [secondaryFire, primaryFire];

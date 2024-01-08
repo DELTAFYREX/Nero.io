@@ -151,6 +151,7 @@ let animations = window.animations = {
     connecting: new Animation(1, 0),
     disconnected: new Animation(1, 0),
     deathScreen: new Animation(1, 0),
+    error: new Animation(1, 0),
     upgradeMenu: new Animation(0, 1, 0.01),
     skillMenu: new Animation(0, 1, 0.01),
     optionsMenu: new Animation(1, 0),
@@ -276,7 +277,7 @@ window.onload = async () => {
     document.getElementById("startButton").onclick = () => startGame();
     document.onkeydown = (e) => {
         var key = e.which || e.keyCode;
-        if (key === global.KEY_ENTER && (global.dead || !global.gameStart)) {
+        if (key === global.KEY_ENTER && (global.dead || !global.gameLoading)) {
             startGame();
         }
     };
@@ -353,6 +354,9 @@ function calculateTarget() {
 // This starts the game and sets up the websocket
 function startGame() {
     PlaySound69();
+    // Set flag
+    global.gameLoading = true;
+    console.log('Started connecting.')
     // Get options
     util.submitToLocalStorage("optFancy");
     util.submitToLocalStorage("centerTank");
@@ -1246,7 +1250,7 @@ function drawEntities(px, py, ratio) {
         }
         x += global.screenWidth / 2;
         y += global.screenHeight / 2;
-        drawEntity(baseColor, x, y, instance, ratio, instance.id === gui.playerid || global.showInvisible ? instance.alpha ? instance.alpha * 0.75 + 0.25 : 0.25 : instance.alpha, 1.1, 1, instance.render.f);
+        drawEntity(baseColor, x, y, instance, ratio, instance.id === gui.playerid || global.showInvisible ? instance.alpha ? instance.alpha * 0.75 + 0.25 : 0.25 : instance.alpha, 1, 1, instance.render.f);
     }
 
     //dont draw healthbars and chat messages in screenshot mode
@@ -1857,12 +1861,6 @@ let getDeath = () => {
 const gameDrawDead = () => {
     clearScreen(color.black, 0.25);
     let ratio = util.getScreenRatio();
-    let scaleScreenRatio = (by, unset) => {
-        global.screenWidth /= by;
-        global.screenHeight /= by;
-        ctx.scale(by, by);
-        if (!unset) ratio *= by;
-    };
     scaleScreenRatio(ratio, true);
     let shift = animations.deathScreen.get();
     ctx.translate(0, -shift * global.screenHeight);
@@ -1887,12 +1885,6 @@ const gameDrawDead = () => {
 };
 const gameDrawBeforeStart = () => {
     let ratio = util.getScreenRatio();
-    let scaleScreenRatio = (by, unset) => {
-        global.screenWidth /= by;
-        global.screenHeight /= by;
-        ctx.scale(by, by);
-        if (!unset) ratio *= by;
-    };
     scaleScreenRatio(ratio, true);
     clearScreen(color.white, 0.5);
     let shift = animations.connecting.get();
@@ -1903,12 +1895,6 @@ const gameDrawBeforeStart = () => {
 };
 const gameDrawDisconnected = () => {
     let ratio = util.getScreenRatio();
-    let scaleScreenRatio = (by, unset) => {
-        global.screenWidth /= by;
-        global.screenHeight /= by;
-        ctx.scale(by, by);
-        if (!unset) ratio *= by;
-    };
     scaleScreenRatio(ratio, true);
     clearScreen(gameDraw.mixColors(color.red, color.guiblack, 0.3), 0.25);
     let shift = animations.disconnected.get();
