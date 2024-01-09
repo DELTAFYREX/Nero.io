@@ -5144,7 +5144,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix"]
-        Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "revobrid", "autoRevolutionist"]
+        Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "revobrid", "equilibrium", "autoRevolutionist"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
 
