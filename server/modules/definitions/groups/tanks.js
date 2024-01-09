@@ -3628,6 +3628,7 @@ Class.triTrapper = makeMulti({
 }, 3, "Tri-Trapper")
 Class.trapGuard = makeGuard({
     PARENT: "genericTank",
+    LABEL: "Trap",
     STAT_NAMES: statnames.mixed,
     GUNS: [
         {
@@ -3638,7 +3639,7 @@ Class.trapGuard = makeGuard({
             }
         }
     ]
-}, "Trap Guard")
+})
 
 // Builder upgrades
 Class.construct = {
@@ -5114,12 +5115,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "autoAuto3"]
 
     Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "directdrive", "autoDirector"]
-        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese", "dictator"]
+        Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
-        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"]
+        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
