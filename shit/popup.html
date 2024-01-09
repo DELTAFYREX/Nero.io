@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MS FART VIRUS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="init();">
+<script type="text/javascript">
+<!--
+ var currentdate = 0;
+ var save = 0
+ var image_number = 0;
+ function ImageArray (n) {
+   this.length = n;
+   for (var i =1; i <= n; i++) {
+     this[i] = ' '
+   }
+ }
+ image = new ImageArray(17)
+ image[0] = '/images/fartclown.png'//goofy
+ image[1] = '/images/rainbowstickman.gif'//funny
+ image[2] = '/images/idiot.png'//idiot
+ image[3] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/videoplayback%20(3).mp4?v=1699145384305'//youhavetoknowthis
+ image[4] = '/images/gird.jpg'//funny
+ image[5] = '/images/sadspong.jpg'//sadspong
+ image[6] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/videoplayback.mp4?v=1699136651542'//BWA BWA berdeaombroinbeiong
+ image[7] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/Screen%20recording%202023-10-24%207.36.47%20PM.webm?v=1699146385701'//mshern
+ image[8] = '/images/monalisa.jpg'//android
+ image[9] = '/images/idiot.png'//idiot
+ image[10] = '/images/petah.jpg'//goofy
+ image[12] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/202310242020.mp4?v=1699012860505'//msfartvideo
+ image[13] = '/images/poopemoji.jpg'//fard
+ image[14] = '/images/question.png'//incommodiousness
+ image[15] = '/images/msfart2.png'//grubhub
+ image[16] = '/images/msfart.png'//grubhub
+ var rand = 60/image.length
+ function randomimage() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+  save = image_number
+ 	return(image[image_number])
+ }
+ function randomimage2() {
+ 	currentdate = new Date()
+ 	image_number = currentdate.getSeconds()
+ 	image_number = Math.floor(image_number/rand)
+  save = image_number
+ 	return(image[image_number])
+ }
+idiotanim = ' class="image3">'
+var save = randomimage()
+imgsizething = 'style="width: 100%; height: 88%;"'
+
+  if (save === 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/videoplayback.mp4?v=1699136651542') {
+    document.write("<video autoplay loop src='" + save + "'" + "></video>");
+ } else if (save === 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/Screen%20recording%202023-10-24%207.36.47%20PM.webm?v=1699146385701') {
+    document.write("<video autoplay loop src='" + save + "'" + "></video>");
+ } else if (save === 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/videoplayback%20(3).mp4?v=1699145384305') {
+    document.write("<video autoplay loop src='" + randomimage() + "'" + imgsizething + "></video>");
+ } else if (save === 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/202310242020.mp4?v=1699012860505') {
+    document.write("<video autoplay loop src='" + randomimage() + "'" + imgsizething + "></video>");
+ } else if (save === '/images/idiot.png') {
+    document.write("<p>you are an idiot</p>")
+    document.write("<img src='" + randomimage() + "'" + imgsizething + idiotanim);
+    document.write("<img src='" + randomimage() + "'" + imgsizething + idiotanim);
+    document.write("<img src='" + randomimage() + "'" + imgsizething + idiotanim); 
+    document.write("<audio src='/sound/idiot.mp3' loop autoplay></audio><audio src='/sound/idiot.mp3' loop autoplay></audio><audio src='/sound/idiot.mp3' loop autoplay></audio>");
+ } else if (save === '/images/sadspong.jpg') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/spongfail.mp3' loop autoplay></audio>");
+ } else if (save === '/images/poopemoji.jpg') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/fard.mp3' loop autoplay></audio>");
+ } else if (save === '/images/fartclown.png') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/goofysounds.mp3' loop autoplay></audio>");
+ } else if (save === '/images/question.png') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/incomloud.mp3' loop autoplay></audio>");
+ } else if (save === '/images/petah.jpg') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/goofysounds.mp3' loop autoplay></audio>");
+ } else if (save === '/images/msfart.png') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/grubhub.mp3' loop autoplay></audio>");
+ } else if (save === '/images/msfart2.png') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/grubhub.mp3' loop autoplay></audio>");
+ } else if (save === '/images/monalisa.jpg') {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/android.mp3' loop autoplay></audio>");
+    document.write("<audio src='/sound/sunnymorning.mp3' loop autoplay></audio>");
+ } else {
+    document.write("<img src='" + randomimage() + "'" + imgsizething + ">");
+    document.write("<audio src='/sound/funny.mp3' loop autoplay></audio>");
+  } 
+   //-->
+    //-->
+</script>         
+</body>
+</html>
+<script src="js/main.js"></script>
