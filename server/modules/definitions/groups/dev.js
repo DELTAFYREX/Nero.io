@@ -1627,7 +1627,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"];
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3", "shieldtest"];
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3", "shieldtest", "poisontest"];
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
