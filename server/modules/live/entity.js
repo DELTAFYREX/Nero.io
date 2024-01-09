@@ -1853,10 +1853,10 @@ class Entity extends EventEmitter {
                             y: (YvelDesired - this.velocity.y) * a,
                         };
                     } else {
-                        this.maxSpeed = 0;
+                        this.maxSpeed = 5;
                     }
                 } else {
-                    this.maxSpeed = 0;
+                    this.maxSpeed = 5;
                 }
             };
                 break;

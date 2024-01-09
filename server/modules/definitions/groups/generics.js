@@ -188,6 +188,15 @@ Class.nuke = {
     PARENT: ["growBullet"],
     LABEL: "Nuke",
     MOTION_TYPE: "fuckingnuclearbomb",
+    BODY: {
+        PENETRATION: 100,
+        SPEED: 7,
+        RANGE: 600,
+        DENSITY: 99999999999,
+        HEALTH: 99999,
+        DAMAGE: 999999,
+        PUSHABILITY: -99999999,
+    },
 };
 Class.developerBullet = {
     PARENT: ["bullet"],
