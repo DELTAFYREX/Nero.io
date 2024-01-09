@@ -62,7 +62,7 @@ const g = require('../gunvals');
         GUNS: [{
             POSITION: { LENGTH: 13, WIDTH: 8, ASPECT: 2, ANGLE: 180 },
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.tonsmorrecoil, g.tonsmorrecoil, g.veryfast, { reload: 0.05, range: 0.2 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.tonsmorerecoil, g.tonsmorerecoil, g.veryfast, { reload: 0.05, range: 0.2 }]),
                 TYPE: 'bullet',
                 COLOR: 'blue'
             }
