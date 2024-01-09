@@ -65,6 +65,7 @@ function collide(collision) {
         case instance.type === "wall" || other.type === "wall":
             if (instance.type === "wall" && other.type === "wall") return;
             if (instance.type === "aura" || other.type === "aura") return;
+            if (instance.type === "satellite" || other.type === "satellite") return;
             let wall = instance.type === "wall" ? instance : other;
             let entity = instance.type === "wall" ? other : instance;
             if (entity.ac || entity.master.ac) return;
@@ -332,7 +333,8 @@ let maintainloop = () => {
         o.isBot = true;
         o.name += ran.chooseBotName();
         o.leftoverUpgrades = ran.chooseChance(...c.BOT_CLASS_UPGRADE_CHANCES);
-        o.color = c.RANDOM_COLORS ? Math.floor(Math.random() * 20) : team ? getTeamColor(team) : 17;
+        let color = c.RANDOM_COLORS ? Math.floor(Math.random() * 20) : team ? getTeamColor(team) : 17;
+        o.define({COLOR: color});
         if (team) o.team = team;
         bots.push(o);
         o.on('dead', () => util.remove(bots, bots.indexOf(o)));

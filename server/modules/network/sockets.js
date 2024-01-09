@@ -1195,10 +1195,10 @@ function perspective(e, player, data) {
                 data[10] = 1;
             }
         }
-        if (player.body.team === e.source.team && c.GROUPS) {
+        if (player.body.team === e.source.team && (c.GROUPS || c.MODE == 'ffa')) {
             // GROUPS
             data = data.slice();
-            data[13] = player.body.color;
+            data[13] = player.teamColor;
         }
     }
     return data;
@@ -1350,28 +1350,8 @@ const eyes = (socket) => {
 // Util
 let getBarColor = (entry) => {
     // What even is the purpose of all of this?
-    //if (c.GROUPS) return 11;
-    //switch (entry.team) {
-    //    case TEAM_ENEMIES:
-    //        return entry.color;
-    //    case -1:
-    //        return 10;
-    //    case -2:
-    //        return 11;
-    //    case -3:
-    //        return 12;
-    //    case -4:
-    //        return 15;
-    //    default:
-    //        if (
-    //            c.MODE[0] === "2" ||
-    //            c.MODE[0] === "3" ||
-    //            c.MODE[0] === "4"
-    //        ) {
-                return entry.color;
-    //        }
-    //        return 11;
-    //}
+    if (c.GROUPS || c.MODE == 'ffa') return '11 0 1 0 false';
+    return entry.color;
 };
 
 // Delta Calculator
@@ -1471,7 +1451,7 @@ let minimapTeams = teamIDs.map((team) =>
                     data: [
                         util.clamp(Math.floor((256 * my.x) / room.width), 0, 255),
                         util.clamp(Math.floor((256 * my.y) / room.height), 0, 255),
-                        my.color,
+                        (c.MODE == 'ffa' || c.GROUPS) ? '10 0 1 0 false' : my.color,
                     ],
                 });
             }
