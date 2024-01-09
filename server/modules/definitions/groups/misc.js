@@ -44,6 +44,7 @@ Class.gravel = {
     LABEL: "Gravel",
     SIZE: 16,
     SHAPE: -7,
+    VARIES_IN_SIZE: false,
 };
 Class.wall = {
     PARENT: ["rock"],
@@ -1223,6 +1224,7 @@ Class.arenaCloser = {
 
 Class.antiTankMachineGunArm = {
     PARENT: ["genericTank"],
+    COLOR: "grey",
     CONTROLLERS: ["mapTargetToGoal"],
     SKILL_CAP: Array(10).fill(255),
     SKILL: Array(10).fill(255),
@@ -1331,6 +1333,7 @@ Class.tracker3gun = {
     "mapAltToFire",
     "nearestDifferentMaster",
   ],
+  COLOR: "grey",
   GUNS: [
     {
       /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */

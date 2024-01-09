@@ -1693,8 +1693,9 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
                 if (upgradeBranch != lastBranch) {
                     if (upgradeBranchLabel.length > 0) {
                         drawText(" " + upgradeBranchLabel, xStart, y + internalSpacing * 2, internalSpacing * 2.3, color.guiwhite, "left", false);
-                        y += 3 * internalSpacing;
+                        y += 1.5 * internalSpacing;
                     }
+                    y += 1.5 * internalSpacing;
                     colorIndex = 10;
                 }
                 lastBranch = upgradeBranch;
@@ -1943,7 +1944,8 @@ function animloop() {
     } catch (e) {
         gameDrawError();
         ctx.translate(-0.5, -0.5);
-        throw Error(e);
+        console.log(e);
+        throw Error('Something has gone wrong!');
     }
 }
 
