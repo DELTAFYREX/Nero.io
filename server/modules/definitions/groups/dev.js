@@ -597,13 +597,12 @@ Class.aimassistbullet = {
     ACCEPTS_SCORE: false,
     SIZE: 18,
     BODY: {
-        PENETRATION: 0,
+        PENETRATION: 0.1,
         SPEED: 99999,
-        RANGE: 1,
-        DENSITY: 0,
+        DENSITY: 0.1,
         HEALTH: 5,
         DAMAGE: 0,
-        PUSHABILITY: 0,
+        PUSHABILITY: 0.1,
     },
     MOTION_TYPE: "aimassistlock",
     CAN_GO_OUTSIDE_ROOM: true,
@@ -613,6 +612,9 @@ Class.aimassistbullet = {
     {
     POSITION: [25, 0, 0, 0, 360, 1],
       TYPE: "crosshair1"
+    }, {
+    POSITION: [25, 0, 0, 0, 360, 1],
+      TYPE: "recangluhitbox"
     }
   ]
 };
@@ -626,7 +628,7 @@ Class.aimassisttest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "bullet",
-                HAS_NO_RECOIL: true,
+                HAS_NO_RECOIL: true
             }
         },
         {
@@ -634,7 +636,7 @@ Class.aimassisttest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "aimassistbullet",
-                HAS_NO_RECOIL: true,
+                HAS_NO_RECOIL: true
             }
       },
     ],
@@ -1165,13 +1167,13 @@ const timer = (run, duration) => {
    Class.recangluhitbox = {
     PARENT: ["genericTank"],
     LABEL: "rec hitbox",
-    EXTRA_SKILL:-45,
-    LEVEL:45,
+    EXTRA_SKILL: -45,
+    LEVEL: 45,
    GUNS: [
       {
             POSITION: [20, 20, 1, 10, 0, 0, 0],
             PROPERTIES: {
-             ALPHA:1,
+             ALPHA: 1,
             },
         },
     ],
@@ -1182,12 +1184,12 @@ const timer = (run, duration) => {
     //         TYPE: "hitboxRender",
     //     },
     // ],//63.5
-    COLOR:8,//body.size * movement/2 + 5    /// 4/3?????//// 1.28 or 62.5/80
+    COLOR: 8,//body.size * movement/2 + 5    /// 4/3?????//// 1.28 or 62.5/80
     //CONTROLLERS: [["spin", { speed: 0 }]],
     DAMAGE_EFFECTS: false,
     RATEFFECTS: false,
     MOTION_EFFECTS: false,
-    BORDERLESS:false,
+    BORDERLESS: false,
     SKILL: Array(10).fill(0),
     SKILL_CAP: Array(10).fill(0),
     BODY: {

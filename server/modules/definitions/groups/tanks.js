@@ -310,9 +310,12 @@ Class.shieldturretBase = {
     TURRETS: [{
         POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "placeableWall",
+        VULNERABLE: true
+
     }, {
         POSITION: [4.65, 10.5, 0, 270, 220, 1],
         TYPE: "placeableWall",
+        VULNERABLE: true
     }]
 };
 Class.revogun = {
