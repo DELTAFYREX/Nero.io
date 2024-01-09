@@ -185,7 +185,7 @@ function incoming(message, socket) {
                 util.remove(views, views.indexOf(socket.view));
                 socket.makeView();
             }
-            socket.party = m[1];
+            socket.party = m[4];
             socket.player = socket.spawn(name);
 
             if (autoLVLup) {
@@ -935,7 +935,7 @@ function publish(gui) {
     if (o.label != null) {
         oo[0] += 0x0002;
         oo.push(o.label);
-        oo.push(o.color || gui.master.teamColor);
+        oo.push(gui.master.teamColor);
         oo.push(gui.bodyid);
     }
     if (o.score != null) {
@@ -1072,13 +1072,14 @@ const spawn = (socket, name) => {
     body.socket = socket;
     switch (c.MODE) {
         case "tdm":
-            if (body.color == "16 0 1 0 false") body.color = getTeamColor(body.team);
+            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') body.define({COLOR: getTeamColor(body.team)});
             break;
         default: 
-            if (body.color == "16 0 1 0 false") body.color = (c.RANDOM_COLORS ? ran.choose([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]) : 12) + ' 0 1 0 false';
+            let color = c.RANDOM_COLORS ? ran.choose([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]) : 12;
+            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') body.define({COLOR: color});
     }
     // Decide what to do about colors when sending updates and stuff
-    player.teamColor = !c.RANDOM_COLORS && c.MODE === "ffa" ? 10 : body.color; // blue
+    player.teamColor = (!c.RANDOM_COLORS && (c.MODE === "ffa" || c.GROUPS) ? 10 : getTeamColor(body.team)) + ' 0 1 0 false'; // blue
     player.target = { x: 0, y: 0 };
     player.command = {
         up: false,
