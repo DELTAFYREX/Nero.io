@@ -629,7 +629,18 @@ Class.aimassisttest = {
                 HAS_NO_RECOIL: true,
             }
       },
-    ]
+    ],
+  TURRETS: [
+    {
+    POSITION: [10, 0, 0, 0, 360, 1],
+      TYPE: "autoTankGunLock"
+    }
+  ]
+}
+Class.autoTankGunLock = {
+  PARENT: "autoTankGun",
+  MOTION_TYPE: "aimassistlock",
+  CONTROLLERS: ["nearestDifferentMasterAlt"],
 }
 Class.mmaTest2 = {
     PARENT: ["genericTank"],
