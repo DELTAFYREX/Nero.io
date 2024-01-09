@@ -684,7 +684,7 @@ Class.autoTankGunLockRecoil = {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.tonsmorerecoil]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.tonsmorerecoil, g.tonsmorerecoil, g.halfreload, g.halfreload, g.halfreload, g.fakewithrecoil]),
                 TYPE: "bullet",
             },
         },

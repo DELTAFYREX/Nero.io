@@ -138,4 +138,5 @@ module.exports = {
     notdense: { density: 0.1 },
     doublerange: { range: 2 },
     acc: { shudder: 0.1 },
+    fakewithrecoil: { recoil: 1, size: 0.00001, health: 0.0001, speed: 0.00001, maxSpeed: 2, range: 0 },
 }
