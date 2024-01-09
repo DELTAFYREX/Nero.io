@@ -595,10 +595,11 @@ Class.aimassistbullet = {
     SHAPE: "M 1 1 l -2 0 L -1 -1 L 1 -1 L -1 -1 L -1 1 L 1 1 L 1 -1 L 1 1",
     CONTROLLERS: ["nearestDifferentMaster"],
     ACCEPTS_SCORE: false,
+    SIZE: 18,
     BODY: {
         PENETRATION: 0,
         SPEED: 99999,
-        RANGE: 1000,
+        RANGE: 1,
         DENSITY: 0,
         HEALTH: 5,
         DAMAGE: 0,
@@ -610,7 +611,7 @@ Class.aimassistbullet = {
     DIE_AT_RANGE: true,
   TURRETS: [
     {
-    POSITION: [10, 0, 0, 0, 360, 1],
+    POSITION: [25, 0, 0, 0, 360, 1],
       TYPE: "crosshair1"
     }
   ]
@@ -667,8 +668,7 @@ Class.autoboosttest = {
 Class.autoTankGunLock = {
   PARENT: "autoTankGun",
   MOTION_TYPE: "aimassistlock",
-  MIRROR_MASTER_ANGLE: true,
-  CONTROLLERS: ["nearestDifferentMasterAlt", "AimAssistLock"],    
+  CONTROLLERS: ["nearestDifferentMaster", "AimAssistLock"],    
   AI: {
         FARMER: true,
     },
