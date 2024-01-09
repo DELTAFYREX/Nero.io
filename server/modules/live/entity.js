@@ -1841,23 +1841,6 @@ class Entity extends EventEmitter {
                 this.y = this.source.y + this.master.control.target.y;
                 this.velocity.x = this.source.velocity.x;
                 this.velocity.y = this.source.velocity.y;
-            } else {                  
-              if (gactive) {
-                    let l = util.getDistance({ x: 0, y: 0, }, g);
-                    if (l > this.size * 2) {
-                        this.maxSpeed = this.topSpeed;
-                        let XvelDesired = (this.topSpeed * g.x) / l,
-                            YvelDesired = (this.topSpeed * g.y) / l;
-                        engine = {
-                            x: (XvelDesired - this.velocity.x) * a,
-                            y: (YvelDesired - this.velocity.y) * a,
-                        };
-                    } else {
-                        this.maxSpeed = 5;
-                    }
-                } else {
-                    this.maxSpeed = 5;
-                }
             };
                 break;
             case "drift":

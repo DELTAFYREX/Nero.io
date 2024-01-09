@@ -637,9 +637,47 @@ Class.aimassisttest = {
     }
   ]
 }
+Class.autoboosttest = {
+    PARENT: "genericTank",
+    LABEL: "Aim Assist",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet",
+            }
+        },
+    ],
+  TURRETS: [
+    {
+    POSITION: [10, 0, 0, 0, 360, 1],
+      TYPE: "autoTankGunLockRecoil"
+    }
+  ]
+}
 Class.autoTankGunLock = {
   PARENT: "autoTankGun",
   MOTION_TYPE: "aimassistlock",
+  MIRROR_MASTER_ANGLE: true,
+  CONTROLLERS: ["nearestDifferentMasterAlt", "AimAssistLock"],    
+  AI: {
+        FARMER: true,
+    },
+}
+Class.autoTankGunLockRecoil = {
+  PARENT: "autoTankGun",
+  MOTION_TYPE: "aimassistlock",
+      GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.tonsmorerecoil]),
+                TYPE: "bullet",
+            },
+        },
+    ],
   CONTROLLERS: ["nearestDifferentMasterAlt", "AimAssistLock"],    
   AI: {
         FARMER: true,
