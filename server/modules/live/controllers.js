@@ -624,6 +624,14 @@ class io_nearestDifferentMasterAlt extends IO {
             };
         }
         return {};
+      } else {
+            if (!input.alt && input.target) {
+    this.body.x = this.body.x + input.target.x; 
+    this.body.y = this.body.y + input.target.y;
+    } 
+    // else if (input.alt) {
+    //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
+    // }
       }
   }
 }

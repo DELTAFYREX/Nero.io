@@ -640,9 +640,8 @@ Class.aimassisttest = {
 Class.autoTankGunLock = {
   PARENT: "autoTankGun",
   MOTION_TYPE: "aimassistlock",
-  CONTROLLERS: ["nearestDifferentMasterAlt", "mapTargetToGoalAlt"],    
+  CONTROLLERS: ["nearestDifferentMasterAlt", "AimAssistLock"],    
   AI: {
-        BLIND: true,
         FARMER: true,
     },
 }
