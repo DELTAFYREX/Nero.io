@@ -111,7 +111,7 @@ module.exports = {
     noSpread: { shudder: 0, spray: 0 },
 
     // Recoil
-    tonsmorrecoil: { recoil: 4 },
+    tonsmorerecoil: { recoil: 4 },
     lotsmorrecoil: { recoil: 1.8 },
     muchmorerecoil: { recoil: 1.35 },
     morerecoil: { recoil: 1.15 },

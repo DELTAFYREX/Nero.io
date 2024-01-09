@@ -592,21 +592,28 @@ Class.oppenheimer = {
 Class.aimassistbullet = {
     PARENT: "bullet",
     LABEL: "Bullet",
+    SHAPE: "M 1 1 l -2 0 L -1 -1 L 1 -1 L -1 -1 L -1 1 L 1 1 L 1 -1 L 1 1",
     CONTROLLERS: ["nearestDifferentMaster"],
     ACCEPTS_SCORE: false,
     BODY: {
-        PENETRATION: 1,
+        PENETRATION: 0,
         SPEED: 99999,
-        RANGE: 90,
-        DENSITY: 5.25,
+        RANGE: 1000,
+        DENSITY: 0,
         HEALTH: 5,
-        DAMAGE: 6,
-        PUSHABILITY: 0.3,
+        DAMAGE: 0,
+        PUSHABILITY: 0,
     },
     MOTION_TYPE: "aimassistlock",
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
+  TURRETS: [
+    {
+    POSITION: [10, 0, 0, 0, 360, 1],
+      TYPE: "crosshair1"
+    }
+  ]
 };
 Class.aimassisttest = {
     PARENT: "genericTank",
@@ -1679,7 +1686,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"];
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3", "shieldtest", "poisontest"];
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3", "shieldtest", "poisontest", "autoboosttest"];
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 

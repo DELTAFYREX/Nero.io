@@ -460,6 +460,10 @@ Class.mindindicator = {
     SHAPE: 'M 0 -1.0 A 1 1 0 0 0 0 1.0 A 1 1 0 0 0 0 -1.0 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
 };
+Class.crosshair1 = {
+    SHAPE: 'M 0 0 l 1 0 L 0 0 L -1 0 L 0 0 L 0 1 L 0 -1',
+    COLOR: 9,
+};
 Class.spaghetti = {
   PARENT: "bullet",
   SHOOT_ON_DEATH: true,
