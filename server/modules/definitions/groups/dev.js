@@ -552,7 +552,7 @@ Class.poisontest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "bullet",
-                SHOOT_ON_DEATH: true
+                SPAWN_ON_DEATH: true
             }
         },
         {
@@ -581,7 +581,7 @@ Class.oppenheimer = {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "flare"
+                TYPE: "nuke"
             }
         },
         {

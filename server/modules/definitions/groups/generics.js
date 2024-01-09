@@ -184,6 +184,11 @@ Class.flare = {
     LABEL: "Flare",
     SHAPE: 4,
 };
+Class.nuke = {
+    PARENT: ["growBullet"],
+    LABEL: "Nuke",
+    MOTION_TYPE: "fuckingnuclearbomb",
+};
 Class.developerBullet = {
     PARENT: ["bullet"],
     SHAPE: [[-1, -1], [1, -1], [2, 0], [1, 1], [-1, 1]],
