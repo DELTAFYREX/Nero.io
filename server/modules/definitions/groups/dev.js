@@ -668,9 +668,13 @@ Class.autoboosttest = {
 Class.autoTankGunLock = {
   PARENT: "autoTankGun",
   MOTION_TYPE: "aimassistlock",
-  CONTROLLERS: ["nearestDifferentMaster", "AimAssistLock"],    
+  BODY: {
+    FOV: 1
+  },
+  CONTROLLERS: ["nearestDifferentMasterAltAlt", "AimAssistLock"],    
   AI: {
         FARMER: true,
+        BLIND: true,
     },
 }
 Class.autoTankGunLockRecoil = {
