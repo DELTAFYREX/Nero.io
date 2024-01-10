@@ -542,9 +542,9 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.poisontest = {
+Class.toxic = {
     PARENT: "genericTank",
-    LABEL: "Single",
+    LABEL: "Intoxicator",
     DANGER: 7,
     GUNS: [
         {
@@ -552,7 +552,6 @@ Class.poisontest = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.single]),
                 TYPE: "poisonbullet",
-                SPAWN_ON_DEATH: true
             }
         },
         {
@@ -565,7 +564,7 @@ Class.poisonbullet = {
     LABEL: "posonio",
   TURRETS: [
     {
-    POSITION: [25, 0, 0, 0, 360, 1],
+    POSITION: [0, 0, 0, 0, 360, 1],
       TYPE: "recangluhitbox"
     }
   ]
@@ -1691,8 +1690,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"];
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"];
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"];
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "aimassisttest", "whirlwind", "vanquisher", "mummifier", "tracker3", "shieldtest", "poisontest", "autoboosttest"];
-        Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
+t        Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"];
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"];
 
     Class.bosses.UPGRADES_TIER_0 = ["AIT", "sentries", "elites", "mysticals", "nesters", "rogues", "rammers", "terrestrials", "celestials", "eternals", "devBosses"];
