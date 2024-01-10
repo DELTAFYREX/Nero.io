@@ -648,10 +648,10 @@ Class.aimassisttest = {
 Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",
-    SHAPE: 136,
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     CONTROLLERS: ["spin"],
     INDEPENDENT: true,
-    COLOR: 216,
+    COLOR: "orange",
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
         TYPE: "revogun"
@@ -667,7 +667,8 @@ ON: [  {
     }, {
           event: "death",
           handler: ({ body }) => {
-            if (!body.master.isDead()) { body.master.define(Class.baseThrower) }
+            if (!body.master.isDead()) return 
+            body.master.define(Class.baseThrower)
         }
     }
   ]
@@ -675,8 +676,8 @@ ON: [  {
 Class.turretBaseKiva = {
     LABEL: "Base",
     SYNC_TURRET_SKILLS: true,
-    SHAPE: 136,
-    COLOR: 216,
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: "orange",
     CONTROLLERS: ["spin"],
     INDEPENDENT: true,
     TURRETS: [{
