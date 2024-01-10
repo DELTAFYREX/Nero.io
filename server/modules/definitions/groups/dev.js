@@ -659,15 +659,10 @@ Class.baseBullet = {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
         TYPE: "revogun"
     }],
-ON: [  {
-        event: "altFire",
-        handler: ({ body }) => {
-            body.master.define(Class.baseThrowerFire)
-        }
-    }, {
+ON: [{
           event: "death",
           handler: ({ body }) => {
-            if (!body.master.isDead()) return 
+            if (!body.master.isDead) return 
             body.master.define(Class.baseThrower)
         }
     }
@@ -705,12 +700,20 @@ Class.baseThrower = {
             TYPE: "baseBullet",
             ALT_FIRE: true,
             ON_SHOOT: "revo",
+            ALPHA: 0
         }
     }],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 0, 0],
         TYPE: "turretBaseKiva"
-    }]
+    }],
+  ON: [  {
+        event: "altFire",
+        handler: ({ body }) => {
+            body.define(Class.baseThrowerFire)
+        }
+      }
+    ]
 };
 Class.baseThrowerFire = {
     PARENT: "genericTank",
