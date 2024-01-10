@@ -654,20 +654,20 @@ Class.baseBullet = {
     COLOR: 216,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: "autoTurretHalfReload"
+        TYPE: "revogun"
     }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "autoTurretHalfReload"
+        TYPE: "revogun"
     }],
 ON: [  {
         event: "altFire",
-        handler: ({ body, define }) => {
+        handler: ({ body }) => {
             body.master.define(Class.baseThrowerFire)
         }
     }, {
           event: "death",
           handler: ({ body }) => {
-            body.master.define(Class.baseThrower)
+            if (!body.master.isDead()) { body.master.define(Class.baseThrower) }
         }
     }
   ]
@@ -713,7 +713,7 @@ Class.baseThrower = {
 };
 Class.baseThrowerFire = {
     PARENT: "genericTank",
-    LABEL: "Kivaaritehdas",
+    LABEL: "Kivaaritehdas burned out",
     DANGER: 7,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
@@ -1769,7 +1769,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "unfinishedtesting"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "baseThrower", "unfinishedtesting"]
         //Class.unfinishedtesting.UPGRADES_TIER_0 = ["testing", "aimassisttest", "toxic", "autoboosttest"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
