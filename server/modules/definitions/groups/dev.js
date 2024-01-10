@@ -649,9 +649,12 @@ Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    FACING_TYPE: ["spin", {speed: 0.1}],
+    CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     COLOR: "orange",
+    BODY: {
+      COLOR: "orange"
+    },
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
         TYPE: ["revogun", { COLOR: "orange" }]
@@ -670,10 +673,9 @@ ON: [{
 };
 Class.turretBaseKiva = {
     LABEL: "Base",
-    SYNC_TURRET_SKILLS: true,
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: "orange",
-    CONTROLLERS: ["spin"],
+    CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
