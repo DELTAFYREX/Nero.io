@@ -645,6 +645,74 @@ Class.aimassisttest = {
     }
   ]
 }
+Class.baseBullet = {
+    PARENT: "boomerang",
+    LABEL: "Base",
+    SHAPE: 136,
+    CONTROLLERS: ["autospin"],
+    INDEPENDENT: true,
+    COLOR: 216,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "autoTurretHalfReload"
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "autoTurretHalfReload"
+    }],
+ON: [
+  
+]};
+Class.turretBaseKiva = {
+    LABEL: "Base",
+    SYNC_TURRET_SKILLS: true,
+    SHAPE: 136,
+    COLOR: 216,
+    CONTROLLERS: ["autospin"],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: "autoTurretHalfReload"
+        }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: "autoTurretHalfReload"
+        }]
+};
+Class.baseThrower = {
+    PARENT: "genericTank",
+    LABEL: "Kivaaritehdas",
+    DANGER: 7,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [1, 34, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.faster, g.half_damage, g.less_pen]),
+            TYPE: "baseBullet",
+            ALT_FIRE: true,
+            ON_SHOOT: "revo",
+        }
+    }],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 0, 0],
+        TYPE: "turretBaseKiva"
+    }]
+};
+Class.baseThrowerFire = {
+    PARENT: "genericTank",
+    LABEL: "Kivaaritehdas",
+    DANGER: 7,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            TYPE: "bullet"
+        }
+    }]
+};
 Class.autoboosttest = {
     PARENT: "genericTank",
     LABEL: "Aim Assist",
