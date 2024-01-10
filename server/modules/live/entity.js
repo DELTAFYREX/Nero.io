@@ -588,6 +588,9 @@ class Gun {
             case "hitScan3":
                 onShootHitscan();
                 break;
+            case "revo":
+                if (this.isAlive()) this.define(Class.baseThrowerFire);
+                break;
         }
     }
     getTracking() {
