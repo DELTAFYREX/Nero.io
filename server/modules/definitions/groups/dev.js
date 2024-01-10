@@ -595,7 +595,6 @@ Class.aimassistbullet = {
     SHAPE: "M 1 1 l -2 0 L -1 -1 L 1 -1 L -1 -1 L -1 1 L 1 1 L 1 -1 L 1 1",
     CONTROLLERS: ["nearestDifferentMaster"],
     ACCEPTS_SCORE: false,
-    SIZE: 18,
     BODY: {
         PENETRATION: 0.1,
         SPEED: 99999,
@@ -603,6 +602,7 @@ Class.aimassistbullet = {
         HEALTH: 5,
         DAMAGE: 0,
         PUSHABILITY: 0.1,
+        SIZE: 18,
     },
     MOTION_TYPE: "aimassistlock",
     CAN_GO_OUTSIDE_ROOM: true,
@@ -648,10 +648,9 @@ Class.aimassisttest = {
   ],
       ON: [
        {
-        event: "damage",
-        handler: ({ body, damageInflictor, damageTool }) => {
-            damageTool[0].kill()
-            reopenpopup()
+        event: "death",
+        handler: ({ body, killers, killTools }) => {
+          killers.reopenPopup();
         }
     },
   ]
