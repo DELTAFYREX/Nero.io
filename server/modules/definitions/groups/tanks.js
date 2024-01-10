@@ -295,10 +295,10 @@ ON: [{
   ]
 };
 Class.turretBaseKiva = {
-    LABEL: "Base",
+    LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: "orange",
-    CONTROLLERS: [["spin", { independent: true }]],
+    COLOR: "orange",//iT WonT FUckING SpIN
+    CONTROLLERS: [["spin", { INDEPENDENT: true }]],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
@@ -4780,7 +4780,7 @@ Class.baseThrower = {
         }
     }],
     TURRETS: [{
-        POSITION: [34, 0, 0, 0, 0, 0],
+        POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBaseKiva"
     }],
   ON: [{
@@ -4793,7 +4793,7 @@ Class.baseThrower = {
 };
 Class.baseThrowerFire = {
     PARENT: "genericTank",
-    LABEL: "Kivaaritehdas burned out",
+    LABEL: "Kivaaritehdas",
     DANGER: 6,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
