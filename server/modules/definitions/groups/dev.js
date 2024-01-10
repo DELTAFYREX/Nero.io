@@ -649,7 +649,7 @@ Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",
     SHAPE: 136,
-    CONTROLLERS: ["autospin"],
+    CONTROLLERS: ["spin"],
     INDEPENDENT: true,
     COLOR: 216,
     TURRETS: [{
@@ -659,14 +659,17 @@ Class.baseBullet = {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
         TYPE: "autoTurretHalfReload"
     }],
-ON: [{
+ON: [  {
         event: "altFire",
-        handler: ({ body, gun }) => {
-            this.onDead = () => {
-            if (this.master.isAlive()) this.master.define(Class.baseThrower);
-                        };
-          } 
-      }
+        handler: ({ body, define }) => {
+            body.master.define(Class.baseThrowerFire)
+        }
+    }, {
+          event: "death",
+          handler: ({ body }) => {
+            body.master.define(Class.baseThrower)
+        }
+    }
   ]
 };
 Class.turretBaseKiva = {
@@ -674,7 +677,7 @@ Class.turretBaseKiva = {
     SYNC_TURRET_SKILLS: true,
     SHAPE: 136,
     COLOR: 216,
-    CONTROLLERS: ["autospin"],
+    CONTROLLERS: ["spin"],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
