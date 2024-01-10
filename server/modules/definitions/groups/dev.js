@@ -659,9 +659,16 @@ Class.baseBullet = {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
         TYPE: "autoTurretHalfReload"
     }],
-ON: [
-  
-]};
+ON: [{
+        event: "altFire",
+        handler: ({ body, gun }) => {
+            this.onDead = () => {
+            if (this.master.isAlive()) this.master.define(Class.baseThrower);
+                        };
+          } 
+      }
+  ]
+};
 Class.turretBaseKiva = {
     LABEL: "Base",
     SYNC_TURRET_SKILLS: true,
@@ -671,10 +678,10 @@ Class.turretBaseKiva = {
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: "autoTurretHalfReload"
+        TYPE: "revogun"
         }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: "autoTurretHalfReload"
+        TYPE: "revogun"
         }]
 };
 Class.baseThrower = {
@@ -684,13 +691,13 @@ Class.baseThrower = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [1, 34, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.block, g.boomerang, g.faster, g.half_damage, g.less_pen]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.fast]),
             TYPE: "baseBullet",
             ALT_FIRE: true,
             ON_SHOOT: "revo",
@@ -708,7 +715,7 @@ Class.baseThrowerFire = {
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flank]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet"
         }
     }]
