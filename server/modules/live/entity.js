@@ -301,6 +301,19 @@ class Gun {
             }
         }
     }
+      syncTurretSkills() {
+        if (this.syncsSkills) {
+            let self = this;
+            for (let i = 0; i < this.children.length; i++) {
+                let child = this.children[i];
+                child.define({
+                    BODY: self.interpret(),
+                    SKILL: self.getSkillRaw(),
+                });
+                child.refreshBodyAttributes();
+            }
+        }
+    }
     fire(gx, gy, sk) {
         // Recoil
         this.lastShot.time = util.time();

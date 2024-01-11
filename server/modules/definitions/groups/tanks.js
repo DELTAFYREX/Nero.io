@@ -362,6 +362,7 @@ Class.revogun = {
     PARENT: "autoTankGun",
     CONTROLLERS: ["nearestDifferentMaster"],
     INDEPENDENT: true,
+    SYNCS_SKILLS: true,
 }
 Class.laser = {
   PARENT: ["bullet"],
