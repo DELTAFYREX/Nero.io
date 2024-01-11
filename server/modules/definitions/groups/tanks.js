@@ -298,14 +298,14 @@ Class.turretBaseKiva = {
     LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: "orange",//iT WonT FUckING SpIN
-    CONTROLLERS: [["spin", { independant: true }]],
+    CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: ["revogun", { COLOR: "orange", SYNCS_SKILLS: true }]
+        TYPE: ["revogun", { COLOR: "orange" }]
         }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: ["revogun", { COLOR: "orange", SYNCS_SKILLS: true }]
+        TYPE: ["revogun", { COLOR: "orange" }]
         }]
 };
 Class.hadronturretBase = {
@@ -4775,14 +4775,14 @@ Class.baseThrower = {
             SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.fast, g.halfdamage, g.halfpen, g.kiva]),
             TYPE: ["baseBullet", { COLOR: "orange" }],
             ALT_FIRE: true,
+          
             ON_SHOOT: "revo",
             ALPHA: 0
         }
     }],
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBaseKiva",
-        SYNCS_SKILLS: true  
+        TYPE: "turretBaseKiva"
     }],
   ON: [{
         event: "altFire",

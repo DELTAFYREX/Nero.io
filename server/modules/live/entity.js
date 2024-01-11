@@ -1155,6 +1155,7 @@ class Entity extends EventEmitter {
             }
             for (let child of this.children) child.team = set.TEAM
         }
+        if (set.SYNC_TURRET_SKILLS != null) this.syncTurretSkills = set.SYNC_TURRET_SKILLS;
         if (set.VARIES_IN_SIZE != null) {
             this.settings.variesInSize = set.VARIES_IN_SIZE;
             this.squiggle = this.settings.variesInSize ? ran.randomRange(0.8, 1.2) : 1;
@@ -1973,6 +1974,7 @@ class Entity extends EventEmitter {
                     }
                 }
                 this.facing += util.loopSmooth(this.facing, givenangle, slowness);
+                if (this.bond.syncTurretSkills) this.skill.set(this.bond.skill.raw);
                 break;
         }
         this.facing += this.turnAngle;
