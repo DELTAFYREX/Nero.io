@@ -1260,6 +1260,7 @@ checkCollision(instance, body, body.facing, );
 //checkCollision(instance, body, body.facing, );
 Class.imagetest = {
     PARENT: "genericTank",
+    UPGRADE_COLOR: "black",
     LABEL: "PapyrusButBlackHoleOfDeath.exe",
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
@@ -1318,6 +1319,7 @@ Class.imagetest = {
 Class.papyrus = {
     PARENT: "genericTank",
     LABEL: "Papyrus",
+    UPGRADE_COLOR: 23,
     SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Papyrus.webp?v=1701450294185',
     DANGER: 7,
     GUNS: [
