@@ -739,30 +739,7 @@ Class.vulnturrettest_turret = {
     HITS_OWN_TYPE: 'hard',
     LABEL: 'Shield',
     COLOR: 'teal',
-    TURRETS: [{
-      POSITION: [20, 10, 10, 0, 0, 2],
-                TYPE: "vulnturrettest_turretrevo",
-                VULNERABLE: true
-              }      
-      ]
 };
-
-Class.vulnturrettest_turretrevo = {
-    PARENT: "rock",
-    COLOR: "grey",
-    HITS_OWN_TYPE: 'hard',
-    LABEL: 'Shield',
-    COLOR: 'teal',
-    BODY: {
-      PUSHABILITY: 0,
-      HEALTH: 10000,
-      SHIELD: 10000,
-      REGEN: 1000,
-      DAMAGE: 1,
-      RESIST: 100,
-      STEALTH: 1,
-    },
-}
 
 Class.vulnturrettest = {
     PARENT: ["genericTank"],
