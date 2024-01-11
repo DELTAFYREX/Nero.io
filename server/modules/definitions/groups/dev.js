@@ -213,6 +213,8 @@ Class.sanctuaries = {
 };
 Class.overpowered = {
     PARENT: ["menu"],
+    UPGRADE_TOOLTIP: "The Funny v2",
+    UPGRADE_COLOR: "rainbow",
     LABEL: "Dev Funny",
 };
 Class.features = {

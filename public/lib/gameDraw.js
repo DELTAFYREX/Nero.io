@@ -190,7 +190,7 @@ var gameDraw = {
         gameDraw.animatedColor.lesbian = gameDraw.getRainbow(lesbian_useSecondSet ? lesbian_oredange : lesbian_white, lesbian_useSecondSet ? lesbian_white : lesbian_magenta, (lesbian_useSecondSet ? five_bars : five_bars - 3) / 2);
         gameDraw.animatedColor.gay = gameDraw.hslToRgb(gay_transition, 0.75, 0.5);
         gameDraw.animatedColor.bi = [bi_pink, bi_purple, bi_blue][three_bars];
-        gameDraw.animatedColor.sans = blinker ? gameDraw.color.guiwhite : gameDraw.color.black
+        gameDraw.animatedColor.sans = [gameDraw.color.black, gameDraw.color.guiwhite, gameDraw.color.cyan, gameDraw.color.black, gameDraw.color.guiwhite, gameDraw.color.gold]
         gameDraw.animatedColor.trans = [trans_blue, trans_pink, trans_white, trans_pink, trans_blue][five_bars];
 
         gameDraw.animatedColor.blue_red = blinker ? gameDraw.color.blue : gameDraw.color.red;
