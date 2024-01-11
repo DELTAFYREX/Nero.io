@@ -4772,7 +4772,7 @@ Class.baseThrower = {
     }, {
         POSITION: [1, 38, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.fast]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.fast, g.halfdamage, g.halfpen]),
             TYPE: ["baseBullet", { COLOR: "orange" }],
             ALT_FIRE: true,
             ON_SHOOT: "revo",

@@ -422,7 +422,8 @@ class Gun {
             SIZE: (this.body.size * this.width * this.settings.size) / 2,
             LABEL: this.master.label + (this.label ? " " + this.label : "") + " " + o.label
         });
-        if (!o.color || o.colorUnboxed.base == '-1' || o.colorUnboxed.base == 'mirror') o.define({COLOR: this.body.master.colorUnboxed.base});        // Keep track of it and give it the function it needs to deutil.log itself upon death
+        if (!o.color || o.colorUnboxed.base == '-1' || o.colorUnboxed.base == 'mirror') o.define({COLOR: this.body.master.colorUnboxed.base});
+        // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
             o.parent = this;
             this.children.push(o);
