@@ -298,6 +298,7 @@ Class.turretBaseKiva = {
     LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: "orange",//iT WonT FUckING SpIN
+    SYNC_TURRET_SKILLS: true,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
@@ -359,10 +360,21 @@ Class.shieldturretBase = {
     }]
 };
 Class.revogun = {
-    PARENT: "autoTankGun",
-    CONTROLLERS: ["nearestDifferentMaster"],
-    INDEPENDENT: true,
+    LABEL: 'Auto Turret',
     SYNCS_SKILLS: true,
+    BODY: {
+        FOV: 1
+    },
+    COLOR: 16,
+    CONTROLLERS: ['onlyAcceptInArc', 'nearestDifferentMaster'],
+    GUNS: [{
+        POSITION: [13.5, 10, 1, 8, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.halfreload]),
+            TYPE: "bullet"
+          }
+        }
+    ]
 }
 Class.laser = {
   PARENT: ["bullet"],
@@ -4764,6 +4776,7 @@ Class.baseThrower = {
     PARENT: "genericTank",
     LABEL: "Kivaaritehdas",
     DANGER: 6,
+    SYNC_TURRET_SKILLS: true,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
         PROPERTIES: {

@@ -302,15 +302,15 @@ class Gun {
         }
     }
       syncTurretSkills() {
-        if (this.syncsSkills) {
+        if (this.syncTurretSkills) {
             let self = this;
-            for (let i = 0; i < this.children.length; i++) {
-                let child = this.children[i];
-                child.define({
+            for (let i = 0; i < this.turret.length; i++) {
+                let turret = this.turrets[i];
+                turret.define({
                     BODY: self.interpret(),
                     SKILL: self.getSkillRaw(),
                 });
-                child.refreshBodyAttributes();
+                turret.refreshBodyAttributes();
             }
         }
     }
