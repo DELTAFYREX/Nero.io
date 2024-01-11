@@ -1721,5 +1721,5 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
-              Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
-              Class.papyrus.UPGRADES_TIER_0 = ["imagetest"];
+              Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"]
+              Class.papyrus.UPGRADES_TIER_0 = ["imagetest"]

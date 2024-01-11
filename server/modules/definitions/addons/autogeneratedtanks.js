@@ -474,9 +474,9 @@ FOV: 1.1 * base.FOV,
 };
 
 Class.aitanks = {
-    PARENT: ["menu"],
+    PARENT: ["genericTank"],
     LABEL: "AI Generated Tanks Lol",
 };
 
-Class.addons.UPGRADES_TIER_0.push("aitanks");
-Class.aitanks.UPGRADES_TIER_0 = ["randomTankTemp", "gufner", "twiper", "traptoap"]
+Class.addons.UPGRADES_TIER_0.push("aitanks")
+Class.aitanks.UPGRADES_TIER_1 = ["randomTankTemp", "gufner", "twiper", "traptoap"]
