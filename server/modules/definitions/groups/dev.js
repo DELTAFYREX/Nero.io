@@ -696,6 +696,7 @@ Class.autoTankGunLockRecoil = {
 }
 Class.mmaTest2 = {
     PARENT: ["genericTank"],
+    COLOR: "grey",
     MIRROR_MASTER_ANGLE: true,
     GUNS: [{
             POSITION: [40, 4, 1, -20, 0, 0, 0],
@@ -733,6 +734,13 @@ Class.mmaTest = {
 }
 
 Class.vulnturrettest_turret = {
+    PARENT: "genericTank",
+    COLOR: "grey",
+    HITS_OWN_TYPE: 'hard',
+    LABEL: 'Shield',
+    COLOR: 'teal',
+}
+Class.vulnturrettest_turretrevo = {
     PARENT: "rock",
     COLOR: "grey",
     HITS_OWN_TYPE: 'hard',

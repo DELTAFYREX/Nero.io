@@ -44,13 +44,13 @@ Class.gravel = {
     LABEL: "Gravel",
     SIZE: 16,
     SHAPE: -7,
-    VARIES_IN_SIZE: false,
 };
 Class.wall = {
     PARENT: ["rock"],
     LABEL: "Wall",
     SIZE: 25,
     SHAPE: 4,
+    VARIES_IN_SIZE: false,
 };
 
 // DOMINATORS
