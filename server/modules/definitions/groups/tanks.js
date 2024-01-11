@@ -299,6 +299,7 @@ Class.turretBaseKiva = {
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: "orange",//iT WonT FUckING SpIN
     CONTROLLERS: [["spin", { INDEPENDENT: true }]],
+    SYNC_TURRET_SKILLS: true,
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
