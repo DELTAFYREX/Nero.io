@@ -141,5 +141,5 @@ module.exports = {
     fakewithrecoil: { recoil: 1, size: 0.00001, health: 0.0001, speed: 0.00001, maxSpeed: 2, range: 0 },
     halfdamage: { damage: 0.5 },
     halfpen: { pen: 0.5 },
-    kiva: { damage: 0.3, pen: 0.3 },
+    kiva: { damage: 0.25, pen: 1 },
 }
