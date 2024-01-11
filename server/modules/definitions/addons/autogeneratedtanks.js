@@ -29,7 +29,7 @@ POSITION: [ 11.84, 10.5, 1.3, 0, 0, 0, 0/3 ],
 },{
 POSITION: [ 6.0200000000000005, 13.65, 1.58, 11.84, 0, 0, 0/3],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.mini, g.flank]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.minigun, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -39,7 +39,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 6.0200000000000005, 13.65, 1.58, 9.84, 0, 0, 1/3],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flankGuard, g.minigun]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -49,7 +49,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 6.0200000000000005, 13.65, 1.58, 7.84, 0, 0, 2/3],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flankGuard, g.minigun]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -72,7 +72,7 @@ MAX_CHILDREN: 0,
 }, },0*/ {
 POSITION: [ 9.8, 6, 0.8, 0, 2, 195, 1/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flank, g.mini, g.bent, g.twin]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flankGuard, g.minigun, g.doubleTwin, g.hewnDouble, g.twin]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -82,7 +82,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 7.800000000000001, 6, 0.8, 0, 2, 195, 3/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.bent, g.twin, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.doubleTwin, g.hewnDouble, g.twin, g.flankGuard, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -92,7 +92,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 5.800000000000001, 6, 0.8, 0, 2, 195, 5/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.bent, g.twin, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.doubleTwin, g.hewnDouble, g.twin, g.flankGuard, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -102,7 +102,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 9.8, 6, 0.8, 0, -2, -195, 0/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.mini, g.flank, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.minigun, g.flankGuard, g.doubleTwin, g.hewnDouble]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -112,7 +112,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 7.800000000000001, 6, 0.8, 0, -2, -195, 2/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.mini, g.flank, g.twin, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.minigun, g.flankGuard, g.twin, g.doubleTwin, g.hewnDouble]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -122,7 +122,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 5.800000000000001, 6, 0.8, 0, -2, -195, 4/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.mini, g.flank, g.twin, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.minigun, g.flankGuard, g.twin, g.doubleTwin, g.hewnDouble]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -132,7 +132,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 12.8, 6, 0.8, 0, 0, 180, 4/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.mini, g.bent, g.flank]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.minigun, g.doubleTwin, g.hewnDouble, g.flankGuard]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -142,7 +142,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 10.8, 6, 0.8, 0, 0, 180, 6/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.flank, g.bent, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.doubleTwin, g.hewnDouble, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -152,7 +152,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 8.8, 6, 0.8, 0, 0, 180, 8/6 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.flank, g.bent, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.gunner, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.doubleTwin, g.hewnDouble, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -182,7 +182,7 @@ MAX_CHILDREN: 4,
 }, },6.5*/ {
 POSITION: [ 6, 16, 0.6, 13, 0, 0, 0/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.drone, g.mehdrone, g.blank, g.blank, g.blank, g.bigdrone, g.blank, g.blank, g.blank, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.drone, g.blank, g.blank, g.blank, g.bigCheese, g.blank, g.blank, g.blank, g.flankGuard, g.minigun]),
 TYPE: "drone",
 AUTOFIRE: true,
 SYNCS_SKILLS: true,
@@ -192,7 +192,7 @@ MAX_CHILDREN: 4,
 }, },{
 POSITION: [ 4, 16, 0.6, 13, 0, 0, 1/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.drone, g.mehdrone, g.blank, g.blank, g.blank, g.bigdrone, g.blank, g.blank, g.blank, g.mini, g.flank]),
+SHOOT_SETTINGS: combineStats([ g.drone, g.blank, g.blank, g.blank, g.bigCheese, g.blank, g.blank, g.blank, g.minigun, g.flankGuard]),
 TYPE: "drone",
 AUTOFIRE: true,
 SYNCS_SKILLS: true,
@@ -202,7 +202,7 @@ MAX_CHILDREN: 4,
 }, },{
 POSITION: [ 2, 16, 0.6, 13, 0, 0, 2/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.drone, g.mehdrone, g.blank, g.blank, g.blank, g.bigdrone, g.blank, g.blank, g.blank, g.mini, g.flank]),
+SHOOT_SETTINGS: combineStats([ g.drone, g.blank, g.blank, g.blank, g.bigCheese, g.blank, g.blank, g.blank, g.minigun, g.flankGuard]),
 TYPE: "drone",
 AUTOFIRE: true,
 SYNCS_SKILLS: true,
@@ -223,7 +223,7 @@ MAX_CHILDREN: 0,
 }, },6*/ {
 POSITION: [ 16.3, 10, 1, 12, 0, 180, 0/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.mini, g.flank]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.minigun, g.flankGuard]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -233,7 +233,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 14.3, 10, 1, 12, 0, 180, 1/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flankGuard, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -243,7 +243,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 12.3, 10, 1, 12, 0, 180, 2/3 ],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flank, g.mini]),
+SHOOT_SETTINGS: combineStats([ g.basic, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.blank, g.flankGuard, g.minigun]),
 TYPE: "bullet",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -277,7 +277,7 @@ POSITION: [ 21.76, 11.5, 1.4, 0, 0, 0, 0/1 ],
 },{
 POSITION: [ 3.2, 16.099999999999998, 1.24, 21.76, 0, 0, 0/1],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.sniper, g.mach, g.pound, g.blank, g.chain, g.blaster, g.blank, g.blank, ]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.sniper, g.machineGun, g.pounder, g.blank, g.blank, g.blank, ]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -322,7 +322,7 @@ POSITION: [ 11, 15.125, 1, 7.5, 2, 15, 1/6 ],
 },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 18.5, 2, 15, 1/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pound, g.blank, g.blank, g.blank, g.destroy, g.blank, g.blank, g.blank, g.mini, g.flank, g.twin, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.minigun, g.flankGuard, g.twin, g.doubleTwin, g.hewnDouble]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -332,7 +332,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 16.5, 2, 15, 3/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pound, g.blank, g.blank, g.blank, g.destroy, g.blank, g.blank, g.blank, g.flank, g.twin, g.mini, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.flankGuard, g.twin, g.minigun, g.doubleTwin, g.hewnDouble]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -342,7 +342,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 14.5, 2, 15, 5/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pound, g.blank, g.blank, g.blank, g.destroy, g.blank, g.blank, g.blank, g.flank, g.twin, g.mini, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.flankGuard, g.twin, g.minigun, g.doubleTwin, g.hewnDouble]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -354,7 +354,7 @@ POSITION: [ 11, 15.125, 1, 7.5, -2, -15, 0/6 ],
 },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 18.5, -2, -15, 0/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pound, g.blank, g.blank, g.blank, g.destroy, g.blank, g.blank, g.blank, g.flank, g.twin, g.mini, g.bent]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.flankGuard, g.twin, g.minigun, g.doubleTwin, g.hewnDouble]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -364,7 +364,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 16.5, -2, -15, 2/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.minigun, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.minigun, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -374,7 +374,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 14.5, -2, -15, 4/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.minigun, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.minigun, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -386,7 +386,7 @@ POSITION: [ 14, 15.125, 1, 15, 0, 0, 4/6 ],
 },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 29, 0, 0, 4/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.minigun, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.minigun, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -396,7 +396,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 27, 0, 0, 6/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.bent, g.minigun]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.doubleTwin, g.hewnDouble, g.minigun]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -406,7 +406,7 @@ MAX_CHILDREN: 0,
 }, },{
 POSITION: [ 2.6100000000000003, 15.125, 1.195, 25, 0, 0, 8/6],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.bent, g.minigun]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.flankGuard, g.doubleTwin, g.hewnDouble, g.minigun]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -433,7 +433,7 @@ POSITION: [ 17.16, 17, 0.7, 7, 2, 195, 1/2 ],
 },{
 POSITION: [ 8.415000000000001, 11.899999999999999, 1.12, 24.16, 2, 195, 1/2],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -445,7 +445,7 @@ POSITION: [ 17.16, 17, 0.7, 7, -2, -195, 0/2 ],
 },{
 POSITION: [ 8.415000000000001, 11.899999999999999, 1.12, 24.16, -2, -195, 0/2],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -457,7 +457,7 @@ POSITION: [ 20.16, 17, 0.7, 14, 0, 180, 0/2 ],
 },{
 POSITION: [ 8.415000000000001, 11.899999999999999, 1.12, 34.16, 0, 180, 0/2],
 PROPERTIES: {
-SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.bent, g.flankGuard]),
+SHOOT_SETTINGS: combineStats([ g.trap, g.pounder, g.blank, g.blank, g.blank, g.destroyer, g.blank, g.blank, g.blank, g.twin, g.doubleTwin, g.hewnDouble, g.flankGuard]),
 TYPE: "trap",
 AUTOFIRE: false,
 SYNCS_SKILLS: false,
@@ -478,5 +478,5 @@ Class.aitanks = {
     LABEL: "AI Generated Tanks Lol",
 };
 
-Class.addons.UPGRADES_TIER_0.push('aitanks');
+Class.addons.UPGRADES_TIER_0.push("aitanks");
 Class.aitanks.UPGRADES_TIER_0 = ["randomTankTemp", "gufner", "twiper", "traptoap"]
