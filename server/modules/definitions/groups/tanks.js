@@ -326,10 +326,10 @@ Class.turretBasenoguns = {
 };
 Class.grenade = {
     PARENT: "bullet",
+    GUNS:
     ON: [{
           event: "death",
           handler: ({ body }) => {
-            if (!body.master.isDead) return 
             body.define(Class.shrapnel)
         }
     }
