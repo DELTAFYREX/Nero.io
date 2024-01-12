@@ -333,12 +333,6 @@ Class.grenade = {
                 TYPE: "bullet",
                 SHOOT_ON_DEATH: true,
             },
-    }],
-    ON: [{
-          event: "death",
-          handler: ({ body }) => {
-            body.spawn(Class.shrapnel)
-        }
     }
   ]
 }
