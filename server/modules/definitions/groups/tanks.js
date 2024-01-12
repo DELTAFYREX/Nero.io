@@ -261,12 +261,79 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
+Class.shrapnel = {
+    PARENT: "bullet",
+    LABEL: "expold heheahah",
+    BODY: {
+        RANGE: 1,
+        FOV: 0.5,
+    },
+    FACING_TYPE: "turnWithSpeed",
+    INDEPENDENT: true,
+    CONTROLLERS: ["alwaysFire", "nearestDifferentMaster", "targetSelf"],
+    AI: {
+        NO_LEAD: true,
+    },
+    GUNS: [
+        {
+            POSITION: [7, 9.5, 0.6, 7, 0, 108, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 9.5, 0.6, 7, 0, 180, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 9.5, 0.6, 7, 0, 252, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 9.5, 0.6, 7, 0, 324, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+        {
+            POSITION: [7, 9.5, 0.6, 7, 0, 36, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.swarm,
+            },
+        },
+    ],
+}
 Class.turretBasenoguns = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
+};
+Class.grenade = {
+    PARENT: "bullet",
+    ON: [{
+          event: "death",
+          handler: ({ body }) => {
+            if (!body.master.isDead) return 
+            body.define(Class.shrapnel)
+        }
+    }
+  ]
 };
 Class.baseBullet = {
     PARENT: "boomerang",
