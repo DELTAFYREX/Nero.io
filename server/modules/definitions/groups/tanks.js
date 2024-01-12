@@ -326,15 +326,22 @@ Class.turretBasenoguns = {
 };
 Class.grenade = {
     PARENT: "bullet",
-    GUNS:
+    GUNS: [{
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.grenade_explosion]),
+                TYPE: "bullet",
+                SHOOT_ON_DEATH: true,
+            },
+    }],
     ON: [{
           event: "death",
           handler: ({ body }) => {
-            body.define(Class.shrapnel)
+            body.spawn(Class.shrapnel)
         }
     }
   ]
-};
+}
 Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",

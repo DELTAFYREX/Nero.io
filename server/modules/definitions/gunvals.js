@@ -141,5 +141,7 @@ module.exports = {
     fakewithrecoil: { recoil: 1, size: 0.00001, health: 0.0001, speed: 0.00001, maxSpeed: 2, range: 0 },
     halfdamage: { damage: 0.5 },
     halfpen: { pen: 0.5 },
-    kiva: { damage: 0.3, pen: 2.2 }
+    kiva: { damage: 0.3, pen: 2.2 },
+    grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1
+    },
 }
