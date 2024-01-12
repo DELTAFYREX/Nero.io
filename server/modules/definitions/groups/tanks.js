@@ -272,7 +272,7 @@ Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    CONTROLLERS: [["spin", { independent: true }]],
+    CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     INDEPENDENT: true,
     COLOR: "orange",
     BODY: {
