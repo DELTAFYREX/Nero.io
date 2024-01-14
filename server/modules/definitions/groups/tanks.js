@@ -4750,6 +4750,24 @@ Class.poacher = makeHybrid('hunter', "Poacher")
 Class.armsman = makeHybrid('rifle', "Armsman")
 Class.cropDuster = makeHybrid('minigun', "Crop Duster")
 Class.hybrid = makeHybrid('destroyer', "Hybrid")
+Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
+Class.twinbrid = makeHybrid('twin', "Twin-Hybrid")
+Class.machbrid = makeHybrid('machineGun', "Machine-Hybrid")
+Class.snipebrid = makeHybrid('sniper', "Snipe-Hybrid")
+Class.flankbrid = makeHybrid('flankGuard', "Flank-Hybrid")
+Class.poundbrid = makeHybrid('pounder', "Pound-Hybrid")
+Class.trapbrid = makeHybrid('trapper', "Trapper-Hybrid")
+Class.clonebrid = makeHybrid('cloner', "Cloner-Hybrid")
+Class.desmosbrid = makeHybrid('desmos', "Desmos-Hybrid")
+
+
+
+
+
+
+
+
+
 
 // Over tanks
 Class.overgunner = makeOver({
