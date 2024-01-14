@@ -192,7 +192,6 @@ exports.makeMulti = (type, count, name = -1, startRotation = 0) => {
         for (let i = 0; i < count; i++) {
             let newgun = exports.dereference(gun);
             newgun.POSITION[5] += startRotation + fraction * i;
-            newgun.POSITION.ANGLE += startRotation + fraction * i;
             if (gun.PROPERTIES) newgun.PROPERTIES.TYPE = gun.PROPERTIES.TYPE;
             output.GUNS.push(newgun);
         };
@@ -621,58 +620,6 @@ exports.makeAuto = (type, name = -1, options = {}) => {
     output.DANGER = type.DANGER + 1;
     return output;
 }
-exports.makeTracker = (type, name = -1, options = {}) => {
-    let turret = {
-        type: "tracker3gun",
-        size: 10,
-        independent: true,
-        color: 16,
-        angle: 180,
-    };
-    if (options.type != null) {
-        turret.type = options.type;
-    }
-    if (options.size != null) {
-        turret.size = options.size;
-    }
-    if (options.independent != null) {
-        turret.independent = options.independent;
-    }
-    if (options.color != null) {
-        turret.color = options.color;
-    }
-    if (options.angle != null) {
-        turret.angle = options.angle;
-    }
-    let output = exports.dereference(type);
-    let autogun = {
-        /*********    SIZE                             X             Y         ANGLE        ARC */
-        POSITION: [turret.size, 0, 0, turret.angle, 360, 1],
-        TYPE: [
-            turret.type,
-            {
-                CONTROLLERS: ["nearestDifferentMaster"],
-                INDEPENDENT: turret.independent,
-                COLOR: turret.color,
-            },
-        ],
-    };
-    if (type.GUNS != null) {
-        output.GUNS = type.GUNS;
-    }
-    if (type.TURRETS == null) {
-        output.TURRETS = [autogun];
-    } else {
-        output.TURRETS = [...type.TURRETS, autogun];
-    }
-    if (name == -1) {
-        output.LABEL = "Auto-" + type.LABEL;
-    } else {
-        output.LABEL = name;
-    }
-    output.DANGER = type.DANGER + 1;
-    return output;
-}
 exports.makeCeption = (type, name = -1, options = {}) => {
     type = ensureIsClass(type);
     let turret = {
@@ -691,50 +638,6 @@ exports.makeCeption = (type, name = -1, options = {}) => {
     }
     let output = exports.dereference(type);
     let autogun = {
-        POSITION: [turret.size, 0, 0, 180, 360, 1],
-        TYPE: [
-            type,
-            {
-                CONTROLLERS: ["nearestDifferentMaster"],
-                INDEPENDENT: turret.independent,
-            },
-        ],
-    };
-    if (type.GUNS != null) {
-        output.GUNS = type.GUNS;
-    }
-    if (type.TURRETS == null) {
-        output.TURRETS = [autogun];
-    } else {
-        output.TURRETS = [...type.TURRETS, autogun];
-    }
-    if (name == -1) {
-        output.LABEL = type.LABEL + "-Ception";
-    } else {
-        output.LABEL = name;
-    }
-    output.DANGER = type.DANGER + 1;
-    return output;
-}
-exports.makeCeptionNerf = (type, name = -1, options = {}) => {
-    type = ensureIsClass(type);
-    let turret = {
-        type: "autoTurretNerf",
-        size: 12.5,
-        independent: true,
-    };
-    if (options.type != null) {
-        turret.type = options.type;
-    }
-    if (options.size != null) {
-        turret.size = options.size;
-    }
-    if (options.independent != null) {
-        turret.independent = options.independent;
-    }
-    let output = exports.dereference(type);
-    let autogun = {
-        /********* SIZE X Y ANGLE ARC */
         POSITION: [turret.size, 0, 0, 180, 360, 1],
         TYPE: [
             type,
@@ -797,6 +700,7 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) =
         ]
     };
 }
+
 class LayeredBoss {
     constructor(identifier, NAME, PARENT = "celestial", SHAPE = 9, COLOR = 0, trapTurretType = "baseTrapTurret", trapTurretSize = 6.5, layerScale = 5, BODY, SIZE, VALUE) {
         this.identifier = identifier ?? NAME.charAt(0).toLowerCase() + NAME.slice(1);
@@ -854,7 +758,6 @@ class LayeredBoss {
     }
 }
 exports.LayeredBoss = LayeredBoss;
-
 
 //unfinished lolo
 exports.makeLabyrinthShape = (type) => {

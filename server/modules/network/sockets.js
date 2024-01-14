@@ -420,6 +420,10 @@ function incoming(message, socket) {
             if (player.body != null && socket.permissions && socket.permissions.class) {
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(Class[socket.permissions.class]);
+                if (player.body.colorUnboxed.base == '-1' || player.body.colorUnboxed.base == 'mirror') {
+                    player.body.colorUnboxed.base = getTeamColor((c.MODE == 'ffa' || c.GROUPS) ? TEAM_RED : player.body.team);
+                    player.body.compressColor();
+                }
             }
             break;
         case "1":

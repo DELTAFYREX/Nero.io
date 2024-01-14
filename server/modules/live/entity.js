@@ -1079,7 +1079,7 @@ class Entity extends EventEmitter {
                 if (set.COLOR.BRIGHTNESS_SHIFT != null) this.colorUnboxed.brightnessShift = set.COLOR.BRIGHTNESS_SHIFT;
                 if (set.COLOR.ALLOW_BRIGHTNESS_INVERT != null) this.colorUnboxed.allowBrightnessInvert = set.COLOR.ALLOW_BRIGHTNESS_INVERT;
             }
-            this.color = this.colorUnboxed.base + " " + this.colorUnboxed.hueShift + " " + this.colorUnboxed.saturationShift + " " + this.colorUnboxed.brightnessShift + " " + this.colorUnboxed.allowBrightnessInvert;
+            this.compressColor();
         }
         this.upgradeColor = set.UPGRADE_COLOR == null ? null : set.UPGRADE_COLOR;
         if (set.GLOW != null) {
@@ -1344,6 +1344,8 @@ class Entity extends EventEmitter {
                 }
             }
             if (set.LABEL != null && set.LABEL.length > 0) this.label = this.label + "-" + set.LABEL;
+            if (set.MAX_CHILDREN != null) this.maxChildren += set.MAX_CHILDREN;
+            else this.maxChildren = null; // For bullet and drone combos so all parts remain functional
             if (set.BODY != null) {
                 if (set.BODY.ACCELERATION != null) this.ACCELERATION *= set.BODY.ACCELERATION;
                 if (set.BODY.SPEED != null) this.SPEED *= set.BODY.SPEED;
@@ -1414,17 +1416,16 @@ class Entity extends EventEmitter {
                     }
                 }
             }
-            if (set.REROOT_UPGRADE_TREE) this.rerootUpgradeTree = set.REROOT_UPGRADE_TREE;
+             if (set.REROOT_UPGRADE_TREE) this.rerootUpgradeTree = set.REROOT_UPGRADE_TREE;
             if (Array.isArray(this.rerootUpgradeTree)) {
                 let finalRoot = "";
                 for (let root of this.rerootUpgradeTree) finalRoot += root + "\\/";
                 this.rerootUpgradeTree += finalRoot.substring(0, finalRoot.length - 2);
             }
-            this.maxChildren = null; // Required because it just doesn't work out otherwise - overlord-triplet would make the triplet inoperable at 8 drones, etc
-        }          
+        }
         // Turret layer ordering
         this.turrets.sort(this.turretSort);
-      
+
         // Batch upgrades
         if (this.batchUpgrades && emitEvent) {
             this.tempUpgrades = [];
@@ -1442,9 +1443,9 @@ class Entity extends EventEmitter {
             this.chooseUpgradeFromBranch(numBranches); // Recursively build upgrade options
         }
     }
-            turretSort(a, b) {
-              return a.bound.layer - b.bound.layer;
-            }
+    turretSort(a, b) {
+        return a.bound.layer - b.bound.layer;
+    }
     chooseUpgradeFromBranch(remaining) {
         if (remaining > 0) { // If there's more to select
             let branchUgrades = this.tempUpgrades[this.defs.length - remaining];
@@ -1714,8 +1715,10 @@ class Entity extends EventEmitter {
                 this.define(this.defs);
                 this.ON(this.onDef, "upgrade", { oldEntity: old })
             }
-            if (c.MODE == 'ffa' || c.GROUPS) this.define({COLOR: 12});
-            if (this.colorUnboxed.base == '-1' || this.colorUnboxed.base == 'mirror') this.define({COLOR: getTeamColor(this.team)});
+            if (this.colorUnboxed.base == '-1' || this.colorUnboxed.base == 'mirror') {
+                this.colorUnboxed.base = getTeamColor((c.MODE == 'ffa' || c.GROUPS) ? TEAM_RED : this.team);
+                this.compressColor();
+            }
             this.sendMessage("You have upgraded to " + this.label + ".");
             for (let def of this.defs) {
                 def = ensureIsClass(def);
