@@ -8,7 +8,7 @@
 }
 
 #mainBody {
-    background-color: #484848;
+    background-color: #dbdbdb;
 }
 
 ::-webkit-scrollbar {
@@ -40,7 +40,7 @@ body {
     font-family: Ubuntu;
     font-size: 14px;
     background-image: url("https://picsum.photos/1456/1892");
-    background-color: #484848;
+    background-color: gray;
 }
 
 html,
@@ -249,7 +249,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
-    height: 340px;
+    height: 410px;
     padding: 10px;
     overflow: hidden;
     display: inline-block;
@@ -313,7 +313,7 @@ a.menuTab:link:hover, a.menuTab:visited:hover {
 }
 .sliderHolder {
     width: 350px;
-    height: 285px;
+    height: 355px;
     overflow: hidden;
 }
 
