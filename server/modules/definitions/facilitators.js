@@ -142,20 +142,19 @@ exports.makeConq = (type, name = -1) => {
 exports.makeSplit = (type, name = -1) => {
     type = ensureIsClass(type);
     let output = exports.dereference(type);
-    let cannon1 = {
+    let cannons = [{
         POSITION: [18, 8, 1, 0, 0, 90, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: exports.combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
-    };
-    let cannon2 = {
+    }, {
         POSITION: [18, 8, 1, 0, 0, 270, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: exports.combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
-    };
+    }];
     output.GUNS = type.GUNS == null ? cannons : type.GUNS.concat(cannons);
     output.LABEL = name == -1 ? "Split " + type.LABEL : name;
     return output;
@@ -193,6 +192,7 @@ exports.makeMulti = (type, count, name = -1, startRotation = 0) => {
         for (let i = 0; i < count; i++) {
             let newgun = exports.dereference(gun);
             newgun.POSITION[5] += startRotation + fraction * i;
+            newgun.POSITION.ANGLE += startRotation + fraction * i;
             if (gun.PROPERTIES) newgun.PROPERTIES.TYPE = gun.PROPERTIES.TYPE;
             output.GUNS.push(newgun);
         };
