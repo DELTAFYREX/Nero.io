@@ -1,4 +1,4 @@
-# Open Source Arras (APS++)
+# Open Source Arras
 
 **Open Source Arras is beta software.** This build is **not** representative of the final product. Expect bugs and missing features.
 
@@ -20,11 +20,9 @@ If you want to stay up to date, fork this template, download a git client, and s
 
 Don't have a supported device or don't want to mess around with localhost? Get a webhost to do the dirty work for you.
 
-This guide will specifically go through setting up your server on [Glitch](https://glitch.com). These steps should be similar you use Replit or another webhost.
+Create a new project and choose to import one from GitHub. When prompted for the URL of the repository, type in `https://github.com/Taureon/aps-plus-plus.git`.
 
-Click the "New project" button at the top-right of the dashboard, and select "Import from GitHub". When prompted for the URL of the repository, type in `https://github.com/Taureon/aps-plus-plus.git`.
-
-Navigate to `server/config.js` and replace `localhost:26301` with `your-project.glitch.me` (replace `your-project` with the actual name of your project, it should be above settings).
+Navigate to `server/config.js` and replace `localhost:26301` with the URL for your project. (For Glitch users, it's `your-project.glitch.me` (replace `your-project` with the actual name of your project, it should be above settings)).
 
 If you're experiencing issues when trying to launch the project, go to `package.json` and replace `"node": "18.x"` with `"node": "16.x"`.
 
@@ -32,10 +30,10 @@ After doing that, your server should be ready!
 
 ## Useful Tools
 - [Create a custom shape](https://arras.io/ext/custom-shape)
-- [Create a custom tank](https://dogeiscut.github.io/Arras-Tank-Builder/)  (This tool is somewhat outdated, please make sure to convert the generated tank code!)
-  - [WIP update to this tool](https://github.com/DogeisCut/Arras.io-Entity-Designer-v2)
+- [Create a custom tank](https://zyrafaq.com/arras-tank-builder) By [DogeisCut](https://github.com/DogeisCut) and [Zyrafaq](https://github.com/zyrafaq)
 - [Create a custom theme](https://codepen.io/road-to-100k/full/GRpvMzb)
 - [Random Tank Generator](https://perchance.org/chomp-arras-gen)
+- [Addon list](https://github.com/Taureon/aps-plus-plus-addons)
 
 ## Other Links
 - [Our Discord server](https://discord.gg/kvCAZfUCjy)
