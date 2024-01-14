@@ -4757,7 +4757,6 @@ Class.snipebrid = makeHybrid('sniper', "Snipe-Hybrid")
 Class.flankbrid = makeHybrid('flankGuard', "Flank-Hybrid")
 Class.poundbrid = makeHybrid('pounder', "Pound-Hybrid")
 Class.trapbrid = makeHybrid('trapper', "Trapper-Hybrid")
-Class.clonebrid = makeHybrid('cloner', "Cloner-Hybrid")
 Class.desmosbrid = makeHybrid('desmos', "Desmos-Hybrid")
 
 
@@ -5178,6 +5177,7 @@ Class.directdrive = {
 // Auto tanks
 Class.autoBasic = makeAuto(Class.basic, "Auto-Basic");
 Class.autoRevolutionist = makeAuto(Class.revolutionist, "Auto-Revolutionist");
+Class.clonebrid = makeHybrid('cloner', "Cloner-Hybrid")
 
 Class.autoTwin = makeAuto(Class.twin, "Auto-Twin");
 Class.autoMach = makeAuto(Class.machineGun, "Auto-Mach");
