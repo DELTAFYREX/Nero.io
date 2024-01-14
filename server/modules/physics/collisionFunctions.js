@@ -57,7 +57,7 @@ function firmcollide(my, n, buffer = 0) {
     }
 }
 
-function mazewallcollide(wall, bounce) {
+function reflectcollide(wall, bounce) {
     let delta = new Vector(wall.x - bounce.x, wall.y - bounce.y);
     let dist = delta.length;
     let difference = wall.size + bounce.size - dist;
