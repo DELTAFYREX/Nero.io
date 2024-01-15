@@ -469,10 +469,10 @@ Class.deltabaseBullet = {
     },
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: ["revogun", { COLOR: "rainbow" }]
+        TYPE: ["deltagun", { COLOR: "rainbow" }]
     }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: ["revogun", { COLOR: "rainbow" }]
+        TYPE: ["deltagun", { COLOR: "rainbow" }]
     }],
 ON: [{
           event: "death",
@@ -483,6 +483,24 @@ ON: [{
     }
   ]
 };
+Class.deltagun = {
+    LABEL: 'Auto Turret',
+    SYNCS_SKILLS: true,
+    BODY: {
+        FOV: 1
+    },
+    COLOR: 16,
+    CONTROLLERS: ['onlyAcceptInArc', 'nearestDifferentMaster'],
+    GUNS: [{
+        POSITION: [13.5, 10, 1, 8, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.halfreload, g.halfspeed, g.op, g.op, g.op]),
+            TYPE: "grenade",
+            HAS_NO_RECOIL: true
+          }
+        }
+    ]
+}
 Class.turretBaseDelta = {
     LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -492,13 +510,15 @@ Class.turretBaseDelta = {
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
-        TYPE: ["revogun", { COLOR: "rainbow" }]
+        TYPE: ["deltagun", { COLOR: "rainbow" }]
         }, {
         POSITION: [4.65, 9.85, 0, 270, 220, 1],
-        TYPE: ["revogun", { COLOR: "rainbow" }]
+        TYPE: ["deltagun", { COLOR: "rainbow" }]
         }]
 };
-Class.deltaDeco = makeDeco(4)
+Class.deltaDeco = {
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958',
+};
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
     LABEL: "Dewta OwO",
@@ -528,7 +548,7 @@ Class.baseThrowerDelta = {
         }, {
         POSITION: [1, 38, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.halfrecoil, g.op, g.op, g.op, g.op, g.op]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.op, g.xxtrahealth]),
             TYPE: ["deltabaseBullet", { COLOR: "rainbow" }],
             ALT_FIRE: true,
             HAS_NO_RECOIL: true,
@@ -538,6 +558,9 @@ Class.baseThrowerDelta = {
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBaseDelta"
+    }, {
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "deltaDeco"
     }],
   ON: [{
         event: "altFire",
@@ -580,7 +603,12 @@ Class.baseThrowerFireDelta = {
                 TYPE: "laser",
                 HAS_NO_RECOIL: true,
             },
-        }]
+        }],
+  TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "deltaDeco"
+    }
+  ]
 };
 Class.unavailable = {
     PARENT: ["menu"],

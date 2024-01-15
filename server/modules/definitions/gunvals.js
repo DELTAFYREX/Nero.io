@@ -145,6 +145,7 @@ module.exports = {
     kiva: { damage: 0.3, pen: 2.2 },
     shockwave: { damage: 5, pen: 5 },
     xtrahealth: { health: 5 },
+    xxtrahealth: { health: 999 },
     grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1
     },
 }
