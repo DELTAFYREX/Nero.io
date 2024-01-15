@@ -45,7 +45,7 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       var clicked = false;
   
       var trapperclosely = new Audio();
-      trapperclosely.src = ("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/gear.wav");
+      trapperclosely.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/look_closely.mp3?v=1705291786778");
       function PlaySoundtrap() {
       trapperclosely.play();
       }
@@ -1635,10 +1635,14 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     if (gui.class === "Winsor") {
       PlaySound169();
     }
-    if (gui.class === "trapper_guy" & global.KEY_SHIFT) {
+  
+    document.onkeydown = (e) => {
+      var key = e.which || e.keyCode;
+      if (gui.class === "Trapper_guy" & key === global.KEY_SHIFT) {
       PlaySoundtrap();
+        }
     }
-
+      
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);

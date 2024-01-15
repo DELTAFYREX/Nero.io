@@ -1778,6 +1778,9 @@ class Entity extends EventEmitter {
             case "fuckingnuclearbomb":
                 this.SIZE += args.growSpeed ?? 10;
                 break;
+            case "trappershockwave":
+                this.SIZE += args.growSpeed ?? 20;
+                break;
             case "glide":
                 this.maxSpeed = this.topSpeed;
                 this.damp = args.damp ?? 0.05;
