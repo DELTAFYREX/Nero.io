@@ -43,6 +43,12 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
         clicksound.play();
       }
       var clicked = false;
+  
+      var trapperclosely = new Audio();
+      trapperclosely.src = ("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/gear.wav");
+      function PlaySoundtrap() {
+      trapperclosely.play();
+      }
 
       function doSomething() {
         if (clicked) {
@@ -1629,6 +1635,9 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     if (gui.class === "Winsor") {
       PlaySound169();
     }
+    if (gui.class === "trapper_guy" & global.KEY_SHIFT) {
+      PlaySoundtrap();
+    }
 
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
@@ -1719,13 +1728,12 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero-Arras Host Client", x + len, y - 50 - 5 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero Engine v2.81", x + len, y - 50 - 5 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 2 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
-        drawText("pissass: " + finalKills, x + len, y - 50 + 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.7", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
