@@ -125,7 +125,7 @@ function PlaySound69() {
 <body oncontextmenu="return false" id="mainBody">
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
-        <input id="chatInput" type="text" maxlength="256" hidden="true">
+        <input id="chatInput" type="text" maxlength="256" hidden=true>
     </div>
     <div id="mainWrapper">
         <div id="startMenuWrapper">
@@ -245,6 +245,7 @@ popup = ' onclick="openPopup()" '
                                 <option value="gruvbox">Gruvbox (by Road)</option>
                                 <option value="lyric">Lyric (by evil isopod)</option>
                                 <option value="blindness">Blindness (by Damocles)</option>
+                                <option value="custom">Custom</option>
                             </select>
                             <select id="optBorders" tabindex="-1">
                                 <option value="normal">Soft Borders</option>
@@ -308,9 +309,14 @@ popup = ' onclick="openPopup()" '
     <script type="module" src="./lib/socketInit.js"></script>
     <script type="module" src="./app.js"></script>
     <script>
+   $("#optColors").change( function () {
+            if ($(this).val() == "custom") document.getElementById("optCustom").type = "text";
+            else document.getElementById("optCustom").type = "hidden";
+        });
         var clicked = false;
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
+            if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
             if (clicked) {
                 $(this).html('<h3 class="nopadding">close options ▾</h3>');
                 $(".slider").css({ "top": "-265px" })
