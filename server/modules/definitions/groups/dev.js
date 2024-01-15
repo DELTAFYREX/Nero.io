@@ -222,15 +222,15 @@ Class.watergun = {
     SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/e304fc26-480b-47b5-8270-949f7df44d92.image.png?v=1705294702951",
     BODY: {
         FOV: 1,
-        SIZE: 21
     },
     COLOR: "blue",
     CONTROLLERS: ['onlyAcceptInArc', 'nearestDifferentMaster'],
     GUNS: [{
-        POSITION: [13.5, 10, 1, 8, 0, 0, 0],
+        POSITION: [10, 8, 1, 8, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret]),
-            TYPE: "bullet"
+            SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.op, g.shockwave, g.shockwave]),
+            TYPE: "bullet",
+            HAS_NO_RECOIL: true
           }
         }
     ]
@@ -243,7 +243,6 @@ Class.watergundormant = {
         FOV: 1
     },
     COLOR: 16,
-    CONTROLLERS: ['onlyAcceptInArc', 'nearestDifferentMaster'],
     GUNS: [{
         POSITION: [13.5, 10, 1, 8, 0, 0, 0],
         PROPERTIES: {
@@ -257,10 +256,9 @@ Class.waterpet = {
     PARENT: "boomerang",
     LABEL: "Base",
     SHAPE: 0,
-    ALPHA: 1,
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 0, 0, 180, 360, 1],
+        POSITION: [25, 0, 0, 180, 360, 1],
         TYPE: "watergun",
     }],
 ON: [{
@@ -273,20 +271,38 @@ ON: [{
   ]
 };
 Class.watertank = {
-    PARENT: "genericTank",
+    PARENT: "triAngle",
     LABEL: "Waduh",
     DANGER: 6,
     SYNC_TURRET_SKILLS: true,
-    GUNS: [{
-        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
-            TYPE: "bullet"
-        }
-    }, {
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.triAngleFront, { recoil: 4 }]),
+                TYPE: "bullet",
+                LABEL: "Front",
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 150, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        },
+        {
+            POSITION: [16, 8, 1, 0, 0, 210, 0.1],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.triAngle, g.thruster]),
+                TYPE: "bullet",
+                LABEL: gunCalcNames.thruster,
+            },
+        }, {
         POSITION: [1, 10, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.halfdamage, g.halfpen, g.kiva]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.shockwave, g.xtrahealth]),
             TYPE: "waterpet",
             ALT_FIRE: true,
             ON_SHOOT: "revo",
@@ -294,7 +310,7 @@ Class.watertank = {
         }
     }],
     TURRETS: [{
-        POSITION: [21, 9.85, 0, 180, 360, 1],
+        POSITION: [17, 9.85, 0, 180, 360, 1],
         TYPE: "watergundormant",
       }],
   ON: [{
