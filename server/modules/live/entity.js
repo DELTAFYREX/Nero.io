@@ -206,25 +206,26 @@ class Gun {
         };
     }
     spawnBullets(useWhile, shootPermission) {
-        // Find out some intermediate values
+
+        //find out some intermediate values
         let angle1 = this.direction + this.angle + this.body.facing,
             angle2 = this.angle + this.body.facing,
-            gunlength = 1.5 * this.length - this.width * this.settings.size,
+            gunlength = 1.5 * this.length - this.width * this.settings.size / 2,
 
-            // Calculate offsets based on lengths and directions
-            offsetBaseX = this.offset * Math.cos(angle1),
-            offsetBaseY = this.offset * Math.sin(angle1),
-            offsetEndX = gunlength * Math.cos(angle2),
-            offsetEndY = gunlength * Math.sin(angle2),
+            //calculate offsets based on lengths and directions
+            offset_base_x = this.offset * Math.cos(angle1),
+            offset_base_y = this.offset * Math.sin(angle1),
+            offset_end_x = gunlength * Math.cos(angle2),
+            offset_end_y = gunlength * Math.sin(angle2),
 
-            // Finally get the final bullet offset
-            offsetFinalX = offsetBaseX + offsetEndX,
-            offsetFinalY = offsetBaseY + offsetEndY,
+            //finally get the final bullet offset
+            offset_final_x = offset_base_x + offset_end_x,
+            offset_final_y = offset_base_y + offset_end_y,
             skill = this.bulletStats === "master" ? this.body.skill : this.bulletStats;
 
         // Shoot, multiple times in a tick if needed
         do {
-            this.fire(offsetFinalX, offsetFinalY, skill);
+            this.fire(offset_final_x, offset_final_y, skill);
             this.cycle--;
             shootPermission =
                   this.countsOwnKids    ? this.countsOwnKids    > this.children.length
@@ -434,10 +435,7 @@ class Gun {
             SIZE: (this.body.size * this.width * this.settings.size) / 2,
             LABEL: this.master.label + (this.label ? " " + this.label : "") + " " + o.label
         });
-        if (!o.color || o.colorUnboxed.base == '-1' || o.colorUnboxed.base == 'mirror') {
-            o.colorUnboxed.base = this.body.master.colorUnboxed.base
-            o.compressColor();
-        }
+        if (!o.color || o.colorUnboxed.base == '-1' || o.colorUnboxed.base == 'mirror') o.define({COLOR: this.body.master.colorUnboxed.base});
         // Keep track of it and give it the function it needs to deutil.log itself upon death
         if (this.countsOwnKids) {
             o.parent = this;
@@ -1035,9 +1033,6 @@ class Entity extends EventEmitter {
         player.body = fakeBody;
         player.body.kill();
     }
-    compressColor() {
-        this.color = this.colorUnboxed.base + " " + this.colorUnboxed.hueShift + " " + this.colorUnboxed.saturationShift + " " + this.colorUnboxed.brightnessShift + " " + this.colorUnboxed.allowBrightnessInvert;
-    }
     define(defs, emitEvent = true) {
         if (!Array.isArray(defs)) defs = [defs];
         
@@ -1079,7 +1074,7 @@ class Entity extends EventEmitter {
                 if (set.COLOR.BRIGHTNESS_SHIFT != null) this.colorUnboxed.brightnessShift = set.COLOR.BRIGHTNESS_SHIFT;
                 if (set.COLOR.ALLOW_BRIGHTNESS_INVERT != null) this.colorUnboxed.allowBrightnessInvert = set.COLOR.ALLOW_BRIGHTNESS_INVERT;
             }
-            this.compressColor();
+            this.color = this.colorUnboxed.base + " " + this.colorUnboxed.hueShift + " " + this.colorUnboxed.saturationShift + " " + this.colorUnboxed.brightnessShift + " " + this.colorUnboxed.allowBrightnessInvert;
         }
         this.upgradeColor = set.UPGRADE_COLOR == null ? null : set.UPGRADE_COLOR;
         if (set.GLOW != null) {
@@ -1344,8 +1339,6 @@ class Entity extends EventEmitter {
                 }
             }
             if (set.LABEL != null && set.LABEL.length > 0) this.label = this.label + "-" + set.LABEL;
-            if (set.MAX_CHILDREN != null) this.maxChildren += set.MAX_CHILDREN;
-            else this.maxChildren = null; // For bullet and drone combos so all parts remain functional
             if (set.BODY != null) {
                 if (set.BODY.ACCELERATION != null) this.ACCELERATION *= set.BODY.ACCELERATION;
                 if (set.BODY.SPEED != null) this.SPEED *= set.BODY.SPEED;
@@ -1416,16 +1409,17 @@ class Entity extends EventEmitter {
                     }
                 }
             }
-             if (set.REROOT_UPGRADE_TREE) this.rerootUpgradeTree = set.REROOT_UPGRADE_TREE;
+            if (set.REROOT_UPGRADE_TREE) this.rerootUpgradeTree = set.REROOT_UPGRADE_TREE;
             if (Array.isArray(this.rerootUpgradeTree)) {
                 let finalRoot = "";
                 for (let root of this.rerootUpgradeTree) finalRoot += root + "\\/";
                 this.rerootUpgradeTree += finalRoot.substring(0, finalRoot.length - 2);
             }
-        }
+            this.maxChildren = null; // Required because it just doesn't work out otherwise - overlord-triplet would make the triplet inoperable at 8 drones, etc
+        }          
         // Turret layer ordering
         this.turrets.sort(this.turretSort);
-
+      
         // Batch upgrades
         if (this.batchUpgrades && emitEvent) {
             this.tempUpgrades = [];
@@ -1443,9 +1437,9 @@ class Entity extends EventEmitter {
             this.chooseUpgradeFromBranch(numBranches); // Recursively build upgrade options
         }
     }
-    turretSort(a, b) {
-        return a.bound.layer - b.bound.layer;
-    }
+            turretSort(a, b) {
+              return a.bound.layer - b.bound.layer;
+            }
     chooseUpgradeFromBranch(remaining) {
         if (remaining > 0) { // If there's more to select
             let branchUgrades = this.tempUpgrades[this.defs.length - remaining];
@@ -1715,10 +1709,8 @@ class Entity extends EventEmitter {
                 this.define(this.defs);
                 this.ON(this.onDef, "upgrade", { oldEntity: old })
             }
-            if (this.colorUnboxed.base == '-1' || this.colorUnboxed.base == 'mirror') {
-                this.colorUnboxed.base = getTeamColor((c.MODE == 'ffa' || c.GROUPS) ? TEAM_RED : this.team);
-                this.compressColor();
-            }
+            if (c.MODE == 'ffa' || c.GROUPS) this.define({COLOR: 12});
+            if (this.colorUnboxed.base == '-1' || this.colorUnboxed.base == 'mirror') this.define({COLOR: getTeamColor(this.team)});
             this.sendMessage("You have upgraded to " + this.label + ".");
             for (let def of this.defs) {
                 def = ensureIsClass(def);
