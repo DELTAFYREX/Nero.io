@@ -69,12 +69,11 @@ function collide(collision) {
             let wall = instance.type === "wall" ? instance : other;
             let entity = instance.type === "wall" ? other : instance;
             if (entity.ac || entity.master.ac) return;
-            switch (true) {
-                case (wall.shape == 4):
-                case (wall.shapeData == "M 1 1 L -1 1 L -1 -1 L 1 -1 Z"):
+            switch (wall.shape) {
+                case 4:
                     mazewallcollide(wall, entity);
                     break;
-                case (wall.shape == 0):
+                case 0:
                     mooncollide(wall, entity);
                     break;
                 default:
@@ -335,8 +334,7 @@ let maintainloop = () => {
         o.name += ran.chooseBotName();
         o.leftoverUpgrades = ran.chooseChance(...c.BOT_CLASS_UPGRADE_CHANCES);
         let color = c.RANDOM_COLORS ? Math.floor(Math.random() * 20) : team ? getTeamColor(team) : 17;
-        o.colorUnboxed.base = color;
-        o.compressColor();
+        o.define({COLOR: color});
         if (team) o.team = team;
         bots.push(o);
         o.on('dead', () => util.remove(bots, bots.indexOf(o)));

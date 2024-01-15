@@ -249,7 +249,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
-    height: 410px;
+    height: 340px;
     padding: 10px;
     overflow: hidden;
     display: inline-block;
@@ -313,7 +313,7 @@ a.menuTab:link:hover, a.menuTab:visited:hover {
 }
 .sliderHolder {
     width: 350px;
-    height: 355px;
+    height: 285px;
     overflow: hidden;
 }
 
@@ -344,7 +344,7 @@ table {
 }
 
 #startMenuSlidingContent {
-    height: 335px;
+    height: 265px;
 }
 
 #startMenuSlidingTrigger {
@@ -528,20 +528,7 @@ a.link {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-.revolt {
-    background: #fd6671;
-    border-bottom: 2px solid #ed4245;
-    box-shadow: inset 0 -2px #ed4245;
-    -webkit-box-shadow: inset 0 -2px #ed4245;
-}
-.revolt:active,
-.revolt:hover {
-    top: 1px;
-    background: #ed4245;
-    outline: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-}
+
 .reddit {
     background: #f75401;
     border-bottom: 2px solid #d24a01;
