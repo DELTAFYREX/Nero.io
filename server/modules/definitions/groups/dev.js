@@ -715,8 +715,8 @@ Class.autoTankGunLockRecoil = {
 }
 Class.mmaTest2 = {
     PARENT: ["genericTank"],
-    MIRROR_MASTER_ANGLE: true,
     COLOR: "grey",
+    MIRROR_MASTER_ANGLE: true,
     GUNS: [{
             POSITION: [40, 4, 1, -20, 0, 0, 0],
         }],
@@ -1611,19 +1611,6 @@ Class.tooltipTank = {
     PARENT: 'genericTank',
     LABEL: "Tooltips",
     UPGRADE_TOOLTIP: "Allan please add details"
-}
-
-Class.bulletSpawnTest = {
-    PARENT: 'genericTank',
-    LABEL: "Bullet Spawn Position",
-    GUNS: [{
-        POSITION: [20, 10, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
-            TYPE: ['bullet', {BORDERLESS: true}],
-            BORDERLESS: true,
-        }
-    }]
 }
 
 Class.levels = {

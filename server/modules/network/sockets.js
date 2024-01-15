@@ -420,10 +420,6 @@ function incoming(message, socket) {
             if (player.body != null && socket.permissions && socket.permissions.class) {
                 player.body.define({ RESET_UPGRADES: true, BATCH_UPGRADES: false });
                 player.body.define(Class[socket.permissions.class]);
-                if (player.body.colorUnboxed.base == '-1' || player.body.colorUnboxed.base == 'mirror') {
-                    player.body.colorUnboxed.base = getTeamColor((c.MODE == 'ffa' || c.GROUPS) ? TEAM_RED : player.body.team);
-                    player.body.compressColor();
-                }
             }
             break;
         case "1":
@@ -1054,13 +1050,13 @@ const spawn = (socket, name) => {
         body = new Entity(loc);
         body.protect();
         body.isPlayer = true;
+        body.define(c.SPAWN_CLASS);
         body.name = name;
         if (player.team != null) {
             body.team = player.team;
         } else {
             player.team = body.team;
         }
-        body.define(c.SPAWN_CLASS);
         if (socket.permissions && socket.permissions.nameColor) {
             body.nameColor = socket.permissions.nameColor;
             socket.talk("z", body.nameColor);
@@ -1076,17 +1072,11 @@ const spawn = (socket, name) => {
     body.socket = socket;
     switch (c.MODE) {
         case "tdm":
-            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') {
-                body.colorUnboxed.base = getTeamColor(body.team);
-                body.compressColor();
-            }
+            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') body.define({COLOR: getTeamColor(body.team)});
             break;
         default: 
             let color = c.RANDOM_COLORS ? ran.choose([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]) : 12;
-            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') {
-                body.colorUnboxed.base = color;
-                body.compressColor();
-            }
+            if (body.colorUnboxed.base == '-1' || body.colorUnboxed.base == 'mirror') body.define({COLOR: color});
     }
     // Decide what to do about colors when sending updates and stuff
     player.teamColor = (!c.RANDOM_COLORS && (c.MODE === "ffa" || c.GROUPS) ? 10 : getTeamColor(body.team)) + ' 0 1 0 false'; // blue
@@ -1438,7 +1428,7 @@ let minimapAll = new Delta(5, () => {
             all.push({
                 id: my.id,
                 data: [
-                    my.type === "wall" || my.isMothership ? (my.shape === 4 || my.shapeData == "M 1 1 L -1 1 L -1 -1 L 1 -1 Z") ? 2 : 1 : 0,
+                    my.type === "wall" || my.isMothership ? my.shape === 4 ? 2 : 1 : 0,
                     util.clamp(Math.floor((256 * my.x) / room.width), 0, 255),
                     util.clamp(Math.floor((256 * my.y) / room.height), 0, 255),
                     my.color,

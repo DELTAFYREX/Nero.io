@@ -981,7 +981,6 @@ const socketInit = port => {
                     global.finalKillers.push(m[7 + i]);
                 }
                 window.animations.deathScreen.reset();
-                window.canvas.reverseDirection = false;
                 global.died = true;
                 global.autoSpin = false;
                 window.onbeforeunload = () => false;
