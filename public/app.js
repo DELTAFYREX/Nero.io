@@ -1654,19 +1654,14 @@ function drawSelfInfo(spacing, alcoveSize, max) {
       var key = e.which || e.keyCode;
       if (gui.class === "Trapper_guy" & key === global.KEY_SHIFT) {
       PlaySoundtrap();
-        }
-    }
-  
-    document.onkeydown = (e) => {
-      var key = e.which || e.keyCode;
-      if (gui.class === "Waduh" & key === global.KEY_SHIFT) {
+        } else {
+                if (gui.class === "Waduh" & key === global.KEY_SHIFT) {
       PlaySoundwater();
-        }
-    }
-    document.onkeydown = (e) => {
-      var key = e.which || e.keyCode;
-      if (gui.class === "Waduh" & key === global.KEY_CHOOSE_5) {
+        } else {
+                if (gui.class === "Waduh" & key === global.KEY_CHOOSE_5) {
       PlaySoundwatuh();
+                } 
+            }
         }
     }
     
