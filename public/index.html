@@ -79,7 +79,7 @@ function PlaySound170() {
 </script>
       <script>
 var music2 = new Audio();
- const pmusic = ["https://cdn.glitch.me/f80d3eec-1e99-4b8c-b120-79a55addacf9/galaxy%20disorder.wav?v=1675465458899", "https://cdn.glitch.me/f80d3eec-1e99-4b8c-b120-79a55addacf9/Khronobytes.wav?v=1675465650296", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Color%20Zen%20song.mp3?v=1675465709467", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/On%20The%20Edge.mp3?v=1675465898995"];
+ const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890"];
 var rand = pmusic[~~(Math.random() * pmusic.length)];
 music2.src = (rand);
 function PlayMusic() {
@@ -295,7 +295,7 @@ popup = ' onclick="openPopup()" '
             </div>
         </div>
     </div>
-          
+    <td><div><label><input id="optmusic"          tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh" onclick="switchAudio()"> [beta] MUSIC</label></div></td>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>
