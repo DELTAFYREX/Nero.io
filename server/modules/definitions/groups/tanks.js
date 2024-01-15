@@ -328,7 +328,7 @@ Class.grenade = {
     PARENT: "bullet",
     INDEPENDENT: true,
     GUNS: [{
-            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            POSITION: [1, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.grenade_explosion]),
                 TYPE: "shrapnel",

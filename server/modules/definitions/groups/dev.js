@@ -186,6 +186,7 @@ Class.tanks = {
 Class.Trapper_guy = {
     PARENT: ["trapper"],
     LABEL: "Trapper_guy",
+    UPGRADE_COLOR: "blue",
     SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/6fcc71bf-255f-4d26-b13e-e3f9f68fb77a.image.png?v=1705291478159",
     GUNS: [
         {
