@@ -247,7 +247,7 @@ exports.makeHybridDrive = (type, name = -1) => {
         POSITION: [6, 12, 1.2, 8, 0, 180, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: exports.combineStats([g.drone, g.weak]),
-            TYPE: ["turreteddrone", { INDEPENDENT: true }],
+            TYPE: ["turretedDrone", { INDEPENDENT: true }],
             AUTOFIRE: true,
             SYNCS_SKILLS: true,
             STAT_CALCULATOR: gunCalcNames.drone,
