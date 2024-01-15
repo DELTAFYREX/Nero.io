@@ -1702,13 +1702,13 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 if (gui.class === "Delta Congregation" & key === global.KEY_SPLIT) {
       PlaySoundchipi();
                     } else {
-                if (gui.class === "Delta OwO" & key === global.KEY_CHOOSE_5) {
+                if (gui.class === "Delta" & key === global.KEY_CHOOSE_5) {
       PlaySoundneko();
                     } else {
-                if (gui.class === "Delta OwO" & key === global.KEY_CHOOSE_4) {
+                if (gui.class === "Delta" & key === global.KEY_CHOOSE_4) {
       PlaySoundbwomp();
                     } else {
-                if (gui.class === "Delta OwO" & key === global.KEY_CHOOSE_3) {
+                if (gui.class === "Delta" & key === global.KEY_CHOOSE_3) {
       PlaySoundnfl();
                     } 
                 }
