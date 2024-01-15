@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeHybridDrive, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -4709,7 +4709,7 @@ Class.poacher = makeHybrid('hunter', "Poacher")
 Class.armsman = makeHybrid('rifle', "Armsman")
 Class.cropDuster = makeHybrid('minigun', "Crop Duster")
 Class.hybrid = makeHybrid('destroyer', "Hybrid")
-Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
+/*Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
 Class.twinbrid = makeHybrid('twin', "Twin-Hybrid")
 Class.machbrid = makeHybrid('machineGun', "Machine-Hybrid")
 Class.snipebrid = makeHybrid('sniper', "Snipe-Hybrid")
@@ -4727,7 +4727,7 @@ Class.launchbrid = makeHybrid('launcher', "Launcher-Hybrid")
 Class.tritrapperbrid = makeHybrid('triTrapper', "Tri-Trapper-Hybrid")
 Class.helixbrid = makeHybrid('helix', "Helix-Hybrid")
 Class.volutebrid = makeHybrid('volute', "Volute-Hybrid")
-Class.honda = makeHybridDrive('pounder', "Honda")
+Class.honda = makeHybridDrive('pounder', "Honda")*/
 
 // Over tanks
 Class.overgunner = makeOver({
