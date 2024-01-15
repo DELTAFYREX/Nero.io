@@ -1344,100 +1344,6 @@ Class.placeableWall = {
     TEAM: TEAM_ENEMIES,
     VARIES_IN_SIZE: false,
 };
-Class.placeableWallwhite = {
-    PARENT: ["rock"],
-    LABEL: "Wall",
-    SIZE: 30,
-    COLOR: "white",
-    SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
-    TEAM: TEAM_ENEMIES,
-    VARIES_IN_SIZE: false,
-};
-Class.wallPlacerThing2 = {
-    PARENT: ["genericTank"],
-    SHAPE:0,
-    MIRROR_MASTER_ANGLE: true,
-    INTANGIBLE: true,
-  DRAW_SELF: false,
-    COLOR: 16,
-      CLEAR_ON_MASTER_UPGRADE: true,
-      BODY: {
-        ACCELERATION: 0.1,
-        SPEED: true,
-        HEALTH: 340282366920938463463374607431768211455,
-        RESIST: 1,
-        SHIELD: 340282366920938463463374607431768211455,
-        REGEN: 340282366920938463463374607431768211455,
-        DAMAGE: false,
-        PENETRATION: true,
-        RANGE: true,
-        FOV: true,
-        SHOCK_ABSORB: 340282366920938463463374607431768211455,
-        RECOIL_MULTIPLIER: false,
-        DENSITY: 340282366920938463463374607431768211455,
-        STEALTH: true,
-        PUSHABILITY: false,
-        HETERO: false,
-    },
-    MOTION_TYPE: "aimassist",
-   GUNS: [
-       {
-            POSITION: [0, 20, 1, 10, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([{reload:10, speed:0, maxSpeed:0, shudder:0.0001, spray:0.0001}]),
-                TYPE: "placeableWallwhite",
-                COLOR: 16,
-                LABEL: "",
-                STAT_CALCULATOR: 0,
-                WAIT_TO_CYCLE: false,
-                AUTOFIRE: false,
-                SYNCS_SKILLS: false,
-                MAX_CHILDREN: 0,
-                ALT_FIRE: false,
-                NEGATIVE_RECOIL: false,
-              DRAW_FILL:false,
-              BORDERLESS:true,
-            },
-        },
-    ],
-
-};
-Class.wallPlacer2 = {
-    PARENT: ["genericTank"],
-    LABEL: "Messin' Around",
-    BODY: {
-        ACCELERATION: base.ACCEL * 1,
-        SPEED: base.SPEED * 1,
-        HEALTH: base.HEALTH * 1,
-        DAMAGE: base.DAMAGE * 1,
-        PENETRATION: base.PENETRATION * 1,
-        SHIELD: base.SHIELD * 1,
-        REGEN: base.REGEN * 1,
-        FOV: base.FOV * 1,
-        DENSITY: base.DENSITY * 1,
-        PUSHABILITY: 1,
-        HETERO: 3,
-    },
-    GUNS: [
-       {
-            POSITION: [16, 20, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
-                TYPE: "wallPlacerThing2",
-                COLOR: 16,
-                LABEL: "",
-                STAT_CALCULATOR: 0,
-                WAIT_TO_CYCLE: false,
-                AUTOFIRE: false,
-                SYNCS_SKILLS: false,
-                MAX_CHILDREN: 1,
-                ALT_FIRE: false,
-                NEGATIVE_RECOIL: false,
-            },
-        },
-    ],
-};
 Class.placeableWallSmall = {
     PARENT: ["rock"],
     LABEL: "Wall",
@@ -2111,7 +2017,7 @@ Class.whirlwind = {
 Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"]
     Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"]
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
-        Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer", "wallPlacer2"]
+        Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
         Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "baseThrower", "shrapnelgun"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
