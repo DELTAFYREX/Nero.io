@@ -61,6 +61,18 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundwatuh() {
       undadewatuh.play();
       }
+  
+      var piss = new Audio();
+      piss.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/flowing-water-sound-effect.mp3?v=1705299861150");
+      function PlaySoundpiss() {
+      piss.play();
+      }
+  
+      var pew = new Audio();
+      pew.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/pew_pew-dknight556-1379997159.mp3?v=1705299975747");
+      function PlaySoundpew() {
+      pew.play();
+      }
 
       function doSomething() {
         if (clicked) {
@@ -1660,7 +1672,15 @@ function drawSelfInfo(spacing, alcoveSize, max) {
         } else {
                 if (gui.class === "Waduh" & key === global.KEY_CHOOSE_5) {
       PlaySoundwatuh();
-                } 
+                } else {
+                if (gui.class === "Pissliner" & key === global.KEY_SHIFT) {
+      PlaySoundpiss();
+                    }
+                } else {
+                if (gui.class === "Pissliner" & key === global.KEY_SPLIT) {
+      PlaySoundpew();
+                    } 
+                }
             }
         }
     }

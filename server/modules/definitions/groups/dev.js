@@ -354,6 +354,7 @@ exports.piszerbeam = {
   PARENT: "genericTank",
   LABEL: "Pissliner",
   COLOR: "yellow",
+  TEAM: TEAM_ROOM,
   DANGER: 7,
   BODY: {
                 ACCELERATION: base.ACCEL * 0.6,
