@@ -249,7 +249,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
-    height: 345px;
+    height: 340px;
     padding: 10px;
     overflow: hidden;
     display: inline-block;
@@ -344,7 +344,7 @@ table {
 }
 
 #startMenuSlidingContent {
-    height: 355px;
+    height: 285px;
 }
 
 #startMenuSlidingTrigger {
