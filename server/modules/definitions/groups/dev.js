@@ -350,6 +350,112 @@ Class.watertankFire = {
         },
     ]
 };
+exports.piszerbeam = {
+  PARENT: "genericTank",
+  LABEL: "UZI's OP Railgun",
+  DANGER: 7,
+  COLOR: "green",
+  LEVEL: 9999999999999999999999,
+  BODY: {
+                ACCELERATION: base.ACCEL * 0.6,
+                SPEED: base.SPEED * 0.85,
+                FOV: base.FOV * 3,
+            },
+  GUNS: [
+        {
+            POSITION: [25, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [23, 8, 1, 0, 0, 0, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [21, 8, 1, 0, 0, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner]),
+                TYPE: "bullet",
+            },
+        },         {
+            POSITION: [25, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner, g.op, g.op]),
+                TYPE: "oplaser",
+                ALT_FIRE: true
+            },
+        },
+        {
+            POSITION: [23, 8, 1, 0, 0, 0, 0.2],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner, g.op, g.op]),
+                TYPE: "oplaser",
+                              ALT_FIRE: true
+
+            },
+        },
+        {
+            POSITION: [21, 8, 1, 0, 0, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner, g.op, g.op]),
+                TYPE: "oplaser",
+                              ALT_FIRE: true
+
+            },
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0.6],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner, g.op, g.op]),
+                TYPE: "oplaser",
+                              ALT_FIRE: true
+
+            },
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 0.8],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.streamliner, g.op, g.op]),
+                TYPE: "oplaser",
+                              ALT_FIRE: true
+
+            },
+        },
+    ],
+};
+Class.oplaser = {
+  PARENT: ["bullet"],
+  SHAPE: -1,
+  MOTION_TYPE: "fuckingnuclearbomb",
+  BODY: {
+        PENETRATION: 1.15,
+        SPEED: 5.8,
+        RANGE: 100,
+        DENSITY: 0.9,
+        HEALTH: 0.155,
+        DAMAGE: 5.6,
+    },
+  BUFF_VS_FOOD: true,
+}
 Class.unavailable = {
     PARENT: ["menu"],
     LABEL: "Unavailable",
@@ -1911,7 +2017,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"]
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank"]
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam"]
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
