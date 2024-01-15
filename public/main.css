@@ -539,8 +539,8 @@ a.link {
     top: 1px;
     background: #ed4245;
     outline: none;
-
-    -webkit-box-shadow: inset 0 -2px #d24a01;
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
 .reddit {
     background: #f75401;
