@@ -221,14 +221,15 @@ Class.watergun = {
     SYNCS_SKILLS: true,
     SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/e304fc26-480b-47b5-8270-949f7df44d92.image.png?v=1705294702951",
     BODY: {
-        FOV: 1
+        FOV: 1,
+        SIZE: 21
     },
-    COLOR: 16,
+    COLOR: "blue",
     CONTROLLERS: ['onlyAcceptInArc', 'nearestDifferentMaster'],
     GUNS: [{
         POSITION: [13.5, 10, 1, 8, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.op, g.op, g.op, g.op, g.op, g.op]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.auto_turret]),
             TYPE: "bullet"
           }
         }
@@ -252,30 +253,15 @@ Class.watergundormant = {
         }
     ]
 }
-Class.turretBaseWater = {
-    LABEL: "Basethingygygyyasgsdgajskhg",
-    ALPHA: 0,
-    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: "orange",//iT WonT FUckING SpIN
-    SYNC_TURRET_SKILLS: true,
-    TURRETS: [{
-        POSITION: [4.65, 9.85, 0, 180, 360, 1],
-        TYPE: ["watergundormant", { COLOR: "orange" }]
-        }]
-};
 Class.waterpet = {
     PARENT: "boomerang",
     LABEL: "Base",
-    ALPHA: 0,
-    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    SHAPE: 0,
+    ALPHA: 1,
     INDEPENDENT: true,
-    COLOR: "orange",
-    BODY: {
-      COLOR: "orange"
-    },
     TURRETS: [{
         POSITION: [4.65, 0, 0, 180, 360, 1],
-        TYPE: ["watergun", { COLOR: "orange" }]
+        TYPE: "watergun",
     }],
 ON: [{
           event: "death",
@@ -288,7 +274,7 @@ ON: [{
 };
 Class.watertank = {
     PARENT: "genericTank",
-    LABEL: "Kivaaritehdas",
+    LABEL: "Waduh",
     DANGER: 6,
     SYNC_TURRET_SKILLS: true,
     GUNS: [{
@@ -298,19 +284,19 @@ Class.watertank = {
             TYPE: "bullet"
         }
     }, {
-        POSITION: [1, 38, 1, 0, 0, 0, 0],
+        POSITION: [1, 10, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.op]),
-            TYPE: ["waterpet", { COLOR: "orange" }],
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.halfdamage, g.halfpen, g.kiva]),
+            TYPE: "waterpet",
             ALT_FIRE: true,
             ON_SHOOT: "revo",
-            ALPHA: 0
+            ALPHA: 1
         }
     }],
     TURRETS: [{
-        POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBaseWater"
-    }],
+        POSITION: [21, 9.85, 0, 180, 360, 1],
+        TYPE: "watergundormant",
+      }],
   ON: [{
         event: "altFire",
         handler: ({ body }) => {
@@ -321,7 +307,7 @@ Class.watertank = {
 };
 Class.watertankFire = {
     PARENT: "genericTank",
-    LABEL: "Kivaaritehdas",
+    LABEL: "Waduh",
     DANGER: 6,
     GUNS: [{
         POSITION: [20, 8, 1, 0, 0, 0, 0.2],
