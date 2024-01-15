@@ -330,8 +330,9 @@ Class.grenade = {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.grenade_explosion]),
-                TYPE: "bullet",
+                TYPE: "shrapnel",
                 SHOOT_ON_DEATH: true,
+                PERSISTS_AFTER_DEATH: true
             },
     }
   ]

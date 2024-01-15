@@ -188,8 +188,6 @@ popup = ' onclick="openPopup()" '
  }
 //-->
 </script>         
-                  <div class="bottomHolder">
-                                              </div>
                   <center>Nero.io runs on Open Source Arras. For more info, <br>visit <a href="https://github.com/Taureon/aps-plus-plus">the APS++ GitHub Repository by Taureon</a> Or Join The Discord With The Widget In The Top Right</center>
                 </div>
                 <div class="startMenuHolder">
@@ -197,9 +195,9 @@ popup = ' onclick="openPopup()" '
                         <div class="slider" id="startMenuSlidingContent">
                           <script>
                     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817') {
-                      document.write('<center><img src="https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044" onmouseover="PlaySound1()" onclick="PlaySound169()" title="Nero.io 2 aaaaabbbbbccccccccddddddd" class="icon" alt="arras icon"></center><h1 onclick="PlaySound170()", onhover="PlaySound1()", id="gameName"> Piss.io 69 </h1><div id="serverName"><h4 class="nopadding">Pissing...</h4></div>');
+                      document.write('<center><img width=92 height=92 src="https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044" onmouseover="PlaySound1()" onclick="PlaySound169()" title="Nero.io 2 aaaaabbbbbccccccccddddddd" class="icon" alt="arras icon"></center><h1 onclick="PlaySound170()", onhover="PlaySound1()", id="gameName"> Piss.io 69 </h1><div id="serverName"><h4 class="nopadding">Pissing...</h4></div>');
                        } else {
-                      document.write('<center><img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0za_Kleki.png?v=1701910145704" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="arras icon"></center><h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 </h1><div id="serverName"><h4 class="nopadding">Loading...</h4></div>');
+                      document.write('<center><img width=92 height=92 src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0za_Kleki.png?v=1701910145704" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="arras icon"></center><h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 </h1><div id="serverName"><h4 class="nopadding">Loading...</h4></div>');
                       }
                           </script>
                             <table id="serverSelector" style="display:none;"></table>
@@ -218,8 +216,7 @@ popup = ' onclick="openPopup()" '
                                 <tr> <td><b>V</b> - reverse tank</td>  <td><b>V</b> - auto-alt</td> </tr>
                                 <tr> <td><b>B</b> - reverse mouse</td> <td><b>O</b> - self-destruct</td> </tr>
                                 <tr> <td><b>T</b> - show tank tree</td><td><b>M</b> - maximize stat</td> </tr>
-                                <tr> <td><b>X</b> - spin lock</td>     <td><b>`</b> - developer tank*</td> </tr>
-                                <tfoot> <td><b>*</b> = requires valid token</td> </tfoot>
+                                <tr> <td><b>X</b> - spin lock</td>     <td><b>H</b> - take control</td> </tr>
                             </table>
                             <options_header>Options:</options_header>
                             <select id="optColors" tabindex="-1">
@@ -253,6 +250,7 @@ popup = ' onclick="openPopup()" '
                                 <option value="neon">Neon Mode</option>
                                 <option value="glass">Glass Mode</option>
                             </select>
+                            <input type="hidden" placeholder="Insert Custom Theme" id="optCustom" />
                             <table>
                                 <tr>
                                     <td><div><label><input id="optScreenshotMode"   tabindex="-1" class="checkbox" type="checkbox"> Screenshot Mode</label></div></td>
@@ -296,7 +294,7 @@ popup = ' onclick="openPopup()" '
             </div>
         </div>
     </div>
-    <td><div><label><input id="optmusic"          tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh" onclick="switchAudio()"> [beta] MUSIC</label></div></td>
+    <td><div><label><input id="optSound"          tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh" onclick="switchAudio()"> [beta] MUSIC</label></div></td>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>
