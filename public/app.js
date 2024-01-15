@@ -49,6 +49,20 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundtrap() {
       trapperclosely.play();
       }
+      
+      var waterflush = new Audio();
+      waterflush.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/toilet_flush.mp3?v=1705296502578");
+      function PlaySoundwater() {
+      waterflush.play();
+      }
+        
+      var undadewatuh = new Audio();
+      undadewatuh.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/y2mate_HOnnyD0.mp3?v=1705296505126");
+      function PlaySoundundadewatuh() {
+      undadewatuh.play();
+      }
+
+      https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/toilet_flush.mp3?v=1705296502578
 
       function doSomething() {
         if (clicked) {
@@ -1642,7 +1656,20 @@ function drawSelfInfo(spacing, alcoveSize, max) {
       PlaySoundtrap();
         }
     }
-      
+  
+    document.onkeydown = (e) => {
+      var key = e.which || e.keyCode;
+      if (gui.class === "watertank" & key === global.KEY_SHIFT) {
+      PlaySoundwater();
+        }
+    }
+    document.onkeydown = (e) => {
+      var key = e.which || e.keyCode;
+      if (gui.class === "watertank" & key === global.KEY_CHOOSE_5) {
+      PlaySoundundadewatuh();
+        }
+    }
+    
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);
