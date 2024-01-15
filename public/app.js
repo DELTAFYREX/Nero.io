@@ -1705,12 +1705,16 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 if (gui.class === "Delta owo" & key === global.KEY_CHOOSE_5) {
       PlaySoundneko();
                     } else {
-                if (gui.class === "Delta owo" & key === global.KEY_SPLIT) {
-      PlaySoundpew();
+                if (gui.class === "Delta owo" & key === global.KEY_CHOOSE_4) {
+      PlaySoundbwomp();
                     } else {
-                if (gui.class === "Pissliner" & key === global.KEY_SPLIT) {
-      PlaySoundpew();
+                if (gui.class === "Delta owo" & key === global.KEY_CHOOSE_3) {
+      PlaySoundnfl();
                     } 
+                }
+                    }
+                    }
+                    }
                 }
                 }
             }
