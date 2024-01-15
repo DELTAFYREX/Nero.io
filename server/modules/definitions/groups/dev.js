@@ -478,7 +478,7 @@ ON: [{
           event: "death",
           handler: ({ body }) => {
             if (!body.master.isDead) return 
-            body.master.define(Class.baseThrower)
+            body.master.define(Class.baseThrowerDelta)
         }
     }
   ]
@@ -498,9 +498,10 @@ Class.turretBaseDelta = {
         TYPE: ["revogun", { COLOR: "rainbow" }]
         }]
 };
+Class.deltaDeco = makeDeco(4)
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
-    LABEL: "Delta :3",
+    LABEL: "Dewta OwO",
     DANGER: 6,
     SYNC_TURRET_SKILLS: true,
     GUNS: [
@@ -527,11 +528,11 @@ Class.baseThrowerDelta = {
         }, {
         POSITION: [1, 38, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.op, g.op, g.op, g.op, g.op]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.halfrecoil, g.op, g.op, g.op, g.op, g.op]),
             TYPE: ["deltabaseBullet", { COLOR: "rainbow" }],
             ALT_FIRE: true,
+            HAS_NO_RECOIL: true,
             ON_SHOOT: "revo",
-            ALPHA: 0
         }
     }],
     TURRETS: [{
@@ -548,15 +549,38 @@ Class.baseThrowerDelta = {
 };
 Class.baseThrowerFireDelta = {
     PARENT: "genericTank",
-    LABEL: "Delta :3",
+    LABEL: "Dewta >w<",
     DANGER: 6,
-    GUNS: [{
-        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
-            TYPE: "bullet"
-        }
-    }]
+    GUNS: [
+        {
+            POSITION: [26, 7, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.halfrecoil, g.machineGun, g.op, g.op, { recoil: 1.15 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [23, 10, 1, 0, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.halfrecoil, g.machineGun, g.op, g.op, { recoil: 1.15 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.halfrecoil, g.op, g.op]),
+                TYPE: "bullet",
+            },
+        }, {
+            POSITION: [24, 1, 1, 0, 0, 0, 2 / 3],
+            PROPERTIES: {
+                COLOR: 'red',
+                SHOOT_SETTINGS: combineStats([g.basic, g.op, g.op, g.halfrecoil, g.op]),
+                TYPE: "laser",
+                HAS_NO_RECOIL: true,
+            },
+        }]
 };
 Class.unavailable = {
     PARENT: ["menu"],
@@ -2119,7 +2143,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"]
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam"]
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta"]
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
