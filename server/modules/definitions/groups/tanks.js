@@ -5172,35 +5172,6 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
-Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
-Class.clonebrid = makeHybrid({  
-  PARENT: "genericTank",
-  GUNS: [
-    {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-      POSITION: [18, 8, 1, 0, 0, 0, 0],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
-        TYPE: "bullet"
-      }
-    },
-    {
-      POSITION: [0, 20, 1, 0, 0, 180, 3],
-      PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, g.slow]),
-        TYPE: "hybridclonerprobe",
-        MAX_CHILDREN: 1
-      }
-    }
-  ],
-  TURRETS: [
-    {
-      /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [24, 0, 0, 0, 360, 0],
-      TYPE: "mindindicator"
-    }
-  ]
-}, "Cloner-Hybrid")
 Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
 
 
@@ -5273,7 +5244,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
-        Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner", "autoCloner"]
+        Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix", "twinbrid"]
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
@@ -5331,14 +5302,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
-        Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
         Class.twinbrid.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"]
         Class.snipebrid.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"]
         Class.machbrid.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"]
         Class.flankbrid.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"]
         Class.poundbrid.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         Class.trapbrid.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"]
-        Class.autobascrid.UPGRADES_TIER_3 = ["clonebrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["autoVolute", "autoHelix"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
