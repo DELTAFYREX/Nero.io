@@ -58,11 +58,9 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
         
       var undadewatuh = new Audio();
       undadewatuh.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/y2mate_HOnnyD0.mp3?v=1705296505126");
-      function PlaySoundundadewatuh() {
+      function PlaySoundwatuh() {
       undadewatuh.play();
       }
-
-      https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/toilet_flush.mp3?v=1705296502578
 
       function doSomething() {
         if (clicked) {
@@ -77,12 +75,14 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
         }
         clicked = !clicked;
       }
+  
       var smallaudio2 = new Audio();
       smallaudio2.src =
         "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/error.ogg";
       function PlaySound211() {
         smallaudio2.play();
       }
+  
       var smallaudio3 = new Audio(
         "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/socket.wav"
       );
@@ -1659,14 +1659,14 @@ function drawSelfInfo(spacing, alcoveSize, max) {
   
     document.onkeydown = (e) => {
       var key = e.which || e.keyCode;
-      if (gui.class === "watertank" & key === global.KEY_SHIFT) {
+      if (gui.class === "Waduh" & key === global.KEY_SHIFT) {
       PlaySoundwater();
         }
     }
     document.onkeydown = (e) => {
       var key = e.which || e.keyCode;
-      if (gui.class === "watertank" & key === global.KEY_CHOOSE_5) {
-      PlaySoundundadewatuh();
+      if (gui.class === "Waduh" & key === global.KEY_CHOOSE_5) {
+      PlaySoundwatuh();
         }
     }
     

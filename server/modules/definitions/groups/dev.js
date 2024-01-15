@@ -306,7 +306,6 @@ Class.watertank = {
             TYPE: "waterpet",
             ALT_FIRE: true,
             ON_SHOOT: "revo",
-            ALPHA: 1
         }
     }],
     TURRETS: [{
