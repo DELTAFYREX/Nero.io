@@ -142,20 +142,19 @@ exports.makeConq = (type, name = -1) => {
 exports.makeSplit = (type, name = -1) => {
     type = ensureIsClass(type);
     let output = exports.dereference(type);
-    let cannon1 = {
+    let cannons = [{
         POSITION: [18, 8, 1, 0, 0, 90, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: exports.combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
-    };
-    let cannon2 = {
+    }, {
         POSITION: [18, 8, 1, 0, 0, 270, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: exports.combineStats([g.basic, g.flankGuard]),
             TYPE: "bullet",
         },
-    };
+    }];
     output.GUNS = type.GUNS == null ? cannons : type.GUNS.concat(cannons);
     output.LABEL = name == -1 ? "Split " + type.LABEL : name;
     return output;
@@ -797,6 +796,7 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) =
         ]
     };
 }
+
 class LayeredBoss {
     constructor(identifier, NAME, PARENT = "celestial", SHAPE = 9, COLOR = 0, trapTurretType = "baseTrapTurret", trapTurretSize = 6.5, layerScale = 5, BODY, SIZE, VALUE) {
         this.identifier = identifier ?? NAME.charAt(0).toLowerCase() + NAME.slice(1);
@@ -854,7 +854,6 @@ class LayeredBoss {
     }
 }
 exports.LayeredBoss = LayeredBoss;
-
 
 //unfinished lolo
 exports.makeLabyrinthShape = (type) => {

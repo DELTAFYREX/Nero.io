@@ -3,29 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="description" content="Nero.io is an unofficial spinoff of arras.io, here we have more tanks, (hopefully) frequent updates, stupid humor and a fun place, so come and join the fun! (This is an extremely dumb fucking game)">
+    <meta name="description" content="Nero.io is an unofficial spinoff of arras.io, here we have more tanks, (hopefully) frequent updates, stupid humor all packed into one bundle of brain rot (this game is really fucking dumb lol)">
     <meta name="robots" content="index, follow">
-     <meta name="author" content="DeltaFyrex">
-    <meta name="keywords" content="arras.io, arras, game, arras mayhem, arras moe, arrasio, neroio, nero.io, nero, io, .io, arras spinoff, woomyarras, woomyarrasio, woomyarras.io, woomy arras">
-  <meta property="og:site_name" content="DeltaFyrex">  
-  <meta property="og:image" content="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0w9_Kleki.png?v=1675988557263">
+    <meta property="og:site_name" content="DeltaFyrex">  
+    <meta property="og:image" content="./round.png">
     <meta property="og:image:width" content="54">
     <meta property="og:image:height" content="54">
+    <meta name="author" content="DeltaFyrex">
+    <meta name="keywords" content="arras.io, arras, deltafyrex, aps, aps++, open source arras, arrasio, neroio, nero.io, nero, io, .io, arras spinoff, woomyarras, woomyarrasio, woomyarras.io, woomy arras, woomyarras.cx">
     <title>Nero.io 2.8</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700">
     <link rel="stylesheet" href="/main.css" />
     <!-- Favicons -->
-    <link rel="icon" href="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yt_Kleki.png?v=1701908687196">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
     <link rel="manifest" href="/lib/json/manifest.json">
-    <meta name="msapplication-TileColor" content="#b493d3">
-    <meta name="theme-color" content="#b493d3">
-      <!-- Apple Web App stuff -->
-  <link rel="apple-touch-icon" href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0t4_Kleki.png?v=1675981715684" />
-  <link rel="apple-touch-startup-image" href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0sv_Kleki.png?v=1675981194335">
-  <meta name="apple-mobile-web-app-capable" content="no">
-<link rel="apple-touch-startup-image" media="(device-width: 768px)" href="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/splashtablet.png">
-   <link rel="apple-touch-startup-image" media="(device-width: 1536px)" href="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/splashtablet.png">
- <link href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0sv_Kleki.png?v=1675981194335" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <meta name="msapplication-TileColor" content="#2e75ab">
+    <meta name="theme-color" content="#2e75ab">
+    <!-- Apple Web App stuff -->
+    <link rel="apple-touch-icon" href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0t4_Kleki.png?v=1675981715684" />
+    <link rel="apple-touch-startup-image" href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0sv_Kleki.png?v=1675981194335">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link rel="apple-touch-startup-image" media="(device-width: 768px)" href="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/splashtablet.png">
+    <link rel="apple-touch-startup-image" media="(device-width: 1536px)" href="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/splashtablet.png">
+    <link href="https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/2023_02_09_0sv_Kleki.png?v=1675981194335" media="(device-width: 375px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
     <!-- Windows App Pin -->
     <meta name="msapplication-TileImage" content="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/appicon.png">
 </head>
@@ -245,6 +245,7 @@ popup = ' onclick="openPopup()" '
                                 <option value="gruvbox">Gruvbox (by Road)</option>
                                 <option value="lyric">Lyric (by evil isopod)</option>
                                 <option value="blindness">Blindness (by Damocles)</option>
+                                <option value="custom">Custom</option>
                             </select>
                             <select id="optBorders" tabindex="-1">
                                 <option value="normal">Soft Borders</option>
@@ -252,6 +253,7 @@ popup = ' onclick="openPopup()" '
                                 <option value="neon">Neon Mode</option>
                                 <option value="glass">Glass Mode</option>
                             </select>
+                            <input type="hidden" placeholder="Insert Custom Theme" id="optCustom" />
                             <table>
                                 <tr>
                                     <td><div><label><input id="optScreenshotMode"   tabindex="-1" class="checkbox" type="checkbox"> Screenshot Mode</label></div></td>
@@ -309,6 +311,8 @@ popup = ' onclick="openPopup()" '
     <script type="module" src="./app.js"></script>
     <script>
         var clicked = false;
+        var clicked = false;
+        $("#startMenuSlidingTrigger").on('click', function() {
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
             if (clicked) {
