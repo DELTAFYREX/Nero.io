@@ -201,7 +201,7 @@ Class.Trapper_guy = {
         }, {
             POSITION: [3, 7, 1.7, 15, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.nomove, g.halfrange, g.shockwave]),
                 TYPE: "shockwave",
                 STAT_CALCULATOR: gunCalcNames.trap,
                 ALT_FIRE: true
