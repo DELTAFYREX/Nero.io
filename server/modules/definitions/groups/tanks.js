@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeHybridDrive, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -4728,6 +4728,7 @@ Class.tritrapperbrid = makeHybrid('triTrapper', "Tri-Trapper-Hybrid")
 Class.helixbrid = makeHybrid('helix', "Helix-Hybrid")
 Class.volutebrid = makeHybrid('volute', "Volute-Hybrid")
 Class.basicceptionbrid = makeHybrid('basicCeption', "Basic-Ception-Hybrid")
+Class.honda = makeHybridDrive('pounder', "Honda")
 
 // Over tanks
 Class.overgunner = makeOver({
@@ -5315,7 +5316,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
-        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "dictator"]
+        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "honda", "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid"]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
@@ -5348,7 +5349,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.snipebrid.UPGRADES_TIER_3 = ["assbrid", "poacher", "cropDuster", "armsman", "autosnipebrid"]
         Class.machbrid.UPGRADES_TIER_3 = ["artilbrid", "cropDuster", "overgunner", "spraybrid", "automachbrid"]
         Class.flankbrid.UPGRADES_TIER_3 = ["surfer", "trapguardbrid", "tritrapperbrid", "autoflankbrid"]
-        Class.poundbrid.UPGRADES_TIER_3 = ["hybrid", "builderbrid", "artilbrid", "launchbrid", "autopoundbrid", "volutebrid"]
+        Class.poundbrid.UPGRADES_TIER_3 = ["hybrid", "builderbrid", "artilbrid", "launchbrid", "autopoundbrid", "volutebrid", "honda"]
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
