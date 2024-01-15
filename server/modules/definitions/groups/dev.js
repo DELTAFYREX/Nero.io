@@ -1424,7 +1424,7 @@ Class.wallPlacer2 = {
             POSITION: [16, 20, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
-                TYPE: "wallPlacerThing",
+                TYPE: "wallPlacerThing2",
                 COLOR: 16,
                 LABEL: "",
                 STAT_CALCULATOR: 0,
@@ -2111,7 +2111,7 @@ Class.whirlwind = {
 Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"]
     Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"]
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
-        Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
+        Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer", "wallPlacer2"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
         Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "baseThrower", "shrapnelgun"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
