@@ -521,7 +521,7 @@ Class.deltaDeco = {
 };
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
-    LABEL: "Delta",
+    LABEL: "Dewta OwO",
     DANGER: 6,
     SYNC_TURRET_SKILLS: true,
     GUNS: [
@@ -573,7 +573,7 @@ Class.baseThrowerDelta = {
 };
 Class.baseThrowerFireDelta = {
     PARENT: "genericTank",
-    LABEL: "Delta Congregation",
+    LABEL: "Dewta >w<",
     DANGER: 6,
     GUNS: [
         {
@@ -652,6 +652,10 @@ Class.features = {
 Class.testing = {
     PARENT: ["menu"],
     LABEL: "Beta Tanks",
+};
+Class.unfinishedtesting = {
+    PARENT: ["menu"],
+    LABEL: "Unfinished tanks",
 };
 
 // Generators
@@ -989,6 +993,154 @@ Class.shrapnelgun = {
         }
     ]
 };
+Class.toxic = {
+    PARENT: "genericTank",
+    LABEL: "Intoxicator",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "poisonbullet",
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+};
+Class.poisonbullet = {
+    PARENT: "bullet",
+    LABEL: "posonio",
+  TURRETS: [
+    {
+    POSITION: [0, 0, 0, 0, 360, 1],
+      TYPE: "recangluhitbox"
+    }
+  ]
+};
+Class.oppenheimer = {
+    PARENT: "genericTank",
+    LABEL: "Oppen Heimer",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "nuke"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+};
+Class.aimassistbullet = {
+    PARENT: "bullet",
+    LABEL: "Bullet",
+    SHAPE: "M 1 1 l -2 0 L -1 -1 L 1 -1 L -1 -1 L -1 1 L 1 1 L 1 -1 L 1 1",
+    CONTROLLERS: ["nearestDifferentMaster"],
+    ACCEPTS_SCORE: false,
+    BODY: {
+        PENETRATION: 0.1,
+        SPEED: 99999,
+        DENSITY: 0.1,
+        HEALTH: 5,
+        DAMAGE: 0,
+        PUSHABILITY: 0.1,
+        SIZE: 18,
+    },
+    MOTION_TYPE: "aimassistlock",
+    CAN_GO_OUTSIDE_ROOM: true,
+    HITS_OWN_TYPE: "never",
+    DIE_AT_RANGE: true,
+  TURRETS: [
+    {
+    POSITION: [25, 0, 0, 0, 360, 1],
+      TYPE: "crosshair1"
+    }
+  ]
+};
+Class.aimassisttest = {
+    PARENT: "genericTank",
+    LABEL: "Aim Assist",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet",
+                HAS_NO_RECOIL: true
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "aimassistbullet",
+                HAS_NO_RECOIL: true
+            }
+      },
+    ],
+  TURRETS: [
+    {
+    POSITION: [10, 0, 0, 0, 360, 1],
+      TYPE: "autoTankGunLock"
+    }
+  ]
+}
+Class.autoboosttest = {
+    PARENT: "genericTank",
+    LABEL: "Aim Assist",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet",
+            }
+        },
+    ],
+  TURRETS: [
+    {
+    POSITION: [10, 0, 0, 0, 360, 1],
+      TYPE: "autoTankGunLockRecoil"
+    }
+  ]
+}
+Class.autoTankGunLock = {
+  PARENT: "autoTankGun",
+  MOTION_TYPE: "aimassistlock",
+  BODY: {
+    FOV: 1
+  },
+  CONTROLLERS: ["nearestDifferentMasterAltAlt", "AimAssistLock"],    
+  AI: {
+        FARMER: true,
+        BLIND: true,
+    },
+}
+Class.autoTankGunLockRecoil = {
+  PARENT: "autoTankGun",
+  MOTION_TYPE: "aimassistlock",
+      GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.tonsmorerecoil, g.tonsmorerecoil, g.halfreload, g.halfreload, g.halfreload, g.fakewithrecoil]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+  CONTROLLERS: ["nearestDifferentMasterAlt", "AimAssistLock"],    
+  AI: {
+        FARMER: true,
+    },
+}
 Class.mmaTest2 = {
     PARENT: ["genericTank"],
     MIRROR_MASTER_ANGLE: true,
@@ -1625,23 +1777,6 @@ Class.papyrus = {
         }
     ]
 }
-Class.oppenheimer = {
-    PARENT: "genericTank",
-    LABEL: "Oppen Heimer",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "nuke"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ]
-};
 Class.winsor0 = {
     PARENT: "genericTank",
     LABEL: "Wi3nsor",
@@ -2019,7 +2154,8 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "baseThrower", "shrapnelgun"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "baseThrower", "shrapnelgun", "unfinishedtesting"]
+        //Class.unfinishedtesting.UPGRADES_TIER_0 = ["testing", "aimassisttest", "toxic", "autoboosttest"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
