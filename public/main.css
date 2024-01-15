@@ -8,7 +8,7 @@
 }
 
 #mainBody {
-    background-color: #dbdbdb;
+    background-color: #484848;
 }
 
 ::-webkit-scrollbar {
@@ -40,7 +40,7 @@ body {
     font-family: Ubuntu;
     font-size: 14px;
     background-image: url("https://picsum.photos/1456/1892");
-    background-color: gray;
+    background-color: #484848;
 }
 
 html,
