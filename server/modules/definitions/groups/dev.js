@@ -457,6 +457,107 @@ Class.oplaser = {
     },
   BUFF_VS_FOOD: true,
 }
+Class.deltabaseBullet = {
+    PARENT: "boomerang",
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
+    INDEPENDENT: true,
+    COLOR: "rainbow",
+    BODY: {
+      COLOR: "rainbow"
+    },
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: ["revogun", { COLOR: "rainbow" }]
+    }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: ["revogun", { COLOR: "rainbow" }]
+    }],
+ON: [{
+          event: "death",
+          handler: ({ body }) => {
+            if (!body.master.isDead) return 
+            body.master.define(Class.baseThrower)
+        }
+    }
+  ]
+};
+Class.turretBaseDelta = {
+    LABEL: "Basethingygygyyasgsdgajskhg",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: "rainbow",//iT WonT FUckING SpIN
+    SYNC_TURRET_SKILLS: true,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 9.85, 0, 90, 220, 1],
+        TYPE: ["revogun", { COLOR: "rainbow" }]
+        }, {
+        POSITION: [4.65, 9.85, 0, 270, 220, 1],
+        TYPE: ["revogun", { COLOR: "rainbow" }]
+        }]
+};
+Class.baseThrowerDelta = {
+    PARENT: "genericTank",
+    LABEL: "Delta :3",
+    DANGER: 6,
+    SYNC_TURRET_SKILLS: true,
+    GUNS: [
+        {
+            POSITION: [26, 7, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.machineGun, { recoil: 1.15 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [23, 10, 1, 0, 0, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.lowPower, g.machineGun, { recoil: 1.15 }]),
+                TYPE: "bullet",
+            },
+        },
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                TYPE: "bullet",
+            },
+        }, {
+        POSITION: [1, 38, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.bitlessspeed, g.bitlessspeed, g.op, g.op, g.op, g.op, g.op]),
+            TYPE: ["deltabaseBullet", { COLOR: "rainbow" }],
+            ALT_FIRE: true,
+            ON_SHOOT: "revo",
+            ALPHA: 0
+        }
+    }],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "turretBaseDelta"
+    }],
+  ON: [{
+        event: "altFire",
+        handler: ({ body }) => {
+            body.define(Class.baseThrowerFireDelta)
+        }
+      }
+    ]
+};
+Class.baseThrowerFireDelta = {
+    PARENT: "genericTank",
+    LABEL: "Delta :3",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+            TYPE: "bullet"
+        }
+    }]
+};
 Class.unavailable = {
     PARENT: ["menu"],
     LABEL: "Unavailable",

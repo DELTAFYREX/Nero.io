@@ -1675,11 +1675,11 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 } else {
                 if (gui.class === "Pissliner" & key === global.KEY_SHIFT) {
       PlaySoundpiss();
-                    }
                 } else {
                 if (gui.class === "Pissliner" & key === global.KEY_SPLIT) {
       PlaySoundpew();
                     } 
+                }
                 }
             }
         }
