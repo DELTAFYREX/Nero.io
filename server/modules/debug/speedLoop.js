@@ -16,7 +16,6 @@ const speedcheckloop = () => {
         //fails++;
         util.warn('~~ LOOPS: ' + loops + '. ENTITY #: ' + entities.length + '//' + Math.round(active / loops) + '. VIEW #: ' + views.length + '. BACKLOGGED :: ' + (sum * c.runSpeed * 3)
             .toFixed(3) + '%! ~~');
-        util.warn(entities.name);
         util.warn('Total activation time: ' + activationtime);
         util.warn('Total collision time: ' + collidetime);
         util.warn('Total cycle time: ' + movetime);
