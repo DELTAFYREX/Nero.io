@@ -73,6 +73,26 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundpew() {
       pew.play();
       }
+        var chipi = new Audio();
+      chipi.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/chipi-chipi-chapa-chapa.mp3?v=1705302832837");
+      function PlaySoundchipi() {
+      chipi.play();
+      }
+          var neko = new Audio();
+      neko.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/neko-arc.mp3?v=1705302835953");
+      function PlaySoundneko() {
+      neko.play();
+      }
+          var bwomp = new Audio();
+      bwomp.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/bwomp.mp3?v=1705302839344");
+      function PlaySoundbwomp() {
+      bwomp.play();
+      }
+          var nfl = new Audio();
+      nfl.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/nfl.mp3?v=1705302843389");
+      function PlaySoundnfl() {
+      nfl.play();
+      }
 
       function doSomething() {
         if (clicked) {
@@ -1676,6 +1696,18 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 if (gui.class === "Pissliner" & key === global.KEY_SHIFT) {
       PlaySoundpiss();
                 } else {
+                if (gui.class === "Pissliner" & key === global.KEY_SPLIT) {
+      PlaySoundpew();
+                    } else {
+                if (gui.class === "Delta >w<" & key === global.KEY_SPLIT) {
+      PlaySoundchipi();
+                    } else {
+                if (gui.class === "Delta owo" & key === global.KEY_CHOOSE_5) {
+      PlaySoundneko();
+                    } else {
+                if (gui.class === "Delta owo" & key === global.KEY_SPLIT) {
+      PlaySoundpew();
+                    } else {
                 if (gui.class === "Pissliner" & key === global.KEY_SPLIT) {
       PlaySoundpew();
                     } 

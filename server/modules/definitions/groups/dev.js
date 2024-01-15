@@ -517,7 +517,7 @@ Class.turretBaseDelta = {
         }]
 };
 Class.deltaDeco = {
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958',
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png',
 };
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
@@ -551,6 +551,7 @@ Class.baseThrowerDelta = {
             SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.op, g.xxtrahealth]),
             TYPE: ["deltabaseBullet", { COLOR: "rainbow" }],
             ALT_FIRE: true,
+            ALPHA: 0,
             HAS_NO_RECOIL: true,
             ON_SHOOT: "revo",
         }
