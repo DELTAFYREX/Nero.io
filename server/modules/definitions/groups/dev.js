@@ -521,7 +521,7 @@ Class.deltaDeco = {
 };
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
-    LABEL: "Dewta OwO",
+    LABEL: "Delta",
     DANGER: 6,
     SYNC_TURRET_SKILLS: true,
     GUNS: [
@@ -573,7 +573,7 @@ Class.baseThrowerDelta = {
 };
 Class.baseThrowerFireDelta = {
     PARENT: "genericTank",
-    LABEL: "Dewta >w<",
+    LABEL: "Delta Congregation",
     DANGER: 6,
     GUNS: [
         {

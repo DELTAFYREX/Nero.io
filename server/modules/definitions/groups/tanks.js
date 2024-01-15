@@ -4718,14 +4718,8 @@ Class.poundbrid = makeHybrid('pounder', "Pound-Hybrid")
 Class.trapbrid = makeHybrid('trapper', "Trapper-Hybrid")
 Class.desmosbrid = makeHybrid('desmos', "Desmos-Hybrid")
 
-
-
-
-
-
-
-
-
+Class.triplebrid = makeHybrid('tripleShot', "Triple-Hybrid")
+Class.triplebrid = makeHybrid('tripleShot', "Triple-Hybrid")
 
 // Over tanks
 Class.overgunner = makeOver({
@@ -5330,9 +5324,9 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "revobrid", "equilibrium", "baseThrower", "autoRevolutionist"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
-    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
+    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
         Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
-        Class.twinbrid.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption"]
+        Class.twinbrid.UPGRADES_TIER_3 = ["autoTripleShot", "overgunner"]
         Class.snipebrid.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption"]
         Class.machbrid.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption"]
         Class.flankbrid.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption"]
