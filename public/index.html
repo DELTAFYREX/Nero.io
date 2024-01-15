@@ -310,17 +310,11 @@ popup = ' onclick="openPopup()" '
     <script type="module" src="./lib/socketInit.js"></script>
     <script type="module" src="./app.js"></script>
     <script>
-        $("#optColors").change( function () {
-            if ($(this).val() == "custom") document.getElementById("optCustom").type = "text";
-            else document.getElementById("optCustom").type = "hidden";
-        });
         var clicked = false;
         var clicked = false;
         $("#startMenuSlidingTrigger").on('click', function() {
         $("#startMenuSlidingTrigger").on('click', function() {
             clicked = !clicked;
-            clicked = !clicked;
-            if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
             if (clicked) {
                 $(this).html('<h3 class="nopadding">close options ▾</h3>');
                 $(".slider").css({ "top": "-265px" })
