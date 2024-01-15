@@ -186,7 +186,34 @@ Class.tanks = {
 Class.Trapper_guy = {
     PARENT: ["trapper"],
     LABEL: "Trapper_guy",
-    SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/6fcc71bf-255f-4d26-b13e-e3f9f68fb77a.image.png?v=1705291478159"
+    SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/6fcc71bf-255f-4d26-b13e-e3f9f68fb77a.image.png?v=1705291478159",
+    GUNS: [
+        {
+            POSITION: [15, 7, 1, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: gunCalcNames.trap
+            }
+        }, {
+            POSITION: [3, 7, 1.7, 15, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "shockwave",
+                STAT_CALCULATOR: gunCalcNames.trap,
+                ALT_FIRE: true
+            }
+        }
+    ]
+};
+Class.shockwave = {
+    PARENT: ["bullet"],
+    LABEL: "funy",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    MOTION_TYPE: "trappershockwave"
 };
 Class.unavailable = {
     PARENT: ["menu"],

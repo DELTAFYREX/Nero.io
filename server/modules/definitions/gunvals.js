@@ -131,6 +131,7 @@ module.exports = {
     bitlessspeed: { speed: 0.93, maxSpeed: 0.93 },
     slow: { speed: 0.7, maxSpeed: 0.7 },
     halfspeed: { speed: 0.5, maxSpeed: 0.5 },
+    nomove: { speed: 0, maxSpeed: 0 },
 
     // Misc 2
     lancer: { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 },
