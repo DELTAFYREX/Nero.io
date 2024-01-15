@@ -278,39 +278,39 @@ Class.shrapnel = {
         {
             POSITION: [7, 9.5, 0.6, 7, 0, 108, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 180, 0.2],
+            POSITION: [7, 9.5, 0.6, 7, 0, 180, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 252, 0.4],
+            POSITION: [7, 9.5, 0.6, 7, 0, 252, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 324, 0.6],
+            POSITION: [7, 9.5, 0.6, 7, 0, 324, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 36, 0.8],
+            POSITION: [7, 9.5, 0.6, 7, 0, 36, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
@@ -326,6 +326,7 @@ Class.turretBasenoguns = {
 };
 Class.grenade = {
     PARENT: "bullet",
+    INDEPENDENT: true,
     GUNS: [{
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
