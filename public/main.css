@@ -249,7 +249,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
-    height: 340px;
+    height: 410px;
     padding: 10px;
     overflow: hidden;
     display: inline-block;
@@ -344,7 +344,7 @@ table {
 }
 
 #startMenuSlidingContent {
-    height: 265px;
+    height: 335px;
 }
 
 #startMenuSlidingTrigger {
@@ -538,8 +538,8 @@ a.link {
 .revolt:hover {
     top: 1px;
     background: #ed4245;
-    border-bottom: 2px solid #d24a01;
-    box-shadow: inset 0 -2px #d24a01;
+    outline: none;
+
     -webkit-box-shadow: inset 0 -2px #d24a01;
 }
 .reddit {
