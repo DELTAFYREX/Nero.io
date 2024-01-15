@@ -352,10 +352,9 @@ Class.watertankFire = {
 };
 exports.piszerbeam = {
   PARENT: "genericTank",
-  LABEL: "UZI's OP Railgun",
+  LABEL: "Pissliner",
+  COLOR: "yellow",
   DANGER: 7,
-  COLOR: "green",
-  LEVEL: 9999999999999999999999,
   BODY: {
                 ACCELERATION: base.ACCEL * 0.6,
                 SPEED: base.SPEED * 0.85,
@@ -447,12 +446,13 @@ Class.oplaser = {
   SHAPE: -1,
   MOTION_TYPE: "fuckingnuclearbomb",
   BODY: {
-        PENETRATION: 1.15,
-        SPEED: 5.8,
-        RANGE: 100,
-        DENSITY: 0.9,
-        HEALTH: 0.155,
-        DAMAGE: 5.6,
+        PENETRATION: 10,
+        SPEED: 30,
+        RANGE: 155,
+        DENSITY: 1.25,
+        HEALTH: 999,
+        DAMAGE: 999,
+        PUSHABILITY: 0.3,
     },
   BUFF_VS_FOOD: true,
 }
