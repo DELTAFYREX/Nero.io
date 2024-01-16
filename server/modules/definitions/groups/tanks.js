@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeHybrid, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
+const { combineStats, makeAuto, makeHybrid, makeHybridDrive, makeOver, makeDeco, makeGuard, makeBird, makeMulti, makeCeption, makeCeptionNerf, makeTracker } = require('../facilitators.js');
 const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -4709,7 +4709,7 @@ Class.poacher = makeHybrid('hunter', "Poacher")
 Class.armsman = makeHybrid('rifle', "Armsman")
 Class.cropDuster = makeHybrid('minigun', "Crop Duster")
 Class.hybrid = makeHybrid('destroyer', "Hybrid")
-/*Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
+Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
 Class.twinbrid = makeHybrid('twin', "Twin-Hybrid")
 Class.machbrid = makeHybrid('machineGun', "Machine-Hybrid")
 Class.snipebrid = makeHybrid('sniper', "Snipe-Hybrid")
@@ -4729,7 +4729,7 @@ Class.helixbrid = makeHybrid('helix', "Helix-Hybrid")
 Class.volutebrid = makeHybrid('volute', "Volute-Hybrid")
 Class.honda = makeHybridDrive('pounder', "Honda")
 
-Class.hybridbase = makeHybrid('genericTank', "Hybrid")*/
+Class.hybridbase = makeHybrid('genericTank', "Hybrid")
 
 // Over tanks
 Class.overgunner = makeOver({
@@ -5176,7 +5176,7 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
-/*Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
+Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
 Class.clonebrid = makeHybrid({  
   PARENT: "genericTank",
   GUNS: [
@@ -5203,7 +5203,7 @@ Class.clonebrid = makeHybrid({
     }
   ]
 }, "Cloner-Hybrid")
-Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")*/
+Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
 
 
 Class.autoDesmos = makeAuto(Class.desmos, "Auto-Desmos");
@@ -5233,14 +5233,14 @@ Class.autoVolute = makeAuto(Class.volute, "Auto-Volute");
 Class.autoHelix = makeAuto(Class.helix, "Auto-Helix");
 
 
-/*//auto hybrid tanks
+//auto hybrid tanks
 Class.autotwinbrid = makeHybrid('autoTwin', "Auto-Twin-Hybrid")
 Class.autosnipebrid = makeHybrid('autoSniper', "Auto-Sniper-Hybrid")
 Class.automachbrid = makeHybrid('autoMach', "Auto-Machine-Hybrid")
 Class.autoflankbrid = makeHybrid('autoFlank', "Auto-Flank-Hybrid")
 Class.autopoundbrid = makeHybrid('autoPound', "Auto-Pound-Hybrid")
 Class.autotrapbrid = makeHybrid('autoTrap', "Auto-Trapper-Hybrid")
-Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")*/
+Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")
 
 
 
@@ -5281,29 +5281,29 @@ Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
 
 
 // TANK UPGRADE PATHS
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos"/*, "bascrid"*/]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
         Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
-    Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix"/*, "twinbrid"*/]
+    Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix", "twinbrid"]
         Class.twin.UPGRADES_TIER_3 = ["dual", "bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble"]
         Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot", "triplex"]
 
-    Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"/*, "snipebrid"*/]
+    Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper", "snipebrid"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin"/*, "assbrid"*/, "single"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "assbrid", "single"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
-    Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach"/*, "machbrid"*/]
+    Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach", "machbrid"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"]
         Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
-        Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer"/*, "spraybrid"*/]
+        Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer", "spraybrid"]
 
-    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank"/*, "flankbrid"*/]
+    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank", "flankbrid"]
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
@@ -5315,7 +5315,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
-        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"/*, "honda"*/, "dictator"]
+        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "honda", "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid"]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
@@ -5333,7 +5333,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
         Class.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption", "autotwinbrid"]
         Class.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption", "autosnipebrid"]
-        Class.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption", "automachbrid]
+        Class.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption", "automachbrid"]
         Class.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption", "autoflankbrid"]
         Class.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption", "autopoundbrid"]

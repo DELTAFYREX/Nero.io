@@ -240,6 +240,25 @@ exports.makeHybrid = (type, name = -1) => {
     output.LABEL = name == -1 ? "Hybrid " + type.LABEL : name;
     return output;
 }
+exports.makeHybridDrive = (type, name = -1) => {
+    type = ensureIsClass(type);
+    let output = exports.dereference(type);
+    let spawner = {
+        POSITION: [6, 12, 1.2, 8, 0, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: exports.combineStats([g.drone, g.weak]),
+            TYPE: ["turretedDrone", { INDEPENDENT: true }],
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: gunCalcNames.drone,
+            WAIT_TO_CYCLE: false,
+            MAX_CHILDREN: 3,
+        },
+    };
+    output.GUNS = type.GUNS == null ? [spawner] : type.GUNS.concat([spawner]);
+    output.LABEL = name == -1 ? "Hybrid " + type.LABEL : name;
+    return output;
+}
 exports.makeOver = (type, name = -1) => {
     type = ensureIsClass(type);
     let output = exports.dereference(type);
