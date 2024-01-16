@@ -154,7 +154,7 @@ class io_mapTargetToGoal extends IO {
         }
     }
 }
-class io_mapTargetToGoalAlt extends IO {
+/*class io_mapTargetToGoalAlt extends IO {
     constructor(b) {
         super(b)
     }
@@ -169,7 +169,7 @@ class io_mapTargetToGoalAlt extends IO {
             }
         }
     }
-}
+}*/
 class io_boomerang extends IO {
     constructor(b) {
         super(b)
@@ -489,7 +489,7 @@ class io_nearestDifferentMaster extends IO {
         return {};
     }
 }
-class io_nearestDifferentMasterAlt extends IO {
+/*class io_nearestDifferentMasterAlt extends IO {
     constructor(body, opts = {}) {
         super(body);
         this.accountForMovement = opts.accountForMovement || true;
@@ -780,7 +780,7 @@ class io_nearestDifferentMasterAltAlt extends IO {
     // }
       }
   }
-}
+}*/
 
 class io_avoid extends IO {
     constructor(body) {
@@ -1125,7 +1125,7 @@ class io_AimAssist extends IO {
     // }
   }
 }
-class io_AimAssistLock extends IO {
+/*class io_AimAssistLock extends IO {
     constructor(body) {
         super(body)
     }
@@ -1138,7 +1138,7 @@ class io_AimAssistLock extends IO {
     //   if(this.body.dist >= 75) this.body.dist -= this.radiusScalingSpeed
     // }
     }
-}
+}*/
 class io_orbit extends IO {
     constructor(body, opts = {}) {
         super(body);
@@ -1211,8 +1211,8 @@ let ioTypes = {
     //aiming related
     stackGuns: io_stackGuns,
     nearestDifferentMaster: io_nearestDifferentMaster,    
-    nearestDifferentMasterAlt: io_nearestDifferentMasterAlt,
-    nearestDifferentMasterAltAlt: io_nearestDifferentMasterAltAlt,
+    //nearestDifferentMasterAlt: io_nearestDifferentMasterAlt,
+    //nearestDifferentMasterAltAlt: io_nearestDifferentMasterAltAlt,
     targetSelf: io_targetSelf,
     hadron: io_hadron,
     AimAssist: io_AimAssist,
@@ -1222,7 +1222,7 @@ let ioTypes = {
     //movement related
     canRepel: io_canRepel,
     mapTargetToGoal: io_mapTargetToGoal,
-    mapTargetToGoalAlt: io_mapTargetToGoalAlt,
+    //mapTargetToGoalAlt: io_mapTargetToGoalAlt,
     bossRushAI: io_bossRushAI,
     moveInCircles: io_moveInCircles,
     boomerang: io_boomerang,
