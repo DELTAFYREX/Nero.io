@@ -1205,7 +1205,7 @@ let ioTypes = {
     mapAltToFire: io_mapAltToFire,
     mapFireToAlt: io_mapFireToAlt,
     whirlwind: io_whirlwind,
-    AimAssistLock: io_AimAssistLock,
+    //AimAssistLock: io_AimAssistLock,
     disableOnOverride: io_disableOnOverride,
 
     //aiming related
