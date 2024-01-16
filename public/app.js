@@ -1678,7 +1678,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     height = 16;
     y -= height + vspacing;
   
-/*    if (gui.class === "Winsor") {
+    if (gui.class === "Winsor") {
       PlaySound169();
     }
   
@@ -1719,7 +1719,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 }
             }
         }
-    }*/
+    }
     
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
