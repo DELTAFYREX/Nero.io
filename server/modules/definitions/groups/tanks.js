@@ -4709,7 +4709,7 @@ Class.poacher = makeHybrid('hunter', "Poacher")
 Class.armsman = makeHybrid('rifle', "Armsman")
 Class.cropDuster = makeHybrid('minigun', "Crop Duster")
 Class.hybrid = makeHybrid('destroyer', "Hybrid")
-Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
+/*Class.bascrid = makeHybrid('basic', "Basic-Hybrid")
 Class.twinbrid = makeHybrid('twin', "Twin-Hybrid")
 Class.machbrid = makeHybrid('machineGun', "Machine-Hybrid")
 Class.snipebrid = makeHybrid('sniper', "Snipe-Hybrid")
@@ -4729,7 +4729,7 @@ Class.helixbrid = makeHybrid('helix', "Helix-Hybrid")
 Class.volutebrid = makeHybrid('volute', "Volute-Hybrid")
 Class.honda = makeHybridDrive('pounder', "Honda")
 
-Class.hybridbase = makeHybrid('genericTank', "Hybrid")
+Class.hybridbase = makeHybrid('genericTank', "Hybrid")*/
 
 // Over tanks
 Class.overgunner = makeOver({
@@ -5176,12 +5176,11 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
-Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
+/*Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
 Class.clonebrid = makeHybrid({  
   PARENT: "genericTank",
   GUNS: [
     {
-      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic]),
@@ -5199,13 +5198,12 @@ Class.clonebrid = makeHybrid({
   ],
   TURRETS: [
     {
-      /*  SIZE     X       Y     ANGLE    ARC */
       POSITION: [24, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]
 }, "Cloner-Hybrid")
-Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
+Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")*/
 
 
 Class.autoDesmos = makeAuto(Class.desmos, "Auto-Desmos");
