@@ -183,6 +183,7 @@ Class.tanks = {
     PARENT: ["menu"],
     LABEL: "Tanks",
 };
+/*
 Class.Trapper_guy = {
     PARENT: ["trapper"],
     LABEL: "Trapper_guy",
@@ -611,6 +612,7 @@ Class.baseThrowerFireDelta = {
     }
   ]
 };
+*/
 Class.unavailable = {
     PARENT: ["menu"],
     LABEL: "Unavailable",
@@ -2036,7 +2038,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"]
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta"]
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer"/*, "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta"*/]
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added

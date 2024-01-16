@@ -5294,7 +5294,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper"/*, "snipebrid"*/]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", /*"assbrid", */"single"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin"/*, "assbrid"*/, "single"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
@@ -5315,7 +5315,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
-        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "honda", "dictator"]
+        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector"/*, "honda"*/, "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute"/*, "poundbrid"*/]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
