@@ -5235,14 +5235,14 @@ Class.autoVolute = makeAuto(Class.volute, "Auto-Volute");
 Class.autoHelix = makeAuto(Class.helix, "Auto-Helix");
 
 
-//auto hybrid tanks
+/*//auto hybrid tanks
 Class.autotwinbrid = makeHybrid('autoTwin', "Auto-Twin-Hybrid")
 Class.autosnipebrid = makeHybrid('autoSniper', "Auto-Sniper-Hybrid")
 Class.automachbrid = makeHybrid('autoMach', "Auto-Machine-Hybrid")
 Class.autoflankbrid = makeHybrid('autoFlank', "Auto-Flank-Hybrid")
 Class.autopoundbrid = makeHybrid('autoPound', "Auto-Pound-Hybrid")
 Class.autotrapbrid = makeHybrid('autoTrap', "Auto-Trapper-Hybrid")
-Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")
+Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")*/
 
 
 
@@ -5340,7 +5340,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption"/*, "autopoundbrid"*/]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption"/*, "autotrapbrid"*/]
-        Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "autodesmosbrid"]
+        Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix"/*, "autodesmosbrid"*/]
         Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "revobrid", "equilibrium", "baseThrower", "autoRevolutionist"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
