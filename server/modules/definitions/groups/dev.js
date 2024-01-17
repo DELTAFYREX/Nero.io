@@ -1002,16 +1002,15 @@ Class['Team' + TEAM_ENEMIES] = {
     TEAM: TEAM_ENEMIES,
     COLOR: "yellow",
     LABEL: "Enemies Team"
-};
+}
 Class.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
 Class.testing = menu("Beta Tanks")
 Class.features = menu("Features")
-Class.overpowered = menu( {
-    UPGRADE_TOOLTIP: "The Funny v2",
-    UPGRADE_COLOR: "rainbow",
-}, "Dev Funny")
-
+Class.overpowered = menu("Dev Funny")
+Class.overpowered.UPGRADE_TOOLTIP = "The Funny v2"
+Class.overpowered.UPGRADE_COLOR = "rainbow"
+  
 Class.addons = menu("Addon Entities")
 Class.addons.UPGRADES_TIER_0 = []
 
