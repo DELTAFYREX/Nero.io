@@ -147,33 +147,6 @@ function PlaySound169() {
   function PlaySound213() {
     camerasound.play();
   };
-     function switchAudio() {
-      if (document.getElementById("optSound").checked === true) {
-           music2.play()
-    music2.addEventListener('ended', function() {this.currentTime = 0; this.play();}, false);
-     } else if (document.getElementById("optSound").checked === false) {
-          music2.pause()
-            }
-         return; } 
-  var music2 = new Audio();
- const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890"];
-var randmusic = pmusic[~~(Math.random() * pmusic.length)];
-music2.src = (randmusic);
-function PlayMusic() {
-  music2.load();   
-    music2.play();
-}
-if (document.getElementById("optSound").checked === true) {      
-  if (music2.src != "dhttps://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
-    global.currentsong = "OI OI OI"
-  } else {
-    if (music2.src != "dhttps://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
-      global.currentsong = "Dejected"
-    }
-  }
-}
-  
-document.getElementById("optSound").onclick = () => switchAudio();
   
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -1747,6 +1720,15 @@ function drawSelfInfo(spacing, alcoveSize, max) {
             }
         }
     }
+    if (document.getElementById("optSound").checked === true) {
+      if (global.currentsong != "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
+          var songname = "OI OI OI"
+        } else {
+          if (global.currentsong === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
+          var songname = "Dejected"
+    }
+}
+    
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);
@@ -1842,7 +1824,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 3 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
-        drawText("Song: " + global.currentsong, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
+        drawText("Song: " + , x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.8", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
