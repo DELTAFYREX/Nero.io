@@ -6,7 +6,6 @@ import { settings } from "./lib/settings.js";
 import { Canvas } from "./lib/canvas.js";
 import { color } from "./lib/color.js";
 import { gameDraw } from "./lib/gameDraw.js";
-import { randmusic } from "./index.html";
 import * as socketStuff from "./lib/socketInit.js";
 (async function (util, global, settings, Canvas, color, gameDraw, socketStuff) {
 
@@ -1721,12 +1720,18 @@ function drawSelfInfo(spacing, alcoveSize, max) {
             }
         }
     }
-    
+   let getsongname = () => {
     if (document.getElementById("optSound").checked === true) {
-      if (document.getElementById("randmusic") === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
+      document.getElementById("randmusic") {
+      let thesongrn = randmusic
+      }
+          if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
           global.currentsong = "OI OI OI"
         }
-    }
+          if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
+          global.currentsong = "Dejected"
+        }
+      }
     
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
@@ -1823,7 +1828,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Update Version: " + "2.7165", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 3 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
-        drawText("song: " + global.currentsong, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
+        drawText("Song: " + global.currentsong, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.8", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
