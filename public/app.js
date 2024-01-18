@@ -147,6 +147,22 @@ function PlaySound169() {
   function PlaySound213() {
     camerasound.play();
   };
+     function switchAudio() {
+      if (document.getElementById("optSound").checked === true) {
+           music2.play()
+    music2.addEventListener('ended', function() {this.currentTime = 0; this.play();}, false);
+     } else if (document.getElementById("optSound").checked === false) {
+          music2.pause()
+            }
+         return; } 
+  var music2 = new Audio();
+ const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890"];
+var randmusic = pmusic[~~(Math.random() * pmusic.length)];
+music2.src = (randmusic);
+function PlayMusic() {
+  music2.load();   
+    music2.play();
+}
   
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -1721,17 +1737,16 @@ function drawSelfInfo(spacing, alcoveSize, max) {
         }
     }
    let getsongname = () => {
-    if (document.getElementById("optSound").checked === true) {
-      document.getElementById("randmusic") {
-      let thesongrn = randmusic
-      }
+    if (document.getElementById("optSound").checked === true) {      
+      let thesongrn = ("randmusic")
           if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
           global.currentsong = "OI OI OI"
-        }
+        } else {
           if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
           global.currentsong = "Dejected"
         }
       }
+    }
     
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
