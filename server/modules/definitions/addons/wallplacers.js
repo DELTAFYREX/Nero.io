@@ -60,4 +60,4 @@ Class.wallPlacerwhite = {
         },
     ],
 }
-Class.wallPlacer.UPGRADES_TIER_0.push('wallPlacerwhite');
+Class.wallPlacer.UPGRADES_TIER_0 = ['wallPlacerwhite']
