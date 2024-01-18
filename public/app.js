@@ -163,6 +163,17 @@ function PlayMusic() {
   music2.load();   
     music2.play();
 }
+if (document.getElementById("optSound").checked === true) {      
+  if (music2.src != "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
+    global.currentsong = "OI OI OI"
+  } else {
+    if (music2.src != "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
+      global.currentsong = "Dejected"
+    }
+  }
+}
+  
+document.getElementById("optSound").onclick = () => switchAudio();
   
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -1736,18 +1747,6 @@ function drawSelfInfo(spacing, alcoveSize, max) {
             }
         }
     }
-   let getsongname = () => {
-    if (document.getElementById("optSound").checked === true) {      
-      let thesongrn = ("randmusic")
-          if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
-          global.currentsong = "OI OI OI"
-        } else {
-          if (thesongrn === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
-          global.currentsong = "Dejected"
-        }
-      }
-    }
-    
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);
