@@ -173,6 +173,7 @@ const global = {
     ratio: window.devicePixelRatio,
     mockupLoading: { then: cb => cb() },
     treeScale: 1,
-    chats: {}
+    chats: {},
+    currentsong: ""
 };
 export { global }

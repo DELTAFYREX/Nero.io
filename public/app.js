@@ -79,7 +79,7 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundchipi() {
       chipi.play();
       }
-          var neko = new Audio();
+        var neko = new Audio();
       neko.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/neko-arc.mp3?v=1705302835953");
       function PlaySoundneko() {
       neko.play();
@@ -1722,6 +1722,12 @@ function drawSelfInfo(spacing, alcoveSize, max) {
         }
     }
     
+    if (document.getElementById("optSound").checked === true) {
+      if (document.getElementById("randmusic") === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
+          global.currentsong = "OI OI OI"
+        }
+    }
+    
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);
@@ -1811,12 +1817,13 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero Engine v2.81", x + len, y - 50 - 5 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero Engine v2.81", x + len, y - 50 - 6 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "2.7165", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
-        drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 2 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
-        drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
+        drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "2.7165", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
+        drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 3 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
+        drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
+        drawText("song: " + global.currentsong, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
         drawText("Nero.io v2.8", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
