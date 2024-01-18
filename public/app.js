@@ -164,10 +164,10 @@ function PlayMusic() {
     music2.play();
 }
 if (document.getElementById("optSound").checked === true) {      
-  if (music2.src != "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
+  if (music2.src != "dhttps://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
     global.currentsong = "OI OI OI"
   } else {
-    if (music2.src != "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
+    if (music2.src != "dhttps://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
       global.currentsong = "Dejected"
     }
   }
