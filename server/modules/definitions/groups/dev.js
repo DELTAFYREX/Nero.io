@@ -1546,7 +1546,7 @@ Class.placeableWall = {
     LABEL: "Wall",
     SIZE: 30,
     SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
+    CLEAR_ON_MASTER_UPGRADE: false,
     TEAM: TEAM_ENEMIES,
     VARIES_IN_SIZE: false,
 };
@@ -1555,9 +1555,9 @@ Class.placeableWallSmall = {
     LABEL: "Wall",
     SIZE: 15,
     SHAPE: 4,
-    CLEAR_ON_MASTER_UPGRADE: true,
-  TEAM: TEAM_ENEMIES,
-      VARIES_IN_SIZE: false,
+    CLEAR_ON_MASTER_UPGRADE: false,
+    TEAM: TEAM_ENEMIES,
+    VARIES_IN_SIZE: false,
 };
 Class.wallPlacerThing = {
     PARENT: ["genericTank"],

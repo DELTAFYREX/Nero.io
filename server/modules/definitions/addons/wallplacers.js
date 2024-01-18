@@ -13,7 +13,8 @@ const g = require('../gunvals.js');
 
 Class.placeableWallwhite = {
     PARENT: ["placeableWall"],
-    COLOR: "white"
+    COLOR: "white",
+    CLEAR_ON_MASTER_UPGRADE: false,
 }
 Class.wallPlacerThingwhite = {
     PARENT: ["wallPlacerThing"],
