@@ -14,7 +14,7 @@ const g = require('../gunvals.js');
 Class.placeableWallwhite = {
     PARENT: ["placeableWall"],
     COLOR: "white"
-};
+}
 Class.wallPlacerThingwhite = {
     PARENT: ["wallPlacerThing"],
     GUNS: [
@@ -37,7 +37,7 @@ Class.wallPlacerThingwhite = {
             },
         },
     ],
-};
+}
 Class.wallPlacerwhite = {
     PARENT: ["wallPlacer"],
     LABEL: "White",
@@ -46,7 +46,7 @@ Class.wallPlacerwhite = {
             POSITION: [16, 20, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
-                TYPE: "wallPlacerThing",
+                TYPE: "wallPlacerThingwhite",
                 COLOR: 16,
                 LABEL: "",
                 STAT_CALCULATOR: 0,
@@ -59,4 +59,5 @@ Class.wallPlacerwhite = {
             },
         },
     ],
-};
+}
+Class.wallPlacer.UPGRADES_TIER_0.push('wallPlacerwhite');
