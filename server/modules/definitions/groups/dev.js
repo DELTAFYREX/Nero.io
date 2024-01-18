@@ -1928,14 +1928,14 @@ Class.winsor4 = {
         }
     ]
 }
+
 Class.utilities = {
     PARENT: "genericTank",
-    LABEL: "Utilities"
+    LABEL: "Utilities",
+    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381'
 };
-Class.AIT = {
-    PARENT: "genericTank",
-    LABEL: "AIT"
-};
+Class.AIT = menu("AIT")
+
 Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons"]
     Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"]
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
