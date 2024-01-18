@@ -1564,9 +1564,9 @@ Class.wallPlacerThing = {
     SHAPE:0,
     MIRROR_MASTER_ANGLE: true,
     INTANGIBLE: true,
-  DRAW_SELF: false,
+    DRAW_SELF: false,
     COLOR: 16,
-      CLEAR_ON_MASTER_UPGRADE: true,
+    CLEAR_ON_MASTER_UPGRADE: false,
       BODY: {
         ACCELERATION: 0.1,
         SPEED: true,
@@ -1585,9 +1585,9 @@ Class.wallPlacerThing = {
         PUSHABILITY: false,
         HETERO: false,
     },
-    MOTION_TYPE: "aimassist",
-   GUNS: [
-       {
+        MOTION_TYPE: "aimassist",
+        GUNS: [
+                 {
             POSITION: [0, 20, 1, 10, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([{reload:10, speed:0, maxSpeed:0, shudder:0.0001, spray:0.0001}]),

@@ -42,11 +42,12 @@ Class.wallPlacerThingwhite = {
 Class.wallPlacerwhite = {
     PARENT: ["wallPlacer"],
     LABEL: "White",
+    CLEAR_ON_MASTER_UPGRADE: false,
     GUNS: [
        {
             POSITION: [16, 20, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic,{reload:1/8}]),
+                SHOOT_SETTINGS: combineStats([g.basic, { reload: 1/8 }]),
                 TYPE: "wallPlacerThingwhite",
                 COLOR: 16,
                 LABEL: "",
