@@ -26,11 +26,11 @@ module.exports = {
     // NOTE: If a /gamemodeconfig/ file "replaces" the value of ROOM_SETUP, it just adds its own ROOM_SETUP's content to this array.
     // NOTE: Files starting with `map_` are maps. files starting with `overlay_` are overlays that get added on.
     // NOTE: These prefixes are only for categorisation, a room file would work the same regardless of its prefix. APS++ does nothing based on file name prefixes.
-    ROOM_SETUP: ['map_apspp_wedding'],
+    ROOM_SETUP: ['map_apspp_default'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 200,
-    TILE_HEIGHT: 200,
+    TILE_WIDTH: 400,
+    TILE_HEIGHT: 400,
 
 
 
@@ -123,13 +123,13 @@ module.exports = {
 
   // Natural Spawns
 
-    FOOD_CAP: 0, // Max normal food per normal tile. 3
-    FOOD_SPAWN_CHANCE: 1.5, // Likeliness of normal food spawn attempts succeedingg. 0.875
+    FOOD_CAP: 3, // Max normal food per normal tile. 3
+    FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg. 0.875
     FOOD_SPAWN_COOLDOWN: 40, // Cooldown (in game ticks) of food spawn attempts being made. 30
 
-    FOOD_CAP_NEST: 0, // Max nest food per nest tile.
-    FOOD_SPAWN_CHANCE_NEST: 1, // Likeliness of nest food spawn attempts succeeding. 0.25
-    FOOD_SPAWN_COOLDOWN_NEST: 28, // Cooldown (in game ticks) of nest food spawn attempts being made. 45
+    FOOD_CAP_NEST: 3, // Max nest food per nest tile.
+    FOOD_SPAWN_CHANCE_NEST: 0.25, // Likeliness of nest food spawn attempts succeeding. 0.25
+    FOOD_SPAWN_COOLDOWN_NEST: 45, // Cooldown (in game ticks) of nest food spawn attempts being made. 45
 
     ENEMY_CAP_NEST: 0, // Max nest enemies per nest tile.
     ENEMY_SPAWN_CHANCE_NEST: 0.6, // Likeliness of nest enemies spawn attempts succeeding. 0.9
