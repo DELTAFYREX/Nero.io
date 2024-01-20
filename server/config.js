@@ -29,8 +29,8 @@ module.exports = {
     ROOM_SETUP: ['map_apspp_wedding'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 270,
-    TILE_HEIGHT: 270,
+    TILE_WIDTH: 200,
+    TILE_HEIGHT: 200,
 
 
 
@@ -123,15 +123,15 @@ module.exports = {
 
   // Natural Spawns
 
-    FOOD_CAP: 1, // Max normal food per normal tile. 3
+    FOOD_CAP: 0, // Max normal food per normal tile. 3
     FOOD_SPAWN_CHANCE: 1.5, // Likeliness of normal food spawn attempts succeedingg. 0.875
     FOOD_SPAWN_COOLDOWN: 40, // Cooldown (in game ticks) of food spawn attempts being made. 30
 
-    FOOD_CAP_NEST: 1, // Max nest food per nest tile.
+    FOOD_CAP_NEST: 0, // Max nest food per nest tile.
     FOOD_SPAWN_CHANCE_NEST: 1, // Likeliness of nest food spawn attempts succeeding. 0.25
     FOOD_SPAWN_COOLDOWN_NEST: 28, // Cooldown (in game ticks) of nest food spawn attempts being made. 45
 
-    ENEMY_CAP_NEST: 0.6, // Max nest enemies per nest tile.
+    ENEMY_CAP_NEST: 0, // Max nest enemies per nest tile.
     ENEMY_SPAWN_CHANCE_NEST: 0.6, // Likeliness of nest enemies spawn attempts succeeding. 0.9
     ENEMY_SPAWN_COOLDOWN_NEST: 120, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
