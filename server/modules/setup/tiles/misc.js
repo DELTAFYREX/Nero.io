@@ -32,6 +32,23 @@ normal = new Tile({
     }
 }),
 
+dancefloor = new Tile({
+    color: "rainbow",
+    data: {
+        allowMazeWallSpawn: true,
+        foodSpawnCooldown: 0, foodCount: 0
+    },
+    init: tile => room.spawnableDefault.push(tile),
+    tick: tile => {
+        if (++tile.data.foodSpawnCooldown > c.FOOD_SPAWN_COOLDOWN) {
+            tile.data.foodSpawnCooldown = 0;
+            if (tile.data.foodCount < c.FOOD_CAP && Math.random() < c.FOOD_SPAWN_CHANCE) {
+                spawnNatural(tile, c.FOOD_TYPES, 'food');
+            }
+        }
+    }
+}),
+
 nestTick = tile => {
     if (++tile.data.enemySpawnCooldown > c.ENEMY_SPAWN_COOLDOWN_NEST) {
         tile.data.enemySpawnCooldown = 0;
