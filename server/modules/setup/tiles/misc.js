@@ -35,7 +35,7 @@ normal = new Tile({
 dancefloor = new Tile({
     color: "rainbow",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
@@ -43,35 +43,42 @@ dancefloor = new Tile({
 dancefloor1 = new Tile({
     color: "20",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor2 = new Tile({
     color: "21",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor3 = new Tile({
     color: "22",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor4 = new Tile({
     color: "23",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor5 = new Tile({
     color: "24",
     data: {
-        allowMazeWallSpawn: true,
+        allowMazeWallSpawn: false,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
+blacktile = new Tile({
+    color: "19",
+    data: {
+        allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
