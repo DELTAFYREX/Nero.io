@@ -36,17 +36,44 @@ dancefloor = new Tile({
     color: "rainbow",
     data: {
         allowMazeWallSpawn: true,
-        foodSpawnCooldown: 0, foodCount: 0
     },
     init: tile => room.spawnableDefault.push(tile),
-    tick: tile => {
-        if (++tile.data.foodSpawnCooldown > c.FOOD_SPAWN_COOLDOWN) {
-            tile.data.foodSpawnCooldown = 0;
-            if (tile.data.foodCount < c.FOOD_CAP && Math.random() < c.FOOD_SPAWN_CHANCE) {
-                spawnNatural(tile, c.FOOD_TYPES, 'food');
-            }
-        }
-    }
+}),
+    
+dancefloor1 = new Tile({
+    color: "20",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
+dancefloor2 = new Tile({
+    color: "21",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
+dancefloor3 = new Tile({
+    color: "22",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
+dancefloor4 = new Tile({
+    color: "23",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
+dancefloor5 = new Tile({
+    color: "24",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
 }),
 
 nestTick = tile => {
@@ -102,4 +129,4 @@ wall = new Tile({
 });
 
 
-module.exports = { normal, nest, wall, nestNoBoss };
+module.exports = { normal, nest, wall, nestNoBoss, dancefloor, dancefloor1, dancefloor2, dancefloor3, dancefloor4, dancefloor5 };
