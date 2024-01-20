@@ -509,6 +509,7 @@ Class.fastdrone = {
 Class.revoorbitdrone = {
   PARENT: "drone",  
   LABEL: 'Drone',
+  SYNC_TURRET_SKILLS: true,
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBase",
