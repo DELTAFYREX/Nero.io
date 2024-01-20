@@ -29,8 +29,8 @@ module.exports = {
     ROOM_SETUP: ['map_apspp_wedding'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 400,
-    TILE_HEIGHT: 400,
+    TILE_WIDTH: 270,
+    TILE_HEIGHT: 270,
 
 
 
@@ -105,7 +105,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 2,
+    BOTS: 0,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
@@ -123,20 +123,20 @@ module.exports = {
 
   // Natural Spawns
 
-    FOOD_CAP: 3, // Max normal food per normal tile.
-    FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg.
-    FOOD_SPAWN_COOLDOWN: 30, // Cooldown (in game ticks) of food spawn attempts being made.
+    FOOD_CAP: 2, // Max normal food per normal tile. 3
+    FOOD_SPAWN_CHANCE: 0.6, // Likeliness of normal food spawn attempts succeedingg. 0.875
+    FOOD_SPAWN_COOLDOWN: 40, // Cooldown (in game ticks) of food spawn attempts being made. 30
 
     FOOD_CAP_NEST: 3, // Max nest food per nest tile.
-    FOOD_SPAWN_CHANCE_NEST: 0.25, // Likeliness of nest food spawn attempts succeeding.
-    FOOD_SPAWN_COOLDOWN_NEST: 45, // Cooldown (in game ticks) of nest food spawn attempts being made.
+    FOOD_SPAWN_CHANCE_NEST: 0.19, // Likeliness of nest food spawn attempts succeeding. 0.25
+    FOOD_SPAWN_COOLDOWN_NEST: 28, // Cooldown (in game ticks) of nest food spawn attempts being made. 45
 
     ENEMY_CAP_NEST: 1, // Max nest enemies per nest tile.
-    ENEMY_SPAWN_CHANCE_NEST: 0.9, // Likeliness of nest enemies spawn attempts succeeding.
+    ENEMY_SPAWN_CHANCE_NEST: 0.6, // Likeliness of nest enemies spawn attempts succeeding. 0.9
     ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 60,
+    BOSS_SPAWN_COOLDOWN: 160, //120
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 5,
