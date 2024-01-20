@@ -164,7 +164,7 @@ function PlaySound169() {
       if (document.getElementById("optSound").checked === true) {
             songrecog()
            global.music2.play()
-    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); }, false);
+    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); }, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
           global.music2.songname = "Not Playing";
