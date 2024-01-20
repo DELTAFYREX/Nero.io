@@ -55,7 +55,7 @@ module.exports = {
 
     // Welcome message once a player spawns.
     WELCOME_MESSAGE: "You have spawned! Welcome to the game.\n"
-                    +"You will be invulnerable until you move or shoot OR ACCEDENTALLY PRESS THE FUCKING SPACE BAR.\n"
+                    +"You will be invulnerable until you move or shoot OR §4ACCEDENTALLY PRESS THE FUCKING SPACE BAR.\n"
                     +"Please report any bugs you encounter on our discord! :)",
 
 
@@ -105,7 +105,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 0,
+    BOTS: 2,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
