@@ -482,12 +482,17 @@ update {
 
 #startButton:active,
 #startButton:hover {
-    top: 1px;
-    background: #1B3353;
+    top: 0.5px;
+    background: #335099;
+    /*background: #A9D86D;*/
+    border: 0;
+    border-bottom: 3px solid #1B3353;
+    /*background: #1B3353;*/
     /*background: #8ABC3F;*/
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    height: 39px;
 }
 
 #bottomHolder {
