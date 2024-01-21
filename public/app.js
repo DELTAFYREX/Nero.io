@@ -150,7 +150,7 @@ function PlaySound169() {
 //Music functions:
   //decide the music
   global.music2 = new Audio();
-  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/look_closely.mp3?v=1705291786778", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/look_closely.mp3?v=1705291786778"];
+  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028"];
   var randmusic = pmusic[~~(Math.random() * pmusic.length)];
   global.music2.src = (randmusic);
   //load the play functions for itasdasf meow
@@ -173,19 +173,22 @@ function PlaySound169() {
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
-  global.music2.songname = "OI OI OI";
+  global.music2.songname = "OI OI OI --- Action Agenda";
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417") {
-  global.music2.songname = "Dejected";
+  global.music2.songname = "Dejected --- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038") {
-  global.music2.songname = "World's End";
+  global.music2.songname = "World's End --- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213") {
-  global.music2.songname = "Melancholy";
+  global.music2.songname = "Melancholy --- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890") {
-  global.music2.songname = "Depredation";
+  global.music2.songname = "Depredation --- Deltafyrex";
+}
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028") {
+  global.music2.songname = "Anybody can find Love (exept You.) --- hkmori"
 }
 }
 fetch("changelog.html", { cache: "no-cache" })
