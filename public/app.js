@@ -188,7 +188,7 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Depredation --- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028") {
-  global.music2.songname = "Anybody can find Love (exept You.) --- hkmori"
+  global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
 fetch("changelog.html", { cache: "no-cache" })
