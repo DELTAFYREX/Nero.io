@@ -15,6 +15,7 @@ Class.placeableWallwhite = {
     PARENT: ["placeableWall"],
     COLOR: "white",
     CLEAR_ON_MASTER_UPGRADE: false,
+    PERSISTS_AFTER_DEATH: true
 }
 Class.wallPlacerThingwhite = {
     PARENT: ["wallPlacerThing"],
@@ -42,7 +43,7 @@ Class.wallPlacerThingwhite = {
 Class.wallPlacerwhite = {
     PARENT: ["wallPlacer"],
     LABEL: "White",
-    CLEAR_ON_MASTER_UPGRADE: false,
+    CLEAR_ON_MASTER_UPGRADE: true,
     GUNS: [
        {
             POSITION: [16, 20, 1, 0, 0, 0, 0],
