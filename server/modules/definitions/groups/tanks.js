@@ -445,7 +445,7 @@ Class.protonturretBase = {
         POSITION: [4.65, 10.5, 0, 360/3, 220, 1],
         TYPE: "revosheild",
     }, {
-        POSITION: [4.65, 10.5, 0, 0, 360/3*2, 1],
+        POSITION: [4.65, 10.5, 0, 360/3*2, 220, 1],
         TYPE: "revosheild",
     }]
 };
@@ -488,7 +488,7 @@ Class.sheildhitbox = {
         FACING_TYPE: "smoothWithMotion",
         MOTION_TYPE: "withMaster",
         CAN_GO_OUTSIDE_ROOM: true,
-        HITS_OWN_TYPE: "never",
+        HITS_OWN_TYPE: "hard",
         DAMAGE_EFFECTS: false,
         DIE_AT_RANGE: false,
         ALPHA: 1,
