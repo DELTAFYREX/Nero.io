@@ -439,7 +439,7 @@ Class.shieldturretBase = {
     INDEPENDENT: true,
     TURRETS: [{
         POSITION: [4.65, 10.5, 0, 90, 220, 1],
-        TYPE: "placeableWall",
+        TYPE: "revosheild",
         VULNERABLE: true
 
     }, {
@@ -465,6 +465,50 @@ Class.revogun = {
         }
     ]
 }
+Class.sheildhitbox = {
+        TYPE: "bullet",
+        LABEL: "",
+        ACCEPTS_SCORE: false,
+        FACING_TYPE: "smoothWithMotion",
+        MOTION_TYPE: "withMaster",
+        CAN_GO_OUTSIDE_ROOM: true,
+        HITS_OWN_TYPE: "never",
+        DAMAGE_EFFECTS: false,
+        DIE_AT_RANGE: false,
+        ALPHA: 1,
+        CLEAR_ON_MASTER_UPGRADE: true,
+        CAN_GO_OUTSIDE_ROOM: true,
+        BODY: {
+            SHIELD: 1e9,
+            REGEN: 1e6,
+            HEALTH: 1e9,
+            DENSITY: 1e6,
+            SPEED: 0,
+            PUSHABILITY: 1e2,
+            DAMAGE: 0,
+        }
+    }
+    Class.revosheild = {
+        PARENT: ["bullet"],
+        HITS_OWN_TYPE: 'hard',
+        BODY: {
+            DENSITY: 0,
+        },
+        COLOR: "dgrey",
+        GUNS: [
+            {
+                POSITION: [0, 20, 0, 0, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.drone, {size: 1.8}]),
+                    TYPE: ["sheildhitbox", {ALPHA: 0}],
+                    AUTOFIRE: true,
+                    MAX_CHILDREN: 1,
+                    ALPHA: 0,
+                },
+            }
+        ]
+    }
+// The sheild uses the hitbox like an aura, but it can hit bullets
 Class.laser = {
   PARENT: ["bullet"],
   SHAPE: -1,
