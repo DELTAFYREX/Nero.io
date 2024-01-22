@@ -425,6 +425,7 @@ Class.protonturretBase = {
     }, {
         POSITION: [4.65, 10.5, 0, 360/3, 220, 1],
         TYPE: "revosheild",
+
     }, {
         POSITION: [4.65, 10.5, 0, 360/3*2, 220, 1],
         TYPE: "revosheild",
@@ -439,7 +440,6 @@ Class.pionturretBase = {
     TURRETS: [{
         POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "revosheild",
-
     }, {
         POSITION: [4.65, 10.5, 0, 270, 220, 1],
         TYPE: "revosheild",
@@ -502,6 +502,7 @@ Class.sheildhitbox = {
                     AUTOFIRE: true,
                     MAX_CHILDREN: 1,
                     ALPHA: 0,
+                    VULNERABLE: true
                 },
             }
         ]
