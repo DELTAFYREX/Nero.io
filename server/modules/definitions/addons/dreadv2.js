@@ -102,7 +102,7 @@ Class.genericHexnought = {
 	PARENT: ["genericDreadnoughtOfficialV2"],
 	BODY: hexnoughtBody,
 	SHAPE: 6,
-	COLOR: 'magenta',
+	COLOR: 0,
 	SIZE: 26,
 	DANGER: 12,
 }
@@ -691,24 +691,24 @@ Class.jumboOfficialV2 = {
 		},
 	],
 }
-Class.colossusTopOfficialV2 = {
+Class.colossalTopOfficialV2 = {
 	PARENT: ["genericSquarenought"],
 	GUNS: [],
 }
 for (let i = 0; i < 4; i++) {
-	Class.colossusTopOfficialV2.GUNS.push(
+	Class.colossalTopOfficialV2.GUNS.push(
 		{
 			POSITION: [3.5, 17.5, 0.001, 9, 0, 90*i, 0],
 			PROPERTIES: {COLOR: 9},
 		},
 	)
 }
-Class.colossusBottomOfficialV2 = {
+Class.colossalBottomOfficialV2 = {
 	PARENT: ["genericSquarenought"],
 	GUNS: [],
 }
 for (let i = 0; i < 4; i++) {
-	Class.colossusTopOfficialV2.GUNS.push(
+	Class.colossalTopOfficialV2.GUNS.push(
 		{
 			POSITION: [3.5, 17.5, 0.001, 9, 0, 90*i, 0],
 			PROPERTIES: {COLOR: 9},
@@ -716,16 +716,16 @@ for (let i = 0; i < 4; i++) {
 	)
 }
 for (let i = 0; i < 4; i++) {
-	Class.colossusBottomOfficialV2.GUNS.push(
+	Class.colossalBottomOfficialV2.GUNS.push(
 		{
 			POSITION: [4, 17.5, 0.001, 9, 0, 90*i, 0],
 			PROPERTIES: {COLOR: 9},
 		},
 	)
 }
-Class.colossusOfficialV2 = {
+Class.colossalOfficialV2 = {
 	PARENT: ["genericSquarenought"],
-	LABEL: "colossus",
+	LABEL: "Colossal",
 	BODY: {
 		SPEED: 1.75,
 		HEALTH: 0.65,
@@ -734,11 +734,11 @@ Class.colossusOfficialV2 = {
 	TURRETS: [
 		{
 			POSITION: [13, 0, 0, 0, 0, 1],
-			TYPE: ['colossusTopOfficialV2', {MIRROR_MASTER_ANGLE: true}]
+			TYPE: ['colossalTopOfficialV2', {MIRROR_MASTER_ANGLE: true}]
 		},
 		{
 			POSITION: [20, 0, 0, 0, 0, 0],
-			TYPE: ['colossusBottomOfficialV2', {MIRROR_MASTER_ANGLE: true}]
+			TYPE: ['colossalBottomOfficialV2', {MIRROR_MASTER_ANGLE: true}]
 		},
 	],
 }
@@ -2312,7 +2312,7 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 				Class.moonOfficialV2.UPGRADES_TIER_0 = ["grandioseOfficialV2"];
 					Class.grandioseOfficialV2.UPGRADES_TIER_0 = [makeHexnoughtBodyV2("grandioseOfficialV2")];
 
-		Class.juggernautOfficialV2.UPGRADES_TIER_0 = ["jumboOfficialV2", "colossusOfficialV2"];
+		Class.juggernautOfficialV2.UPGRADES_TIER_0 = ["jumboOfficialV2", "colossalOfficialV2"];
 
 			Class.jumboOfficialV2.UPGRADES_TIER_0 = ["goliathOfficialV2", "planetOfficialV2", "moonOfficialV2"];
 				Class.goliathOfficialV2.UPGRADES_TIER_0 = ["behemothOfficialV2"];
@@ -2320,7 +2320,7 @@ Class.addons.UPGRADES_TIER_0.push("dreadOfficialV2");
 				// Class.planetOfficialV2.UPGRADES_TIER_0 = ["astronomicOfficialV2"];
 				// Class.moonOfficialV2.UPGRADES_TIER_0 = ["grandioseOfficialV2"];
 
-			Class.colossusOfficialV2.UPGRADES_TIER_0 = ["titanOfficialV2", "sirenOfficialV2", "harpyOfficialV2"];
+			Class.colossalOfficialV2.UPGRADES_TIER_0 = ["titanOfficialV2", "sirenOfficialV2", "harpyOfficialV2"];
 				Class.titanOfficialV2.UPGRADES_TIER_0 = ["leviathanOfficialV2"];
 					Class.leviathanOfficialV2.UPGRADES_TIER_0 = [makeHexnoughtBodyV2("leviathanOfficialV2")];
 				Class.sirenOfficialV2.UPGRADES_TIER_0 = ["valrayvnOfficialV2"];
