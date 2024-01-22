@@ -162,7 +162,7 @@ function PlaySound169() {
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
-            songrecog()
+        songrecog()
            global.music2.play()
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); }, false);
      } else if (document.getElementById("optSound").checked === false) {
