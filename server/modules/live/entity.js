@@ -87,7 +87,8 @@ class Gun {
             this.independentChildren = info.PROPERTIES.INDEPENDENT_CHILDREN == null ? false : info.PROPERTIES.INDEPENDENT_CHILDREN;
             if (info.PROPERTIES.COLOR != null) {
                 if (typeof info.PROPERTIES.COLOR === "number" || typeof info.PROPERTIES.COLOR === "string") {
-                        this.colorUnboxed.base = info.PROPERTIES.COLOR;
+                    if (!isNaN(info.PROPERTIES.COLOR) && !isNaN(parseFloat(info.PROPERTIES.COLOR)) || /^[a-zA-Z]*$/.test(info.PROPERTIES.COLOR))
+z                        this.colorUnboxed.base = info.PROPERTIES.COLOR;
                 }
                 else if (typeof info.PROPERTIES.COLOR === "object")
                     this.colorUnboxed = {
@@ -208,7 +209,7 @@ class Gun {
         // Find out some intermediate values
         let angle1 = this.direction + this.angle + this.body.facing,
             angle2 = this.angle + this.body.facing,
-            gunlength = this.length - this.width * this.settings.size / 2,
+            gunlength = 1.5 * this.length - this.width * this.settings.size,
 
             // Calculate offsets based on lengths and directions
             offsetBaseX = this.offset * Math.cos(angle1),
@@ -2278,10 +2279,11 @@ class Entity extends EventEmitter {
         this.isProtected = true;
     }
     say(message, duration = c.CHAT_MESSAGE_DURATION) {
-        if (!chats[this.id]) {
-            chats[this.id] = [];
+        let id = player.body.id;
+        if (!chats[id]) {
+            chats[id] = [];
         }
-        chats[this.id].unshift({ message, expires: Date.now() + duration });
+        chats[id].unshift({ message, expires: Date.now() + duration });
     }
     sendMessage(message) {} // Dummy
     setKillers(killers) {} // Dummy
