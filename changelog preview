@@ -4,9 +4,24 @@
     <ul>
         <li>Added Kivaaharatedas (i did not spell that right)</li>
         <li>Added Equilibrium, Revobrid, Subverter</li>
-        <li>Added Kivaaharatedas (i did not spell that right)</li>
+        <li>shrapnel testing</li>
+        <li>removed unfinished aimbot/boosting testing</li>
         <li>Added Basic Hybrid Tier 3 branch</li>
         <li>Bug Fixed Colors</li>
+        <li>Added Tanks of my friends and tank soundboard support</li>
+        <li>Added the rest of the Basic Hybrid branch (tier 4)</li>
+        <li>Fixed changelog not appearing</li>
+        <li>Added beta music support including 5 songs</li>
+        <li>changed start button look to not shade out and actually work like a button</li>
+        <li>fixed debug key (again)</li>
+        <li>fixed screen tearing</li>
+        <li>worked bullet spawn position</li>
+        <li>Better organized dev menu and changed the way utilities looks</li>
+        <li>Added music recognition in the debug key to see the song name & artist</li>
+        <li>Added new song (Anybody can find Love (except You) by hkmori</li>
+        <li>fixed debug not recognizing a song and not  after its finished</li>
+        <li>Placeholder</li>
+        <li>Placeholder</li>
         <p style="color:red;">wahhh... (i forgor why im crying)</p>
     </ul>
 </div>
