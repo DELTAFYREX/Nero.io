@@ -29,8 +29,8 @@ module.exports = {
     ROOM_SETUP: ['map_apspp_banquet'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 400,
-    TILE_HEIGHT: 400,
+    TILE_WIDTH: 200,
+    TILE_HEIGHT: 200,
 
 
 
