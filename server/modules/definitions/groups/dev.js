@@ -1519,14 +1519,14 @@ Class.shrapnelgun = {
     DANGER: 7,
     GUNS: [
         {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            POSITION: [17, 13, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.halfspeed]),
                 TYPE: "grenade"
             }
         },
         {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+            POSITION: [10, 9, 1, 9, 0, 0, 0],
         }
     ]
 };
