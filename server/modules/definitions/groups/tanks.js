@@ -364,25 +364,6 @@ ON: [{
     }
   ]
 };
-Class.obstacleTurret = {
-    LABEL: 'Shield',
-    DAMAGE_CLASS: 1,
-    SHAPE: 0,
-    BODY: {
-        PUSHABILITY: 0,
-        HEALTH: 1e4,
-        REGEN: 1000,
-        DAMAGE: 1,
-        RESIST: 10000,
-        STEALTH: 1,
-        DENSITY: 10000
-    },
-    VALUE: 0,
-    COLOR: 34,
-    SYNC_SKILLS: true,
-    SYNC_TURRET_SKILLS: true,
-    HITS_OWN_TYPE: "shield"
-};
 Class.turretBaseKiva = {
     LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
