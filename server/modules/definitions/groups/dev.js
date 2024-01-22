@@ -1,4 +1,4 @@
-const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto } = require('../facilitators.js');
+const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto, LayeredBoss } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -19,6 +19,7 @@ Class.developer = {
     RESET_CHILDREN: true,
     ACCEPTS_SCORE: true,
     CAN_BE_ON_LEADERBOARD: true,
+    CAN_GO_OUTSIDE_ROOM: false,
     DRAW_HEALTH: true,
     ARENA_CLOSER: false,
     INVISIBLE: [0, 0],
@@ -957,14 +958,23 @@ Class.tooltipTank = {
 Class.bulletSpawnTest = {
     PARENT: 'genericTank',
     LABEL: "Bullet Spawn Position",
-    GUNS: [{
-        POSITION: [20, 10, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
-            TYPE: ['bullet', {BORDERLESS: true}],
-            BORDERLESS: true,
+    GUNS: [
+        {
+            POSITION: [20, 10, 1, 0, -5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
+                TYPE: ['bullet', {BORDERLESS: true}],
+                BORDERLESS: true,
+            }
+        }, {
+            POSITION: [50, 10, 1, 0, 5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
+                TYPE: ['bullet', {BORDERLESS: true}],
+                BORDERLESS: true,
+            }
         }
-    }]
+    ]
 }
 
 Class.levels = menu("Levels")
@@ -990,7 +1000,7 @@ for (let i = 1; i <= 8; i++) {
         LABEL: "Team " + TEAM
     };
     Class.teams.UPGRADES_TIER_0.push("Team" + TEAM);
-}
+};
 Class['Team' + TEAM_ROOM] = {
     PARENT: ["teams"],
     TEAM: TEAM_ROOM,
@@ -1002,7 +1012,7 @@ Class['Team' + TEAM_ENEMIES] = {
     TEAM: TEAM_ENEMIES,
     COLOR: "yellow",
     LABEL: "Enemies Team"
-}
+};
 Class.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
 Class.testing = menu("Beta Tanks")
@@ -1077,6 +1087,20 @@ Class.Trapper_guy = {
         }
     ]
 };
+let testLayeredBoss = new LayeredBoss("testLayeredBoss", "Test Layered Boss", "terrestrial", 7, 3, "terrestrialTrapTurret", 5, 7, {SPEED: 10});
+testLayeredBoss.addLayer({gun: {
+    POSITION: [3.6, 7, -1.4, 8, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.factory, { size: 0.5 }]),
+        TYPE: ["minion", {INDEPENDENT: true}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 16);
+testLayeredBoss.addLayer({turret: {
+    POSITION: [10, 7.5, 0, null, 160, 0],
+    TYPE: "crowbarTurret",
+}}, true);
 Class.shockwave = {
     PARENT: ["bullet"],
     LABEL: "funy",
@@ -1973,7 +1997,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.terrestrials.UPGRADES_TIER_0 = ["bosses", "ares", "gersemi", "ezekiel", "eris", "selene"];
         Class.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia", "atlas", "rhea", "julius", "genghis", "napoleon"];
         Class.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
-        Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
+        Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
         Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner"]
