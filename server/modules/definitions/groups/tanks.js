@@ -276,7 +276,7 @@ Class.shrapnel = {
     },
     GUNS: [
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 108, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 360/5, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
@@ -334,8 +334,16 @@ Class.grenade = {
                 TYPE: "shrapnel",
                 SHOOT_ON_DEATH: true,
                 PERSISTS_AFTER_DEATH: true
-            },
-    }
+        }
+            }, {
+            POSITION: [15, 8, 1, 0, 0, 180, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.thruster]),
+                TYPE: "bullet",
+                PERSISTS_AFTER_DEATH: true,
+                AUTOFIRE: true
+            }
+        }
   ]
 }
 Class.baseBullet = {
