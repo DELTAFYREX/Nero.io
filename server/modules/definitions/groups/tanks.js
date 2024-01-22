@@ -438,14 +438,14 @@ Class.protonturretBase = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 10.5, 0, 1/3, 220, 1],
+        POSITION: [4.65, 10.5, 0, 0, 220, 1],
         TYPE: "revosheild",
 
     }, {
-        POSITION: [4.65, 10.5, 0, 2/3, 220, 1],
+        POSITION: [4.65, 10.5, 0, 360/3, 220, 1],
         TYPE: "revosheild",
     }, {
-        POSITION: [4.65, 10.5, 0, 0, 220, 1],
+        POSITION: [4.65, 10.5, 0, 0, 360/3*2, 1],
         TYPE: "revosheild",
     }]
 };
@@ -5375,7 +5375,7 @@ Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
 // TANK UPGRADE PATHS
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
-        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"]
+        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
         Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
@@ -5431,7 +5431,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption", "autopoundbrid"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "autodesmosbrid"]
-        Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
+        Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
