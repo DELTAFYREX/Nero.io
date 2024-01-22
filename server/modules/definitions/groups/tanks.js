@@ -470,7 +470,7 @@ Class.sheildhitbox = {
         FACING_TYPE: "smoothWithMotion",
         MOTION_TYPE: "withMaster",
         CAN_GO_OUTSIDE_ROOM: true,
-        HITS_OWN_TYPE: "never",
+        HITS_OWN_TYPE: 'hard',
         DAMAGE_EFFECTS: false,
         DIE_AT_RANGE: false,
         ALPHA: 1,
@@ -488,6 +488,7 @@ Class.sheildhitbox = {
     }
     Class.revosheild = {
         PARENT: ["bullet"],
+        VULNERABLE: true,
         HITS_OWN_TYPE: 'hard',
         BODY: {
             DENSITY: 0,
@@ -5406,7 +5407,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "autobascrid", "revolutionist", "basicCeption"]
         Class.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
-        Class.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "twinCeption", "autotwinbrid"]
+        Class.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "equilibrium", "twinCeption", "autotwinbrid"]
         Class.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption", "autosnipebrid"]
         Class.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption", "automachbrid"]
         Class.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption", "autoflankbrid"]
