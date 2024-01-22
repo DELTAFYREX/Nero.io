@@ -431,7 +431,25 @@ Class.subverterturretBase = {
         TYPE: "revogun",
     }]
 };
-Class.shieldturretBase = {
+Class.protonturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 10.5, 0, 1/3, 220, 1],
+        TYPE: "revosheild",
+
+    }, {
+        POSITION: [4.65, 10.5, 0, 2/3, 220, 1],
+        TYPE: "revosheild",
+    }, {
+        POSITION: [4.65, 10.5, 0, 0, 220, 1],
+        TYPE: "revosheild",
+    }]
+};
+Class.pionturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     COLOR: 9,
@@ -440,12 +458,10 @@ Class.shieldturretBase = {
     TURRETS: [{
         POSITION: [4.65, 10.5, 0, 90, 220, 1],
         TYPE: "revosheild",
-        VULNERABLE: true
 
     }, {
         POSITION: [4.65, 10.5, 0, 270, 220, 1],
-        TYPE: "placeableWall",
-        VULNERABLE: true
+        TYPE: "revosheild",
     }]
 };
 Class.revogun = {
@@ -1382,6 +1398,19 @@ Class.smasher = {
             TYPE: "smasherBody"
         }
     ]
+}
+Class.pion = {
+    PARENT: "genericSmasher",
+    LABEL: "Pion",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        }, {
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "pionturretBase",
+    }]
 }
 Class.healer = {
     PARENT: "genericTank",
@@ -4884,6 +4913,24 @@ Class.revolutionist = {
     },
   ],
 };
+Class.proton = {
+    PARENT: "genericTank",
+    LABEL: "Proton",
+    DANGER: 6,
+    GUNS: [{
+        POSITION: [20, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+            TYPE: "bullet",
+        },
+    },
+          ],
+    TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "protonturretBase",
+    },
+  ],
+};
 Class.baseThrower = {
     PARENT: "genericTank",
     LABEL: "Kivaaritehdas",
@@ -5328,7 +5375,7 @@ Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
 // TANK UPGRADE PATHS
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
-        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "trackerSmasher"]
+        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
         Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
@@ -5384,7 +5431,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption", "autopoundbrid"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "autodesmosbrid"]
-        Class.revolutionist.UPGRADES_TIER_3 = ["hadron", "revodirector", "subverter", "revobrid", "equilibrium", "baseThrower", "autoRevolutionist"]
+        Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
