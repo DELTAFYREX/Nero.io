@@ -1513,24 +1513,6 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.shrapnelgun = {
-    PARENT: "genericTank",
-    LABEL: "Albuquerque",
-    DANGER: 7,
-    GUNS: [{
-            POSITION: [17, 13, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.halfspeed]),
-                TYPE: "grenade"
-            }
-        }
-    ],
-      TURRETS: [{
-        POSITION: [8.2, 16.7, 0, 0, 0, 0],
-        TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
-    }
-  ]
-};
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',

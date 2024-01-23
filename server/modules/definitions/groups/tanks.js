@@ -261,6 +261,7 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
+Class.autobullet = makeHybrid('bullet', "AutoBullet")
 Class.shrapnel = {
     PARENT: "bullet",
     SHAPE: 5,
@@ -4896,6 +4897,43 @@ Class.minilaser = {
         }
     ],
 };
+Class.shrapnelgun = {
+    PARENT: "genericTank",
+    LABEL: "Albuquerque",
+    DANGER: 7,
+    GUNS: [{
+            POSITION: [17, 13, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.halfspeed]),
+                TYPE: "grenade"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [8.2, 16.7, 0, 0, 0, 0],
+        TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
+    }
+  ]
+};
+Class.inception = {
+    PARENT: "genericTank",
+    LABEL: "Inception",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "autobullet",
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [9, -8, 0, 0, 0, 1],
+        TYPE: ["autoTurret", { MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
 Class.revolutionist = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
