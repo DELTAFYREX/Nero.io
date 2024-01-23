@@ -1219,7 +1219,7 @@ Class.spikeBody = {
 
 // Basic & starting upgrades
 Class.basic = {
-    UPGRADE_COLOR: 36,
+    UPGRADE_COLOR: "animatednero",
     PARENT: "genericTank",
     LABEL: "Basic",
     DANGER: 4,
