@@ -347,7 +347,7 @@ Class.grenade = {
         }
     ],
       TURRETS: [{
-        POSITION: [4.65, 0, 0, 0, 0, 1],
+        POSITION: [9, -8, 0, 0, 0, 1],
         TYPE: ["grenadeDeco"]
     }
   ]
