@@ -324,9 +324,6 @@ Class.turretBasenoguns = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
 };
-Class.grenadeDeco = {
-  SHAPE: 0
-}
 Class.grenade = {
     PARENT: "bullet",
     INDEPENDENT: true,
@@ -354,6 +351,9 @@ Class.grenade = {
         TYPE: ["grenadeDeco"]
     }
   ]
+}
+Class.grenadeDeco = {
+  SHAPE: 0
 }
 Class.baseBullet = {
     PARENT: "boomerang",
@@ -657,7 +657,7 @@ Class.clonerprobe = {
     TURRETS: [
     {
       /*  SIZE     X       Y     ANGLE    ARC */
-      POSITION: [24, 0, 0, 0, 360, 360],
+      POSITION: [24, 0, 0, 0, 360, 0],
       TYPE: "mindindicator"
     }
   ]

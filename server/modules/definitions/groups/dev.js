@@ -1518,9 +1518,6 @@ Class.shrapnelgun = {
     LABEL: "asfjsdfghtrekjrth albequerque",
     DANGER: 7,
     GUNS: [{
-            POSITION: [10, 9, 1, 9, 0, 0, 0],
-        },
-        {
             POSITION: [17, 13, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.halfspeed]),
@@ -1529,7 +1526,7 @@ Class.shrapnelgun = {
         }
     ],
       TURRETS: [{
-        POSITION: [14, 12, 0, 0, 0, 1],
+        POSITION: [8, 16, 0, 0, 0, 0],
         TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
     }
   ]
