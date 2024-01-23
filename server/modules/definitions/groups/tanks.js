@@ -276,41 +276,41 @@ Class.shrapnel = {
     },
     GUNS: [
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 360/5-180, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 72, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfspeed, g.halfrange, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 360/5*2-180, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 72*2, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 360/5*3-180, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 72*3, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 360/5*4-180, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 72*4, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 360-180, 0],
+            POSITION: [7, 9.5, 0.6, 7, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
