@@ -36,6 +36,13 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       }
       var clicked = false;
 
+      var vsau = new Audio();
+      vsau.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/jake-chudnow-edited_y1t8j5q.mp3?v=1706018057534"
+      function PlaySound99() {
+        vsau.play();
+      }
+      var clicked = false;
+  
       var clicksound = new Audio();
       clicksound.src =
         "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg";

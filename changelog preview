@@ -28,7 +28,7 @@
         <li>Finished Revolutionist Branch<li>
         <li>Added Inception & Albuquerque</li>
         <li>Placeholder</li>
-        <p style="color:red;">Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
+        <p style="color:red;" onclick="PlaySound99();">Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
 <div>
