@@ -170,58 +170,13 @@ function PlaySound169() {
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
-        drawshit()
            global.music2.play()
-    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); drawshit();}, false);
+    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
           global.music2.songname = "Not Playing";
             }
          return; };
-  
-  function drawshit() {
-  
-  let audio1 = new Audio();
-audio1.src = randmusic;
-  
-const spectcontainer = document.getElementById("container");
-const spectcanvas = document.getElementById("musicCanvas");
-spectcanvas.width = window.innerWidth;
-spectcanvas.height = window.innerHeight;
-
-const spectctx = spectcanvas.getContext("2d");
-  
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-let audioSource = null;
-let spectanalyser = null;
-  
-audio1.play();
-audioSource = audioCtx.createMediaElementSource(audio1);
-spectanalyser = audioCtx.createAnalyser();
-audioSource.connect(spectanalyser);
-spectanalyser.connect(audioCtx.destination);
-  
-spectanalyser.fftSize = 128;
-const bufferLength = spectanalyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
-const barWidth = spectcanvas.width / bufferLength;
-  
-  let x = 0;
-function animate() {
-    x = 0;
-    ctx.clearRect(0, 0, spectcanvas.width, spectcanvas.height);
-    spectanalyser.getByteFrequencyData(dataArray);
-    for (let i = 0; i < bufferLength; i++) {
-        let barHeight = dataArray[i];
-        ctx.fillStyle = "white";
-        ctx.fillRect(x, spectcanvas.height - barHeight, barWidth, barHeight);
-        x += barWidth;
-    }
-
-    requestAnimationFrame(animate);
-}
-    animate();
-  }
 
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
