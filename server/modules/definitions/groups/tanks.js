@@ -4929,7 +4929,7 @@ Class.inception = {
         }
     ],
       TURRETS: [{
-        POSITION: [6.5, 17.5, 0, 0, 0, 0],
+        POSITION: [5.5, 18, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
