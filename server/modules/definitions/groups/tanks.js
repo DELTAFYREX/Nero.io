@@ -328,6 +328,7 @@ Class.grenadeDeco = makeDeco(1)
 Class.grenade = {
     PARENT: "bullet",
     INDEPENDENT: true,
+    BODY: { RANGE: 120 },
     GUNS: [{
             POSITION: [1, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
@@ -337,15 +338,15 @@ Class.grenade = {
                 PERSISTS_AFTER_DEATH: true
         }
             }, {
-            POSITION: [15, 8, 1, 0, 0, 180, 0],
+            POSITION: [14, 6, 1, 0, 0, 180, 0],
             PROPERTIES: {
+                AUTOFIRE: true,
                 SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { recoil: 1.35 }, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: "bullet",
-                PERSISTS_AFTER_DEATH: true,
-                AUTOFIRE: true
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
             }
         }
-  ],
+    ],
       TURRETS: [{
         POSITION: [4.65, 0, 0, 0, 0, 1],
         TYPE: ["grenadeDeco"]
