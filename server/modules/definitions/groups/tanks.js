@@ -263,20 +263,20 @@ Class.turretBase = {
 };
 Class.shrapnel = {
     PARENT: "bullet",
+    SHAPE: 5,
     LABEL: "expold heheahah",
     BODY: {
         RANGE: 1,
         FOV: 0.5,
     },
-    FACING_TYPE: "turnWithSpeed",
     INDEPENDENT: true,
-    CONTROLLERS: ["alwaysFire", "nearestDifferentMaster", "targetSelf"],
+    CONTROLLERS: ["alwaysFire"],
     AI: {
         NO_LEAD: true,
     },
     GUNS: [
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 72, 0],
+            POSITION: [7, 9.5, 1, 7, 0, 72, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfspeed, g.halfrange, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
@@ -284,7 +284,7 @@ Class.shrapnel = {
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 72*2, 0],
+            POSITION: [7, 9.5, 1, 7, 0, 72*2, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
@@ -292,7 +292,7 @@ Class.shrapnel = {
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 72*3, 0],
+            POSITION: [7, 9.5, 1, 7, 0, 72*3, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
@@ -300,7 +300,7 @@ Class.shrapnel = {
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 72*4, 0],
+            POSITION: [7, 9.5, 1, 7, 0, 72*4, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
@@ -308,9 +308,9 @@ Class.shrapnel = {
             },
         },
         {
-            POSITION: [7, 9.5, 0.6, 7, 0, 0, 0],
+            POSITION: [7, 9.5, 1, 7, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee, g.halfspeed, g.halfspeed, g.halfrange, g.halfspeed, g.halfrange]),
                 TYPE: ["trap", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.swarm,
             },
@@ -324,6 +324,7 @@ Class.turretBasenoguns = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
 };
+Class.grenadeDeco = makeDeco(1)
 Class.grenade = {
     PARENT: "bullet",
     INDEPENDENT: true,
@@ -344,6 +345,11 @@ Class.grenade = {
                 AUTOFIRE: true
             }
         }
+  ],
+      TURRETS: [{
+        POSITION: [4.65, 0, 0, 0, 0, 1],
+        TYPE: ["grenadeDeco"]
+    }
   ]
 }
 Class.baseBullet = {
