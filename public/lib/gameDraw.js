@@ -152,27 +152,11 @@ var gameDraw = {
                 .padStart(6, "0")
         );
     },
-    getNero: (a, b, c = 0.5) => {
-        if (0 >= c) return a;
-        if (1 <= c) return b;
-        let f = 1 - c;
-        a = parseInt(a.slice(1, 7), 16);
-        b = parseInt(b.slice(1, 7), 16);
-        return (
-            "#" +
-            (
-                (((a & 0xff0000) * f + (b & 0xff0000) * c) & 0xff0000) |
-                (((a & 0x00ff00) * f + (b & 0x00ff00) * c) & 0x00ff00) |
-                (((a & 0x0000ff) * f + (b & 0x0000ff) * c) & 0x0000ff)
-            )
-                .toString(16)
-                .padStart(6, "0")
-        );
-    },
     animatedColor: {
         lesbian: "",
         gay: "",
         bi: "",
+        nero: "",
         trans: "",
         blue_red: "",
         blue_grey: "",
@@ -203,6 +187,10 @@ var gameDraw = {
             trans_pink  = "#f7a8b8",
             trans_blue  = "#55cdfc",
             trans_white = "#ffffff";
+      
+            nero_blue1 = "#4287f5",
+            nero_blue2 = "#70b5ff",
+            nero_blue3 = "#335099";
 
         gameDraw.animatedColor.lesbian = gameDraw.getRainbow(lesbian_useSecondSet ? lesbian_oredange : lesbian_white, lesbian_useSecondSet ? lesbian_white : lesbian_magenta, (lesbian_useSecondSet ? five_bars : five_bars - 3) / 2);
         gameDraw.animatedColor.gay = gameDraw.hslToRgb(gay_transition, 0.75, 0.5);
@@ -214,6 +202,8 @@ var gameDraw = {
         gameDraw.animatedColor.grey_blue = blinker ? gameDraw.color.grey : gameDraw.color.blue;
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
+      
+        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2 ?);
     },
     animatedColors: {
         // police
@@ -251,6 +241,10 @@ var gameDraw = {
         // bi
         38: true,
         animatedBi: true,
+      
+        // nero
+        42: true,
+        animatednero: true,
     },
     getColor: (colorNumber) => {
         switch (colorNumber) {
@@ -397,6 +391,9 @@ var gameDraw = {
             case "41":
             case "tree":
                 return "#267524";
+            case "42":
+            case "nero":
+                return gameDraw.animatedColor.nero;
         }
     },
     getColorDark: (givenColor) => {
