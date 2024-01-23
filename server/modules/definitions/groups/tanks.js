@@ -4929,8 +4929,8 @@ Class.inception = {
         }
     ],
       TURRETS: [{
-        POSITION: [5, 15, 0, 0, 0, 0],
-        TYPE: ["autoTurret", { MIRROR_MASTER_ANGLE: true }]
+        POSITION: [5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
 }
@@ -5242,7 +5242,7 @@ Class.revodirector = {
 }
 Class.directdrive = {
     PARENT: "genericTank",
-    LABEL: "Direcdrive",
+    LABEL: "Motor",
     STAT_NAMES: statnames.drone,
     BODY: {
         FOV: base.FOV * 1.1
@@ -5412,7 +5412,7 @@ Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
 
 
 // TANK UPGRADE PATHS
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid", "inception"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -5483,6 +5483,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
+  
+    Class.inception.UPGRADES_TIER_2 = ["directdrive"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
