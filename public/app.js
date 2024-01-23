@@ -170,12 +170,10 @@ function PlaySound169() {
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
-        barstart()
            global.music2.play()
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); barstart();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
-               barstart()
           global.music2.songname = "Not Playing";
             }
          return; };
@@ -184,13 +182,13 @@ function PlaySound169() {
       
       function barstart() {
         
-    music.src = randmusic
+    music.src = new Audio();
     music.load();
     music.play();
   
       var spectcontext = new AudioContext();
-    var spectsrc = context.createMediaElementSource(music);
-    var musicanalyser = context.createAnalyser();
+    var spectsrc = spectcontext.createMediaElementSource(music);
+    var musicanalyser = spectcontext.createAnalyser();
   
       let spectcanvas = document.getElementById("musicCanvas");
       spectcanvas.width = window.innerWidth;
@@ -198,7 +196,7 @@ function PlaySound169() {
       let spectctx = spectcanvas.getContext("2d");
   
       spectsrc.connect(musicanalyser);
-      musicanalyser.connect(context.destination);
+      musicanalyser.connect(spectcontext.destination);
   
       musicanalyser.fftSize = 256;
 
@@ -207,10 +205,10 @@ function PlaySound169() {
 
       var dataArray = new Uint8Array(bufferLength);
   
-      var WIDTH = spectcanvas.width;
-      var HEIGHT = spectcanvas.height;
+      var BARSWIDTH = spectcanvas.width;
+      var BARSHEIGHT = spectcanvas.height;
 
-      var barWidth = (WIDTH / bufferLength) * 2.5;
+      var barWidth = (BARSWIDTH / bufferLength) * 2.5;
       var barHeight;
       var x = 0;
 
@@ -221,8 +219,8 @@ function PlaySound169() {
 
       musicanalyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      spectctx.fillStyle = "#000";
+      spectctx.fillRect(0, 0, BARSWIDTH, BARSHEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i];
@@ -231,8 +229,8 @@ function PlaySound169() {
         var g = 250 * (i/bufferLength);
         var b = 50;
 
-        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+        spectctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        spectctx.fillRect(x, BARSHEIGHT - barHeight, barWidth, barHeight);
 
         x += barWidth + 1;
       }

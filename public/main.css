@@ -656,7 +656,7 @@ a.link {
     position: absolute;
 }
 #musicCanvas {
-  position: absolute;
+  position: fixed;
   pointer-events: none;
   left: 0;
   top: 0;
