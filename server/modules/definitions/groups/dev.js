@@ -1515,7 +1515,7 @@ Class.devtesttemplate = {
 };
 Class.shrapnelgun = {
     PARENT: "genericTank",
-    LABEL: "asfjsdfghtrekjrth albequerque",
+    LABEL: "Albuquerque",
     DANGER: 7,
     GUNS: [{
             POSITION: [17, 13, 1, 0, 0, 0, 0],
@@ -1526,7 +1526,7 @@ Class.shrapnelgun = {
         }
     ],
       TURRETS: [{
-        POSITION: [8, 16, 0, 0, 0, 0],
+        POSITION: [8.3, 16.6, 0, 0, 0, 0],
         TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
     }
   ]
