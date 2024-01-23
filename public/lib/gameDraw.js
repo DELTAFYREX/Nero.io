@@ -203,7 +203,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2, lesbian_useSecondSet ? nero_blue3 : nero_blue1, (lesbian_useSecondSet ? five_bars : five_bars - 3) / 2);
+        gameDraw.animatedColor.nero = gameDraw.hslToRgb(nero_blue1, nero_blue2, nero_blue3, nero_blue1, (five_bars - 4));
     },
     animatedColors: {
         // police
