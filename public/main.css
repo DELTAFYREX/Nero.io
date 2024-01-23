@@ -669,6 +669,16 @@ a.link {
     color: black;
     background-color: #ffffff88;
 }
+p.vsaucereference {
+  animation: pfpDefault 800ms linear both;
+}
+p.vsaucereference:hover {
+     animation:pfpHoverOn 400ms linear both;
+}
+
+p.vsaucereference:active {
+     animation:pfpDefault 200ms linear both;
+}
 
 input [type="image"]:focus {
     border: none;
