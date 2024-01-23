@@ -223,7 +223,7 @@ var gameDraw = {
         gameDraw.animatedColor.nero = gameDraw.getNero(nero_blue1, nero_blue2, nero_blue3, (gay_transition, 0.75, 0.5));
     },
     animatedColors: {
-        // police
+          // 
         20: true,
         animatedBlueRed: true,
 
@@ -409,7 +409,7 @@ var gameDraw = {
             case "tree":
                 return "#267524";
             case "42":
-            case "nero":
+            case "animatednero":
                 return gameDraw.animatedColor.nero;
         }
     },
