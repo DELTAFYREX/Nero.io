@@ -152,6 +152,23 @@ var gameDraw = {
                 .padStart(6, "0")
         );
     },
+    getNero: (a, b, c = 0.5) => {
+        if (0 >= c) return a;
+        if (1 <= c) return b;
+        let f = 1 - c;
+        a = parseInt(a.slice(1, 7), 16);
+        b = parseInt(b.slice(1, 7), 16);
+        return (
+            "#" +
+            (
+                (((a & 0xff0000) * f + (b & 0xff0000) * c) & 0xff0000) |
+                (((a & 0x00ff00) * f + (b & 0x00ff00) * c) & 0x00ff00) |
+                (((a & 0x0000ff) * f + (b & 0x0000ff) * c) & 0x0000ff)
+            )
+                .toString(16)
+                .padStart(6, "0")
+        );
+    },
     animatedColor: {
         lesbian: "",
         gay: "",

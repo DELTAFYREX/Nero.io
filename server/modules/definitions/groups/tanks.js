@@ -437,15 +437,15 @@ Class.protonturretBase = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 10.5, 0, 0, 220, 1],
+        POSITION: [5, 10.5, 0, 0, 220, 1],
         TYPE: "revosheild",
 
     }, {
-        POSITION: [4.65, 10.5, 0, 360/3, 220, 1],
+        POSITION: [5, 10.5, 0, 360/3, 220, 1],
         TYPE: "revosheild",
 
     }, {
-        POSITION: [4.65, 10.5, 0, 360/3*2, 220, 1],
+        POSITION: [5, 10.5, 0, 360/3*2, 220, 1],
         TYPE: "revosheild",
     }]
 };
@@ -456,10 +456,10 @@ Class.pionturretBase = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
     TURRETS: [{
-        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        POSITION: [5, 10.5, 0, 90, 220, 1],
         TYPE: "revosheild",
     }, {
-        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        POSITION: [5, 10.5, 0, 270, 220, 1],
         TYPE: "revosheild",
     }]
 };
@@ -511,7 +511,7 @@ Class.sheildhitbox = {
         BODY: {
             DENSITY: 0,
         },
-        COLOR: "dgrey",
+        COLOR: "darkGray",
         GUNS: [
             {
                 POSITION: [0, 20, 0, 0, 0, 0, 0],
