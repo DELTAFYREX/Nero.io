@@ -1529,7 +1529,7 @@ Class.shrapnelgun = {
         }
     ],
       TURRETS: [{
-        POSITION: [21, 0, 12, 0, 0, 1],
+        POSITION: [14, 12, 0, 0, 0, 1],
         TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
     }
   ]
