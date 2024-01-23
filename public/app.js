@@ -170,31 +170,39 @@ function PlaySound169() {
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
+        barstart()
            global.music2.play()
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); barstart();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
+               barstart()
           global.music2.songname = "Not Playing";
             }
          return; };
+  
+    var music = global.music2;
       
       function barstart() {
+        
+    music.src = randmusic
+    music.load();
+    music.play();
   
-      var context = new AudioContext();
-    var src = context.createMediaElementSource(global.music2);
-    var analyser = context.createAnalyser();
+      var spectcontext = new AudioContext();
+    var spectsrc = context.createMediaElementSource(music);
+    var musicanalyser = context.createAnalyser();
   
       let spectcanvas = document.getElementById("musicCanvas");
       spectcanvas.width = window.innerWidth;
       spectcanvas.height = window.innerHeight;
       let spectctx = spectcanvas.getContext("2d");
   
-      src.connect(analyser);
-      analyser.connect(context.destination);
+      spectsrc.connect(musicanalyser);
+      musicanalyser.connect(context.destination);
   
-      analyser.fftSize = 256;
+      musicanalyser.fftSize = 256;
 
-      var bufferLength = analyser.frequencyBinCount;
+      var bufferLength = musicanalyser.frequencyBinCount;
       console.log(bufferLength);
 
       var dataArray = new Uint8Array(bufferLength);
@@ -211,7 +219,7 @@ function PlaySound169() {
 
       x = 0;
 
-      analyser.getByteFrequencyData(dataArray);
+      musicanalyser.getByteFrequencyData(dataArray);
 
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -230,7 +238,7 @@ function PlaySound169() {
       }
     }
     renderFrame();
-  };
+  }
   
 
 function songrecog() {
