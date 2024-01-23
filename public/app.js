@@ -177,6 +177,59 @@ function PlaySound169() {
           global.music2.songname = "Not Playing";
             }
          return; };
+  
+      var context = new AudioContext();
+    var src = context.createMediaElementSource(global.music2);
+    var analyser = context.createAnalyser();
+  
+      let spectcanvas = document.getElementById("gameCanvas");
+      spectcanvas.width = window.innerWidth;
+      spectcanvas.height = window.innerHeight;
+      let spectctx = spectcanvas.getContext("2d");
+  
+      src.connect(analyser);
+      analyser.connect(context.destination);
+  
+      analyser.fftSize = 256;
+
+      var bufferLength = analyser.frequencyBinCount;
+      console.log(bufferLength);
+
+      var dataArray = new Uint8Array(bufferLength);
+  
+      var WIDTH = spectcanvas.width;
+      var HEIGHT = spectcanvas.height;
+
+      var barWidth = (WIDTH / bufferLength) * 2.5;
+      var barHeight;
+      var x = 0;
+
+    function renderFrame() {
+      requestAnimationFrame(renderFrame);
+
+      x = 0;
+
+      analyser.getByteFrequencyData(dataArray);
+
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+      for (var i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i];
+        
+        var r = barHeight + (25 * (i/bufferLength));
+        var g = 250 * (i/bufferLength);
+        var b = 50;
+
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+        x += barWidth + 1;
+      }
+    }
+    renderFrame();
+  
+
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
