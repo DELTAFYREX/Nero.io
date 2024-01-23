@@ -171,18 +171,20 @@ function PlaySound169() {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
            global.music2.play()
-    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); }, false);
+    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); barstart();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
           global.music2.songname = "Not Playing";
             }
          return; };
+      
+      function barstart() {
   
       var context = new AudioContext();
     var src = context.createMediaElementSource(global.music2);
     var analyser = context.createAnalyser();
   
-      let spectcanvas = document.getElementById("gameCanvas");
+      let spectcanvas = document.getElementById("musicCanvas");
       spectcanvas.width = window.innerWidth;
       spectcanvas.height = window.innerHeight;
       let spectctx = spectcanvas.getContext("2d");
@@ -228,6 +230,7 @@ function PlaySound169() {
       }
     }
     renderFrame();
+  };
   
 
 function songrecog() {
