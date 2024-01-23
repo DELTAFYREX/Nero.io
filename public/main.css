@@ -670,14 +670,15 @@ a.link {
     background-color: #ffffff88;
 }
 p.vsaucereference {
-  animation: pfpDefault 800ms linear both;
+     animation:pfpHoverOn 400ms linear both;
+  font-size: 13px;
 }
 p.vsaucereference:hover {
      animation:pfpHoverOn 400ms linear both;
 }
 
 p.vsaucereference:active {
-     animation:pfpDefault 200ms linear both;
+  animation: pfpDefault 800ms linear both;
 }
 
 input [type="image"]:focus {
