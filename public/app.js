@@ -171,73 +171,19 @@ function PlaySound169() {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
            global.music2.play()
-    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); barstart();}, false);
+    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
           global.music2.songname = "Not Playing";
             }
          return; };
   
-    var music = global.music2;
-      
-      function barstart() {
-        
-    music.src = new Audio();
-    music.load();
-    music.play();
-  
-      var spectcontext = new AudioContext();
-    var spectsrc = spectcontext.createMediaElementSource(music);
-    var musicanalyser = spectcontext.createAnalyser();
-  
-      let spectcanvas = document.getElementById("musicCanvas");
-      spectcanvas.width = window.innerWidth;
-      spectcanvas.height = window.innerHeight;
-      let spectctx = spectcanvas.getContext("2d");
-  
-      spectsrc.connect(musicanalyser);
-      musicanalyser.connect(spectcontext.destination);
-  
-      musicanalyser.fftSize = 256;
+  const spectcontainer = document.getElementById("gameAreaWrapper");
+const spectcanvas = document.getElementById("musicCanvas");
+spectcanvas.width = window.innerWidth;
+spectcanvas.height = window.innerHeight;
 
-      var bufferLength = musicanalyser.frequencyBinCount;
-      console.log(bufferLength);
-
-      var dataArray = new Uint8Array(bufferLength);
-  
-      var BARSWIDTH = spectcanvas.width;
-      var BARSHEIGHT = spectcanvas.height;
-
-      var barWidth = (BARSWIDTH / bufferLength) * 2.5;
-      var barHeight;
-      var x = 0;
-
-    function renderFrame() {
-      requestAnimationFrame(renderFrame);
-
-      x = 0;
-
-      musicanalyser.getByteFrequencyData(dataArray);
-
-      spectctx.fillStyle = "#000";
-      spectctx.fillRect(0, 0, BARSWIDTH, BARSHEIGHT);
-
-      for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
-        
-        var r = barHeight + (25 * (i/bufferLength));
-        var g = 250 * (i/bufferLength);
-        var b = 50;
-
-        spectctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        spectctx.fillRect(x, BARSHEIGHT - barHeight, barWidth, barHeight);
-
-        x += barWidth + 1;
-      }
-    }
-    renderFrame();
-  }
-  
+const spectctx = spectcanvas.getContext("2d");
 
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
