@@ -183,14 +183,14 @@ var gameDraw = {
             bi_pink   = "#D70071",
             bi_purple = "#9C4E97",
             bi_blue   = "#0035AA",
+            
+            nero_blue1 = "#4287f5",
+            nero_blue2 = "#70b5ff",
+            nero_blue3 = "#335099",
 
             trans_pink  = "#f7a8b8",
             trans_blue  = "#55cdfc",
             trans_white = "#ffffff";
-      
-            nero_blue1 = "#4287f5",
-            nero_blue2 = "#70b5ff",
-            nero_blue3 = "#335099";
 
         gameDraw.animatedColor.lesbian = gameDraw.getRainbow(lesbian_useSecondSet ? lesbian_oredange : lesbian_white, lesbian_useSecondSet ? lesbian_white : lesbian_magenta, (lesbian_useSecondSet ? five_bars : five_bars - 3) / 2);
         gameDraw.animatedColor.gay = gameDraw.hslToRgb(gay_transition, 0.75, 0.5);
@@ -203,7 +203,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2 ?);
+        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2, lesbian_useSecondSet ? nero_blue3 : nero_blue1, (lesbian_useSecondSet ? five_bars : five_bars - 3) / 2);
     },
     animatedColors: {
         // police
