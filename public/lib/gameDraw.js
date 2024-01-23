@@ -220,7 +220,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = [nero_blue1, nero_blue2, nero_blue3]three_bars];
+        gameDraw.animatedColor.nero = gameDraw.getNero(nero_blue1, nero_blue2, nero_blue3, (gay_transition, 0.75, 0.5));
     },
     animatedColors: {
         // police
