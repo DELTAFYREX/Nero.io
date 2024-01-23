@@ -185,7 +185,7 @@ var gameDraw = {
     reanimateColors: () => {
         let now = Date.now(),
 
-            //six_gradient = Math.floor((now / 200) % 6),
+            six_gradient = Math.floor((now / 200) % 6),
             five_bars = Math.floor((now % 2000) / 400),
             three_bars = Math.floor((now % 2000) * 3 / 2000),
             blinker = 150 > now % 300,
@@ -220,7 +220,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2, lesbian_useSecondSet ? nero_blue3 : nero_blue2, (lesbian_useSecondSet ? gay_transition : gay_transition, 0.75, 0.5) / 2);
+        gameDraw.animatedColor.nero = gameDraw.getRainbow(lesbian_useSecondSet ? nero_blue1 : nero_blue2, lesbian_useSecondSet ? nero_blue3 : nero_blue2, (lesbian_useSecondSet ? six_gradient : six_gradient - 3) / 2);
     },
     animatedColors: {
           // 
