@@ -113,7 +113,6 @@ function PlaySound69() {
 <body oncontextmenu="return false" id="mainBody">
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
-        <canvas id="musicCanvas" tabindex="1"></canvas>
         <input id="chatInput" type="text" maxlength="256" hidden="true">
     </div>
     <div id="mainWrapper">
@@ -264,7 +263,10 @@ popup = ' onclick="openPopup()" '
                         <button id="startButton" onmouseover="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
                     </div>
                 </div>
-                      
+                  <div id="container">
+                <canvas id="musicCanvas" tabindex="1"></canvas>
+                        </div>
+
                 <div class="startMenuHolder shrinkable">
                     <span class="titleSpan">Changelog</span>
                     <div id="patchNotes" class="shadowScroll"></div>

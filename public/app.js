@@ -170,8 +170,9 @@ function PlaySound169() {
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
+        drawshit()
            global.music2.play()
-    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
+    global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog(); drawshit();}, false);
      } else if (document.getElementById("optSound").checked === false) {
           global.music2.pause()
           global.music2.songname = "Not Playing";
@@ -183,7 +184,7 @@ function PlaySound169() {
   let audio1 = new Audio();
 audio1.src = randmusic;
   
-  const spectcontainer = document.getElementById("gameAreaWrapper");
+const spectcontainer = document.getElementById("container");
 const spectcanvas = document.getElementById("musicCanvas");
 spectcanvas.width = window.innerWidth;
 spectcanvas.height = window.innerHeight;
@@ -219,6 +220,7 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
+    animate();
   }
 
 function songrecog() {
