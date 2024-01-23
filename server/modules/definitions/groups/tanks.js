@@ -261,7 +261,7 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
-Class.autobullet = makeHybrid('bullet', "AutoBullet")
+Class.autobullet = makeAuto('bullet', "AutoBullet")
 Class.shrapnel = {
     PARENT: "bullet",
     SHAPE: 5,
@@ -4929,7 +4929,7 @@ Class.inception = {
         }
     ],
       TURRETS: [{
-        POSITION: [9, -8, 0, 0, 0, 1],
+        POSITION: [5, 15, 0, 0, 0, 0],
         TYPE: ["autoTurret", { MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5452,7 +5452,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
         Class.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"]
         Class.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery", "artilbrid"]
-        Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "autoLaunch", "launchbrid"]
+        Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "shrapnelgun", "autoLaunch", "launchbrid"]
 
     Class.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "autoTrap", "trapbrid"]
         Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"]
