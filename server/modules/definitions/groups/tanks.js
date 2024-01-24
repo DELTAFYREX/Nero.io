@@ -4935,6 +4935,44 @@ Class.inception = {
     }
   ]
 }
+Class.machceptioner = {
+    PARENT: "Machceptioner",
+    LABEL: "Inception",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                TYPE: "autobullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [5.5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
+Class.poundceptioner = {
+    PARENT: "genericTank",
+    LABEL: "Tailgator",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [20.5, 12, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+                TYPE: "bullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [5.5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
 Class.revolutionist = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
