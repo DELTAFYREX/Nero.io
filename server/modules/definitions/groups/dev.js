@@ -1217,7 +1217,7 @@ Class.watertankFire = {
         },
     ]
 };
-exports.piszerbeam = {
+Class.piszerbeam = {
   PARENT: "genericTank",
   LABEL: "Pissliner",
   COLOR: "yellow",
@@ -1540,18 +1540,18 @@ Class.pisseroo = {
         }
     }]
 }
-exports.adsfoipuasdfiopu = {
-PARENT: "genericTank",
-LABEL: "Random tank i made in music class because i can",
-UPGRADE_TOOLTIP: "penis explosion chamber",
-GUNS: [{
-POSITION: [21, 10, 0, 0, 1, 0, 0],
-PROPERTIES: {
-SHOOT_SETTINGS: ([g.basic, g.op]),
-TYPE: "bullet"
-}
-}
-]
+Class.adsfoipuasdfiopu = {
+    PARENT: ["genericTank"],
+    LABEL: "Random tank i made in music class because i can",
+    UPGRADE_TOOLTIP: "send this * to the penis explosion chamber and have his penis exploded immediately",
+    GUNS: [{
+        POSITION: [21, 10, 0, 0, 1, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+            TYPE: "bullet"
+            }
+        }
+    ]
 }
 
 //wait whats stuff

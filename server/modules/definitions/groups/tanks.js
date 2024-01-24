@@ -4948,7 +4948,7 @@ Class.machinception = {
             }
         }
     ],
-      TURRETS: [{
+    TURRETS: [{
         POSITION: [6.5, 18, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
@@ -5523,7 +5523,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "", "directdrive"]
+    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "tailgator", "directdrive"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
