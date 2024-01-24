@@ -4935,6 +4935,44 @@ Class.inception = {
     }
   ]
 }
+Class.machceptioner = {
+    PARENT: "Machceptioner",
+    LABEL: "Inception",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                TYPE: "autobullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [6.5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
+Class.poundceptioner = {
+    PARENT: "genericTank",
+    LABEL: "Tailgator",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [20.5, 12, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+                TYPE: "autobullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [7.5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
 Class.revolutionist = {
     PARENT: "genericTank",
     LABEL: "Revolutionist",
@@ -5485,7 +5523,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["directdrive"]
+    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machceptioner", "poundceptioner", "directdrive"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
