@@ -1540,6 +1540,19 @@ Class.pisseroo = {
         }
     }]
 }
+exports.adsfoipuasdfiopu = {
+PARENT: "genericTank",
+LABEL: "Random tank i made in music class because i can",
+UPGRADE_TOOLTIP: "penis explosion chamber",
+GUNS: [{
+POSITION: [21, 10, 0, 0, 1, 0, 0],
+PROPERTIES: {
+SHOOT_SETTINGS: ([g.basic, g.op]),
+TYPE: "bullet"
+}
+}
+]
+}
 
 //wait whats stuff
 Class.placeableWall = {
@@ -1959,7 +1972,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["bosses", "taureonBoss", "zenphiaBoss", "dogeiscutBoss", "trplnrBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner"]
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu"]
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
