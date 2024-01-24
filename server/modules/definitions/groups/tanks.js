@@ -4897,7 +4897,7 @@ Class.minilaser = {
             },
         }
     ],
-};
+}
 Class.shrapnelgun = {
     PARENT: "genericTank",
     LABEL: "Albuquerque",
@@ -4915,7 +4915,7 @@ Class.shrapnelgun = {
         TYPE: ["grenadeDeco", { MIRROR_MASTER_ANGLE: true }],
     }
   ]
-};
+}
 Class.inception = {
     PARENT: "genericTank",
     LABEL: "Inception",
@@ -4935,7 +4935,7 @@ Class.inception = {
     }
   ]
 }
-Class.machceptioner = {
+Class.machinception = {
     PARENT: "Machceptioner",
     LABEL: "Inception",
     DANGER: 4,
@@ -4954,7 +4954,7 @@ Class.machceptioner = {
     }
   ]
 }
-Class.poundceptioner = {
+Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
     DANGER: 4,
@@ -5523,7 +5523,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machceptioner", "poundceptioner", "directdrive"]
+    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "", "directdrive"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
