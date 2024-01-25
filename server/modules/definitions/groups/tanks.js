@@ -5527,4 +5527,4 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
-        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHybrid"]
+        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHelix", "helixbrid"]

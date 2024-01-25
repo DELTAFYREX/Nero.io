@@ -732,95 +732,118 @@ Class.shinySentryTrap.UPGRADE_LABEL = "Shiny Trap Sentry";
 
 // SENTINELS (by ranar)
 Class.sentinel = {
-    PARENT: ["genericTank"],
-    TYPE: "crasher",
-    LABEL: "Sentinel",
-    DANGER: 7,
-    COLOR: "purple",
-    SHAPE: 5,
-    SIZE: 13,
-    SKILL: skillSet({
-        rld: 0.7, //reload
-        dam: 0.45, //bullet damage
-        pen: 0.6, //bullet penetration
-        str: 0.6, //bullet health
-        atk: 0.5, //bullet speed
-        spd: 0.6, //body damage
-        hlt: 0.85, //max health
-        shi: 0.45, //shield capacity
-        rgn: 0.35, //shield regeneration
-        mob: 0, //movement speed
-    }),
-    VALUE: 26668,
-    VARIES_IN_SIZE: true,
-    CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal", "minion"],
-    AI: { NO_LEAD: true },
-    BODY: {
-        FOV: 0.8,
-        ACCEL: 0.003,
-        DAMAGE: base.DAMAGE * 2.1,
-        SPEED: base.SPEED * 0.4,
-        HEALTH: base.HEALTH * 2.1,
-        SHIELD: base.SHIELD * 2.1,
-        REGEN: base.REGEN * 0.15,
-    },
-    MOTION_TYPE: "motor",
-    FACING_TYPE: "smoothToTarget",
-    HITS_OWN_TYPE: "hard",
+  PARENT: ["genericTank"],
+  TYPE: "crasher",
+  LABEL: "Sentinel",
+  DANGER: 7,
+  COLOR: "purple",
+  SHAPE: 5,
+  SIZE: 13,
+  SKILL: skillSet({
+    rld: 0.7, //reload
+    dam: 0.45, //bullet damage
+    pen: 0.6, //bullet penetration
+    str: 0.6, //bullet health
+    atk: 0.5, //bullet speed
+    spd: 0.6, //body damage
+    hlt: 0.85, //max health
+    shi: 0.45, //shield capacity
+    rgn: 0.35, //shield regeneration
+    mob: 0, //movement speed
+  }),
+  VALUE: 26668,
+  VARIES_IN_SIZE: true,
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal", "minion"],
+  AI: { NO_LEAD: true },
+  BODY: {
+    FOV: 0.8,
+    ACCEL: 0.003,
+    DAMAGE: base.DAMAGE * 2.1,
+    SPEED: base.SPEED * 0.4,
+    HEALTH: base.HEALTH * 2.1,
+    SHIELD: base.SHIELD * 2.1,
+    REGEN: base.REGEN * 0.15,
+  },
+  MOTION_TYPE: "motor",
+  FACING_TYPE: "smoothToTarget",
+  HITS_OWN_TYPE: "hard",
 };
 Class.sentinelMissile = {
-    PARENT: ["bullet"],
-    LABEL: "Missile",
-    INDEPENDENT: true,
-    BODY: {
-        RANGE: 120,
-        DENSITY: 3,
+  PARENT: ["bullet"],
+  LABEL: "Missile",
+  INDEPENDENT: true,
+  BODY: {
+    RANGE: 120,
+    DENSITY: 3,
+  },
+  GUNS: [
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+
+      POSITION: [12, 10, 0, 0, 0, 180, 0],
+      PROPERTIES: {
+        AUTOFIRE: true,
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer, 
+        ]),
+        TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+        STAT_CALCULATOR: gunCalcNames.thruster,
+      },
     },
-    GUNS: [
-        {
-            POSITION: [12, 10, 0, 0, 0, 180, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer]),
-                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
-                STAT_CALCULATOR: gunCalcNames.thruster,
-            },
-        }, {
-            POSITION: [14, 6, 1, 0, -2, 130, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer]),
-                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
-                STAT_CALCULATOR: gunCalcNames.thruster,
-            },
-        }, {
-            POSITION: [14, 6, 1, 0, 2, 230, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer]),
-                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
-                STAT_CALCULATOR: gunCalcNames.thruster,
-            },
-        },
-    ],
+    {
+      POSITION: [14, 6, 1, 0, -2, 130, 0],
+      PROPERTIES: {
+        AUTOFIRE: true,
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+                    g.skimmer,
+        ]),
+        TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+        STAT_CALCULATOR: gunCalcNames.thruster,
+      },
+    },
+    {
+      POSITION: [14, 6, 1, 0, 2, 230, 0],
+      PROPERTIES: {
+        AUTOFIRE: true,
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.skimmer,
+        ]),
+        TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+        STAT_CALCULATOR: gunCalcNames.thruster,
+      },
+    },
+  ],
 };
 Class.sentinelLauncher = {
-    PARENT: "sentinel",
-    UPGRADE_LABEL: "Missile Sentinel",
-    UPGRADE_COLOR: "purple",
-    GUNS: [
-        {
-            POSITION: [3, 12.45, -1.35, 17.2, 0, 0, 0],
+  PARENT: ["sentinel"],
+  UPGRADE_LABEL: "Missile Sentinel",
+  UPGRADE_COLOR: "purple",
+  GUNS: [
+    {
+      POSITION: [3, 12.45, -1.35, 17.2, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.launcher]),
-                TYPE: "sentinelMissile",
-            },
-        }, {
-            POSITION: [17.5, 13, 1.25, 0, 0, 0, 0],
-        }, {
-            POSITION: [18.55, 20.25, 0.25, 1, 0, 0, 0],
-        },
-    ],
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pelleter,
+          g.pounder,
+          g.launcher,
+        ]),
+        TYPE: "sentinelMissile",
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [17.5, 13, 1.25, 0, 0, 0, 0],
+
+    },
+    {
+      POSITION: [18.55, 20.25, 0.25, 1, 0, 0, 0],
+    },
+  ],
 };
 Class.sentinelCrossbow = {
   PARENT: ["sentinel"],
@@ -830,90 +853,202 @@ Class.sentinelCrossbow = {
         {
             POSITION: [15, 2.5, 1, 0, 3.5, 35/2, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { speed: 0.7, maxSpeed: 0.7 }, g.crossbow, { recoil: 0.5 }]),
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.sniper,
+                    g.rifle,
+                    { speed: 0.7, maxSpeed: 0.7 },
+                    g.crossbow,
+                    { recoil: 0.5 },
+                ]),
                 TYPE: "bullet",
             },
-        }, {
+        },
+        {
             POSITION: [15, 2.5, 1, 0, -3.5, -35/2, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { speed: 0.7, maxSpeed: 0.7 }, g.crossbow, { recoil: 0.5 }]),
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.sniper,
+                    g.rifle,
+                    { speed: 0.7, maxSpeed: 0.7 },
+                    g.crossbow,
+                    { recoil: 0.5 },
+                ]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [20, 3.5, 1, 0, 4, 0, 1/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { speed: 0.7, maxSpeed: 0.7 }, g.crossbow, { recoil: 0.5 }]),
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.sniper,
+                    g.rifle,
+                    { speed: 0.7, maxSpeed: 0.7 },
+                    g.crossbow,
+                    { recoil: 0.5 },
+                ]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [20, 3.5, 1, 0, -4, 0, 1/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { speed: 0.7, maxSpeed: 0.7 }, g.crossbow, { recoil: 0.5 }]),
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.sniper,
+                    g.rifle,
+                    { speed: 0.7, maxSpeed: 0.7 },
+                    g.crossbow,
+                    { recoil: 0.5 },
+                ]),
                 TYPE: "bullet",
             },
         },
         {
             POSITION: [24, 7, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.rifle, { speed: 0.7, maxSpeed: 0.7, reload: 2, recoil: 0.5 }]),
+                SHOOT_SETTINGS: combineStats([
+                    g.basic,
+                    g.sniper,
+                    g.rifle,
+                    { speed: 0.7, maxSpeed: 0.7 },
+                    { reload: 2 },
+                    { recoil: 0.5 },
+                ]),
                 TYPE: "bullet",
             },
         },
     ],
 };
 Class.sentinelMinigun = {
-    PARENT: "sentinel",
-    UPGRADE_LABEL: "Minigun Sentinel",
-    UPGRADE_COLOR: "purple",
+  PARENT: ["sentinel"],
+  UPGRADE_LABEL: "Minigun Sentinel",
+  UPGRADE_COLOR: "purple",
+  GUNS: [
+  {
+      POSITION: [16, 7.5, 1, 0, 4.5, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12.5, 7.5, -1.35, 0, 4.5, 0, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16, 7.5, 1, 0, -4.5, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [12.5, 7.5, -1.35, 0, -4.5, 0, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
+      POSITION: [22.5, 9, 1, 0, 0, 0, 0.2],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [20.4, 9, 1, 0, 0, 0, 0.4],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [18.3, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.minigun,
+          g.spam,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+
+// MISCELLANEOUS TANKS
+Class.baseSwarmTurret = {
+    PARENT: ["genericTank"],
+    LABEL: "Protector",
+    COLOR: "grey",
+    BODY: {
+        FOV: 2,
+    },
+    CONTROLLERS: ["nearestDifferentMaster"],
+    AI: {
+        NO_LEAD: true,
+        LIKES_SHAPES: true,
+    },
+    INDEPENDENT: true,
     GUNS: [
         {
-            POSITION: [16, 7.5, 1, 0, 4.5, 0, 0],
+            POSITION: [5, 4.5, 0.6, 7, 2, 0, 0.15],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.swarm, g.baseProtector]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: gunCalcNames.swarm,
             },
-        }, {
-            POSITION: [11.5, 7.5, -1.33, 1, 4.5, 0, 0.5],
+        },
+        {
+            POSITION: [5, 4.5, 0.6, 7, -2, 0, 0.15],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.swarm, g.baseProtector]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: gunCalcNames.swarm,
             },
-        }, {
-            POSITION: [16, 7.5, 1, 0, -4.5, 0, 0],
+        },
+        {
+            POSITION: [5, 4.5, 0.6, 7.5, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [11.5, 7.5, -1.33, 1, -4.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [22.5, 9, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [20.4, 9, 1, 0, 0, 0, 1/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [18.3, 9, 1, 0, 0, 0, 2/3],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.twin]),
-                TYPE: "bullet",
+                SHOOT_SETTINGS: combineStats([g.swarm, g.baseProtector]),
+                TYPE: ["swarm", { INDEPENDENT: true, AI: { LIKES_SHAPES: true }}],
+                STAT_CALCULATOR: gunCalcNames.swarm,
             },
         },
     ],
 };
-
 Class.baseProtector = {
     PARENT: ["genericTank"],
     LABEL: "Base",
