@@ -261,20 +261,6 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
-Class.droneturretBase = {
-    LABEL: "Base",
-    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
-    COLOR: 9,
-    CONTROLLERS: [["spin", { independent: true }]],
-    INDEPENDENT: true,
-    TURRETS: [{
-        POSITION: [4.65, 10.5, 0, 90, 220, 1],
-        TYPE: "droneAutoTurret",
-    }, {
-        POSITION: [4.65, 10.5, 0, 270, 220, 1],
-        TYPE: "droneAutoTurret",
-    }]
-};
 Class.autobullet = makeAuto('bullet', "AutoBullet", {type: 'droneAutoTurret'})
 Class.shrapnel = {
     PARENT: "bullet",
@@ -582,6 +568,7 @@ Class.fastdrone = {
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
 };
+
 Class.revoorbitdrone = {
   PARENT: "drone",  
   LABEL: 'Drone',
@@ -4913,6 +4900,20 @@ Class.minilaser = {
     ],
 }
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
+Class.droneturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        TYPE: "droneAutoTurret",
+    }, {
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        TYPE: "droneAutoTurret",
+    }]
+};
 Class.cruiserdrive = {
     PARENT: "genericTank",
     LABEL: "Swarmdrive",
