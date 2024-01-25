@@ -261,7 +261,20 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
-Class.autoturretswarm = makeAuto('swarm', "AutoSwarm", {type: 'droneAutoTurret'})
+Class.droneturretBase = {
+    LABEL: "Base",
+    SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
+    COLOR: 9,
+    CONTROLLERS: [["spin", { independent: true }]],
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [4.65, 10.5, 0, 90, 220, 1],
+        TYPE: "droneAutoTurret",
+    }, {
+        POSITION: [4.65, 10.5, 0, 270, 220, 1],
+        TYPE: "droneAutoTurret",
+    }]
+};
 Class.autobullet = makeAuto('bullet', "AutoBullet", {type: 'droneAutoTurret'})
 Class.shrapnel = {
     PARENT: "bullet",
@@ -575,7 +588,7 @@ Class.revoorbitdrone = {
   SYNC_TURRET_SKILLS: true,
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "turretBase",
+        TYPE: "droneturretBase",
     },
   ],
 };
@@ -4899,6 +4912,7 @@ Class.minilaser = {
         }
     ],
 }
+Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
 Class.cruiserdrive = {
     PARENT: "genericTank",
     LABEL: "Swarmdrive",
@@ -5514,7 +5528,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
-        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "revodirector", "honda", "dictator"]
+        Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "cruiserdrive", "revodirector", "honda", "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid"]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
