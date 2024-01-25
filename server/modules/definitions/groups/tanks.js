@@ -4950,8 +4950,8 @@ Class.machinception = {
     ],
     TURRETS: [{
         POSITION: [6.5, 20, 0, 0, 0, 0],
-        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
-    }
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANLE: true }]
+    }w
   ]
 }
 Class.tailgator = {
@@ -5527,4 +5527,4 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
-        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHelix", "helixbrid"]
+        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHebrid"]
