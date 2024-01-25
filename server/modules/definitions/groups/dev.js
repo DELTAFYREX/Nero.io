@@ -19,6 +19,7 @@ Class.developer = {
     RESET_CHILDREN: true,
     ACCEPTS_SCORE: true,
     CAN_BE_ON_LEADERBOARD: true,
+    CAN_GO_OUTSIDE_ROOM: false,
     DRAW_HEALTH: true,
     ARENA_CLOSER: false,
     INVISIBLE: [0, 0],
@@ -957,14 +958,23 @@ Class.tooltipTank = {
 Class.bulletSpawnTest = {
     PARENT: 'genericTank',
     LABEL: "Bullet Spawn Position",
-    GUNS: [{
-        POSITION: [20, 10, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
-            TYPE: ['bullet', {BORDERLESS: true}],
-            BORDERLESS: true,
+    GUNS: [
+        {
+            POSITION: [20, 10, 1, 0, -5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
+                TYPE: ['bullet', {BORDERLESS: true}],
+                BORDERLESS: true,
+            }
+        }, {
+            POSITION: [50, 10, 1, 0, 5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, {speed: 0, maxSpeed: 0, shudder: 0, spray: 0, recoil: 0}]),
+                TYPE: ['bullet', {BORDERLESS: true}],
+                BORDERLESS: true,
+            }
         }
-    }]
+    ]
 }
 
 Class.levels = menu("Levels")
@@ -1002,7 +1012,7 @@ Class['Team' + TEAM_ENEMIES] = {
     TEAM: TEAM_ENEMIES,
     COLOR: "yellow",
     LABEL: "Enemies Team"
-}
+};
 Class.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
 Class.testing = menu("Beta Tanks")
