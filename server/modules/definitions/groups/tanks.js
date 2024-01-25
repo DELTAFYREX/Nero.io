@@ -362,9 +362,9 @@ Class.baseBullet = {
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     INDEPENDENT: true,
-    COLOR: "orange",
-    BODY: {
-      COLOR: "orange"
+    COLOR: {
+      BASE: "orange",
+      HUE_SHIFT: 180, // Additive, degrees
     },
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],

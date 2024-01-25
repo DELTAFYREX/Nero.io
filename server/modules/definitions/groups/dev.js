@@ -1859,11 +1859,11 @@ Class.oppenheimer = {
     PARENT: "genericTank",
     LABEL: "Oppen Heimer",
     DISPLAY: {
-      glow: {
-      radius: 5, 
-      color: "rainbow", 
-      alpha: 1, 
-      recursion: 1
+      GLOW: {
+        RADIUS: 5, 
+        COLOR: "rainbow", 
+        ALPHA: 1, 
+        RECURSION: 1
       }
     },
     DANGER: 7,
