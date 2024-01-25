@@ -1858,11 +1858,13 @@ Class.papyrus = {
 Class.oppenheimer = {
     PARENT: "genericTank",
     LABEL: "Oppen Heimer",
-    GLOW: {
+    DISPLAY: {
+      glow: {
       radius: 5, 
-      color: 1, 
+      color: "rainbow", 
       alpha: 1, 
       recursion: 1
+      }
     },
     DANGER: 7,
     GUNS: [
