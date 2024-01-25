@@ -4936,8 +4936,8 @@ Class.inception = {
   ]
 }
 Class.machinception = {
-    PARENT: "Machceptioner",
-    LABEL: "Inception",
+    PARENT: "genericTank",
+    LABEL: "Machceptioner",
     DANGER: 4,
     GUNS: [
         {
@@ -4949,7 +4949,7 @@ Class.machinception = {
         }
     ],
     TURRETS: [{
-        POSITION: [6.5, 18, 0, 0, 0, 0],
+        POSITION: [6.5, 20, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -4968,7 +4968,7 @@ Class.tailgator = {
         }
     ],
       TURRETS: [{
-        POSITION: [7.5, 18, 0, 0, 0, 0],
+        POSITION: [7.5, 20, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
