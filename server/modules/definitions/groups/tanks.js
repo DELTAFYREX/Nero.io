@@ -1035,6 +1035,7 @@ Class.ceptionistturret = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
                 TYPE: "bullet",
+                COLOR: "black",
             },
         },
     ],
@@ -5028,6 +5029,26 @@ Class.inceptionist = {
     }
   ]
 }
+Class.autoinceptionist = {
+    PARENT: "genericTank",
+    LABEL: "Ceptionist",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "ceptionistbullet",
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [10, 0, 0, 0, 0, 1],
+        TYPE: ["ceptionistturret"],
+        COLOR: "gray"
+    }
+  ]
+}
 Class.twinceptionist = {
     PARENT: "genericTank",
     LABEL: "twinceptionist",
@@ -5624,6 +5645,13 @@ Class.autoTrapGuard = makeAuto(Class.trapGuard, "Auto-TrapGuard");
 Class.autoVolute = makeAuto(Class.volute, "Auto-Volute");
 Class.autoHelix = makeAuto(Class.helix, "Auto-Helix");
 
+Class.autoinception = makeAuto(Class.inception, "Auto-inception");
+Class.automachinception = makeAuto(Class.machinception, "Auto-Machceptioner");
+Class.autotailgator = makeAuto(Class.tailgator, "Auto-Tailgator");
+Class.autoflankinception = makeAuto(Class.flankinception, "Auto-Flankceptioner");
+
+
+
 
 //auto hybrid tanks
 Class.autotwinbrid = makeHybrid('autoTwin', "Auto-Twin-Hybrid")
@@ -5733,9 +5761,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption", "autopoundbrid"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
-        Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "autodesmosbrid"]
+        Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "desmosCeption", "autodesmosbrid"]
         Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
-        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "des""bascridCeption", "inceptCeption"]
+        Class.autoinception.UPGRADES_TIER_3 = ["autoinceptionist"]
+        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "desmosCeption", "bascridCeption", "inceptCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
         Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
@@ -5750,9 +5779,9 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive"]
         Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory"]
-        Class.machinception.UPGRADES_TIER_3 = ["machceptionist"]
-        Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun"]
-        Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist"]
+        Class.machinception.UPGRADES_TIER_3 = ["machceptionist", "automachinception"]
+        Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun", "autotailgator"]
+        Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist", "autoflankinception"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
