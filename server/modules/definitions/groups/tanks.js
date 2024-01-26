@@ -5101,7 +5101,7 @@ Class.flankceptionist = makeMulti({
         }
     ],
       TURRETS: [{
-        POSITION: [5.5, 0, 0, 0, 0, 0],
+        POSITION: [5.5, 0, 0, 0, 0, -1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
