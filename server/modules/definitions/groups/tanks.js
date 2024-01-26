@@ -1025,7 +1025,7 @@ Class.autoTurret = {
 Class.ceptionistturret = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: "darkgray",
+    COLOR: "darkGray",
     BODY: {
         FOV: 0.8,
     },
@@ -1035,7 +1035,7 @@ Class.ceptionistturret = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
                 TYPE: "bullet",
-                COLOR: "darkgray",
+                COLOR: "darkGray",
             },
         },
     ],
@@ -5029,9 +5029,9 @@ Class.inceptionist = {
     }
   ]
 }
-Class.autoinceptionist = {
+Class.autoinceptionistbody = {
     PARENT: "genericTank",
-    LABEL: "Auto-Inceptionist",
+    LABEL: "Auto-Inceptionist base",
     DANGER: 4,
     GUNS: [
         {
@@ -5041,13 +5041,9 @@ Class.autoinceptionist = {
                 TYPE: "ceptionistbullet",
             }
         }
-    ],
-      TURRETS: [{
-        POSITION: [10, 0, 0, 0, 0, 1],
-        TYPE: ["ceptionistturret", { CONTROLLERS: ["nearestDifferentMaster"], COLOR: "gray" }],
-    }
-  ]
+    ]
 }
+Class.autoinceptionist = makeAuto(Class.autoinceptionistbody);
 Class.twinceptionist = {
     PARENT: "genericTank",
     LABEL: "twinceptionist",
