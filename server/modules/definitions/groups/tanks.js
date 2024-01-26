@@ -261,7 +261,8 @@ Class.turretBase = {
         TYPE: "revogun",
     }]
 };
-Class.autobullet = makeAuto('bullet', "AutoBullet", {type: 'droneAutoTurret'})
+Class.autobullet = makeAuto('bullet', "AutoBullet", {type: 'projectileAutoTurret'})
+Class.heavyautobullet = makeAuto('bullet', "AutoBullet", {type: 'pillboxTurret'})
 Class.shrapnel = {
     PARENT: "bullet",
     SHAPE: 5,
@@ -1054,6 +1055,25 @@ Class.droneAutoTurret = {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.projectileAutoTurret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    CONTROLLERS: ['nearestDifferentMaster'],
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter]),
                 TYPE: "bullet",
             },
         },
@@ -4922,7 +4942,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
