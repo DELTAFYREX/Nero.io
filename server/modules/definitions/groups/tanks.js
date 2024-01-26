@@ -1025,7 +1025,7 @@ Class.autoTurret = {
 Class.ceptionistturret = {
     PARENT: "genericTank",
     LABEL: "Turret",
-    COLOR: "black",
+    COLOR: "darkgray",
     BODY: {
         FOV: 0.8,
     },
@@ -1035,7 +1035,7 @@ Class.ceptionistturret = {
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
                 TYPE: "bullet",
-                COLOR: "black",
+                COLOR: "darkgray",
             },
         },
     ],
@@ -5031,7 +5031,7 @@ Class.inceptionist = {
 }
 Class.autoinceptionist = {
     PARENT: "genericTank",
-    LABEL: "Ceptionist",
+    LABEL: "Auto-Inceptionist",
     DANGER: 4,
     GUNS: [
         {
@@ -5044,8 +5044,7 @@ Class.autoinceptionist = {
     ],
       TURRETS: [{
         POSITION: [10, 0, 0, 0, 0, 1],
-        TYPE: ["ceptionistturret"],
-        COLOR: "gray"
+        TYPE: ["ceptionistturret", { CONTROLLERS: ["nearestDifferentMaster"], COLOR: "gray" }],
     }
   ]
 }
@@ -5192,7 +5191,7 @@ Class.poundceptionist = {
         }
     ],
       TURRETS: [{
-        POSITION: [10, 20, 0, 0, 0, 1],
+        POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5773,7 +5772,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoinception.UPGRADES_TIER_3 = ["autoinceptionist", "automachinception", "autotailgator", "autoflankinception", "autoinceptionbrid", "inceptCeption"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "desmosCeption", "bascridCeption", "inceptCeption"]
 
-    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
+    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid", "inceptionbrid"]
         Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
         Class.twinbrid.UPGRADES_TIER_3 = ["bentHybrid", "overgunner", "autotwinbrid", "helixbrid"]
         Class.snipebrid.UPGRADES_TIER_3 = ["assbrid", "poacher", "cropDuster", "armsman", "autosnipebrid"]
