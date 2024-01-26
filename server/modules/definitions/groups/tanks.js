@@ -5023,7 +5023,7 @@ Class.inceptionist = {
         }
     ],
       TURRETS: [{
-        POSITION: [16, 0, 0, 0, 0, 1],
+        POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5061,7 +5061,7 @@ Class.machceptionist = {
         }
     ],
     TURRETS: [{
-        POSITION: [16, 0, 0, 0, 0, 0],
+        POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5101,7 +5101,7 @@ Class.flankceptionist = makeMulti({
         }
     ],
       TURRETS: [{
-        POSITION: [16, 0, 0, 0, 0, 0],
+        POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
