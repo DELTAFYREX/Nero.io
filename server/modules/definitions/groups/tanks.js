@@ -4942,7 +4942,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
