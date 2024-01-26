@@ -5028,6 +5028,32 @@ Class.inceptionist = {
     }
   ]
 }
+Class.twinceptionist = {
+    PARENT: "genericTank",
+    LABEL: "twinceptionist",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [20, 8, 1, 0, 5.5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [20, 8, 1, 0, -5.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [10, 0, 0, 0, 0, 1],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
 Class.machinception = {
     PARENT: "genericTank",
     LABEL: "Machceptioner",
@@ -5076,17 +5102,23 @@ Class.flankinception = makeMulti({
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
-                TYPE: "bullet"
+                TYPE: "autobullet"
             }
         }
     ],
       TURRETS: [{
         POSITION: [5.5, 18, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    },{
+        POSITION: [5.5, 18, 0, 0, 1/3, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    },{
+        POSITION: [5.5, 18, 0, 0, 2/3, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
 }, 3, "Flankceptioner")
-Class.flankceptionistbody = makeMulti({
+Class.flankceptionist = makeMulti({
     PARENT: "genericTank",
     BODY: {
         SPEED: 1.1 * base.SPEED
@@ -5100,16 +5132,12 @@ Class.flankceptionistbody = makeMulti({
             }
         }
     ],
-}, 3, "Flankceptionista")
-Class.flankceptionist = {
-  PARENT: "flankceptionistbody",
-  LABEL: "Flankceptionist",
-        TURRETS: [{
+    TURRETS: [{
         POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
-}
+}, 3, "Flankceptionist")
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5641,6 +5669,9 @@ Class.flankCeption = makeCeptionNerf(Class.flankGuard, "Flank-Ception");
 Class.directCeption = makeCeptionNerf(Class.director, "Drone-Ception");
 Class.poundCeption = makeCeptionNerf(Class.pounder, "Pound-Ception");
 Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
+Class.desmosCeption = makeCeptionNerf(Class.desmos, "Desmos-Ception");
+Class.bascridCeption = makeCeptionNerf(Class.bascrid, "Basic-Hybrid-Ception");
+Class.inceptCeption = makeCeptionNerf(Class.inception, "Incept-Ception");
 
 
 
@@ -5704,7 +5735,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "autodesmosbrid"]
         Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
-        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption"]
+        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "des""bascridCeption", "inceptCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid"]
         Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
@@ -5714,11 +5745,11 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.flankbrid.UPGRADES_TIER_3 = ["surfer", "trapguardbrid", "tritrapperbrid", "autoflankbrid"]
         Class.poundbrid.UPGRADES_TIER_3 = ["hybrid", "builderbrid", "artilbrid", "launchbrid", "autopoundbrid", "volutebrid", "honda"]
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
-        Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
+        Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid", "bascridCeption"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive"]
-        Class.inceptionist.UPGRADES_TIER_3 = ["machceptionist", "poundceptionist", "flankceptionist"]
+        Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory"]
         Class.machinception.UPGRADES_TIER_3 = ["machceptionist"]
         Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun"]
         Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist"]
