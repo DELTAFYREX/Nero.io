@@ -5043,7 +5043,7 @@ Class.autoinceptionistbody = {
         }
     ]
 }
-Class.autoinceptionist = makeAuto(Class.autoinceptionistbody);
+Class.autoinceptionist = makeAuto(Class.autoinceptionistbody, "Auto-Inceptionist", {type: 'ceptionistturret'});
 Class.twinceptionist = {
     PARENT: "genericTank",
     LABEL: "twinceptionist",
