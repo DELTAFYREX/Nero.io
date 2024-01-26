@@ -247,6 +247,43 @@ Class.rocketeerMissile = {
 
 //delta projectiles/turrets
 // ??? it still dont spin i think lol
+Class.projectileAutoTurret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    CONTROLLERS: ['nearestDifferentMaster'],
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.turret]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.ceptionistturret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "darkGray",
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
+                TYPE: "bullet",
+                COLOR: "darkGray",
+            },
+        },
+    ],
+}
 Class.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -1023,24 +1060,6 @@ Class.autoTurret = {
         },
     ],
 }
-Class.ceptionistturret = {
-    PARENT: "genericTank",
-    LABEL: "Turret",
-    COLOR: "darkGray",
-    BODY: {
-        FOV: 0.8,
-    },
-    GUNS: [
-        {
-            POSITION: [22, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
-                TYPE: "bullet",
-                COLOR: "darkGray",
-            },
-        },
-    ],
-}
 Class.droneAutoTurret = {
     PARENT: "genericTank",
     LABEL: "Turret",
@@ -1055,25 +1074,6 @@ Class.droneAutoTurret = {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-}
-Class.projectileAutoTurret = {
-    PARENT: "genericTank",
-    LABEL: "Turret",
-    COLOR: "grey",
-    INDEPENDENT: true,
-    CONTROLLERS: ['nearestDifferentMaster'],
-    BODY: {
-        FOV: 0.8,
-    },
-    GUNS: [
-        {
-            POSITION: [22, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.overdrive]),
                 TYPE: "bullet",
             },
         },
@@ -4942,7 +4942,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload, g.turret]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
