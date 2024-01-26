@@ -262,7 +262,7 @@ Class.turretBase = {
     }]
 };
 Class.autobullet = makeAuto('bullet', "AutoBullet", {type: 'projectileAutoTurret'})
-Class.heavyautobullet = makeAuto('bullet', "AutoBullet", {type: 'pillboxTurret'})
+Class.heavyautobullet = makeAuto('bullet', "HeavyAutoBullet", {type: 'pillboxTurret'})
 Class.shrapnel = {
     PARENT: "bullet",
     SHAPE: 5,
@@ -1073,7 +1073,7 @@ Class.projectileAutoTurret = {
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.overdrive]),
                 TYPE: "bullet",
             },
         },
@@ -4942,7 +4942,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
@@ -5183,7 +5183,7 @@ Class.tailgator = {
             POSITION: [20.5, 12, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
-                TYPE: "autobullet"
+                TYPE: "heavyautobullet"
             }
         }
     ],
@@ -5221,7 +5221,7 @@ Class.interceptor = {
             POSITION: [21, 14, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer]),
-                TYPE: "autobullet"
+                TYPE: "heavyautobullet"
             }
         }
     ],
