@@ -5086,7 +5086,7 @@ Class.flankinception = makeMulti({
     }
   ]
 }, 3, "Flankceptioner")
-Class.flankceptionist = makeMulti({
+Class.flankceptionistbody = makeMulti({
     PARENT: "genericTank",
     BODY: {
         SPEED: 1.1 * base.SPEED
@@ -5100,12 +5100,16 @@ Class.flankceptionist = makeMulti({
             }
         }
     ],
-      TURRETS: [{
+}, 3, "Flankceptionista")
+Class.flankceptionist = {
+  PARENT: "flankceptionistbody",
+  LABEL: "Flankceptionist",
+        TURRETS: [{
         POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
-}, 3, "Flankceptionist")
+}
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5122,6 +5126,25 @@ Class.tailgator = {
       TURRETS: [{
         POSITION: [7.5, 20, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
+Class.poundceptionist = {
+    PARENT: "genericTank",
+    LABEL: "PoundCeptionist",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [20.5, 12, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+                TYPE: "ceptionistbullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [10, 20, 0, 0, 0, 1],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
 }
@@ -5695,10 +5718,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive"]
-        Class.inceptionist.UPGRADES_TIER_3 = ["machceptionist", "flankceptionist"]
-        //Class.machinception.UPGRADES_TIER_3 = []
-        Class.tailgator.UPGRADES_TIER_3 = ["interceptor", "engineer", "shrapnelgun"]
-        //Class.flankinception.UPGRADES_TIER_3 = []
+        Class.inceptionist.UPGRADES_TIER_3 = ["machceptionist", "poundceptionist", "flankceptionist"]
+        Class.machinception.UPGRADES_TIER_3 = ["machceptionist"]
+        Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun"]
+        Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist"]
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
