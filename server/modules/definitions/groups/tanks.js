@@ -1022,6 +1022,23 @@ Class.autoTurret = {
         },
     ],
 }
+Class.ceptionistturret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "black",
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
 Class.droneAutoTurret = {
     PARENT: "genericTank",
     LABEL: "Turret",
@@ -4899,6 +4916,19 @@ Class.minilaser = {
         }
     ],
 }
+Class.ceptionistbullet = {
+  PARENT: "bullet",
+  GUNS: [{
+      POSITION: [18, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
+          TYPE: "bullet",
+          COLOR: "black",
+          AUTOFIRE: true
+      }
+    }
+  ]
+}
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
 Class.droneturretBase = {
     LABEL: "Base",
@@ -4979,6 +5009,25 @@ Class.inception = {
     }
   ]
 }
+Class.inceptionist = {
+    PARENT: "genericTank",
+    LABEL: "Ceptionist",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "ceptionistbullet",
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [5.5, 0, 0, 0, 0, 0],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
 Class.machinception = {
     PARENT: "genericTank",
     LABEL: "Machceptioner",
@@ -4995,6 +5044,25 @@ Class.machinception = {
     TURRETS: [{
         POSITION: [6.5, 20, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
+Class.machceptionist = {
+    PARENT: "genericTank",
+    LABEL: "Machceptionist",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun]),
+                TYPE: "ceptionistbullet"
+            }
+        }
+    ],
+    TURRETS: [{
+        POSITION: [6.5, 0, 0, 0, 0, 0],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
 }
@@ -5018,6 +5086,26 @@ Class.flankinception = makeMulti({
     }
   ]
 }, 3, "Flankceptioner")
+Class.flankceptionist = makeMulti({
+    PARENT: "genericTank",
+    BODY: {
+        SPEED: 1.1 * base.SPEED
+    },
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+                TYPE: "ceptionistbullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [5.5, 0, 0, 0, 0, 0],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}, 3, "Flankceptionist")
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5606,7 +5694,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "tailgator", "flankinception", "directdrive"]
+    Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive"]
+        Class.inceptionist.UPGRADES_TIER_3 = ["machceptionist", "flankceptionist"]
         //Class.machinception.UPGRADES_TIER_3 = []
         Class.tailgator.UPGRADES_TIER_3 = ["interceptor", "engineer", "shrapnelgun"]
         //Class.flankinception.UPGRADES_TIER_3 = []
