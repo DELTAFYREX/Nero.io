@@ -4998,6 +4998,26 @@ Class.machinception = {
     }
   ]
 }
+Class.flankinception = makeMulti({
+    PARENT: "genericTank",
+    BODY: {
+        SPEED: 1.1 * base.SPEED
+    },
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard]),
+                TYPE: "bullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [5.5, 18, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}, 3, "Flankceptioner")
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5007,6 +5027,25 @@ Class.tailgator = {
             POSITION: [20.5, 12, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+                TYPE: "autobullet"
+            }
+        }
+    ],
+      TURRETS: [{
+        POSITION: [7.5, 20, 0, 0, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
+  ]
+}
+Class.interceptor = {
+    PARENT: "genericTank",
+    LABEL: "Interceptor",
+    DANGER: 4,
+    GUNS: [
+        {
+            POSITION: [21, 14, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer]),
                 TYPE: "autobullet"
             }
         }
@@ -5567,7 +5606,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "tailgator", "directdrive"]
+    Class.inception.UPGRADES_TIER_2 = ["basicCeption", "machinception", "tailgator", "flankinception", "directdrive"]
+        //Class.machinception.UPGRADES_TIER_3 = []
+        Class.tailgator.UPGRADES_TIER_3 = ["interceptor", "engineer", "shrapnelgun"]
+        //Class.flankinception.UPGRADES_TIER_3 = []
 
     Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
         Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
