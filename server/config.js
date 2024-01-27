@@ -63,19 +63,19 @@ module.exports = {
     // Physics
 
     // General multiplier for acceleration and max speeds.
-    runSpeed: 5, //1.5
+    runSpeed: 3, //1.5
 
     // General damage multiplier everytime damage is dealt.
-    DAMAGE_CONSTANT: 0.5,
+    DAMAGE_CONSTANT: 0.5, // 0.5
 
     // General knockback multiplier everytime knockback is applied.
-    KNOCKBACK_CONSTANT: 1.5,
+    KNOCKBACK_CONSTANT: 3, //1.5
 
     // TODO: Figure out how the math behind this works.
     GLASS_HEALTH_FACTOR: 2,
 
     // How strong the force is that confines entities to the map and portals apply to entities.
-    ROOM_BOUND_FORCE: 0.01,
+    ROOM_BOUND_FORCE: 0.02, //0.01
 
 
 
