@@ -278,7 +278,7 @@ Class.ceptionistturret = {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
-                TYPE: "bullet",
+                TYPE: "ceptionistbullet",
                 COLOR: "darkGray",
             },
         },
