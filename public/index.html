@@ -136,7 +136,7 @@ function PlaySound69() {
      this[i] = ' '
    }
  }
- image = new ImageArray(20)
+ image = new ImageArray(21)
  image[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/girb.jpg?v=1698237916390' //girb
  image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623' //girb2
  image[2] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/84812d435b246f4edffe887c5f755008.jpg?v=1698318627584' //girat
@@ -157,6 +157,7 @@ function PlaySound69() {
  image[17] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/poop-emoji.jpg?v=1701104126682' //shart
  image[18] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(6).mp4?v=1701691279895' //i beleive i made myself clear
  image[19] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/nero%20shitpost.png?v=1705290370363' //shitpost
+ image[20] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MemeFeedBot_5.mp4?v=1706646351474' //fuckthisshitimout
  var rand = 60/image.length
  function randomimage() {
  	currentdate = new Date()
@@ -168,6 +169,8 @@ var save = randomimage()
 imgsizething = 'style="width: 100%; height: 88%;", title="the funny"'
 popup = ' onclick="openPopup()" '
     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
+    document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
+   } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MemeFeedBot_5.mp4?v=1706646351474') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
    } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(6).mp4?v=1701691279895') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
