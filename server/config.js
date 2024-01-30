@@ -26,11 +26,11 @@ module.exports = {
     // NOTE: If a /gamemodeconfig/ file "replaces" the value of ROOM_SETUP, it just adds its own ROOM_SETUP's content to this array.
     // NOTE: Files starting with `map_` are maps. files starting with `overlay_` are overlays that get added on.
     // NOTE: These prefixes are only for categorisation, a room file would work the same regardless of its prefix. APS++ does nothing based on file name prefixes.
-    ROOM_SETUP: ['map_apspp_banquet'],
+    ROOM_SETUP: ['map_apspp_default'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 200,
-    TILE_HEIGHT: 200,
+    TILE_WIDTH: 400, //400
+    TILE_HEIGHT: 400, //400
 
 
 
@@ -63,19 +63,19 @@ module.exports = {
     // Physics
 
     // General multiplier for acceleration and max speeds.
-    runSpeed: 3, //1.5
+    runSpeed: 1.5, //1.5
 
     // General damage multiplier everytime damage is dealt.
     DAMAGE_CONSTANT: 0.5, // 0.5
 
     // General knockback multiplier everytime knockback is applied.
-    KNOCKBACK_CONSTANT: 3, //1.5
+    KNOCKBACK_CONSTANT: 1.5, //1.5
 
     // TODO: Figure out how the math behind this works.
     GLASS_HEALTH_FACTOR: 2,
 
     // How strong the force is that confines entities to the map and portals apply to entities.
-    ROOM_BOUND_FORCE: 0.02, //0.01
+    ROOM_BOUND_FORCE: 0.01, //0.01
 
 
 
@@ -105,7 +105,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 4,
+    BOTS: 3,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
@@ -123,7 +123,7 @@ module.exports = {
 
   // Natural Spawns
 
-    FOOD_CAP: 0, // Max normal food per normal tile. 3
+    FOOD_CAP: 3, // Max normal food per normal tile. 3
     FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg. 0.875
     FOOD_SPAWN_COOLDOWN: 30, // Cooldown (in game ticks) of food spawn attempts being made. 30
 
