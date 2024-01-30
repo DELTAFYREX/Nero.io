@@ -5058,14 +5058,14 @@ Class.twinceptionist = {
             POSITION: [20, 8, 1, 0, 5.5, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "bullet"
+                TYPE: "ceptionistbullet"
             }
         },
         {
             POSITION: [20, 8, 1, 0, -5.5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "bullet"
+                TYPE: "ceptionistbullet"
             }
         }
     ],
