@@ -5128,13 +5128,13 @@ Class.flankinception = makeMulti({
         }
     ],
       TURRETS: [{
-        POSITION: [5.5, 18, 0, 0, 0, 0],
+        POSITION: [5.5, 18, 0, 0, 0.000001, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 1/3, 0],
+        POSITION: [5.5, 18, 0, 0, 0.333334, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 2/3, 0],
+        POSITION: [5.5, 18, 0, 0, 0.666667, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5153,8 +5153,14 @@ Class.flankceptionist = makeMulti({
             }
         }
     ],
-    TURRETS: [{
-        POSITION: [10, 0, 0, 0, 0, 1],
+      TURRETS: [{
+        POSITION: [5.5, 18, 0, 0, 0.000001, 0],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    },{
+        POSITION: [5.5, 18, 0, 0, 0.333334, 0],
+        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    },{
+        POSITION: [5.5, 18, 0, 0, 0.666667, 0],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
