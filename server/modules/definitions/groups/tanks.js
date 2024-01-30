@@ -1258,7 +1258,6 @@ Class.spikeBody = {
 
 // Basic & starting upgrades
 Class.basic = {
-    UPGRADE_COLOR: "animatednero",
     PARENT: "genericTank",
     LABEL: "Basic",
     DANGER: 4,
@@ -1440,19 +1439,6 @@ Class.smasher = {
             TYPE: "smasherBody"
         }
     ]
-}
-Class.pion = {
-    PARENT: "genericSmasher",
-    LABEL: "Pion",
-    DANGER: 6,
-    TURRETS: [
-        {
-            POSITION: [21.5, 0, 0, 0, 360, 0],
-            TYPE: "smasherBody"
-        }, {
-        POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "pionturretBase",
-    }]
 }
 Class.healer = {
     PARENT: "genericTank",
@@ -4022,7 +4008,6 @@ Class.assembler = {
 }
 
 // Tri-Trapper upgrades
-// Tri-Trapper upgrades
 Class.hexaTrapper = makeAuto(makeMulti({
     PARENT: "genericTank",
     DANGER: 7,
@@ -5330,6 +5315,19 @@ Class.subverter = {
     },
   ],
 };
+Class.pion = {
+    PARENT: "genericSmasher",
+    LABEL: "Pion",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        }, {
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "pionturretBase",
+    }]
+}
 Class.equilibrium = {
     PARENT: "genericTank",
     LABEL: "Equilibrium",
