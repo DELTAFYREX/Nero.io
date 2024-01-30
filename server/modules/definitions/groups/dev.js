@@ -1539,6 +1539,70 @@ Class.devtesttemplate = {
         }
     ]
 };
+Class.cumbullet = {
+    PARENT: "bullet",
+    COLOR: {
+      BASE: "white"
+    }
+}
+Class.mantank = {
+    PARENT: "genericTank",
+    LABEL: "boy tank (i hate you)",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "cumbullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ],
+  ON: [
+       {
+        event: "tick",
+        handler: ({ body }) => {  
+for (let instance of entities) {
+  if (Math.sqrt(((instance.x - bidy.x) ** 2) + ((instance.y - body.y) ** 2)) <= body.size + instance.size && instance.master.id != body.id) { if (instance.type == "cumbullet"){            instance.sendMessage('collide!')
+
+}}
+           }
+       }
+       }
+     ],
+};
+Class.girltank = {
+    PARENT: "genericTank",
+    LABEL: "girl tank (i hate you)",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ],
+  ON: [
+       {
+        event: "tick",
+        handler: ({ body }) => {  
+for (let instance of entities) {
+  if (Math.sqrt(((instance.x - bidy.x) ** 2) + ((instance.y - body.y) ** 2)) <= body.size + instance.size && instance.master.id != body.id) { if (instance.type == "cumbullet"){            instance.sendMessage('collide!')
+
+}}
+           }
+         }
+       }
+     ],
+};
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
