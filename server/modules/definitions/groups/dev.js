@@ -1572,7 +1572,7 @@ Class.lancertest = {
     }
     }],
 };
-let killcount = null;
+let killcount = 1;
 Class.poisontest = {
     PARENT: "genericTank",
     LABEL: "fasdf",
@@ -1595,8 +1595,11 @@ Class.poisontest = {
   ON: [{
         event: "tick",
         handler: ({ body }) => {
-        let killcount = body.killCount.solo + 1
+        if killcount != body.killCount.solo + 1 {
+          let killcount = body.killCount.solo + 1
+          global.
         }
+      }
   }]
 };
 Class.cumbullet = {
