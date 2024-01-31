@@ -100,6 +100,12 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundnfl() {
       nfl.play();
       }
+  
+      var KillSound = new Audio();
+      KillSound.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4%202.wav?v=1706716161860");
+      function PlaySoundKS() {
+      KillSound.play();
+      }
 
       function doSomething() {
         if (clicked) {
@@ -1393,12 +1399,21 @@ function drawFloor(px, py, ratio) {
 
             //draw it
             let tile = row[j];
+          if (global.altoveria = "disabledrn") {
             ctx.globalAlpha = 1;
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : color.white;
             ctx.fillRect(left, top, right - left, bottom - top);
             ctx.globalAlpha = 0.3;
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : gameDraw.modifyColor(tile);
             ctx.fillRect(left, top, right - left, bottom - top);
+          } else {
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = settings.graphical.screenshotMode ? color.red : color.red;
+            ctx.fillRect(left, top, right - left, bottom - top);
+            ctx.globalAlpha = 0.3;
+            ctx.fillStyle = settings.graphical.screenshotMode ? color.red : gameDraw.modifyColor(tile);
+            ctx.fillRect(left, top, right - left, bottom - top);
+          }
         }
     }
     ctx.lineWidth = 1.5;
@@ -1728,6 +1743,11 @@ function drawSelfInfo(spacing, alcoveSize, max) {
   
     if (gui.class === "Winsor") {
       PlaySound169();
+    }
+  
+    if (global.altoveria = "pingthemotherfuckingkillsoundyoudumbass") {
+      global.altoveria = "disabledrn";
+      PlaySoundKS();
     }
   
     document.onkeydown = (e) => {

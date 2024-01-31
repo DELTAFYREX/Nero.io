@@ -156,7 +156,6 @@ const global = {
     upgradeHover: false,
     statMaxing: false,
     metrics: {
-        altoveria: 0,
         latency: 0,
         lag: 0,
         rendertime: 0,
@@ -169,6 +168,7 @@ const global = {
     mouse: { x: 0, y: 0},
     target: { x: 0, y: 0 },
     reverseTank: 1,
+    altoveria: "disabledrn",
     fps: 60,
     screenSize: Math.min(1920, Math.max(window.innerWidth, 1280)),
     ratio: window.devicePixelRatio,
