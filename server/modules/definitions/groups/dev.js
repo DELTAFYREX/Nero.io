@@ -1539,9 +1539,26 @@ Class.devtesttemplate = {
         }
     ]
 };
+Class.poisontest = {
+    PARENT: "genericTank",
+    LABEL: "fasdf",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "cumbullet"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+};
 const poison = (me, them, multiplier, duration) => {
     if (!them) return
-    if (!them.immuneToAbilities && !them.invuln && !them.passive && !them.godmode && !them.variables.poisoned) {
+    if (!them.variables.poisoned) {
         them.variables.poisoned = true;
         setTimeout(() => {
             them.variables.poisoned = false;
@@ -1556,12 +1573,18 @@ const poison = (me, them, multiplier, duration) => {
         }, 2 * duration);
     }
 };
-/*Class.cumbullet = {
+Class.cumbullet = {
     PARENT: "bullet",
     COLOR: {
       BASE: "white"
-    }
-}*/
+    },
+    ON: [{
+        event: "damage",
+        handler: ({ poison }) => {
+            poison(me, them, 1.5, 1);
+        }
+  }]
+}
 /*Class.mantank = {
     PARENT: "genericTank",
     LABEL: "boy tank (i hate you)",
@@ -2070,7 +2093,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "poisontest"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
