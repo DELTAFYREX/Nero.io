@@ -1539,12 +1539,12 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.cumbullet = {
+/*Class.cumbullet = {
     PARENT: "bullet",
     COLOR: {
       BASE: "white"
     }
-}
+}*/
 /*Class.mantank = {
     PARENT: "genericTank",
     LABEL: "boy tank (i hate you)",
