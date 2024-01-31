@@ -1596,8 +1596,8 @@ Class.cumbullet = {
     },
     TURRETS: [{
              /** SIZE     X       Y     ANGLE    ARC */
-             POSITION: [20, 40, 0, 0, 360, 0],
-            TYPE: "hitboxRender",
+             POSITION: [20, 0, 0, 0, 360, 0],
+            TYPE: "recangluhitbox",
 }]
 }
 /*Class.mantank = {
