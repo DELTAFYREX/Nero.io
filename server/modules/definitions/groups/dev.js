@@ -1,4 +1,3 @@
-const { global } = require('public/lib/global.js');
 const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto, LayeredBoss } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
@@ -1592,18 +1591,7 @@ Class.poisontest = {
         {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
-    ],
-  ON: [{
-        event: "tick",
-        handler: ({ body, global}) => {
-        if (killcount !== this.body.killCount.solo + 1) {
-          let killcount = this.body.killCount.solo + 1;
-          global.metrics.altoveria1 = killcount;
-          global.metrics.altoveria2 = body.killCount.solo + 1;
-          global.metrics.altoveria = "pingthemotherfuckingkillsoundyoudumbass";
-        }
-      }
-  }]
+    ]
 };
 Class.cumbullet = {
     PARENT: "bullet",
