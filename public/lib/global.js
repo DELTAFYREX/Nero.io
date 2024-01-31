@@ -156,6 +156,7 @@ const global = {
     upgradeHover: false,
     statMaxing: false,
     metrics: {
+        altoveria: 0,
         latency: 0,
         lag: 0,
         rendertime: 0,
