@@ -1526,6 +1526,9 @@ Class.devtesttemplate = {
     PARENT: "genericTank",
     LABEL: "Single",
     DANGER: 7,
+    BODY: {
+      DAMAGE: base.DAMAGE + 1 * player.body.killCount.solo
+    },
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
