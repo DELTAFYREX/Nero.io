@@ -1526,9 +1526,6 @@ Class.devtesttemplate = {
     PARENT: "genericTank",
     LABEL: "Single",
     DANGER: 7,
-    BODY: {
-      DAMAGE: base.DAMAGE * killcount
-    },
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
@@ -1540,12 +1537,7 @@ Class.devtesttemplate = {
         {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
-    ],
-  ON: [{
-        event: "tick",
-        handler: ({ body }) => {
-        body.killCount.solo
-  }]
+    ]
 };
 Class.lancertest = {
     PARENT: "genericTank",
@@ -1580,10 +1572,14 @@ Class.lancertest = {
     }
     }],
 };
+let killcount = null;
 Class.poisontest = {
     PARENT: "genericTank",
     LABEL: "fasdf",
     DANGER: 7,
+    BODY: {
+      DAMAGE: base.DAMAGE * killcount
+    },
     GUNS: [
         {
             POSITION: [19, 8, 1, 0, 0, 0, 0],
@@ -1595,7 +1591,13 @@ Class.poisontest = {
         {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
-    ]
+    ],
+  ON: [{
+        event: "tick",
+        handler: ({ body }) => {
+        let killcount = body.killCount.solo + 1
+        }
+  }]
 };
 Class.cumbullet = {
     PARENT: "bullet",
