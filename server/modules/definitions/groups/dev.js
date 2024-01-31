@@ -1595,8 +1595,10 @@ Class.poisontest = {
   ON: [{
         event: "tick",
         handler: ({ body }) => {
-        if (killcount != body.killCount.solo + 1) {
+        if (killcount !== body.killCount.solo + 1) {
           let killcount = body.killCount.solo + 1;
+          global.altoveria1 = killcount;
+          global.altoveria2 = body.killCount.solo + 1;
           global.altoveria = "pingthemotherfuckingkillsoundyoudumbass";
         }
       }

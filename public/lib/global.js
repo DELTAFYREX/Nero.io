@@ -169,6 +169,8 @@ const global = {
     target: { x: 0, y: 0 },
     reverseTank: 1,
     altoveria: "disabledrn",
+    altoveria1: 0,
+    altoveria2: 0,
     fps: 60,
     screenSize: Math.min(1920, Math.max(window.innerWidth, 1280)),
     ratio: window.devicePixelRatio,

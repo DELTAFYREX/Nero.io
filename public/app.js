@@ -1744,11 +1744,12 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     if (gui.class === "Winsor") {
       PlaySound169();
     }
-  
+  if (gui.class === "fasdf") {
     if (global.altoveria = "pingthemotherfuckingkillsoundyoudumbass") {
       global.altoveria = "disabledrn";
       PlaySoundKS();
     }
+  }
   
     document.onkeydown = (e) => {
       var key = e.which || e.keyCode;
