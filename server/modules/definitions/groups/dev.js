@@ -1,3 +1,4 @@
+const { global } = require('public/lib/global.js');
 const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto, LayeredBoss } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
@@ -1572,7 +1573,7 @@ Class.lancertest = {
     }
     }],
 };
-let killcount = 1;
+let killcount = null;
 Class.poisontest = {
     PARENT: "genericTank",
     LABEL: "fasdf",
@@ -1595,11 +1596,11 @@ Class.poisontest = {
   ON: [{
         event: "tick",
         handler: ({ body, global}) => {
-        if (killcount !== body.killCount.solo + 1) {
-          let killcount = body.killCount.solo + 1;
-          global.altoveria1 = killcount;
-          global.altoveria2 = body.killCount.solo + 1;
-          global.altoveria = "pingthemotherfuckingkillsoundyoudumbass";
+        if (killcount !== this.body.killCount.solo + 1) {
+          let killcount = this.body.killCount.solo + 1;
+          global.metrics.altoveria1 = killcount;
+          global.metrics.altoveria2 = body.killCount.solo + 1;
+          global.metrics.altoveria = "pingthemotherfuckingkillsoundyoudumbass";
         }
       }
   }]

@@ -1399,21 +1399,12 @@ function drawFloor(px, py, ratio) {
 
             //draw it
             let tile = row[j];
-          if (global.altoveria = "disabledrn") {
             ctx.globalAlpha = 1;
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : color.white;
             ctx.fillRect(left, top, right - left, bottom - top);
             ctx.globalAlpha = 0.3;
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : gameDraw.modifyColor(tile);
             ctx.fillRect(left, top, right - left, bottom - top);
-          } else {
-            ctx.globalAlpha = 1;
-            ctx.fillStyle = settings.graphical.screenshotMode ? color.red : color.red;
-            ctx.fillRect(left, top, right - left, bottom - top);
-            ctx.globalAlpha = 0.3;
-            ctx.fillStyle = settings.graphical.screenshotMode ? color.red : gameDraw.modifyColor(tile);
-            ctx.fillRect(left, top, right - left, bottom - top);
-          }
         }
     }
     ctx.lineWidth = 1.5;
@@ -1745,8 +1736,8 @@ function drawSelfInfo(spacing, alcoveSize, max) {
       PlaySound169();
     }
   if (gui.class === "fasdf") {
-    if (global.altoveria = "pingthemotherfuckingkillsoundyoudumbass") {
-      global.altoveria = "disabledrn";
+    if (global.metrics.altoveria = "pingthemotherfuckingkillsoundyoudumbass") {
+      global.metrics.altoveria = "disabledrn";
       PlaySoundKS();
     }
   }
@@ -1878,7 +1869,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("thing:" + global.altoveria + global.altoveria1 + global.altoveria2, x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("thing:" + global.metrics.altoveria + global.metrics.altoveria1 + global.metrics.altoveria2, x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
         drawText("Nero Engine v2.9", x + len, y - 50 - 6 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
