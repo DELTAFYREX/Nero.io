@@ -1878,7 +1878,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("thing:" + global.metrics.altoveria, x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("thing:" + global.altoveria + global.altoveria1 + global.altoveria2, x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
         drawText("Nero Engine v2.9", x + len, y - 50 - 6 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
