@@ -2056,6 +2056,9 @@ const gameDrawAlive = (ratio, drawRatio) => {
     global.metrics.lastrender = getNow();
 };
 let getKills = () => {
+    let altoveria = {
+      " killstreak": [Math.round(global.finalKills[0].get()), 1],
+    };
     let finalKills = {
         " kills": [Math.round(global.finalKills[0].get()), 1],
         " assists": [Math.round(global.finalKills[1].get()), 0.5],

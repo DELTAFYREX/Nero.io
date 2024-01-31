@@ -1593,12 +1593,11 @@ Class.cumbullet = {
     PARENT: "bullet",
     COLOR: {
       BASE: "white"
-    },
-    TURRETS: [{
-             /** SIZE     X       Y     ANGLE    ARC */
+    }
+/*    TURRETS: [{
              POSITION: [20, 0, 0, 0, 360, 0],
             TYPE: "recangluhitbox",
-}]
+}]*/
 }
 /*Class.mantank = {
     PARENT: "genericTank",
