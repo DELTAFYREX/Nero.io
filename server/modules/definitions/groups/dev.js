@@ -1527,7 +1527,7 @@ Class.devtesttemplate = {
     LABEL: "Single",
     DANGER: 7,
     BODY: {
-      DAMAGE: base.DAMAGE + 1 * player.body.killCount.solo
+      DAMAGE: base.DAMAGE * killcount
     },
     GUNS: [
         {
@@ -1540,7 +1540,12 @@ Class.devtesttemplate = {
         {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
-    ]
+    ],
+  ON: [{
+        event: "tick",
+        handler: ({ body }) => {
+        body.killCount.solo
+  }]
 };
 Class.lancertest = {
     PARENT: "genericTank",
