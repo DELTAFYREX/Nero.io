@@ -1539,6 +1539,23 @@ Class.devtesttemplate = {
         }
     ]
 };
+const poison = (me, them, multiplier, duration) => {
+    if (!them) return
+    if (!them.immuneToAbilities && !them.invuln && !them.passive && !them.godmode && !them.variables.poisoned) {
+        them.variables.poisoned = true;
+        setTimeout(() => {
+            them.variables.poisoned = false;
+        }, 2 * duration * 1000);
+        timer(() => {
+            if (them.variables.poisoned && them.health.amount > 10) {
+                them.health.amount -= multiplier * 0.5;
+                if (them.onDamaged) them.onDamaged(them, me, multiplier * 0.5)
+                if (me.onDealtDamage) me.onDealtDamage(me, them.multiplier * 0.5)
+                if (me.onDealtDamageUniv) me.onDealtDamageUniv(me, them.multiplier * 0.5)
+            }
+        }, 2 * duration);
+    }
+};
 /*Class.cumbullet = {
     PARENT: "bullet",
     COLOR: {
