@@ -110,6 +110,14 @@ function PlaySound69() {
     startloadsound.play();
 }
 </script>
+  <script>
+var neroa = new Audio();
+neroa.src = ("https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/NeroA.mp3?v=1675461719161");
+function PlaySound2() {
+   neroa.load();
+     neroa.play();
+}
+</script>
       <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
     <!-- Main Code-->       
 <body oncontextmenu="return false" id="mainBody">
@@ -198,7 +206,7 @@ popup = ' onclick="openPopup()" '
                             <input type="text" class="conceal" tabindex="3" placeholder="Insert token here" id="playerKeyInput" maxlength="64" />
                         </div>
                         <div class="slider" id="startMenuSlidingTrigger">
-                            <h3 class="nopadding" onclick="PlaySound()">view options ▸</h3>
+                            <h3 class="nopadding" onmouseover="PlaySound1()">view options ▸ ≡</h3>
                         </div>
                         <div class="slider">
                             <br>
@@ -270,7 +278,7 @@ popup = ' onclick="openPopup()" '
                 </div>
                 <canvas id="musicCanvas" tabindex="1"></canvas>
                 <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan">Changelog</span>
+                    <span class="titleSpan" onclick="PlaySound2()">Changelog</span>
                     <div id="patchNotes" class="shadowScroll"></div>
                     <div id="bottomHolder">
                         <!--<a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
@@ -278,9 +286,9 @@ popup = ' onclick="openPopup()" '
                         <a class="link original"  href="https://arras.io/">Arras.io Game</a>-->
                         <a class="link discord"   href="https://discord.gg/kvCAZfUCjy" title="Join the APS++ Discord server! (this is not the nero.io discord server)" onclick="PlaySound()" onmouseover="PlaySound1()">APS++ Discord</a>
                         <a class="link developer" href="https://drive.google.com/drive/folders/1JehdLrkZxvyr5cMFgH2MpSnS5caI-Bf5?usp=sharing" title="funny google drive folder" onclick="PlaySound()" onmouseover="PlaySound1()">Gallery</a>
-                        <a class="link github"    href="https://sites.google.com/view/deltafyrex/home" title="the developer of this game" onclick="PlaySound()" onmouseover="PlaySound1()">The Shithead Dev</a>
+                        <a class="link github"    href="https://sites.google.com/view/deltafyrex/home" title="the developer of this game" onclick="PlaySound2()" onmouseover="PlaySound1()">The Shithead Dev</a>
                         <a class="link discord"   href="https://arras.io" title="arras.io" onclick="PlaySound()" onmouseover="PlaySound1()">Arras.io</a>
-                        <a class="link developer" href="https://youtube.com/@deltafyrex" title="the devs youtube page (subscribe pls)" onclick="PlaySound()" onmouseover="PlaySound1()">Youtube</a>
+                        <a class="link developer" href="https://youtube.com/@deltafyrex" title="the devs youtube page (subscribe pls)" onclick="PlaySound1()" onmouseover="PlaySound1()">Youtube</a>
                         <a class="link github"    href="https://github.com/Taureon/aps-plus-plus/issues" title="Report bugs (we do not have a website for this yet)" onclick="PlaySound()" onmouseover="PlaySound1()">Report Bugs</a>
                     </div>
                 </div>
@@ -311,11 +319,11 @@ popup = ' onclick="openPopup()" '
             if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
             if (clicked) {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding">close options ▾</h3>');
+                $(this).html('<h3 class="nopadding">close options ▾ ≡</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
-                PlaySound6()
-                $(this).html('<h3 class="nopadding">view options ▸</h3>');
+                PlaySound3()
+                $(this).html('<h3 class="nopadding">view options ▸ ≡</h3>');
                 $(".slider").css({ "top": 0 });
             }
         });
