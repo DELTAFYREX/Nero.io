@@ -198,7 +198,7 @@ popup = ' onclick="openPopup()" '
                             <input type="text" class="conceal" tabindex="3" placeholder="Insert token here" id="playerKeyInput" maxlength="64" />
                         </div>
                         <div class="slider" id="startMenuSlidingTrigger">
-                            <h3 class="nopadding">view options ▸</h3>
+                            <h3 class="nopadding" onclick="PlaySound()">view options ▸</h3>
                         </div>
                         <div class="slider">
                             <br>
@@ -264,8 +264,8 @@ popup = ' onclick="openPopup()" '
                             </table>
                         </div>
                     </div>
-                    <div style="position: relative; bottom: -10px;">
-                        <button id="startButton" onmouseover="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
+                    <div style="position: relative; bottom: -10px;" onclick="PlaySound()">
+                        <button id="startButton" onmouseover="PlaySound1()" onclick="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
                     </div>
                 </div>
                 <canvas id="musicCanvas" tabindex="1"></canvas>
@@ -310,9 +310,11 @@ popup = ' onclick="openPopup()" '
             clicked = !clicked;
             if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
             if (clicked) {
+                PlaySound3()
                 $(this).html('<h3 class="nopadding">close options ▾</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
+                PlaySound6()
                 $(this).html('<h3 class="nopadding">view options ▸</h3>');
                 $(".slider").css({ "top": 0 });
             }
