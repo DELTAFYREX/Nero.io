@@ -1964,10 +1964,12 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
             if (y > initialY) initialY = y;
             rowWidth = x;
           
-            global.clickables.upgrade.place(i, y * clickableRatio, x * clickableRatio, len * clickableRatio, height * clickableRatio);
-            let upgradeKey = getClassUpgradeKey(upgradeNum);
+//          global.clickables.upgrade.place(i, y * clickableRatio, x * clickableRatio, len * clickableRatio, height * clickableRatio);
+            global.clickables.upgrade.place(i, x * clickableRatio, y * clickableRatio, len * clickableRatio, height * clickableRatio);  
+          let upgradeKey = getClassUpgradeKey(upgradeNum);
           
-            drawEntityIcon(model, y, x, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
+//          drawEntityIcon(model, y, x, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
+            drawEntityIcon(model, x, y, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
 
             ticker++;
             upgradeNum++;
