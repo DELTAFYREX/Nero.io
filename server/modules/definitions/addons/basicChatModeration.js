@@ -6,7 +6,7 @@ let recent = {},
 	ratelimit = 3,
 	decay = 10_000;
 
-module.exports = ({ Events }) => {
+module.Class = ({ Events }) => {
 	Events.on('chatMessage', ({ message, socket, preventDefault }) => {
 		let perms = socket.permissions,
 			id = socket.player.body.id;
