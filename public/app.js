@@ -1919,7 +1919,8 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let height = len;
       
         // Animation processing
-        let columnCount = Math.max(Math.ceil(gui.upgrades.length / ), 5);
+//      let columnCount = Math.max(Math.ceil(gui.upgrades.length / 5), 3);
+        let columnCount = Math.max(3, Math.ceil(gui.upgrades.length / 5));
         upgradeMenu.set(columnCount + 0.5);
         let glide = upgradeMenu.get();
 
@@ -1962,10 +1963,10 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
 
             if (y > initialY) initialY = y;
             rowWidth = x;
-
+          
             global.clickables.upgrade.place(i, y * clickableRatio, x * clickableRatio, len * clickableRatio, height * clickableRatio);
             let upgradeKey = getClassUpgradeKey(upgradeNum);
-
+          
             drawEntityIcon(model, y, x, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
 
             ticker++;
