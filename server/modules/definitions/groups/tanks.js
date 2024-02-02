@@ -4958,6 +4958,28 @@ Class.littleHunter = {
         }
     }]
 };
+Class.flanksubdue = makeMulti({
+    PARENT: "genericTank",
+    DANGER: 5,
+    BODY: {
+        ACCELERATION: base.ACCEL * .9,
+        FOV: 1.1
+        SPEED
+    },
+    GUNS: [{
+        POSITION: [23, 5, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, .2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            TYPE: "bullet"
+        }
+    }]
+})
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5153,10 +5175,10 @@ Class.flankinception = makeMulti({
         POSITION: [5.5, 18, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 120, 0],
+        POSITION: [5.5, 18, 0, 120, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 240, 0],
+        POSITION: [5.5, 18, 0, 240, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5179,10 +5201,10 @@ Class.flankceptionist = makeMulti({
         POSITION: [5.5, 18, 0, 0, 0, 0],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 120, 0],
+        POSITION: [5.5, 18, 0, 120, 0, 0],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 0, 240, 0],
+        POSITION: [5.5, 18, 0, 240, 0, 0],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
