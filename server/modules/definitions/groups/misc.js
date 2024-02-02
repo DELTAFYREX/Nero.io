@@ -571,7 +571,7 @@ Class.barricadeTurret = {
 };
 
 Class.sentrySwarm = {
-    PARENT: ["sentry"],
+    PARENT: "sentry",
     UPGRADE_LABEL: "Swarm Sentry",
     UPGRADE_COLOR: "pink",
     GUNS: [
@@ -586,7 +586,7 @@ Class.sentrySwarm = {
     ],
 };
 Class.megaAutoTurret = {
-  PARENT: ["autoTurret"],
+  PARENT: "autoTurret",
   BODY: {
     FOV: 2,
     SPEED: 0.9
@@ -600,8 +600,7 @@ Class.megaAutoTurret = {
     }
   }]
 }
-Class.sentryGun = makeAuto(Class.sentry, "Sentry", {
-    type: Class.megaAutoTurret,
+Class.sentryGun = makeAuto(Class.sentry, "Sentry", { type: "megaAutoTurret',
     size: 12,
 });
 Class.sentryGun.UPGRADE_LABEL = "Gun Sentry";
