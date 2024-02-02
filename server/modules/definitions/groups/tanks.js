@@ -5854,7 +5854,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.littleHunterbrid.UPGRADES_TIER_3 = ["autoMini", "autolittleHunterbrid"]
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
 
-    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "autolittleHunter", "littleHunterbrid"]
+    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "flankdue", "autolittleHunter", "littleHunterbrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
         Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory", "autoinceptionist", "inceptionistbrid"]
