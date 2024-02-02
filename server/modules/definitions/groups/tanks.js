@@ -4938,10 +4938,10 @@ Class.ceptionistbullet = {
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
 Class.littleHunter = {
     PARENT: "genericTank",
-    LABEL: 'Subduer',
+    LABEL: "Subduer",
     DANGER: 5,
     BODY: {
-        ACCELERATION: base.ACCEL * .9,
+        ACCELERATION: base.ACCEL * 0.9,
         FOV: 1.1
     },
     GUNS: [{
@@ -4951,7 +4951,7 @@ Class.littleHunter = {
             TYPE: "bullet"
         }
     }, {
-        POSITION: [20, 8, 1, 0, 0, 0, .2],
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
             TYPE: "bullet"
@@ -5191,9 +5191,9 @@ Class.flankdue = makeMulti({
     PARENT: "genericTank",
     DANGER: 5,
     BODY: {
-        ACCELERATION: base.ACCEL * .9,
+        ACCELERATION: base.ACCEL * 0.9,
         FOV: 1.1,
-        SPEED: base.SPEED * 1.1
+        SPEED: base.SPEED * 1.1,
     },
     GUNS: [{
         POSITION: [23, 5, 1, 0, 0, 0, 0],
@@ -5202,7 +5202,7 @@ Class.flankdue = makeMulti({
             TYPE: "bullet"
         }
     }, {
-        POSITION: [20, 8, 1, 0, 0, 0, .2],
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter]),
             TYPE: "bullet"
