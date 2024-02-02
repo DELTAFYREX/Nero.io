@@ -247,43 +247,6 @@ Class.rocketeerMissile = {
 
 //delta projectiles/turrets
 // ??? it still dont spin i think lol
-Class.projectileAutoTurret = {
-    PARENT: "genericTank",
-    LABEL: "Turret",
-    COLOR: "grey",
-    INDEPENDENT: true,
-    CONTROLLERS: ['nearestDifferentMaster'],
-    BODY: {
-        FOV: 0.8,
-    },
-    GUNS: [
-        {
-            POSITION: [22, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.turret]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-}
-Class.ceptionistturret = {
-    PARENT: "genericTank",
-    LABEL: "Turret",
-    COLOR: "darkGray",
-    BODY: {
-        FOV: 0.8,
-    },
-    GUNS: [
-        {
-            POSITION: [22, 10, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
-                TYPE: "ceptionistbullet",
-                COLOR: "darkGray",
-            },
-        },
-    ],
-}
 Class.turretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -1060,6 +1023,24 @@ Class.autoTurret = {
         },
     ],
 }
+Class.ceptionistturret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "darkGray",
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret]),
+                TYPE: "bullet",
+                COLOR: "darkGray",
+            },
+        },
+    ],
+}
 Class.droneAutoTurret = {
     PARENT: "genericTank",
     LABEL: "Turret",
@@ -1074,6 +1055,25 @@ Class.droneAutoTurret = {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, { recoil: 1.15 }, g.turret, g.overdrive]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
+Class.projectileAutoTurret = {
+    PARENT: "genericTank",
+    LABEL: "Turret",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    CONTROLLERS: ['nearestDifferentMaster'],
+    BODY: {
+        FOV: 0.8,
+    },
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.overdrive]),
                 TYPE: "bullet",
             },
         },
@@ -1258,6 +1258,7 @@ Class.spikeBody = {
 
 // Basic & starting upgrades
 Class.basic = {
+    UPGRADE_COLOR: "animatednero",
     PARENT: "genericTank",
     LABEL: "Basic",
     DANGER: 4,
@@ -1439,6 +1440,19 @@ Class.smasher = {
             TYPE: "smasherBody"
         }
     ]
+}
+Class.pion = {
+    PARENT: "genericSmasher",
+    LABEL: "Pion",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        }, {
+        POSITION: [34, 0, 0, 0, 360, 0],
+        TYPE: "pionturretBase",
+    }]
 }
 Class.healer = {
     PARENT: "genericTank",
@@ -3164,7 +3178,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, -4, 90, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "autoswarm",
+                TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }
@@ -3173,7 +3187,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, 4, 270, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "autoswarm",
+                TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }
@@ -4007,6 +4021,7 @@ Class.assembler = {
     ]
 }
 
+// Tri-Trapper upgrades
 // Tri-Trapper upgrades
 Class.hexaTrapper = makeAuto(makeMulti({
     PARENT: "genericTank",
@@ -4927,7 +4942,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload, g.turret]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
@@ -4936,28 +4951,6 @@ Class.ceptionistbullet = {
   ]
 }
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
-Class.littleHunter = {
-    PARENT: "genericTank",
-    LABEL: "Subduer",
-    DANGER: 5,
-    BODY: {
-        ACCELERATION: base.ACCEL * 0.9,
-        FOV: 1.1
-    },
-    GUNS: [{
-        POSITION: [23, 5, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
-            TYPE: "bullet"
-        }
-    }]
-};
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5080,14 +5073,14 @@ Class.twinceptionist = {
             POSITION: [20, 8, 1, 0, 5.5, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "ceptionistbullet"
+                TYPE: "bullet"
             }
         },
         {
             POSITION: [20, 8, 1, 0, -5.5, 0, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
-                TYPE: "ceptionistbullet"
+                TYPE: "bullet"
             }
         }
     ],
@@ -5153,10 +5146,10 @@ Class.flankinception = makeMulti({
         POSITION: [5.5, 18, 0, 0, 0, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 120, 0, 0],
+        POSITION: [5.5, 18, 0, 0, 1/3, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     },{
-        POSITION: [5.5, 18, 0, 240, 0, 0],
+        POSITION: [5.5, 18, 0, 0, 2/3, 0],
         TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
@@ -5175,40 +5168,12 @@ Class.flankceptionist = makeMulti({
             }
         }
     ],
-      TURRETS: [{
-        POSITION: [5.5, 18, 0, 0, 0, 0],
-        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
-    },{
-        POSITION: [5.5, 18, 0, 120, 0, 0],
-        TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
-    },{
-        POSITION: [5.5, 18, 0, 240, 0, 0],
+    TURRETS: [{
+        POSITION: [10, 0, 0, 0, 0, 1],
         TYPE: ["ceptionistturret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
     }
   ]
 }, 3, "Flankceptionist")
-Class.flankdue = makeMulti({
-    PARENT: "genericTank",
-    DANGER: 5,
-    BODY: {
-        ACCELERATION: base.ACCEL * 0.9,
-        FOV: 1.1,
-        SPEED: base.SPEED * 1.1,
-    },
-    GUNS: [{
-        POSITION: [23, 5, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter]),
-            TYPE: "bullet"
-        }
-    }]
-}, 3, "Flankduer")
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5365,19 +5330,6 @@ Class.subverter = {
     },
   ],
 };
-Class.pion = {
-    PARENT: "genericSmasher",
-    LABEL: "Pion",
-    DANGER: 6,
-    TURRETS: [
-        {
-            POSITION: [21.5, 0, 0, 0, 360, 0],
-            TYPE: "smasherBody"
-        }, {
-        POSITION: [34, 0, 0, 0, 360, 0],
-        TYPE: "pionturretBase",
-    }]
-}
 Class.equilibrium = {
     PARENT: "genericTank",
     LABEL: "Equilibrium",
@@ -5686,8 +5638,6 @@ Class.clonebrid = makeHybrid({
   ]
 }, "Cloner-Hybrid")
 Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
-Class.autolittleHunter = makeAuto(Class.littleHunter, "Auto-Subduer")
-Class.littleHunterbrid = makeHybrid('littleHunter', "Subduer-Hybrid")
 
 Class.autoDesmos = makeAuto(Class.desmos, "Auto-Desmos");
 
@@ -5732,7 +5682,6 @@ Class.autopoundbrid = makeHybrid('autoPound', "Auto-Pound-Hybrid")
 Class.autotrapbrid = makeHybrid('autoTrap', "Auto-Trapper-Hybrid")
 Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")
 Class.autoinceptionbrid = makeHybrid('autoinception', "Auto-Inception-Hybrid")
-Class.autolittleHunterbrid = makeHybrid('autolittleHunter', "Auto-Subduer-Hybrid")
 
 
 
@@ -5772,13 +5721,12 @@ Class.poundCeption = makeCeptionNerf(Class.pounder, "Pound-Ception");
 Class.trapCeption = makeCeptionNerf(Class.trapper, "Trap-Ception");
 Class.desmosCeption = makeCeptionNerf(Class.desmos, "Desmos-Ception");
 Class.bascridCeption = makeCeptionNerf(Class.bascrid, "Basic-Hybrid-Ception");
-Class.littleHunterCeption = makeCeptionNerf(Class.littleHunter, "Subduer-Ception");
 Class.inceptCeption = makeCeptionNerf(Class.inception, "Incept-Ception");
 
 
 
 // TANK UPGRADE PATHS
-Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid", "littleHunter", "inception"]
+Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid", "inception"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
         Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
@@ -5795,12 +5743,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
-    Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach", "machbrid", "machinception"]
+    Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach", "machbrid"]
         Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"]
         Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer", "spraybrid"]
 
-    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank", "flankbrid", "flankinception"]
+    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank", "flankbrid"]
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
@@ -5814,7 +5762,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
         Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "cruiserdrive", "revodirector", "honda", "dictator"]
 
-    Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid", "tailgator"]
+    Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid"]
         Class.pounder.UPGRADES_TIER_3 = ["shotgun", "eagle"]
         Class.destroyer.UPGRADES_TIER_3 = ["conqueror", "annihilator", "hybrid", "construct", "autoDestroy"]
         Class.artillery.UPGRADES_TIER_3 = ["mortar", "ordnance", "beekeeper", "fieldGun", "autoArtillery", "artilbrid"]
@@ -5826,7 +5774,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper", "tritrapperbrid"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard", "trapguardbrid"]
 
-    Class.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "autobascrid", "autolittleHunter", "autoinception", "revolutionist", "basicCeption"]
+    Class.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "autobascrid", "autoinception", "revolutionist", "basicCeption"]
         Class.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
         Class.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "equilibrium", "twinCeption", "autotwinbrid"]
         Class.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption", "autosnipebrid"]
@@ -5837,11 +5785,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "desmosCeption", "autodesmosbrid"]
         Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
-        Class.autolittleHunter.UPGRADES_TIER_3 = ["autolittleHunterbrid", "littleHunterCeption"]
         Class.autoinception.UPGRADES_TIER_3 = ["autoinceptionist", "automachinception", "autotailgator", "autoflankinception", "autoinceptionbrid", "inceptCeption"]
-        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "desmosCeption", "bascridCeption", "littleHunterCeption", "inceptCeption"]
+        Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "desmosCeption", "bascridCeption", "inceptCeption"]
 
-    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid", "littleHunterbrid", "inceptionbrid"]
+    Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid", "inceptionbrid"]
         Class.bascrid.UPGRADES_TIER_3 = ["clonebrid"]
         Class.twinbrid.UPGRADES_TIER_3 = ["bentHybrid", "overgunner", "autotwinbrid", "helixbrid"]
         Class.snipebrid.UPGRADES_TIER_3 = ["assbrid", "poacher", "cropDuster", "armsman", "autosnipebrid"]
@@ -5851,10 +5798,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid", "bascridCeption"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
-        Class.littleHunterbrid.UPGRADES_TIER_3 = ["autoMini", "autolittleHunterbrid"]
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
-
-    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "flankdue", "autolittleHunter", "littleHunterbrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
         Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory", "autoinceptionist", "inceptionistbrid"]

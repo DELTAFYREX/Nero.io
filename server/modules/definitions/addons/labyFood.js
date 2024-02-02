@@ -1,4 +1,4 @@
-module.Class = ({ Config }) => {
+module.exports = ({ Config }) => {
 
 // To enable this addon, simply comment out the line below.
 return console.log('[labyFood.js] Addon disabled by default');

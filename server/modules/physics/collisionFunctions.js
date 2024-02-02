@@ -239,34 +239,6 @@ function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false) {
             n.damageRecieved += __n * Number(__n > 0
                 ? my.team != n.team
                 : my.healer && n.team == my.team && n.type == "tank" && my.master.id != n.id);
-            let finalDmg = {
-                my: damage._n * deathFactor._n,
-                n: damage._me * deathFactor._me
-            }
-                            if (my.onDamaged) {
-                            my.onDamaged(my, n, finalDmg.my);
-                            }
-                            if (my.onDealtDamage) {
-                                my.onDealtDamage(my, n, finalDmg.n);
-                            }
-                            if (my.onDealtDamageUniv) {
-                                my.onDealtDamageUniv(my, n, finalDmg.n);
-                            }
-                            if (my.master && my.master.onDealtDamageUniv) {
-                                my.master.onDealtDamageUniv(my.master, n, finalDmg.n);
-                            }
-                            if (n.onDamaged) {
-                                n.onDamaged(n, my, finalDmg.n);
-                            }
-                            if (n.onDealtDamage) {
-                                n.onDealtDamage(n, my, finalDmg.my);
-                            }
-                            if (n.onDealtDamageUniv) {
-                                n.onDealtDamageUniv(n, my, finalDmg.my);
-                            }
-                            if (n.master && n.master.onDealtDamageUniv) {
-                                n.master.onDealtDamageUniv(n.master, my, finalDmg.my);
-                            }
         }
     }
     // Exit if healer (healers don't push on collide)
