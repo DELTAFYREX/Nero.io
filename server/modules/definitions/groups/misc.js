@@ -366,7 +366,7 @@ Class.crasher = {
     DRAW_HEALTH: true,
 };
 Class.crasherSpawner = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Spawned",
     STAT_NAMES: statnames.drone,
     CONTROLLERS: ["nearestDifferentMaster"],
@@ -399,7 +399,7 @@ Class.crasherSpawner = {
 
 // SENTRIES
 Class.sentry = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     TYPE: "crasher",
     LABEL: "Sentry",
     DANGER: 3,
@@ -440,7 +440,7 @@ Class.sentry = {
     GIVE_KILL_MESSAGE: true,
 };
 Class.trapTurret = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Turret",
     BODY: {
         FOV: 0.5,
@@ -478,7 +478,7 @@ let makeshottrapTurretProps = () => ({
     STAT_CALCULATOR: gunCalcNames.block,
 });
 Class.shottrapTurret = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: 'Turret',
     BODY: {
         FOV: 0,
@@ -600,17 +600,12 @@ Class.megaAutoTurret = {
     }
   }]
 }
-Class.sentryGun = makeAuto(Class.sentry, "Sentry", { type: "megaAutoTurret',
-    size: 12,
-});
+Class.sentryGun = makeAuto('sentry', "Sentry", { type: 'megaAutoTurret', size: 12 });
 Class.sentryGun.UPGRADE_LABEL = "Gun Sentry";
-Class.sentryTrap = makeAuto(Class.sentry, "Sentry", {
-    type: Class.trapTurret,
-    size: 12,
-});
+Class.sentryTrap = makeAuto('sentry', "Sentry", { type: 'trapTurret', size: 12 });
 Class.sentryTrap.UPGRADE_LABEL = "Trap Sentry";
 Class.shinySentry = {
-    PARENT: ["sentry"],
+    PARENT: "sentry",
     COLOR: "lightGreen",
     UPGRADE_COLOR: "lightGreen",
     DANGER: 4,
@@ -622,7 +617,7 @@ Class.shinySentry = {
     },
 };
 Class.shinySentrySwarm = {
-    PARENT: ["shinySentry"],
+    PARENT: "shinySentry",
     UPGRADE_LABEL: "Shiny Swarm Sentry",
     UPGRADE_COLOR: "lightGreen",
     GUNS: [
@@ -675,10 +670,7 @@ Class.artilleryAutoTankgun = {
         },
     ],
 };
-Class.shinySentryGun = makeAuto(Class.shinySentry, "Sentry", {
-    type: Class.artilleryAutoTankgun,
-    size: 12,
-});
+Class.shinySentryGun = makeAuto('shinySentry', "Sentry", { type: 'artilleryAutoTankgun', size: 12 });
 Class.shinySentryGun.UPGRADE_LABEL = "Shiny Gun Sentry";
 Class.barricadeAutoTankGun = {
     PARENT: ["genericTank"],
@@ -723,15 +715,12 @@ Class.barricadeAutoTankGun = {
         },
     ],
 };
-Class.shinySentryTrap = makeAuto(Class.shinySentry, "Sentry", {
-    type: Class.barricadeAutoTankGun,
-    size: 12,
-});
+Class.shinySentryTrap = makeAuto('shinySentry', "Sentry", { type: 'barricadeAutoTankGun', size: 12 });
 Class.shinySentryTrap.UPGRADE_LABEL = "Shiny Trap Sentry";
 
 // SENTINELS (by ranar)
 Class.sentinel = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     TYPE: "crasher",
     LABEL: "Sentinel",
     DANGER: 7,
@@ -768,7 +757,7 @@ Class.sentinel = {
     HITS_OWN_TYPE: "hard",
 };
 Class.sentinelMissile = {
-    PARENT: ["bullet"],
+    PARENT: "bullet",
     LABEL: "Missile",
     INDEPENDENT: true,
     BODY: {

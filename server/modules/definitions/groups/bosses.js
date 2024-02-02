@@ -1075,7 +1075,7 @@ for(let i = 0; i < 5; i++) {
 
 // Rogues
 Class.roguePalisade = {
-    PARENT: ["miniboss"],
+    PARENT: "miniboss",
     LABEL: "Rogue Palisade",
     COLOR: "darkGrey",
     UPGRADE_COLOR: "darkGrey",
