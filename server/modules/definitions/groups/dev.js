@@ -1539,39 +1539,6 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.lancertest = {
-    PARENT: "genericTank",
-    LABEL: 'Lancer',
-    DANGER: 5,
-    BODY: {
-        SPEED: base.SPEED * 1.5,
-        ACCELERATION: base.ACCEL * .7
-    },
-    GUNS: [{
-        POSITION: [8, 4, 1.4, 6, 0, 0, 0],
-        PROPERTIES: {
-            AUTOFIRE: true,
-            SHOOT_SETTINGS: combineStats([g.lance]),
-            TYPE: "bullet",
-            ALPHA: 1,
-            LABEL: 'Lance'
-        }
-    }, {
-        POSITION: [8, 4, 1.4, 8.5, 0, 0, 0],
-        PROPERTIES: {
-            AUTOFIRE: true,
-            SHOOT_SETTINGS: combineStats([g.lance]),
-            TYPE: "bullet",
-                ALPHA: 1,
-                LABEL: 'Lance'
-        }
-    }, {
-        POSITION: [25, .3, -55, 0, 0, 0, 0],
-              PROPERTIES: {
-                ALPHA: 0.5,
-    }
-    }],
-}
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
@@ -1612,7 +1579,6 @@ Class.adsfoipuasdfiopu = {
         }
     ]
 }
-
 //wait whats stuff
 Class.placeableWall = {
     PARENT: ["rock"],
@@ -1907,14 +1873,6 @@ Class.papyrus = {
 Class.oppenheimer = {
     PARENT: "genericTank",
     LABEL: "Oppen Heimer",
-    DISPLAY: {
-      GLOW: {
-        RADIUS: 5, 
-        COLOR: "rainbow", 
-        ALPHA: 1, 
-        RECURSION: 1
-      }
-    },
     DANGER: 7,
     GUNS: [
         {
@@ -2022,7 +1980,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "lancertest"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
