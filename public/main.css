@@ -91,6 +91,14 @@ options_header {
     text-align: center;
 }
 
+miniupdate {
+    font-size: medium;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    animation:pfpDefault 800ms linear both;
+}
 
 h3 {
     font-size: small;
@@ -102,6 +110,7 @@ h3 {
     margin: 4px 0;
     width: 100%;
     height: 20px;
+    animation:pfpDefault 800ms linear both;
     box-sizing: border-box;
     background: #70b5ff;
     border-bottom: 2px solid #5c9ce0;
@@ -379,6 +388,8 @@ table {
 }
 update {
     color: #D83848;
+      animation:pfpDefault 800ms linear both;
+
     font-weight: bold;
 }
 
@@ -396,6 +407,7 @@ update {
 
 #patchNotes {
     max-width: 330px;
+    animation:pfpDefault 800ms linear both;
     height: calc(100% - 100px);
     padding: 5px 20px 10px;
     overflow: hidden auto;
@@ -421,6 +433,7 @@ update {
     }
 
     position: relative;
+    animation:pfpDefault 800ms linear both;
 
     &::before {
         content: '';
