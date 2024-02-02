@@ -1919,7 +1919,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let height = len;
       
         // Animation processing
-        let columnCount = Math.max(5, Math.ceil(gui.upgrades.length / 4));
+        let columnCount = Math.max(Math.ceil(gui.upgrades.length / ), 5);
         upgradeMenu.set(columnCount + 0.5);
         let glide = upgradeMenu.get();
 
