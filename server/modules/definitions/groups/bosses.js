@@ -1222,7 +1222,7 @@ Class.guardian = {
     AI: { NO_LEAD: false },
 };
 Class.defenderAutoTankGun = {
-    PARENT: ["autoTankGun"],
+    PARENT: "autoTankGun",
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
