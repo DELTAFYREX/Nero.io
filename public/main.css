@@ -607,13 +607,7 @@ a.link {
 .github:hover {
     top: 1px;
     background: #666666;
-    /*background: #333333;*/
-    border: 0;
     border-bottom: 2px solid #333333;
-    /*background: #1B3353;*/
-    /*background: #8ABC3F;*/
-      line-height: 15px;
-    text-align: center;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
