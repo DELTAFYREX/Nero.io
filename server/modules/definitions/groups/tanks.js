@@ -3164,7 +3164,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, -4, 90, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: ["autoswarm"],
+                TYPE: "autoswarm",
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }
@@ -3173,7 +3173,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, 4, 270, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: ["autoswarm"],
+                TYPE: "autoswarm",
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }

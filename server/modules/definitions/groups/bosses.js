@@ -285,7 +285,7 @@ Class.eliteDestroyer = {
     ],
 };
 Class.eliteGunner = {
-    PARENT: ["elite"],
+    PARENT: "elite",
     UPGRADE_LABEL: "Elite Gunner",
     UPGRADE_COLOR: "pink",
     FACING_TYPE: "toTarget",
@@ -317,7 +317,7 @@ Class.eliteGunner = {
     ],
 };
 Class.eliteSprayer = {
-    PARENT: ["elite"],
+    PARENT: "elite",
     UPGRADE_LABEL: "Elite Sprayer",
     UPGRADE_COLOR: "pink",
     SKILL: [0, 9, 3, 9, 2, 9, 9, 9, 9, 0],
@@ -350,7 +350,7 @@ Class.eliteSprayer = {
     ],
 };
 Class.eliteBattleship = {
-    PARENT: ["elite"],
+    PARENT: "elite",
     UPGRADE_LABEL: "Elite Battleship",
     UPGRADE_COLOR: "pink",
     GUNS: [
