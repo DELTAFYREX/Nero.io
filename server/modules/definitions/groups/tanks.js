@@ -4958,28 +4958,6 @@ Class.littleHunter = {
         }
     }]
 };
-Class.flanksubdue = makeMulti({
-    PARENT: "genericTank",
-    DANGER: 5,
-    BODY: {
-        ACCELERATION: base.ACCEL * .9,
-        FOV: 1.1
-        SPEED
-    },
-    GUNS: [{
-        POSITION: [23, 5, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, .2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
-            TYPE: "bullet"
-        }
-    }]
-})
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5209,6 +5187,28 @@ Class.flankceptionist = makeMulti({
     }
   ]
 }, 3, "Flankceptionist")
+Class.flankdue = makeMulti({
+    PARENT: "genericTank",
+    DANGER: 5,
+    BODY: {
+        ACCELERATION: base.ACCEL * .9,
+        FOV: 1.1,
+        SPEED: base.SPEED * 1.1
+    },
+    GUNS: [{
+        POSITION: [23, 5, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, .2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter]),
+            TYPE: "bullet"
+        }
+    }]
+}, 3, "Flankduer")
 Class.tailgator = {
     PARENT: "genericTank",
     LABEL: "Tailgator",
@@ -5851,7 +5851,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid", "bascridCeption"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
-        Class.littleHunterbrid.UPGRADES_TIER_3 = ["autolittleHunterbrid"]
+        Class.littleHunterbrid.UPGRADES_TIER_3 = ["autoMini", "autolittleHunterbrid"]
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
 
     Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "autolittleHunter", "littleHunterbrid"]
