@@ -1571,96 +1571,7 @@ Class.lancertest = {
                 ALPHA: 0.5,
     }
     }],
-};
-let killcount = null;
-Class.poisontest = {
-    PARENT: "genericTank",
-    LABEL: "fasdf",
-    DANGER: 7,
-    BODY: {
-      DAMAGE: base.DAMAGE * killcount
-    },
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "cumbullet"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ]
-};
-Class.cumbullet = {
-    PARENT: "bullet",
-    COLOR: {
-      BASE: "white"
-    }
-/*    TURRETS: [{
-             POSITION: [20, 0, 0, 0, 360, 0],
-            TYPE: "recangluhitbox",
-}]*/
 }
-/*Class.mantank = {
-    PARENT: "genericTank",
-    LABEL: "boy tank (i hate you)",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "cumbullet"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ],
-  ON: [
-       {
-        event: "tick",
-        handler: ({ body }) => {  
-for (let instance of entities) {
-  if (Math.sqrt(((instance.x - bidy.x) ** 2) + ((instance.y - body.y) ** 2)) <= body.size + instance.size && instance.master.id != body.id) { if (instance.type == "cumbullet"){            instance.sendMessage('collide!')
-
-}}
-           }
-       }
-       }
-     ],
-};
-Class.girltank = {
-    PARENT: "genericTank",
-    LABEL: "girl tank (i hate you)",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ],
-  ON: [
-       {
-        event: "tick",
-        handler: ({ body }) => {  
-for (let instance of entities) {
-  if (Math.sqrt(((instance.x - bidy.x) ** 2) + ((instance.y - body.y) ** 2)) <= body.size + instance.size && instance.master.id != body.id) { if (instance.type == "cumbullet"){            instance.sendMessage('collide!')
-
-}}
-           }
-         }
-       }
-     ],
-};*/
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
@@ -2111,7 +2022,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "poisontest", "lancertest"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "whirlwind", "vanquisher", "mummifier", "tracker3", "lancertest"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
