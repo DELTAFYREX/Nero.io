@@ -548,6 +548,7 @@ a.link {
 
 .discord {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #7289da;
     border-bottom: 2px solid #6175ba;
     box-shadow: inset 0 -2px #6175ba;
@@ -558,6 +559,7 @@ a.link {
     top: 3px;
     background: #7289da;
     height: 85%;
+    line-height: 15px;
     border-bottom: 1px solid #6175ba;
     box-shadow: inset 0 -2px #6175ba;
     -webkit-box-shadow: inset 0 -2px #6175ba;
@@ -565,6 +567,7 @@ a.link {
 
 .reddit {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #f75401;
     border-bottom: 2px solid #d24a01;
     box-shadow: inset 0 -2px #d24a01;
@@ -573,8 +576,9 @@ a.link {
 .reddit:active,
 .reddit:hover {
     top: 3px;
-    background: #d24a01;
+    background: #f75401;
     height: 85%;
+    line-height: 15px;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -582,6 +586,7 @@ a.link {
 
 .original {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #77bf79;
     border-bottom: 2px solid #679c68;
     box-shadow: inset 0 -2px #679c68;
@@ -590,8 +595,9 @@ a.link {
 .original:active,
 .original:hover {
     top: 3px;
-    background: #679c68;
+    background: #77bf79;
     height: 85%;
+    line-height: 15px;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -599,6 +605,7 @@ a.link {
 
 .developer {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #454b7f;
     line-height: 15px;
     border-bottom: 2px solid #313454;
@@ -619,6 +626,7 @@ a.link {
 
 .youtube {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #f71701;
     line-height: 15px;
     border-bottom: 2px solid #d21401;
@@ -639,6 +647,7 @@ a.link {
 
 .github {
     top: 2px;
+    animation:pfpDefault 800ms linear both;
     background: #666666;
     line-height: 15px;
     border-bottom: 2px solid #333333;
