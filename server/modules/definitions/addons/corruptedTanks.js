@@ -4,7 +4,7 @@
 // "[PARENT ADDON NAME]-[EXTENSION NAME].js", to make sure that it would run after that addon ran.
 
 const { dereference } = require('../facilitators.js')
-
+/*
 Math.seed = function(s) {
     var mask = 0xffffffff;
     var m_w  = (123456789 + s) & mask;
@@ -21,6 +21,8 @@ Math.seed = function(s) {
 }
 var seed = Math.random()*1e16; // can be any number
 console.log('[corruptedTanks.js] SEED: '+seed)
+*/
+module.exports = ({ Class }) => {
 
 	const CONFIG = {
         usedTanks: 3, // Number of tanks used per generated tank
@@ -32,7 +34,7 @@ console.log('[corruptedTanks.js] SEED: '+seed)
     }
     numTanksToMake = 100;
     var defs = [];
-    let startTank = Class.basic; 
+    let startTank = exports.bosses; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
@@ -175,17 +177,22 @@ console.log('[corruptedTanks.js] SEED: '+seed)
         }
         if (page === 0) {
             Class.corruptedTankMenu = {
-                PARENT: "basic",
+                PARENT: "menu",
                 LABEL: "Corrupted Tanks",
                 UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
             };
         } else {
             Class[`corruptedTankMenuPage_${page+1}`] = {
-                PARENT: "basic",
+                PARENT: "menu",
                 LABEL: `Page ${page+1}`,
                 UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
             };
         }
         
     }
+
+
+
+
     Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
+};
