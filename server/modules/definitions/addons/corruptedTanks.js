@@ -22,6 +22,8 @@ Math.seed = function(s) {
 var seed = Math.random()*1e16; // can be any number
 console.log('[corruptedTanks.js] SEED: '+seed)
 
+module.Class = ({ CorrClass }) => {
+
 	const CONFIG = {
         usedTanks: 3, // Number of tanks used per generated tank
         maxChildren: 5, // The overall max children a singluar tank can have
@@ -30,14 +32,14 @@ console.log('[corruptedTanks.js] SEED: '+seed)
         turretsPerTank: 2, // The max amount of turrets to use from each tank
         propsPerTank: 2, // The max amount of props to use from each tank
     }
-    numTanksToMake = 100;
+    let numTanksToMake = 100;
     var defs = [];
-    let startTank = Class.bosses; 
+    let startTank = CorrClass.bosses; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
       let newObj = dereference(obj);
-      let objName = Object.getOwnPropertyNames(Class).find(item => Class[item] === obj);
+      let objName = Object.getOwnPropertyNames(CorrClass).find(item => CorrClass[item] === obj);
       if (handledTanks.has(objName)) return;
       handledTanks.add(objName);
       defs.push([objName, newObj]);
@@ -46,7 +48,7 @@ console.log('[corruptedTanks.js] SEED: '+seed)
         if (propertyName.startsWith("UPGRADES_TIER_")) {
             try { // hack to catch strange proprties that are undefined :/
             for (const upgrade of newObj[propertyName]) {
-                iterateThroughUpgrades(Class[upgrade]);
+                iterateThroughUpgrades(CorrClass[upgrade]);
             }
             } catch {}
         }
@@ -170,22 +172,27 @@ console.log('[corruptedTanks.js] SEED: '+seed)
     for (let page=0;page<pages.length;page++) {
         let generatedCorruptedTanks = [];
         for (let j=0;j<pages[page];j++) {
-            Class[`corruptedTank_${page}_${j}`] = generateNewTank();
+            CorrClass[`corruptedTank_${page}_${j}`] = generateNewTank();
             generatedCorruptedTanks.push(`corruptedTank_${page}_${j}`)
         }
         if (page === 0) {
-            Class.corruptedTankMenu = {
-                PARENT: "overpowered",
+            CorrClass.corruptedTankMenu = {
+                PARENT: "menu",
                 LABEL: "Corrupted Tanks",
                 UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
             };
         } else {
-            Class[`corruptedTankMenuPage_${page+1}`] = {
-                PARENT: "overpowered",
+            CorrClass[`corruptedTankMenuPage_${page+1}`] = {
+                PARENT: "menu",
                 LABEL: `Page ${page+1}`,
                 UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
             };
         }
         
     }
-    Class.addons.UPGRADES_TIER_0.push("corruptedTankMenu");
+
+
+
+
+    Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
+};
