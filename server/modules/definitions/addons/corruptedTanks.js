@@ -19,10 +19,8 @@ Math.seed = function(s) {
       return result;
     }
 }
-var seed = Math.random()*2; // can be any number
+var seed = Math.random()*1e16; // can be any number
 console.log('[corruptedTanks.js] SEED: '+seed)
-
-module.Class = ({ Class }) => {
 
 	const CONFIG = {
         usedTanks: 3, // Number of tanks used per generated tank
@@ -32,9 +30,9 @@ module.Class = ({ Class }) => {
         turretsPerTank: 2, // The max amount of turrets to use from each tank
         propsPerTank: 2, // The max amount of props to use from each tank
     }
-    let numTanksToMake = 100;
+    numTanksToMake = 100;
     var defs = [];
-    let startTank = Class.bosses; 
+    let startTank = Class.basic; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
@@ -177,22 +175,17 @@ module.Class = ({ Class }) => {
         }
         if (page === 0) {
             Class.corruptedTankMenu = {
-                PARENT: "bosses",
+                PARENT: "basic",
                 LABEL: "Corrupted Tanks",
                 UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
             };
         } else {
             Class[`corruptedTankMenuPage_${page+1}`] = {
-                PARENT: "bosses",
+                PARENT: "basic",
                 LABEL: `Page ${page+1}`,
                 UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
             };
         }
         
     }
-
-
-
-
-};
     Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
