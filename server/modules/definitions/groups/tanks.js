@@ -5758,7 +5758,7 @@ Class.autoCloner = makeAuto({
 Class.gundirector = {
     PARENT: "genericTank",
     LABEL: "Pathogen",
-    STAT_NAMES: statnames.generic,
+    STAT_NAMES: statnames.mixed,
     DANGER: 7,
     BODY: {
         ACCELERATION: base.ACCEL * 0.675,
@@ -5804,7 +5804,7 @@ Class.gundirector = {
 Class.trojan = {
     PARENT: "genericTank",
     LABEL: "Trojan",
-    STAT_NAMES: statnames.generic,
+    STAT_NAMES: statnames.mixed,
     DANGER: 6,
     BODY: {
         ACCELERATION: base.ACCEL * .75,
@@ -5829,16 +5829,16 @@ Class.trojan = {
         }
     }]
 }
-defExports.spawnerContagion = {
+Class.protist = {
     PARENT: "genericTank",
-    LABEL: 'Protist',
+    LABEL: "Protist",
     DANGER: 7,
     BODY: {
         ACCELERATION: base.ACCEL * .9,
         SPEED: base.SPEED * .8,
         FOV: 1.1
     },
-    STAT_NAMES: statNames.generic,
+    STAT_NAMES: statnames.mixed,
     GUNS: [{
         POSITION: [18, 5.5, 1, 0, 0, 0, .5],
         PROPERTIES: {
@@ -5850,7 +5850,7 @@ defExports.spawnerContagion = {
     }, {
         POSITION: [1, 12, 1.01, 15, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.factory, g.baby_factory]),
+            SHOOT_SETTINGS: combineStats([g.factory, g.babyfactory]),
             TYPE: "minion",
             STAT_CALCULATOR: gunCalcNames.drone,
             AUTOFIRE: true,
@@ -6025,7 +6025,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "trojan", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
         Class.underseer.UPGRADES_TIER_3 = ["necromancer", "maleficitor", "infestor", "autoUnderseer"]
-        Class.spawner.UPGRADES_TIER_3 = ["factory", "autoSpawner"]
+        Class.spawner.UPGRADES_TIER_3 = ["factory", "protist", "autoSpawner"]
         Class.directdrive.UPGRADES_TIER_3 = ["overdrive", "cruiserdrive", "revodirector", "honda", "dictator"]
 
     Class.pounder.UPGRADES_TIER_2 = ["destroyer", "builder", "artillery", "launcher", "autoPound", "volute", "poundbrid", "tailgator"]
@@ -6070,7 +6070,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "bigSubduer", "flankdue", "autolittleHunter", "littleHunterbrid"]
         Class.binary.UPGRADES_TIER_3 = ["dual", "autoBinary", "binarybrid"]
-        Class.gundirector.UPGRADES_TIER_3 = ["trojan", "autoGundirector"]
+        Class.gundirector.UPGRADES_TIER_3 = ["trojan", "protist", "autoGundirector"]
         Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "biggerSubduer", "autoBigSubduer", "bigsubduerbrid"]
         Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
   
