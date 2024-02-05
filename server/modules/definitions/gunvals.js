@@ -68,6 +68,8 @@ module.exports = {
     bigCheese: { reload: 1.5, size: 1.8, health: 2.5, speed: 1.25 },
     mothership: { reload: 1.25, pen: 1.1, speed: 0.775, maxSpeed: 0.8, range: 15, resist: 1.15 },
     satellite: { size: 0.8, reload: 3, damage: 1.875 },
+    contagi: { reload: 1, recoil: .5, shudder: 1.5, size: 1, health: .6, damage: .6, pen: .75, speed: 1.05, maxSpeed: 1, range: 1, density: .9, spray: .75, resist: .7
+  },
 
 // Heavy cannons
     pounder: { reload: 2, recoil: 1.6, damage: 2, speed: 0.85, maxSpeed: 0.8, density: 1.5, resist: 1.15 },
@@ -122,6 +124,7 @@ module.exports = {
     halfreload: { reload: 2 },
     lessreload: { reload: 1.5 },
     one_third_reload: { reload: 1.333 },
+    bitlessreload: { reload: 1 },
     morereload: { reload: 0.75 },
     doublereload: { reload: 0.5 },
 
