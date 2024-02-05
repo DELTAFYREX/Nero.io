@@ -5660,7 +5660,7 @@ Class.autoCloner = makeAuto({
 }, "Auto-Cloner");
 Class.gundirector = {
     PARENT: "genericTank",
-    LABEL: "Director",
+    LABEL: "Pathogen",
     STAT_NAMES: statnames.drone,
     BODY: {
         FOV: base.FOV * 1.1
@@ -5674,14 +5674,16 @@ Class.gundirector = {
                 AUTOFIRE: true,
                 SYNCS_SKILLS: true,
                 STAT_CALCULATOR: gunCalcNames.drone,
-                MAX_CHILDREN: 6
+                MAX_CHILDREN: 5
             }
-        }{
+        }, {
             POSITION: [18, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic]),
                 TYPE: "bullet",
-    ]
+        }
+    }
+  ]
 }
 Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
 Class.clonebrid = makeHybrid({  
@@ -5713,6 +5715,8 @@ Class.clonebrid = makeHybrid({
 Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
 Class.autoLittleHunter = makeAuto(Class.littleHunter, "Auto-Subduer")
 Class.littleHunterbrid = makeHybrid('littleHunter', "Subduer-Hybrid")
+
+Class.autoGundirector = makeAuto(Class.gundirector, "Auto-Pathogen")
 
 Class.autoFlankdue = makeAuto(Class.flankdue, "Auto-Flankduer")
 Class.flankduebrid = makeHybrid('flankdue', "Flankduer-Hybrid")
