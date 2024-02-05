@@ -5020,6 +5020,41 @@ Class.bigSubduer = {
         }
     }]
 }
+Class.biggerSubduer = {
+    PARENT: "genericTank",
+    LABEL: 'Cytochrome',
+    DANGER: 7,
+    BODY: {
+        ACCELERATION: base.ACCEL * 0.8,
+        SPEED: base.SPEED * 0.95,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [29, 2, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.hunter2, g.hunter2, g.preda, g.less_recoil]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [26, 4, 1, 0, 0, 0, 2 / 15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.hunter2, g.preda, g.less_recoil]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [23, 6, 1, 0, 0, 0, 4 / 15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.preda]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, .4],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.preda]),
+            TYPE: "bullet"
+        }
+    }]
+};
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5783,6 +5818,9 @@ Class.binarybrid = makeHybrid('binary', "Binary-Hybrid")
 
 Class.autoGundirector = makeAuto(Class.gundirector, "Auto-Pathogen")
 
+Class.autoBigSubduer = makeAuto(Class.bigSubduer, "Auto-Mitochondrion")
+Class.bigsubduerbrid = makeHybrid('bigSubduer', "Mitochondrion-Hybrid")
+
 Class.autoFlankdue = makeAuto(Class.flankdue, "Auto-Flankduer")
 Class.flankduebrid = makeHybrid('flankdue', "Flankduer-Hybrid")
 
@@ -5954,6 +5992,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
     Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "flankdue", "autolittleHunter", "littleHunterbrid"]
         Class.binary.UPGRADES_TIER_3 = ["dual", "autoBinary", "binarybrid"]
         Class.gundirector.UPGRADES_TIER_3 = ["autoGundirector"]
+        Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "autoBigSubduer", "bigsubduerbrid"]
         Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
