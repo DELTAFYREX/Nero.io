@@ -5755,9 +5755,9 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
-Class.gundirector = {
+Class.trojan = {
     PARENT: "genericTank",
-    LABEL: "Pathogen",
+    LABEL: "Trojan",
     STAT_NAMES: statnames.mixed,
     DANGER: 7,
     BODY: {
@@ -5801,14 +5801,14 @@ Class.gundirector = {
         }
     }]
 }
-Class.trojan = {
+Class.gundirector = {
     PARENT: "genericTank",
-    LABEL: "Trojan",
+    LABEL: "Pathogen",
     STAT_NAMES: statnames.mixed,
     DANGER: 6,
     BODY: {
-        ACCELERATION: base.ACCEL * .75,
-        SPEED: base.SPEED * .95,
+        ACCELERATION: base.ACCEL * 0.75,
+        SPEED: base.SPEED * 0.95,
         FOV: 1.1
     },
     GUNS: [{
