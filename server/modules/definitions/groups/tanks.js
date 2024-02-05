@@ -4969,25 +4969,25 @@ Class.binary = {
     GUNS: [{
         POSITION: [23, 5, 1, 0, 5.5, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [20, 8, 1, 0, 5.5, 0, 0.2],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [23, 5, 1, 0, -5.5, 0, 0.5],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [20, 8, 1, 0, -5.5, 0, 0.7],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
             TYPE: "bullet"
         }
     }]
@@ -5750,6 +5750,9 @@ Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
 Class.autolittleHunter = makeAuto(Class.littleHunter, "Auto-Subduer")
 Class.littleHunterbrid = makeHybrid('littleHunter', "Subduer-Hybrid")
 
+Class.autoBinary = makeAuto(Class.binary, "Auto-Binary")
+Class.binarybrid = makeHybrid('binary', "Binary-Hybrid")
+
 Class.autoGundirector = makeAuto(Class.gundirector, "Auto-Pathogen")
 
 Class.autoFlankdue = makeAuto(Class.flankdue, "Auto-Flankduer")
@@ -5920,7 +5923,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.littleHunterbrid.UPGRADES_TIER_3 = ["cropDuster", "poacher", "spraybrid", "flankduebrid", "autolittleHunterbrid"]
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
 
-    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "gundirector", "flankdue", "autolittleHunter", "littleHunterbrid"]
+    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "flankdue", "autolittleHunter", "littleHunterbrid"]
+        Class.binary.UPGRADES_TIER_3 = ["autoBinary", "binarybrid"]
         Class.gundirector.UPGRADES_TIER_3 = ["autoGundirector"]
         Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
   
