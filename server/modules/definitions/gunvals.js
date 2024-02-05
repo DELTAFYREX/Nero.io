@@ -115,6 +115,7 @@ module.exports = {
     lotsmorrecoil: { recoil: 1.8 },
     muchmorerecoil: { recoil: 1.35 },
     morerecoil: { recoil: 1.15 },
+    lessrecoil: { recoil: 0.65 },
     halfrecoil: { recoil: 0.5 },
 
     // Reload

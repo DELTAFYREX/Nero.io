@@ -4936,125 +4936,6 @@ Class.ceptionistbullet = {
   ]
 }
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
-Class.littleHunter = {
-    PARENT: "genericTank",
-    LABEL: "Subduer",
-    DANGER: 5,
-    BODY: {
-        ACCELERATION: base.ACCEL * 0.9,
-        FOV: 1.1
-    },
-    GUNS: [{
-        POSITION: [23, 5, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
-            TYPE: "bullet"
-        }
-    }]
-};
-Class.binary = {
-    PARENT: "genericTank",
-    LABEL: "Binary",
-    DANGER: 5,
-    BODY: {
-        ACCELERATION: base.ACCEL * 0.9,
-        FOV: 1.1
-    },
-    GUNS: [{
-        POSITION: [20, 5, 1, 0, 5.5, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [17, 8, 1, 0, 5.5, 0, 0.2],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 5, 1, 0, -5.5, 0, 0.5],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [17, 8, 1, 0, -5.5, 0, 0.7],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
-            TYPE: "bullet"
-        }
-    }]
-}
-Class.bigSubduer = {
-    PARENT: "genericTank",
-    LABEL: 'Mitochondrion',
-    DANGER: 7,
-    BODY: {
-        ACCELERATION: base.ACCEL * .9,
-        FOV: 1.1
-    },
-    GUNS: [{
-        POSITION: [26, 2, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [23, 5, 1, 0, 0, 0, .15],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.predator]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, .3],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.predator]),
-            TYPE: "bullet"
-        }
-    }]
-}
-Class.biggerSubduer = {
-    PARENT: "genericTank",
-    LABEL: 'Cytochrome',
-    DANGER: 7,
-    BODY: {
-        ACCELERATION: base.ACCEL * 0.8,
-        SPEED: base.SPEED * 0.95,
-        FOV: 1.1
-    },
-    GUNS: [{
-        POSITION: [29, 2, 1, 0, 0, 0, 0],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.hunter2, g.hunter2, g.preda, g.less_recoil]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [26, 4, 1, 0, 0, 0, 2 / 15],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.hunter2, g.preda, g.less_recoil]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [23, 6, 1, 0, 0, 0, 4 / 15],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunter2, g.preda]),
-            TYPE: "bullet"
-        }
-    }, {
-        POSITION: [20, 8, 1, 0, 0, 0, .4],
-        PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.preda]),
-            TYPE: "bullet"
-        }
-    }]
-};
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -5611,6 +5492,125 @@ Class.cloner = {
                 }, },
         ],
     };
+Class.littleHunter = {
+    PARENT: "genericTank",
+    LABEL: "Subduer",
+    DANGER: 5,
+    BODY: {
+        ACCELERATION: base.ACCEL * 0.9,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [23, 5, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            TYPE: "bullet"
+        }
+    }]
+};
+Class.binary = {
+    PARENT: "genericTank",
+    LABEL: "Binary",
+    DANGER: 5,
+    BODY: {
+        ACCELERATION: base.ACCEL * 0.9,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [20, 5, 1, 0, 5.5, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [17, 8, 1, 0, 5.5, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 5, 1, 0, -5.5, 0, 0.5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [17, 8, 1, 0, -5.5, 0, 0.7],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.twin, g.hunter]),
+            TYPE: "bullet"
+        }
+    }]
+}
+Class.bigSubduer = {
+    PARENT: "genericTank",
+    LABEL: 'Mitochondrion',
+    DANGER: 7,
+    BODY: {
+        ACCELERATION: base.ACCEL * .9,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [26, 2, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [23, 5, 1, 0, 0, 0, .15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.predator]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, .3],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.predator]),
+            TYPE: "bullet"
+        }
+    }]
+}
+Class.biggerSubduer = {
+    PARENT: "genericTank",
+    LABEL: 'Cytochrome',
+    DANGER: 7,
+    BODY: {
+        ACCELERATION: base.ACCEL * 0.8,
+        SPEED: base.SPEED * 0.95,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [29, 2, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.hunterSecondary, g.predator, g.less_recoil]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [26, 4, 1, 0, 0, 0, 2/15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator, g.less_recoil]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [23, 6, 1, 0, 0, 0, 4/15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.predator]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, 0.4],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.predator]),
+            TYPE: "bullet"
+        }
+    }]
+}
 Class.railgun = {
     PARENT: "genericTank",
     DANGER: 6,
@@ -5989,10 +5989,10 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.littleHunterbrid.UPGRADES_TIER_3 = ["cropDuster", "binarybrid", "poacher", "spraybrid", "flankduebrid", "autolittleHunterbrid"]
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
 
-    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "flankdue", "autolittleHunter", "littleHunterbrid"]
+    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "bigSubduer", "flankdue", "autolittleHunter", "littleHunterbrid"]
         Class.binary.UPGRADES_TIER_3 = ["dual", "autoBinary", "binarybrid"]
         Class.gundirector.UPGRADES_TIER_3 = ["autoGundirector"]
-        Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "autoBigSubduer", "bigsubduerbrid"]
+        Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "biggerSubduer", "autoBigSubduer", "bigsubduerbrid"]
         Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
