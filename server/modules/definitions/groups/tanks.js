@@ -5588,13 +5588,13 @@ Class.biggerSubduer = {
     GUNS: [{
         POSITION: [29, 2, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.hunterSecondary, g.predator, g.less_recoil]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.hunterSecondary, g.predator, g.lessrecoil]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [26, 4, 1, 0, 0, 0, 2/15],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator, g.less_recoil]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator, g.lessrecoil]),
             TYPE: "bullet"
         }
     }, {
