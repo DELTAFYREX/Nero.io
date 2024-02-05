@@ -5056,7 +5056,7 @@ Class.inceptionist = {
     }
   ]
 }
-Class.autoInceptionistbody = {
+Class.autoinceptionistbody = {
     PARENT: "genericTank",
     LABEL: "Auto-Inceptionist base",
     DANGER: 4,
@@ -5070,7 +5070,7 @@ Class.autoInceptionistbody = {
         }
     ]
 }
-Class.autoInceptionist = makeAuto(Class.autoInceptionistbody, "Auto-Inceptionist", {type: 'ceptionistturret'});
+Class.autoinceptionist = makeAuto(Class.autoinceptionistbody, "Auto-Inceptionist", {type: 'ceptionistturret'});
 Class.twinceptionist = {
     PARENT: "genericTank",
     LABEL: "twinceptionist",
@@ -5713,7 +5713,7 @@ Class.clonebrid = makeHybrid({
   ]
 }, "Cloner-Hybrid")
 Class.autobascrid = makeHybrid('autoBasic', "Auto-Basic-Hybrid")
-Class.autoLittleHunter = makeAuto(Class.littleHunter, "Auto-Subduer")
+Class.autolittleHunter = makeAuto(Class.littleHunter, "Auto-Subduer")
 Class.littleHunterbrid = makeHybrid('littleHunter', "Subduer-Hybrid")
 
 Class.autoGundirector = makeAuto(Class.gundirector, "Auto-Pathogen")
@@ -5747,7 +5747,7 @@ Class.autoTrapGuard = makeAuto(Class.trapGuard, "Auto-TrapGuard");
 Class.autoVolute = makeAuto(Class.volute, "Auto-Volute");
 Class.autoHelix = makeAuto(Class.helix, "Auto-Helix");
 
-Class.autoInception = makeAuto(Class.inception, "Auto-inception");
+Class.autoinception = makeAuto(Class.inception, "Auto-inception");
 Class.automachinception = makeAuto(Class.machinception, "Auto-Machceptioner");
 Class.autotailgator = makeAuto(Class.tailgator, "Auto-Tailgator");
 Class.autoflankinception = makeAuto(Class.flankinception, "Auto-Flankceptioner");
@@ -5763,8 +5763,8 @@ Class.autoflankbrid = makeHybrid('autoFlank', "Auto-Flank-Hybrid")
 Class.autopoundbrid = makeHybrid('autoPound', "Auto-Pound-Hybrid")
 Class.autotrapbrid = makeHybrid('autoTrap', "Auto-Trapper-Hybrid")
 Class.autodesmosbrid = makeHybrid('autoDesmos', "Auto-Desmos-Hybrid")
-Class.autoinceptionbrid = makeHybrid('autoInception', "Auto-Inception-Hybrid")
-Class.autolittleHunterbrid = makeHybrid('autoLittleHunter', "Auto-Subduer-Hybrid")
+Class.autoinceptionbrid = makeHybrid('autoinception', "Auto-Inception-Hybrid")
+Class.autolittleHunterbrid = makeHybrid('autolittleHunter', "Auto-Subduer-Hybrid")
 
 
 
@@ -5838,7 +5838,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
         Class.auto3.UPGRADES_TIER_3 = ["auto5", "mega3", "auto4", "banshee", "autoAuto3"]
 
-    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "spawner", "directdrive", "autoDirector"]
+    Class.director.UPGRADES_TIER_2 = ["overseer", "cruiser", "underseer", "gundirector", "spawner", "directdrive", "autoDirector"]
         Class.director.UPGRADES_TIER_3 = ["manager", "bigCheese"]
         Class.overseer.UPGRADES_TIER_3 = ["overlord", "overtrapper", "overgunner", "banshee", "autoOverseer", "overdrive", "commander"]
         Class.cruiser.UPGRADES_TIER_3 = ["carrier", "battleship", "fortress", "autoCruiser", "commander"]
@@ -5858,19 +5858,19 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "autoTriTrapper", "tritrapperbrid"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard", "trapguardbrid"]
 
-    Class.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "autobascrid", "autoLittleHunter", "autoInception", "revolutionist", "basicCeption"]
+    Class.autoBasic.UPGRADES_TIER_2 = ["autoTwin", "autoSniper", "autoMach", "autoFlank", "autoDirector", "autoPound", "autoTrap", "autoDesmos", "autobascrid", "autolittleHunter", "autoinception", "revolutionist", "basicCeption"]
         Class.autoBasic.UPGRADES_TIER_3 = ["autoSmasher", "autoCloner"]
         Class.autoTwin.UPGRADES_TIER_3 = ["autoDouble", "autoTripleShot", "autoGunner", "autoHexaTank", "equilibrium", "twinCeption", "autotwinbrid"]
         Class.autoSniper.UPGRADES_TIER_3 = ["autoAssassin", "autoHunter", "autoMini", "autoRifle", "snipeCeption", "autosnipebrid"]
         Class.autoMach.UPGRADES_TIER_3 = ["autoArtillery", "autoMini", "autoGunner", "autoSprayer", "machCeption", "automachbrid"]
         Class.autoFlank.UPGRADES_TIER_3 = ["autoHexaTank", "autoTriAngle", "autoAuto3", "autoTrapGuard", "autoTriTrapper", "flankCeption", "autoflankbrid"]
-        Class.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoSpawner", "directCeption"]
+        Class.autoDirector.UPGRADES_TIER_3 = ["autoOverseer", "autoCruiser", "autoUnderseer", "autoGundirector", "autoSpawner", "directCeption"]
         Class.autoPound.UPGRADES_TIER_3 = ["autoDestroy", "autoBuilder", "autoArtillery", "autoLaunch", "poundCeption", "autopoundbrid"]
         Class.autoTrap.UPGRADES_TIER_3 = ["autoBuilder", "autoTriTrapper", "autoTrapGuard", "trapCeption", "autotrapbrid"]
         Class.autoDesmos.UPGRADES_TIER_3 = ["autoVolute", "autoHelix", "desmosCeption", "autodesmosbrid"]
         Class.revolutionist.UPGRADES_TIER_3 = ["subverter", "autoRevolutionist", "proton", "pion", "hadron", "equilibrium", "revobrid", "baseThrower", "revodirector"]
-        Class.autoLittleHunter.UPGRADES_TIER_3 = ["autoMini", "autoHunter", "autoSprayer", "autoFlankdue", "autolittleHunterbrid", "littleHunterCeption"]
-        Class.autoInception.UPGRADES_TIER_3 = ["autoInceptionist", "automachinception", "autotailgator", "autoflankinception", "autoInceptionbrid", "inceptCeption"]
+        Class.autolittleHunter.UPGRADES_TIER_3 = ["autoMini", "autoHunter", "autoSprayer", "autoGunDirector", "autoFlankdue", "autolittleHunterbrid", "littleHunterCeption"]
+        Class.autoinception.UPGRADES_TIER_3 = ["autoinceptionist", "automachinception", "autotailgator", "autoflankinception", "autoinceptionbrid", "inceptCeption"]
         Class.basicCeption.UPGRADES_TIER_3 = ["twinCeption", "snipeCeption", "machCeption", "flankCeption", "directCeption", "poundCeption", "trapCeption", "desmosCeption", "bascridCeption", "littleHunterCeption", "inceptCeption"]
 
     Class.bascrid.UPGRADES_TIER_2 = ["twinbrid", "snipebrid", "machbrid", "flankbrid", "overseer", "poundbrid", "trapbrid", "autobascrid", "desmosbrid", "littleHunterbrid", "inceptionbrid"]
@@ -5883,14 +5883,14 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.trapbrid.UPGRADES_TIER_3 = ["builderbrid", "tritrapperbrid", "trapguardbrid", "autotrapbrid", "overtrapper"]
         Class.autobascrid.UPGRADES_TIER_3 = ["autotwinbrid", "autosnipebrid", "automachbrid", "autoflankbrid", "autopoundbrid", "autotrapbrid", "autodesmosbrid", "revobrid", "bascridCeption"]
         Class.desmosbrid.UPGRADES_TIER_3 = ["volutebrid", "helixbrid", "autodesmosbrid"]
-        Class.littleHunterbrid.UPGRADES_TIER_3 = ["cropDuster", "poacher", "spraybrid", "flankduebrid", "autoLittleHunterbrid"]
-        Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoInceptionbrid"]
+        Class.littleHunterbrid.UPGRADES_TIER_3 = ["cropDuster", "poacher", "spraybrid", "flankduebrid", "autolittleHunterbrid"]
+        Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "autoinceptionbrid"]
 
-    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "flankdue", "autoLittleHunter", "littleHunterbrid"]
-        Class.flankdue.UPGRADES_TIER_3 = ["autoFlankduer", "flankduerbrid"]
+    Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "hunter", "sprayer", "gundirector", "flankdue", "autolittleHunter", "littleHunterbrid"]
+        Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
   
-    Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoInception", "inceptionbrid"]
-        Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory", "autoInceptionist", "inceptionistbrid"]
+    Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
+        Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory", "autoinceptionist", "inceptionistbrid"]
         Class.machinception.UPGRADES_TIER_3 = ["machceptionist", "automachinception", "machinceptionbrid"]
         Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun", "autotailgator", "tailgatorbrid"]
         Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist", "autoflankinception", "flankinceptionbrid"]
