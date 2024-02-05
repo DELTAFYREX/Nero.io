@@ -146,6 +146,7 @@ module.exports = {
     shockwave: { damage: 5, pen: 5 },
     xtrahealth: { health: 5 },
     xxtrahealth: { health: 999 },
+    dual: { reload: 1.5, shudder: 0.7, health: 1.2, speed: 1.3, maxSpeed: 1.1, resist: 1.25 },
       lance: {
         reload: 6,
         recoil: 0,

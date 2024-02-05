@@ -4958,6 +4958,40 @@ Class.littleHunter = {
         }
     }]
 };
+Class.binary = {
+    PARENT: "genericTank",
+    LABEL: "Binary",
+    DANGER: 5,
+    BODY: {
+        ACCELERATION: base.ACCEL * 0.9,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [23, 5, 1, 0, 5.5, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 5.5, 0, 0.2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [23, 5, 1, 0, -5.5, 0, 0.5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, -5.5, 0, 0.7],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter]),
+            TYPE: "bullet"
+        }
+    }]
+};
 Class.droneturretBase = {
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
