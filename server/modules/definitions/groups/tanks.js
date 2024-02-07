@@ -5633,19 +5633,19 @@ Class.clubbin = makeMulti({
     GUNS: [{
         POSITION: [26, 2, 1, 0, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.slightlyweaker, g.flankGuard, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [23, 5, 1, 0, 0, 0, .15],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary, g.predator]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.slightlyweaker, g.flankGuard, g.hunter, g.hunterSecondary, g.predator]),
             TYPE: "bullet"
         }
     }, {
         POSITION: [20, 8, 1, 0, 0, 0, .3],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.predator]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.slightlyweaker, g.flankGuard, g.hunter, g.predator]),
             TYPE: "bullet"
         }
     }]
