@@ -5548,6 +5548,52 @@ Class.binary = {
         }
     }]
 }
+Class.trinary = {
+    PARENT: "genericTank",
+    LABEL: 'Trinary',
+    DANGER: 7,
+    BODY: {
+        ACCELERATION: base.ACCEL * .7,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [22, 5, 1, 0, 2, 20, .5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [19, 8, 1, 0, 2, 20, .7],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [22, 5, 1, 0, -2, -20, .5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [19, 8, 1, 0, -2, -20, .7],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [25, 5, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.hunterSecondary, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [22, 8, 1, 0, 0, 0, .2],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.hunter, g.twin, g.tripleShot]),
+            TYPE: "bullet"
+        }
+    }]
+};
 Class.bigSubduer = {
     PARENT: "genericTank",
     LABEL: 'Mitochondrion',
@@ -6005,7 +6051,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
     Class.twin.UPGRADES_TIER_2 = ["doubleTwin", "tripleShot", "gunner", "hexaTank", "autoTwin", "helix", "twinbrid", "binary"]
         Class.twin.UPGRADES_TIER_3 = ["bulwark", "musket"]
         Class.doubleTwin.UPGRADES_TIER_3 = ["tripleTwin", "hewnDouble", "autoDouble", "bentDouble", "doubletwinbrid"]
-        Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentHybrid", "bentDouble", "triplet", "autoTripleShot", "triplex"]
+        Class.tripleShot.UPGRADES_TIER_3 = ["pentaShot", "spreadshot", "bentDouble", "triplet", "autoTripleShot", "triplex", "bentHybrid", "trinary"]
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper", "snipebrid"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
@@ -6073,7 +6119,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.inceptionbrid.UPGRADES_TIER_3 = ["inceptionistbrid", "machinceptionbrid", "tailgatorbrid", "flankinceptionbrid", "overdrive", "autoinceptionbrid"]
 
     Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "bigSubduer", "flankdue", "autolittleHunter", "littleHunterbrid"]
-        Class.binary.UPGRADES_TIER_3 = ["dual", "autoBinary", "binarybrid"]
+        Class.binary.UPGRADES_TIER_3 = ["trinary", "dual", "autoBinary", "binarybrid"]
         Class.gundirector.UPGRADES_TIER_3 = ["trojan", "protist", "autoGundirector"]
         Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "biggerSubduer", "autoBigSubduer", "bigsubduerbrid"]
         Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
