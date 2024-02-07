@@ -13,6 +13,7 @@ const speedcheckloop = () => {
         active = logs.entities.count();
     global.fps = (1000 / sum).toFixed(2);
     if (sum > 1000 / c.runSpeed / 30) {
+      for (let)
         //fails++;
         util.warn('~~ LAST SERVER TICK TOOK TOO LONG TO CALCULATE ~~');
         util.warn('~~ LOOPS: ' + loops + '. ENTITIES: ' + entities.length + '//' + Math.round(active / loops) + '. VIEWS: ' + views.length + '. BACKLOGGED :: ' + (sum * c.runSpeed * 3).toFixed(3) + '%! ~~');
