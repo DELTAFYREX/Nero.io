@@ -5622,6 +5622,34 @@ Class.bigSubduer = {
         }
     }]
 }
+Class.clubbin = makeMulti({
+      PARENT: "genericTank",
+    LABEL: 'Mitochondrion',
+    DANGER: 7,
+    BODY: {
+        ACCELERATION: base.ACCEL * .9,
+        FOV: 1.1
+    },
+    GUNS: [{
+        POSITION: [26, 2, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary, g.hunterSecondary, g.predator]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [23, 5, 1, 0, 0, 0, .15],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.hunterSecondary, g.predator]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [20, 8, 1, 0, 0, 0, .3],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.hunter, g.predator]),
+            TYPE: "bullet"
+        }
+    }]
+}, 3, "Clubbin")
 Class.biggerSubduer = {
     PARENT: "genericTank",
     LABEL: 'Cytochrome',

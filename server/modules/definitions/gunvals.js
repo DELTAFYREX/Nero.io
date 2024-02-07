@@ -123,7 +123,6 @@ module.exports = {
     halfreload: { reload: 2 },
     lessreload: { reload: 1.5 },
     one_third_reload: { reload: 1.333 },
-    bitlessreload: { reload: 1 },
     bitlessreload: { reload: 0.9 },
     morereload: { reload: 0.75 },
     doublereload: { reload: 0.5 },
