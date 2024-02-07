@@ -6149,8 +6149,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
     Class.littleHunter.UPGRADES_TIER_2 = ["minigun", "binary", "hunter", "sprayer", "gundirector", "bigSubduer", "flankdue", "autolittleHunter", "littleHunterbrid"]
         Class.binary.UPGRADES_TIER_3 = ["trinary", "dual", "autoBinary", "binarybrid"]
         Class.gundirector.UPGRADES_TIER_3 = ["trojan", "protist", "autoGundirector"]
-        Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "biggerSubduer", "autoBigSubduer", "bigsubduerbrid"]
-        Class.flankdue.UPGRADES_TIER_3 = ["autoFlankdue", "flankduebrid"]
+        Class.bigSubduer.UPGRADES_TIER_3 = ["predator", "redistributor", "biggerSubduer", "clubbin", "autoBigSubduer", "bigsubduerbrid"]
+        Class.flankdue.UPGRADES_TIER_3 = ["clubbin", "autoFlankdue", "flankduebrid"]
   
     Class.inception.UPGRADES_TIER_2 = ["inceptionist", "machinception", "tailgator", "flankinception", "directdrive", "autoinception", "inceptionbrid"]
         Class.inceptionist.UPGRADES_TIER_3 = ["twinceptionist", "machceptionist", "poundceptionist", "flankceptionist", "factory", "autoinceptionist", "inceptionistbrid"]
