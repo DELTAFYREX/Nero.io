@@ -5848,7 +5848,7 @@ Class.trojan = {
     }, {
         POSITION: [6, 12, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.bitlessreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.bitlessreload]),
             TYPE: "drone",
             AUTOFIRE: true,
             SYNCS_SKILLS: true,
@@ -5865,7 +5865,7 @@ Class.trojan = {
     }, {
         POSITION: [6, 12, 1.2, 8, 0, 180, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.bitlessreload]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.bitlessreload]),
             TYPE: "drone",
             AUTOFIRE: true,
             SYNCS_SKILLS: true,
