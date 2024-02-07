@@ -28,25 +28,25 @@ Class.rock = {
     ACCEPTS_SCORE: false,
 };
 Class.stone = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Stone",
     SIZE: 32,
     SHAPE: -7,
 };
 Class.moon = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Moon",
     SIZE: 60,
     SHAPE: 0,
 };
 Class.gravel = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Gravel",
     SIZE: 16,
     SHAPE: -7,
 };
 Class.wall = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Wall",
     SIZE: 25,
     SHAPE: "M 1 1 L -1 1 L -1 -1 L 1 -1 Z",
@@ -62,7 +62,7 @@ Class.dominationBody = {
     INDEPENDENT: true,
 };
 Class.dominator = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Dominator",
     UPGRADE_LABEL: 'Unknown',
     ON_MINIMAP: false,

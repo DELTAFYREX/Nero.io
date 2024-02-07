@@ -1866,7 +1866,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Nero Engine v2.9", x + len, y - 50 - 6 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "2.7165", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "2.9114", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 3 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");

@@ -3,7 +3,7 @@
 // Addons that are dependant on other addons should be named something like
 // "[PARENT ADDON NAME]-[EXTENSION NAME].js", to make sure that it would run after that addon ran.
 
-/*const { base } = require('../constants.js');
+const { base } = require('../constants.js');
 
 // This addon is disabled by default.
 // You can also disable addons by not making them end with '.js'
@@ -72,4 +72,4 @@ Class.exampleAddon = {
 };
 Class.addons.UPGRADES_TIER_0.push("exampleAddon");
 
-console.log('[exampleAddon] The Abomination has been created.');*/
+console.log('[exampleAddon] The Abomination has been created.');
