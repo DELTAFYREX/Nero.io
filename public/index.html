@@ -305,15 +305,16 @@ popup = ' onclick="openPopup()" '
     <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
 <div id="achiv">
           <script type="text/javascript">
-                document.write("<div>hi this is achivement testing</div>")
-                if (localStorage.getItem("startachivement") === "YOUDIDIT:D!!!") {
-                  document.write("<div>Hi you have the achivement :D</div>");
+                document.write("<div>hi this is achievement testing</div>")
+                if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div>Hi you have the achievement :D</div>");
                 } else {
-                  document.write("<div>No achivement =(</div>");
+                  document.write("<div>No achievement =(</div>");
                 }
         </script>
+        <a style="background: #2bab2f; width: 25%" href="javascript:void(0)" onclick="displayAchievements()">Achievements</a>
+    <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
   </div>
-  <button id="resetachivementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achivements">Reset Achivements</button>
               <div class="popup" style="display: none;">
                 <h1>Title</h1>
                 <span>Message</span><br />
@@ -322,8 +323,7 @@ popup = ' onclick="openPopup()" '
                 </div>
             </div>
             <div class="achievementsHolder" id="achievementsHolder">
-                <div id="achievementsClose"
-                    onclick="document.getElementsByClassName('achievementsHolder')[0].style.display = 'none'"></div>
+                <div id="achievementsClose" onclick="document.getElementsByClassName('achievementsHolder')[0].style.display = 'none'"></div>
                 <h1 id="achievementsHeader">Achievements</h1>
                 <hr>
                 <div id="achievementsDisplay" class="shadowScroll"></div>
@@ -331,6 +331,13 @@ popup = ' onclick="openPopup()" '
                 <hr>
                 <table id="achievementsStatsTable"></table>
             </div>
+  <script defer>
+    {
+                  function displayAchievements() {
+                document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
+            };
+    }
+  </script>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>

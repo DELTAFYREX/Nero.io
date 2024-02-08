@@ -205,8 +205,8 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
-function resetAllAchivements() {
-  util.resetAchivementFromLocalStorage("startachivement")
+function resetAllAchievements() {
+  util.resetAchievementFromLocalStorage("startachievement")
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -381,8 +381,8 @@ window.onload = async () => {
     if (document.getElementById("optBorders").value === "") {
         document.getElementById("optBorders").value = "nero";
     }
-    // Achivement Shit
-    document.getElementById("resetachivementsbutton").onclick = () => resetAllAchivements();
+    // Achievement Shit
+    document.getElementById("resetachievementsbutton").onclick = () => resetAllAchievements();
     // Game start stuff
     document.getElementById("startButton").onclick = () => startGame();
     document.onkeydown = (e) => {
@@ -572,8 +572,8 @@ function startGame() {
     // Set flag
     global.gameLoading = true;
     console.log('Started connecting.')
-    //set start achivement
-    util.submitAchivementToLocalStorage("startachivement");
+    //set start achievement
+    util.submitAchievementToLocalStorage("startachievement");
     // Get options
     util.submitToLocalStorage("optFancy");
     util.submitToLocalStorage("centerTank");

@@ -11,12 +11,12 @@ const util = {
         document.getElementById(name).checked = localStorage.getItem(name + 'Checked') === 'true';
         return false;
     },
-    submitAchivementToLocalStorage: achive => {
+    submitAchievementToLocalStorage: achive => {
         localStorage.setItem(achive, "YOUDIDIT:D!!!");
         return false;
     },
-    resetAchivementFromLocalStorage: achive => {
-        localStorage.setItem(achive, "noachivement");
+    resetAchievementFromLocalStorage: achive => {
+        localStorage.setItem(achive, "noachievement");
         return false;
     },
     handleLargeNumber: (a, cullZeroes = false) => {
