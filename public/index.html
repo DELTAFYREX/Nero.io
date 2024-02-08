@@ -312,8 +312,25 @@ popup = ' onclick="openPopup()" '
                   document.write("<div>No achivement =(</div>");
                 }
         </script>
-          <button id="resetachivementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achivements">Reset Achivements</button>
-</div>
+  </div>
+  <button id="resetachivementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achivements">Reset Achivements</button>
+              <div class="popup" style="display: none;">
+                <h1>Title</h1>
+                <span>Message</span><br />
+                <div>
+                    <button onclick="document.querySelector('.popup').style.display = 'none';">Close</button>
+                </div>
+            </div>
+            <div class="achievementsHolder" id="achievementsHolder">
+                <div id="achievementsClose"
+                    onclick="document.getElementsByClassName('achievementsHolder')[0].style.display = 'none'"></div>
+                <h1 id="achievementsHeader">Achievements</h1>
+                <hr>
+                <div id="achievementsDisplay" class="shadowScroll"></div>
+                <h1>Player Stats</h1>
+                <hr>
+                <table id="achievementsStatsTable"></table>
+            </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>
