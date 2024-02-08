@@ -487,10 +487,10 @@ update {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
-#achiv {
-  z-index: -2;
 
-}
+
+
+
 
 #resetachivementsbutton {
     font-family: Ubuntu;
@@ -498,7 +498,7 @@ update {
     width: 10%;
     height: 40px;
     max-height: 100px;
-
+z-index: -5;
 
     color: white;
     animation:pfpDefault 800ms linear both;
@@ -517,7 +517,7 @@ update {
     -webkit-border-radius: 5px;
 }
 
-.icon {
+.icon 
   display: block;
   width: 96px;
   padding-top: 4px;
