@@ -174,7 +174,7 @@ const global = {
     mockupLoading: { then: cb => cb() },
     treeScale: 1,
     achivements: {
-        startachivement: "notunlockedLbozoyoufuckingtwatstoplookingatthecodeyou",
+        startachivement: "notunlockedLbozo",
     },
     chats: {},
     music2: 0
