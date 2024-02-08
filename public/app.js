@@ -633,8 +633,8 @@ function startGame() {
     global.screenHeight = window.innerHeight;
     document.getElementById("startMenuWrapper").style.maxHeight = "0px";
     document.getElementById("gameAreaWrapper").style.opacity = 1;
-    document.getElementById("deltasettings").style.maxHeight = "0px";
-    document.getElementById("deltasettings").style.opacity = 1;
+    document.getElementById("deltasettings").style.opacity = 0;
+    document.getElementById("deltasettings").style.height = "";
     // Set up the socket
     if (!global.socket) {
         global.socket = socketInit(26301);

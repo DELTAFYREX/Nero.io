@@ -493,6 +493,7 @@ update {
     line-height: 0;
     width: 10%;
     height: 40px;
+    opacity: 100;
     color: white;
     animation:pfpDefault 800ms linear both;
     text-align: center;
