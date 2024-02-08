@@ -487,6 +487,10 @@ update {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+#achiv {
+  z-index: -2;
+
+}
 
 #resetachivementsbutton {
     font-family: Ubuntu;
@@ -494,7 +498,8 @@ update {
     width: 10%;
     height: 5%;
     max-height: 5%;
-    opacity: 100;
+ 
+
     color: white;
     animation:pfpDefault 800ms linear both;
     text-align: center;
