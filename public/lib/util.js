@@ -12,13 +12,13 @@ const util = {
         return false;
     },
     submitJsToLocalStorage: string => {
-        localStorage.setItem(string + 'piss', string);
+        localStorage.setItem(string, string);
         return false;
     },
-    retrieveJsFromLocalStorage: string => {
+/*    retrieveJsFromLocalStorage: string => {
         global.achivements.startachivement = localStorage.getItem(string);
         return false;
-    },
+    },*/
     handleLargeNumber: (a, cullZeroes = false) => {
         if (cullZeroes && a == 0) {
             return '';
