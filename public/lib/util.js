@@ -11,8 +11,8 @@ const util = {
         document.getElementById(name).checked = localStorage.getItem(name + 'Checked') === 'true';
         return false;
     },
-    submitJsToLocalStorage: string => {
-        localStorage.setItem(string, string);
+    submitAchivementToLocalStorage: achive => {
+        localStorage.setItem(achive, "YOUDIDIT:D!!!");
         return false;
     },
 /*    retrieveJsFromLocalStorage: string => {

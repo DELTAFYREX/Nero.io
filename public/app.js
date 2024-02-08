@@ -568,7 +568,7 @@ function startGame() {
     global.gameLoading = true;
     console.log('Started connecting.')
     //set start achivement
-    util.submitJsToLocalStorage("startachivement");
+    util.submitAchivementToLocalStorage("startachivement");
     // Get options
     util.submitToLocalStorage("optFancy");
     util.submitToLocalStorage("centerTank");
