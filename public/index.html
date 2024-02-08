@@ -276,7 +276,14 @@ popup = ' onclick="openPopup()" '
                         <button id="startButton" onmouseover="PlaySound1()" onclick="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
                     </div>
                 </div>
-                <canvas id="musicCanvas" tabindex="1"></canvas>
+              <script>
+              util.retrieveJsFromLocalStorage("startachivement")
+              switch (("startachivement").value) {
+              case "yes":
+                  document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
+                  break;
+              }
+              </script>
                 <div class="startMenuHolder shrinkable">
                     <span class="titleSpan" onclick="PlaySound2()">Changelog</span>
                     <div id="patchNotes" class="shadowScroll"></div>

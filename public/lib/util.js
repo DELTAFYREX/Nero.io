@@ -11,12 +11,12 @@ const util = {
         document.getElementById(name).checked = localStorage.getItem(name + 'Checked') === 'true';
         return false;
     },
-    submitJsVariableToLocalStorage: name => {
-        localStorage.setItem(name + 'Value', '"' + name + '"');
+    submitJsToLocalStorage: name => {
+        (name).value = localStorage.setItem(name + 'Value', name);
         return false;
     },
-    retrieveJsVariableFromLocalStorage: name => {
-        document.getElementById(name).value = localStorage.getItem(name + 'Value');
+    retrieveJsFromLocalStorage: name => {
+        (name).value = localStorage.getItem(name + 'Value');
         return false;
     },
     handleLargeNumber: (a, cullZeroes = false) => {
