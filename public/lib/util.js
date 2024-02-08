@@ -15,10 +15,10 @@ const util = {
         localStorage.setItem(achive, "YOUDIDIT:D!!!");
         return false;
     },
-/*    retrieveJsFromLocalStorage: string => {
-        global.achivements.startachivement = localStorage.getItem(string);
+    resetAchivementFromLocalStorage: achive => {
+        localStorage.setItem(achive, "noachivement");
         return false;
-    },*/
+    },
     handleLargeNumber: (a, cullZeroes = false) => {
         if (cullZeroes && a == 0) {
             return '';

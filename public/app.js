@@ -206,7 +206,7 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 }
 function resetAllAchivements() {
-  
+  util.resetAchivementFromLocalStorage("startachivement")
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -633,6 +633,8 @@ function startGame() {
     global.screenHeight = window.innerHeight;
     document.getElementById("startMenuWrapper").style.maxHeight = "0px";
     document.getElementById("gameAreaWrapper").style.opacity = 1;
+    document.getElementById("deltasettings").style.maxHeight = "0px";
+    document.getElementById("deltasettings").style.opacity = 1;
     // Set up the socket
     if (!global.socket) {
         global.socket = socketInit(26301);

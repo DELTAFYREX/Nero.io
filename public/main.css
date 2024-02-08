@@ -489,7 +489,25 @@ update {
 }
 
 #resetachivementsbutton {
-  background: #70b5ff;
+    font-family: Ubuntu;
+    line-height: 0;
+    width: 10%;
+    height: 40px;
+    color: white;
+    animation:pfpDefault 800ms linear both;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background: #70b5ff;
+    font-family: Ubuntu;
+    position: relative;
+    border: 0;
+    border-bottom: 2px solid #1B3353;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #1B3353;
+    box-shadow: inset 0 -2px #1B3353;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 .icon {
@@ -525,6 +543,20 @@ update {
     -webkit-box-shadow: none;
     box-shadow: none;
     height: 39px;
+}
+
+#resetachivementsbutton:active,
+#resetachivementsbutton:hover {
+    line-height: 25px;
+    text-align: center;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: 39px;
+    border: 0;
+    border-bottom: 3px solid #1B3353;
+    top: 1px;
+
 }
 
 #bottomHolder {
