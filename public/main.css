@@ -493,6 +493,7 @@ update {
     line-height: 0;
     width: 10%;
     height: 5%;
+    max-height: 5%;
     opacity: 100;
     color: white;
     animation:pfpDefault 800ms linear both;
