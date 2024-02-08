@@ -11,6 +11,14 @@ const util = {
         document.getElementById(name).checked = localStorage.getItem(name + 'Checked') === 'true';
         return false;
     },
+    submitJsVariableToLocalStorage: name => {
+        localStorage.setItem(name + 'Value', '"' + name + '"');
+        return false;
+    },
+    retrieveJsVariableFromLocalStorage: name => {
+        document.getElementById(name).value = localStorage.getItem(name + 'Value');
+        return false;
+    },
     handleLargeNumber: (a, cullZeroes = false) => {
         if (cullZeroes && a == 0) {
             return '';
