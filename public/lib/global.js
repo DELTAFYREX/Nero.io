@@ -173,6 +173,9 @@ const global = {
     ratio: window.devicePixelRatio,
     mockupLoading: { then: cb => cb() },
     treeScale: 1,
+    achivements: {
+        startachivement: "notunlockedLbozoyoufuckingtwatstoplookingatthecodeyou",
+    },
     chats: {},
     music2: 0
 };

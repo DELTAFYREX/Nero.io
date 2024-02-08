@@ -12,11 +12,11 @@ const util = {
         return false;
     },
     submitJsToLocalStorage: string => {
-        localStorage.setItem(string + 'Value', (string).value);
+        localStorage.setItem(string, string);
         return false;
     },
     retrieveJsFromLocalStorage: string => {
-        (string).value = localStorage.getItem(string + 'Value');
+        string = localStorage.getItem(string);
         return false;
     },
     handleLargeNumber: (a, cullZeroes = false) => {
