@@ -487,6 +487,11 @@ update {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+
+#resetachivementsbutton {
+  background: #70b5ff;
+}
+
 .icon {
   display: block;
   width: 96px;
@@ -713,14 +718,6 @@ a.link {
 
 #gameCanvas {
     position: absolute;
-}
-#musicCanvas {
-  position: absolute;
-  pointer-events: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
 }
 
 #chatInput {

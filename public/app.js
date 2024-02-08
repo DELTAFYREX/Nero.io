@@ -205,6 +205,9 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
+function resetAllAchivements() {
+  
+}
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
@@ -378,6 +381,8 @@ window.onload = async () => {
     if (document.getElementById("optBorders").value === "") {
         document.getElementById("optBorders").value = "nero";
     }
+    // Achivement Shit
+    document.getElementById("resetachivementsbutton").onclick = () => resetAllAchivements();
     // Game start stuff
     document.getElementById("startButton").onclick = () => startGame();
     document.onkeydown = (e) => {
