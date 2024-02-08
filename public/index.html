@@ -277,11 +277,11 @@ popup = ' onclick="openPopup()" '
                     </div>
                 </div>
               <script>
-              util.retrieveJsFromLocalStorage("startachivement")
-              switch (("startachivement").value) {
-              case "yes":
+              retrieveJsFromLocalStorage(startachivement)
+              if(localStorage.getItem("string") === "yes"){
+ 
                   document.write("Hi you have the achivement =D");
-                  break;
+
               }
               </script>
                 <div class="startMenuHolder shrinkable">
