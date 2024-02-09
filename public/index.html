@@ -303,7 +303,7 @@ popup = ' onclick="openPopup()" '
         </div>
     </div>
     <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
-<div id="achiv">
+<div id="achiev">
           <script type="text/javascript">
                 document.write("<div>hi this is achievement testing</div>")
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
@@ -313,7 +313,7 @@ popup = ' onclick="openPopup()" '
                 }
         </script>
         <a style="background: #2bab2f; width: 25%" href="javascript:void(0)" onclick="displayAchievements()">Achievements</a>
-    <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
+    <button id="resetachivementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
   </div>
               <div class="popup" style="display: none;">
                 <h1>Title</h1>
@@ -327,6 +327,14 @@ popup = ' onclick="openPopup()" '
                 <h1 id="achievementsHeader">Achievements</h1>
                 <hr>
                 <div id="achievementsDisplay" class="shadowScroll">
+        <script type="text/javascript">
+                if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div>Hi you have the join game achievement :D</div>");
+                } else {
+                  document.write("<div>No game join achievement =(</div>");
+                }
+        </script>
+                  <br>
         <script type="text/javascript">
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div>Hi you have the join game achievement :D</div>");
