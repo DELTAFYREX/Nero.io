@@ -327,14 +327,17 @@ popup = ' onclick="openPopup()" '
                 <h1 id="achievementsHeader">Achievements</h1>
                 <hr>
                 <div id="achievementsDisplay" class="shadowScroll">
+                  <div class="autoBorder">
         <script type="text/javascript">
                 let achievementbox = 'class="achievementsItem"'
+                let autobox = 'class="autoBorder"'
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + achievementbox + " ><h1>Hi you have the join game achievement :D</h1></div>");
                 } else {
-                  document.write("<div " + achievementbox + " ><h1>No game join achievement =(</h1></div>");
+                  document.write("<div " + achievementbox + " ><h1 " + autobox + " >No game join achievement =(</h1></div>");
                 }
         </script>
+              </div>
               </div>
                 <h1>Player Stats</h1>
                 <hr>
