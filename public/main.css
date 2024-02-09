@@ -940,6 +940,10 @@ input [type="image"]:focus {
 #achievementsStatsTable tr b {
     font-size: 22px;
 }
+.autoBorder {
+    display: block;
+    border: 3.5px solid rgba(0, 0, 0, 0.35);
+}
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   3.4% { transform: matrix3d(1.032, 0, 0, 0, 0, 1.041, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
