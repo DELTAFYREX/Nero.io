@@ -839,7 +839,7 @@ input [type="image"]:focus {
 }
 
 .popup button:active {
-    background: #8ABC3F;
+    background: #FFFFFF;
     border-bottom: 0;
     outline: none;
     box-shadow: none;
@@ -848,7 +848,7 @@ input [type="image"]:focus {
 .popup span.small {
     font-size: xx-large;
     font-weight: bold;
-    color: var(--menuTextColor);
+    color: black;
     white-space: pre-line;
 }
 
@@ -856,7 +856,7 @@ input [type="image"]:focus {
     font-size: x-large;
     white-space: pre-line;
     font-weight: light;
-    color: var(--menuTextColor);
+    color: black;
 }
 .achievementsHolder {
     position: absolute;
@@ -868,28 +868,28 @@ input [type="image"]:focus {
     transform: translate(-50%, -50%);
     z-index: 3;
     border-radius: 10px;
-    background: "#FFFFFF;
+    background: #FFFFFF;
     padding: 10px;
     font-size: larger;
     text-align: center;
     border-style: solid;
     border-color: #c1cfd8;
-    color: var(--menuTextColor);
+    color: black;
     display: none;
 }
 
 .achievementsHolder span.small {
     font-size: xx-large;
-      background: "#FFFFFF";
+      background: #FFFFFF;
     font-weight: bold;
-    color: var(--menuTextColor);
+    color: black;
 }
 
 .achievementsHolder span {
     font-size: x-large;
-      background: "#FFFFFF";
+      background: #FFFFFF;
     font-weight: light;
-    color: var(--menuTextColor);
+    color: #FFFFFF;
 }
 
 #achievementsClose {
