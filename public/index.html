@@ -326,7 +326,15 @@ popup = ' onclick="openPopup()" '
                 <div id="achievementsClose" onclick="document.getElementsByClassName('achievementsHolder')[0].style.display = 'none'"></div>
                 <h1 id="achievementsHeader">Achievements</h1>
                 <hr>
-                <div id="achievementsDisplay" class="shadowScroll"></div>
+                <div id="achievementsDisplay" class="shadowScroll">
+        <script type="text/javascript">
+                if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div>Hi you have the join game achievement :D</div>");
+                } else {
+                  document.write("<div>No game join achievement =(</div>");
+                }
+        </script>
+              </div>
                 <h1>Player Stats</h1>
                 <hr>
                 <table id="achievementsStatsTable">

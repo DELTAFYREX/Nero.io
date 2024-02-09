@@ -868,7 +868,7 @@ input [type="image"]:focus {
     transform: translate(-50%, -50%);
     z-index: 3;
     border-radius: 10px;
-    background: var(--backgroundColor);
+    background: "#FFFFFF;
     padding: 10px;
     font-size: larger;
     text-align: center;
@@ -880,12 +880,14 @@ input [type="image"]:focus {
 
 .achievementsHolder span.small {
     font-size: xx-large;
+      background: "#FFFFFF";
     font-weight: bold;
     color: var(--menuTextColor);
 }
 
 .achievementsHolder span {
     font-size: x-large;
+      background: "#FFFFFF";
     font-weight: light;
     color: var(--menuTextColor);
 }
