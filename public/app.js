@@ -208,6 +208,65 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement")
 }
+          // Update the dom holder for achievements and statistics
+        _updateDisplay(element = document.getElementById("achievementsDisplay"), elementTwo = document.getElementById("achievementsStatsTable")) {
+            element.innerHTML = '';
+            let i = 0;
+
+            // Its split up like this so we can sort by tier, but also push unlocked to the top
+            let arrayOfAll = Object.keys(this._achievements).map(key => this._achievements[key]);
+            let arrayOfUnlocked = arrayOfAll.filter(a => a.unlocked).sort((a, b) => a.tier - b.tier);
+            let arrayOfLocked = arrayOfAll.filter(a => !a.unlocked).sort((a, b) => a.tier - b.tier);
+
+            // Visually display the achievements
+            for (let instance of [...arrayOfUnlocked, ...arrayOfLocked]) {
+                let holder = document.createElement('div');
+                let title = document.createElement("h1");
+                let description = document.createElement("span");
+
+                // Title and concat precentage of progress
+                title.innerText = `${instance.title}${instance.precentageData ? this._getNamedPrecentage(...instance.precentageData) : ""}`;
+                description.innerText = instance.description;
+
+                holder.classList.add('achievementsItem');
+                holder.classList.add('autoBorder');
+                holder.appendChild(title);
+                holder.appendChild(description);
+
+                if (instance.unlocked) i++;
+                holder.style.backgroundColor = this._getTierColor(instance.unlocked ? instance.tier : false);
+
+                element.appendChild(holder);
+            }
+
+            let precentage = Math.floor(i / Object.keys(this._achievements).length * 100)
+
+            document.getElementById("achievementsHeader").innerText += (` ${precentage}% ${precentage === 100 ? "Completed" : ` Complete [${i}/${Object.keys(this._achievements).length}]`}`);
+
+            // Same, but for statistics
+            let arr = this._statistics;
+            elementTwo.innerHTML = (`<tr> <td><b>Kills</b>: ${arr[0]}</td> <td><b>Deaths</b>: ${arr[1]}</td> </tr> <tr> <td><b>Boss Kills</b>: ${arr[2]}</td> <td><b>Polygon Kills</b>: ${arr[3]}</td> </tr> <tr> <td><b>Best Score</b>: ${_util._handleLargeNumber(Math.round(arr[4]))}</td> <td><b>Best Time</b>: ${_util._formatTime(Math.round(arr[5]), true)}</td> </tr> <tr> <td><b>Total Score</b>: ${_util._handleLargeNumber(Math.round(arr[6]))}</td> <td><b>Total Time</b>: ${_util._formatTime(Math.round(arr[7]), true)}</td> </tr> </table>`);
+
+            if (this._achievements.the_king.unlocked) {
+                let div = document.createElement("div");
+                let link = document.createElement("a");
+
+                div.classList.add("bottomHolder");
+
+                link.style.background = "#2bab2f";
+                link.style.width = "100px;";
+
+                link.href = "javascript:void(0)";
+                link.onclick = this._openThankYou;
+
+                link.innerText = "Thank you";
+
+                div.appendChild(link);
+                document.getElementById("achievementsHeader").appendChild(div);
+
+                document.getElementById("achievementsHolder").style.height = `700px`
+            };
+        }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
