@@ -252,5 +252,28 @@ const util = {
             }),
         };
     },
+      formatTime: (x, abbv = false) => {
+        let seconds = x % 60;
+        x /= 60;
+        x = Math.floor(x);
+        let minutes = x % 60;
+        x /= 60;
+        x = Math.floor(x);
+        let hours = x % 24;
+        x /= 24;
+        x = Math.floor(x);
+        let days = x,
+            y = "";
+
+        function parse(z, text) { //+=
+            if (z) y = y + (y === "" ? "" : (abbv ? " " : ", ")) + z + (abbv ? "" : " ") + text + (z > 1 ? (abbv ? "" : "s") : "");
+        }
+        parse(days, abbv ? "d" : "day");
+        parse(hours, abbv ? "h" : "hour");
+        parse(minutes, abbv ? "m" : "minute");
+        parse(seconds, abbv ? "s" : "second");
+        if (y === "") y = abbv ? "0 s" : "less than a second";
+        return y;
+    },
 }
 export { util }
