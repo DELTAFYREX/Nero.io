@@ -634,7 +634,7 @@ function startGame() {
     document.getElementById("startMenuWrapper").style.maxHeight = "0px";
     document.getElementById("gameAreaWrapper").style.opacity = 1;
 
-    document.getElementById("achiv").style.zIndex = "-3";
+    document.getElementById("achiev").style.zIndex = "-3";
     // Set up the socket
     if (!global.socket) {
         global.socket = socketInit(26301);

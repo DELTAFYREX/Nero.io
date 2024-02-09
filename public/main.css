@@ -882,14 +882,12 @@ input [type="image"]:focus {
 
 .achievementsHolder span.small {
     font-size: xx-large;
-      background: #FFFFFF;
     font-weight: bold;
     color: black;
 }
 
 .achievementsHolder span {
     font-size: x-large;
-      background: #FFFFFF;
     font-weight: light;
     color: black;
 }
