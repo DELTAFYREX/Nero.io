@@ -489,13 +489,11 @@ update {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+
 #achiev {
   position: relative;
   z-index: 3;
   }
-
-
-
 
 #resetachievementsbutton {
     font-family: Ubuntu;
@@ -504,7 +502,6 @@ update {
     height: 40px;
     max-height: 100px;
     z-index: 3;
-
     color: white;
     animation:pfpDefault 800ms linear both;
     text-align: center;
