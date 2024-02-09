@@ -1,6 +1,8 @@
 :root {
     font-family: Ubuntu;
     font-size: 14px;
+    --backgroundColor: #DDE6EB;
+    --menuTextColor: #000000;
 }
 
 .conceal {
@@ -868,7 +870,7 @@ input [type="image"]:focus {
     transform: translate(-50%, -50%);
     z-index: 3;
     border-radius: 10px;
-    background: #FFFFFF;
+    background: var(--backgroundColor);
     padding: 10px;
     font-size: larger;
     text-align: center;
@@ -889,7 +891,7 @@ input [type="image"]:focus {
     font-size: x-large;
       background: #FFFFFF;
     font-weight: light;
-    color: #FFFFFF;
+    color: black;
 }
 
 #achievementsClose {
