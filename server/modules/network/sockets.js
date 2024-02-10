@@ -913,9 +913,6 @@ function update(gui) {
     // Update other
     gui.root.update(b.rerootUpgradeTree);
     gui.class.update(b.label);
-             if (player.body.killCount.solo >= 0) {
-            socket.talk("achieve", 0)
-            };
 }
 
 function publish(gui) {
@@ -1010,6 +1007,12 @@ let newgui = (player) => {
         publish: () => publish(gui),
     };
 };
+function getachiev() {
+      let player = {}
+      if (player.body.killCount.solo >= 0) {
+      socket.talk("achieve", 0)
+      }
+}
 
 // Make a function to spawn new players
 const spawn = (socket, name) => {
