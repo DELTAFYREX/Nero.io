@@ -344,9 +344,14 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + grayachievementbox + " ><h1>Beep! Offline Beep!</h1><span>Get Disconnected while In game</h1></span></div>");
                 };
                 if (localStorage.getItem("lagachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + greenachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (thats all)</span></div>");
+                  document.write("<div " + greenachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (and it seems you do...or it was intentional)</span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (thats all)</h1></span></div>");
+                };
+                if (localStorage.getItem("killachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>5 KStreak</h1><span>Kill 5 Players in one Session (you murderer!!!!)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>5 KStreak</h1><span>Kill 5 Players in one Session</h1></span></div>");
                 };
         </script>
                   </div>

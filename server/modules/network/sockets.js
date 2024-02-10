@@ -1105,6 +1105,9 @@ const spawn = (socket, name) => {
         autoalt: false,
         spinlock: false
     };
+ if (player.body.killCount.solo >= 0) {
+      socket.talk("achieve", 0)
+};
     // Set up the recording commands
     let begin = util.time();
     player.records = () => [

@@ -214,6 +214,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
   util.resetAchievementFromLocalStorage("lagachievement");
+  util.resetAchievementFromLocalStorage("killachievement");
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
