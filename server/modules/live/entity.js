@@ -974,11 +974,6 @@ class Entity extends EventEmitter {
         this.sendMessage = (content, color) => player.socket.talk("m", content);
         this.kick = (reason) => player.socket.kick(reason);
     }
-    achieve() {
-      if (player.body.killCount.solo >= 0) {
-      socket.talk("achieve", 0)
-      }
-    }
     giveUp(player, name = "Mothership") {
         if (!player.body.isMothership) {
             player.body.controllers = [
@@ -2192,6 +2187,9 @@ class Entity extends EventEmitter {
             if (this.settings.broadcastMessage) {
                 sockets.broadcast(this.settings.broadcastMessage);
             }
+      if (this.killCount.solo >= 0) {
+      util.submitAchievementToLocalStorage("killachievement")
+    }
             if (this.settings.defeatMessage) {
                 let text = util.addArticle(this.label, true);
                 if (notJustFood) {
