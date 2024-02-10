@@ -938,6 +938,14 @@ input [type="image"]:focus {
     background-color: rgb(159, 159, 159);
 }
 
+.bleenachievement {
+    background-color: rgb(125, 195, 235);
+}
+
+.grueachievement {
+    background-color: rgb(160, 170, 180);
+}
+
 #achievementsStatsTable td {
     font-size: 18px;
 }

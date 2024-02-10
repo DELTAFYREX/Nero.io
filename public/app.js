@@ -214,7 +214,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
   util.resetAchievementFromLocalStorage("lagachievement");
-  util.resetAchievementFromLocalStorage("pissioachievement");
+  util.resetAchievementFromLocalStorage("pissio");
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
