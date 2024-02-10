@@ -2187,9 +2187,6 @@ class Entity extends EventEmitter {
             if (this.settings.broadcastMessage) {
                 sockets.broadcast(this.settings.broadcastMessage);
             }
-      if (this.killCount.solo >= 0) {
-      util.submitAchievementToLocalStorage("killachievement")
-    }
             if (this.settings.defeatMessage) {
                 let text = util.addArticle(this.label, true);
                 if (notJustFood) {
