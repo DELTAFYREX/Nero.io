@@ -841,6 +841,12 @@ const socketInit = port => {
                 global.gameHeight = m[1];
                 global.roomSetup = JSON.parse(m[2]);
                 break;
+          case 'achieve':
+                const achievementTable = ["killachievement"] // lookup table of achievements and their ids
+                let achievementId = get.next() // gets the id of the achievement, dw about this part
+                let achivementGotten = achievementTable[achievementId] // uses achievementId as an index into the table to see what it should grant
+                util.submitAchievementToLocalStorage(achivementGotten); // whatever code to actually give the player the achievement
+                break;
             case 'c': // force camera move
                 global.player.renderx = global.player.cx = m[0];
                 global.player.rendery = global.player.cy = m[1];
