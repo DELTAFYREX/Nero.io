@@ -205,9 +205,15 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
+if (global.metrics.rendertime <= 60 ) {
+  if (global.metrics.rendertime >= 45 ) {
+  util.submitAchievementToLocalStorage("lagachievement");
+}
+}
 function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
+  util.resetAchievementFromLocalStorage("lagachievement");
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
