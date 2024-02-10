@@ -206,7 +206,8 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 }
 function resetAllAchievements() {
-  util.resetAchievementFromLocalStorage("startachievement")
+  util.resetAchievementFromLocalStorage("startachievement");
+  util.resetAchievementFromLocalStorage("disconnectachievement");
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
@@ -2161,6 +2162,7 @@ const gameDrawDisconnected = () => {
     ctx.translate(0, shift * global.screenHeight);
 };
 const gameDrawError = () => {
+    util.submitAchievementToLocalStorage("disconnectachievement");
     let ratio = util.getScreenRatio();
     scaleScreenRatio(ratio, true);
     clearScreen(gameDraw.mixColors(color.red, color.guiblack, 0.2), 0.35);
