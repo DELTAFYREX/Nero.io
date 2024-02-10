@@ -118,6 +118,9 @@ function incoming(message, socket) {
         return;
     }
     switch (m.shift()) {
+      case "achieve":
+        body.achieve
+        break;
         case "k":
             // key verification
             if (m.length > 1) {
