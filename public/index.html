@@ -336,7 +336,12 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + greenachievementbox + " ><h1>Join The Game</h1><span>Hi you have the join game achievement :D</h1></span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Join The Game</h1><span>No game join achievement =(</span></div>");
-                }
+                };
+                if (localStorage.getItem("disconnectachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Errors, Errors</h1><span>Get Disconnected while In game (and you did...😑)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Errors, Errors</h1><span>Get Disconnected while In game</h1></span></div>");
+                };
         </script>
                   </div>
             </div>

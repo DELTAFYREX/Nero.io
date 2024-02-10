@@ -2150,6 +2150,7 @@ const gameDrawBeforeStart = () => {
     ctx.translate(0, shift * global.screenHeight);
 };
 const gameDrawDisconnected = () => {
+    util.submitAchievementToLocalStorage("disconnectachievement");
     let ratio = util.getScreenRatio();
     scaleScreenRatio(ratio, true);
     clearScreen(gameDraw.mixColors(color.red, color.guiblack, 0.3), 0.25);
