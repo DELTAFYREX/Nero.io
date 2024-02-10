@@ -844,7 +844,7 @@ const socketInit = port => {
           case 'achieve':
                 const achievementTable = ["killachievement"] // lookup table of achievements and their ids
                 let achievementId = get.next() // gets the id of the achievement, dw about this part
-                print(achievementId)
+                console.logs(achievementId)
                 let achivementGotten = achievementTable[achievementId] // uses achievementId as an index into the table to see what it should grant
                 util.submitAchievementToLocalStorage(achivementGotten); // whatever code to actually give the player the achievement
                 break;
