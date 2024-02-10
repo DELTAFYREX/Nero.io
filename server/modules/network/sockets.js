@@ -1007,12 +1007,6 @@ let newgui = (player) => {
         publish: () => publish(gui),
     };
 };
-function getachiev() {
-      let player = {}
-      if (player.body.killCount.solo >= 0) {
-      socket.talk("achieve", 0)
-      }
-}
 
 // Make a function to spawn new players
 const spawn = (socket, name) => {
