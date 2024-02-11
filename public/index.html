@@ -122,7 +122,7 @@ function PlaySound2() {
 </script>
   <script>
     function goofyahh() {
-    localStorage.setItem("pissio", "YOUDIDIT:D!!!");
+    localStorage.setItem("skypemoment", "YOUDIDIT:D!!!");
     }
   </script>
       <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
@@ -356,6 +356,11 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + greenachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (and it seems you do...or it was intentional)</span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (thats all)</h1></span></div>");
+                };
+                if (localStorage.getItem("skypemoment") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button (AHA YOU GOT RICKROLLED)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button</h1></span></div>");
                 };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
