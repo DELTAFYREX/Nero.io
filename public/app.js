@@ -171,13 +171,16 @@ function PlaySound169() {
   global.music2.load();   
   global.music2.play();
 }
-var contentdiv = document.getElementById("content");
+
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
         document.getElementById("content").style.opacity = 1
         songrecog()
            global.music2.play()
+    //audio.src = randmusic;
+    //audio.load();
+    //audio.play();
     var context = new AudioContext();
     var src = context.createMediaElementSource(global.music2);
     var analyser = context.createAnalyser();
@@ -231,12 +234,12 @@ var contentdiv = document.getElementById("content");
     renderFrame();
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
      } else if (document.getElementById("optSound").checked === false) {
-        document.getElementById("content").style.opacity = 0;
+        document.getElementById("content").style.opacity = 0
        global.music2.pause()
           global.music2.songname = "Not Playing";
             }
          return; };
-  
+
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
