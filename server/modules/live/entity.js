@@ -615,9 +615,6 @@ class Gun {
                 out.DAMAGE = shoot.damage * sk.dam * Math.sqrt(sizeFactor) * shoot.pen * sk.pen;
                 out.RANGE = shoot.range * Math.sqrt(sizeFactor);
                 break;
-          case "lance":
-                out.RANGE = Math.sqrt(this.skill.spd) * 999;
-                break;
         }
         // Go through and make sure we respect its natural properties
         for (let property in out) {

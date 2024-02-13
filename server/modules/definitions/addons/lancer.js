@@ -302,10 +302,9 @@ Class.chasseur = {
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.2, maxSpeed: 0.2, range: 0.075 }]),
         TYPE: ["bullet", { ALPHA: 1 }],
         AUTOFIRE: true,
-        STAT_CALCULATOR: gunCalcNames.lance,
       }
     },
     {
