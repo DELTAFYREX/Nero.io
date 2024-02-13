@@ -175,6 +175,9 @@ const global = {
     mockupLoading: { then: cb => cb() },
     treeScale: 1,
     chats: {},
-    music2: 0
+    music2: {
+      src: "",
+      songname: "",
+    },
 };
 export { global }
