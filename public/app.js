@@ -185,7 +185,7 @@ function PlaySound169() {
     var src = context.createMediaElementSource(global.music2);
     var analyser = context.createAnalyser();
 
-    var canvas = document.getElementById("canvas");
+    let musiccanvas = document.getElementById("canvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var ctx = canvas.getContext("2d");
@@ -197,24 +197,28 @@ function PlaySound169() {
 
     var bufferLength = analyser.frequencyBinCount;
     console.log(bufferLength);
+        
+            let WIDTH = canvas.width;
+    let HEIGHT = canvas.height;
 
     var dataArray = new Uint8Array(bufferLength);
-
-    const WIDTH = canvas.width;
-    const HEIGHT = canvas.height;
 
     var barWidth = (WIDTH / bufferLength) * 2.5;
     var barHeight;
     var barstuffx = 0;
 
     function renderFrame() {
+      
+          let barthingWIDTH = canvas.width;
+    let HEIGHT = canvas.height;
+      
       requestAnimationFrame(renderFrame);
 
       barstuffx = 0;
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "rgba(0,0,0,0.2)";
+      ctx.fillStyle = "rgba(0,0,0,0.15)";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
