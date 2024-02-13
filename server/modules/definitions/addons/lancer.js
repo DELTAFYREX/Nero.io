@@ -286,6 +286,7 @@ Class.lancebrid = makeHybrid(Class.lancer, "Lancebrid");
 Class.chasseur = {
   PARENT: "genericTank",
   LABEL: "Chasseur",
+  IS_LANCER: true,
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 1
@@ -302,7 +303,7 @@ Class.chasseur = {
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.2, maxSpeed: 0.2, range: 0.075 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
         TYPE: ["bullet", { ALPHA: 1 }],
         AUTOFIRE: true,
       }
