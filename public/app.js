@@ -205,7 +205,7 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
-  const container = document.getElementById("container");
+const container = document.getElementById("musiccontainer");
 const canvas3 = document.getElementById("musiccanvas");
 canvas3.width = window.innerWidth;
 canvas3.height = window.innerHeight;
@@ -214,24 +214,24 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 let audioSource = null;
 let analyser = null;
 
-audioSource = audioCtx.createMediaElementSource(global.music2);
+audioSource = audioCtx.createMediaElementSource(pmusic);
 analyser = audioCtx.createAnalyser();
 audioSource.connect(analyser);
 analyser.connect(audioCtx.destination);
 analyser.fftSize = 128;
 const bufferLength = analyser.frequencyBinCount;
 const dataArray = new Uint8Array(bufferLength);
-const barWidth = canvas3.width / bufferLength;
-let x = 0;
+const musicbarWidth = canvas3.width / bufferLength;
+let musicx = 0;
 function baranimate() {
-    x = 0;
-    ctx.clearRect(0, 0, canvas3.width, canvas3.height);
+    musicx = 0;
+    ctx3.clearRect(0, 0, canvas3.width, canvas3.height);
     analyser.getByteFrequencyData(dataArray);
     for (let i = 0; i < bufferLength; i++) {
-        const barHeight = dataArray[i];
-        ctx.fillStyle = "white";
-        ctx.fillRect(x, canvas3.height - barHeight, barWidth, barHeight);
-        x += barWidth;
+        let musicbarHeight = dataArray[i];
+        ctx3.fillStyle = "white";
+        ctx3.fillRect(musicx, canvas3.height - musicbarHeight, musicbarWidth, musicbarHeight);
+        musicx += musicbarWidth;
     }
 
     requestAnimationFrame(baranimate);
