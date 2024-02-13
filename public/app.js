@@ -201,7 +201,7 @@ function PlaySound169() {
     var dataArray = new Uint8Array(bufferLength);
 
     var WIDTH = canvas.width;
-    var HEIGHT = canvas.height;
+    const HEIGHT = canvas.height;
 
     var barWidth = (WIDTH / bufferLength) * 2.5;
     var barHeight;
