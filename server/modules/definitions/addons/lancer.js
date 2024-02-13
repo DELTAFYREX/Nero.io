@@ -290,7 +290,7 @@ Class.chasseur = {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 1
   },
-  IS_LANCER: false,
+  IS_LANCER: true,
   HAS_NO_RECOIL: true,
   STAT_NAMES: {
     BULLET_SPEED: 'Lance Range',
@@ -305,6 +305,8 @@ Class.chasseur = {
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
         TYPE: ["bullet", { ALPHA: 1 }],
+        IS_LANCER: true,
+        SYNCS_SKILLS: true,
         AUTOFIRE: true
       }
     },
