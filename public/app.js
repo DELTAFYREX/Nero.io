@@ -175,6 +175,8 @@ function PlaySound169() {
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
+        if (document.getElementById("content").style.opacity <= 100) {
+        }
         songrecog()
            global.music2.play()
     //audio.src = randmusic;

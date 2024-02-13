@@ -128,7 +128,7 @@ function PlaySound2() {
       <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
     <!-- Main Code-->   
 <body oncontextmenu="return false" id="mainBody">
-  <div id="content">
+  <div id="content" style="display: none;">
   <canvas id="canvas"></canvas>
   <audio id="audio" crossorigin="anonymous"></audio>
   </div>
@@ -325,8 +325,7 @@ popup = ' onclick="openPopup()" '
                 }
         </script>
         <a style="background: #2bab2f; width: 25%" href="javascript:void(0)" onclick="displayAchievements()">Achievements</a>
-  <a onclick="PlaySound()">
-  <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
+  <a onclick="PlaySound()">  
   </a>
     </div>
               <div class="popup" style="display: none;">
@@ -383,6 +382,7 @@ popup = ' onclick="openPopup()" '
                 };
         </script>
                   </div>
+              <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
             </div>
   <script defer>
     {

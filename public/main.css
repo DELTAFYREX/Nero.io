@@ -522,6 +522,7 @@ update {
 #resetachievementsbutton {
     font-family: Ubuntu;
     line-height: 0;
+    top: 30px;
     width: 200px;
     height: 40px;
     max-height: 100px;
@@ -588,7 +589,7 @@ update {
     height: 39px;
     border: 0;
     border-bottom: 3px solid #1B3353;
-    top: 1px;
+    top: 31px;
 
 }
 
