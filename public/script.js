@@ -1,5 +1,9 @@
-let audio1 = new Audio();
-audio1.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/chipi-chipi-chapa-chapa.mp3?v=1705302832837";
+var audio1 = new Audio();
+audio1.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/chipi-chipi-chapa-chapa.mp3");
+function fard() {
+  audio1.load();
+  audio1.play()
+}
 
 const container = document.getElementById("container");
 const canvas = document.getElementById("musiccanvas");
@@ -11,7 +15,7 @@ const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 let audioSource = null;
 let analyser = null;
 
-audio1.play();
+document.getElementById("musiccanvas").onclick = () => fard();
 audioSource = audioCtx.createMediaElementSource(audio1);
 analyser = audioCtx.createAnalyser();
 audioSource.connect(analyser);
