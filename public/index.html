@@ -342,55 +342,39 @@ popup = ' onclick="openPopup()" '
                 let grayachievementbox = 'class="achievementsItem autoBorder greyachievement"'
                 let grueachievementbox = 'class="achievementsItem autoBorder grueachievement"'
                 let bleenachievementbox = 'class="achievementsItem autoBorder bleenachievement"'
-                let uncompletedachivements = 0
-                let completedachivements = 0
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>Join The Game</h1><span>Hi you have the join game achievement :D</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>Join The Game</h1><span>No game join achievement =(</span></div>");
                 };
                 if (localStorage.getItem("disconnectachievement") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>Beep! Offline Beep!</h1><span>Get Disconnected while In game (and you did...😑)</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>Beep! Offline Beep!</h1><span>Get Disconnected while In game</span></div>");
                 };
                 if (localStorage.getItem("killachievement") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>KStreak-5</h1><span>Get 5 kills while In game</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>KStreak-5</h1><span>Get 5 kills while In game</span></div>");
                 };
                 if (localStorage.getItem("killachievement2") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>KStreak-10</h1><span>Get A Killstreak of 10 kills while In game (not bad)</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>KStreak-10</h1><span>Get Killstreak of 10 kills while In game</span></div>");
                 };
                 if (localStorage.getItem("lagachievement") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (and it seems you do...or you intentionally lagged your game)</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (thats all)</span></div>");
                 };
                 if (localStorage.getItem("skypemoment") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + greenachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button (AHA YOU GOT RICKROLLED)</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grayachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button</span></div>");
                 };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
-                  completedachivements += 1
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
                 } else {
-                  uncompletedachivements += 1
                   document.write("<div " + grueachievementbox + " ><h1>Piss.io</h1><span>Locked!</span></div>");
                 };
         </script>
