@@ -1539,28 +1539,6 @@ Class.devtesttemplate = {
         }
     ]
 };
-let killpowerlevel = 0;
-Class.killstreaktank = {
-    PARENT: "genericTank",
-    LABEL: "Killstreak Tank",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, { reload: killpowerlevel } ]),
-                TYPE: "bullet"
-            }
-        }
-    ],
-  ON: [{
-        event: "tick",
-        handler: ({ instance, other }) => {
-            let killpowerlevel = (instance.killCount.solo + 1);
-        }
-      }
-    ]
-};
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
@@ -2018,10 +1996,10 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
-        Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]]
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "killstreaktank"]
+        Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu"];
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
-              Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"]
-              Class.papyrus.UPGRADES_TIER_0 = ["imagetest"]
+              Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
+              Class.papyrus.UPGRADES_TIER_0 = ["imagetest"];
