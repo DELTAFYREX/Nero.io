@@ -1096,6 +1096,7 @@ class Entity extends EventEmitter {
         if (set.CAN_BE_ON_LEADERBOARD != null) this.settings.leaderboardable = set.CAN_BE_ON_LEADERBOARD;
         if (set.INTANGIBLE != null) this.intangibility = set.INTANGIBLE;
         if (set.IS_SMASHER != null) this.settings.reloadToAcceleration = set.IS_SMASHER;
+        if (set.IS_LANCER != null) this.settings.bulletSpeedToLancerRange = set.IS_LANCER;
         if (set.STAT_NAMES != null) this.settings.skillNames = {
             body_damage: set.STAT_NAMES?.BODY_DAMAGE ?? 'Body Damage',
             max_health: set.STAT_NAMES?.MAX_HEALTH ?? 'Max Health',
@@ -1520,7 +1521,7 @@ class Entity extends EventEmitter {
         if (this.settings.reloadToAcceleration) this.acceleration *= this.skill.acl;
         this.topSpeed = (topSpeedMultiplier * c.runSpeed * this.SPEED * this.skill.mob) / speedReduce;
         if (this.settings.reloadToAcceleration) this.topSpeed /= Math.sqrt(this.skill.acl);
-        if (this.settings.bulletSpeedToLancerRange) this.range *= this.skill.speed;
+        if (this.settings.bulletSpeedToLancerRange) this.range *= this.skill.spd;
         this.health.set(((this.settings.healthWithLevel ? 2 * this.level : 0) + this.HEALTH) * this.skill.hlt * healthMultiplier);
         this.health.resist = 1 - 1 / Math.max(1, this.RESIST + this.skill.brst);
         this.shield.set(((this.settings.healthWithLevel ? 0.6 * this.level : 0) + this.SHIELD) * this.skill.shi, Math.max(0, ((this.settings.healthWithLevel ? 0.006 * this.level : 0) + 1) * this.REGEN * this.skill.rgn * regenMultiplier));
