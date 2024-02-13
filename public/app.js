@@ -210,10 +210,18 @@ if (global.metrics.rendertime <= 60 ) {
   util.submitAchievementToLocalStorage("lagachievement");
 }
 }
+/*if (localStorage.getItem("killachievement") !== "YOUDIDIT:D!!!") {
+  if (global.achievements.kills >= 4) {
+    util.submitAchievementToLocalStorage("killachievement");
+  }
+}*/
 function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
+  util.resetAchievementFromLocalStorage("killachievement");
+  util.resetAchievementFromLocalStorage("killachievement2");
   util.resetAchievementFromLocalStorage("lagachievement");
+  util.resetAchievementFromLocalStorage("skypeachievement");
   util.resetAchievementFromLocalStorage("pissio");
 }
 fetch("changelog.html", { cache: "no-cache" })

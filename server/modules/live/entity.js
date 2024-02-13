@@ -2150,6 +2150,13 @@ class Entity extends EventEmitter {
                 switch (this.type) {
                     case "tank":
                         killers.length > 1 ? instance.killCount.assists++ : instance.killCount.solo++;
+                        if (instance.killCount.solo == 5) {
+                          if (instance.socket) instance.socket.talk("achieve");
+                        };
+                        if (instance.killCount.solo == 10) {
+                          if (instance.socket) instance.socket.talk("achieve2");
+                          sockets.broadcast(instance.name + "is on a streak of 10!");
+                        };
                         break;
                     
                     case "food":

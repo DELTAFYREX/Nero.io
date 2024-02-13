@@ -842,11 +842,20 @@ const socketInit = port => {
                 global.roomSetup = JSON.parse(m[2]);
                 break;
           case "achieve":
-                const achievementTable = ["killachievement"] // lookup table of achievements and their ids
+                /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
                 let achievementId = get.next() // gets the id of the achievement, dw about this part
-                console.logs(achievementId)
-                let achivementGotten = achievementTable[achievementId] // uses achievementId as an index into the table to see what it should grant
-                util.submitAchievementToLocalStorage(achivementGotten); // whatever code to actually give the player the achievement
+                let achivementGotten = m[0] // uses achievementId as an index into the table to see what it should grant
+                console.log(achivementGotten)
+                util.submitAchievementToLocalStorage(achivementGotten) // whatever code to actually give the player the achievement*/
+                util.submitAchievementToLocalStorage("killachievement")
+                break;
+          case "achieve2":
+                /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
+                let achievementId = get.next() // gets the id of the achievement, dw about this part
+                let achivementGotten = m[0] // uses achievementId as an index into the table to see what it should grant
+                console.log(achivementGotten)
+                util.submitAchievementToLocalStorage(achivementGotten) // whatever code to actually give the player the achievement*/
+                util.submitAchievementToLocalStorage("killachievement2")
                 break;
             case 'c': // force camera move
                 global.player.renderx = global.player.cx = m[0];
@@ -992,6 +1001,7 @@ const socketInit = port => {
                 global.died = true;
                 global.autoSpin = false;
                 window.onbeforeunload = () => false;
+                //global.achievements.kills = (m[2]);
                 break;
             case 'K': // kicked
                 window.onbeforeunload = () => false;
