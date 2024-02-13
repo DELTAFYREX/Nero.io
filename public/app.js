@@ -205,6 +205,39 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
 }
 }
+  const container = document.getElementById("container");
+const canvas3 = document.getElementById("musiccanvas");
+canvas3.width = window.innerWidth;
+canvas3.height = window.innerHeight;
+const ctx3 = canvas3.getContext("2d");
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let audioSource = null;
+let analyser = null;
+
+audioSource = audioCtx.createMediaElementSource(global.music2);
+analyser = audioCtx.createAnalyser();
+audioSource.connect(analyser);
+analyser.connect(audioCtx.destination);
+analyser.fftSize = 128;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+const barWidth = canvas3.width / bufferLength;
+let x = 0;
+function baranimate() {
+    x = 0;
+    ctx.clearRect(0, 0, canvas3.width, canvas3.height);
+    analyser.getByteFrequencyData(dataArray);
+    for (let i = 0; i < bufferLength; i++) {
+        const barHeight = dataArray[i];
+        ctx.fillStyle = "white";
+        ctx.fillRect(x, canvas3.height - barHeight, barWidth, barHeight);
+        x += barWidth;
+    }
+
+    requestAnimationFrame(baranimate);
+}
+
+baranimate();
 if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 0) {
   util.submitAchievementToLocalStorage("lagachievement");
 }
