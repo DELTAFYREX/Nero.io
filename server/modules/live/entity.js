@@ -1520,6 +1520,9 @@ class Entity extends EventEmitter {
         if (this.settings.reloadToAcceleration) this.acceleration *= this.skill.acl;
         this.topSpeed = (topSpeedMultiplier * c.runSpeed * this.SPEED * this.skill.mob) / speedReduce;
         if (this.settings.reloadToAcceleration) this.topSpeed /= Math.sqrt(this.skill.acl);
+/*      if (this.settings.bulletSpeedToLancerRange) this.range *= this.skill.speed;
+        this.topSpeed = (topSpeedMultiplier * c.runSpeed * this.SPEED * this.skill.mob) / speedReduce;
+        if (this.settings.bulletSpeedToLancerRange) this.topSpeed /= Math.sqrt(this.skill.acl);*/
         this.health.set(((this.settings.healthWithLevel ? 2 * this.level : 0) + this.HEALTH) * this.skill.hlt * healthMultiplier);
         this.health.resist = 1 - 1 / Math.max(1, this.RESIST + this.skill.brst);
         this.shield.set(((this.settings.healthWithLevel ? 0.6 * this.level : 0) + this.SHIELD) * this.skill.shi, Math.max(0, ((this.settings.healthWithLevel ? 0.006 * this.level : 0) + 1) * this.REGEN * this.skill.rgn * regenMultiplier));

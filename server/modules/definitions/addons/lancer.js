@@ -298,7 +298,6 @@ Class.chasseur = {
     BULLET_DAMAGE: 'Lance Damage',
     RELOAD: 'Lance Density'
   },
-  SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl],
   GUNS: [
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
