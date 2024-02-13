@@ -850,12 +850,13 @@ const socketInit = port => {
                 util.submitAchievementToLocalStorage("killachievement")
                 break;
           case "achieve2":
-                /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
-                let achievementId = get.next() // gets the id of the achievement, dw about this part
-                let achivementGotten = m[0] // uses achievementId as an index into the table to see what it should grant
-                console.log(achivementGotten)
-                util.submitAchievementToLocalStorage(achivementGotten) // whatever code to actually give the player the achievement*/
                 util.submitAchievementToLocalStorage("killachievement2")
+                break;
+          case "killgained":
+                global.metrics.killcount += 1;
+                break;
+          case "killstreakreset":
+                global.metrics.killcount = 0;
                 break;
             case 'c': // force camera move
                 global.player.renderx = global.player.cx = m[0];

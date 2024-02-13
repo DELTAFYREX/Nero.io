@@ -2155,8 +2155,9 @@ class Entity extends EventEmitter {
                         };
                         if (instance.killCount.solo == 10) {
                           if (instance.socket) instance.socket.talk("achieve2");
-                          sockets.broadcast(instance.name + "is on a streak of 10!");
+                          sockets.broadcast(instance.name + "is on a kill streak of 10!");
                         };
+                          if (instance.socket) instance.socket.talk("killgained");
                         break;
                     
                     case "food":

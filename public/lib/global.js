@@ -164,6 +164,7 @@ const global = {
         lastrender: 0,
         rendergap: 0,
         lastuplink: 0,
+        killcount: 0,
     },
     mouse: { x: 0, y: 0},
     target: { x: 0, y: 0 },
