@@ -181,36 +181,33 @@ function PlaySound169() {
     //audio.src = randmusic;
     //audio.load();
     //audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(global.music2);
-    var analyser = context.createAnalyser();
+    var musiccontext = new AudioContext();
+    var musicsrc = musiccontext.createMediaElementSource(global.music2);
+    var analyser = musiccontext.createAnalyser();
 
     let musiccanvas = document.getElementById("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    var ctx = canvas.getContext("2d");
+    musiccanvas.width = window.innerWidth;
+    musiccanvas.height = window.innerHeight;
+    var ctx3 = musiccanvas.getContext("2d");
 
-    src.connect(analyser);
-    analyser.connect(context.destination);
+    musicsrc.connect(analyser);
+    analyser.connect(musiccontext.destination);
 
     analyser.fftSize = 256;
 
     var bufferLength = analyser.frequencyBinCount;
     console.log(bufferLength);
         
-            let WIDTH = canvas.width;
-    let HEIGHT = canvas.height;
+    var WIDTHOFBAR = musiccanvas.width;
+    var HEIGHTOFBAR = musiccanvas.height;
 
     var dataArray = new Uint8Array(bufferLength);
 
-    var barWidth = (WIDTH / bufferLength) * 2.5;
-    var barHeight;
+    var musicbarWidth = (WIDTHOFBAR / bufferLength) * 2.5;
+    var musicbarHeight;
     var barstuffx = 0;
 
     function renderFrame() {
-      
-          let barthingWIDTH = canvas.width;
-    let HEIGHT = canvas.height;
       
       requestAnimationFrame(renderFrame);
 
@@ -218,20 +215,20 @@ function PlaySound169() {
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "rgba(0,0,0,0.15)";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      ctx3.fillStyle = "rgba(0,0,0,0.15)";
+      ctx3.fillRect(0, 0, WIDTHOFBAR, HEIGHTOFBAR);
 
       for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
+        musicbarHeight = dataArray[i];
         
-        var r = barHeight + (25 * (i/bufferLength));
-        var g = 250 * (i/bufferLength);
-        var b = 50;
+        var b = musicbarHeight + (25 * (i/bufferLength));
+        var r = 270 * (i/bufferLength);
+        var g = musicbarHeight + (4 * -(i/bufferLength));
 
-        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(barstuffx, HEIGHT - barHeight, barWidth, barHeight);
+        ctx3.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ctx3.fillRect(barstuffx, HEIGHTOFBAR - musicbarHeight, musicbarWidth, musicbarHeight);
 
-        barstuffx += barWidth + 1;
+        barstuffx += musicbarWidth + 1;
       }
     }
     //audio.play();
