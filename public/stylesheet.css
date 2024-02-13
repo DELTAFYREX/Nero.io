@@ -2,11 +2,7 @@
   position: fixed;
   top: 10px;
   left: 10px;
-  z-index: 0;
-}
-
-#optSound {
-  z-index: 999
+  z-index: 100;
 }
 
 #canvas {
