@@ -1,4 +1,4 @@
-window.onload = function Startsound() {
+window.onload = function() {
   
   //Music functions:
   //decide the music
@@ -25,10 +25,9 @@ window.onload = function Startsound() {
   
   var checkbox = document.getElementById("optSound");
   var audio = document.getElementById("audio");
-  
-    function Startsound() {
-    document.getElementById("optSound").addEventListener("click", () => {
-    audio.src = randmusic
+
+checkbox.onclick = function() {
+    audio.src = randmusic;
     audio.load();
     audio.play();
     var context = new AudioContext();
@@ -83,6 +82,5 @@ window.onload = function Startsound() {
 
     audio.play();
     renderFrame();
-        }
-    }
-}
+  };
+};
