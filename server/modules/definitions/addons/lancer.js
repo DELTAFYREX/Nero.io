@@ -286,7 +286,6 @@ Class.lancebrid = makeHybrid(Class.lancer, "Lancebrid");
 Class.chasseur = {
   PARENT: "genericTank",
   LABEL: "Chasseur",
-  IS_LANCER: true,
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 1
