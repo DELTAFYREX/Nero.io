@@ -85,7 +85,7 @@ class Gun {
             this.syncsSkills = info.PROPERTIES.SYNCS_SKILLS == null ? false : info.PROPERTIES.SYNCS_SKILLS;
             this.negRecoil = info.PROPERTIES.NEGATIVE_RECOIL == null ? false : info.PROPERTIES.NEGATIVE_RECOIL;
             this.independentChildren = info.PROPERTIES.INDEPENDENT_CHILDREN == null ? false : info.PROPERTIES.INDEPENDENT_CHILDREN;
-            this.bulletSpeedToLancerRange = info.PROPERTIES.SPEED2RANGE == null ? false : PROPERTIES.SPEED2RANGE;
+            //this.bulletSpeedToLancerRange = info.PROPERTIES.SPEED2RANGE == null ? false : PROPERTIES.SPEED2RANGE;
             if (info.PROPERTIES.COLOR != null) {
                 if (typeof info.PROPERTIES.COLOR === "number" || typeof info.PROPERTIES.COLOR === "string") {
                         this.colorUnboxed.base = info.PROPERTIES.COLOR;
@@ -615,6 +615,9 @@ class Gun {
                 out.DAMAGE = shoot.damage * sk.dam * Math.sqrt(sizeFactor) * shoot.pen * sk.pen;
                 out.RANGE = shoot.range * Math.sqrt(sizeFactor);
                 break;
+          case "lance":
+                out.RANGE = Math.sqrt(this.skill.spd) * 999;
+                break;
         }
         // Go through and make sure we respect its natural properties
         for (let property in out) {
@@ -1097,7 +1100,7 @@ class Entity extends EventEmitter {
         if (set.CAN_BE_ON_LEADERBOARD != null) this.settings.leaderboardable = set.CAN_BE_ON_LEADERBOARD;
         if (set.INTANGIBLE != null) this.intangibility = set.INTANGIBLE;
         if (set.IS_SMASHER != null) this.settings.reloadToAcceleration = set.IS_SMASHER;
-        if (set.IS_LANCER != null) this.settings.bulletSpeedToLancerRange = set.IS_LANCER;
+        //if (set.IS_LANCER != null) this.settings.bulletSpeedToLancerRange = set.IS_LANCER;
         if (set.STAT_NAMES != null) this.settings.skillNames = {
             body_damage: set.STAT_NAMES?.BODY_DAMAGE ?? 'Body Damage',
             max_health: set.STAT_NAMES?.MAX_HEALTH ?? 'Max Health',
@@ -1522,7 +1525,7 @@ class Entity extends EventEmitter {
         if (this.settings.reloadToAcceleration) this.acceleration *= this.skill.acl;
         this.topSpeed = (topSpeedMultiplier * c.runSpeed * this.SPEED * this.skill.mob) / speedReduce;
         if (this.settings.reloadToAcceleration) this.topSpeed /= Math.sqrt(this.skill.acl);
-        if (this.settings.bulletSpeedToLancerRange) this.sk.range *= this.skill.spd;
+        //if (this.settings.bulletSpeedToLancerRange) this.sk.range *= this.skill.spd;
         this.health.set(((this.settings.healthWithLevel ? 2 * this.level : 0) + this.HEALTH) * this.skill.hlt * healthMultiplier);
         this.health.resist = 1 - 1 / Math.max(1, this.RESIST + this.skill.brst);
         this.shield.set(((this.settings.healthWithLevel ? 0.6 * this.level : 0) + this.SHIELD) * this.skill.shi, Math.max(0, ((this.settings.healthWithLevel ? 0.006 * this.level : 0) + 1) * this.REGEN * this.skill.rgn * regenMultiplier));
