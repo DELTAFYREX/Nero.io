@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function Startsound() {
   
   //Music functions:
   //decide the music
@@ -23,12 +23,12 @@ window.onload = function() {
             }
          return; };*/
   
-  var file = document.getElementById("thefile");
+  var checkbox = document.getElementById("optSound");
   var audio = document.getElementById("audio");
   
-  file.onchange = function() {
-    var files = this.files;
-    audio.src = URL.createObjectURL(files[0]);
+    function Startsound() {
+    document.getElementById("optSound").addEventListener("click", () => {
+    audio.src = randmusic
     audio.load();
     audio.play();
     var context = new AudioContext();
@@ -83,5 +83,6 @@ window.onload = function() {
 
     audio.play();
     renderFrame();
-  };
-};
+        }
+    }
+}
