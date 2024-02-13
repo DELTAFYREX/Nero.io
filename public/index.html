@@ -126,8 +126,12 @@ function PlaySound2() {
     }
   </script>
       <audio id ="bflat" src="https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/sysse_ok.ogg"></audio>
-    <!-- Main Code-->       
+    <!-- Main Code-->   
 <body oncontextmenu="return false" id="mainBody">
+  <div id="content">
+  <canvas id="canvas"></canvas>
+  <audio id="audio" crossorigin="anonymous"></audio>
+  </div>
     <div id="gameAreaWrapper">
         <canvas id="gameCanvas" tabindex="1"></canvas>
         <input id="chatInput" type="text" maxlength="256" hidden="true">
