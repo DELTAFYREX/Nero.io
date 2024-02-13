@@ -200,21 +200,21 @@ function PlaySound169() {
 
     var dataArray = new Uint8Array(bufferLength);
 
-    var WIDTH = canvas.width;
+    const WIDTH = canvas.width;
     const HEIGHT = canvas.height;
 
     var barWidth = (WIDTH / bufferLength) * 2.5;
     var barHeight;
-    var x = 0;
+    var barstuffx = 0;
 
     function renderFrame() {
       requestAnimationFrame(renderFrame);
 
-      x = 0;
+      barstuffx = 0;
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "#000";
+      ctx.fillStyle = "rgba(0,0,0,0.2)";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
@@ -225,9 +225,9 @@ function PlaySound169() {
         var b = 50;
 
         ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+        ctx.fillRect(barstuffx, HEIGHT - barHeight, barWidth, barHeight);
 
-        x += barWidth + 1;
+        barstuffx += barWidth + 1;
       }
     }
     //audio.play();
