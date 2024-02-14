@@ -228,7 +228,8 @@ function PlaySound169() {
         var g = 50;
 
         ctx3.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx3.fillRect(barstuffx, global.screenHeight - musicbarHeight, musicbarWidth, musicbarHeight);
+        ctx3.fillRect(barstuffx, global.screenHeight / musicbarHeight, musicbarWidth, -1);
+        ctx3.fillRect(barstuffx, global.screenHeight - musicbarHeight, musicbarWidth, 400);
 
         barstuffx += musicbarWidth + 1;
       }
