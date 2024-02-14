@@ -209,14 +209,16 @@ function PlaySound169() {
 
     function renderFrame() {
       
+          resizeEvent();
+      
       requestAnimationFrame(renderFrame);
 
       barstuffx = 0;
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx3.fillStyle = "rgba(0,0,0,0.22)";
-      ctx3.fillRect(0, 0, WIDTHOFBAR, HEIGHTOFBAR);
+      ctx3.fillStyle = "rgba(0,0,0,0.12)";
+      ctx3.fillRect(0, 0, WIDTHOFBAR, global.screenHeight);
 
       for (var i = 0; i < bufferLength; i++) {
         musicbarHeight = dataArray[i];
@@ -226,7 +228,7 @@ function PlaySound169() {
         var g = 50;
 
         ctx3.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx3.fillRect(barstuffx, HEIGHTOFBAR - musicbarHeight, musicbarWidth, musicbarHeight);
+        ctx3.fillRect(barstuffx, global.screenHeight - musicbarHeight, musicbarWidth, musicbarHeight);
 
         barstuffx += musicbarWidth + 1;
       }
