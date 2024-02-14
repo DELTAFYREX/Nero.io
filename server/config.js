@@ -55,7 +55,7 @@ module.exports = {
 
     // Welcome message once a player spawns.
     WELCOME_MESSAGE: "You have spawned! Welcome to the game.\n"
-                    +"You will be invulnerable until you move or shoot OR §4ACCEDENTALLY PRESS THE FUCKING SPACE BAR.\n"
+                    +"You will be invulnerable until you move or shoot OR §§4ACCEDENTALLY PRESS THE FUCKING SPACE BAR.\n"
                     +"Please report any bugs you encounter on our discord! :)",
 
 

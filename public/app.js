@@ -215,13 +215,13 @@ function PlaySound169() {
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx3.fillStyle = "rgba(0,0,0,0.15)";
+      ctx3.fillStyle = "rgba(0,0,0,0.22)";
       ctx3.fillRect(0, 0, WIDTHOFBAR, HEIGHTOFBAR);
 
       for (var i = 0; i < bufferLength; i++) {
         musicbarHeight = dataArray[i];
         
-        var b = musicbarHeight + (20 * (i/bufferLength));
+        var b = musicbarHeight + (18 * (i/bufferLength));
         var r = 250 * (i/bufferLength);
         var g = 50;
 
