@@ -210,6 +210,7 @@ function PlaySound169() {
     function renderFrame() {
       
           resizeEvent();
+      let deviscale = window.devicePixelRatio
       
       requestAnimationFrame(renderFrame);
 
@@ -228,8 +229,7 @@ function PlaySound169() {
         var g = 50;
 
         ctx3.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx3.fillRect(barstuffx, global.screenHeight / musicbarHeight, musicbarWidth, -1);
-        ctx3.fillRect(barstuffx, global.screenHeight - musicbarHeight, musicbarWidth, 400);
+        ctx3.fillRect(barstuffx, global.screenHeight - musicbarHeight * deviscale, musicbarWidth, musicbarHeight);
 
         barstuffx += musicbarWidth + 1;
       }
