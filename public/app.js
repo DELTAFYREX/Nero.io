@@ -221,9 +221,9 @@ function PlaySound169() {
       for (var i = 0; i < bufferLength; i++) {
         musicbarHeight = dataArray[i];
         
-        var b = musicbarHeight + (25 * (i/bufferLength));
-        var r = 270 * (i/bufferLength);
-        var g = musicbarHeight + (4 * -(i/bufferLength));
+        var b = musicbarHeight + (20 * (i/bufferLength));
+        var r = 250 * (i/bufferLength);
+        var g = 50;
 
         ctx3.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
         ctx3.fillRect(barstuffx, HEIGHTOFBAR - musicbarHeight, musicbarWidth, musicbarHeight);
