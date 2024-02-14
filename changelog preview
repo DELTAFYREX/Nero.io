@@ -24,6 +24,8 @@
         <li>Added 10 Killstreak Achievement</li>
         <li>Changed Debug Menu</li>
         <li>Added Kill Amount In Debug</li>
+        <li>Added Audio Visualizer in the title screen</li>
+        <li>Fixed Embed Not Working Properly</li>
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
