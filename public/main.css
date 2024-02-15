@@ -332,6 +332,22 @@ a.menuTab.catto:hover {
     box-shadow: none;
 }
 
+a.menuTab.ach {
+  background: #1E8449  url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/play.png") 3px 2px/23px no-repeat;
+  padding: 6px 10px 7px 28px;
+        border-bottom: 2px solid #156637;
+    box-shadow: inset 0 -2px #156637;
+    -webkit-box-shadow: inset 0 -2px #156637;
+      animation:pfpDefault 800ms linear both;
+}
+a.menuTab.ach:active,
+a.menuTab.ach:hover {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 a.menuTab.stat {
   background: #1E8449  url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/play.png") 3px 2px/23px no-repeat;
   padding: 6px 10px 7px 28px;

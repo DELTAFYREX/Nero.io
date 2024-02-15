@@ -140,6 +140,7 @@ function PlaySound2() {
         <a class="menuTab discordbutton" onclick="PlaySound()" onmouseover="PlaySound1()" title="Join the Nero.io Discord server!" href="https://discord.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Nero.io Discord</a>
         <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the game's source code" href="https://glitch.com/neroio2" target="_blank" rel="noopener noreferrer">View Source Code</a>
         <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="Old Nero.io (Nero.io 1)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">Old Nero.io</a>
+        <a class="menuTab ach" onmouseover="PlaySound1()" style="background: #2bab2f; width: 25%;" href="javascript:void(0)" onclick="displayAchievements()">Achievements</a>
           </div>
             <div id="startMenu">
                 <div class="startMenuHolder">
@@ -322,9 +323,6 @@ popup = ' onclick="openPopup()" '
                   document.write("<div>No achievement =(</div>");
                 }
         </script>
-        <a style="background: #2bab2f; width: 25%" href="javascript:void(0)" onclick="displayAchievements()">Achievements</a>
-  <a onclick="PlaySound()">  
-  </a>
     </div>
               <div class="popup" style="display: none;">
                 <h1>Title</h1>
@@ -374,9 +372,9 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + grayachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button</span></div>");
                 };
                 if (localStorage.getItem("tokenachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + greenachievementbox + " ><h1>Nice Try Dumbass 💀</h1><span>No Beta Testa For Yu!</span></div>");
+                  document.write("<div " + greenachievementbox + " ><h1>Nice Try Dumbass 💀</h1><span>No Beta Testa Token Fo Yu!</span></div>");
                 } else {
-                  document.write("<div " + grayachievementbox + " ><h1>Nice try 💀</h1><span>CaN i HaVe BeTa TeStEr?1!!</span></div>");
+                  document.write("<div " + grayachievementbox + " ><h1>Nice try 💀</h1><span>i KnOw ThE tOkEn!1!!</span></div>");
                 };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
