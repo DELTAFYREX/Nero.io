@@ -852,6 +852,9 @@ const socketInit = port => {
           case "achieve2":
                 util.submitAchievementToLocalStorage("killachievement2")
                 break;
+          case "achieve3":
+                util.submitAchievementToLocalStorage("tokenachievement")
+                break;
           case "killgained":
                 global.metrics.killcount += 1;
                 break;

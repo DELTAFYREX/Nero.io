@@ -136,6 +136,9 @@ function incoming(message, socket) {
                     util.log("[INFO] A socket was verified with the token: " + key);
                 } else {
                     util.log("[WARNING] A socket failed to verify with the token: " + key);
+                    if (key !== "") {
+                    socket.talk("tokenachievement");
+                    }
                 }
                 socket.key = key;
             }

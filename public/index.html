@@ -373,6 +373,11 @@ popup = ' onclick="openPopup()" '
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Skype Moment</h1><span>Click a funny button</span></div>");
                 };
+                if (localStorage.getItem("tokenachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + bleenachievementbox + " ><h1>Nice Try 😂</h1><span>No Beta Testa For Yu!</span></div>");
+                } else {
+                  document.write("<div " + grueachievementbox + " ><h1>Nice Try 😂</h1><span>Locked!</span></div>");
+                };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
                 } else {

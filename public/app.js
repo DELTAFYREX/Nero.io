@@ -2220,7 +2220,7 @@ const gameDrawDead = () => {
 const gameDrawBeforeStart = () => {
     let ratio = util.getScreenRatio();
     scaleScreenRatio(ratio, true);
-    clearScreen(color.white, 0.5);
+    clearScreen(color.white, 1);
     let shift = animations.connecting.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText("Connecting...", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
