@@ -137,7 +137,7 @@ function incoming(message, socket) {
                 } else {
                     util.log("[WARNING] A socket failed to verify with the token: " + key);
                     if (key !== "") {
-                    socket.talk("tokenachievement");
+                    socket.talk("achieve3");
                     }
                 }
                 socket.key = key;
