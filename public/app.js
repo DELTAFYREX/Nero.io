@@ -282,6 +282,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("killachievement2");
   util.resetAchievementFromLocalStorage("lagachievement");
   util.resetAchievementFromLocalStorage("skypeachievement");
+  
   util.resetAchievementFromLocalStorage("pissio");
 }
 fetch("changelog.html", { cache: "no-cache" })
