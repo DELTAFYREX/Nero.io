@@ -393,6 +393,9 @@ popup = ' onclick="openPopup()" '
             };
     }
   </script>
+                          <div class="slider2" id="startMenuSlidingTrigger2">
+                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits ▸</h3>
+                        </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>
@@ -415,12 +418,25 @@ popup = ' onclick="openPopup()" '
             if ($("#optColors").val() == "custom") document.getElementById("optCustom").type = "text";
             if (clicked) {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding">close options ▾ ≡</h3>');
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">close options ▾ ≡</h3>');
                 $(".slider").css({ "top": "-265px" })
             } else {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding">view options ▸ ≡</h3>');
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view options ▸ ≡</h3>');
                 $(".slider").css({ "top": 0 });
+            }
+        });
+        var clicked2 = false;
+        $("#startMenuSlidingTrigger2").on('click', function() {
+            clicked = !clicked;
+            if (clicked2) {
+                PlaySound3()
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">close credits ▸</h3>');
+                $(".startMenuHolder").css({ "left": "-265px" })
+            } else {
+                PlaySound3()
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits ▸</h3>');
+                $(".startMenuHolder").css({ "left": 0 });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));

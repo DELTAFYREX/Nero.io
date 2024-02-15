@@ -287,6 +287,7 @@ div {
 
 .startMenuHolder {
     width: 350px;
+    left: 0px;
     height: 340px;
     padding: 10px;
     overflow: hidden;
@@ -379,6 +380,12 @@ a.menuTab:link:hover, a.menuTab:visited:hover {
     overflow: hidden;
 }
 
+.sliderHolder2 {
+    width: 350px;
+    height: 285px;
+    overflow: hidden;
+}
+
 tfoot {
     text-align: center;
     opacity: 0.5;
@@ -394,6 +401,18 @@ table {
 }
 
 .slider {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    -webkit-transition: top 500ms;
+    -moz-transition: top 500ms;
+    -o-transition: top 500ms;
+    transition: top 500ms;
+    animation:pfpDefault 800ms linear both;
+  	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1.275)
+}
+
+.slider2 {
     position: relative;
     top: 0px;
     width: 100%;
@@ -424,6 +443,23 @@ table {
 #startMenuSlidingTrigger:hover > h3 > i.arrow {
   border-color: #323232;
 }
+
+#startMenuSlidingTrigger2 {
+    cursor: pointer;
+    height: 15px;
+    width: 100px;
+}
+#startMenuSlidingTrigger2:hover {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+#startMenuSlidingTrigger2:active > h3 {
+  color: #323232;
+     animation:pfpDefault 800ms linear both;
+}
+#startMenuSlidingTrigger2:hover > h3 > i.arrow {
+  border-color: #323232;
+}
+
 .menuTabs {
   height: 26px;
   margin: 0 8px;
