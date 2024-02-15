@@ -166,6 +166,7 @@ const global = {
         lastuplink: 0,
         killcount: 0,
     },
+    ISTHEGODAMNFUCKINGGAMEON: "no",
     mouse: { x: 0, y: 0},
     target: { x: 0, y: 0 },
     reverseTank: 1,

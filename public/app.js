@@ -171,13 +171,14 @@ function PlaySound169() {
   global.music2.load();   
   global.music2.play();
 }
-
+  
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
       if (document.getElementById("optSound").checked === true) {
-        document.getElementById("content").style.opacity = 1
         songrecog()
            global.music2.play()
+        if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
+        document.getElementById("content").style.opacity = 1
     //audio.src = randmusic;
     //audio.load();
     //audio.play();
@@ -236,6 +237,7 @@ function PlaySound169() {
     }
     //audio.play();
     renderFrame();
+    }
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
      } else if (document.getElementById("optSound").checked === false) {
         document.getElementById("content").style.opacity = 0
@@ -657,7 +659,8 @@ function startGame() {
     util.submitToLocalStorage("optPredictive");
     util.submitToLocalStorage("optScreenshotMode");
     util.submitToLocalStorage("coloredHealthbars");
-    util.submitToLocalStorage("seperatedHealthbars");
+    util.submitToLocalStorage("seperatedHealthbars"); 
+    global.ISTHEGODAMNFUCKINGGAMEON = "yeah";
     settings.graphical.fancyAnimations = !document.getElementById("optFancy").checked;
     settings.graphical.centerTank = document.getElementById("centerTank").checked;
     settings.graphical.pointy = !document.getElementById("optNoPointy").checked;

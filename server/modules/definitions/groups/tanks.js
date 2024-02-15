@@ -5025,8 +5025,6 @@ Class.undertowbrid = makeHybrid('undertow', "Undertow-Hybrid")
 Class.repeaterbrid = makeHybrid('repeater', "Repeater-Hybrid")
 Class.honda = makeHybridDrive('pounder', "Honda")
 
-Class.hybridbase = makeHybrid('genericTank', "Hybrid")
-
 // Over tanks
 Class.overgunner = makeOver({
     PARENT: "genericTank",
