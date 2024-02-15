@@ -303,6 +303,25 @@ fetch("changelog.html", { cache: "no-cache" })
         console.error(error);
     }
 });
+  fetch("credits.html", { cache: "no-cache" })
+  
+.then(async CreditsHTMLFile => {
+    let patchNotes = document.querySelector("#credits");
+    try {
+        let parser = new DOMParser(),
+            RawHTMLString = await CreditsHTMLFile.text(),
+            ParsedHTML = parser.parseFromString(RawHTMLString, "text/html"),
+            titles = ParsedHTML.documentElement.getElementsByTagName('h1');
+        for (const title of titles) {
+            title.classList.add('title');
+        }
+
+        patchNotes.innerHTML += ParsedHTML.documentElement.innerHTML;
+    } catch (error) {
+        patchNotes.innerHTML = `<p>An error occured while trying to fetch 'credits.html'</p><p>${error}</p>`;
+        console.error(error);
+    }
+});
 
 class Animation {
     constructor(start, to, smoothness = 0.05) {
