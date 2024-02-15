@@ -288,7 +288,7 @@ popup = ' onclick="openPopup()" '
                     </div>
                 </div>
                 <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan" onclick="PlaySound2()">Changelog</span>
+                    <span class="titleSpan" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
                     <div id="patchNotes" class="shadowScroll"></div>
                     <div id="bottomHolder">
                         <!-- Old Taureon
@@ -389,6 +389,7 @@ popup = ' onclick="openPopup()" '
     {
                   function displayAchievements() {
                 document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
+                PlaySound();
             };
     }
   </script>

@@ -922,12 +922,14 @@ input [type="image"]:focus {
     font-size: xx-large;
     font-weight: bold;
     color: black;
+    animation:pfpDefault 800ms linear both;
 }
 
 .achievementsHolder span {
     font-size: x-large;
     font-weight: light;
     color: black;
+    animation:pfpDefault 800ms linear both;
 }
 
 #achievementsClose {
@@ -947,6 +949,7 @@ input [type="image"]:focus {
 
 #achievementsDisplay {
     height: 448px;
+    animation:pfpDefault 800ms linear both;
     width: auto;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -955,12 +958,14 @@ input [type="image"]:focus {
 .achievementsItem {
     margin: 16px 16px 12px 16px;
     border-radius: 14px;
+    animation:pfpDefault 800ms linear both;
     padding: 6px;
 
 }
 
 .achievementsItem h1 {
     font-size: 22px;
+    animation:pfpDefault 800ms linear both;
     font-weight: light;
     color: #22160b;
 }
@@ -968,6 +973,7 @@ input [type="image"]:focus {
 .achievementsItem span {
     font-size: 17px;
     font-weight: bold;
+    animation:pfpDefault 800ms linear both;
     color: #22160b;
 }
 
@@ -988,10 +994,12 @@ input [type="image"]:focus {
 }
 
 #achievementsStatsTable td {
+    animation:pfpDefault 800ms linear both;
     font-size: 18px;
 }
 
 #achievementsStatsTable tr b {
+    animation:pfpDefault 800ms linear both;
     font-size: 22px;
 }
 .autoBorder {
