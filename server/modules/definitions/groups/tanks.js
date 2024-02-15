@@ -3,6 +3,53 @@ const { base, statnames, gunCalcNames, dfltskl, smshskl } = require('../constant
 require('./generics.js');
 const g = require('../gunvals.js');
 
+
+// Bullets
+Class.splitterBullet = {
+    PARENT: "bullet",
+    INDEPENDENT: true,
+    GUNS: [
+        {
+            POSITION: [8, 8, 1, 0, 0, 90, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+            }
+        },
+        {
+            POSITION: [8, 8, 1, 0, 0, 270, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+            }
+        },
+    ]
+}
+Class.superSplitterBullet = {
+    PARENT: "bullet",
+    INDEPENDENT: true,
+    GUNS: [
+        {
+            POSITION: [8, 8, 1, 0, 0, 90, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: ["splitterBullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+            }
+        },
+        {
+            POSITION: [8, 8, 1, 0, 0, 270, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: ["splitterBullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+            }
+        },
+    ]
+}
+
 // Missiles
 Class.missile = {
     PARENT: "bullet",
@@ -3164,7 +3211,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, -4, 90, 0.5],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "autoswarm",
+                TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }
@@ -3173,7 +3220,7 @@ Class.battleship = {
             POSITION: [7, 7.5, 0.6, 7, 4, 270, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "autoswarm",
+                TYPE: ["autoswarm"],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 LABEL: "Autonomous"
             }
@@ -4372,6 +4419,52 @@ Class.helix = {
         },
     ],
 }
+Class.undertow = {
+    PARENT: "genericTank",
+    LABEL: "Undertow",
+    DANGER: 6,
+    TOOLTIP: "[DEV NOTE] The Undertow does not function as intended yet!",
+    GUNS: [
+        {
+            POSITION: [14, 12, 0.8, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos, { reload: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [11.25, 8, 0.15, 4.25, 4, 13.5, 0]
+        },
+        {
+            POSITION: [11.25, 8, 0.15, 4.25, -4, -13.5, 0]
+        }
+    ]
+}
+Class.repeater = {
+    PARENT: "genericTank",
+    LABEL: "Repeater",
+    GUNS: [
+        {
+            POSITION: [20, 10, 0.8, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["splitterBullet", {MOTION_TYPE: "desmos"}]
+            }
+        },
+        {
+            POSITION: [4.625, 9.5, 2, 0.375, -8, 91.5, 0]
+        },
+        {
+            POSITION: [4.625, 9.5, 2, 0.375, 8, -91.5, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 0, -4.75, 50, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 0, 4.75, -50, 0]
+        }
+    ]
+}
 
 // Volute upgrades
 Class.sidewinder = {
@@ -4499,6 +4592,106 @@ Class.quadruplex = {
         },
     ],
 }
+// Undertow upgrades
+Class.riptide = {
+    PARENT: "genericTank",
+    LABEL: "Riptide",
+    DANGER: 7,
+    TOOLTIP: "[DEV NOTE] The Riptide does not function as intended yet!",
+    GUNS: [
+        {
+            POSITION: [6.5, 23.5, 0.25, 3, 0, 180, 0],
+        },
+        {
+            POSITION: [18, 16, 0.75, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos, { size: 0.9, reload: 1.2 }]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [17, 16, 0.1, 0.25, 4, 13.5, 0]
+        },
+        {
+            POSITION: [17, 16, 0.1, 0.25, -4, -13.5, 0]
+        }
+    ]
+}
+// Repeater upgrades
+Class.iterator = {
+    PARENT: "genericTank",
+    LABEL: "Iterator",
+    DANGER: 7,
+    STAT_NAMES: statnames.desmos,
+    GUNS: [
+        {
+            POSITION: [22, 10, 0.8, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.desmos]),
+                TYPE: ["superSplitterBullet", {MOTION_TYPE: "desmos"}]
+            }
+        },
+        {
+            POSITION: [4.625, 10.5, 2.75, 0.375, -7, 91.5, 0]
+        },
+        {
+            POSITION: [4.625, 10.5, 2.75, 0.375, 7, -91.5, 0]
+        },
+        {
+            POSITION: [4, 9, 3, 1.5, -5, 95, 0]
+        },
+        {
+            POSITION: [4, 9, 3, 1.5, 5, -95, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, -1.5, -5.25, 50, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, -1.5, 5.25, -50, 0]
+        }
+    ]
+}
+Class.duplicator = {
+    PARENT: "genericTank",
+    LABEL: "Duplicator",
+    DANGER: 7,
+    STAT_NAMES: statnames.desmos,
+    GUNS: [
+        {
+            POSITION: [20, 10, 0.8, 0, 0, 20, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.desmos]),
+                TYPE: ["splitterBullet", {MOTION_TYPE: ["desmos", {invert: false}]}]
+            }
+        },
+        {
+            POSITION: [20, 10, 0.8, 0, 0, -20, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.desmos]),
+                TYPE: ["splitterBullet", {MOTION_TYPE: ["desmos", {invert: true}]}]
+            }
+        },
+        {
+            POSITION: [5.625, 9.5, 2, 0.375-1, -8, 111.5, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 0, 4.75, -30, 0]
+        },
+        {
+            POSITION: [5.625, 9.5, 2, 0.375-1, 8, -111.5, 0]
+        },
+        {
+            POSITION: [3.75, 10, 2.125, 0, -4.75, 30, 0]
+        },
+        {
+            POSITION: [18, 8, 0.65, 0, 0, 0, 0]
+        },
+        {
+            POSITION: [19, 6, 0.45, 0, 0, 0, 0]
+        },
+    ]
+}
+
 
 
 // Smasher upgrades

@@ -121,8 +121,8 @@ Class.celestials.UPGRADE_COLOR = "lightGreen"
 Class.celestials.SHAPE = 9
 
 Class.eternals = menu("Eternals")
-Class.eternals.COLOR = "teal"
-Class.eternals.UPGRADE_COLOR = "teal"
+Class.eternals.COLOR = "veryLightGrey"
+Class.eternals.UPGRADE_COLOR = "veryLightGrey"
 Class.eternals.SHAPE = 11
 
 Class.devBosses = menu("Developers")
