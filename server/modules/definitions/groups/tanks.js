@@ -5021,6 +5021,8 @@ Class.launchbrid = makeHybrid('launcher', "Launcher-Hybrid")
 Class.tritrapperbrid = makeHybrid('triTrapper', "Tri-Trapper-Hybrid")
 Class.helixbrid = makeHybrid('helix', "Helix-Hybrid")
 Class.volutebrid = makeHybrid('volute', "Volute-Hybrid")
+Class.undertowbrid = makeHybrid('undertow', "Undertow-Hybrid")
+Class.repeaterbrid = makeHybrid('repeater', "Repeater-Hybrid")
 Class.honda = makeHybridDrive('pounder', "Honda")
 
 Class.hybridbase = makeHybrid('genericTank', "Hybrid")
@@ -6199,6 +6201,8 @@ Class.autoTrapGuard = makeAuto(Class.trapGuard, "Auto-TrapGuard");
 
 Class.autoVolute = makeAuto(Class.volute, "Auto-Volute");
 Class.autoHelix = makeAuto(Class.helix, "Auto-Helix");
+Class.autoUndertow = makeAuto(Class.undertow, "Auto-Undertow");
+Class.autoRepeater = makeAuto(Class.repeater, "Auto-Repeater");
 
 Class.autoinception = makeAuto(Class.inception, "Auto-inception");
 Class.automachinception = makeAuto(Class.machinception, "Auto-Machceptioner");
@@ -6351,6 +6355,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.tailgator.UPGRADES_TIER_3 = ["poundceptionist", "interceptor", "engineer", "shrapnelgun", "autotailgator", "tailgatorbrid"]
         Class.flankinception.UPGRADES_TIER_3 = ["flankceptionist", "autoflankinception", "flankinceptionbrid"]
 
-    Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "autoDesmos", "desmosbrid"]
-        Class.volute.UPGRADES_TIER_3 = ["sidewinder", "autoVolute", "volutebrid"]
-        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "autoHelix", "helixbrid"]
+    Class.desmos.UPGRADES_TIER_2 = ["volute", "helix", "undertow", "repeater", "autoDesmos", "desmosbrid"]
+        Class.volute.UPGRADES_TIER_3 = ["sidewinder", "riptide", "autoVolute", "volutebrid"]
+        Class.helix.UPGRADES_TIER_3 = ["triplex", "quadruplex", "duplicator", "autoHelix", "helixbrid"]
+        Class.undertow.UPGRADES_TIER_3 = ["riptide", "autoUndertow", "undertowbrid"]
+        Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator", "autoRepeater", "repeaterbrid"]
