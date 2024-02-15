@@ -288,8 +288,8 @@ popup = ' onclick="openPopup()" '
                     </div>
                 </div>
                 <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan replace1" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
-                    <span class="titleSpan replace2" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
+                    <span class="titleSpan slider2" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
+                    <span class="titleSpan slider3" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
                     <div id="patchNotes" class="shadowScroll replace1"></div>
                     <div id="bottomHolder">
                         <!-- Old Taureon
@@ -394,7 +394,7 @@ popup = ' onclick="openPopup()" '
             };
     }
   </script>
-                          <div class="slider2" id="startMenuSlidingTrigger2">
+                          <div id="startMenuSlidingTrigger2">
                             <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
                         </div>
     <!-- JS -->
@@ -433,13 +433,13 @@ popup = ' onclick="openPopup()" '
             if (clicked2) {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
-                $(".replace1").css({ "display": "none" });
-                $(".replace2").css({ "display": "block" });
+                $(".slider2").css({ "right": "-400px" });
+                $(".slider3").css({ "right": "0px" });
             } else {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
-                $(".replace1").css({ "display": "block" });
-                $(".replace2").css({ "display": "none" });
+                $(".slider2").css({ "right": "0px" });
+                $(".slider3").css({ "right": "-400px" });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
