@@ -288,8 +288,9 @@ popup = ' onclick="openPopup()" '
                     </div>
                 </div>
                 <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
-                    <div id="patchNotes" class="shadowScroll"></div>
+                    <span class="titleSpan replace1" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
+                    <span class="titleSpan replace2" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
+                    <div id="patchNotes" class="shadowScroll replace1"></div>
                     <div id="bottomHolder">
                         <!-- Old Taureon
                         <a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
@@ -394,7 +395,7 @@ popup = ' onclick="openPopup()" '
     }
   </script>
                           <div class="slider2" id="startMenuSlidingTrigger2">
-                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits ▸</h3>
+                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
                         </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -428,15 +429,17 @@ popup = ' onclick="openPopup()" '
         });
         var clicked2 = false;
         $("#startMenuSlidingTrigger2").on('click', function() {
-            clicked = !clicked;
+            clicked2 = !clicked2;
             if (clicked2) {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">close credits ▸</h3>');
-                $(".startMenuHolder").css({ "left": "-265px" })
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
+                $(".replace1").css({ "display": "none" });
+                $(".replace2").css({ "display": "block" });
             } else {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits ▸</h3>');
-                $(".startMenuHolder").css({ "left": 0 });
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
+                $(".replace1").css({ "display": "block" });
+                $(".replace2").css({ "display": "none" });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
