@@ -186,11 +186,14 @@ var gameDraw = {
             bi_blue   = "#0035AA",
             
             nero_blue1 = "#4287F5",
-            nero
-            nero_blue2 = "#70B5FF",
-            nero_blue3 = "#335099",
-            nero_blue4 = "#5324bf",
-            nero_blue5 = "#1814E0",
+            nero_blue2 = "#3CA2F0",
+            nero_blue3 = "#70B5FF",
+            nero_blue4 = "#4B90DB",
+            nero_blue5 = "#355BBD",
+            nero_blue6 = "#1F4199",
+            nero_blue7 = "#242bbd",
+            nero_blue8 = "#1814E0",
+            nero_blue9 = "#2668d1",
 
             trans_pink  = "#f7a8b8",
             trans_blue  = "#55cdfc",
@@ -207,7 +210,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = ["#4287F5", "#4B90F7", "#5499F9", "#5EA3FB", "#67ACFD", "#70B5FF", "#67ACFD", "#5EA3FB", "#5499F9", "#4B90F7", "#4287F5", "#3F7CE3", "#3C71D0", "#3966BE", "#365BAB", "#335099", "#2E44A7", "#2838B5", "#232CC4", "#1D20D2", "#1814E0", "#202BE4", "#2942E8", "#3159ED", "#3A70F1"][twentysix_bars];
+        gameDraw.animatedColor.nero = [nero_blue1, "#4287F5", "#418CF4", "#4092F3", "#3E97F2", "#3D9DF1", nero_blue2, "#46A6F3", "#51AAF6", "#5BADF9", "#66B1FC", nero_blue3, "#69AEF8", "#61A6F1", "#5A9FE9", "#5297E2", nero_blue4, "#4785D5", "#427BCF", "#3E70C9", "#3966C3", nero_blue5, "#3156B6", "#2C51AF", "#284BA7", "#2346A0", nero_blue6][twentysix_bars];
     },
     animatedColors: {
           // 
