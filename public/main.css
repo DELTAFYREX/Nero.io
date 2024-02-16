@@ -422,6 +422,7 @@ table {
     right: 0px;
     width: 100%;
     z-index: 0;
+    display: inline-block;
     -webkit-transition: right 500ms;
     -moz-transition: right 500ms;
     -o-transition: right 500ms;
@@ -434,6 +435,7 @@ table {
     z-index: -6;
     right: 400px;
     width: 100%;
+    display: inline-block;
     -webkit-transition: right 500ms;
     -moz-transition: right 500ms;
     -o-transition: right 500ms;

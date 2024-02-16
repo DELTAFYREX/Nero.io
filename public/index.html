@@ -287,9 +287,9 @@ popup = ' onclick="openPopup()" '
                         <button id="startButton" onmouseover="PlaySound1()" onclick="PlaySound()" title="Load Into The Game" tabindex="2">Play</button>
                     </div>
                 </div>
-                <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan slider2" tabindex="-4" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
-                    <span class="titleSpan slider3" tabindex="-4" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
+                <div class="startMenuHolder shrinkable" style="z-index: -7;">
+                    <span class="titleSpan slider2" tabindex="-10" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
+                    <span class="titleSpan slider3" tabindex="-10" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
                     <div id="patchNotes" class="shadowScroll slider2"></div>
                     <div id="credits" class="shadowScroll slider3"></div>
                     <div id="bottomHolder">
@@ -315,7 +315,7 @@ popup = ' onclick="openPopup()" '
             </div>
         </div>
     </div>
-    <td><div><label><input id="optSound" tabindex="6" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
+    <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
                                         <div id="startMenuSlidingTrigger2">
                             <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
                         </div>
@@ -439,7 +439,7 @@ popup = ' onclick="openPopup()" '
                 $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
                 $(".slider3").css({ "position": "relative" });
-                $(".slider2").css({ "z-index": "0" });
+                $(".slider2").css({ "z-index": "-6" });
                 $(".slider3").css({ "z-index": "0" });
             } else {
                 PlaySound3()
@@ -449,7 +449,7 @@ popup = ' onclick="openPopup()" '
                 $(".slider2").css({ "position": "relative" });
                 $(".slider3").css({ "position": "absolute" });
                 $(".slider2").css({ "z-index": "0" });
-                $(".slider3").css({ "z-index": "0" });
+                $(".slider3").css({ "z-index": "-6" });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
