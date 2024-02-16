@@ -290,7 +290,7 @@ popup = ' onclick="openPopup()" '
                 <div class="startMenuHolder shrinkable">
                     <span class="titleSpan slider2" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
                     <span class="titleSpan slider3" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
-                    <div id="patchNotes" class="shadowScroll slider2"></div>
+                    <div id="patchNotes" class="shadowScroll credits"></div>
                     <div id="bottomHolder">
                         <!-- Old Taureon
                         <a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
@@ -436,11 +436,15 @@ popup = ' onclick="openPopup()" '
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
                 $(".slider2").css({ "right": "400px" });
                 $(".slider3").css({ "right": "135px" });
+                $(".slider2").css({ "position": "absolute" });
+                $(".slider3").css({ "position": "relative" });
             } else {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
                 $(".slider2").css({ "right": "0px" });
                 $(".slider3").css({ "right": "400px" });
+                $(".slider2").css({ "position": "relative" });
+                $(".slider3").css({ "position": "absolute" });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));

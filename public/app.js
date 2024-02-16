@@ -304,10 +304,10 @@ fetch("changelog.html", { cache: "no-cache" })
         console.error(error);
     }
 });
-  fetch("credits.html", { cache: "no-cache" })
-  
+
+fetch("credits.html", { cache: "no-cache" })
 .then(async CreditsHTMLFile => {
-    let patchNotes = document.querySelector("#credits");
+    let patchNotes = document.querySelector(".credits");
     try {
         let parser = new DOMParser(),
             RawHTMLString = await CreditsHTMLFile.text(),

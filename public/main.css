@@ -498,6 +498,45 @@ update {
     padding-left: 0px;
     width: 360px;
 }
+.credits {
+    max-width: 330px;
+    /*animation:pfpDefault 800ms linear both;*/
+    height: calc(100% - 100px);
+    padding: 5px 20px 10px;
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.15);
+}
+
+.credits div {
+    > .title {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    > date {
+        color: rgba(0, 0, 0, 0.45);
+        font-style: italic;
+    }
+
+    > ul li {
+        margin-left: 1em;
+        margin-bottom: .5em;
+    }
+
+    position: relative;
+    /*animation:pfpDefault 800ms linear both;*/
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: .1em;
+        background-color: gray;
+    }
+}
 
 #patchNotes {
     max-width: 330px;
@@ -514,8 +553,8 @@ update {
         margin: 0;
         font-size: 1.5em;
         font-weight: bold;
-    }
-
+  }
+  
     > date {
         color: rgba(0, 0, 0, 0.45);
         font-style: italic;
