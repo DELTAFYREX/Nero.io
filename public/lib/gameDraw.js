@@ -185,9 +185,12 @@ var gameDraw = {
             bi_purple = "#9C4E97",
             bi_blue   = "#0035AA",
             
-            nero_blue1 = "#4287f5",
-            nero_blue2 = "#70b5ff",
+            nero_blue1 = "#4287F5",
+            nero
+            nero_blue2 = "#70B5FF",
             nero_blue3 = "#335099",
+            nero_blue4 = "#5324bf",
+            nero_blue5 = "#1814E0",
 
             trans_pink  = "#f7a8b8",
             trans_blue  = "#55cdfc",
@@ -204,7 +207,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = ["#4287F5", "#4287F5", "#4B90F7", "#5499F9", "#5EA3FB", "#67ACFD", "#70B5FF", "#70B5FF", "#70B5FF", "#67ACFD", "#5EA3FB", "#5499F9", "#4B90F7", "#4287F5", "#4287F5", "#4287F5", "#3F7CE3", "#3C71D0", "#3966BE", "#365BAB", "#335099", "#365BAB", "#3966BE", "#3C71D0", "#3F7CE3", "#4287F5"][twentysix_bars];
+        gameDraw.animatedColor.nero = ["#4287F5", "#4B90F7", "#5499F9", "#5EA3FB", "#67ACFD", "#70B5FF", "#67ACFD", "#5EA3FB", "#5499F9", "#4B90F7", "#4287F5", "#3F7CE3", "#3C71D0", "#3966BE", "#365BAB", "#335099", "#2E44A7", "#2838B5", "#232CC4", "#1D20D2", "#1814E0", "#202BE4", "#2942E8", "#3159ED", "#3A70F1"][twentysix_bars];
     },
     animatedColors: {
           // 
