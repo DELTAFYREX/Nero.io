@@ -315,7 +315,7 @@ popup = ' onclick="openPopup()" '
             </div>
         </div>
     </div>
-    <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
+    <td><div><label><input id="optSound" tabindex="6" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
                                         <div id="startMenuSlidingTrigger2">
                             <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
                         </div>
@@ -436,9 +436,11 @@ popup = ' onclick="openPopup()" '
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
                 $(".slider2").css({ "right": "400px" });
-                $(".slider3").css({ "right": "135px" });
+                $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
                 $(".slider3").css({ "position": "relative" });
+                $(".slider2").css({ "z-index": "0" });
+                $(".slider3").css({ "z-index": "0" });
             } else {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
@@ -446,6 +448,8 @@ popup = ' onclick="openPopup()" '
                 $(".slider3").css({ "right": "400px" });
                 $(".slider2").css({ "position": "relative" });
                 $(".slider3").css({ "position": "absolute" });
+                $(".slider2").css({ "z-index": "0" });
+                $(".slider3").css({ "z-index": "0" });
             }
         });
         if (navigator.serviceWorker) navigator.serviceWorker.register('/service-worker.js', { scope: '/' }).then(registration => console.log('Service Worker Registered'));
