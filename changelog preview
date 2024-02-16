@@ -26,6 +26,12 @@
         <li>Added Kill Amount In Debug</li>
         <li>Added Audio Visualizer in the title screen</li>
         <li>Fixed Embed Not Working Properly</li>
+        <li>Fixed Bug Where Audio Visualizer Appears In Game</li>
+        <li>Added Token Achievement</li>
+        <li>Added Achievement Tab</li>
+        <li>Added Discord Achievement</li>
+        <li>Removed Testing</li>
+        <li>Added Credits Button</li>
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
