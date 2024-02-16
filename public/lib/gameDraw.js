@@ -171,7 +171,7 @@ var gameDraw = {
             six_gradient = Math.floor((now / 200) % 6),
             five_bars = Math.floor((now % 2000) / 400),
             three_bars = Math.floor((now % 2000) * 3 / 2000),
-            twentysix_bars = Math.floor((now % 2000) * 26 / 2000),
+            fourtyfive_bars = Math.floor((now % 4000) * 45 / 4000),
             blinker = 150 > now % 300,
 
             lesbian_magenta  = "#a50062",
@@ -210,7 +210,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = [nero_blue1, "#4287F5", "#418CF4", "#4092F3", "#3E97F2", "#3D9DF1", nero_blue2, "#46A6F3", "#51AAF6", "#5BADF9", "#66B1FC", nero_blue3, "#69AEF8", "#61A6F1", "#5A9FE9", "#5297E2", nero_blue4, "#4785D5", "#427BCF", "#3E70C9", "#3966C3", nero_blue5, "#3156B6", "#2C51AF", "#284BA7", "#2346A0", nero_blue6][twentysix_bars];
+        gameDraw.animatedColor.nero = [nero_blue1, "#418CF4", "#4092F3", "#3E97F2", "#3D9DF1", nero_blue2, "#46A6F3", "#51AAF6", "#5BADF9", "#66B1FC", nero_blue3, "#69AEF8", "#61A6F1", "#5A9FE9", "#5297E2", nero_blue4, "#4785D5", "#427BCF", "#3E70C9", "#3966C3", nero_blue5, "#3156B6", "#2C51AF", "#284BA7", "#2346A0", nero_blue6, "#203DA0", "#2138A7", "#2234AF", "#232FB6", nero_blue7, "#2226C4", "#1F22CB", "#1D1DD2", "#1A19D9", nero_blue8, "#1B25DD", "#1E36DA", "#2046D7", "#2357D4", nero_blue9, "#2C6ED8", "#3174DF", "#377BE7", "#3C81EE", "#4287F5"][fourtyfive_bars];
     },
     animatedColors: {
           // 
