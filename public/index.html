@@ -137,7 +137,7 @@ function PlaySound2() {
     <div id="mainWrapper">
         <div id="startMenuWrapper">
           <div class="menuTabs">
-        <a class="menuTab discordbutton" onclick="PlaySound()" onmouseover="PlaySound1()" title="Join the Nero.io Discord server!" href="https://discord.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Nero.io Discord</a>
+        <a class="menuTab discordbutton" onclick="Discordjoin()" onmouseover="PlaySound1()" title="Join the Nero.io Discord server!" href="https://discord.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Nero.io Discord</a>
         <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the game's source code" href="https://glitch.com/neroio2" target="_blank" rel="noopener noreferrer">View Source Code</a>
         <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="Old Nero.io (Nero.io 1)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">Old Nero.io</a>
         <a class="menuTab ach" onclick="displayAchievements()" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Achievements</a>
@@ -377,6 +377,11 @@ popup = ' onclick="openPopup()" '
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Nice try 💀</h1><span>i KnOw ThE tOkEn!1!!</span></div>");
                 };
+                if (localStorage.getItem("Getbacktowoooak") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord (STOP ASKING FOR SEX UPDATE BRO)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord</span></div>");
+                };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
                 } else {
@@ -385,6 +390,9 @@ popup = ' onclick="openPopup()" '
         </script>
                   </div>
               <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
+                                        <div id="startMenuSlidingTrigger2">
+                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
+                        </div>
             </div>
   <script defer>
     {
@@ -392,11 +400,12 @@ popup = ' onclick="openPopup()" '
                 document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
                 PlaySound();
             };
+                        function Discordjoin() {
+                      localStorage.setItem("Getbacktowoooak", "YOUDIDIT:D!!!");
+                PlaySound();
+            };
     }
   </script>
-                          <div id="startMenuSlidingTrigger2">
-                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
-                        </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>
