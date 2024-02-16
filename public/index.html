@@ -288,9 +288,10 @@ popup = ' onclick="openPopup()" '
                     </div>
                 </div>
                 <div class="startMenuHolder shrinkable">
-                    <span class="titleSpan slider2" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
-                    <span class="titleSpan slider3" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
-                    <div id="patchNotes" class="shadowScroll credits"></div>
+                    <span class="titleSpan slider2" tabindex="-4" onclick="PlaySound2()" title="Changes And Updates">Changelog</span>
+                    <span class="titleSpan slider3" tabindex="-4" onclick="PlaySound2()" title="Credits And Special Thanks">Credits</span>
+                    <div id="patchNotes" class="shadowScroll slider2"></div>
+                    <div id="credits" class="shadowScroll slider3"></div>
                     <div id="bottomHolder">
                         <!-- Old Taureon
                         <a class="link youtube"   href="https://www.youtube.com/arrasio">Arras.io YouTube</a>
@@ -315,7 +316,10 @@ popup = ' onclick="openPopup()" '
         </div>
     </div>
     <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
-<div id="achiev">
+                                        <div id="startMenuSlidingTrigger2">
+                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
+                        </div>
+  <div id="achiev">
     </div>
               <div class="popup" style="display: none;">
                 <h1>Title</h1>
@@ -382,9 +386,6 @@ popup = ' onclick="openPopup()" '
         </script>
                   </div>
               <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
-                                        <div id="startMenuSlidingTrigger2">
-                            <h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>
-                        </div>
             </div>
   <script defer>
     {

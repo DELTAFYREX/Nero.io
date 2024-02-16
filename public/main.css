@@ -429,7 +429,7 @@ table {
   	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1)
 }
 .slider3 {
-    position: relative;
+    position: absolute;
     right: 400px;
     width: 100%;
     -webkit-transition: right 500ms;
@@ -498,7 +498,7 @@ update {
     padding-left: 0px;
     width: 360px;
 }
-.credits {
+#credits {
     max-width: 330px;
     /*animation:pfpDefault 800ms linear both;*/
     height: calc(100% - 100px);
@@ -508,7 +508,7 @@ update {
     scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.15);
 }
 
-.credits div {
+#credits div {
     > .title {
         margin: 0;
         font-size: 1.5em;
