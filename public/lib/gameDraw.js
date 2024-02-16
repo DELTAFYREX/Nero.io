@@ -171,6 +171,7 @@ var gameDraw = {
             six_gradient = Math.floor((now / 200) % 6),
             five_bars = Math.floor((now % 2000) / 400),
             three_bars = Math.floor((now % 2000) * 3 / 2000),
+            twentysix_bars = Math.floor((now % 2000) * 26 / 2000),
             blinker = 150 > now % 300,
 
             lesbian_magenta  = "#a50062",
@@ -203,7 +204,7 @@ var gameDraw = {
         gameDraw.animatedColor.red_grey = blinker ? gameDraw.color.red : gameDraw.color.grey;
         gameDraw.animatedColor.grey_red = blinker ? gameDraw.color.grey : gameDraw.color.red;
       
-        gameDraw.animatedColor.nero = ["#4287F5", "#4287F5", "#4B90F7", "#5499F9", "#5EA3FB", "#67ACFD", "#70B5FF", "#70B5FF", "#70B5FF", "#67ACFD", "#5EA3FB", "#5499F9", "#4B90F7", "#4287F5", "#4287F5", "#4287F5", "#3F7CE3", "#3C71D0", "#3966BE", "#365BAB", "#335099", "#365BAB", "#3966BE"];
+        gameDraw.animatedColor.nero = ["#4287F5", "#4287F5", "#4B90F7", "#5499F9", "#5EA3FB", "#67ACFD", "#70B5FF", "#70B5FF", "#70B5FF", "#67ACFD", "#5EA3FB", "#5499F9", "#4B90F7", "#4287F5", "#4287F5", "#4287F5", "#3F7CE3", "#3C71D0", "#3966BE", "#365BAB", "#335099", "#365BAB", "#3966BE", "#3C71D0", "#3F7CE3", "#4287F5"][twentysix_bars];
     },
     animatedColors: {
           // 

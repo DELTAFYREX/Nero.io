@@ -1579,6 +1579,7 @@ Class.adsfoipuasdfiopu = {
         }
     ]
 }
+Class.adsfoipuasdfiopu.UPGRADE_COLOR = "animatednero",
 //wait whats stuff
 Class.placeableWall = {
     PARENT: ["rock"],
