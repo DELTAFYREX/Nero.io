@@ -6022,33 +6022,57 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
-defExports.contagion = {
-    PARENT: [defExports.genericTank],
+Class.contagion = {
+    PARENT: "genericTank",
     LABEL: 'Contagion',
     DANGER: 6,
     BODY: {
         FOV: 1.1,
         ACCELERATION: base.ACCEL * .9
     },
-    STAT_NAMES: statNames.generic,
+    STAT_NAMES: statnames.mixed,
     GUNS: [{
         POSITION: [19, 5.5, 1, 0, 0, 0, .5],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.contagi]),
-            TYPE: defExports.bullet
+            TYPE: "bullet"
         }
     }, {
         POSITION: [13, 8, 1, 0, 0, 0, 0]
     }, {
         POSITION: [4, 8, 1.7, 13, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.more_range, g.less_spread]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.morerange, g.lessspread]),
             TYPE: "trap",
             STAT_CALCULATOR: gunCalcNames.trap
         }
     }]
 };
-Class.triContagion = makeMulti(Class.contagion, 3, 'Tri-Contagion');
+Class.triContagion = makeMulti({
+    PARENT: "genericTank",
+    DANGER: 6,
+    BODY: {
+        FOV: 1.1,
+        ACCELERATION: base.ACCEL * 0.9
+    },
+    STAT_NAMES: statnames.mixed,
+    GUNS: [{
+        POSITION: [19, 5.5, 1, 0, 0, 0, .5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.contagi]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [13, 8, 1, 0, 0, 0, 0]
+    }, {
+        POSITION: [4, 8, 1.7, 13, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.morerange, g.lessspread]),
+            TYPE: "trap",
+            STAT_CALCULATOR: gunCalcNames.trap
+        }
+    }]
+}, 3, "Tri-Contagion");
 Class.autoContagion = makeAuto(Class.contagion);
 Class.fort = {
     PARENT: "genericTank",

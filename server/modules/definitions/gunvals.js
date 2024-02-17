@@ -107,9 +107,14 @@ module.exports = {
     arenaCloser: { reload: 1.25, recoil: 0.25, health: 1000, damage: 1000, pen: 1000, speed: 2.5, maxSpeed: 2.25, range: 1.4, density: 4, spray: 0.25 },
     healer: { damage: -1 },
     lowPower: { shudder: 2, health: 0.5, damage: 0.5, pen: 0.7, spray: 0.5, resist: 0.7 },
-    halfrange: { range: 0.5 },
     aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, damage: 3, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noSpread: { shudder: 0, spray: 0 },
+    lessspread: { shudder: 0.75, spread: 0.75 },
+  
+    // Range
+    doublerange: { range: 2 },
+    morerange: { range: 1.15 },
+    halfrange: { range: 0.5 },
 
     // Recoil
     tonsmorerecoil: { recoil: 4 },
