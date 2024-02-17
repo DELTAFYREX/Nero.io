@@ -5,7 +5,7 @@
 
 const { dereference } = require('../facilitators.js')
 const { base } = require('../constants.js')
-/*
+
 Math.seed = function(s) {
     var mask = 0xffffffff;
     var m_w  = (123456789 + s) & mask;
@@ -22,8 +22,7 @@ Math.seed = function(s) {
 }
 var seed = Math.random()*1e16; // can be any number
 console.log('[corruptedTanks.js] SEED: '+seed)
-*/
-module.exports = ({ Class }) => {
+
 
 	const CONFIG = {
         usedTanks: 3, // Number of tanks used per generated tank
@@ -33,14 +32,14 @@ module.exports = ({ Class }) => {
         turretsPerTank: 2, // The max amount of turrets to use from each tank
         propsPerTank: 2, // The max amount of props to use from each tank
     }
-    numTanksToMake = 100;
+    var numTanksToMake = 100;
     var defs = [];
-    let startTank = "bosses"; 
+    let startTank = Class.bosses; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
       let newObj = dereference(obj);
-      let objName = Object.getOwnPropertyNames(exports).find(item => Class[item] === obj);
+      let objName = Object.getOwnPropertyNames(Class).find(item => Class[item] === obj);
       if (handledTanks.has(objName)) return;
       handledTanks.add(objName);
       defs.push([objName, newObj]);
@@ -168,45 +167,21 @@ module.exports = ({ Class }) => {
         numTanksToMake-=30;
     }
     pages.push(numTanksToMake);
-  exports.corruptedTank_0_0 = {
-    PARENT: "genericTank",
-    LABEL: "Mega-3",
-    BODY: {
-        SPEED: 0.95 * base.SPEED,
-    },
-    DANGER: 7,
-    FACING_TYPE: ["spin", {speed: 0.02}],
-    TURRETS: [
-        {
-            POSITION: [14, 8, 0, 0, 190, 0],
-            TYPE: "megaAutoTankgun",
-        },
-        {
-            POSITION: [14, 8, 0, 120, 190, 0],
-            TYPE: "megaAutoTankgun",
-        },
-        {
-            POSITION: [14, 8, 0, 240, 190, 0],
-            TYPE: "megaAutoTankgun",
-        },
-    ],
-}
-
     
     for (let page=0;page<pages.length;page++) {
         let generatedCorruptedTanks = [];
         for (let j=0;j<pages[page];j++) {
-            exports[`corruptedTank_${page}_${j}`] = generateNewTank();
+            Class[`corruptedTank_${page}_${j}`] = generateNewTank();
             generatedCorruptedTanks.push(`corruptedTank_${page}_${j}`)
         }
         if (page === 0) {
-            exports.corruptedTankMenu = {
+            Class.corruptedTankMenu = {
                 PARENT: "menu",
                 LABEL: "Corrupted Tanks",
                 UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
             };
         } else {
-            exports[`corruptedTankMenuPage_${page+1}`] = {
+            Class[`corruptedTankMenuPage_${page+1}`] = {
                 PARENT: "menu",
                 LABEL: `Page ${page+1}`,
                 UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
@@ -214,8 +189,4 @@ module.exports = ({ Class }) => {
         }
         
     }
-
-
-
-
-};
+Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
