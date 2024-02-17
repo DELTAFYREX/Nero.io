@@ -354,6 +354,22 @@ a.menuTab.ach:hover {
     box-shadow: none;
 }
 
+a.menuTab.cred {
+  background: #2bab2f  url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Trophy.png?v=1708025693434") 3px 2px/23px no-repeat;
+  padding: 6px 10px 7px 28px;
+        border-bottom: 2px solid #156637;
+    box-shadow: inset 0 -2px #156637;
+    -webkit-box-shadow: inset 0 -2px #156637;
+      animation:pfpDefault 800ms linear both;
+}
+a.menuTab.cred:active,
+a.menuTab.cred:hover {
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 a.menuTab.stat {
   background: #1E8449  url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/play.png") 3px 2px/23px no-repeat;
   padding: 6px 10px 7px 28px;
