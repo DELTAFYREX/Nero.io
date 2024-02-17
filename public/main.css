@@ -625,7 +625,7 @@ update {
     -webkit-border-radius: 5px;
 }
 
-.hideongamestart {
+#achiev {
   position: relative;
   z-index: 3;
   }
