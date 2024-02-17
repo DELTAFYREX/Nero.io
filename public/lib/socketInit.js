@@ -841,6 +841,9 @@ const socketInit = port => {
                 global.gameHeight = m[1];
                 global.roomSetup = JSON.parse(m[2]);
                 break;
+            case 'info': // info
+                global.message = m[0];
+                console.log(m[0]);
           case "achieve":
                 /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
                 let achievementId = get.next() // gets the id of the achievement, dw about this part
