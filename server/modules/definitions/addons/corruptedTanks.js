@@ -4,6 +4,7 @@
 // "[PARENT ADDON NAME]-[EXTENSION NAME].js", to make sure that it would run after that addon ran.
 
 const { dereference } = require('../facilitators.js')
+const { base } = require('../constants.js')
 /*
 Math.seed = function(s) {
     var mask = 0xffffffff;
@@ -167,22 +168,45 @@ module.exports = ({ Class }) => {
         numTanksToMake-=30;
     }
     pages.push(numTanksToMake);
+  exports.corruptedTank_0_0 = {
+    PARENT: "genericTank",
+    LABEL: "Mega-3",
+    BODY: {
+        SPEED: 0.95 * base.SPEED,
+    },
+    DANGER: 7,
+    FACING_TYPE: ["spin", {speed: 0.02}],
+    TURRETS: [
+        {
+            POSITION: [14, 8, 0, 0, 190, 0],
+            TYPE: "megaAutoTankgun",
+        },
+        {
+            POSITION: [14, 8, 0, 120, 190, 0],
+            TYPE: "megaAutoTankgun",
+        },
+        {
+            POSITION: [14, 8, 0, 240, 190, 0],
+            TYPE: "megaAutoTankgun",
+        },
+    ],
+}
 
     
     for (let page=0;page<pages.length;page++) {
         let generatedCorruptedTanks = [];
         for (let j=0;j<pages[page];j++) {
-            Class[`corruptedTank_${page}_${j}`] = generateNewTank();
+            exports[`corruptedTank_${page}_${j}`] = generateNewTank();
             generatedCorruptedTanks.push(`corruptedTank_${page}_${j}`)
         }
         if (page === 0) {
-            Class.corruptedTankMenu = {
+            exports.corruptedTankMenu = {
                 PARENT: "menu",
                 LABEL: "Corrupted Tanks",
                 UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
             };
         } else {
-            Class[`corruptedTankMenuPage_${page+1}`] = {
+            exports[`corruptedTankMenuPage_${page+1}`] = {
                 PARENT: "menu",
                 LABEL: `Page ${page+1}`,
                 UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
@@ -194,5 +218,4 @@ module.exports = ({ Class }) => {
 
 
 
-    Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
 };
