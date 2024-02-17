@@ -309,7 +309,7 @@ popup = ' onclick="openPopup()" '
                         <a class="link developer" href="https://sites.google.com/view/deltafyrex/home" title="the developer of this game" onclick="PlaySound2()" onmouseover="PlaySound1()">The Shithead Dev</a>
                         <a class="link original"  href="https://arras.io" title="arras.io" onclick="PlaySound()" onmouseover="PlaySound1()">Arras.io</a>
                         <a class="link youtube"   href="https://youtube.com/@deltafyrex" title="the devs youtube page (subscribe pls)" onclick="PlaySound1()" onmouseover="PlaySound1()">Youtube</a>
-                        <a class="link github"    id="startMenuSlidingTrigger2" title="hi" onclick="PlaySound()" onmouseover="PlaySound1()">View Credits</a>
+                        <a class="link github"    id="startMenuSlidingTrigger2" title="View Credits And Special Thanks" onmouseover="PlaySound1()">View Credits</a>
                     </div>
                 </div>
             </div>
@@ -429,7 +429,7 @@ popup = ' onclick="openPopup()" '
             clicked2 = !clicked2;
             if (clicked2) {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
+                $(this).html('<a id="startMenuSlidingTrigger2" class="link github nopadding" title="View The Games Changelog" onclick="PlaySound()" onmouseover="PlaySound1()">View Changelog</h3>');
                 $(".slider2").css({ "right": "400px" });
                 $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
@@ -438,7 +438,7 @@ popup = ' onclick="openPopup()" '
                 $(".slider3").css({ "z-index": "0" });
             } else {
                 PlaySound3()
-                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
+                $(this).html('<a class="link github nopadding"    id="startMenuSlidingTrigger2" title="View Credits And Special Thanks" onclick="PlaySound()" onmouseover="PlaySound1()">View Credits</a>');
                 $(".slider2").css({ "right": "0px" });
                 $(".slider3").css({ "right": "400px" });
                 $(".slider2").css({ "position": "relative" });
