@@ -6022,6 +6022,90 @@ Class.autoCloner = makeAuto({
     }
   ]
 }, "Auto-Cloner");
+defExports.contagion = {
+    PARENT: [defExports.genericTank],
+    LABEL: 'Contagion',
+    DANGER: 6,
+    BODY: {
+        FOV: 1.1,
+        ACCELERATION: base.ACCEL * .9
+    },
+    STAT_NAMES: statNames.generic,
+    GUNS: [{
+        POSITION: [19, 5.5, 1, 0, 0, 0, .5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.contagi]),
+            TYPE: defExports.bullet
+        }
+    }, {
+        POSITION: [13, 8, 1, 0, 0, 0, 0]
+    }, {
+        POSITION: [4, 8, 1.7, 13, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.more_range, g.less_spread]),
+            TYPE: "trap",
+            STAT_CALCULATOR: gunCalcNames.trap
+        }
+    }]
+};
+Class.triContagion = makeMulti(Class.contagion, 3, 'Tri-Contagion');
+Class.autoContagion = makeAuto(Class.contagion);
+Class.fort = {
+    PARENT: "genericTank",
+    LABEL: "Fort",
+    DANGER: 7,
+    BODY: {
+        SPEED: base.SPEED * .8,
+        ACCELERATION: base.ACCEL * .9,
+        FOV: 1.15
+    },
+    STAT_NAMES: statnames.mixed,
+    GUNS: [{
+        POSITION: [22, 5.5, 1, 0, 0, 0, .5],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.contagi]),
+            TYPE: "bullet"
+        }
+    }, {
+        POSITION: [18, 12, 1, 0, 0, 0, 0]
+    }, {
+        POSITION: [2, 12, 1.1, 18, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap, g.block]),
+            TYPE: "block"
+        }
+    }]
+};
+Class.droneTrapper = {
+    PARENT: "genericTank",
+    LABEL: "Magician",
+    DANGER: 7,
+    BODY: {
+        FOV: 1.1,
+        ACCELERATION: base.ACCEL * .9
+    },
+    STAT_NAMES: statnames.mixed,
+    GUNS: [{
+        POSITION: [6, 12, 1.2, 8, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.lesspower]),
+            TYPE: "drone",
+            AUTOFIRE: true,
+            SYNCS_SKILLS: true,
+            STAT_CALCULATOR: gunCalcNames.drone,
+            MAX_CHILDREN: 6
+        }
+    }, {
+        POSITION: [13, 8, 1, 0, 0, 0, 0]
+    }, {
+        POSITION: [4, 8, 1.7, 13, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.trap]),
+            TYPE: "trap",
+            STAT_CALCULATOR: gunCalcNames.trap
+        }
+    }]
+}
 Class.trojan = {
     PARENT: "genericTank",
     LABEL: "Trojan",
