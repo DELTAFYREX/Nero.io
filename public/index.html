@@ -141,7 +141,6 @@ function PlaySound2() {
         <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the game's source code" href="https://glitch.com/neroio2" target="_blank" rel="noopener noreferrer">View Source Code</a>
         <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="Old Nero.io (Nero.io 1)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">Old Nero.io</a>
         <a class="menuTab ach" onclick="displayAchievements()" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Achievements</a>
-        <a class="menuTab cred" id="startMenuSlidingTrigger2" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Vie</a>
           </div>
             <div id="startMenu">
                 <div class="startMenuHolder">
@@ -317,6 +316,11 @@ popup = ' onclick="openPopup()" '
         </div>
     </div>
     <td><div><label><input id="optSound" tabindex="-1" class="checkbox" type="checkbox" title="im too lazy to make a button right now just sit there, cry and fucking deal with it wahh wahh wahh"> [beta] MUSIC</label></div></td>
+  <div id="hideongamestart">
+  <div id="startMenuSlidingTrigger2">
+                            <h3 class="nopadding" tabindex="1" onmouseover="PlaySound1()">view credits</h3>
+                        </div>
+  </div>
   <div id="achiev">
     </div>
               <div class="popup" style="display: none;">
@@ -432,7 +436,7 @@ popup = ' onclick="openPopup()" '
             clicked2 = !clicked2;
             if (clicked2) {
                 PlaySound3()
-                $(this).html('<a class="menuTab cred" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Vie</a>');
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view changelog</h3>');
                 $(".slider2").css({ "right": "400px" });
                 $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
@@ -441,7 +445,7 @@ popup = ' onclick="openPopup()" '
                 $(".slider3").css({ "z-index": "0" });
             } else {
                 PlaySound3()
-                $(this).html('<a class="cred" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Vie</a>');
+                $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view credits</h3>');
                 $(".slider2").css({ "right": "0px" });
                 $(".slider3").css({ "right": "400px" });
                 $(".slider2").css({ "position": "relative" });
