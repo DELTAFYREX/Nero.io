@@ -3,7 +3,7 @@
 // Addons that are dependant on other addons should be named something like
 // "[PARENT ADDON NAME]-[EXTENSION NAME].js", to make sure that it would run after that addon ran.
 
-const { dereference } = require('../facilitators.js')
+const { dereference, menu } = require('../facilitators.js')
 const { base } = require('../constants.js')
 
 Math.seed = function(s) {
@@ -56,7 +56,7 @@ console.log('[corruptedTanks.js] SEED: '+seed)
     }
     
     
-    iterateThroughUpgrades("Class."startTank);
+    iterateThroughUpgrades("Class." + startTank);
     let maxDefLength = defs.length
     for(let arr of defs){
         arr[1].MAX_CHILDREN = CONFIG.maxChildren
@@ -175,18 +175,11 @@ console.log('[corruptedTanks.js] SEED: '+seed)
             generatedCorruptedTanks.push(`corruptedTank_${page}_${j}`)
         }
         if (page === 0) {
-            Class.corruptedTankMenu = {
-                PARENT: "menu",
-                LABEL: "Corrupted Tanks",
-                UPGRADES_TIER_0: (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks])
-            };
+            Class.corruptedTankMenu = menu("Corrupted Tanks");
+            Class.corruptedTankMenu.UPGRADES_TIER_0 = (pages.length > 1) ? ([...generatedCorruptedTanks, `corruptedTankMenuPage_2`]) : ([...generatedCorruptedTanks]);
         } else {
-            Class[`corruptedTankMenuPage_${page+1}`] = {
-                PARENT: "menu",
-                LABEL: `Page ${page+1}`,
-                UPGRADES_TIER_0: (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`])
-            };
-        }
-        
-    }
+            Class[`corruptedTankMenuPage_${page+1}`] = menu(`Page ${page+1}`)
+            Class[`corruptedTankMenuPage_${page+1}`].UPGRADES_TIER_0 = (page === pages.length-1) ? ([...generatedCorruptedTanks]) : ([...generatedCorruptedTanks, `corruptedTankMenuPage_${page+2}`]);
+          };
+        };
 Class.addons.UPGRADES_TIER_0.push('corruptedTankMenu');
