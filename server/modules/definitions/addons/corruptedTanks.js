@@ -34,7 +34,7 @@ console.log('[corruptedTanks.js] SEED: '+seed)
     }
     var numTanksToMake = 100;
     var defs = [];
-    let startTank = Class.bosses; 
+    let startTank = "bosses"; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
@@ -56,7 +56,7 @@ console.log('[corruptedTanks.js] SEED: '+seed)
     }
     
     
-    iterateThroughUpgrades(startTank);
+    iterateThroughUpgrades("Class."startTank);
     let maxDefLength = defs.length
     for(let arr of defs){
         arr[1].MAX_CHILDREN = CONFIG.maxChildren
