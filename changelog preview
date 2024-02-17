@@ -37,6 +37,8 @@
         <li>added credits-changelog animation transition</li>
         <li>added all credits</li>
         <li>moved credits button (its 1:08 am im soooooo tired)</li>
+        <li>Fixed Game Breaking Bug</li>
+        <li>Added Contagion Branch To Subduer & Trapper</li>
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
