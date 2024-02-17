@@ -32,6 +32,11 @@
         <li>Added Discord Achievement</li>
         <li>Removed Testing</li>
         <li>Added Credits Button</li>
+        <li>Added Credits Tab</li>
+        <li>fixed credits interfering with eachother</li>
+        <li>added credits-changelog animation transition</li>
+        <li>added all credits</li>
+        <li>moved credits button (its 1:08 am im soooooo tired)</li>
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
