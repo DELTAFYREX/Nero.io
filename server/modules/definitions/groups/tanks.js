@@ -6059,7 +6059,7 @@ Class.triContagion = makeMulti({
     GUNS: [{
         POSITION: [19, 5.5, 1, 0, 0, 0, .5],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.basic, g.contagi]),
+            SHOOT_SETTINGS: combineStats([g.basic, g.contagi, g.flankGuard]),
             TYPE: "bullet"
         }
     }, {
@@ -6067,7 +6067,7 @@ Class.triContagion = makeMulti({
     }, {
         POSITION: [4, 8, 1.7, 13, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.morerange, g.lessspread]),
+            SHOOT_SETTINGS: combineStats([g.trap, g.morerange, g.lessspread, g.flankGuard]),
             TYPE: "trap",
             STAT_CALCULATOR: gunCalcNames.trap
         }
@@ -6095,8 +6095,8 @@ Class.fort = {
     }, {
         POSITION: [2, 12, 1.1, 18, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.trap, g.block]),
-            TYPE: "block"
+            SHOOT_SETTINGS: combineStats([g.trap, g.setTrap]),
+            TYPE: "setTrap"
         }
     }]
 };
@@ -6112,7 +6112,7 @@ Class.droneTrapper = {
     GUNS: [{
         POSITION: [6, 12, 1.2, 8, 0, 0, 0],
         PROPERTIES: {
-            SHOOT_SETTINGS: combineStats([g.drone, g.over, g.lesspower]),
+            SHOOT_SETTINGS: combineStats([g.drone, g.overseer, g.lesspower]),
             TYPE: "drone",
             AUTOFIRE: true,
             SYNCS_SKILLS: true,
