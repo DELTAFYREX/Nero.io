@@ -169,6 +169,7 @@ module.exports = {
         spray: 180,
         resist: 1
     },
+    lesspower: { reload: 1, recoil: 1, shudder: 1, size: 1, health: .9, damage: .9, pen: .9, speed: 1, maxSpeed: 1, range: 1, density: 1, spray: 1, resist: 1 },
     slightlyweaker: { health: 0.8, damage: 0.8, pen: 0.8 },
     grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1
     },
