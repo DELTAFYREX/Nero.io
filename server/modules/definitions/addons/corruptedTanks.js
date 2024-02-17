@@ -34,7 +34,7 @@ module.exports = ({ Class }) => {
     }
     numTanksToMake = 100;
     var defs = [];
-    let startTank = Class.bosses; 
+    let startTank = "Class.bosses"; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
