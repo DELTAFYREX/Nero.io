@@ -34,12 +34,12 @@ module.exports = ({ Class }) => {
     }
     numTanksToMake = 100;
     var defs = [];
-    let startTank = "Class.bosses"; 
+    let startTank = "bosses"; 
     let handledTanks = new Set(); 
     
     function iterateThroughUpgrades(obj) {
       let newObj = dereference(obj);
-      let objName = Object.getOwnPropertyNames(Class).find(item => Class[item] === obj);
+      let objName = Object.getOwnPropertyNames(exports).find(item => Class[item] === obj);
       if (handledTanks.has(objName)) return;
       handledTanks.add(objName);
       defs.push([objName, newObj]);

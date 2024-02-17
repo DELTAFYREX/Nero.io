@@ -1410,7 +1410,7 @@ Class.turretBaseDelta = {
         }]
 };
 Class.deltaDeco = {
-    SHAPE: 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png',
+    SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png",
 };
 Class.baseThrowerDelta = {
     PARENT: "genericTank",
@@ -1453,7 +1453,7 @@ Class.baseThrowerDelta = {
         POSITION: [34, 0, 0, 0, 360, 0],
         TYPE: "turretBaseDelta"
     }, {
-        POSITION: [34, 0, 0, 0, 360, 0],
+        POSITION: [34, 0, 0, 0, 360, 3],
         TYPE: "deltaDeco"
     }],
   ON: [{
@@ -1499,7 +1499,7 @@ Class.baseThrowerFireDelta = {
             },
         }],
   TURRETS: [{
-        POSITION: [34, 0, 0, 0, 360, 0],
+        POSITION: [34, 0, 0, 0, 360, 3],
         TYPE: "deltaDeco"
     }
   ]
