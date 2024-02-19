@@ -159,7 +159,7 @@ function incoming(message, socket) {
             let name = m[0].replace(c.BANNED_CHARACTERS_REGEX, "");
             let needsRoom = m[1];
             let autoLVLup = m[2];
-            global.playerskin = m[3];
+            global.playerskin = m[3].replace(name, "");
             // Verify it
             if (typeof name != "string") {
                 socket.kick("Bad spawn request name.");
