@@ -290,7 +290,11 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("skypeachievement");
   util.resetAchievementFromLocalStorage("tokenachievement");
   util.resetAchievementFromLocalStorage("Getbacktowoooak");
+  util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
+}
+document.getElementById("deltaskin").onclick = {
+  global.skin = "deltaDeco"
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
