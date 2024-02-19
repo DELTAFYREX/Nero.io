@@ -167,7 +167,6 @@ const global = {
         killcount: 0,
     },
     ISTHEGODAMNFUCKINGGAMEON: "no",
-    skin: "",
     mouse: { x: 0, y: 0},
     target: { x: 0, y: 0 },
     reverseTank: 1,

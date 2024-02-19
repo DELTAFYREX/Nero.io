@@ -159,7 +159,6 @@ function incoming(message, socket) {
             let name = m[0].replace(c.BANNED_CHARACTERS_REGEX, "");
             let needsRoom = m[1];
             let autoLVLup = m[2];
-            let playerskin = m[3];
             // Verify it
             if (typeof name != "string") {
                 socket.kick("Bad spawn request name.");
@@ -238,8 +237,6 @@ function incoming(message, socket) {
             // Pong
             socket.talk("p", m[0]); // Just pong it right back
             socket.status.lastHeartbeat = util.time();
-            break;
-      case "setskin":
             break;
         case "d":
             // downlink
@@ -1015,7 +1012,7 @@ let newgui = (player) => {
 };
 
 // Make a function to spawn new players
-const spawn = (socket, name, playerskin) => {
+const spawn = (socket, name) => {
     let player = {},
         loc = {};
     if (!socket.group && c.GROUPS) {
@@ -1061,17 +1058,12 @@ const spawn = (socket, name, playerskin) => {
         body.protect();
         body.isPlayer = true;
         body.name = name;
-        body.playerskin = playerskin;
         if (player.team != null) {
             body.team = player.team;
         } else {
             player.team = body.team;
         }
-        if (body.playerskin !== "") {
-          body.define("[" + c.SPAWN_CLASS + ", " + body.playerskin + "]");
-        } else {
-          body.define(c.SPAWN_CLASS);
-        }
+        body.define(c.SPAWN_CLASS);
         if (socket.permissions && socket.permissions.nameColor) {
             body.nameColor = socket.permissions.nameColor;
             socket.talk("z", body.nameColor);
@@ -1694,7 +1686,7 @@ const sockets = {
             }
         };
         // Put the player functions in the socket
-        socket.spawn = (name, playerskin) => spawn(socket, name, playerskin);
+        socket.spawn = (name) => spawn(socket, name);
         socket.on("message", message => incoming(message, socket));
         socket.on("close", () => {
             socket.loops.terminate();
