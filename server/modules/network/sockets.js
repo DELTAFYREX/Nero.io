@@ -486,7 +486,6 @@ function incoming(message, socket) {
                 if (player.body != null && socket.permissions) {
               player.body.settings.leaderboardable = !player.body.settings.leaderboardable;
               player.body.sendMessage((player.body.settings.leaderboardable ? "You have been added to the leaderboard" : "You have been removed from the leaderboard."));
-              player.body.sendMessage((player.entity.class))
                 }
             break;
         case "keyStrong"://keyStrong
@@ -1066,7 +1065,7 @@ const spawn = (socket, name) => {
             player.team = body.team;
         }
         if (global.playerskin !== "") {
-          body.define('["' + c.SPAWN_CLASS + '", "' + "twin" + '"]');
+          body.define(c.SPAWN_CLASS, global.playerskin);
         } else {
           body.define(c.SPAWN_CLASS);
         }
