@@ -1099,6 +1099,9 @@ input [type="image"]:focus {
     display: block;
     border: 3.5px solid rgba(0, 0, 0, 0.35);
 }
+.metasip {
+    background: url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/svg0.svg") 4px 3px/21px no-repeat; 
+}
 
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
