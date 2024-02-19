@@ -25,4 +25,6 @@ Class.A = {
             POSITION: [6.5, 20, 0, 0, 0, 0],
             TYPE: "sandwichdeco"
   }]
-}
+};
+
+Class.addons.UPGRADES_TIER_0.push("A")
