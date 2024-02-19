@@ -238,6 +238,8 @@ function incoming(message, socket) {
             socket.talk("p", m[0]); // Just pong it right back
             socket.status.lastHeartbeat = util.time();
             break;
+      case "setskin":
+            break;
         case "d":
             // downlink
             if (m.length !== 1) {
