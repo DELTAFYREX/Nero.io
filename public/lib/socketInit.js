@@ -822,7 +822,7 @@ const socketInit = port => {
             case 'w': // welcome to the game
                 if (m[0]) { // Ask to spawn
                     console.log('The server has welcomed us to the game room. Sending spawn request.');
-                    socket.talk('s', global.playerName, 1, 1 * settings.game.autoLevelUp);
+                    socket.talk('s', global.playerName, 1, 1 * settings.game.autoLevelUp, global.skin);
                     global.message = '';
                 }
             break;
