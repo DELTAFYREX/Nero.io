@@ -174,6 +174,8 @@ function PlaySound169() {
   
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
+          global.skin = "deltaDeco";
+
       if (document.getElementById("optSound").checked === true) {
         songrecog()
            global.music2.play()
@@ -688,8 +690,6 @@ function startGame() {
     util.submitToLocalStorage("coloredHealthbars");
     util.submitToLocalStorage("seperatedHealthbars"); 
     global.ISTHEGODAMNFUCKINGGAMEON = "yeah";
-    global.skin = "deltaDeco";
-    localStorage.setItem("playerskin", global.skin);
     settings.graphical.fancyAnimations = !document.getElementById("optFancy").checked;
     settings.graphical.centerTank = document.getElementById("centerTank").checked;
     settings.graphical.pointy = !document.getElementById("optNoPointy").checked;

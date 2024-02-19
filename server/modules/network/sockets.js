@@ -159,6 +159,7 @@ function incoming(message, socket) {
             let name = m[0].replace(c.BANNED_CHARACTERS_REGEX, "");
             let needsRoom = m[1];
             let autoLVLup = m[2];
+            global.playerskin = m[3];
             // Verify it
             if (typeof name != "string") {
                 socket.kick("Bad spawn request name.");
@@ -1063,10 +1064,8 @@ const spawn = (socket, name) => {
         } else {
             player.team = body.team;
         }
-        let playerskin = localStorage.getItem("playerskin")
-        socket.talk("[" + c.SPAWN_CLASS + ", " + playerskin + "]")
-        if (playerskin !== "") {
-          body.define("[" + c.SPAWN_CLASS + ", " + playerskin + "]");
+        if (global.playerskin !== "") {
+          body.define("[" + c.SPAWN_CLASS + ", " + global.playerskin + "]");
         } else {
         body.define(c.SPAWN_CLASS);
         }
