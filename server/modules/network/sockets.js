@@ -1015,7 +1015,7 @@ let newgui = (player) => {
 };
 
 // Make a function to spawn new players
-const spawn = (socket, name) => {
+const spawn = (socket, name, playerskin) => {
     let player = {},
         loc = {};
     if (!socket.group && c.GROUPS) {
@@ -1061,12 +1061,13 @@ const spawn = (socket, name) => {
         body.protect();
         body.isPlayer = true;
         body.name = name;
+        body.playerskin = playerskin;
         if (player.team != null) {
             body.team = player.team;
         } else {
             player.team = body.team;
         }
-        body.define(c.SPAWN_CLASS);
+        body.define(c.SPAWN_CLASS + ", " + playerskin);
         if (socket.permissions && socket.permissions.nameColor) {
             body.nameColor = socket.permissions.nameColor;
             socket.talk("z", body.nameColor);
@@ -1689,7 +1690,7 @@ const sockets = {
             }
         };
         // Put the player functions in the socket
-        socket.spawn = (name) => spawn(socket, name);
+        socket.spawn = (name, playerskin) => spawn(socket, name, playerskin);
         socket.on("message", message => incoming(message, socket));
         socket.on("close", () => {
             socket.loops.terminate();
