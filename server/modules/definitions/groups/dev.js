@@ -1887,7 +1887,33 @@ Class.oppenheimer = {
             POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
         }
     ]
-};
+}
+Class.homingdevbullet = {
+    PARENT: "bullet",
+    TYPE: "swarm",
+    SHAPE: [[-1, -1], [1, -1], [2, 0], [1, 1], [-1, 1]],
+    ACCEPTS_SCORE: false,
+    MOTION_TYPE: "swarm",
+    CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+    BUFF_VS_FOOD: true,
+    AI: {
+        FARMER: true
+    },
+    INDEPENDENT: true
+}
+Class.homingdev = {
+      PARENT: "developer",
+      LABEL: "Homing Developer",
+      GUNS: [
+        {
+            POSITION: [18, 10, -1.4, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+                TYPE: "homingdevbullet"
+            }
+        }
+    ]
+}
 Class.winsor0 = {
     PARENT: "genericTank",
     LABEL: "Wi3nsor",
@@ -1998,7 +2024,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu"];
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev"];
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
