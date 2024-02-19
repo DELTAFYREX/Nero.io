@@ -1065,9 +1065,9 @@ const spawn = (socket, name) => {
             player.team = body.team;
         }
         if (global.playerskin !== "") {
-          body.define('["' + c.SPAWN_CLASS + '", "' + global.playerskin + '"]');
+          body.define('["' + c.SPAWN_CLASS + '", "' + "twin" + '"]');
         } else {
-        body.define(c.SPAWN_CLASS);
+          body.define(c.SPAWN_CLASS);
         }
         if (socket.permissions && socket.permissions.nameColor) {
             body.nameColor = socket.permissions.nameColor;
