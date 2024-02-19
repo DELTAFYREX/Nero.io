@@ -689,6 +689,7 @@ function startGame() {
     util.submitToLocalStorage("seperatedHealthbars"); 
     global.ISTHEGODAMNFUCKINGGAMEON = "yeah";
     global.skin = "deltaDeco";
+    localStorage.setItem("playerskin", global.skin);
     settings.graphical.fancyAnimations = !document.getElementById("optFancy").checked;
     settings.graphical.centerTank = document.getElementById("centerTank").checked;
     settings.graphical.pointy = !document.getElementById("optNoPointy").checked;
