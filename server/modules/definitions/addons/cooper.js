@@ -1,3 +1,5 @@
+const { combineStats } = require('../facilitators.js');
+
 Class.A = {
     PARENT: "genericTank",
     LABEL: "Single",
