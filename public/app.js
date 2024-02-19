@@ -175,7 +175,6 @@ function PlaySound169() {
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
     document.getElementById("optSound").onclick = () => {
           global.skin = "deltaDeco";
-
       if (document.getElementById("optSound").checked === true) {
         songrecog()
            global.music2.play()

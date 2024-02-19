@@ -151,7 +151,7 @@ function incoming(message, socket) {
                 socket.kick("Trying to spawn while already alive.");
                 return 1;
             }
-            if (m.length !== 3) {
+            if (m.length !== 4) {
                 socket.kick("Ill-sized spawn request.");
                 return 1;
             }
@@ -1065,7 +1065,7 @@ const spawn = (socket, name) => {
             player.team = body.team;
         }
         if (global.playerskin !== "") {
-          body.define("[" + c.SPAWN_CLASS + ", " + global.playerskin + "]");
+          body.define('["' + c.SPAWN_CLASS + '", "' + global.playerskin + '"]');
         } else {
         body.define(c.SPAWN_CLASS);
         }

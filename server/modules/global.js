@@ -8,7 +8,7 @@ global.protocol = require(".././lib/fasttalk.js");
 
 // Global Variables (These must come before we import from the modules folder.)
 global.fps = "Unknown";
-global.playerskin = ""
+global.playerskin = "";
 global.minimap = [];
 global.entities = [];
 global.views = [];
