@@ -290,6 +290,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("skypeachievement");
   util.resetAchievementFromLocalStorage("tokenachievement");
   util.resetAchievementFromLocalStorage("Getbacktowoooak");
+  util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
 }
 fetch("changelog.html", { cache: "no-cache" })

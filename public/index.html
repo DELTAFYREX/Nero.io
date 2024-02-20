@@ -377,6 +377,11 @@ popup = ' onclick="openPopup()" '
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord</span></div>");
                 };
+                if (localStorage.getItem("creditsachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page (heh)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page</span></div>");
+                };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
                 } else {
