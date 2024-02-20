@@ -1065,7 +1065,7 @@ const spawn = (socket, name) => {
             player.team = body.team;
         }
         if (global.playerskin !== "") {
-          body.define([global.playerskin, c.SPAWN_CLASS]);
+          body.define([c.SPAWN_CLASS, global.playerskin]);
         } else {
           body.define(c.SPAWN_CLASS);
         }

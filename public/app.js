@@ -294,7 +294,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("pissio");
 }
 document.getElementById("deltaskin").onclick = () => {
-  global.skin = "deltaDeco"
+  global.skin = "deltaDecoskin"
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
