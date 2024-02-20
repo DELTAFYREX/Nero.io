@@ -274,10 +274,10 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
   global.music2.songname = "Longing --- Amaryllis"
 }
 }
-if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 0) {
-  if (global.gameStart) {
-    util.submitAchievementToLocalStorage("lagachievement");
-  }
+function lagachloop() {
+    if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 25) {
+        util.submitAchievementToLocalStorage("lagachievement");
+    }
 }
 /*if (localStorage.getItem("killachievement") !== "YOUDIDIT:D!!!") {
   if (global.achievements.kills >= 4) {
@@ -2292,6 +2292,7 @@ function animloop() {
     ctx.lineJoin = "round";
     // Draw the game
     if (global.gameStart && !global.disconnected) {
+        lagachloop();
         global.time = getNow();
         if (global.time - lastPing > 1000) {
             // Latency
