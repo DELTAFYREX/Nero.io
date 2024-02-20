@@ -293,6 +293,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
 }
+
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
