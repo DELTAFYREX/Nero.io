@@ -287,7 +287,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("killachievement");
   util.resetAchievementFromLocalStorage("killachievement2");
   util.resetAchievementFromLocalStorage("lagachievement");
-  util.resetAchievementFromLocalStorage("skypeachievement");
+  util.resetAchievementFromLocalStorage("skypemoment");
   util.resetAchievementFromLocalStorage("tokenachievement");
   util.resetAchievementFromLocalStorage("Getbacktowoooak");
   util.resetAchievementFromLocalStorage("creditsachievement");
