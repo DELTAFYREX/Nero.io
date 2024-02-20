@@ -9,3 +9,10 @@ TURRETS: [{
         TYPE: "deltaDeco"
     }]
 };
+
+Class.cswmskin = {
+TURRETS: [{
+        POSITION: [34, 0, 0, 0, 360, 3],
+        TYPE: "sandwichdeco"
+    }]
+};

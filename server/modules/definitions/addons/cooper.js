@@ -22,7 +22,7 @@ Class.A = {
         }
     ],
   TURRETS: [{
-            POSITION: [6.5, 20, 0, 0, 0, 0],
+            POSITION: [11, 0, 0, 0, 0, 99],
             TYPE: "sandwichdeco"
   }]
 };

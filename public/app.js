@@ -246,6 +246,7 @@ function PlaySound169() {
             }
          return; };
 document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin"
+document.getElementById("cswmskin").onclick = () => global.skin = "cswmskin"
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
