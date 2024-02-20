@@ -438,7 +438,8 @@ popup = ' onclick="openPopup()" '
             clicked2 = !clicked2;
             if (clicked2) {
                 document.getElementById("startMenuSlidingTrigger2").innerHTML="View Changelog";
-                PlaySound3()
+                PlaySound3();
+                localStorage.setItem("creditsachievement", "YOUDIDIT:D!!!");
                 $(".slider2").css({ "right": "400px" });
                 $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
