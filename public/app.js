@@ -245,7 +245,7 @@ function PlaySound169() {
           global.music2.songname = "Not Playing";
             }
          return; };
-
+document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin"
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
@@ -274,7 +274,9 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 }
 if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 0) {
-  util.submitAchievementToLocalStorage("lagachievement");
+  if (global.gameStart) {
+    util.submitAchievementToLocalStorage("lagachievement");
+  }
 }
 /*if (localStorage.getItem("killachievement") !== "YOUDIDIT:D!!!") {
   if (global.achievements.kills >= 4) {
