@@ -337,8 +337,7 @@ popup = ' onclick="openPopup()" '
                 let grayachievementbox = 'class="achievementsItem autoBorder greyachievement"'
                 let grueachievementbox = 'class="achievementsItem autoBorder grueachievement"'
                 let bleenachievementbox = 'class="achievementsItem autoBorder bleenachievement"
-                let getskin1 = 'onclick="setskin('
-                let getskin2 = ')"'
+                let deltaskin = 'id="deltaskin" '
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>New Beginnings</h1><span>Hi you have the join game achievement :D</span></div>");
                 } else {
@@ -380,7 +379,7 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + grayachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord</span></div>");
                 };
                 if (localStorage.getItem("creditsachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + setskin1 + ""greenachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page (heh)</span></div>");
+                  document.write("<div " + deltaskin + greenachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page (heh)</span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page</span></div>");
                 };
@@ -394,19 +393,16 @@ popup = ' onclick="openPopup()" '
               <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
             </div>
   <script defer>
-    import { global } from "./lib/global.js";
-      function displayAchievements() {
-        document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
-        PlaySound();
-      };
-      function Discordjoin() {
-        localStorage.setItem("Getbacktowoooak", "YOUDIDIT:D!!!");
-        PlaySound();
-      };
-      function getskin(skin) {
-        PlaySound();
-        global.skin = skin
-      };
+    {
+                  function displayAchievements() {
+                document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
+                PlaySound();
+            };
+                        function Discordjoin() {
+                      localStorage.setItem("Getbacktowoooak", "YOUDIDIT:D!!!");
+                PlaySound();
+            };
+    }
   </script>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>

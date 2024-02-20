@@ -1102,9 +1102,6 @@ input [type="image"]:focus {
 .metasip {
     background: url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/svg0.svg") 4px 3px/21px no-repeat; 
 }
-#deltaskin {
-  opacity: 1;
-}
 
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
