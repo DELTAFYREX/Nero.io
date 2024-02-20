@@ -336,8 +336,7 @@ popup = ' onclick="openPopup()" '
                 let greenachievementbox = 'class="achievementsItem autoBorder greenachievement"'
                 let grayachievementbox = 'class="achievementsItem autoBorder greyachievement"'
                 let grueachievementbox = 'class="achievementsItem autoBorder grueachievement"'
-                let bleenachievementbox = 'class="achievementsItem autoBorder bleenachievement"
-                let deltaskin = 'id="deltaskin" '
+                let bleenachievementbox = 'class="achievementsItem autoBorder bleenachievement"'
                 if (localStorage.getItem("startachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>New Beginnings</h1><span>Hi you have the join game achievement :D</span></div>");
                 } else {
@@ -377,11 +376,6 @@ popup = ' onclick="openPopup()" '
                   document.write("<div " + greenachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord (STOP ASKING FOR SEX UPDATE BRO)</span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Sex Update When?!?!</h1><span>Join The Discord</span></div>");
-                };
-                if (localStorage.getItem("creditsachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + deltaskin + greenachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page (heh)</span></div>");
-                } else {
-                  document.write("<div " + grayachievementbox + " ><h1>Thanks!!! :D</h1><span>View The Credits And Special Thanks Page</span></div>");
                 };
                 if (localStorage.getItem("pissio") === "YOUDIDIT:D!!!") {
                   document.write("<div " + bleenachievementbox + " ><h1>Piss.io 69420</h1><span>you lucky bastard</span></div>");
@@ -440,7 +434,6 @@ popup = ' onclick="openPopup()" '
             if (clicked2) {
                 document.getElementById("startMenuSlidingTrigger2").innerHTML="View Changelog";
                 PlaySound3()
-                localStorage.setItem("creditsachievement", "YOUDIDIT:D!!!");
                 $(".slider2").css({ "right": "400px" });
                 $(".slider3").css({ "right": "0px" });
                 $(".slider2").css({ "position": "absolute" });
