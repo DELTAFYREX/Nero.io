@@ -293,7 +293,9 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
 }
-
+document.getElementById("deltaskin").onclick = () => {
+  global.skin = "deltaDecoskin"
+}
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
