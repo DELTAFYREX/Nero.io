@@ -275,7 +275,7 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 }
 function lagachloop() {
-    if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 25) {
+    if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 15) {
         util.submitAchievementToLocalStorage("lagachievement");
     }
 }
