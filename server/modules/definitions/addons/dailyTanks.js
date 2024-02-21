@@ -990,6 +990,7 @@ Class.dailyTanks = {
 		"literallyATank",
 		"rocketeer",
 		"jumpSmasher",
+    "dlylancer",
 	]
 }
 
@@ -1608,8 +1609,6 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
   "dlytrilancebrid", //
 ];
 
-getDay()
-
 if (addToMain == true) {
 Class.basic.UPGRADES_TIER_1.push("whirlwind")
 Class.basic.UPGRADES_TIER_2.push("literallyATank")
@@ -1620,5 +1619,5 @@ Class.trapGuard.UPGRADES_TIER_3.push("whirlGuard")
 Class.underseer.UPGRADES_TIER_3.push("prophet")
 Class.launcher.UPGRADES_TIER_3.push("vortex")
 } else {
-Class.basic.UPGRADES_TIER_3.push(dailytank)
+Class.basic.UPGRADES_TIER_3.push("dailytank")
 }
