@@ -1048,6 +1048,13 @@ Class.jumpSmasher = {
     UPGRADE_TOOLTIP: "Daily Tank!",
   	UPGRADE_COLOR: "rainbow",
     DANGER: 7,
+    GUN: [{
+            POSITION: [12, 8, 1.3, 30, 0, 0, 0],
+            PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorrecoil]),
+              TYPE: "bullet"
+            }
+      }],
     TURRETS: [
         {
             POSITION: [21.5, 0, 0, 0, 360, 0],
