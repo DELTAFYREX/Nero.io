@@ -17,7 +17,8 @@ global.entitiesToAvoid = [];
 global.grid = new hshg.HSHG();
 global.arenaClosed = false;
 global.mockupsLoaded = false;
-global.dayofweek = getUTCDay();
+const d = new Date();
+global.dayofweek = d.getUTCDay();
 
 global.TEAM_BLUE = -1;
 global.TEAM_GREEN = -2;
