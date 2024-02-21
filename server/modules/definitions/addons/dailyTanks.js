@@ -896,8 +896,8 @@ Class.blizzard = {
 }
 
 // Whirlwind upgrade paths
-Class.whirlwind.UPGRADES_TIER_2 = ["tornado", "hurricane"]
-	Class.whirlwind.UPGRADES_TIER_3 = ["hexaWhirl", "munition", "whirl3", "whirlGuard", "prophet", "vortex"]
+Class.dlywhirlwind.UPGRADES_TIER_2 = ["tornado", "hurricane"]
+	Class.dlywhirlwind.UPGRADES_TIER_3 = ["hexaWhirl", "munition", "whirl3", "whirlGuard", "prophet", "vortex"]
 	Class.tornado.UPGRADES_TIER_3 = ["megaTornado", "tempest", "thunderbolt"]
 	Class.hurricane.UPGRADES_TIER_3 = ["typhoon", "blizzard"]
 
@@ -965,6 +965,7 @@ Class.literallyAMachineGun = {
         FOV: base.FOV * 1.2
     },
     TOOLTIP: "[DEV NOTE] This tank does not function as intended yet!",
+    UPGRADE_LABEL: "Daily Tank",
     TURRETS: [
         {
             POSITION: [10, 14, 0, 0, 0, 1],
@@ -984,7 +985,7 @@ Class.dailyTanks = {
 	LABEL: "Daily Tanks!",
 	UPGRADE_COLOR: "rainbow",
 	UPGRADES_TIER_0: [
-		"whirlwind",
+		"dlywhirlwind",
 		"master",
 		"literallyAMachineGun",
 		"literallyATank",
@@ -1609,11 +1610,48 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
   "dlytrilancebrid", //
 ];
 
-let dlytanks = ["literallyAMachineGun", "literallyATank", "whirlwind", "master", "rocketeer", "jumpSmasher", "dlylancer", "literallyATank"];
+Class.dlywhirlwind = {
+    PARENT: "genericTank",
+    LABEL: "Whirlwind",
+    UPGRADE_LABEL: "Daily Tank"
+    ANGLE: 60,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    TURRETS: [
+        {
+            POSITION: [8, 0, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco"
+        }
+    ],
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 6; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 60}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
+
+
+let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "rocketeer", "jumpSmasher", "dlylancer", "master"];
 dailytank = dlytanks[global.dayofweek];
 
 if (addToMain == true) {
-Class.basic.UPGRADES_TIER_1.push("whirlwind")
+Class.basic.UPGRADES_TIER_1.push("dlywhirlwind")
 Class.basic.UPGRADES_TIER_2.push("literallyATank")
 Class.hexaTank.UPGRADES_TIER_3.push("hexaWhirl")
 Class.artillery.UPGRADES_TIER_3.push("munition")
