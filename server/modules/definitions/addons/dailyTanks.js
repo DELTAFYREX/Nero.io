@@ -1,5 +1,5 @@
-const { dereference, combineStats, makeMulti, makeDeco,  } = require('../facilitators.js');
-const { base, gunCalcNames, statnames } = require('../constants.js');
+const { dereference, combineStats, makeMulti, makeDeco, makeAuto, makeHybrid, makeCeptionNerf } = require('../facilitators.js');
+const { base, gunCalcNames, statnames, dfltskl, smshskl } = require('../constants.js');
 const g = require('../gunvals.js');
 
 const addToMain = false
@@ -1263,7 +1263,7 @@ Class.dlylancer = {
     }
   ]
 }
-Class.dlyautolancer = makeAuto(Class.lancer, "Auto-Lancer");
+Class.dlyautolancer = makeAuto(Class.dlylancer, "Auto-Lancer");
 Class.dlytrilancer = {
   PARENT: "genericTank",
   LABEL: "Tri-Lancer",
@@ -1315,7 +1315,91 @@ Class.dlytrilancer = {
     }
   ]
 }
-Class.dlylancebrid = makeHybrid(Class.lancer, "Lancebrid");
+Class.dlyhexalancer = {
+  PARENT: "genericTank",
+  LABEL: "Hexa Lancer",
+  BODY: {
+    SPEED: base.SPEED * 1.2,
+    DAMAGE: base.DAMAGE * 0.9
+  },
+  HAS_NO_RECOIL: true,
+  STAT_NAMES: {
+    BULLET_SPEED: 'Lance Range',
+    BULLET_HEALTH: 'Lance Longevity',
+    BULLET_PEN: 'Lance Sharpness',
+    BULLET_DAMAGE: 'Lance Damage',
+    RELOAD: 'Lance Density'
+  },
+  GUNS: [
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 0, 0]
+    },
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 60, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 60, 0]
+    },
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 120, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 120, 0]
+    },
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 180, 0]
+    },
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 240, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 240, 0]
+    },
+    {
+      POSITION: [20, 15, 0.001, 0, 0, 300, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        TYPE: ["bullet", { ALPHA: 0 }],
+        AUTOFIRE: true
+      }
+    },
+    {
+      POSITION: [25, 15, 0.001, 0, 0, 300, 0]
+    }
+  ]
+}
+Class.dlylancebrid = makeHybrid(Class.dlylancer, "Lancebrid");
 Class.dlychasseur = {
   PARENT: "genericTank",
   LABEL: "Chasseur",
@@ -1345,7 +1429,8 @@ Class.dlychasseur = {
     }
   ]
 }
-Class.dlyautochasseur = makeAuto(Class.chasseur, "Auto-Chasseur");
+Class.dlyautochasseur = makeAuto(Class.dlychasseur, "Auto-Chasseur");
+Class.dlychasseurbrid = makeHybrid(Class.dlychasseur, "Lancebrid");
 Class.dlytrichasseur = {
   PARENT: "genericTank",
   LABEL: "Tri-Chasseur",
@@ -1498,14 +1583,19 @@ Class.dlychasseur.UPGRADES_TIER_3 = [
   "dlytripleur",
   "dlyautochasseur",
   "dlytrichasseur",
+  "dlychasseurbrid",
 ];
 Class.dlytrilancer.UPGRADES_TIER_3 = [
   "dlyhexalancer",
   "dlytrailblazer",
   "dlytrichasseur",
+  "dlytrilancerbrid",
+  "dlyautotrilancer",
 ];
-Class.autolancer.UPGRADES_TIER_3 = [
+Class.dlyautolancer.UPGRADES_TIER_3 = [
   "dlyautochasseur",
+  "dlyautolancerbrid",
+  "dlyautotrilancer",
 ];
 
 if (addToMain == true) {
