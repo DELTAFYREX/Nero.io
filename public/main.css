@@ -1275,6 +1275,9 @@ input [type="image"]:focus {
   margin-right: auto;
   width: 50%;
 }
+#selectskin {
+  text-align: center;
+}
 
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
