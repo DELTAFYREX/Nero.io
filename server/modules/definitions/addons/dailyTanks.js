@@ -101,6 +101,7 @@ Class.dlywhirlwind = {
     PARENT: "genericTank",
     LABEL: "Whirlwind",
     UPGRADE_TOOLTIP: "Daily Tank!",
+	  UPGRADE_COLOR: "rainbow",
     ANGLE: 60,
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
@@ -941,6 +942,7 @@ Class.master = {
     PARENT: "genericTank",
     LABEL: "Master",
     UPGRADE_TOOLTIP: "Daily Tank!",
+  	UPGRADE_COLOR: "rainbow",
     BODY: {
         HEALTH: base.HEALTH * 0.4,
         SHIELD: base.SHIELD * 0.4,
@@ -997,6 +999,7 @@ Class.literallyAMachineGun = {
     PARENT: "genericTank",
     LABEL: "Literally a Machine Gun",
     UPGRADE_TOOLTIP: "Daily Tank!",
+	  UPGRADE_COLOR: "rainbow",
     DANGER: 7,
     BODY: {
         FOV: base.FOV * 1.2
@@ -1234,6 +1237,7 @@ Class.latBase = {
 Class.literallyATank = {
     PARENT: "genericTank",
     UPGRADE_TOOLTIP: "Daily Tank!",
+  	UPGRADE_COLOR: "rainbow",
     DANGER: 6,
 	  BODY: {
 		HEALTH: base.HEALTH * 1.2,
@@ -1278,6 +1282,7 @@ Class.dlylancer = {
   PARENT: "genericTank",
   LABEL: "Lancer",
   UPGRADE_TOOLTIP: "Daily Tank!",
+	UPGRADE_COLOR: "rainbow",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 0.9
@@ -1651,6 +1656,8 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
 Class.crayon = {
     PARENT: "genericTank",
     LABEL: "Crayon",
+  	UPGRADE_COLOR: "rainbow",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     SIZE: 12,
     SHAPE: 0,
     GUNS: [{
@@ -1677,7 +1684,9 @@ Class.crayon = {
 };
 Class.autocrayon = makeAuto(Class.crayon, 'Auto Crayon'); 
 
-let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "rocketeer", "jumpSmasher", "dlylancer", "master"];
+Class.crayon.UPGRADES_TIER_3 = ["autocrayon"];
+
+let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "jumpSmasher", "dlylancer", "master", "crayon"];
 dailytank = dlytanks[global.dayofweek];
 
 if (addToMain == true) {
