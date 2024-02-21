@@ -152,7 +152,8 @@ function incoming(message, socket) {
                 return 1;
             }
             if (m.length !== 4) {
-                socket.kick("Ill-sized spawn request.");
+                
+                socket.kick("Ill-sized spawn request." + global.playerskin);
                 return 1;
             }
             // Get data

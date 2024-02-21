@@ -246,7 +246,7 @@ function PlaySound169() {
             }
          return; };
 
-  document.getElementById("selectskin").onclick = () => global.skin = global.selectedskin;
+  document.getElementById("selectskin").onclick = () => global.skin===global.selectedskin;
   
   const counterthing = document.querySelector(".displaytest");
   const rightbutton = document.querySelector("#rightarrowbutton");
