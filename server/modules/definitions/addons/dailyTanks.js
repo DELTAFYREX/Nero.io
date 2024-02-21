@@ -1263,8 +1263,9 @@ Class.dlylancer = {
     }
   ]
 }
+Class.dlylancebrid = makeHybrid(Class.dlylancer, "Lancebrid");
 Class.dlyautolancer = makeAuto(Class.dlylancer, "Auto-Lancer");
-Class.dlyautolancerbrid = makeAuto(Class.dlylancerbrid, "Auto-Lancerbrid");
+Class.dlyautolancebrid = makeAuto(Class.dlylancebrid, "Auto-Lancebrid");
 Class.dlytrilancer = {
   PARENT: "genericTank",
   LABEL: "Tri-Lancer",
@@ -1400,7 +1401,6 @@ Class.dlyhexalancer = {
     }
   ]
 }
-Class.dlylancebrid = makeHybrid(Class.dlylancer, "Lancebrid");
 Class.dlychasseur = {
   PARENT: "genericTank",
   LABEL: "Chasseur",
@@ -1433,8 +1433,8 @@ Class.dlychasseur = {
 Class.dlyautochasseur = makeAuto(Class.dlychasseur, "Auto-Chasseur");
 Class.dlylancerception = makeAuto(Class.dlylancer, "Lancer-Ception");
 Class.dlyautotrilancer = makeAuto(Class.dlytrilancer, "Auto-Trilancer");
-Class.dlychasseurbrid = makeHybrid(Class.dlychasseur, "Chasseurbrid");
-Class.dlytrilancerbrid = makeHybrid(Class.dlytrilancer, "Trilancerbrid");
+Class.dlychasseubrid = makeHybrid(Class.dlychasseur, "Chasseubrid");
+Class.dlytrilancebrid = makeHybrid(Class.dlytrilancer, "Trilancebrid");
 Class.dlytrichasseur = {
   PARENT: "genericTank",
   LABEL: "Tri-Chasseur",
@@ -1587,26 +1587,28 @@ Class.dlychasseur.UPGRADES_TIER_3 = [
   "dlytripleur", //
   "dlyautochasseur", //
   "dlytrichasseur", //
-  "dlychasseurbrid", //
+  "dlychasseubrid", //
 ];
 Class.dlytrilancer.UPGRADES_TIER_3 = [
   "dlyhexalancer", //
   "dlytrailblazer", //
   "dlytrichasseur", //
-  "dlytrilancerbrid", //
+  "dlytrilancebrid", //
   "dlyautotrilancer", //
 ];
 Class.dlyautolancer.UPGRADES_TIER_3 = [
   "dlyautochasseur", //
-  "dlyautolancerbrid", //
+  "dlyautolancebrid", //
   "dlyautotrilancer", //
   "dlylancerception", //
 ];
 Class.dlylancebrid.UPGRADES_TIER_3 = [
-  "dlychasseurbrid", //
-  "dlyautolancerbrid", //
-  "dlytrilancerbrid", //
+  "dlychasseubrid", //
+  "dlyautolancebrid", //
+  "dlytrilancebrid", //
 ];
+
+getDay()
 
 if (addToMain == true) {
 Class.basic.UPGRADES_TIER_1.push("whirlwind")
@@ -1618,5 +1620,5 @@ Class.trapGuard.UPGRADES_TIER_3.push("whirlGuard")
 Class.underseer.UPGRADES_TIER_3.push("prophet")
 Class.launcher.UPGRADES_TIER_3.push("vortex")
 } else {
-Class.basic.UPGRADES_TIER_3 = ["dailyTanks"]
+Class.basic.UPGRADES_TIER_3.push(dailytank)
 }
