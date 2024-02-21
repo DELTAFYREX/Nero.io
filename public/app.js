@@ -254,7 +254,7 @@ function PlaySound169() {
   const myImg = document.querySelector("#skinpreview");
 
   rightbutton.addEventListener("click", function() {
-      if (global.skinpage === 2) {
+      if (global.skinpage === 3) {
           global.skinpage = 0;  
       } else {
           global.skinpage += 1;
@@ -264,7 +264,7 @@ function PlaySound169() {
   });
   leftbutton.addEventListener("click", function() {
       if (global.skinpage === 0) {
-          global.skinpage = 2;  
+          global.skinpage = 3;  
       } else {
           global.skinpage -= 1;
       };                 
@@ -284,6 +284,10 @@ function PlaySound169() {
     if (global.skinpage === 2) {
     global.selectedskin = "deltaDecoskin";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
+    }
+    if (global.skinpage === 3) {
+    global.selectedskin = "tankcharmskin";
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
   };
 

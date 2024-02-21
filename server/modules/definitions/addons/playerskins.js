@@ -19,7 +19,7 @@ TURRETS: [{
     }]
 };
 
-Class.tankcharm = {
+Class.tankcharmskin = {
 TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 0.5],
         TYPE: "tcharm"
