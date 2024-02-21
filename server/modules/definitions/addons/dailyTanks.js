@@ -97,6 +97,41 @@ Class.blizzardDeco2 = makeDeco(5);
 Class.blizzardDeco2.CONTROLLERS = [["spin", { independent: true, speed: -0.128 }]];
 
 // Whirlwind upgrades
+Class.dlywhirlwind = {
+    PARENT: "genericTank",
+    LABEL: "Whirlwind",
+    UPGRADE_TOOLTIP: "Daily Tank!",
+    ANGLE: 60,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    TURRETS: [
+        {
+            POSITION: [8, 0, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco"
+        }
+    ],
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 6; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 60}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
 Class.tornado = {
     PARENT: "genericTank",
     LABEL: "Tornado",
@@ -905,6 +940,7 @@ Class.dlywhirlwind.UPGRADES_TIER_2 = ["tornado", "hurricane"]
 Class.master = {
     PARENT: "genericTank",
     LABEL: "Master",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     BODY: {
         HEALTH: base.HEALTH * 0.4,
         SHIELD: base.SHIELD * 0.4,
@@ -960,12 +996,12 @@ Class.master = {
 Class.literallyAMachineGun = {
     PARENT: "genericTank",
     LABEL: "Literally a Machine Gun",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     DANGER: 7,
     BODY: {
         FOV: base.FOV * 1.2
     },
     TOOLTIP: "[DEV NOTE] This tank does not function as intended yet!",
-    UPGRADE_LABEL: "Daily Tank",
     TURRETS: [
         {
             POSITION: [10, 14, 0, 0, 0, 1],
@@ -999,6 +1035,7 @@ Class.dailyTanks = {
 Class.jumpSmasher = {
     PARENT: "genericSmasher",
     LABEL: "Jump Smasher",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     DANGER: 7,
     TURRETS: [
         {
@@ -1196,10 +1233,11 @@ Class.latBase = {
 }
 Class.literallyATank = {
     PARENT: "genericTank",
+    UPGRADE_TOOLTIP: "Daily Tank!",
     DANGER: 6,
-	BODY: {
+	  BODY: {
 		HEALTH: base.HEALTH * 1.2,
-	},
+	  },
     LABEL: "Literally a Tank",
     SHAPE: "M -1 -1 H 0 C 1 -1 1 0 1 0 C 1 0 1 1 0 1 H -1 V -1",
     GUNS: [
@@ -1239,6 +1277,7 @@ Class.literallyATank = {
 Class.dlylancer = {
   PARENT: "genericTank",
   LABEL: "Lancer",
+  UPGRADE_TOOLTIP: "Daily Tank!",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 0.9
@@ -1609,43 +1648,6 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
   "dlyautolancebrid", //
   "dlytrilancebrid", //
 ];
-
-Class.dlywhirlwind = {
-    PARENT: "genericTank",
-    LABEL: "Whirlwind",
-    UPGRADE_LABEL: "Daily Tank"
-    ANGLE: 60,
-    CONTROLLERS: ["whirlwind"],
-    HAS_NO_RECOIL: true,
-    STAT_NAMES: statnames.whirlwind,
-    TURRETS: [
-        {
-            POSITION: [8, 0, 0, 0, 360, 1],
-            TYPE: "whirlwindDeco"
-        }
-    ],
-    AI: {
-        SPEED: 2, 
-    }, 
-    GUNS: (() => { 
-        let output = []
-        for (let i = 0; i < 6; i++) { 
-            output.push({ 
-                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
-                PROPERTIES: {
-                    SHOOT_SETTINGS: combineStats([g.satellite]), 
-                    TYPE: ["satellite", {ANGLE: i * 60}], 
-                    MAX_CHILDREN: 1,   
-                    AUTOFIRE: true,  
-                    SYNCS_SKILLS: false,
-                    WAIT_TO_CYCLE: true
-                }
-            }) 
-        }
-        return output
-    })()
-}
-
 
 let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "rocketeer", "jumpSmasher", "dlylancer", "master"];
 dailytank = dlytanks[global.dayofweek];
