@@ -275,7 +275,7 @@ function PlaySound169() {
   function changeskinpreview() {
     if (global.skinpage === 0) {
     global.selectedskin = "";
-    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
+    myImg.src = ""
     }
     if (global.skinpage === 1) {
     global.selectedskin = "cswmskin";
