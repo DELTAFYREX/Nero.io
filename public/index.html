@@ -141,6 +141,7 @@ function PlaySound2() {
         <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the game's source code" href="https://glitch.com/edit/#!/neroio2" target="_blank" rel="noopener noreferrer">View Source Code</a>
         <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="Old Nero.io (Nero.io 1)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">Old Nero.io</a>
         <a class="menuTab ach" onclick="displayAchievements()" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Achievements</a>
+        <a class="menuTab skin" onclick="displaySkins()" onmouseover="PlaySound1()" title="View Game Skins" href="javascript:void(0)">Skins</a>
           </div>
             <div id="startMenu">
                 <div class="startMenuHolder">
@@ -322,7 +323,7 @@ popup = ' onclick="openPopup()" '
   </div>
               <div class="popup" style="display: none;">
                 <h1>Title</h1>
-                <span>Message</span><br />
+                <span>Message</span><br/>
                 <div>
                     <button onclick="document.querySelector('.popup').style.display = 'none';">Close</button>
                 </div>
@@ -398,12 +399,33 @@ popup = ' onclick="openPopup()" '
                 document.getElementsByClassName('achievementsHolder')[0].style.display = 'block';
                 PlaySound();
             };
+                  function displaySkins() {
+                document.getElementsByClassName('skinHolder')[0].style.display = 'block';
+                PlaySound();
+            };
                         function Discordjoin() {
                       localStorage.setItem("Getbacktowoooak", "YOUDIDIT:D!!!");
                 PlaySound();
             };
     }
   </script>
+            <div class="skinpopup" style="display: none;">
+                <h1>Title</h1>
+                <span>Message</span><br/>
+                <div>
+                    <button onclick="document.querySelector('.skinpopup').style.display = 'none';">Close</button>
+                </div>
+            </div>
+              <div class="skinHolder" id="skinHolder">
+                <div id="skinClose" onclick="document.getElementsByClassName('skinHolder')[0].style.display = 'none'"></div>
+                <h1 id="skinHeader">Skins</h1>
+                <hr>
+                <div id="skinDisplay">
+                  <div class="displaytest">0</div>
+                  <img id="skinpreview" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097">
+                  </div>
+                <p id="leftarrowbutton">left</p><p id="rightarrowbutton">right</p>
+            </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
     <script type="module" src="./lib/settings.js"></script>

@@ -245,8 +245,29 @@ function PlaySound169() {
           global.music2.songname = "Not Playing";
             }
          return; };
-document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin"
-document.getElementById("cswmskin").onclick = () => global.skin = "cswmskin"
+document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin";
+document.getElementById("cswmskin").onclick = () => global.skin = "cswmskin";
+                      const counterthing = document.querySelector(".displaytest");
+                      const rightbutton = document.querySelector("#rightarrowbutton");
+                      const leftbutton = document.querySelector("#leftarrowbutton");
+                      const myImg = document.getElementById("#skinpreview");
+                    rightbutton.addEventListener("click", function() {
+                      if (global.skinpage === 1) {
+                        global.skinpage = 0;  
+                      } else {
+                        global.skinpage += 1;
+                      };
+                      counterthing.textContent = global.skinpage;
+                    });
+                      leftbutton.addEventListener("click", function() {
+                      if (global.skinpage === 0) {
+                        global.skinpage = 1;  
+                      } else {
+                        global.skinpage -= 1;
+                      };                 
+                      counterthing.textContent = global.skinpage;
+                    });
+
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033") {
