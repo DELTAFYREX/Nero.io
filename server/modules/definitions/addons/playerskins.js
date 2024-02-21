@@ -14,14 +14,14 @@ TURRETS: [{
 
 Class.cswmskin = {
 TURRETS: [{
-        POSITION: [18, 0, 0, 0, 360, 0.5],
+        POSITION: [18, 0, 0, 0, 360, 1],
         TYPE: "sandwichdeco"
     }]
 };
 
 Class.tankcharmskin = {
 TURRETS: [{
-        POSITION: [18, 0, 0, 0, 360, 0.5],
+        POSITION: [18, 0, 0, 0, 360, 1],
         TYPE: "tcharm"
     }]
 }

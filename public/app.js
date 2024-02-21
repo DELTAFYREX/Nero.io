@@ -285,10 +285,6 @@ function PlaySound169() {
     global.selectedskin = "deltaDecoskin";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
-    if (global.skinpage === 3) {
-    global.selectedskin = "tankcharmskin";
-    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
-    }
   };
 
 function songrecog() {
