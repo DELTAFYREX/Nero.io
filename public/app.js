@@ -282,7 +282,7 @@ function PlaySound169() {
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 2) {
-    global.selectedskin = "deltaskin";
+    global.selectedskin = "deltaDecoskin";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
   };
