@@ -1261,10 +1261,14 @@ input [type="image"]:focus {
 #leftarrowbutton {
     position: relative;
     float: left;
+    height: 30%;
+    width: 30%;
 }
 #rightarrowbutton {
     position: relative;
     float: right;
+    height: 30%;
+    width: 30%;
 }
 .displaytest {
     position: relative;
