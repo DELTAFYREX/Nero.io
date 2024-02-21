@@ -1264,6 +1264,7 @@ Class.dlylancer = {
   ]
 }
 Class.dlyautolancer = makeAuto(Class.dlylancer, "Auto-Lancer");
+Class.dlyautolancerbrid = makeAuto(Class.dlylancerbrid, "Auto-Lancerbrid");
 Class.dlytrilancer = {
   PARENT: "genericTank",
   LABEL: "Tri-Lancer",
@@ -1430,7 +1431,10 @@ Class.dlychasseur = {
   ]
 }
 Class.dlyautochasseur = makeAuto(Class.dlychasseur, "Auto-Chasseur");
-Class.dlychasseurbrid = makeHybrid(Class.dlychasseur, "Lancebrid");
+Class.dlylancerception = makeAuto(Class.dlylancer, "Lancer-Ception");
+Class.dlyautotrilancer = makeAuto(Class.dlytrilancer, "Auto-Trilancer");
+Class.dlychasseurbrid = makeHybrid(Class.dlychasseur, "Chasseurbrid");
+Class.dlytrilancerbrid = makeHybrid(Class.dlytrilancer, "Trilancerbrid");
 Class.dlytrichasseur = {
   PARENT: "genericTank",
   LABEL: "Tri-Chasseur",
@@ -1574,28 +1578,34 @@ Class.dlytrailblazer = {
 }
 
 Class.dlylancer.UPGRADES_TIER_2 = [
-  "dlychasseur",
-  "dlylancebrid",
-  "dlytrilancer",
-  "dlyautolancer",
+  "dlychasseur", //
+  "dlylancebrid", //
+  "dlytrilancer", //
+  "dlyautolancer", //
 ];
 Class.dlychasseur.UPGRADES_TIER_3 = [
-  "dlytripleur",
-  "dlyautochasseur",
-  "dlytrichasseur",
-  "dlychasseurbrid",
+  "dlytripleur", //
+  "dlyautochasseur", //
+  "dlytrichasseur", //
+  "dlychasseurbrid", //
 ];
 Class.dlytrilancer.UPGRADES_TIER_3 = [
-  "dlyhexalancer",
-  "dlytrailblazer",
-  "dlytrichasseur",
-  "dlytrilancerbrid",
-  "dlyautotrilancer",
+  "dlyhexalancer", //
+  "dlytrailblazer", //
+  "dlytrichasseur", //
+  "dlytrilancerbrid", //
+  "dlyautotrilancer", //
 ];
 Class.dlyautolancer.UPGRADES_TIER_3 = [
-  "dlyautochasseur",
-  "dlyautolancerbrid",
-  "dlyautotrilancer",
+  "dlyautochasseur", //
+  "dlyautolancerbrid", //
+  "dlyautotrilancer", //
+  "dlylancerception", //
+];
+Class.dlylancebrid.UPGRADES_TIER_3 = [
+  "dlychasseurbrid", //
+  "dlyautolancerbrid", //
+  "dlytrilancerbrid", //
 ];
 
 if (addToMain == true) {
