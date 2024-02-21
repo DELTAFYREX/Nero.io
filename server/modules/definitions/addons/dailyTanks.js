@@ -1648,6 +1648,34 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
   "dlyautolancebrid", //
   "dlytrilancebrid", //
 ];
+Class.crayon = {
+    PARENT: "genericTank",
+    LABEL: "Crayon",
+    SIZE: 12,
+    SHAPE: 0,
+    GUNS: [{
+            POSITION: [16.615, 6.4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            }
+          }, {
+            POSITION: [16.615, 6.4, 1, 0, -5.538, 0, 0.25],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            },
+        },
+        {
+            POSITION: [16.615, 6.4, 1, 0, 5.538, 0, 0.75],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.twin]),
+                TYPE: "bullet"
+            },
+        },
+    ],
+};
+Class.autocrayon = makeAuto(Class.crayon, 'Auto Crayon'); 
 
 let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "rocketeer", "jumpSmasher", "dlylancer", "master"];
 dailytank = dlytanks[global.dayofweek];
