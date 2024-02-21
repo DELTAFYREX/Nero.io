@@ -264,7 +264,7 @@ function PlaySound169() {
   });
   leftbutton.addEventListener("click", function() {
       if (global.skinpage === 0) {
-          global.skinpage = 1;  
+          global.skinpage = 2;  
       } else {
           global.skinpage -= 1;
       };                 
