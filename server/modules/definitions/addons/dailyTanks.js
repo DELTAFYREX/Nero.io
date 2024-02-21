@@ -2,7 +2,7 @@ const { dereference, combineStats, makeMulti, makeDeco } = require('../facilitat
 const { base, gunCalcNames, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
-const addToMain = true
+const addToMain = false
 
 // Bullets
 Class.masterBullet = {
@@ -60,33 +60,6 @@ Class.masterBullet = {
     ],
 }
 
-// Satellites
-Class.satellite = { 
-    LABEL: "Satellite",
-    TYPE: "drone",
-    ACCEPTS_SCORE: false,
-    DANGER: 2,
-    SHAPE: 0,
-    LAYER: 13,
-    CONTROLLERS: ['orbit'],
-    FACING_TYPE: "spin",
-    BODY: {
-        PENETRATION: 1.2,
-        PUSHABILITY: 0.6,
-        ACCELERATION: 0.75,
-        HEALTH: 0.3,
-        DAMAGE: 3.375,
-        SPEED: 10,
-        RANGE: 200,
-        DENSITY: 0.03,
-        RESIST: 1.5,
-        FOV: 0.5,
-    },
-    DRAW_HEALTH: false,
-    CLEAR_ON_MASTER_UPGRADE: true,
-    BUFF_VS_FOOD: true,
-    MOTION_TYPE: 'motor'
-}
 Class.squareSatellite = {
     PARENT: "satellite",
     SHAPE: 4
@@ -102,6 +75,26 @@ Class.lamgSpinnerTurret = makeMulti({
         }
     ]
 }, 10)
+
+// Decorations
+Class.tornadoDeco = makeDeco(4);
+Class.tornadoDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]];
+Class.megaTornadoDeco = makeDeco([[0,-1],[0.5,0],[0,1],[-0.5,0]])
+Class.megaTornadoDeco.CONTROLLERS = [["spin", { independent: true }]];
+Class.tempestDeco1 = makeDeco(3);
+Class.tempestDeco1.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]];
+Class.tempestDeco2 = makeDeco(3);
+Class.tempestDeco2.CONTROLLERS = [["spin", { independent: true, speed: -0.128 }]];
+Class.thunderboltDeco = makeDeco(4);
+Class.thunderboltDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.16 }]];
+Class.hurricaneDeco = makeDeco(8);
+Class.hurricaneDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]];
+Class.typhoonDeco = makeDeco(10);
+Class.typhoonDeco.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]];
+Class.blizzardDeco1 = makeDeco(5);
+Class.blizzardDeco1.CONTROLLERS = [["spin", { independent: true, speed: 0.128 }]];
+Class.blizzardDeco2 = makeDeco(5);
+Class.blizzardDeco2.CONTROLLERS = [["spin", { independent: true, speed: -0.128 }]];
 
 // Whirlwind upgrades
 Class.tornado = {
@@ -987,7 +980,7 @@ Class.literallyAMachineGun = {
 
 // Dev shit
 Class.dailyTanks = {
-	PARENT: "menu",
+	PARENT: "genericTank",
 	LABEL: "Daily Tanks!",
 	UPGRADE_COLOR: "rainbow",
 	UPGRADES_TIER_0: [

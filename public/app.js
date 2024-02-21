@@ -245,28 +245,42 @@ function PlaySound169() {
           global.music2.songname = "Not Playing";
             }
          return; };
-document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin";
-document.getElementById("cswmskin").onclick = () => global.skin = "cswmskin";
-                      const counterthing = document.querySelector(".displaytest");
-                      const rightbutton = document.querySelector("#rightarrowbutton");
-                      const leftbutton = document.querySelector("#leftarrowbutton");
-                      const myImg = document.getElementById("#skinpreview");
-                    rightbutton.addEventListener("click", function() {
-                      if (global.skinpage === 1) {
-                        global.skinpage = 0;  
-                      } else {
-                        global.skinpage += 1;
-                      };
-                      counterthing.textContent = global.skinpage;
-                    });
-                      leftbutton.addEventListener("click", function() {
-                      if (global.skinpage === 0) {
-                        global.skinpage = 1;  
-                      } else {
-                        global.skinpage -= 1;
-                      };                 
-                      counterthing.textContent = global.skinpage;
-                    });
+
+  document.getElementById("deltaskin").onclick = () => global.skin = "deltaDecoskin";
+  document.getElementById("cswmskin").onclick = () => global.skin = "cswmskin";
+  
+  const counterthing = document.querySelector(".displaytest");
+  const rightbutton = document.querySelector("#rightarrowbutton");
+  const leftbutton = document.querySelector("#leftarrowbutton");
+  const myImg = document.querySelector("#skinpreview");
+
+  rightbutton.addEventListener("click", function() {
+      if (global.skinpage === 1) {
+          global.skinpage = 0;  
+      } else {
+          global.skinpage += 1;
+      };
+      counterthing.textContent = global.skinpage;
+      changeskinpreview();
+  });
+  leftbutton.addEventListener("click", function() {
+      if (global.skinpage === 0) {
+          global.skinpage = 1;  
+      } else {
+          global.skinpage -= 1;
+      };                 
+      counterthing.textContent = global.skinpage;
+      changeskinpreview();
+  });
+
+  function changeskinpreview() {
+    if (global.skinpage === 0) {
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
+    }
+    if (global.skinpage === 1) {
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
+    }
+  };
 
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
