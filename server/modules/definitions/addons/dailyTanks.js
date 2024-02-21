@@ -1609,8 +1609,8 @@ Class.dlylancebrid.UPGRADES_TIER_3 = [
   "dlytrilancebrid", //
 ];
 
-let dlytanks = ["whirlwind", "litterallyATank", "master", "autoTwin", "autoSniper", "dlylancer", "developer"]
-dailytank[global.dayofweek];
+let dlytanks = ["literallyAMachineGun", "literallyATank", "whirlwind", "master", "rocketeer", "jumpSmasher", "dlylancer", "literallyATank"];
+dailytank = dlytanks[global.dayofweek];
 
 if (addToMain == true) {
 Class.basic.UPGRADES_TIER_1.push("whirlwind")
@@ -1622,5 +1622,5 @@ Class.trapGuard.UPGRADES_TIER_3.push("whirlGuard")
 Class.underseer.UPGRADES_TIER_3.push("prophet")
 Class.launcher.UPGRADES_TIER_3.push("vortex")
 } else {
-Class.basic.UPGRADES_TIER_3.push(dailytank)
+Class.basic.UPGRADES_TIER_3 = [dailytank]
 }
