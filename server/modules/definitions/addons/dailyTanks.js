@@ -1050,9 +1050,9 @@ Class.jumpSmasher = {
     DANGER: 7,
     GUNS: [
         {
-            POSITION: [18, 10, -1.4, 0, 0, 180, 0],
+            POSITION: [2, 10, 1, 0, 0, 180, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorerecoil, g.tonsmorerecoil, g.tonsmorerecoil]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorerecoil, g.lotsmorrecoil, g.halfreload, g.halfreload, g.halfreload, g.halfreload]),
                 TYPE: "bullet"
             }
         }
