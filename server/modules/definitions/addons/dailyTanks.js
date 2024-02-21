@@ -1035,15 +1035,23 @@ Class.dailyTanks = {
 }
 
 // December 19th-20th - Jump Smasher
+Class.jumpsmasherBody = {
+    LABEL: "",
+    CONTROLLERS: [["spin", { independent: true }]],
+    COLOR: "black",
+    SHAPE: 8,
+    INDEPENDENT: true
+}
 Class.jumpSmasher = {
     PARENT: "genericSmasher",
     LABEL: "Jump Smasher",
     UPGRADE_TOOLTIP: "Daily Tank!",
+  	UPGRADE_COLOR: "rainbow",
     DANGER: 7,
     TURRETS: [
         {
             POSITION: [21.5, 0, 0, 0, 360, 0],
-            TYPE: "smasherBody"
+            TYPE: "jumpsmasherBody"
         }
     ]
 }
