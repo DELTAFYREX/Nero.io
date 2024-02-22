@@ -333,6 +333,7 @@ if (localStorage.getItem("startachievement") !== "YOUDIDIT:D!!!") {
 localStorage.setItem("savedkills", 0);
 }
 function resetAllAchievements() {
+  var zeroyeah = 0;
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
   util.resetAchievementFromLocalStorage("killachievement");
@@ -343,7 +344,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("Getbacktowoooak");
   util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
-  localStorage.setItem("savedkills", 0);
+  localStorage.setItem("savedkills", zeroyeah.toString());
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
