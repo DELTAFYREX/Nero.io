@@ -273,22 +273,28 @@ function PlaySound169() {
 
   function changeskinpreview() {
     if (global.skinpage === 0) {
-    counterthing.textContent = "◉ ○ ○";
+    counterthing.textContent = "◉ ○ ○ ○";
     global.selectedskin = "";
     skinnamedisplay.textContent = "Default";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
     if (global.skinpage === 1) {
-    counterthing.textContent = "○ ◉ ○";
+    counterthing.textContent = "○ ◉ ○ ○";
     global.selectedskin = "cswmskin";
     skinnamedisplay.textContent = "ChickenSandwhichMan";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 2) {
-    counterthing.textContent = "○ ○ ◉	";
+    counterthing.textContent = "○ ○ ◉	○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
+    }
+    if (global.skinpage === 3) {
+    counterthing.textContent = "○ ○ ○ ◉";
+    global.selectedskin = "primalskin";
+    skinnamedisplay.textContent = "Ultimate Primal";
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/primal.webp?v=1708602763032";
     }
   };
 
@@ -336,6 +342,7 @@ function resetAllAchievements() {
   var zeroyeah = 0;
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
+  util.resetAchievementFromLocalStorage("100killsachievement");
   util.resetAchievementFromLocalStorage("killachievement");
   util.resetAchievementFromLocalStorage("killachievement2");
   util.resetAchievementFromLocalStorage("lagachievement");
