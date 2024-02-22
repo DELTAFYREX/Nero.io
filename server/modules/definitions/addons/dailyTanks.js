@@ -1028,7 +1028,7 @@ Class.dailyTanks = {
 		"master",
 		"literallyAMachineGun",
 		"literallyATank",
-		"rocketeer",
+		"crayon",
 		"jumpSmasher",
     "dlylancer",
 	]
@@ -1052,8 +1052,9 @@ Class.jumpSmasher = {
         {
             POSITION: [2, 10, 1, 0, 0, 180, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorerecoil, g.lotsmorrecoil, g.halfreload, g.halfreload, g.halfreload, g.halfreload]),
-                TYPE: "bullet"
+                SHOOT_SETTINGS: combineStats([g.basic, g.tonsmorerecoil, g.tonsmorrecoil, g.halfreload, g.halfreload, g.halfreload, g.halfreload, g.norange]),
+                TYPE: "bullet",
+                ALT_FIRE: true
             }
         }
     ],
@@ -1484,7 +1485,7 @@ Class.dlychasseur = {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
         SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
-        TYPE: ["bullet", { ALPHA: 1 }],
+        TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true,
       }
     },

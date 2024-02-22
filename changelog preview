@@ -30,16 +30,13 @@
         <li>Added Contagion Branch To Subduer & Trapper</li>
         <li>Added Longing And Resurgam By Amaryllis To The OST</li>
         <li>added credits ach</li>
-        <li>Added New Desmos Branch</li>
+        <li>Added 2 New Branches For Desmos</li>
         <li>Testing Skins</li>
         <li>Added Beta Skin Menu</li>
-        <li>Fixed Bug With Skins</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Fixed Skin Bug</li>
+        <li>Fixed Crashing On Respawn</li>
+        <li>Added More Detail To Skin Menu</li>
+        <li>Added Cat Code and Chickensandwhichman Skin</li>
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
