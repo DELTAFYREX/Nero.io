@@ -329,6 +329,10 @@ function lagachloop() {
     util.submitAchievementToLocalStorage("killachievement");
   }
 }*/
+if (localStorage.getItem("savedkills") >= 0) {
+} else {
+  localStorage.setItem("savedkills", 0);
+};
 function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
@@ -340,6 +344,7 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("Getbacktowoooak");
   util.resetAchievementFromLocalStorage("creditsachievement");
   util.resetAchievementFromLocalStorage("pissio");
+  localStorage.setItem("savedkills", 0);
 }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
