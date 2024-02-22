@@ -275,7 +275,7 @@ function PlaySound169() {
     if (global.skinpage === 0) {
     global.selectedskin = "";
     skinnamedisplay.textContent = "Default";
-    myImg.src = "";
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
     if (global.skinpage === 1) {
     global.selectedskin = "cswmskin";
