@@ -1075,14 +1075,14 @@ input [type="image"]:focus {
 .achievementsItem h1 {
     font-size: 22px;
     animation:pfpDefault 800ms linear both;
-    font-weight: light;
+    font-weight: bold;
     color: #22160b;
 }
 
 .achievementsItem span {
     font-size: 17px;
     font-weight: bold;
-    animation: pfpDefault 800ms linear both;
+    animation:pfpDefault 800ms linear both;
     color: #22160b;
 }
 
@@ -1118,67 +1118,6 @@ input [type="image"]:focus {
 .metasip {
     background-image: "https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/svg0.svg"
 }
-.skinpopup {
-    position: absolute;
-    display: block;
-    width: auto;
-    max-width: 42%;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    border-radius: 10px;
-    background: var(--backgroundColor);
-    padding: 10px;
-    font-size: larger;
-    text-align: center;
-    border-style: solid;
-    border-color: #c1cfd8;
-    color: var(--menuTextColor);
-}
-
-.skinpopup button {
-    margin: 15px;
-    padding: 10px 50px 10px 50px;
-    width: auto;
-    box-sizing: border-box;
-    color: white;
-    text-align: center;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.2);
-    background: #A9D86D;
-    border: 0;
-    border-bottom: 2px solid #8ABC3F;
-    cursor: pointer;
-    box-shadow: inset 0 -2px #8ABC3F;
-    border-radius: 5px;
-    font: 18px Ubuntu;
-}
-
-.skinpopup button:hover {
-    border-bottom: 1px solid #8ABC3F;
-}
-
-.skinpopup button:active {
-    background: #FFFFFF;
-    border-bottom: 0;
-    outline: none;
-    box-shadow: none;
-}
-
-.skinpopup span.small {
-    font-size: xx-large;
-    font-weight: bold;
-    color: black;
-    white-space: pre-line;
-}
-
-.skinpopup span {
-    font-size: x-large;
-    white-space: pre-line;
-    font-weight: light;
-    color: black;
-}
 .skinHolder {
     position: absolute;
     display: block;
@@ -1206,7 +1145,7 @@ input [type="image"]:focus {
     animation:pfpDefault 800ms linear both;
 }
 
-.achievementsHolder span {
+.skinHolder span {
     font-size: x-large;
     font-weight: light;
     color: black;
@@ -1277,7 +1216,7 @@ input [type="image"]:focus {
     animation:pfpDefault 800ms linear both;
 }
 .displaytest {
-    top: 5%;
+    top: 7%;
     position: relative;
     text-align: center;
     margin-left: auto;
@@ -1289,6 +1228,7 @@ input [type="image"]:focus {
     position: relative;
 }
 #skinpreview {
+    top: 4%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
