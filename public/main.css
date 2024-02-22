@@ -1036,7 +1036,7 @@ input [type="image"]:focus {
 
 .achievementsHolder span {
     font-size: x-large;
-    font-weight: light;
+    font-weight: lighter;
     color: black;
     animation:pfpDefault 800ms linear both;
 }
@@ -1082,7 +1082,7 @@ input [type="image"]:focus {
 .achievementsItem span {
     font-size: 17px;
     font-weight: bold;
-    animation:pfpDefault 800ms linear both;
+    animation: pfpDefault 800ms linear both;
     color: #22160b;
 }
 
