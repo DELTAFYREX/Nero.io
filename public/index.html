@@ -395,7 +395,7 @@ popup = ' onclick="openPopup()" '
                   </div>
               <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
               <script type="text/javascript">
-                  document.write("<div><h2>" + localstorage.getItem("savedkills") + "</h2></div>");
+                  document.write(localStorage.getItem("savedkills"));
               </script>
             </div>
   <script defer>

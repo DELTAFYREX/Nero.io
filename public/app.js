@@ -329,10 +329,9 @@ function lagachloop() {
     util.submitAchievementToLocalStorage("killachievement");
   }
 }*/
-if (localStorage.getItem("savedkills") >= 0) {
-} else {
-  localStorage.setItem("savedkills", 0);
-};
+if (localStorage.getItem("startachievement") !== "YOUDIDIT:D!!!") {
+localStorage.setItem("savedkills", 0);
+}
 function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("startachievement");
   util.resetAchievementFromLocalStorage("disconnectachievement");
