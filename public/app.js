@@ -255,7 +255,7 @@ function PlaySound169() {
   const myImg = document.querySelector("#skinpreview");
 
   rightbutton.addEventListener("click", function() {
-      if (global.skinpage === 2) {
+      if (global.skinpage === 12) {
           global.skinpage = 0;  
       } else {
           global.skinpage += 1;
@@ -264,7 +264,7 @@ function PlaySound169() {
   });
   leftbutton.addEventListener("click", function() {
       if (global.skinpage === 0) {
-          global.skinpage = 2;  
+          global.skinpage = 12;  
       } else {
           global.skinpage -= 1;
       };                 
