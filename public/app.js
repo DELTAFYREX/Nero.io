@@ -278,19 +278,25 @@ function PlaySound169() {
     skinnamedisplay.textContent = "Default";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
-    if (global.skinpage === 1) {
+    if (global.skinpage === 2) {
+    counterthing.textContent = "○ ◉ ○ ○";
+    global.selectedskin = "cswmskin";
+    skinnamedisplay.textContent = "Broken Signal";
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tv.png?v=1708615075011"
+    }
+    if (global.skinpage === 3) {
     counterthing.textContent = "○ ◉ ○ ○";
     global.selectedskin = "cswmskin";
     skinnamedisplay.textContent = "ChickenSandwhichMan";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
-    if (global.skinpage === 2) {
+    if (global.skinpage === 4) {
     counterthing.textContent = "○ ○ ◉	○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
-    if (global.skinpage === 3) {
+    if (global.skinpage === 5) {
     counterthing.textContent = "○ ○ ○ ◉";
     global.selectedskin = "primalskin";
     skinnamedisplay.textContent = "Ultimate Primal";
