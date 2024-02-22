@@ -322,9 +322,9 @@ function PlaySound169() {
     }
     if (global.skinpage === 8) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "skypeskin";
     skinnamedisplay.textContent = "Skype";
-    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708619037464";
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
     }
     if (global.skinpage === 9) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
