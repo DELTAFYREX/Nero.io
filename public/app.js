@@ -329,6 +329,12 @@ function lagachloop() {
     if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 15) {
         util.submitAchievementToLocalStorage("lagachievement");
     }
+    if (global.savedkillcount >= 99) {
+        util.submitAchievementToLocalStorage("100killsachievement");
+    }
+    if (global.savedkillcount >= 24) {
+        util.submitAchievementToLocalStorage("25killsachievement");
+    }
 }
 /*if (localStorage.getItem("killachievement") !== "YOUDIDIT:D!!!") {
   if (global.achievements.kills >= 4) {

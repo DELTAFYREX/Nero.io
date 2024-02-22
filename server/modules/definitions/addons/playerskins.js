@@ -4,7 +4,7 @@ require('../groups/generics.js');
 const g = require('../gunvals.js');
 
 Class.tcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813")
-Class.primalskin = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813")
+Class.primalskincharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813")
 
 Class.deltaDecoskin = {
 TURRETS: [{
@@ -20,9 +20,16 @@ TURRETS: [{
     }]
 };
 
+Class.primalskin = {
+TURRETS: [{
+        POSITION: [20, 0, 0, 0, 360, 3],
+        TYPE: "primalskincharm"
+    }]
+};
+
 Class.tankcharm = {
 TURRETS: [{
-        POSITION: [18, 0, 0, 0, 360, 0.5],
+        POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "tcharm"
     }]
 }

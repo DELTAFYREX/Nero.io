@@ -351,10 +351,15 @@ popup = ' onclick="openPopup()" '
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>Beep! Offline Beep!</h1><span>Get Disconnected while In game</span></div>");
                 };
+                if (localStorage.getItem("25killsachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>K-25</h1><span>Get 25 Kills (okay, okay)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>K-25</h1><span>Get 25 Kills</span></div>");
+                };
                 if (localStorage.getItem("100killsachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>K-100</h1><span>Get 100 Kills (DAMN...)</span></div>");
                 } else {
-                  document.write("<div " + grayachievementbox + " ><h1>KStreak-5</h1><span>Get 100 Kills</span></div>");
+                  document.write("<div " + grayachievementbox + " ><h1>K-100</h1><span>Get 100 Kills</span></div>");
                 };
                 if (localStorage.getItem("killachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>KStreak-5</h1><span>Get A Killstreak of 5 kills while In game</span></div>");
