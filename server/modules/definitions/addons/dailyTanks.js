@@ -1718,4 +1718,4 @@ Class.launcher.UPGRADES_TIER_3.push("vortex")
 } else {
 Class.basic.UPGRADES_TIER_3 = [dailytank]
 }
-Class.launcher.UPGRADES_TIER_3.push("dailytanks")
+Class.addons.UPGRADES_TIER_3 = ["dailyTanks"];
