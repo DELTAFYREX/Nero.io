@@ -860,9 +860,9 @@ const socketInit = port => {
                 break;
           case "killgained":
                 global.metrics.killcount += 1;
-                let ksaver = (localStorage.getItem("savedkills"));
-                global.savedkillcount = (ksaver =+ 1);
-                localStorage.setItem("savedkills", global.savedkillcount);
+                let ksaver = localStorage.getItem("savedkills");
+                global.savedkillcount += 
+                localStorage.setItem("savedkills", ksaver);
                 break;
           case "killstreakreset":
                 global.metrics.killcount = 0;
