@@ -280,19 +280,19 @@ function PlaySound169() {
     }
     if (global.skinpage === 1) {
     counterthing.textContent = "○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
-    global.selectedskin = "cswmskin";
+    global.selectedskin = "bsignalskin";
     skinnamedisplay.textContent = "Broken Signal";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tv.png?v=1708615075011"
     }
     if (global.skinpage === 2) {
     counterthing.textContent = "○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "tankcharmskin";
     skinnamedisplay.textContent = "Tank Charm";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
     if (global.skinpage === 3) {
     counterthing.textContent = "○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "dfxskin";
     skinnamedisplay.textContent = "Deltafyrex";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-12-14-17-8-14.gif?v=1708618924966";
     }
@@ -304,7 +304,7 @@ function PlaySound169() {
     }
     if (global.skinpage === 5) {
     counterthing.textContent = "○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "kangarooskin";
     skinnamedisplay.textContent = "Kangaroo";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/image.webp?v=1708602765689";
     }
@@ -316,7 +316,7 @@ function PlaySound169() {
     }
     if (global.skinpage === 7) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "cogskin";
     skinnamedisplay.textContent = "Cogwheel";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381";
     }
@@ -328,13 +328,13 @@ function PlaySound169() {
     }
     if (global.skinpage === 9) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "coinskin";
     skinnamedisplay.textContent = "Coined";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196";
     }
     if (global.skinpage === 10) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
@@ -346,7 +346,7 @@ function PlaySound169() {
     }
     if (global.skinpage === 12) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉";
-    global.selectedskin = "primalskin";
+    global.selectedskin = "incomskin";
     skinnamedisplay.textContent = "Very Much Incommodiousness";
     myImg.src = "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044";
     }

@@ -45,21 +45,45 @@ Class.kangarooskin = {
         TYPE: "kangaroocharm"
     }]
 };
-Class.cogskin = {
-    TURRETS: [{
-        POSITION: [18, 0, 0, 0, 360, 3],
-        TYPE: "cogcharm"
-    }]
-};
 Class.cswmskin = {
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 0.5],
         TYPE: "sandwichdeco"
     }]
 };
+Class.cogskin = {
+    TURRETS: [{
+        POSITION: [18, 0, 0, 0, 360, 3],
+        TYPE: "cogcharm"
+    }]
+};
+Class.skypeskin = {
+    TURRETS: [{
+        POSITION: [18, 0, 0, 0, 360, 3],
+        TYPE: "skypecharm"
+    }]
+};
+Class.coinskin = {
+    TURRETS: [{
+        POSITION: [18, 0, 0, 0, 360, 3],
+        TYPE: "coincharm"
+    }]
+};
+Class.discordskin = {
+    TURRETS: [{
+        POSITION: [18, 0, 0, 0, 360, 3],
+        TYPE: "discordcharm"
+    }]
+};
 Class.deltaDecoskin = {
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 3],
         TYPE: "deltaDeco"
+    }]
+};
+Class.incomskin = {
+    TURRETS: [{
+        POSITION: [18, 0, 0, 0, 360, 3],
+        TYPE: "incomcharm"
     }]
 };
