@@ -1278,6 +1278,11 @@ input [type="image"]:focus {
 }
 .displaytest {
     position: relative;
+    float: bottom;
+}
+.displayskinname {
+    top: 5%;
+    position: relative;
 }
 #skinpreview {
     position: relative;

@@ -249,6 +249,7 @@ function PlaySound169() {
   document.getElementById("selectskin").onclick = () => global.skin = global.selectedskin;
   
   const counterthing = document.querySelector(".displaytest");
+  const skinnamedisplay = document.querySelector(".displayskinname");
   const rightbutton = document.querySelector("#rightarrowbutton");
   const leftbutton = document.querySelector("#leftarrowbutton");
   const myImg = document.querySelector("#skinpreview");
@@ -259,7 +260,6 @@ function PlaySound169() {
       } else {
           global.skinpage += 1;
       };
-      counterthing.textContent = global.skinpage;
       changeskinpreview();
   });
   leftbutton.addEventListener("click", function() {
@@ -268,23 +268,26 @@ function PlaySound169() {
       } else {
           global.skinpage -= 1;
       };                 
-      counterthing.textContent = global.skinpage;
       changeskinpreview();
   });
 
   function changeskinpreview() {
     if (global.skinpage === 0) {
     global.selectedskin = "";
-    myImg.src = ""
+    skinnamedisplay.textContent = "Default";
+    myImg.src = "";
     }
     if (global.skinpage === 1) {
     global.selectedskin = "cswmskin";
+    skinnamedisplay.textContent = "ChickenSandwhichMan";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 2) {
     global.selectedskin = "deltaDecoskin";
+    skinnamedisplay.textContent = "Cat-Code";
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
+    counterthing.textContent = global.skinpage;
   };
 
 function songrecog() {
