@@ -10,7 +10,7 @@ Class.dfxcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 Class.primalcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/primal.webp?v=1708602763032")
 Class.kangaroocharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/image.webp?v=1708602765689")
 Class.cogcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381")
-Class.skypecharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708619037464")
+Class.skypecharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494")
 Class.coincharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196")
 Class.discordcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293")
 Class.incomcharm = makeDeco("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044")
