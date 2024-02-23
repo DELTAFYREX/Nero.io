@@ -320,14 +320,14 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "kangarooskin";
     skinnamedisplay.textContent = "Kangaroo";
-    checkifachieve("killachievement2");
+    checkifachieve("killachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/image.webp?v=1708623596560";
     }
     if (global.skinpage === 6) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "cswmskin";
     skinnamedisplay.textContent = "ChickenSandwhichMan";
-    checkifachieve("killachievement");
+    checkifachieve("killachievement2");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 7) {
@@ -341,7 +341,7 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
     global.selectedskin = "skypeskin";
     skinnamedisplay.textContent = "Skype";
-    checkifachieve("skypeachievement");
+    checkifachieve("skypemoment");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
     }
     if (global.skinpage === 9) {
@@ -355,21 +355,21 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
     global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
-    checkifachieve("discordachievement");
+    checkifachieve("getbacktowoooak");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
     if (global.skinpage === 11) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
-    checkifachieve("");
+    checkifachieve("creditsachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
     if (global.skinpage === 12) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉";
     global.selectedskin = "incomskin";
     skinnamedisplay.textContent = "Very Much Incommodiousness";
-    checkifachieve();
+    checkifachieve("pissio");
     myImg.src = "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044";
     }
   };
