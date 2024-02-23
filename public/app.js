@@ -271,15 +271,27 @@ function PlaySound169() {
       changeskinpreview();
   });
   
+  selectimage.onclick = () => {
+      if (localStorage.getItem(achname) === "YOUDIDIT:D!!!") {
+      if (global.skin === global.selectedskin) {
+        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
+      } else {
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
+      }
+    } else {
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
+    }
+    global.skin = global.selectedskin;
+  }
+  
   
   function checkifachieve(ach, lockcolor) {
-    const theachievementnamewerelookingfor = ach;
-    if (localStorage.getItem(theachievementnamewerelookingfor) === "YOUDIDIT:D!!!") {
-      selectimage.onclick = () => selectskin(ach);
+    if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
+      global.lockedornot = 0;
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
-      getcurrentskinselectbutton(ach);
     } else {
+      global.lockedornot
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
       lock.style.display = 'inline-block';
       myImg.style.filter = 'brightness(0.5)';
@@ -292,25 +304,6 @@ function PlaySound169() {
       } else {
         lock.style.filter = 'invert(0)';
       }
-    }
-  }
-  
-  function selectskin(achname) {
-    if (localStorage.getItem(achname) === "YOUDIDIT:D!!!") {
-        global.skin = global.selectedskin; 
-        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
-    }
-  }
-  
-  function getcurrentskinselectbutton(achname) {
-    if (localStorage.getItem(achname) === "YOUDIDIT:D!!!") {
-      if (global.skin === global.selectedskin) {
-        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
-      } else {
-      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
-      }
-    } else {
-      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
     }
   }
   
