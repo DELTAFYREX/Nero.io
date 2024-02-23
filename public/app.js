@@ -270,6 +270,14 @@ function PlaySound169() {
       };                 
       changeskinpreview();
   });
+  
+  function checkifachieve(ach) {
+    if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
+      
+    } else {
+      
+    }
+  }
 
   function changeskinpreview() {
     if (global.skinpage === 0) {
