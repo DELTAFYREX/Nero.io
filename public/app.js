@@ -334,35 +334,35 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○";
     global.selectedskin = "cogskin";
     skinnamedisplay.textContent = "Cogwheel";
-    checkifachieve("");
+    checkifachieve("lagachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381";
     }
     if (global.skinpage === 8) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
     global.selectedskin = "skypeskin";
     skinnamedisplay.textContent = "Skype";
-    checkifachieve();
+    checkifachieve("skypeachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
     }
     if (global.skinpage === 9) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
     global.selectedskin = "coinskin";
     skinnamedisplay.textContent = "Coined";
-    checkifachieve();
+    checkifachieve("tokenachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196";
     }
     if (global.skinpage === 10) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
     global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
-    checkifachieve();
+    checkifachieve("discordachievement");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
     if (global.skinpage === 11) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
-    checkifachieve();
+    checkifachieve("");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
     if (global.skinpage === 12) {
