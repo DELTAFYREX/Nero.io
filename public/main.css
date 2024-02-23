@@ -1227,12 +1227,16 @@ input [type="image"]:focus {
     top: 5%;
     position: relative;
 }
-#skinpreview {
+#skinpdiv {
     top: 4%;
     position: relative;
     margin-left: auto;
     margin-right: auto;
+}
+#skinpreview {
+    vertical-align: bottom;   
     width: 50%;
+    height: 50%;
 }
 #selectskin {
     margin-top: auto;
@@ -1241,14 +1245,11 @@ input [type="image"]:focus {
     height: 15%;
     width: 20%;
 }
-#lockedskin
-{
-    background-image: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked.png?v=1708602929342";
+#lockedskin {
     display: inline-block;
-    height: 30px;
+    width: 50%;
+    height: 50%; 
     position: absolute;
-    top: 100px;
-    width: 100px;
 }
 
 @keyframes pfpHoverOn { 
