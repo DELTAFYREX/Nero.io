@@ -1246,14 +1246,13 @@ input [type="image"]:focus {
     height: 15%;
     width: 20%;
 }
-#lockedskin {
+.lockedskin {
     display: inline-block;
     width: 100%;
     height: 100%; 
     top: 0;
     left: 0;
     position: absolute;
-    animation:invertation 800ms linear repeat;
 }
 
 @keyframes pfpHoverOn { 
