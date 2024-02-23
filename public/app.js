@@ -273,8 +273,9 @@ function PlaySound169() {
   
   
   function checkifachieve(ach, lockcolor) {
-    if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      selectimage.onclick = () => { selectskin(ach); };
+    const theachievementnamewerelookingfor = ach;
+    if (localStorage.getItem(theachievementnamewerelookingfor) === "YOUDIDIT:D!!!") {
+      selectimage.onclick = () => selectskin(ach);
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
       getcurrentskinselectbutton(ach);
