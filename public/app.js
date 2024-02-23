@@ -273,7 +273,7 @@ function PlaySound169() {
   
   function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      document.getElementById("selectskin").onclick = () => global.skin = global.selectedskin;
+      selectimage.onclick = () => global.skin = global.selectedskin;
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
       if (global.skin = global.selectedskin) {
@@ -282,7 +282,6 @@ function PlaySound169() {
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
       }
     } else {
-      document.getElementById("selectskin").onclick = () => angycuznounlock();
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
       lock.style.display = 'inline-block';
       myImg.style.filter = 'brightness(0.5)';
@@ -308,6 +307,9 @@ function PlaySound169() {
     global.selectedskin = "";
     skinnamedisplay.textContent = "Default";
     lock.style.display = 'none';
+    if (global.selectedskin = "") {
+    selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
+    };
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
     if (global.skinpage === 1) {
