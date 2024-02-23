@@ -276,7 +276,7 @@ function PlaySound169() {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
       lock.style.display = 'none';
     } else {
-      lock.style.display = 'absolute';
+      lock.style.display = 'inline-block';
     }
   }
 

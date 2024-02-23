@@ -1253,6 +1253,7 @@ input [type="image"]:focus {
     top: 0;
     left: 0;
     position: absolute;
+    animation:invertation 800ms linear repeat;
 }
 
 @keyframes pfpHoverOn { 
