@@ -253,7 +253,7 @@ function PlaySound169() {
   const rightbutton = document.querySelector("#rightarrowbutton");
   const leftbutton = document.querySelector("#leftarrowbutton");
   const myImg = document.querySelector("#skinpreview");
-  const lock = document.querySelector("#lockedskin")
+  const lock = document.querySelector(".lockedskin")
 
   rightbutton.addEventListener("click", function() {
       if (global.skinpage === 12) {
@@ -274,14 +274,11 @@ function PlaySound169() {
   
   function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      if (lockcolor === "black") {
-        lock.style.filter = 'brightness(1)';
-      } else {
-        lock.style.filter = 'brightness(0)';
-      };
       lock.style.display = 'none';
+      myImg.style.filter = 'brightness(1)';
     } else {
       lock.style.display = 'inline-block';
+      myImg.style.filter = 'brightness(0.5)';
     }
   }
 
@@ -311,7 +308,7 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "dfxskin";
     skinnamedisplay.textContent = "Deltafyrex";
-    checkifachieve("50killsachievement");
+    checkifachieve("50killsachievement", "white");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-12-14-17-8-14.gif?v=1708618924966";
     }
     if (global.skinpage === 4) {
