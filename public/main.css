@@ -1232,11 +1232,13 @@ input [type="image"]:focus {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    width: 50%;
+    height: 50%;
 }
 #skinpreview {
     vertical-align: bottom;   
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 #selectskin {
     margin-top: auto;
@@ -1247,8 +1249,10 @@ input [type="image"]:focus {
 }
 #lockedskin {
     display: inline-block;
-    width: 50%;
-    height: 50%; 
+    width: 100%;
+    height: 100%; 
+    top: 0;
+    left: 0;
     position: absolute;
 }
 
