@@ -245,8 +245,6 @@ function PlaySound169() {
           global.music2.songname = "Not Playing";
             }
          return; };
-
-  document.getElementById("selectskin").onclick = () => global.skin = global.selectedskin;
   
   const counterthing = document.querySelector(".displaytest");
   const skinnamedisplay = document.querySelector(".displayskinname");
@@ -275,9 +273,17 @@ function PlaySound169() {
   
   function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
+      document.getElementById("selectskin").onclick = () => global.skin = global.selectedskin;
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
+      if (global.skin = global.selectedskin) {
+        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
+      } else {
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
+      }
     } else {
+      document.getElementById("selectskin").onclick = () => angycuznounlock();
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
       lock.style.display = 'inline-block';
       myImg.style.filter = 'brightness(0.5)';
       if (lockcolor === "white") {
@@ -290,6 +296,10 @@ function PlaySound169() {
         lock.style.filter = 'invert(0)';
       }
     }
+  }
+  
+  function angycuznounlock() {
+    
   }
 
   function changeskinpreview() {
