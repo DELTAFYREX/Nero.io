@@ -356,6 +356,11 @@ popup = ' onclick="openPopup()" '
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>K-25</h1><span>Get 25 Kills</span></div>");
                 };
+                if (localStorage.getItem("50killsachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>K-50</h1><span>Get 25 Kills (alright, bros good)</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>K-50</h1><span>Get 50 Kills</span></div>");
+                };
                 if (localStorage.getItem("100killsachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>K-100</h1><span>Get 100 Kills (DAMN...)</span></div>");
                 } else {

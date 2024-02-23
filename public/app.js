@@ -274,7 +274,7 @@ function PlaySound169() {
   
   function checkifachieve(ach) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      lock.style.display = 'none';    
+      lock.style.display = 'none';
     } else {
       lock.style.display = 'absolute';
     }
@@ -355,7 +355,7 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
     global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
-    checkifachieve("getbacktowoooak");
+    checkifachieve("Getbacktowoooak");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
     if (global.skinpage === 11) {
