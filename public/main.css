@@ -1246,8 +1246,8 @@ input [type="image"]:focus {
     float: center;
     margin-left: auto;
     margin-right: auto;
-    height: 15%;
-    width: 20%;
+    height: 130px;
+    width: 260px;
     z-index: 3;
 }
 #lockedskin {

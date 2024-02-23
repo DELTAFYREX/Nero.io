@@ -253,7 +253,8 @@ function PlaySound169() {
   const rightbutton = document.querySelector("#rightarrowbutton");
   const leftbutton = document.querySelector("#leftarrowbutton");
   const myImg = document.querySelector("#skinpreview");
-  const lock = document.querySelector("#lockedskin")
+  const lock = document.querySelector("#lockedskin");
+  const selectimage = document.querySelector("#selectskin");
 
   rightbutton.addEventListener("click", function() {
       if (global.skinpage === 12) {
