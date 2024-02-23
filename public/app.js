@@ -272,26 +272,24 @@ function PlaySound169() {
   });
   
   selectimage.onclick = () => {
-      if (localStorage.getItem(achname) === "YOUDIDIT:D!!!") {
-      if (global.skin === global.selectedskin) {
+      if (global.lockedornot === 0) {
+        global.skin = global.selectedskin;
         selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
-      } else {
-      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
-      }
     } else {
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
     }
-    global.skin = global.selectedskin;
   }
   
   
   function checkifachieve(ach, lockcolor) {
+    if (global.selectedskin !== "") {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
       global.lockedornot = 0;
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
+      updateskinselectbutton();
     } else {
-      global.lockedornot
+      global.lockedornot = 1;
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
       lock.style.display = 'inline-block';
       myImg.style.filter = 'brightness(0.5)';
@@ -305,10 +303,23 @@ function PlaySound169() {
         lock.style.filter = 'invert(0)';
       }
     }
+  } else {
+    lock.style.display = 'none';
+    if (global.skin === global.selectedskin) {
+    selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
+    } else {
+      global.skin === global.selectedskin
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
+    };
   }
+}
   
-  function angycuznounlock() {
-    
+  function updateskinselectbutton() {
+    if (global.lockedornot === 0) {
+    selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992"
+    } else {
+    selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
+    }
   }
 
   function changeskinpreview() {
@@ -316,12 +327,7 @@ function PlaySound169() {
     counterthing.textContent = "◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "";
     skinnamedisplay.textContent = "Default";
-    lock.style.display = 'none';
-    if (global.skin === global.selectedskin) {
-    selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
-    } else {
-      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
-    };
+    checkifachieve("", "");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
     if (global.skinpage === 1) {
