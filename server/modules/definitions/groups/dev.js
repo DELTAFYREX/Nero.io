@@ -695,7 +695,7 @@ Class.auraHealer = {
 
 Class.ghoster_ghostForm = {
     PARENT: ['genericTank'],
-    TOOLTIP: 'You are now in ghost form, roam around and find your next target. Will turn back in 5 seconds',
+    TOOLTIP: 'You are now hidden, roam around and find your next target. You will be visible again in 5 seconds',
     LABEL: 'Ghoster',
     BODY: {
         SPEED: 20,
@@ -711,7 +711,7 @@ Class.ghoster_ghostForm = {
 Class.ghoster = {
     PARENT: ['genericTank'],
     LABEL: 'Ghoster',
-    TOOLTIP: 'Shooting will turn you into a ghost for 5 seconds',
+    TOOLTIP: 'Shooting will hide you for 5 seconds',
     BODY: {
         SPEED: base.SPEED,
         ACCELERATION: base.ACCEL,
@@ -973,6 +973,40 @@ Class.bulletSpawnTest = {
                 TYPE: ['bullet', {BORDERLESS: true}],
                 BORDERLESS: true,
             }
+        }
+    ]
+}
+Class.propTestProp = {
+    PARENT: 'genericTank',
+    SHAPE: 6,
+    COLOR: 0,
+    GUNS: [
+        {
+            POSITION: [20, 10, 1, 0, 0, 45, 0],
+            PROPERTIES: {COLOR: 13},
+        }, {
+            POSITION: [20, 10, 1, 0, 0, -45, 0],
+            PROPERTIES: {COLOR: 13},
+        }
+    ]
+}
+
+Class.propTest = {
+    PARENT: 'genericTank',
+    LABEL: 'Deco Prop Test',
+    GUNS: [
+        {
+            POSITION: [18, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet",
+            }
+        }
+    ],
+    PROPS: [
+        {
+            POSITION: [10, 0, 0, 0, 1],
+            TYPE: 'propTestProp'
         }
     ]
 }
@@ -2023,7 +2057,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
         Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
-        Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
+        Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
         Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev"];
 
 
