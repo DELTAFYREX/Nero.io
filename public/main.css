@@ -1241,6 +1241,15 @@ input [type="image"]:focus {
     height: 15%;
     width: 20%;
 }
+#lockedskin
+{
+    background-image: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked.png?v=1708602929342";
+    display: inline-block;
+    height: 30px;
+    position: absolute;
+    top: 100px;
+    width: 100px;
+}
 
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
