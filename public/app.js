@@ -273,14 +273,10 @@ function PlaySound169() {
   
   function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      selectimage.onclick = () => global.skin = global.selectedskin;
+      selectimage.onclick = () => { global.skin = global.selectedskin; getcurrentskinselectbutton(); };
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
-      if (global.skin === global.selectedskin) {
-        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
-      } else {
-      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
-      }
+      getcurrentskinselectbutton();
     } else {
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
       lock.style.display = 'inline-block';
@@ -295,6 +291,14 @@ function PlaySound169() {
         lock.style.filter = 'invert(0)';
       }
     }
+  }
+  
+  function getcurrentskinselectbutton() {
+      if (global.skin === global.selectedskin) {
+        selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
+      } else {
+      selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/select.png?v=1708718071992";
+      }
   }
   
   function angycuznounlock() {
