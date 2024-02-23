@@ -272,8 +272,13 @@ function PlaySound169() {
       changeskinpreview();
   });
   
-  function checkifachieve(ach) {
+  function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
+      if (lockcolor === "black") {
+        lock.style.filter = 'brightness(1)';
+      } else {
+        lock.style.filter = 'brightness(0)';
+      };
       lock.style.display = 'none';
     } else {
       lock.style.display = 'inline-block';
@@ -292,14 +297,14 @@ function PlaySound169() {
     counterthing.textContent = "○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "bsignalskin";
     skinnamedisplay.textContent = "Broken Signal";
-    checkifachieve("disconnectachievement");
+    checkifachieve("disconnectachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tv.png?v=1708615075011"
     }
     if (global.skinpage === 2) {
     counterthing.textContent = "○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "tankcharmskin";
     skinnamedisplay.textContent = "Tank Charm";
-    checkifachieve("25killsachievement");
+    checkifachieve("25killsachievement", "white");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
     if (global.skinpage === 3) {
