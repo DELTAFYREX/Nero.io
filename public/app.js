@@ -271,9 +271,10 @@ function PlaySound169() {
       changeskinpreview();
   });
   
+  
   function checkifachieve(ach, lockcolor) {
     if (localStorage.getItem(ach) === "YOUDIDIT:D!!!") {
-      selectimage.onclick = () => { global.skin = global.selectedskin; getcurrentskinselectbutton(); };
+      selectimage.onclick = () => { selecttheskin(); getcurrentskinselectbutton(); };
       lock.style.display = 'none';
       myImg.style.filter = 'brightness(1)';
       getcurrentskinselectbutton();
@@ -291,6 +292,10 @@ function PlaySound169() {
         lock.style.filter = 'invert(0)';
       }
     }
+  }
+  
+  function selecttheskin() {
+    global.skin = global.selectedskin; 
   }
   
   function getcurrentskinselectbutton() {
