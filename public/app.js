@@ -253,7 +253,7 @@ function PlaySound169() {
   const rightbutton = document.querySelector("#rightarrowbutton");
   const leftbutton = document.querySelector("#leftarrowbutton");
   const myImg = document.querySelector("#skinpreview");
-  const lock = document.querySelector(".lockedskin")
+  const lock = document.querySelector("#lockedskin")
 
   rightbutton.addEventListener("click", function() {
       if (global.skinpage === 12) {
@@ -279,6 +279,15 @@ function PlaySound169() {
     } else {
       lock.style.display = 'inline-block';
       myImg.style.filter = 'brightness(0.5)';
+      if (lockcolor === "white") {
+        lock.style.filter = 'invert(1)';
+      } else if (lockcolor === "grey") {
+        lock.style.filter = 'invert(0.7)';
+      } else if (lockcolor === "dgrey") {
+        lock.style.filter = 'invert(0.3)';
+      } else {
+        lock.style.filter = 'invert(0)';
+      }
     }
   }
 
@@ -301,77 +310,78 @@ function PlaySound169() {
     counterthing.textContent = "○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "tankcharmskin";
     skinnamedisplay.textContent = "Tank Charm";
-    checkifachieve("25killsachievement", "white");
+    checkifachieve("25killsachievement", "dgrey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
     if (global.skinpage === 3) {
     counterthing.textContent = "○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "dfxskin";
     skinnamedisplay.textContent = "Deltafyrex";
-    checkifachieve("50killsachievement", "white");
+    checkifachieve("50killsachievement", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-12-14-17-8-14.gif?v=1708618924966";
     }
     if (global.skinpage === 4) {
     counterthing.textContent = "○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "primalskin";
     skinnamedisplay.textContent = "Ultimate Primal";
-    checkifachieve("100killsachievement");
+    checkifachieve("100killsachievement", "white");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/primal.webp?v=1708602763032";
     }
     if (global.skinpage === 5) {
     counterthing.textContent = "○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "kangarooskin";
     skinnamedisplay.textContent = "Kangaroo";
-    checkifachieve("killachievement");
+    checkifachieve("killachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/image.webp?v=1708623596560";
     }
     if (global.skinpage === 6) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "cswmskin";
     skinnamedisplay.textContent = "ChickenSandwhichMan";
-    checkifachieve("killachievement2");
+    checkifachieve("killachievement2", "dgrey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 7) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○";
     global.selectedskin = "cogskin";
     skinnamedisplay.textContent = "Cogwheel";
-    checkifachieve("lagachievement");
+    checkifachieve("lagachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381";
     }
     if (global.skinpage === 8) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
     global.selectedskin = "skypeskin";
     skinnamedisplay.textContent = "Skype";
-    checkifachieve("skypemoment");
+    checkifachieve("skypemoment", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
     }
     if (global.skinpage === 9) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
     global.selectedskin = "coinskin";
     skinnamedisplay.textContent = "Coined";
-    checkifachieve("tokenachievement");
+    checkifachieve("tokenachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196";
     }
     if (global.skinpage === 10) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
     global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
-    checkifachieve("Getbacktowoooak");
+    checkifachieve("Getbacktowoooak", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
     if (global.skinpage === 11) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
-    checkifachieve("creditsachievement");
+    checkifachieve("creditsachievement", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
     if (global.skinpage === 12) {
     counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉";
     global.selectedskin = "incomskin";
     skinnamedisplay.textContent = "Very Much Incommodiousness";
-    checkifachieve("pissio");
+    checkifachieve("pissio", "grey");
+    myImg.style.filter = 'blur(10px)';
     myImg.src = "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044";
     }
   };
