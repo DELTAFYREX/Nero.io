@@ -1580,7 +1580,11 @@ DANGER: 4,
 ON: [{
   event: "tick",
   handler: ({ body }) => {
-    if (body.control.fire) {
+    if (global.cangrappleonceagain === "yes") {
+    function myLoop(i) {
+  setTimeout(function()
+      global.cangrappleonceagain = "no",
+        if (body.control.fire) {
       for (instance of entities) {
         if (instance.type == "wall") {
           if (instance != body != null && util.getDistance(instance, {
@@ -1599,7 +1603,10 @@ ON: [{
           }
         }
       }
-    }
+    }//  decrement i and call myLoop again if i > 0
+  }, 3000)
+  }
+}
   }  
 }]
 }

@@ -19,6 +19,7 @@ global.arenaClosed = false;
 global.mockupsLoaded = false;
 const d = new Date();
 global.dayofweek = d.getUTCDay();
+global.cangrappleonceagain = "yes"
 
 global.TEAM_BLUE = -1;
 global.TEAM_GREEN = -2;
