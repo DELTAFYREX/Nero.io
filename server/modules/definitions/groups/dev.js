@@ -1574,22 +1574,34 @@ Class.devtesttemplate = {
     ]
 };
 Class.grappeltest = {
-    PARENT: "genericTank",
-    LABEL: "Grappel",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "bullet"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+PARENT: "genericTank",
+LABEL: "GrappleTest",
+DANGER: 4,
+ON: [{
+  event: "tick",
+  handler: ({ body }) => {
+    if (body.control.fire) {
+      for (instance of entities) {
+        if (instance.type == "wall") {
+        if (instance != body != null && util.getDistance(instance, {
+          x: body.control.target.x + body.x,
+          y: body.control.target.y + body.y
+        }) < instance.size * 1.3) {
+          if (body.children == 0) {
+            // pull =
+            let deltaX = instance.x - body.x,
+            deltaY = instance.y - body.y,
+            distance = util.getDistance(instance, body)
+            angle = Math.atan2(deltaY, deltaX);
+            body.velocity.x = distance/(distance* instance.damp) * Math.cos(angle),
+            body.velocity.y = distance/(distance* instance.damp)* Math.sin(angle)
+          }
         }
-    ]
-};
+      }
+    }
+  }  
+}]
+}
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
