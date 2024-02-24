@@ -1580,10 +1580,6 @@ DANGER: 4,
 ON: [{
   event: "tick",
   handler: ({ body }) => {
-    if (global.cangrappleonceagain === "yes") {
-    function myLoop(i) {
-  setTimeout(function()
-      global.cangrappleonceagain = "no",
         if (body.control.fire) {
       for (instance of entities) {
         if (instance.type == "wall") {
@@ -1600,15 +1596,13 @@ ON: [{
               body.velocity.x = distance/(distance* instance.damp) * Math.cos(angle),
               body.velocity.y = distance/(distance* instance.damp)* Math.sin(angle)
             }
-          }
         }
       }
-    }//  decrement i and call myLoop again if i > 0
-  }, 3000)
+    }
   }
 }
-  }  
-}]
+  }
+]
 }
 Class.pisseroo = {
     PARENT: ['basic'],
