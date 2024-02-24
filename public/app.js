@@ -2287,13 +2287,19 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
             ticker++;
             upgradeNum++;
         }
+      
 
         // Draw dont upgrade button
         let h = 14,
             msg = "Don't Upgrade",
             m = measureText(msg, h - 3) + 10;
-        let buttonX = initialX + (rowWidth + len + internalSpacing - initialX) / 2,
-            buttonY = initialY + height + internalSpacing;
+            if (rowWidth >= 3) {
+              let thisvariable = 3;
+            } else {
+              let thisvariable = rowWidth;
+            }
+        let buttonX = initialY + (height + len + internalSpacing - initialX) / 2,
+            buttonY = initialX + thisvariable + internalSpacing;
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h + settings.graphical.barChunk, color.black);
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
         drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
