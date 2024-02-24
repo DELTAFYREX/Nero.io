@@ -2287,16 +2287,15 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
             ticker++;
             upgradeNum++;
         }
-      
 
         // Draw dont upgrade button
         let h = 14,
             msg = "Don't Upgrade",
             m = measureText(msg, h - 3) + 10;
-        let buttonX = initialY + (height + len + internalSpacing - initialX) / 2,
-            buttonY = initialX + rowWidth + internalSpacing;
-        drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h + settings.graphical.barChunk, color.black);
-        drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
+        let buttonY = initialX + (rowWidth + len + internalSpacing - initialX) / 2,
+            buttonX = initialY + height + internalSpacing;
+        drawBar(buttonY - m / 2, buttonX + m / 2, buttonY + h / 2, h + settings.graphical.barChunk, color.black);
+        drawBar(buttonY - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
         drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
         global.clickables.skipUpgrades.place(0, (buttonX - m / 2) * clickableRatio, buttonY * clickableRatio, m * clickableRatio, h * clickableRatio);
 
