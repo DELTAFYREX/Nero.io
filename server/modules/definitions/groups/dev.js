@@ -1607,10 +1607,106 @@ ON: [{
 Class.maxStatTank = {
   PARENT: ['genericTank'],
   SKILL_CAP: Array(10).fill(255),
-
     SKILL: Array(10).fill(255),
-
-
+}
+Class.qlamgSpinnerTurret = {
+    PARENT: "genericTank",
+    LABEL: "Spinner Turret",
+    GUNS: [
+        {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.1],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.2],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.3],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.4],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.5],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.6],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.7],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.8],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        },         {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0.9],
+              PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              TYPE: "bullet"
+            }
+        }, 
+    ]
+}
+Class.quiteliterallyAMachineGun = {
+    PARENT: "genericTank",
+    LABEL: "Quite Literally a Motherfucking Machine Gun",
+	  UPGRADE_COLOR: "red",
+    DANGER: 7,
+    BODY: {
+        FOV: base.FOV * 1.2
+    },
+    TURRETS: [
+        {
+            POSITION: [10, 14, 0, 0, 0, 1],
+            TYPE: "qlamgSpinnerTurret"
+        }, {
+            POSITION: [5, 14, 0, 0, 0, 3],
+            TYPE: "lamgSpinnerTurret"
+        }, {
+            POSITION: [10, 14, 0, 0, 0, 2],
+            TYPE: "lamgSpinnerTurret"
+        }
+    ],
+    GUNS: [
+        {
+            POSITION: [22, 8, 1, 0, 0, 0, 0]
+        }, {
+            POSITION: [2, 3.5, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun, g.op]),
+              TYPE: "bullet"
+            }
+        }
+    ]
 }
 Class.pisseroo = {
     PARENT: ['basic'],
@@ -2097,7 +2193,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["maxStatTank", "basic"]];
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["basic", "maxStatTank"], "quiteliterallyAMachineGun"];
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added

@@ -66,73 +66,15 @@ Class.squareSatellite = {
 }
 
 // Turrets
-Class.lamgSpinnerTurret = {
+Class.lamgSpinnerTurret = makeMulti({
     PARENT: "genericTank",
     LABEL: "Spinner Turret",
     GUNS: [
         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.1],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.2],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.3],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.4],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.5],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.6],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.7],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.8],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        },         {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0.9],
-              PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
-              TYPE: "bullet"
-            }
-        }, 
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0]
+        }
     ]
-}
+}, 10)
 
 // Decorations
 Class.tornadoDeco = makeDeco(4);
