@@ -160,5 +160,5 @@ module.exports = {
     slightlyweaker: { health: 0.8, damage: 0.8, pen: 0.8 },
     grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1 },
     norange: { range: 0.2 },
-    literallyamachinegun: { reload: 0.2, speed: 5, maxSpeed: 5, spread: 0.4, shudder: 0.6 }
+    literallyamachinegun: { reload: 0.2, speed: 5, maxSpeed: 5, spray: 0.3, shudder: 0.6 },
 }
