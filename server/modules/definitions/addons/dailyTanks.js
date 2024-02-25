@@ -70,7 +70,9 @@ Class.lamgSpinnerTurret = makeMulti({
     PARENT: "genericTank",
     LABEL: "Spinner Turret",
     GUNS: [
-x
+        {
+            POSITION: [15, 3.5, 1, 0, 0, 0, 0]
+        }
     ]
 }, 10)
 
@@ -1015,7 +1017,7 @@ Class.literallyAMachineGun = {
         }, {
             POSITION: [2, 3.5, 1, 0, 0, 0, 0],
             PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun]),
               TYPE: "bullet"
             }
         }
