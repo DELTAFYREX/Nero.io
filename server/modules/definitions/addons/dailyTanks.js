@@ -70,9 +70,7 @@ Class.lamgSpinnerTurret = makeMulti({
     PARENT: "genericTank",
     LABEL: "Spinner Turret",
     GUNS: [
-        {
-            POSITION: [15, 3.5, 1, 0, 0, 0, 0]
-        }
+x
     ]
 }, 10)
 
