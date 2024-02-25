@@ -1017,7 +1017,7 @@ Class.literallyAMachineGun = {
         }, {
             POSITION: [2, 3.5, 1, 0, 0, 0, 0],
             PROPERTIES: {
-              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun]),
+              SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.gunner, g.nailgun, g.literallyamachinegun]),
               TYPE: "bullet"
             }
         }
