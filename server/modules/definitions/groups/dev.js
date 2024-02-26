@@ -1606,8 +1606,22 @@ ON: [{
 }
 Class.maxStatTank = {
   PARENT: ['genericTank'],
+  DANGER: 11,
+  BODY: {
+    ACCELERATION: base.ACCEL*2,
+    SPEED: base.SPEED*2,
+    HEALTH: base.HEALTH*2,
+    DAMAGE: base.DAMAGE*2,
+    PENETRATION: base.PENETRATION*2,
+    SHIELD: base.SHIELD*2,
+    REGEN: base.REGEN*2,
+    FOV: base.FOV*2,
+    DENSITY: base.DENSITY*2,
+    PUSHABILITY: 2,
+    HETERO: 6,
+  },
   SKILL_CAP: Array(10).fill(255),
-    SKILL: Array(10).fill(255),
+  SKILL: Array(10).fill(255),
 }
 Class.qlamgSpinnerTurret = {
     PARENT: "genericTank",
@@ -2193,7 +2207,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["basic", "maxStatTank"], "quiteliterallyAMachineGun"];
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["maxStatTank", "basic"], "quiteliterallyAMachineGun"];
 
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
