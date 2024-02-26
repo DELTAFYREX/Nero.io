@@ -5929,8 +5929,8 @@ Class.skater = {
     LABEL: "Skater",
     DANGER: 6,
     BODY: {
-        SPEED: 1.7 * base.SPEED,
-        ACCELERATION: 0.8 * base.ACCEL,
+        SPEED: base.SPEED * 2,
+        ACCELERATION: base.ACCEL * 0.76,
     },
     TURRETS: [
         {
@@ -5943,6 +5943,7 @@ Class.skater = {
     ]
 }
 Class.trackerSmasher = makeTracker(Class.smasher, "Scanner");
+Class.trakerAssassin = makeTracker(Class.assassin, "Hitman");
 Class.revodirector = {
     PARENT: "genericTank",
     LABEL: "Solar System",
@@ -6407,7 +6408,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper", "snipebrid"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "assbrid", "single"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "assbrid", "trakerAssassin", "single"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
