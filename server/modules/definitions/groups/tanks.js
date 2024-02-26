@@ -5929,9 +5929,10 @@ Class.skater = {
     LABEL: "Skater",
     DANGER: 6,
     BODY: {
-        SPEED: base.SPEED * 2,
-        ACCELERATION: base.ACCEL * 0.76,
+        SPEED: base.SPEED * 2.4,
+        ACCELERATION: base.ACCEL * 0.56,
     },
+  
     TURRETS: [
         {
             POSITION: [21.5, 0, 0, 0, 360, 0],
