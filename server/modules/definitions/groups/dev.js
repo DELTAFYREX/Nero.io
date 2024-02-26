@@ -1763,6 +1763,27 @@ Class.adsfoipuasdfiopu = {
     ]
 }
 Class.adsfoipuasdfiopu.UPGRADE_COLOR = "animatednero",
+Class.adsfoipuasdfiopu2 = {
+    PARENT: ["genericTank"],
+    LABEL: "Random tank i made on the bus because i can",
+    UPGRADE_TOOLTIP: "send this non-* to the asshole explosion chamber and have his ashole exploded immediately",
+    GUNS: [{
+        POSITION: [21, 0, 0, 0, 1, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+            TYPE: "bullet"
+            }
+        }, {
+        POSITION: [17, 0, 0, 0, 2, 180, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic, g.op]),
+            TYPE: "gunchip",
+            MAX_CHILDREN: 30,
+          }
+        }
+    ]
+}
+Class.adsfoipuasdfiopu2.UPGRADE_COLOR = "animatednero",
 //wait whats stuff
 Class.placeableWall = {
     PARENT: ["rock"],
@@ -2209,7 +2230,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
         Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["maxStatTank", "basic"], "quiteliterallyAMachineGun"];
 
-
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
               Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];
               Class.papyrus.UPGRADES_TIER_0 = ["imagetest"];
+              Class.adsfoipuasdfiopu.UPGRADES_TIER_0 = ["adsfoipuasdfiopu2"];
