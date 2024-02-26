@@ -5922,6 +5922,26 @@ Class.railgun = {
     }
     ]
 }
+Class.skaterDeco = makeDeco("M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1");
+Class.skaterDeco.STROKE_WIDTH = 2;
+Class.skater = {
+    PARENT: "genericSmasher",
+    LABEL: "Skater",
+    DANGER: 6,
+    BODY: {
+        SPEED: 1.7 * base.SPEED,
+        ACCELERATION: 0.8 * base.ACCEL,
+    },
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        }, {
+            POSITION: [15, 0, 0, 0, 360, 1],
+            TYPE: ["skaterDeco", { COLOR: "#49bdde" }]
+        }
+    ]
+}
 Class.trackerSmasher = makeTracker(Class.smasher, "Scanner");
 Class.revodirector = {
     PARENT: "genericTank",
@@ -6376,7 +6396,7 @@ Class.inceptCeption = makeCeptionNerf(Class.inception, "Incept-Ception");
 // TANK UPGRADE PATHS
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "autoBasic", "desmos", "bascrid", "littleHunter", "inception"]
     Class.basic.UPGRADES_TIER_2 = ["smasher", "cloner"]
-        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher"]
+        Class.smasher.UPGRADES_TIER_3 = ["megaSmasher", "spike", "autoSmasher", "landmine", "pion", "trackerSmasher", "skater"]
         Class.healer.UPGRADES_TIER_3 = ["medic", "ambulance", "surgeon", "paramedic"]
         Class.cloner.UPGRADES_TIER_3 = ["hivemind", "autoCloner"]
 
