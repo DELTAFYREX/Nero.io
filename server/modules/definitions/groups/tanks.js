@@ -5903,7 +5903,7 @@ Class.accelminigun = {
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
                 TYPE: "bullet"
             }
         }
