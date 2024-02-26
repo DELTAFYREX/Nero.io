@@ -5878,6 +5878,37 @@ Class.biggerSubduer = {
         }
     }]
 }
+Class.accelminigun = {
+    PARENT: "genericTank",
+    LABEL: "Hyper-Minigun",
+    DANGER: 6,
+    BODY: {
+        FOV: base.FOV * 1.2
+    },
+    GUNS: [
+        {
+            POSITION: [21, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 1/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
+                TYPE: "bullet"
+            }
+        },
+        {
+            POSITION: [17, 8, 1, 0, 0, 0, 2/3],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun]),
+                TYPE: "bullet"
+            }
+        }
+    ]
+}
 Class.railgun = {
     PARENT: "genericTank",
     DANGER: 6,
