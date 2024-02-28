@@ -2271,7 +2271,7 @@ class Entity extends EventEmitter {
                     }
                     instance.master.skill.score += jackpot;
                     killers.push(instance.master); // And keep track of who killed me
-                } else if (instance.settings.acceptsScore)
+                } else if (instance.settings.acceptsScore) {
                     instance.skill.score += jackpot;
                 }
                 killTools.push(instance); // Keep track of what actually killed me
@@ -2380,8 +2380,8 @@ class Entity extends EventEmitter {
             // Kill it
             return 1;
         }
-return 0;
-}
+        return 0;
+    }
     protect() {
         entitiesToAvoid.push(this);
         this.isProtected = true;
