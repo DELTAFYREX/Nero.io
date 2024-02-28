@@ -1604,6 +1604,8 @@ ON: [{
   }
 ]
 }
+
+
 Class.maxStatTank = {
   PARENT: ['genericTank'],
   DANGER: 11,
