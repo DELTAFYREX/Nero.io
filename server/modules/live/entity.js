@@ -2379,7 +2379,7 @@ class Entity extends EventEmitter {
             this.setKillers(killers);
             // Kill it
             return 1;
-        }
+        };
         return 0;
     }
     protect() {
