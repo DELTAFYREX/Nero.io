@@ -2380,8 +2380,8 @@ class Entity extends EventEmitter {
             // Kill it
             return 1;
         }
-   return 0;
-    }
+return 0;
+}
     protect() {
         entitiesToAvoid.push(this);
         this.isProtected = true;
