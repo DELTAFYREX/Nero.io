@@ -731,36 +731,6 @@ if (player.body != null && socket.permissions) {
             //     clients[i].talk("CHAT_MESSAGE_BOX", message);
             // }
             break;
-        case "gogogadgetgrappleweee":
-          if (body.children != null) {
-          for (let instance of body.children) {
-                 let deltaX = instance.x - body.x,
-               deltaY = instance.y - body.y,
-               distance = util.getDistance(instance, body)
-               angle = Math.atan2(deltaY, deltaX),
-               combinedRadii = instance.realSize + body.realSize;
-            body.velocity.x += 5 * Math.cos(angle)
-            body.velocity.y += 5 * Math.sin(angle)
-            if (combinedRadii * 1.3 > distance) {
-              body.children = []
-              break
-            }
-            
-          }
-          }
-          if (body.control.fire) {
-          for (instance of entities) {
-           if (instance != body && instance.type == "wall" && util.getDistance(instance, {
-                  x: body.control.target.x + body.x,
-                  y: body.control.target.y + body.y
-                }) < instance.size * 1.3) {
-             if (body.children == 0) {
-               body.children.push(instance)
-             }
-           }
-          }
-        }
-        break;
     }
 }
 // Monitor traffic and handle inactivity disconnects
