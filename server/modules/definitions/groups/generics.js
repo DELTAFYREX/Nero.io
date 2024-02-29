@@ -223,10 +223,6 @@ Class.nuke = {
         PUSHABILITY: -99999999,
     },
 };
-Class.accBullet = {
-    PARENT: "bullet",
-    MOTION_TYPE: "accelerate",
-};
 Class.developerBullet = {
     PARENT: ["bullet"],
     SHAPE: [[-1, -1], [1, -1], [2, 0], [1, 1], [-1, 1]],

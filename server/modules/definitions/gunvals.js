@@ -131,6 +131,7 @@ module.exports = {
     bitlessreload: { reload: 0.9 },
     morereload: { reload: 0.75 },
     doublereload: { reload: 0.5 },
+    triplereload: { reload: 1/3 },
 
     // Speed
     fast: { speed: 1.2 },
@@ -161,5 +162,4 @@ module.exports = {
     grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1 },
     norange: { range: 0.2 },
     literallyamachinegun: { reload: 0.2, speed: 5, maxSpeed: 5, spray: 0.3, shudder: 0.6 },
-    testacceler: { speed: 0.1, maxSpeed: 1 }
 }
