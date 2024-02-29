@@ -1628,8 +1628,8 @@ Class.hook = {
         handler: ({ body }) => {
           if (body.master.children != null) {
           for (let instance of body.master.children) {
-                 let deltaX = instance.x - body.x,
-               deltaY = instance.y - body.y,
+                 let deltaX = instance.x - body.master.x,
+               deltaY = instance.y - body.master.y,
                distance = util.getDistance(instance, body)
                angle = Math.atan2(deltaY, deltaX),
                combinedRadii = instance.realSize + body.realSize;

@@ -127,19 +127,10 @@ miniupdate {
 }
 
 h3 {
-    font-size: small;
+    font-size: large;
     color: #484848;
     text-align: center;
-
-    
-    
-    
-    
-    
     animation:pfpDefault 800ms linear both;
-
-    
-  
 }
 
 h3:hover {
