@@ -614,6 +614,7 @@ Class.sheildhitbox = {
 // The sheild uses the hitbox like an aura, but it can hit bullets
 Class.backShieldTurret = {
     LABEL: 'Backshield',
+    TYPE: "wall"
     VULNERABLE: true,
     SHAPE: 5,
     COLOR: 5,
@@ -624,9 +625,8 @@ Class.backShieldTurret = {
             HEALTH: 1e9,
             DENSITY: 9e6,
             SPEED: 0,
-            PUSHABILITY: 2e2,
+            PUSHABILITY: -9e2,
             DAMAGE: 0,
-            PUSHABILITY: -1000,
             RESIST: 9e2,
     },
     SYNC_TURRET_SKILLS: true,
