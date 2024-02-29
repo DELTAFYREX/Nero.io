@@ -614,7 +614,7 @@ Class.sheildhitbox = {
 // The sheild uses the hitbox like an aura, but it can hit bullets
 Class.backShieldTurret = {
     LABEL: 'Backshield',
-    TYPE: "wall"
+    TYPE: "wall",
     VULNERABLE: true,
     SHAPE: 5,
     COLOR: 5,
@@ -625,7 +625,7 @@ Class.backShieldTurret = {
             HEALTH: 1e9,
             DENSITY: 9e6,
             SPEED: 0,
-            PUSHABILITY: -9e2,
+            PUSHABILITY: 9e2,
             DAMAGE: 0,
             RESIST: 9e2,
     },
@@ -5910,21 +5910,21 @@ Class.accelminigun = {
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
-                TYPE: "bullet"
+                TYPE: "accBullet"
             }
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
-                TYPE: "bullet"
+                TYPE: "accBullet"
             }
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2/3],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.testacceler]),
-                TYPE: "bullet"
+                TYPE: "accBullet"
             }
         }
     ]
