@@ -619,14 +619,18 @@ Class.backShieldTurret = {
     COLOR: 5,
     DAMAGE_CLASS: 1,
     BODY: {
-        PUSHABILITY: 0,
-        HEALTH: 10000,
-        SHIELD: 10000,
-        REGEN: 1000,
-        DAMAGE: 1,
-        RESIST: 100,
-        STEALTH: 1,
+            SHIELD: 1e9,
+            REGEN: 1e6,
+            HEALTH: 1e9,
+            DENSITY: 9e6,
+            SPEED: 0,
+            PUSHABILITY: 2e2,
+            DAMAGE: 0,
+            PUSHABILITY: -1000,
+            RESIST: 9e2,
     },
+    SYNC_TURRET_SKILLS: true,
+    HITS_OWN_TYPE: 'hard'
 };
 Class.laser = {
   PARENT: ["bullet"],
