@@ -273,9 +273,6 @@ class Canvas {
             case global.KEY_MOUSE_2:
                 this.socket.cmd.set(6, false);
                 break;
-          case global.KEY_RANDOM_TEST:
-                this.socket.cmd.set(7, false);
-                break;
             case global.KEY_MAX_STAT:
                 global.statMaxing = false;
                 break;

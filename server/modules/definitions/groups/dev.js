@@ -1636,7 +1636,7 @@ Class.hook = {
             body.master.velocity.x += 5 * Math.cos(angle)
             body.master.velocity.y += 5 * Math.sin(angle)
             if (combinedRadii * 1.3 > distance) {
-              body.children = []
+              body.master.children = []
               break
             }
             
@@ -1644,12 +1644,12 @@ Class.hook = {
           }
           if (body.master.control.fire) {
           for (instance of entities) {
-           if (instance != body && instance.type == "wall" && util.getDistance(instance, {
-                  x: body.control.target.x + body.x,
-                  y: body.control.target.y + body.y
+           if (instance != body.master && instance.type == "wall" && util.getDistance(instance, {
+                  x: body.master.control.target.x + body.master.x,
+                  y: body.master.control.target.y + body.master.y
                 }) < instance.size * 1.3) {
-             if (body.children == 0) {
-               body.children.push(instance)
+             if (body.master.children == 0) {
+               body.master.children.push(instance)
              }
            }
           }
@@ -1676,7 +1676,23 @@ Class.devtesttemplate = {
         }
     ]
 };
-
+Class.grappletest2 = {
+    PARENT: "genericTank",
+    LABEL: "Single",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [19, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
+                TYPE: "hook"
+            }
+        },
+        {
+            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
+        }
+    ]
+};
 Class.maxStatTank = {
   PARENT: ['genericTank'],
   DANGER: 11,
@@ -2284,7 +2300,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun", "grappletest2"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
