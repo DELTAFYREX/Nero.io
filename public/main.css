@@ -127,7 +127,7 @@ miniupdate {
 }
 
 h3 {
-    font-size: large;
+    font-size: medium;
     color: #484848;
     text-align: center;
     animation:pfpDefault 800ms linear both;
@@ -413,7 +413,7 @@ table {
     -o-transition: top 500ms;
     transition: top 500ms;
     animation:pfpDefault 800ms linear both;
-  	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1.275)
+  	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1.2)
 }
 
 .slider2 {
