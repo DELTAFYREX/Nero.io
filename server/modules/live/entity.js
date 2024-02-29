@@ -1908,6 +1908,11 @@ class Entity extends EventEmitter {
                 this.maxSpeed = this.topSpeed;
                 this.damp = args.damo ?? -0.025;
                 break;
+            case "accelerate":
+                    this.maxSpeed = this.topSpeed;
+                    this.damp = -0.0125;
+                    this.DAMAGE -= 10; // .05, 1, 2
+                    break;
             case "swarm":
                 this.maxSpeed = this.topSpeed;
                 let l =

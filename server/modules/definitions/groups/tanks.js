@@ -613,23 +613,25 @@ Class.sheildhitbox = {
     }
 // The sheild uses the hitbox like an aura, but it can hit bullets
 Class.backShieldTurret = {
-    PARENT: "obstacleTurret",
     LABEL: 'Backshield',
     VULNERABLE: true,
-    HITS_OWN_TYPE: 'shield',
-    SHAPE: 291,
+    SHAPE: 5,
     COLOR: 5,
     DAMAGE_CLASS: 1,
     BODY: {
-        PUSHABILITY: 0,
-        HEALTH: 1e4,
-        REGEN: 1000,
-        DAMAGE: 1,
-        RESIST: 10000,
-        STEALTH: 1,
-        DENSITY: 10000
+            SHIELD: 1e9,
+            REGEN: 1e6,
+            HEALTH: 1e9,
+            DENSITY: 1e6,
+            SPEED: 0,
+            PUSHABILITY: 1e2,
+            DAMAGE: 0,
+            PUSHABILITY: 0,
+            RESIST: 1e2,
+            STEALTH: 1,
     },
     SYNC_TURRET_SKILLS: true,
+    HITS_OWN_TYPE: 'hard'
 };
 Class.laser = {
   PARENT: ["bullet"],
@@ -6308,6 +6310,23 @@ Class.protist = {
         POSITION: [3.5, 12, 1, 8, 0, 0, 0]
     }]
 }
+Class.backShield = {
+    PARENT: "genericTank",
+    LABEL: 'Back Shield',
+    DANGER: 7,
+    GUNS: [{
+        POSITION: [18, 8, 1, 0, 0, 0, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+            TYPE: "bullet"
+        }
+    }],
+    TURRETS: [{
+        POSITION: [18, 18, 0, 180, 0, 1],
+        TYPE: "backShieldTurret",
+        VULNERABLE: true
+    }]
+};
 Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
 Class.clonebrid = makeHybrid({  
   PARENT: "genericTank",
@@ -6468,7 +6487,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer", "spraybrid"]
 
-    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank", "flankbrid", "flankdue", "flankinception"]
+    Class.flankGuard.UPGRADES_TIER_2 = ["hexaTank", "triAngle", "auto3", "trapGuard", "triTrapper", "autoFlank", "flankbrid", "flankdue", "flankinception", "backShield"]
         Class.flankGuard.UPGRADES_TIER_3 = ["tripleTwin", "quadruplex"]
         Class.hexaTank.UPGRADES_TIER_3 = ["octoTank", "cyclone", "hexaTrapper", "autoHexaTank", "hexatankbrid"]
         Class.triAngle.UPGRADES_TIER_3 = ["fighter", "booster", "falcon", "bomber", "autoTriAngle", "surfer", "eagle", "phoenix", "vulture"]
