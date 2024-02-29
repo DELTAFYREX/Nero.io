@@ -306,7 +306,7 @@ function incoming(message, socket) {
                 player.command.lmb = (commands & 16) >> 4;
                 player.command.mmb = (commands & 32) >> 5;
                 player.command.rmb = (commands & 64) >> 6;
-                player.command.ability = (commands & 6) >> 7;
+                player.command.ability = (commands & 128) >> 7;
             }
             // Update the thingy
             socket.timeout.set(commands);
