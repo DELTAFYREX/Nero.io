@@ -2080,6 +2080,9 @@ function drawSelfInfo(spacing, alcoveSize, max) {
                 }
                 }
             }
+        };
+        if (global.KEY_RANDOM_TEST) {
+          
         }
     }
     // Draw the %-of-leader bar
