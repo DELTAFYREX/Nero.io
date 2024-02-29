@@ -1556,6 +1556,59 @@ Class.pouner = {
         }
     ]
 }
+
+Class.grappletest = {
+    PARENT: "genericTank",
+    LABEL: "GrappleTest",
+    DANGER: 4,
+    ON: [
+        {
+      event: "define",
+        handler: ({ body }) => {
+          if (body.hasDefined) {
+            body.children = []
+          body.hasDefined = false
+          } else {
+            body.hasDefined = true
+          }
+        }
+        },
+       {
+      event: "tick",
+        handler: ({ body }) => {
+          if (body.children != null) {
+          for (let instance of body.children) {
+                 let deltaX = instance.x - body.x,
+               deltaY = instance.y - body.y,
+               distance = util.getDistance(instance, body)
+               angle = Math.atan2(deltaY, deltaX),
+               combinedRadii = instance.realSize + body.realSize;
+            body.velocity.x += 5 * Math.cos(angle)
+            body.velocity.y += 5 * Math.sin(angle)
+            if (combinedRadii * 1.3 > distance) {
+              body.children = []
+              break
+            }
+            
+          }
+          }
+          if (body.control.fire) {
+          for (instance of entities) {
+           if (instance != body && instance.type == "wall" && util.getDistance(instance, {
+                  x: body.control.target.x + body.x,
+                  y: body.control.target.y + body.y
+                }) < instance.size * 1.3) {
+             if (body.children == 0) {
+               body.children.push(instance)
+             }
+           }
+          }
+        }
+        }
+       }
+    ]
+}
+
 Class.devtesttemplate = {
     PARENT: "genericTank",
     LABEL: "Single",
@@ -1573,38 +1626,6 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.grappeltest = {
-PARENT: "genericTank",
-LABEL: "GrappleTest",
-DANGER: 4,
-ON: [{
-  event: "tick",
-  handler: ({ body }) => {
-        if (body.control.fire) {
-      for (instance of entities) {
-        if (instance.type == "wall") {
-          if (instance != body != null && util.getDistance(instance, {
-            x: body.control.target.x + body.x,
-            y: body.control.target.y + body.y
-          }) < instance.size * 1.3) {
-            if (body.children == 0) {
-              // pull =
-              let deltaX = instance.x - body.x,
-              deltaY = instance.y - body.y,
-              distance = util.getDistance(instance, body)
-              angle = Math.atan2(deltaY, deltaX);
-              body.velocity.x = distance/(distance* instance.damp) * Math.cos(angle),
-              body.velocity.y = distance/(distance* instance.damp)* Math.sin(angle)
-            }
-        }
-      }
-    }
-  }
-}
-  }
-]
-}
-
 
 Class.maxStatTank = {
   PARENT: ['genericTank'],
@@ -2213,7 +2234,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappeltest", "basic"], "accelminigun"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
