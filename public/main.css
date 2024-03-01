@@ -1259,16 +1259,11 @@ input [type="image"]:focus {
   top: 10%;
   left: 50%;
   color: white;
+  outline: #000000 solid;
+  z-index: 0;
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
   background: #202020 url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/channels4_profile.jpg?v=1709324207088") 0px 0px/100px repeat;
-}
-#eventtitle2 {
-  position: absolute;
-  float: center;
-  top: 10%;
-  left: 50%;
-  color: black;
-  height: 98%
-  
 }
 
 @keyframes pfpHoverOn { 
