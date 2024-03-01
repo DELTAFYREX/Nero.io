@@ -1258,7 +1258,17 @@ input [type="image"]:focus {
   float: center;
   top: 10%;
   left: 50%;
-  background: url("https://cloud-cube.s3.amazonaws.com/m660o440l0wv/public/svg0.svg") 4px 3px/21px no-repeat;
+  color: white;
+  background: #202020 url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/channels4_profile.jpg?v=1709324207088") 0px 0px/100px repeat;
+}
+#eventtitle2 {
+  position: absolute;
+  float: center;
+  top: 10%;
+  left: 50%;
+  color: black;
+  height: 98%
+  
 }
 
 @keyframes pfpHoverOn { 
