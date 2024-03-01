@@ -54,7 +54,7 @@ module.exports = {
     REPL_WINDOW: true,
 
     // Welcome message once a player spawns.
-    WELCOME_MESSAGE: "You have spawned! Welcome to the game.\n"
+    WELCOME_MESSAGE: "You have spawned! Welcome to the game, Hold N To Level Up.\n"
                     +"You will be invulnerable until you move or shoot OR ACCIDENTALLY PRESS THE FUCKING SPACE BAR.\n"
                     +"Please report any bugs you encounter on our discord! :)",
 
@@ -105,7 +105,7 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 3,
+    BOTS: 4,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
     BOT_XP: 125,
@@ -124,11 +124,11 @@ module.exports = {
   // Natural Spawns
 
     FOOD_CAP: 1, // Max normal food per normal tile. 3
-    FOOD_SPAWN_CHANCE: 0.875, // Likeliness of normal food spawn attempts succeedingg. 0.875
+    FOOD_SPAWN_CHANCE: 0.1, // Likeliness of normal food spawn attempts succeedingg. 0.875
     FOOD_SPAWN_COOLDOWN: 30, // Cooldown (in game ticks) of food spawn attempts being made. 30
 
     FOOD_CAP_NEST: 1, // Max nest food per nest tile. 3
-    FOOD_SPAWN_CHANCE_NEST: 0.25, // Likeliness of nest food spawn attempts succeeding. 0.25
+    FOOD_SPAWN_CHANCE_NEST: 0.1, // Likeliness of nest food spawn attempts succeeding. 0.25
     FOOD_SPAWN_COOLDOWN_NEST: 45, // Cooldown (in game ticks) of nest food spawn attempts being made. 45
 
     ENEMY_CAP_NEST: 0, // Max nest enemies per nest tile. 1
@@ -136,7 +136,7 @@ module.exports = {
     ENEMY_SPAWN_COOLDOWN_NEST: 60, // Cooldown (in game ticks) of nest enemies spawn attempts being made.
 
     // Cooldown (in seconds) of boss spawns being announced.
-    BOSS_SPAWN_COOLDOWN: 99999, //120
+    BOSS_SPAWN_COOLDOWN: 1800, //120
     // The delay (in seconds) between the boss spawns being announced and the bosses actually spawning.
     // NOTE: The spawn message (ex. "A strange trembling...") takes half as long to appear than the boss.
     BOSS_SPAWN_DURATION: 5,
