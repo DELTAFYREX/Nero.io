@@ -1710,7 +1710,7 @@ Class.autocrayon = makeAuto(Class.crayon, 'Auto Crayon');
 
 Class.crayon.UPGRADES_TIER_3 = ["autocrayon"];
 
-let dlytanks = ["literallyAMachineGun", "dlywhirlwind", "literallyATank", "jumpSmasher", "dlylancer", "master", "crayon"];
+let dlytanks = ["master", "dlywhirlwind", "literallyATank", "jumpSmasher", "dlylancer", "literallyAMachineGun", "crayon"];
 dailytank = dlytanks[global.dayofweek];
 
 if (addToMain == true) {
