@@ -31,6 +31,14 @@ normal = new Tile({
         }
     }
 }),
+    
+normalNoFood = new Tile({
+    color: "white",
+    data: {
+        allowMazeWallSpawn: true,
+    },
+    init: tile => room.spawnableDefault.push(tile),
+}),
 
 dancefloor = new Tile({
     color: "rainbow",
@@ -121,6 +129,13 @@ nestNoBoss = new Tile({
         enemySpawnCooldown: 0, enemyCount: 0
     },
     tick: nestTick
+}),
+    
+nestNoFood = new Tile({
+    color: "purple",
+    data: {
+        allowMazeWallSpawn: true,
+    },
 }),
 
 wall = new Tile({
