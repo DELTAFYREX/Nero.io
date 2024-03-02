@@ -2171,9 +2171,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero Engine v2.95", x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero Engine v3.0", x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "v2.9528", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "v3.0", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 4 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
@@ -2181,7 +2181,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
-        drawText("Nero.io v2.9", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero.io v3.0", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
         drawText((100 * gui.fps).toFixed(2) + "% : " + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, "right");
     }
