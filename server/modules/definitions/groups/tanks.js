@@ -6330,7 +6330,7 @@ Class.backShield = {
     }],
     TURRETS: [{
         POSITION: [18, 18, 0, 180, 0, 1],
-        TYPE: "backShieldTurret",
+        TYPE: "rock",
         VULNERABLE: true
     }]
 };
