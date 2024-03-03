@@ -3,7 +3,7 @@ module.exports = {
 
     // Game server domain.
     // If 'localhost:NUMBER', the port must equal the port setting.
-    host: "neroio2.glitch.me",
+    host: "https://deltafyrex.github.io/Nero.io",
 
     // Which port to run the web server on.
     port: 26309,
