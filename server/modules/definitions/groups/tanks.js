@@ -6521,7 +6521,7 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.launcher.UPGRADES_TIER_3 = ["skimmer", "twister", "swarmer", "rocketeer", "fieldGun", "shrapnelgun", "autoLaunch", "launchbrid"]
 
     Class.trapper.UPGRADES_TIER_2 = ["builder", "triTrapper", "trapGuard", "contagion", "autoTrap", "trapbrid"]
-        Class.trapper.UPGRADES_TIER_3 = ["barricade", "overtrapper"]
+        Class.trapper.UPGRADES_TIER_3 = ["barricade"]
         Class.builder.UPGRADES_TIER_3 = ["construct", "autoBuilder", "engineer", "boomer", "assembler", "architect", "conqueror", "fort", "builderbrid"]
         Class.triTrapper.UPGRADES_TIER_3 = ["fortress", "hexaTrapper", "septaTrapper", "architect", "triContagion", "autoTriTrapper", "tritrapperbrid"]
         Class.trapGuard.UPGRADES_TIER_3 = ["bushwhacker", "gunnerTrapper", "bomber", "conqueror", "bulwark", "autoTrapGuard", "trapguardbrid"]

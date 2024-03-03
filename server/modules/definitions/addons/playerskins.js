@@ -16,6 +16,7 @@ Class.discordcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e
 Class.incomcharm = makeDeco("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044")
 
 Class.bsignalskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "bsignalcharm"
