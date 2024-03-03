@@ -23,66 +23,77 @@ Class.bsignalskin = {
     }]
 };
 Class.tankcharmskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "tcharm"
     }]
 };
 Class.dfxskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "dfxcharm"
     }]
 };
 Class.primalskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [20, 0, 0, 0, 360, 3],
         TYPE: "primalcharm"
     }]
 };
 Class.kangarooskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "kangaroocharm"
     }]
 };
 Class.cswmskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 0.5],
         TYPE: "sandwichdeco"
     }]
 };
 Class.cogskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "cogcharm"
     }]
 };
 Class.skypeskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "skypecharm"
     }]
 };
 Class.coinskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "coincharm"
     }]
 };
 Class.discordskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "discordcharm"
     }]
 };
 Class.deltaDecoskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 3],
         TYPE: "deltaDeco"
     }]
 };
 Class.incomskin = {
+    MAX_CHILDREN: 1,
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "incomcharm"
