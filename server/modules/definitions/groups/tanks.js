@@ -5903,7 +5903,7 @@ Class.accelminigun = {
     LABEL: "Rainmaker",
     DANGER: 6,
     BODY: {
-        FOV: base.FOV * 1.2
+        FOV: base.FOV * 1.4
     },
     GUNS: [
       {
@@ -5917,21 +5917,21 @@ Class.accelminigun = {
         {
             POSITION: [21, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker, g.morerange]),
                 TYPE: ["bullet", { MOTION_TYPE: "accelerate" }]
             }
         },
         {
             POSITION: [19, 8, 1, 0, 0, 0, 1/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker, g.morerange]),
                 TYPE: ["bullet", { MOTION_TYPE: "accelerate" }]
             }
         },
         {
             POSITION: [17, 8, 1, 0, 0, 0, 2/3],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.minigun, g.rainmaker, g.morerange]),
                 TYPE: ["bullet", { MOTION_TYPE: "accelerate" }]
             }
         }
