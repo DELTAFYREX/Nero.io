@@ -429,6 +429,19 @@ table {
     animation:pfpDefault 800ms linear both;
   	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1)
 }
+.slider3 {
+    position: absolute;
+    z-index: -6;
+    right: 400px;
+    width: 100%;
+    display: inline-block;
+    -webkit-transition: right 1000ms;
+    -moz-transition: right 1000ms;
+    -o-transition: right 1000ms;
+    transition: right 1000ms;
+    animation:pfpDefault 800ms linear both;
+  	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1)
+}
 
 #startMenuSlidingContent {
     height: 265px;
