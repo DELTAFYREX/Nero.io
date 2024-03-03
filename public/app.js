@@ -864,6 +864,9 @@ function parseTheme(string){
     
     return null;
 }
+  function goToNeroDotIo() {
+  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+};
 // This starts the game and sets up the websocket
 function startGame() {
     PlaySound69();
