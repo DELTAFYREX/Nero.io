@@ -6003,7 +6003,7 @@ Class.skater = {
     ]
 }
 Class.trackerSmasher = makeTracker(Class.smasher, "Scanner");
-Class.trakerAssassin = makeTracker(Class.assassin, "Hitman");
+Class.trackerAssassin = makeTracker(Class.assassin, "Hitman");
 Class.revodirector = {
     PARENT: "genericTank",
     LABEL: "Solar System",
@@ -6485,12 +6485,12 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
 
     Class.sniper.UPGRADES_TIER_2 = ["assassin", "hunter", "minigun", "rifle", "autoSniper", "snipebrid"]
         Class.sniper.UPGRADES_TIER_3 = ["bushwhacker"]
-        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "assbrid", "trakerAssassin", "single"]
+        Class.assassin.UPGRADES_TIER_3 = ["ranger", "falcon", "stalker", "autoAssassin", "assbrid", "trackerAssassin", "single"]
         Class.hunter.UPGRADES_TIER_3 = ["predator", "xHunter", "poacher", "ordnance", "railgun", "dual","autoHunter"]
         Class.rifle.UPGRADES_TIER_3 = ["musket", "crossbow", "armsman", "autoRifle"]
 
     Class.machineGun.UPGRADES_TIER_2 = ["artillery", "minigun", "gunner", "sprayer", "autoMach", "machbrid", "machinception"]
-        Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini"]
+        Class.minigun.UPGRADES_TIER_3 = ["streamliner", "nailgun", "cropDuster", "barricade", "vulture", "minilaser", "autoMini", "accelminigun"]
         Class.gunner.UPGRADES_TIER_3 = ["autoGunner", "nailgun", "auto4", "machineGunner", "gunnerTrapper", "cyclone", "overgunner"]
         Class.sprayer.UPGRADES_TIER_3 = ["redistributor", "phoenix", "atomizer", "focal", "autoSprayer", "spraybrid"]
 
