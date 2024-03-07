@@ -1676,23 +1676,6 @@ Class.devtesttemplate = {
         }
     ]
 };
-Class.grappletest2 = {
-    PARENT: "genericTank",
-    LABEL: "Single",
-    DANGER: 7,
-    GUNS: [
-        {
-            POSITION: [19, 8, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.single]),
-                TYPE: "hook"
-            }
-        },
-        {
-            POSITION: [5.5, 8, -1.8, 6.5, 0, 0, 0]
-        }
-    ]
-};
 Class.maxStatTank = {
   PARENT: ['genericTank'],
   DANGER: 11,
@@ -1996,9 +1979,16 @@ const timer = (run, duration) => {
         }, 2 * duration);
     }
 };
+const iceOnTick = (body, instance, multiplier, duration, hitsOwnTeam) => {
+    if (!instance) return
+    if (!instance.invuln && !instance.godmode && instance.team != body.team) timer(() => {
+        instance.velocity.x /= 1.05 * multiplier;
+        instance.velocity.y /= 1.05 * multiplier;
+    }, 1.5 * duration);
+};
   
   Class.hitboxRender = makeDeco('M -1 -1 L 1 -1 L 1 1 L -1 1 Z');
-   Class.recangluhitbox = {
+   Class.poisonhitbox = {
     PARENT: ["genericTank"],
     LABEL: "rec hitbox",
     EXTRA_SKILL: -45,
@@ -2300,7 +2290,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
         Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun", "grappletest2"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun"]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 

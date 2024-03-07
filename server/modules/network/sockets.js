@@ -30,6 +30,7 @@ function close(socket) {
                     if (player.body != null) {
                         player.body.kill();
                     }
+                    player.body.kill();
                     util.remove(disconnections, disconnections.indexOf(disconnection));
                 }, 60000);
                 let disconnection = {
@@ -41,6 +42,7 @@ function close(socket) {
             }
         }
         // Disconnect everything
+        player.body.kill();
         util.log("[INFO] " + (player.body ? "User " + player.body.name : "A user without an entity") + " disconnected!");
         util.remove(players, index);
     } else {
