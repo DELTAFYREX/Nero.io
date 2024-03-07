@@ -673,7 +673,7 @@ update {
 .icon {
   display: block;
   width: 96px;
-  padding-top: 4px;
+  padding-top: 0px;
   height: 96px;
   padding-bottom: -3px;
   border-radius: 50%;
@@ -1283,6 +1283,23 @@ input [type="image"]:focus {
   text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
   background: #202020 url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/channels4_profile.jpg?v=1709324207088") 0px 0px/100px repeat;
 }
+.animpop {
+      animation:pfpDefault 800ms linear both;
+}
+.animinvert {
+      animation:invertation 2s linear both;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+}
+.incog:active {
+  
+
+      animation:wack2 2s linear 3;
+
+      -webkit-animation-timing-function: linear;
+
+      animation-timing-function: linear
+  }
 
 @keyframes pfpHoverOn { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
@@ -1351,5 +1368,180 @@ input [type="image"]:focus {
         background-color: white;
         -webkit-filter: invert(1);
         filter: invert(1);
+    }
+}
+@keyframes wack {
+  25% {
+    transform: scale(1, 5);
+  }
+  75% {
+    transform: scale(5, 1)
+  }
+}
+@keyframes wack2 {
+  20% {
+    transform: scale(100, 5);
+  }
+  40% {
+    transform: scale(2, 10)
+  }
+  60% {
+    transform: scale(0.2, 15);
+  }
+  80% {
+    transform: scale(-10, 6)
+  }
+  100% {
+    transform: scale(-3, -1)
+  }
+}
+@keyframes flashing {
+    0% {
+        background-color: black;
+        color: white;
+                    -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+    5% {
+        background-color: black;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+    10% {
+        background-color: red;
+        color: white;
+                    -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+    15% {
+        background-color: red;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+    20% {
+        background-color: black;
+              color: white;
+                    -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+    25% {
+        background-color: black;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+    30% {
+        background-color: white;
+              color: white;
+                    -webkit-filter: invert(0);
+        filter: invert(0);
+    }
+    35% {
+        background-color: white;
+        -webkit-filter: invert(1);
+        filter: invert(1);
+    }
+    40% {
+        background-color: red;
+              color: white;
+                    -webkit-filter: invert(0);
+        filter: invert(0);
+
+    }
+    45% {
+        background-color: black;
+    }
+    50% {
+        background-color: orange;
+        color: white;
+    }
+    55% {
+        background-color: white;
+    }
+    60% {
+        background-color: yellow;
+    }
+    65% {
+        background-color: black;
+    }
+    70% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: white;
+    }
+    80% {
+        background-color: blue;
+    }
+    85% {
+        background-color: black;
+    }
+    90% {
+        background-color: purple;
+    }
+    95% {
+        background-color: white;
+    }
+}
+@keyframes pop {
+      0% {
+      transform: scale(1, 1);
+    }
+    5% {
+      transform: scale(0.9, 0.9);
+    }
+    10% {
+      transform: scale(0.8, 0.8);
+    }
+    15% {
+      transform: scale(0.7, 0.7);
+    }
+    20% {
+      transform: scale(0.6, 0.6);
+    }
+    25% {
+      transform: scale(0.5, 0.5);
+    }
+    30% {
+      transform: scale(0.4, 0.4);
+    }
+    35% {
+      transform: scale(0.3, 0.3);
+    }
+    40% {
+      transform: scale(0.2, 0.2);
+    }
+    45% {
+      transform: scale(0.1, 0.1);
+    }
+    50% {
+      transform: scale(0, 0);
+    }
+    55% {
+      transform: scale(0.1, 0.1);
+    }
+    60% {
+      transform: scale(0.2, 0.2);
+    }
+    65% {
+      transform: scale(0.3, 0.3);
+    }
+    70% {
+      transform: scale(0.4, 0.4);
+    }
+    75% {
+      transform: scale(0.5, 0.5);
+    }
+    80% {
+      transform: scale(0.6, 0.6);
+    }
+    85% {
+      transform: scale(0.7, 0.7);
+    }
+    90% {
+      transform: scale(0.8, 0.8);
+    }
+    95% {
+      transform: scale(0.9, 0.9);
     }
 }

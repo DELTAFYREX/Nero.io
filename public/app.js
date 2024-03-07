@@ -487,6 +487,129 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("pissio");
   localStorage.setItem("savedkills", zeroyeah.toString());
 }
+  let nIntervId;
+                     if (!nIntervId) {
+                    nIntervId = setInterval(gettimesince, 1000);
+                   }
+                function gettimesince() {
+                  const date = new Date()
+                  var sec = 0;
+                  var min = 0;
+                  var hour = 0;
+                  var day = 0;
+                  var month = 0;
+                  var year = 0;
+                  var nerosec = '';
+                  var neromin = '';
+                  var nerohour = '';
+                  var neroday = '';
+                  var neromonth = '';
+                  var daysinm = 0;
+                  if (date.getMonth() == 8 || 10 || 3 || 5) {
+                    daysinm = 30
+                  } else {
+                    if (date.getMonth() == 1) {
+                      if (date.getFullYear() == 2024 || 2028 || 2032 || 2036 || 2040 || 2044 || 2048 || 2042) {
+                        daysinm = 29
+                      } else {
+                        daysinm = 28
+                      }
+                    } else {
+                      daysinm = 31
+                    }
+                  }
+                if ((date.getSeconds() + 60) - 32 > 59) {
+                    sec = (date.getSeconds() + 60) - 92
+                  } else {
+                    sec = (date.getSeconds() + 60) - 32
+                };
+              if (date.getMinutes() < 45) {
+                if (date.getSeconds() > 31) {
+                    min = (date.getMinutes() + 60) - 44
+                  } else {
+                    min = (date.getMinutes() + 60) - 45
+                }
+              } else {
+                  if (date.getSeconds() > 31) {
+                    min = (date.getMinutes() + 60) - 104
+                  } else {
+                    min = (date.getMinutes() + 60) - 105
+                }
+              }
+              if (date.getHours() < 11) {
+                if (date.getMinutes() > 44) {
+                    hour = ((date.getHours() + 24) - 10)
+                  } else {
+                    hour = ((date.getHours() + 24) - 11)
+                }
+              } else {
+                if (date.getMinutes() > 44) {
+                    hour = ((date.getHours() + 24) - 34)
+                  } else {
+                    hour = ((date.getHours() + 24) - 35)
+                }
+              }
+                if (date.getDate() < 24) {
+                  if (date.getHours() > 10) {
+                    day = (date.getDate() + daysinm) - 23
+                  } else {
+                    day = (date.getDate() + daysinm) - 24
+                    }
+                  } else {
+                    if (date.getHours() > 10) {
+                    day = (date.getDate() + daysinm) - (23 + daysinm)
+                  } else {
+                    day = (date.getDate() + daysinm) - (24 + daysinm)
+                    }
+                  };
+                if (date.getMonth() < 3) {
+                  if (date.getDate() > 23) {
+                    month = (date.getMonth() + 11) - 2
+                  } else {
+                    month = (date.getMonth() + 11) - 3
+                  }
+                } else {
+                  if (date.getDate() > 23) {
+                    month = (date.getMonth() + 11) - 14
+                  } else {
+                    month = (date.getMonth() + 11) - 15
+                  }
+                };
+                  if (month > 3 && day > 23 && hour > 10 && min > 44 && sec > 31) {
+                    year = ' | Years: ' + (date.getFullYear() - 2018)
+                  } else {
+                    year = ' | Years: ' + (date.getFullYear() - 2019)
+                  }
+                  if (sec !== 0) {
+                    nerosec = ', Seconds: ' + sec
+                  } else {
+                    nerosec = ''
+                  }
+                  if (min !== 0) {
+                    neromin = ', Minutes: ' + min
+                  } else {
+                    neromin = ''
+                  }
+                  if (hour !== 0) {
+                    nerohour = ', Hours: ' + hour
+                  } else {
+                    nerohour = ''
+                  }
+                  if (day !== 0) {
+                    neroday = ', Days: ' + day
+                  } else {
+                    neroday = ''
+                  }
+                  if (month !== 0) {
+                    neromonth = ', Months: ' + month
+                  } else {
+                    neromonth = ''
+                  }
+                    //const currentdate = ' / Current Year: ' + date.getFullYear() + ' / Current Month: ' + date.getMonth() + ' / Current Day: ' + date.getDate() + ' / Current Hour: ' + date.getHours() + ' / Current Minute: ' + date.getMinutes() + ' / Current Second: ' + date.getSeconds() + ' /'
+                    const nerodate = year + ' ' + neromonth + ' ' + neroday + ' ' + nerohour + ' ' + neromin + ' ' + nerosec + ' |'
+                    $(document.getElementById("updatetime")).html("<h3>" + nerodate + "</h3>");
+                    //$(document.getElementById("updatetime2")).html("<h3>" + currentdate + "</h3>");
+              }
 fetch("changelog.html", { cache: "no-cache" })
 .then(async ChangelogsHTMLFile => {
     let patchNotes = document.querySelector("#patchNotes");
@@ -687,7 +810,9 @@ window.onload = async () => {
         var key = e.which || e.keyCode;
         if (key === global.KEY_ENTER && (global.dead || !global.gameLoading)) {
             startGame();
-        }
+  clearInterval(nIntervId);
+  // release our intervalID from the variable
+  nIntervId = null;        }
     };
     window.addEventListener("resize", resizeEvent);
     resizeEvent();
