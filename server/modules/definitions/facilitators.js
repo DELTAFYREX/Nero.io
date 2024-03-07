@@ -255,7 +255,12 @@ exports.makeHybridDrive = (type, name = -1) => {
             MAX_CHILDREN: 3,
         },
     };
+      let spawnerdeco = {
+        POSITION: [7, 14, 0, 180, 0, 0],
+        TYPE: ["autoTurret", { INDEPENDENT: true, MIRROR_MASTER_ANGLE: true }]
+    }
     output.GUNS = type.GUNS == null ? [spawner] : type.GUNS.concat([spawner]);
+    output.TURRETS = type.TURRETS == null ? [spawnerdeco] : type.TURRETS.concat([spawnerdeco]);
     output.LABEL = name == -1 ? "Hybrid " + type.LABEL : name;
     return output;
 }

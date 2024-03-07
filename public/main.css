@@ -41,7 +41,7 @@ body {
 body {
     font-family: Ubuntu;
     font-size: 14px;
-    background-image: url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_03_02_0yw_Kleki%20(1).png?v=1709425612528");
+    background-image: url("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_03_02_0yw_Kleki.png?v=1709425601538");
     background-color: #484848;
 }
 
@@ -443,6 +443,16 @@ table {
   	transition-timing-function: cubic-bezier(0.175, 0.585, 0.32, 1)
 }
 
+.slidingtrigger3 {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    -webkit-transition: top 500ms;
+    -moz-transition: top 500ms;
+    -o-transition: top 500ms;
+    transition: top 500ms;
+}
+
 #startMenuSlidingContent {
     height: 265px;
 }
@@ -475,6 +485,14 @@ table {
 }
 #startMenuSlidingTrigger2:hover > h3 > i.arrow {
   border-color: #323232;
+}
+#startMenuSlidingTrigger3 {
+    cursor: pointer;
+    height: 15px;
+}
+
+#startMenuSlidingTrigger3:hover {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .menuTabs {

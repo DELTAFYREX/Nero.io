@@ -166,6 +166,7 @@ const global = {
         lastuplink: 0,
         killcount: 0,
     },
+    emojiloaded: false,
     ISTHEGODAMNFUCKINGGAMEON: "no",
     skin: "",
     skinpage: 0,

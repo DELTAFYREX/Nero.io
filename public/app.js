@@ -612,7 +612,7 @@ function getMockups() {
     });
 }
 window.onload = async () => {
-    window.serverAdd = (await (await fetch("./serverData.json")).json()).ip;
+    window.serverAdd = (await (await fetch("/serverData.json")).json()).ip;
     if (Array.isArray(window.serverAdd)) {
         window.isMultiserver = true;
         const servers = window.serverAdd;
@@ -1069,6 +1069,43 @@ function drawGuiRect(x, y, length, height, stroke = false) {
         case false:
             ctx.fillRect(x, y, length, height);
             break;
+        case 0:
+            ctx.beginPath();
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + length, y);
+            ctx.lineTo(x, y + height);
+            ctx.lineTo(x + length, y + height);
+            ctx.closePath();
+            ctx.stroke();
+            break;
+        case 1:
+            ctx.beginPath();
+            ctx.roundRect(x, y, length, height, 5);
+            ctx.stroke();
+            break;
+        case 2:
+            ctx.beginPath();
+            ctx.roundRect(x, y, length, height, 5);
+            ctx.stroke();
+            ctx.fill();
+            break;
+        case 3:
+            ctx.beginPath();
+            ctx.roundRect(x, y, length, height, [5,5,0,0]);
+            ctx.stroke();
+            ctx.fill();
+            break;
+        case 4:
+            ctx.beginPath();
+            ctx.lineTo(x, y);
+            ctx.lineTo(x + length, y);
+            ctx.lineTo(x + length, y + height);
+            ctx.lineTo(x, y + height);
+            //ctx.lineWidth = strokeWidth;
+            //ctx.strokeStyle = color;
+            ctx.closePath();
+            ctx.stroke();
+            break;
     }
 }
 
@@ -1471,12 +1508,18 @@ function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, c
         baseColor = picture.color;
 
     // Draw box
-    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = color.black;
+    ctx.fillStyle = color.black;
+    ctx.lineWidth = 3 * lineWidthMult;
+    ctx.globalAlpha = 0.4
+    drawGuiRect(x + 8, y + 8, len, height, 2);
+    ctx.globalAlpha = 1;
     ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex > 18 ? colorIndex - 19 : colorIndex).toString());
-    drawGuiRect(x, y, len, height);
+    //drawGuiRect(x + 25, y + 25, len - 50, height - 50, 2);
+    drawGuiRect(x, y, len, height, 2);
     ctx.globalAlpha = 0.1;
     ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex - 9).toString());
-    drawGuiRect(x, y, len, height * 0.6);
+    drawGuiRect(x, y, len, height * 0.6, 3);
     ctx.fillStyle = color.black;
     drawGuiRect(x, y + height * 0.6, len, height * 0.4);
     ctx.globalAlpha = 1;
@@ -1493,7 +1536,7 @@ function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, c
     }
     ctx.strokeStyle = color.black;
     ctx.lineWidth = 3 * lineWidthMult;
-    drawGuiRect(x, y, len, height, true); // Border
+    drawGuiRect(x, y, len, height, 1); // Border
 }
 
 // Start animation
@@ -1734,6 +1777,7 @@ function drawFloor(px, py, ratio) {
     ctx.stroke();
     ctx.globalAlpha = 1;
 }
+const trollface = new Image(); // Create new img element
 
 function drawEntities(px, py, ratio) {
     // Draw things
@@ -1797,11 +1841,22 @@ function drawEntities(px, py, ratio) {
                 text = chat.text,
                 msgLengthHalf = measureText(text, 15 * ratioForChat) / 2,
                 alpha = Math.max(0, Math.min(1000, chat.expires - now) / 1000);
-
             ctx.globalAlpha = 0.5 * alpha;
+            if (text.includes("--troll")) {
+            trollface.addEventListener("load", () => {
+            global.emojiloaded = true;
+            }); 
+            trollface.src = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png"; // Set source path
+            msgLengthHalf = (measureText(text, 15 * ratioForChat) / 2) - 23;
+            };
             drawBar(x - msgLengthHalf, x + msgLengthHalf, y, 30 * ratioForChat, gameDraw.modifyColor(instance.color));
             ctx.globalAlpha = alpha;
             settings.graphical.fontStrokeRatio *= 1.2;
+            if (global.emojiloaded && text.includes("--troll")) {
+            let wheretrollfaceis = (ratioForChat) - msgLengthHalf;
+            text = text.replace("--troll", "");
+            ctx.drawImage(trollface, x - wheretrollfaceis, y + -1 * ratioForChat, 18 * ratioForChat, 18 * ratioForChat);
+            }
             drawText(text, x, y + 7 * ratioForChat, 15 * ratioForChat, color.guiwhite, "center");
             settings.graphical.fontStrokeRatio /= 1.2;
             y -= 35 * ratioForChat;
@@ -2030,13 +2085,19 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     let len = 1.75 * alcoveSize; // * global.screenWidth;
     let height = 23;
     let x = (global.screenWidth - len) / 2;
-    let y = global.screenHeight - spacing - height - 1;
+    let y = global.screenHeight - spacing - height - 5;
     ctx.lineWidth = 1;
 
     // Draw the exp bar
+    //ctx.fillStyle = color.black;
+    //drawGuiRect(x - 13, y - 3, len + 26, (height + 1) + settings.graphical.barChunk);
+    //ctx.fillStyle = color.grey;
+    //drawGuiRect(x - 10, y, len + 20, height - settings.graphical.barChunk / 4);
+    //ctx.fillStyle = color.blue;
+    //drawGuiRect(x - 10, y, (len + 20) * gui.__s.getProgress(), height - settings.graphical.barChunk / 4);
     drawBar(x, x + len, y + height / 2, height + settings.graphical.barChunk, color.black);
     drawBar(x, x + len, y + height / 2, height - settings.graphical.barChunk / 4, color.grey);
-    drawBar(x, x + len * gui.__s.getProgress(), y + height / 2, height - 2, color.gold);
+    drawBar(x, x + len * gui.__s.getProgress(), y + height / 2, height - 2, color.blue);
 
     // Draw the class type
     drawText("Level " + gui.__s.getLevel() + " " + gui.class, x + len / 2, y + height / 2 + 1, height - 2.5, color.guiwhite, "center", true);
@@ -2088,7 +2149,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     // Draw the %-of-leader bar
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 + settings.graphical.barChunk, color.black);
     drawBar(x + len * 0.1, x + len * 0.9, y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.grey);
-    drawBar(x + len * 0.1, x + len * (0.1 + 0.8 * (max ? Math.min(1, gui.__s.getScore() / max) : 1)), y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.green);
+    drawBar(x + len * 0.1, x + len * (0.1 + 0.8 * (max ? Math.min(1, gui.__s.getScore() / max) : 1)), y + height / 2, height - 3 - settings.graphical.barChunk / 4, color.teal);
 
     //write the score and name
     drawText("Score: " + util.formatLargeNumber(Math.floor(gui.__s.getScore())), x + len / 2, y + height / 2 + 1, height - 3.5, color.guiwhite, "center", true);
@@ -2142,7 +2203,6 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     ctx.globalAlpha = 1;
     ctx.lineWidth = 3;
     ctx.fillStyle = color.black;
-    drawGuiRect(x, y, len, height, true); // Border
     for (let entity of minimap.get()) {
         ctx.fillStyle = gameDraw.mixColors(gameDraw.modifyColor(entity.color), color.black, 0.3);
         ctx.globalAlpha = entity.alpha;
@@ -2159,7 +2219,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         }
     }
     ctx.globalAlpha = 1;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 3;
+    ctx.fillStyle = color.black;
+    drawGuiRect(x, y, len, height, 1); // Border    ctx.lineWidth = 1;
     ctx.strokeStyle = color.black;
     ctx.fillStyle = color.black;
     drawGuiCircle(x + (global.player.cx / global.gameWidth) * len - 1, y + (global.player.cy / global.gameHeight) * height - 1, 2, false);
@@ -2174,9 +2236,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero Engine v3.0", x + len, y - 50 - 7 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero Engine v3.0", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "v3.006", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "v3.015", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 4 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
@@ -2184,7 +2246,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
-        drawText("Nero.io v3.0", x + len, y - 50 - 2 * 14 - 2, 15, "#B6E57C", "right");
+        drawText("Nero.io v3.0", x + len, y - 50 - 2 * 14 - 2, 15, "#2eabe6", "right");
         drawText((100 * gui.fps).toFixed(2) + "% : " + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, "right");
     }
@@ -2453,7 +2515,7 @@ const gameDrawBeforeStart = () => {
     let shift = animations.connecting.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText("Connecting...", global.screenWidth / 2, global.screenHeight / 2, 30, color.guiwhite, "center");
-    drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.lgreen, "center");
+    drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.blue, "center");
     ctx.translate(0, shift * global.screenHeight);
 };
 const gameDrawDisconnected = () => {
@@ -2475,7 +2537,7 @@ const gameDrawError = () => {
     let shift = animations.error.get();
     ctx.translate(0, -shift * global.screenHeight);
     drawText("There has been an error!", global.screenWidth / 2, global.screenHeight / 2 - 50, 50, color.guiwhite, "center");
-    drawText("(This Either Means The Dev's Working On The Game Or Its Bugged)", global.screenWidth / 2, global.screenHeight / 1.8, 20, color.lgreen, "center");
+    drawText("(This Either Means The Dev's Working On The Game Or Its Bugged)", global.screenWidth / 2, global.screenHeight / 1.8, 20, color.blue, "center");
     drawText(global.message, global.screenWidth / 2, global.screenHeight / 2 + 30, 15, color.orange, "center");
     ctx.translate(0, shift * global.screenHeight);
 };
