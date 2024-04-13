@@ -49,42 +49,42 @@ dancefloor = new Tile({
 }),
     
 dancefloor1 = new Tile({
-    color: "20",
+    color: 20,
     data: {
         allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor2 = new Tile({
-    color: "21",
+    color: 21,
     data: {
         allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor3 = new Tile({
-    color: "22",
+    color: 22,
     data: {
         allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor4 = new Tile({
-    color: "23",
+    color: 23,
     data: {
         allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 dancefloor5 = new Tile({
-    color: "24",
+    color: 24,
     data: {
         allowMazeWallSpawn: false,
     },
     init: tile => room.spawnableDefault.push(tile),
 }),
 blacktile = new Tile({
-    color: "19",
+    color: 19,
     data: {
         allowMazeWallSpawn: false,
     },
@@ -107,8 +107,9 @@ nestTick = tile => {
     }
 },
 
+nestColor = {BASE: "purple", BRIGHTNESS_SHIFT: 10, SATURATION_SHIFT: 0.8},
 nest = new Tile({
-    color: "purple",
+    color: nestColor,
     data: {
         allowMazeWallSpawn: true,
         foodSpawnCooldown: 0, foodCount: 0,
@@ -122,7 +123,7 @@ nest = new Tile({
 }),
 
 nestNoBoss = new Tile({
-    color: "purple",
+    color: nestColor,
     data: {
         allowMazeWallSpawn: true,
         foodSpawnCooldown: 0, foodCount: 0,
@@ -132,7 +133,7 @@ nestNoBoss = new Tile({
 }),
     
 nestNoFood = new Tile({
-    color: "purple",
+    color: nestColor,
     data: {
         allowMazeWallSpawn: true,
     },
@@ -147,6 +148,8 @@ wall = new Tile({
 	    o.SIZE = room.tileWidth / 2;
 	    o.protect();
 	    o.life();
+      makeHitbox(o);
+      walls.push(o);
     }
 });
 

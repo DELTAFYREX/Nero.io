@@ -6,7 +6,7 @@ let recent = {},
 	ratelimit = 3,
 	decay = 10_000;
 
-module.Class = ({ Events }) => {
+module.exports = ({ Events }) => {
 	Events.on('chatMessage', ({ message, socket, preventDefault }) => {
 		let perms = socket.permissions,
 			id = socket.player.body.id;
@@ -19,7 +19,7 @@ module.Class = ({ Events }) => {
 		// Fortunately, this returns false if 'recent[id] is 'undefined'.
 		if (recent[id] >= ratelimit) {
 			preventDefault(); // 'preventDefault()' prevents the message from being sent.
-			socket.talk('m', 'Please slow down!');
+			socket.talk('m', c.MESSAGE_DISPLAY_TIME, 'Please slow down!');
 			return;
 		}
 
@@ -42,10 +42,9 @@ module.Class = ({ Events }) => {
 		// If message above the character limit, lets stop that from getting through
 		if (message.length > 256) {
 			preventDefault();
-			socket.talk('m', 'Too long!')
+			socket.talk('m', c.MESSAGE_DISPLAY_TIME, 'Too long!')
 		}
 	});
 
 	console.log('[basicChatModeration] Loaded spam prevention!');
 };
-

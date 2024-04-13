@@ -21,7 +21,7 @@ Class.developer = {
     CAN_BE_ON_LEADERBOARD: true,
     CAN_GO_OUTSIDE_ROOM: false,
     DRAW_HEALTH: true,
-    ARENA_CLOSER: false,
+    ARENA_CLOSER: true,
     INVISIBLE: [0, 0],
     ALPHA: [0, 1],
     HITS_OWN_TYPE: "hardOnlyTanks",
@@ -68,89 +68,48 @@ Class.spectator = {
 }
 
 Class.bosses = menu("Bosses")
-
-Class.sentries = menu("Sentries")
-Class.sentries.COLOR = "pink"
-Class.sentries.UPGRADE_COLOR = "pink"
-Class.sentries.SHAPE = 3.5
-Class.sentries.TURRETS = [
+Class.bosses.REROOT_UPGRADE_TREE = "bosses"
+Class.sentries = menu("Sentries", "pink", 3.5)
+Class.sentries.PROPS = [
     {
         POSITION: [9, 0, 0, 0, 360, 1],
         TYPE: "genericEntity"
     }
 ]
-
-Class.elites = menu("Elites")
-Class.elites.COLOR = "pink"
-Class.elites.UPGRADE_COLOR = "pink"
-Class.elites.SHAPE = 3.5
-
-Class.mysticals = menu("Mysticals")
-Class.mysticals.COLOR = "gold"
-Class.mysticals.UPGRADE_COLOR = "gold"
-Class.mysticals.SHAPE = 4
-
-Class.nesters = menu("Nesters")
-Class.nesters.COLOR = "purple"
-Class.nesters.UPGRADE_COLOR = "purple"
-Class.nesters.SHAPE = 5.5
-
-Class.rogues = menu("Rogues")
-Class.rogues.COLOR = "darkGrey"
-Class.rogues.UPGRADE_COLOR = "darkGrey"
-Class.rogues.SHAPE = 6
-
-Class.rammers = menu("Rammers")
-Class.rammers.COLOR = "teal"
-Class.rammers.UPGRADE_COLOR = "teal"
-Class.rammers.TURRETS = [
+Class.elites = menu("Elites", "pink", 3.5)
+Class.mysticals = menu("Mysticals", "gold", 4)
+Class.nesters = menu("Nesters", "purple", 5.5)
+Class.rogues = menu("Rogues", "darkGrey", 6)
+Class.rammers = menu("Rammers", "aqua")
+Class.rammers.PROPS = [
     {
-        POSITION: [21.5, 0, 0, 0, 360, 0],
+        POSITION: [21.5, 0, 0, 360, -1],
         TYPE: "smasherBody",
     }
 ]
-
-Class.terrestrials = menu("Terrestrials")
-Class.terrestrials.COLOR = "orange"
-Class.terrestrials.UPGRADE_COLOR = "orange"
-Class.terrestrials.SHAPE = 7
-
-Class.celestials = menu("Celestials")
-Class.celestials.COLOR = "lightGreen"
-Class.celestials.UPGRADE_COLOR = "lightGreen"
-Class.celestials.SHAPE = 9
-
-Class.eternals = menu("Eternals")
-Class.eternals.COLOR = "veryLightGrey"
-Class.eternals.UPGRADE_COLOR = "veryLightGrey"
-Class.eternals.SHAPE = 11
-
-Class.devBosses = menu("Developers")
-Class.devBosses.COLOR = "lightGreen"
-Class.devBosses.UPGRADE_COLOR = "rainbow"
-Class.devBosses.SHAPE = 4
+Class.terrestrials = menu("Terrestrials", "orange", 7)
+Class.celestials = menu("Celestials", "lightGreen", 9)
+Class.eternals = menu("Eternals", "veryLightGrey", 11)
+Class.devBosses = menu("Developers", "lightGreen", 4)
 
 Class.tanks = menu("Tanks")
 Class.unavailable = menu("Unavailable")
-
 Class.dominators = menu("Dominators")
-Class.dominators.TURRETS = [
+Class.dominators.PROPS = [
     {
-        POSITION: [22, 0, 0, 0, 360, 0],
+        POSITION: [22, 0, 0, 360, 0],
         TYPE: "dominationBody",
     }
 ]
-
 Class.sanctuaries = menu("Sanctuaries")
-Class.sanctuaries.TURRETS = [
+Class.sanctuaries.PROPS = [
     {
-        POSITION: [22, 0, 0, 0, 360, 0],
+        POSITION: [22, 0, 0, 360, 0],
         TYPE: "dominationBody",
-    },
-        {
-            POSITION: [13, 0, 0, 0, 360, 1],
-            TYPE: "healerSymbol",
-        }
+    }, {
+        POSITION: [13, 0, 0, 360, 1],
+        TYPE: "healerSymbol",
+    }
 ]
 
 // Generators
@@ -186,7 +145,6 @@ function compileMatrix(matrix, matrix2Entrance) {
         };
     }
 }
-
 function connectMatrix(matrix, matrix2Entrance) {
     let matrixWidth = matrix[0].length,
         matrixHeight = matrix.length;
@@ -218,7 +176,6 @@ let generatorMatrix = [
     [ "alphaPentagon" , "shinyAlphaPentagon" , "legendaryAlphaPentagon" , "shadowAlphaPentagon" , "rainbowAlphaPentagon" , "transAlphaPentagon" , "AlphaPentagonRelic" ],
     [ "sphere"        , "cube"               , "tetrahedron"            , "octahedron"          , "dodecahedron"         , "icosahedron"        , "tesseract"          ],
 ],
-
 gemRelicMatrix = [];
 for (let tier of [ "", "Egg", "Square", "Triangle", "Pentagon", "BetaPentagon", "AlphaPentagon" ]) {
     let row = [];
@@ -265,6 +222,32 @@ for (let tier = 0; tier < 6; tier++) {
                 }],
             });
         }
+        let str = `laby${tier}${poly}Crasher`,
+            LABEL = str[0].toUpperCase() + str.slice(1).replace(/\d/, d => ["", "Beta", "Alpha", "Omega", "Gamma", "Delta"][d]).replace(/[A-Z]/g, m => ' ' + m) + " Generator",
+            code = str + 'Generator';
+        column.push(Class[code] = {
+            PARENT: "spectator",
+            LABEL,
+            SKILL_CAP: [31, 0, 0, 0, 0, 0, 0, 0, 0, 31],
+            TURRETS: [{
+                POSITION: [5 + tier * 2, 0, 0, 0, 0, 1],
+                TYPE: str,
+            }],
+            GUNS: [{
+                POSITION: [14, 12, 1, 4, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, g.fake]),
+                    TYPE: "bullet"
+                }
+            }, {
+                POSITION: [12, 12, 1.4, 4, 0, 0, 0],
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.basic, { recoil: 0 }]),
+                    INDEPENDENT_CHILDREN: true,
+                    TYPE: str
+                },
+            }],
+        });
         row.push(column);
     }
     labyTensor.push(row);
@@ -302,7 +285,7 @@ for (let x = 0; x < tensorWidth; x++) for (let y = 0; y < tensorHeight; y++) for
 
 // Testing tanks
 Class.diamondShape = {
-    PARENT: ["basic"],
+    PARENT: "basic",
     LABEL: "Rotated Body",
     SHAPE: 4.5
 };
@@ -362,7 +345,7 @@ Class.mummifier = {
 };
 
 Class.colorMan = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Testing Animated Colors",
     SHAPE: 4,
     COLOR: "rainbow",
@@ -394,7 +377,7 @@ Class.colorMan = {
 };
 
 Class.miscTestHelper2 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Turret Reload 3",
     MIRROR_MASTER_ANGLE: true,
     COLOR: -1,
@@ -410,7 +393,7 @@ Class.miscTestHelper2 = {
     ],
 };
 Class.miscTestHelper = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Turret Reload 2",
     //MIRROR_MASTER_ANGLE: true,
     COLOR: {
@@ -435,7 +418,7 @@ Class.miscTestHelper = {
     ]
 };
 Class.miscTest = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Turret Reload",
     COLOR: "teal",
     GUNS: [
@@ -455,7 +438,7 @@ Class.miscTest = {
     ]
 };
 Class.mmaTest2 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     MIRROR_MASTER_ANGLE: true,
     COLOR: "grey",
     GUNS: [{
@@ -463,7 +446,7 @@ Class.mmaTest2 = {
         }],
 }
 Class.mmaTest1 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     COLOR: -1,
     // Somehow, removing the gun below causes a crash when the tank is chosen ??????
     GUNS: [
@@ -479,7 +462,7 @@ Class.mmaTest1 = {
     ]
 }
 Class.mmaTest = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Mirror Master Angle",
     TURRETS: [
         {
@@ -502,7 +485,7 @@ Class.vulnturrettest_turret = {
 }
 
 Class.vulnturrettest = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Vulnerable Turrets",
     TOOLTIP: "[DEV NOTE] Vulnerable turrets are still being worked on and may not function as intended!",
     BODY: {
@@ -538,7 +521,7 @@ Class.turretLayerTesting = {
             TYPE: ["basic", {COLOR: "lightGrey", MIRROR_MASTER_ANGLE: true}]
         },
         {
-            POSITION: [20, 10, 5, 0, 0, 2],
+            POSITION: [20, 15, 5, 0, 0, 2],
             TYPE: ["basic", {COLOR: "grey", MIRROR_MASTER_ANGLE: true}]
         },
         {
@@ -651,7 +634,7 @@ Class.onTest = {
 
 Class.auraBasicGen = addAura();
 Class.auraBasic = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Aura Basic",
     TURRETS: [
         {
@@ -671,7 +654,7 @@ Class.auraBasic = {
 };
 Class.auraHealerGen = addAura(-1);
 Class.auraHealer = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Aura Healer",
     TURRETS: [
         {
@@ -693,8 +676,8 @@ Class.auraHealer = {
     ],
 };
 
-Class.ghoster_ghostForm = {
-    PARENT: ['genericTank'],
+Class.ghoster_ghosted = {
+    PARENT: 'genericTank',
     TOOLTIP: 'You are now hidden, roam around and find your next target. You will be visible again in 5 seconds',
     LABEL: 'Ghoster',
     BODY: {
@@ -709,7 +692,7 @@ Class.ghoster_ghostForm = {
 }
 
 Class.ghoster = {
-    PARENT: ['genericTank'],
+    PARENT: 'genericTank',
     LABEL: 'Ghoster',
     TOOLTIP: 'Shooting will hide you for 5 seconds',
     BODY: {
@@ -720,7 +703,7 @@ Class.ghoster = {
         {
             event: 'fire',
             handler: ({ body }) => {
-                body.define(Class.ghoster_ghostForm)
+                body.define(Class.ghoster_ghosted)
                 setTimeout(() => {
                     body.SPEED = 1e-99
                     body.ACCEL = 1e-99
@@ -773,7 +756,7 @@ Class.switcheroo = {
 }
 
 Class.vanquisher = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     DANGER: 8,
     LABEL: "Vanquisher",
     STAT_NAMES: statnames.generic,
@@ -857,7 +840,7 @@ Class.armyOfOneBullet = {
     ],
 };
 Class.armyOfOne = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Army Of One",
     DANGER: 9,
     SKILL_CAP: [31, 31, 31, 31, 31, 31, 31, 31, 31, 31],
@@ -882,7 +865,7 @@ Class.armyOfOne = {
     ],
 };
 Class.godbasic = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "God Basic",
     SKILL_CAP: [31, 31, 31, 31, 31, 31, 31, 31, 31, 31],
     SKILL: [ 31, 31, 31, 31, 31, 31, 31, 31, 31, 31 ],
@@ -919,7 +902,7 @@ Class.godbasic = {
     ],
 };
 Class.maximumOverdrive = {
-    PARENT: ["overdrive"],
+    PARENT: "overdrive",
     LABEL: "Maximum Overdrive",
     SKILL_CAP: Array(10).fill(255),
     SKILL: Array(10).fill(255),
@@ -947,7 +930,7 @@ Class.weirdAutoBasic = {
             INDEPENDENT: true
         }]
     }]
-};
+}
 
 Class.tooltipTank = {
     PARENT: 'genericTank',
@@ -1016,7 +999,7 @@ Class.levels.UPGRADES_TIER_0 = []
 for (let i = 0; i < 12; i++) {
     let LEVEL = i * c.TIER_MULTIPLIER;
     Class["level" + LEVEL] = {
-        PARENT: ["levels"],
+        PARENT: "levels",
         LEVEL,
         LABEL: "Level " + LEVEL
     };
@@ -1028,7 +1011,7 @@ Class.teams.UPGRADES_TIER_0 = []
 for (let i = 1; i <= 8; i++) {
     let TEAM = i;
     Class["Team" + TEAM] = {
-        PARENT: ["teams"],
+        PARENT: "teams",
         TEAM: -TEAM,
         COLOR: getTeamColor(-TEAM),
         LABEL: "Team " + TEAM
@@ -1036,13 +1019,13 @@ for (let i = 1; i <= 8; i++) {
     Class.teams.UPGRADES_TIER_0.push("Team" + TEAM);
 }
 Class['Team' + TEAM_ROOM] = {
-    PARENT: ["teams"],
+    PARENT: "teams",
     TEAM: TEAM_ROOM,
     COLOR: "yellow",
     LABEL: "Room Team"
 };
 Class['Team' + TEAM_ENEMIES] = {
-    PARENT: ["teams"],
+    PARENT: "teams",
     TEAM: TEAM_ENEMIES,
     COLOR: "yellow",
     LABEL: "Enemies Team"
@@ -1051,9 +1034,10 @@ Class.teams.UPGRADES_TIER_0.push('Team' + TEAM_ROOM, 'Team' + TEAM_ENEMIES);
 
 Class.testing = menu("Beta Tanks")
 Class.features = menu("Features")
-Class.overpowered = menu("Dev Funny")
+Class.overpowered = menu("Dev Funny", "rainbow")
+Class.goofytanks = menu("Goofy Shit", "rainbow")
 Class.overpowered.UPGRADE_TOOLTIP = "The Funny v2"
-Class.overpowered.UPGRADE_COLOR = "rainbow"
+Class.goofytanks.UPGRADE_TOOLTIP = "The Funny v3"
   
 Class.addons = menu("Addon Entities")
 Class.addons.UPGRADES_TIER_0 = []
@@ -1110,8 +1094,114 @@ testLayeredBoss.addLayer({turret: {
     TYPE: "crowbarTurret",
 }}, true);
 
+// FLAIL!!!
+Class.flailBallSpike = {
+    PARENT: "genericTank",
+    COLOR: "black",
+    SHAPE: 6,
+    INDEPENDENT: true,
+};
+Class.flailBall = {
+    PARENT: "genericTank",
+    COLOR: "grey",
+    HITS_OWN_TYPE: 'hard',
+    INDEPENDENT: true,
+    TURRETS: [{
+        POSITION: [21.5, 0, 0, 0, 360, 0],
+        TYPE: "flailBallSpike",
+    }],
+};
+Class.flailBolt1 = {
+    PARENT: "genericTank",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    GUNS: [{
+        POSITION: [40, 5, 1, 8, 0, 0, 0]
+    }],
+    TURRETS: [{
+        POSITION: [48, 56, 0, 0, 360, 1],
+        TYPE: "flailBall"
+    }],
+};
+Class.flailBolt2 = {
+    PARENT: "genericTank",
+    COLOR: "grey",
+    INDEPENDENT: true,
+    GUNS: [{
+        POSITION: [30, 5, 1, 8, 0, 0, 0]
+    }],
+    TURRETS: [{
+        POSITION: [20, 36, 0, 0, 360, 1],
+        TYPE: "flailBolt1"
+    }],
+};
+Class.flailBolt3 = {
+    PARENT: "genericTank",
+    COLOR: "grey",
+    GUNS: [{
+        POSITION: [30, 5, 1, 8, 0, 0, 0]
+    }],
+    TURRETS: [{
+        POSITION: [18, 36, 0, 0, 360, 1],
+        TYPE: "flailBolt2"
+    }],
+};
+Class.genericFlail = {
+    PARENT: "genericTank",
+    STAT_NAMES: statnames.flail,
+    TOOLTIP: "[DEV NOTE] The Flail is not finished yet. This tank is currently just a mockup.",
+    SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, 0, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
+}
+Class.flail = {
+    PARENT: "genericFlail",
+    LABEL: "Flail",
+    TURRETS: [{
+        POSITION: [6, 10, 0, 0, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }]
+}
+Class.doubleFlail = {
+    PARENT: "genericFlail",
+    LABEL: "Double Flail",
+    DANGER: 6,
+    TURRETS: [{
+        POSITION: [6, 10, 0, 0, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }, {
+        POSITION: [6, 10, 0, 180, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }]
+}
+Class.tripleFlail = {
+    PARENT: "genericFlail",
+    LABEL: "Triple Flail",
+    DANGER: 7,
+    TURRETS: [{
+        POSITION: [6, 10, 0, 0, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }, {
+        POSITION: [6, 10, 0, 120, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }, {
+        POSITION: [6, 10, 0, 240, 190, 0],
+        TYPE: ["flailBolt3", {
+            INDEPENDENT: true
+        }]
+    }]
+}
+
 Class.Trapper_guy = {
-    PARENT: ["trapper"],
+    PARENT: "trapper",
     LABEL: "Trapper_guy",
     UPGRADE_COLOR: "blue",
     SHAPE: "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/6fcc71bf-255f-4d26-b13e-e3f9f68fb77a.image.png?v=1705291478159",
@@ -1138,7 +1228,7 @@ Class.Trapper_guy = {
     ]
 };
 Class.shockwave = {
-    PARENT: ["bullet"],
+    PARENT: "bullet",
     LABEL: "funy",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     MOTION_TYPE: "trappershockwave"
@@ -1232,7 +1322,6 @@ Class.watertank = {
             SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.bitlessspeed, g.shockwave, g.xtrahealth]),
             TYPE: "waterpet",
             ALT_FIRE: true,
-            ON_SHOOT: "revo",
         }
     }],
     TURRETS: [{
@@ -1370,7 +1459,7 @@ Class.piszerbeam = {
     ],
 };
 Class.oplaser = {
-  PARENT: ["bullet"],
+  PARENT: "bullet",
   SHAPE: -1,
   MOTION_TYPE: "fuckingnuclearbomb",
   BODY: {
@@ -1480,7 +1569,6 @@ Class.baseThrowerDelta = {
             ALT_FIRE: true,
             ALPHA: 0,
             HAS_NO_RECOIL: true,
-            ON_SHOOT: "revo",
         }
     }],
     TURRETS: [{
@@ -1676,6 +1764,20 @@ Class.devtesttemplate = {
         }
     ]
 };
+Class.speedoflight = {
+    PARENT: "genericTank",
+    LABEL: "SpeedOfLight",
+    DANGER: 7,
+    GUNS: [
+        {
+            POSITION: [24, 4, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.acceltospeedoflight, { range: 999 }]),
+                TYPE: ["bullet", { MOTION_TYPE: "acceleratetothespeedoflight" }]
+            }
+        }
+    ]
+};
 Class.maxStatTank = {
   PARENT: ['genericTank'],
   DANGER: 11,
@@ -1794,6 +1896,67 @@ Class.quiteliterallyAMachineGun = {
         }
     ]
 }
+Class.goofysatellite = { 
+    LABEL: "Satellite",
+    TYPE: "bullet",
+    ACCEPTS_SCORE: false,
+    CONTROLLERS: ["orbit"],
+    DANGER: 2,
+    SHAPE: 0,
+    LAYER: 13,
+    BODY: {
+        PENETRATION: 1.2,
+        PUSHABILITY: 0.6,
+        ACCELERATION: 0.75,
+        HEALTH: 0.3,
+        DAMAGE: 3.375,
+        SPEED: 10,
+        RANGE: 10,
+        DENSITY: 0.03,
+        RESIST: 1.5,
+        FOV: 0.5,
+    },
+    COLOR: 'nero',
+    DRAW_HEALTH: true,
+    CLEAR_ON_MASTER_UPGRADE: true,
+    BUFF_VS_FOOD: true,
+    DIE_AT_RANGE: true,
+}
+
+Class.goofywhirlwind = {
+    PARENT: "genericTank",
+    LABEL: "Goofy Whirlwind",
+    ANGLE: 60,
+    CONTROLLERS: ["whirlwind"],
+    HAS_NO_RECOIL: true,
+    STAT_NAMES: statnames.whirlwind,
+    TURRETS: [
+        {
+            POSITION: [8, 0, 0, 0, 360, 1],
+            TYPE: "whirlwindDeco"
+        }
+    ],
+    AI: {
+        SPEED: 2, 
+    }, 
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 5; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["goofysatellite", {ANGLE: i * 72}], 
+                    MAX_CHILDREN: 4,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                }
+            }) 
+        }
+        return output
+    })()
+}
+
 Class.pisseroo = {
     PARENT: ['basic'],
     LABEL: 'Winsor',
@@ -1822,7 +1985,7 @@ Class.pisseroo = {
     }]
 }
 Class.adsfoipuasdfiopu = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Random tank i made in music class because i can",
     UPGRADE_TOOLTIP: "send this * to the penis explosion chamber and have his penis exploded immediately",
     GUNS: [{
@@ -1836,7 +1999,7 @@ Class.adsfoipuasdfiopu = {
 }
 Class.adsfoipuasdfiopu.UPGRADE_COLOR = "animatednero",
 Class.adsfoipuasdfiopu2 = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Random tank i made on the bus because i can",
     UPGRADE_TOOLTIP: "send this non-* to the asshole explosion chamber and have his ashole exploded immediately",
     GUNS: [{
@@ -1849,7 +2012,7 @@ Class.adsfoipuasdfiopu2 = {
         POSITION: [17, 0, 0, 0, 2, 180, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.basic, g.op]),
-            TYPE: "gunchip",
+            TYPE: "bee",
             MAX_CHILDREN: 30,
           }
         }
@@ -1858,7 +2021,7 @@ Class.adsfoipuasdfiopu2 = {
 Class.adsfoipuasdfiopu2.UPGRADE_COLOR = "animatednero",
 //wait whats stuff
 Class.placeableWall = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Wall",
     SIZE: 30,
     SHAPE: 4,
@@ -1867,7 +2030,7 @@ Class.placeableWall = {
     VARIES_IN_SIZE: false,
 };
 Class.placeableWallSmall = {
-    PARENT: ["rock"],
+    PARENT: "rock",
     LABEL: "Wall",
     SIZE: 15,
     SHAPE: 4,
@@ -1876,7 +2039,7 @@ Class.placeableWallSmall = {
     VARIES_IN_SIZE: false,
 };
 Class.wallPlacerThing = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     SHAPE:0,
     MIRROR_MASTER_ANGLE: true,
     INTANGIBLE: true,
@@ -1925,7 +2088,7 @@ Class.wallPlacerThing = {
 
 };
 Class.wallPlacer = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     LABEL: "Messin' Around",
     BODY: {
         ACCELERATION: base.ACCEL * 1,
@@ -1959,127 +2122,6 @@ Class.wallPlacer = {
         },
     ],
 };
-const timer = (run, duration) => {
-    let timer = setInterval(() => run(), 31.25);
-    setTimeout(() => {
-        clearInterval(timer);
-    }, duration * 1000);
-};
-  const damageOnTick = (body, instance, multiplier, duration, stopAtSetHealth, hitsOwnTeam) => {
-    if (!instance) return
-    if (!instance.damageOnTicking && !instance.invuln && instance.type !== "wall" && instance.team != body.team) {
-        instance.damageOnTicking = true;
-        setTimeout(() => {
-            instance.damageOnTicking = false;
-        }, 2 * duration * 1000);
-        timer(() => {
-            if (instance.damageOnTicking && instance.health.amount > stopAtSetHealth && instance.health.amount - (multiplier * 0.5) > stopAtSetHealth) {
-                instance.health.amount -= multiplier * 0.5;
-            } //else {if (instance.health.amount - (multiplier * 0.5) < stopAtSetHealth) {instance.health.amount === stopAtSetHealth}}
-        }, 2 * duration);
-    }
-};
-const iceOnTick = (body, instance, multiplier, duration, hitsOwnTeam) => {
-    if (!instance) return
-    if (!instance.invuln && !instance.godmode && instance.team != body.team) timer(() => {
-        instance.velocity.x /= 1.05 * multiplier;
-        instance.velocity.y /= 1.05 * multiplier;
-    }, 1.5 * duration);
-};
-  
-  Class.hitboxRender = makeDeco('M -1 -1 L 1 -1 L 1 1 L -1 1 Z');
-   Class.poisonhitbox = {
-    PARENT: ["genericTank"],
-    LABEL: "rec hitbox",
-    EXTRA_SKILL: -45,
-    LEVEL: 45,
-   GUNS: [
-      {
-            POSITION: [20, 20, 1, 10, 0, 0, 0],
-            PROPERTIES: {
-             ALPHA: 1,
-            },
-        },
-    ],
-    //    TURRETS: [
-    //     {
-    //         /** SIZE     X       Y     ANGLE    ARC */
-    //         POSITION: [20, 40, 0, 0, 360, 0],
-    //         TYPE: "hitboxRender",
-    //     },
-    // ],//63.5
-    COLOR: 8,//body.size * movement/2 + 5    /// 4/3?????//// 1.28 or 62.5/80
-    //CONTROLLERS: [["spin", { speed: 0 }]],
-    DAMAGE_EFFECTS: false,
-    RATEFFECTS: false,
-    MOTION_EFFECTS: false,
-    BORDERLESS: false,
-    SKILL: Array(10).fill(0),
-    SKILL_CAP: Array(10).fill(0),
-    BODY: {
-        ACCELERATION: 20,
-        SPEED: 1,
-        HEALTH: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
-        RESIST: 1,
-        SHIELD: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
-        REGEN: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
-        DAMAGE: 1,
-        PENETRATION: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
-        RANGE: 0,
-        FOV: 1,
-        SHOCK_ABSORB: 0,
-        RECOIL_MULTIPLIER: 0,
-        DENSITY: 13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084095,
-        STEALTH: 1,
-        PUSHABILITY: 0,
-        HETERO: 0,
-    },
-      ON: [
-       {
-        event: "tick",
-        handler: ({ body }) => {
-          
-            for (let instance of entities) {
-             function rotatePoint(x, y, angle) {
-    const newX = x * Math.cos(angle) - y * Math.sin(angle);
-    const newY = x * Math.sin(angle) + y * Math.cos(angle);
-    return { x: newX, y: newY };
-}
-
-function checkCollision(instance, body, angle) {
-    const rotatedInstance = rotatePoint(instance.x - body.x, instance.y - body.y, -angle);
-    
-    const rotatedHitboxX = rotatedInstance.x + body.x;
-    const rotatedHitboxY = rotatedInstance.y + body.y;
-//     const intervalX = body.realSize;
-//     const intervalY = body.realSize;
-
-//     const rotatedHitboxX = rotatedInstance.x + body.x + (Math.round(rotatedInstance.x / intervalX) * intervalX) + 10;
-//     const rotatedHitboxY = rotatedInstance.y + body.y + (Math.round(rotatedInstance.y / intervalY) * intervalY);
-
-    const length = 40;
-    const width = 20;
-    const xOffset = 40;
-    const yOffset = 0;
-    if (
-        (rotatedHitboxX > body.x - (((body.realSize / 20) * length) + instance.realSize + ((-body.realSize / 20) * xOffset))) &&// left collusion
-        (rotatedHitboxX < body.x + (((body.realSize / 20) * length) + instance.realSize + ((body.realSize / 20) * xOffset))) &&//right collusion
-        (rotatedHitboxY > body.y - (((body.realSize / 20) * width) + instance.realSize + ((-body.realSize / 20) * yOffset))) &&//top collusion
-        (rotatedHitboxY < body.y + (((body.realSize / 20) * width) + instance.realSize + ((body.realSize / 20) * yOffset))) &&//bottom collusion
-        instance.id != body.id
-    ) {
-      //instance.color = 9
-     damageOnTick(body, instance, 1.5, 1, 1, true);
-    }
-}
-checkCollision(instance, body, body.facing, );
-              
-            }
-            }
-        }
-     ],
-};
-//checkCollision(instance, body, body.facing, );
 Class.imagetest = {
     PARENT: "genericTank",
     UPGRADE_COLOR: "black",
@@ -2289,8 +2331,10 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
     Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"]
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
-        Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "winsor0"]
-        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "accelminigun"]
+        Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "flail", "winsor0"]
+            Class.flail.UPGRADES_TIER_2 = ["doubleFlail"]
+                Class.doubleFlail.UPGRADES_TIER_3 = ["tripleFlail"]
+        Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"]]
         Class.dominators.UPGRADES_TIER_0 = ["AIT", "destroyerDominator", "gunnerDominator", "trapperDominator"]
         Class.sanctuaries.UPGRADES_TIER_0 = ["AIT", "sanctuaryTier1", "sanctuaryTier2", "sanctuaryTier3", "sanctuaryTier4", "sanctuaryTier5", "sanctuaryTier6"]
 
@@ -2304,10 +2348,11 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
         Class.terrestrials.UPGRADES_TIER_0 = ["bosses", "ares", "gersemi", "ezekiel", "eris", "selene"];
         Class.celestials.UPGRADES_TIER_0 = ["bosses", "paladin", "freyja", "zaphkiel", "nyx", "theia", "atlas", "rhea", "julius", "genghis", "napoleon"];
         Class.eternals.UPGRADES_TIER_0 = ["bosses", "odin", "kronos"];
-        Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss"];
+        Class.devBosses.UPGRADES_TIER_0 = ["taureonBoss", "zephiBoss", "dogeiscutBoss", "trplnrBoss", "frostBoss", "toothlessBoss"];
 
         Class.features.UPGRADES_TIER_0 = ["tanks", "diamondShape", "rotatedTrap", "colorMan", "miscTest", "mmaTest", "vulnturrettest", "onTest", "alphaGunTest", "strokeWidthTest", "testLayeredBoss", "tooltipTank", "turretLayerTesting", "bulletSpawnTest", "propTest", "auraBasic", "auraHealer", "weirdAutoBasic", "ghoster", "switcheroo", ["developer", "developer"]];
-        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "armyOfOne", "godbasic", "maximumOverdrive", "pisseroo", "papyrus", "oppenheimer", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "homingdev", ["maxStatTank", "basic"], "quiteliterallyAMachineGun"];
+        Class.overpowered.UPGRADES_TIER_0 = ["tanks", "goofytanks", "armyOfOne", "godbasic", "maximumOverdrive", "oppenheimer", "homingdev", ["maxStatTank", "basic"], "quiteliterallyAMachineGun", "speedoflight"];
+        Class.goofytanks.UPGRADES_TIER_0 = ["overpowered", "pisseroo", "papyrus", "Trapper_guy", "watertank", "piszerbeam", "baseThrowerDelta", "pouner", "adsfoipuasdfiopu", "goofywhirlwind"];
 
         //the "winsor" tank needs this to function, it worked before the "ON" thing was added
               Class.winsor0.UPGRADES_TIER_0 = ["winsor1", "winsor2", "winsor3", "winsor4"];

@@ -7,7 +7,7 @@ class Canvas {
         this.target = global.target;
         this.socket = global.socket;
         this.directions = [];
-
+        this.wikiInput = document.getElementById("wikiTankThing");
         this.chatInput = document.getElementById('chatInput');
         this.chatInput.addEventListener('keydown', event => {
             if (![global.KEY_ENTER, global.KEY_ESC].includes(event.keyCode)) return;
@@ -17,6 +17,17 @@ class Canvas {
             if (!this.chatInput.value) return;
             if (event.keyCode === global.KEY_ENTER) this.socket.talk('M', this.chatInput.value);
             this.chatInput.value = "";
+        });
+        this.wikiInput.addEventListener('keydown', event => {
+          if (global.wiki && global.gameStart) {
+          if (event.keyCode === global.KEY_ENTER) {
+          if (this.wikiInput.value != "") {
+            global.wikidisplaytank = this.wikiInput.value;
+            this.wikiInput.value = "";
+          }
+          this.cv.focus();
+            }
+          }
         });
 
         this.cv = document.getElementById('gameCanvas');
@@ -68,11 +79,17 @@ class Canvas {
                 global.showDebug = !0;
                 break;
             case global.KEY_ENTER:
+                global.killsoundready = true
                 // Enter to respawn
                 if (global.died) {
                     this.socket.talk('s', global.playerName, 0, 1 * settings.game.autoLevelUp, global.skin);
                     global.died = false;
-                    break;
+                break;
+                }
+            
+                if (global.wiki && global.gameStart) {
+                this.wikiInput.focus();
+                break;
                 }
 
                 // or to talk instead
@@ -96,11 +113,19 @@ class Canvas {
             case global.KEY_LEFT_ARROW:
                 if (!global.died && global.showTree) return global.scrollVelocityX = -this.treeScrollSpeed * this.treeScrollSpeedMultiplier;
             case global.KEY_LEFT:
+                if (global.wiki && global.gameStart) {
+                global.wikidisplaytank = parseInt(global.wikidisplaytank) - 1;
+                break;
+                }
                 this.socket.cmd.set(2, true);
                 break;
             case global.KEY_RIGHT_ARROW:
                 if (!global.died && global.showTree) return global.scrollVelocityX = +this.treeScrollSpeed * this.treeScrollSpeedMultiplier;
             case global.KEY_RIGHT:
+                if (global.wiki && global.gameStart) {
+                global.wikidisplaytank = parseInt(global.wikidisplaytank) + 1;
+                break;
+                }
                 this.socket.cmd.set(3, true);
                 break;
             case global.KEY_MOUSE_0:
@@ -169,6 +194,13 @@ class Canvas {
             case global.KEY_HEAL:
                 this.socket.talk('heal');
                 break;
+            case global.KEY_WIKI:
+                global.wiki = true;
+                document.querySelector("#wikiTankThing").style.display = 'block';
+                break;
+            case global.KEY_ESC:
+                global.wiki = false;
+                document.querySelector("#wikiTankThing").style.display = 'none';
         }
         if (!event.repeat) {
             switch (event.keyCode) {

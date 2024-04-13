@@ -625,6 +625,7 @@ const convert = {
         let index = get.next(),
             // Translate the encoded index
             indices = {
+                wikitank: index & 0x0800,
                 class: index & 0x0400,
                 root: index & 0x0200,
                 topspeed: index & 0x0100,
@@ -658,6 +659,9 @@ const convert = {
                 gui.upgrades.push(get.next().split("\\\\//"));
                 gui.upgrades[i][2] = util.getEntityImageFromMockup(gui.upgrades[i][2], gui.color);
             }
+        }
+        if (indices.wikitank) {
+                gui.wikidisplay = util.getEntityImageFromMockup("1057");
         }
         if (indices.statsdata) {
             for (let i = 9; i >= 0; i--) {
@@ -917,10 +921,10 @@ const socketInit = port => {
                 break;
             case 'm': // message
                 global.messages.push({
-                    text: m[0],
+                    text: m[1],
                     status: 2,
                     alpha: 0,
-                    time: Date.now(),
+                    time: Date.now() + m[0],
                 });
                 break;
             case 'u': // uplink

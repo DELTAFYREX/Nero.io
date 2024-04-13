@@ -58,15 +58,34 @@ function firmcollide(my, n, buffer = 0) {
 }
 
 function reflectcollide(wall, bounce) {
-    let delta = new Vector(wall.x - bounce.x, wall.y - bounce.y);
-    let dist = delta.length;
-    let difference = wall.size + bounce.size - dist;
-    if (difference > 0) {
-        bounce.accel.x -= difference * delta.x / dist;
-        bounce.accel.y -= difference * delta.y / dist;
-        return 1;
+    if (wall.master.team != bounce.team) {
+        let delta = new Vector(wall.x - bounce.x, wall.y - bounce.y);
+        let dist = delta.length;
+        let difference = wall.size + bounce.size - dist;
+        if (difference > 0) {
+            bounce.accel.x -= difference * delta.x / dist;
+            bounce.accel.y -= difference * delta.y / dist;
+            return 1;
+        }
+        return 0;
     }
-    return 0;
+}
+
+function mirrorcollide(wall, bounce) {
+    if (wall.master.team != bounce.team || bounce.type == 'bullet') {
+        let delta = new Vector(wall.x - bounce.x, wall.y - bounce.y);
+        let dist = delta.length;
+        let difference = wall.size + bounce.size - dist;
+        if (difference > 0) {
+            bounce.accel.x -= difference * delta.x / dist;
+            bounce.accel.y -= difference * delta.y / dist;
+            if (bounce.type == 'bullet') {
+            bounce.team = wall.master.team;
+            }
+            return 1;
+        }
+        return 0;
+    }
 }
 
 function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false) {
@@ -422,5 +441,6 @@ module.exports = {
     reflectcollide,
     advancedcollide,
     mooncollide,
-    mazewallcollide
+    mazewallcollide,
+    mirrorcollide,
 };

@@ -6,7 +6,7 @@ module.exports = {
     host: "neroio2.glitch.me",
 
     // Which port to run the web server on.
-    port: 5463,
+    port: 3000,
 
     // How often to update the list of the entities that players can see.
     // Has effects of when entities are activated.
@@ -26,13 +26,13 @@ module.exports = {
     // NOTE: If a /gamemodeconfig/ file "replaces" the value of ROOM_SETUP, it just adds its own ROOM_SETUP's content to this array.
     // NOTE: Files starting with `map_` are maps. files starting with `overlay_` are overlays that get added on.
     // NOTE: These prefixes are only for categorisation, a room file would work the same regardless of its prefix. APS++ does nothing based on file name prefixes.
-    ROOM_SETUP: ['map_apspp_arena'],
+    ROOM_SETUP: ['map_apspp_default'],
 
     // The dimensions of a single tile on the map.
-    TILE_WIDTH: 400, //400
-    TILE_HEIGHT: 400, //400
-
-
+    TILE_WIDTH: 300, //400
+    TILE_HEIGHT: 300, //400
+  
+  
 
     // Miscellaneous
 
@@ -42,7 +42,7 @@ module.exports = {
 
     // If you don't want your players to color their messages.
     // They get sanitized after addons interpret them, but before they're added to the chat message dictionary.
-    SANITIZE_CHAT_MESSAGE_COLORS: true,
+    SANITIZE_CHAT_MESSAGE_COLORS: false,
 
     // If someone tries to get a file that does not exist, send them this instead.
     DEFAULT_FILE: 'index.html',
@@ -58,7 +58,10 @@ module.exports = {
                     +"You will be invulnerable until you move or shoot OR ACCIDENTALLY PRESS THE FUCKING SPACE BAR.\n"
                     +"Please report any bugs you encounter on our discord! :)",
 
-
+    
+    // How long a popup message lasts before fading out in milliseconds.
+    MESSAGE_DISPLAY_TIME: 10_000,
+    
 
     // Physics
 
@@ -105,16 +108,19 @@ module.exports = {
     LEVEL_CHEAT_CAP: 45,
 
     // Amount of player-bots to spawn.
-    BOTS: 4,
+    BOTS: 6,
 
     // How much XP player-bots get per second until they reach LEVEL_CAP.
-    BOT_XP: 125,
+    BOT_XP: 26302,
 
     // The chances of a player-bot upgrading a specific skill when skill upgrades are available.
     BOT_SKILL_UPGRADE_CHANCES: [ 1, 1, 3, 4, 4, 4, 4, 2, 1, 1],
 
     // The chances of a player-bot upgrading a specific amount of times before it stops upgrading.
     BOT_CLASS_UPGRADE_CHANCES: [ 1, 5, 20, 37, 37],
+  
+    // The prefix of the bot's name.
+    BOT_NAME_PREFIX: "[AI] ",
 
     // The class that players and player-bots spawn as.
     SPAWN_CLASS: "basic",
@@ -207,7 +213,7 @@ module.exports = {
 
 
 
-    // Gamemode related.
+    // Default values for gamemode related stuff.
     // Do not change these, you'll likely break stuff.
     // Change GAME_MODES instead.
     GAMEMODE_NAME_PREFIXES: [],

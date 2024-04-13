@@ -55,7 +55,7 @@ module.exports = {
 // Drones
     overseer: { reload: 1.25, size: 0.85, health: 0.7, damage: 0.8, maxSpeed: 0.9, density: 2 },
     overdrive: { reload: 2.5, health: 0.8, damage: 0.8, pen: 0.8, speed: 0.9, maxSpeed: 0.9, range: 0.9, spray: 1.2 },
-    commander: { reload: 3, size: 0.7, health: 0.4, damage: 0.7, range: 0.1, density: 0.5 },
+    commander: { reload: 1.5, health: 0.4, damage: 0.7 },
     baseProtector: { reload: 5, recoil: 0.000001, health: 100, range: 0.5, density: 5, resist: 10 },
     battleship: { health: 1.25, damage: 1.15, maxSpeed: 0.85, resist: 1.1 },
     carrier: { reload: 1.5, damage: 0.8, speed: 1.3, maxSpeed: 1.2, range: 1.2 },
@@ -107,7 +107,7 @@ module.exports = {
     arenaCloser: { reload: 1.25, recoil: 0.25, health: 1000, damage: 1000, pen: 1000, speed: 2.5, maxSpeed: 2.25, range: 1.4, density: 4, spray: 0.25 },
     healer: { damage: -1 },
     lowPower: { shudder: 2, health: 0.5, damage: 0.5, pen: 0.7, spray: 0.5, resist: 0.7 },
-    aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, damage: 3, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
+    aura: { reload: 0.001, recoil: 0.001, shudder: 0.001, size: 6, speed: 0.001, maxSpeed: 0.001, spray: 0.001 },
     noSpread: { shudder: 0, spray: 0 },
     lessspread: { shudder: 0.75, spread: 0.75 },
   
@@ -115,6 +115,8 @@ module.exports = {
     doublerange: { range: 2 },
     morerange: { range: 1.15 },
     halfrange: { range: 0.5 },
+    norange: { range: 0.2 },
+    literallynorange: { range: 0 },
 
     // Recoil
     tonsmorerecoil: { recoil: 4 },
@@ -160,7 +162,7 @@ module.exports = {
     lesspower: { reload: 1, recoil: 1, shudder: 1, size: 1, health: .9, damage: .9, pen: .9, speed: 1, maxSpeed: 1, range: 1, density: 1, spray: 1, resist: 1 },
     slightlyweaker: { health: 0.8, damage: 0.8, pen: 0.8 },
     grenade_explosion: { reload: 8, recoil: 0, shudder: 4.25, size: 2, health: 2.25, damage: 1.75, pen: 1.5, speed: 1.35, maxSpeed: 1, range: 1, density: 1, spray: 4, resist: 1 },
-    norange: { range: 0.2 },
     literallyamachinegun: { reload: 0.2, speed: 5, maxSpeed: 5, spray: 0.3, shudder: 0.6 },
-    rainmaker: { speed: 0.03, maxSpeed: 0.5, health: 0.9, damage: 0.85, pen: 1,},
+    rainmaker: { speed: 0.03, maxSpeed: 0.5, health: 0.9, damage: 0.85, pen: 1 },
+    acceltospeedoflight: { speed: 0.001, maxSpeed: 1000 },
 }
