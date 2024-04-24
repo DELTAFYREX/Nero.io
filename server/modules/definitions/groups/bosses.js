@@ -1,5 +1,5 @@
 const { combineStats, skillSet, makeAuto, addAura, LayeredBoss, makeDeco } = require('../facilitators.js');
-const { base, gunCalcNames } = require('../constants.js');
+const { base, gunCalcNames, smshskl } = require('../constants.js');
 const g = require('../gunvals.js');
 require('./generics.js');
 
@@ -11,217 +11,6 @@ Class.miniboss = {
 Class.ramMiniboss = {
     PARENT: "genericBoss",
     CONTROLLERS: ["nearestDifferentMaster", "canRepel", "mapTargetToGoal"],
-};
-
-// GUNS
-Class.baseTrapTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Turret",
-    INDEPENDENT: true,
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [16, 14, 1, 0, 0, 0, 0],
-        }, {
-            POSITION: [4, 14, 1.8, 16, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.lowPower, g.pounder, g.destroyer, { reload: 0.5 }, g.hexaTrapper]),
-                TYPE: "trap",
-                STAT_CALCULATOR: gunCalcNames.trap,
-                AUTOFIRE: true,
-            },
-        },
-    ],
-}
-Class.terrestrialTrapTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Turret",
-    INDEPENDENT: true,
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [13, 14, 1, 0, 0, 0, 0],
-        }, {
-            POSITION: [4, 14, 1.8, 13, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.lowPower, g.pounder, g.destroyer, { reload: 0.5 }, g.hexaTrapper]),
-                TYPE: "trap",
-                STAT_CALCULATOR: gunCalcNames.trap,
-                AUTOFIRE: true,
-            },
-        },
-    ],
-}
-Class.machineTripleTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Machine Gun",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ ["spin", {speed: 0.04}] ],
-    INDEPENDENT: true,
-    COLOR: -1,
-    GUNS: [
-        {
-            POSITION: [12, 10, 1.4, 8, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.flankGuard]),
-                TYPE: "bullet",
-                AUTOFIRE: true,
-            },
-        }, {
-            POSITION: [12, 10, 1.4, 8, 0, 120, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.flankGuard]),
-                TYPE: "bullet",
-                AUTOFIRE: true,
-            },
-        }, {
-            POSITION: [12, 10, 1.4, 8, 0, 240, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.machineGun, g.flankGuard]),
-                TYPE: "bullet",
-                AUTOFIRE: true,
-            },
-        },
-    ],
-};
-Class.skimmerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Skimmer",
-    BODY: { FOV: 2 * base.FOV },
-    COLOR: -1,
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [
-        {
-            POSITION: [10, 14, -0.5, 9, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.skimmer]),
-                TYPE: "hypermissile",
-                STAT_CALCULATOR: gunCalcNames.sustained,
-            },
-        }, {
-            POSITION: [17, 15, 1, 0, 0, 0, 0],
-        },
-    ],
-};
-Class.twisterTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Twister",
-    BODY: { FOV: 2 },
-    COLOR: -1,
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [
-        {
-            POSITION: [10, 13, -0.5, 9, 0, 0, 0],
-        }, {
-            POSITION: [17, 14, -1.4, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.skimmer, { speed: 1.3, maxSpeed: 1.3 }, { reload: 4/3 }]),
-                TYPE: "spinmissile",
-                STAT_CALCULATOR: gunCalcNames.sustained,
-            },
-        },
-    ],
-};
-Class.hyperTwisterTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Twister",
-    BODY: { FOV: 2 },
-    COLOR: -1,
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [
-        {
-            POSITION: [10, 13, -0.5, 9, 0, 0, 0],
-        }, {
-            POSITION: [17, 14, -1.4, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.skimmer, { speed: 1.3, maxSpeed: 1.3 }, { reload: 4/3 }]),
-                TYPE: "hyperspinmissile",
-                STAT_CALCULATOR: gunCalcNames.sustained,
-            },
-        },
-    ],
-};
-Class.boomerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Boomer",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: -1,
-    GUNS: [
-        {
-            POSITION: [7.75, 10, 1, 12, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang, g.fake]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [6, 10, -1.5, 7, 0, 0, 0],
-        }, {
-            POSITION: [2, 10, 1.3, 18, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.boomerang]),
-                TYPE: "boomerang",
-            },
-        },
-    ],
-};
-Class.triTrapGuardTurret = {
-    PARENT: ["genericTank"],
-    COLOR: -1,
-    CONTROLLERS: [["spin", { independent: true }]],
-    GUNS: [],
-};
-for(let i = 0; i < 3; i++) {
-    Class.triTrapGuardTurret.GUNS.push(
-        {
-            POSITION: [17, 8, 1, 0, 0, 120*i, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.flankGuard]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [13, 8, 1, 0, 0, 120*i+60, 0],
-        }, {
-            POSITION: [4, 8, 1.7, 13, 0, 120*i+60, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap]),
-                TYPE: "trap",
-                STAT_CALCULATOR: gunCalcNames.trap,
-            },
-        },
-    )
-};
-Class.eliteSpinnerCyclone = {
-    PARENT: ["genericTank"],
-    COLOR: -1,
-    CONTROLLERS: [["spin", { speed: 0.1, independent: true }]],
-    GUNS: [],
-};
-for (let i = 0; i < 12; i++) {
-    let delay;
-    switch (i % 4) {
-        case 0:
-            delay = 0;
-            break;
-        case 1:
-            delay = 0.5;
-            break;
-        case 2:
-            delay = 0.25;
-            break;
-        case 3:
-            delay = 0.75;
-            break;
-    }
-    Class.eliteSpinnerCyclone.GUNS.push(
-        {
-            POSITION: [15, 3.5, 1, 0, 0, 30 * i, delay],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.gunner, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: "bullet",
-            },
-        },
-    )
 };
 
 // ELITE CRASHERS
@@ -285,7 +74,7 @@ Class.eliteDestroyer = {
     ],
 };
 Class.eliteGunner = {
-    PARENT: "elite",
+    PARENT: ["elite"],
     UPGRADE_LABEL: "Elite Gunner",
     UPGRADE_COLOR: "pink",
     FACING_TYPE: "toTarget",
@@ -317,7 +106,7 @@ Class.eliteGunner = {
     ],
 };
 Class.eliteSprayer = {
-    PARENT: "elite",
+    PARENT: ["elite"],
     UPGRADE_LABEL: "Elite Sprayer",
     UPGRADE_COLOR: "pink",
     SKILL: [0, 9, 3, 9, 2, 9, 9, 9, 9, 0],
@@ -350,7 +139,7 @@ Class.eliteSprayer = {
     ],
 };
 Class.eliteBattleship = {
-    PARENT: "elite",
+    PARENT: ["elite"],
     UPGRADE_LABEL: "Elite Battleship",
     UPGRADE_COLOR: "pink",
     GUNS: [
@@ -579,40 +368,6 @@ Class.oldEliteSprayer = {
 };
 
 // Legionary Crasher
-Class.legionaryTwin = {
-    PARENT: ["auto4gun"],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [17.5, 5, 1, 0, -4.5, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.twin, g.power, { speed: 0.7, maxSpeed: 0.7 }]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [17.5, 5, 1, 0, 4.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.twin, g.power, { speed: 0.7, maxSpeed: 0.7 }]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-}
-Class.legionaryPillbox = {
-    PARENT: ["unsetTrap"],
-    LABEL: "Pillbox",
-    BODY: {
-        SPEED: 1,
-        DENSITY: 5,
-    },
-    DIE_AT_RANGE: true,
-    TURRETS: [
-        {
-            POSITION: [11, 0, 0, 0, 360, 1],
-            TYPE: "legionaryTwin",
-        },
-    ],
-}
 Class.legionaryCrasherTop = {
     PARENT: ["elite"],
     AI: { STRAFE: false, NO_LEAD: false },
@@ -626,7 +381,7 @@ for (let i = 0; i < 3; i++) {
         {
             POSITION: [4, 9.5, 0.7, 7, 5, 120*i+60, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.pounder, { speed: 1.3, maxSpeed: 1.3 }, { speed: 1.3, maxSpeed: 1.3 }, {size: 0.7, speed: 5, maxSpeed: 2, shudder: 5, range: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.pounder, { speed: 3, maxSpeed: 1.7, size: 0.6, range: 2.8}]),
                 TYPE: [ "swarm", { INDEPENDENT: true } ],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 AUTOFIRE: true,
@@ -635,7 +390,7 @@ for (let i = 0; i < 3; i++) {
         }, {
             POSITION: [4, 9.5, 0.7, 7, -5, 120*i+60, 0.5],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.pounder, { speed: 1.3, maxSpeed: 1.3 }, { speed: 1.3, maxSpeed: 1.3 }, {size: 0.7, speed: 5, maxSpeed: 2, shudder: 5, range: 1.5}]),
+                SHOOT_SETTINGS: combineStats([g.swarm, g.pounder, { speed: 3, maxSpeed: 1.7, size: 0.6, range: 2.8}]),
                 TYPE: [ "swarm", { INDEPENDENT: true } ],
                 STAT_CALCULATOR: gunCalcNames.swarm,
                 AUTOFIRE: true,
@@ -656,7 +411,7 @@ Class.legionaryCrasher = {
     AI: { STRAFE: false, NO_LEAD: false },
     HAS_NO_RECOIL: true,
     VALUE: 5e6,
-    SIZE: 80,
+    SIZE: 75,
     BODY: {
         FOV: 1.5,
         SPEED: 0.1 * base.SPEED,
@@ -678,7 +433,7 @@ for (let i = 0; i < 3; i++) {
         }, {
             POSITION: [3, 13, 1.7, 14.5, 0, 120*i, 0],
             PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.pounder, g.destroyer, { speed: 2.5 }, { size: 0.6, maxSpeed: 3 }]),
+                SHOOT_SETTINGS: combineStats([g.trap, g.setTrap, g.pounder, g.destroyer, { speed: 2.5, size: 0.6, maxSpeed: 3 }]),
                 TYPE: "legionaryPillbox",
                 STAT_CALCULATOR: gunCalcNames.trap,
             },
@@ -719,11 +474,6 @@ Class.sprayerLegion = {
 };
 
 // STRANGE BOSSES
-Class.waferbread = {
-    PARENT: ["sunchip"],
-    NECRO: [0],
-    SHAPE: 0
-};
 Class.sorcerer = {
     PARENT: ["miniboss"],
     LABEL: "Sorcerer",
@@ -744,7 +494,7 @@ Class.sorcerer = {
         POSITION: [3.5, 8.65, 1.2, 8, 0, i * 180, 0],
         PROPERTIES: {
             SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.machineGun, g.machineGunner, { size: 0.4, spray: 150, speed: 2, shudder: 1.75 }]),
-            TYPE: "waferbread",
+            TYPE: "minichip",
             AUTOFIRE: true,
             SYNCS_SKILLS: true,
             STAT_CALCULATOR: gunCalcNames.necro,
@@ -780,11 +530,6 @@ Class.summoner = {
         },
     }))
 };
-Class.dorito = {
-    PARENT: ["sunchip"],
-    NECRO: [3],
-    SHAPE: 3
-};
 Class.enchantress = {
     PARENT: ["miniboss"],
     LABEL: "Enchantress",
@@ -812,11 +557,6 @@ Class.enchantress = {
             WAIT_TO_CYCLE: true,
         },
     }))
-};
-Class.demonchip = {
-    PARENT: ["sunchip"],
-    NECRO: [5],
-    SHAPE: 5
 };
 Class.exorcistor = {
     PARENT: ["miniboss"],
@@ -846,18 +586,13 @@ Class.exorcistor = {
         },
     }))
 };
-Class.realchip = {
-    PARENT: "sunchip",
-    NECRO: [6],
-    SHAPE: 6
-};
 Class.shaman = {
     PARENT: "miniboss",
     LABEL: "Shaman",
     DANGER: 8,
     SHAPE: 6,
-    COLOR: "magenta",
-    UPGRADE_COLOR: "magenta",
+    COLOR: "hexagon",
+    UPGRADE_COLOR: "hexagon",
     SIZE: 26,
     MAX_CHILDREN: 20,
     VALUE: 6e5,
@@ -1075,7 +810,7 @@ for(let i = 0; i < 5; i++) {
 
 // Rogues
 Class.roguePalisade = {
-    PARENT: "miniboss",
+    PARENT: ["miniboss"],
     LABEL: "Rogue Palisade",
     COLOR: "darkGrey",
     UPGRADE_COLOR: "darkGrey",
@@ -1162,8 +897,8 @@ Class.bob = {
     PARENT: ["ramMiniboss"],
     LABEL: "Bob",
     SHAPE: 0,
-    COLOR: "teal",
-    UPGRADE_COLOR: "teal",
+    COLOR: "aqua",
+    UPGRADE_COLOR: "aqua",
     SIZE: 18,
     BODY: {
         FOV: 2,
@@ -1222,7 +957,7 @@ Class.guardian = {
     AI: { NO_LEAD: false },
 };
 Class.defenderAutoTankGun = {
-    PARENT: "autoTankGun",
+    PARENT: ["autoTankGun"],
     GUNS: [
         {
             POSITION: [22, 10, 1, 0, 0, 0, 0],
@@ -1339,60 +1074,6 @@ Class.eternal = {
 };
 
 // Terrestrials
-Class.protoHive = {
-    PARENT: ["bullet"],
-    LABEL: "Proto-Hive",
-    BODY: {
-        RANGE: 90,
-        FOV: 0.5,
-    },
-    FACING_TYPE: "turnWithSpeed",
-    INDEPENDENT: true,
-    CONTROLLERS: ["alwaysFire", "nearestDifferentMaster", "targetSelf"],
-    AI: { NO_LEAD: true },
-    GUNS: [
-        {
-            POSITION: [7, 9.5, 0.6, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
-                TYPE: ["bee", { INDEPENDENT: true }],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [7, 9.5, 0.6, 7, 0, 120, 0.2],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
-                TYPE: ["bee", { INDEPENDENT: true }],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [7, 9.5, 0.6, 7, 0, -120, 0.4],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.hive, g.bee]),
-                TYPE: ["bee", { INDEPENDENT: true }],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
-Class.protoSwarmerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Swarmer",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [10, 14, -1.2, 5, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, g.hive]),
-                TYPE: "protoHive",
-            },
-        }, {
-            POSITION: [11, 12, 1, 5, 0, 0, 0],
-        },
-    ],
-};
 let ares = new LayeredBoss(null, "Ares", "terrestrial", 7, "purple", "terrestrialTrapTurret", 7, 5.5);
 ares.addLayer({gun: {
     POSITION: [3.75, 7, 1.2, 8, 0, null, 0],
@@ -1410,39 +1091,6 @@ ares.addLayer({turret: {
     TYPE: ["protoSwarmerTurret", { INDEPENDENT: true }],
 }}, true, 6.5);
 
-Class.swarmTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Swarm",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [7, 7.5, 0.6, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: ["swarm", {INDEPENDENT: true}],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
-Class.basicTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Turret",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [16, 4, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.twin, g.power, { speed: 0.7, maxSpeed: 0.7 }]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-};
 let gersemi = new LayeredBoss(null, "Gersemi", "terrestrial", 7, "lightGreen", "terrestrialTrapTurret", 7, 5.5);
 gersemi.addLayer({turret: {
     POSITION: [9, 8, 0, null, 160, 0],
@@ -1505,24 +1153,6 @@ selene.addLayer({turret: {
 }}, true, 6.5);
 
 // PALADIN
-Class.swarmerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Swarmer",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [14, 14, -1.2, 5, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.destroyer, g.hive]),
-                TYPE: "hive",
-            },
-        }, {
-            POSITION: [15, 12, 1, 5, 0, 0, 0],
-        },
-    ],
-};
 let paladin = new LayeredBoss(null, "Paladin", "celestial", 9, "purple", "baseTrapTurret", 6.5, 5.5);
 paladin.addLayer({gun: {
     POSITION: [3.8, 6, 1.4, 8, 0, null, 0],
@@ -1541,30 +1171,6 @@ paladin.addLayer({turret: {
 }}, true, 6);
 
 // FREYJA
-Class.cruiserTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Cruiser",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [7, 7.5, 0.6, 7, 4, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [7, 7.5, 0.6, 7, -4, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
 let freyja = new LayeredBoss(null, "Freyja", "celestial", 9, "lightGreen", "baseTrapTurret", 6.5, 5.5);
 freyja.addLayer({turret: {
     POSITION: [8.5, 9, 0, null, 180, 0],
@@ -1592,25 +1198,6 @@ zaphkiel.addLayer({turret: {
 }}, true, 6);
 
 // NYX
-Class.rocketeerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Rocketeer",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [10, 12.5, -0.7, 10, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.launcher, g.rocketeer]),
-                TYPE: "rocketeerMissile",
-                STAT_CALCULATOR: gunCalcNames.sustained,
-            },
-        }, {
-            POSITION: [17, 18, 0.65, 0, 0, 0, 0],
-        },
-    ],
-};
 let nyx = new LayeredBoss(null, "Nyx", "celestial", 9, "pink", "baseTrapTurret", 6.5, 5.5);
 nyx.addLayer({gun: {
     POSITION: [3.8, 7, -1.4, 8, 0, null, 0],
@@ -1644,68 +1231,7 @@ theia.addLayer({turret: {
 }}, true, 6);
 
 // ATLAS
-Class.artilleryTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Artillery",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [17, 3, 1, 0, -6, -7, 0.25],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.artillery]),
-                TYPE: "bullet",
-                LABEL: "Secondary",
-            },
-        }, {
-            POSITION: [17, 3, 1, 0, 6, 7, 0.75],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.artillery]),
-                TYPE: "bullet",
-                LABEL: "Secondary",
-            },
-        }, {
-            POSITION: [19, 12, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery]),
-                TYPE: "bullet",
-                LABEL: "Heavy",
-            },
-        },
-    ],
-};
-Class.nailgunTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Nailgun",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [{
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [19, 2, 1, 0, -2.5, 0, 0.25],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [19, 2, 1, 0, 2.5, 0, 0.75],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [20, 2, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin, g.nailgun]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [5.5, 7, -1.8, 6.5, 0, 0, 0],
-        },
-    ],
-};
-let atlas = new LayeredBoss(null, "Atlas", "celestial", 9, "lavender", "baseTrapTurret", 6.5, 5.5);
+let atlas = new LayeredBoss(null, "Atlas", "celestial", 9, "purple", "baseTrapTurret", 6.5, 5.5);
 atlas.addLayer({turret: {
     POSITION: [7, 9, 0, null, 180, 0],
     TYPE: "artilleryTurret",
@@ -1716,61 +1242,6 @@ atlas.addLayer({turret: {
 }}, true, 6);
 
 // RHEA
-Class.crowbarTurret = {
-    PARENT: ["genericTank"],
-    COLOR: "grey",
-    LABEL: "Crowbar",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [
-        {
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [37, 6.5, 1, 0, 0, 0, 0],
-        }, {
-            POSITION: [5, 8.5, -1.5, 8, 0, 0, 0],
-        },
-    ],
-    TURRETS: [
-        {
-            /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [6, 38, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        }, {
-            POSITION: [6, 28, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        }, {
-            POSITION: [6, 18, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        },
-    ],
-};
-Class.wrenchTurret = {
-    PARENT: ["genericTank"],
-    COLOR: "grey",
-    LABEL: "Wrench",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [{
-            /*** LENGTH  WIDTH   ASPECT    X       Y     ANGLE   DELAY */
-            POSITION: [67, 6.5, 1, 0, 0, 0, 0],
-        }, {
-            POSITION: [5, 8.5, -1.5, 8, 0, 0, 0],
-        },
-    ],
-    TURRETS: [
-        {
-            /*  SIZE     X       Y     ANGLE    ARC */
-            POSITION: [6, 68, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        }, {
-            POSITION: [6, 58, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        }, {
-            POSITION: [6, 48, 0, 0, 360, 1],
-            TYPE: [ "autoTankGun", { INDEPENDENT: true, HAS_NO_RECOIL: true } ],
-        },
-    ],
-};
 let rhea = new LayeredBoss(null, "Rhea", "celestial", 9, "darkGrey", "baseTrapTurret", 6.5, 5.5);
 rhea.addLayer({turret: {
     POSITION: [8.5, 9, 0, null, 180, 0],
@@ -1782,48 +1253,6 @@ rhea.addLayer({turret: {
 }}, true, 6);
 
 // JULIUS
-Class.juliusDrone = {
-    PARENT: ["eggchip"],
-    NECRO: false,
-};
-Class.launcherTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Launcher",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            /*** LENGTH    WIDTH     ASPECT        X             Y         ANGLE     DELAY */
-            POSITION: [10, 9, 1, 9, 0, 0, 0],
-        }, {
-            POSITION: [17, 13, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery]),
-                TYPE: "minimissile",
-                STAT_CALCULATOR: gunCalcNames.sustained,
-            },
-        },
-    ],
-};
-Class.juliusLowerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "",
-    MAX_CHILDREN: 3,
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [8.5, 11, 0.6, 6, 0, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.sunchip]),
-                TYPE: "juliusDrone",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
 let julius = new LayeredBoss(null, "Julius", "celestial", 9, "darkGrey", "baseTrapTurret", 6.5, 5.5);
 julius.addLayer({turret: {
     POSITION: [8.5, 9, 0, null, 180, 0],
@@ -1835,59 +1264,6 @@ julius.addLayer({turret: {
 }}, true, 6);
 
 // GENGHIS
-Class.tinyMinion = {
-    PARENT: ["minion"],
-    LABEL: "Tiny Minion",
-    ACCEPTS_SCORE: false,
-    SHAPE: 0,
-    MOTION_TYPE: 'swarm',
-    CRAVES_ATTENTION: true,
-    BODY: {
-        ACCELERATION: 3,
-        PENETRATION: 1.5,
-        HEALTH: 0.35 * 0.5,
-        DAMAGE: 2.25,
-        RESIST: 1.6,
-        RANGE: 300,
-        DENSITY: 12,
-        PUSHABILITY: 0.5,
-        FOV: 1.5,
-    },
-    AI: { BLIND: true },
-    GUNS: [
-        {
-            POSITION: [17, 9, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.minionGun, g.lowPower]),
-                WAIT_TO_CYCLE: true,
-                TYPE: "bullet",
-            }, 
-        },
-    ],
-    DIE_AT_RANGE: true,
-    BUFF_VS_FOOD: true,
-}
-Class.genghisLowerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "",
-    MAX_CHILDREN: 4,
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [7, 11, 0.6, 6, 0, 0, 0.5],
-        }, {
-            POSITION: [2, 12, 1, 13, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.babyfactory, { reload: 1.5 }]),
-                TYPE: ["tinyMinion", {INDEPENDENT: true}],
-                AUTOFIRE: true,
-                SYNCS_SKILLS: true,
-            },
-        },
-    ],
-};
 let genghis = new LayeredBoss(null, "Genghis", "celestial", 9, "darkGrey", "baseTrapTurret", 6.5, 5.5);
 genghis.addLayer({turret: {
     POSITION: [8.5, 9, 0, null, 180, 0],
@@ -1899,49 +1275,6 @@ genghis.addLayer({turret: {
 }}, true, 6);
 
 // NAPOLEON
-Class.napoleonLowerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [8, 8, 0.6, 6, 0, 30, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.bee, g.pounder, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: ["bee", { INDEPENDENT: true }],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [8, 8, 0.6, 6, 0, -30, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.bee, g.pounder, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: ["bee", { INDEPENDENT: true }],
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
-Class.turretedBullet = makeAuto('bullet', "Auto-Bullet", {size: 14, color: "veryLightGrey", angle: 0});
-Class.napoleonUpperTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [12, 17, -0.6, 0, 0, 0, 0],
-        }, {
-            POSITION: [16, 12, 1, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, { speed: 0.93, maxSpeed: 0.93 }]),
-                TYPE: ["turretedBullet", {COLOR: "veryLightGrey"}],
-            },
-        },
-    ],
-};
 let napoleon = new LayeredBoss(null, "Napoleon", "celestial", 9, "darkGrey", "baseTrapTurret", 6.5, 5.5);
 napoleon.addLayer({turret: {
     POSITION: [8.5, 9, 0, null, 180, 0],
@@ -1953,128 +1286,6 @@ napoleon.addLayer({turret: {
 }}, true, 6)
 
 // Eternals
-Class.kronosMissile = {
-    PARENT: ["missile"],
-    GUNS: [
-        {
-            POSITION: [4, 8, 1.5, 14, 0, 90, 0.5],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.trap, { range: 0.5 }, {reload: 3}]),
-                TYPE: [ "trap", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.trap,
-            },
-        }, {
-            POSITION: [4, 8, 1.5, 14, 0, -90, 0.5],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.trap, { range: 0.5 }, {reload: 3}]),
-                TYPE: [ "trap", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.trap,
-            },
-        }, {
-            POSITION: [14, 6, 1, 0, -2, 150, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, {reload: 3}]),
-                TYPE: [ "bullet", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.thruster,
-            },
-        }, {
-            POSITION: [14, 6, 1, 0, 2, 210, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, {reload: 3}]),
-                TYPE: [ "bullet", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.thruster,
-            },
-        }, {
-            POSITION: [14, 8, 1, 0, 0, 90, 0],
-        }, {
-            POSITION: [14, 8, 1, 0, 0, -90, 0],
-        },
-    ],
-};
-Class.kronosSkimmerTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Skimmer",
-    BODY: { FOV: 10 },
-    COLOR: "grey",
-    INDEPENDENT: true,
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    GUNS: [
-        {
-            POSITION: [8, 20, -0.25, 11, 0, 0, 0],
-        }, {
-            POSITION: [15, 18, -0.8, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.skimmer, { reload: 2 }]),
-                TYPE: "kronosMissile",
-            },
-        },
-    ],
-};
-Class.carrierTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Carrier",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    INDEPENDENT: true,
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [7, 8, 0.6, 7, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship, g.carrier, g.pounder, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [7, 8, 0.6, 7, 2, 30, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship, g.carrier, g.pounder, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [7, 8, 0.6, 7, -2, -30, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship, g.carrier, g.pounder, { speed: 1.3, maxSpeed: 1.3 }]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        },
-    ],
-};
-Class.tripletTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Triplet",
-    BODY: { FOV: 2 },
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    INDEPENDENT: true,
-    COLOR: "grey",
-    GUNS: [
-        {
-            POSITION: [18, 10, 1, 0, 5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [18, 10, 1, 0, -5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [21, 10, 1.2, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.twin, g.triplet]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-};
 let kronos = new LayeredBoss(null, "Kronos", "eternal", 11, "veryLightGrey", "baseTrapTurret", 6, 5.5);
 kronos.addLayer({turret: {
     POSITION: [6.5, 9, 0, null, 160, 0],
@@ -2089,97 +1300,7 @@ kronos.addLayer({turret: {
     TYPE: "tripletTurret",
 }}, true, 4);
 
-Class.autoSmasherMissile = {
-    PARENT: ["missile"],
-    LABEL: "Auto-Smasher",
-    HITS_OWN_TYPE: "never",
-    BODY: {
-        FOV: 1.05 * base.FOV,
-        DENSITY: 2 * base.DENSITY,
-    },
-    TURRETS: [
-        {
-            POSITION: [21.5, 0, 0, 0, 360, 0],
-            TYPE: "smasherBody",
-        }, {
-            POSITION: [11, 0, 0, 0, 360, 1],
-            TYPE: ["auto4gun", { INDEPENDENT: true }],
-        },
-    ],
-}
-Class.autosmashTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Launcher",
-    BODY: { FOV: 10 },
-    COLOR: "grey",
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    INDEPENDENT: true,
-    GUNS: [
-        {
-            POSITION: [4, 12, 1.2, 16, 0, 0, 0],
-        }, {
-            POSITION: [18, 20, -0.7, 0, 0, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pounder, g.artillery, g.artillery, g.skimmer, { reload: 2 }, { speed: 1.3, maxSpeed: 1.3 }, { speed: 1.3, maxSpeed: 1.3 }, {range: 2.5}]),
-                TYPE: "autoSmasherMissile",
-            },
-        },
-    ],
-};
-Class.gunnerCruiserTurret = {
-    PARENT: ["genericTank"],
-    LABEL: "Launcher",
-    BODY: { FOV: 10 },
-    COLOR: "grey",
-    CONTROLLERS: [ "canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster" ],
-    INDEPENDENT: true,
-    GUNS: [
-        {
-            POSITION: [4, 7.5, 0.6, 6, 4.5, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [4, 7.5, 0.6, 6, -4.5, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.swarm]),
-                TYPE: "swarm",
-                STAT_CALCULATOR: gunCalcNames.swarm,
-            },
-        }, {
-            POSITION: [16, 3, 1, 0, -3, 0, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin]),
-                TYPE: "bullet",
-            },
-        }, {
-            POSITION: [16, 3, 1, 0, 3, 0, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.pelleter, g.power, g.twin]),
-                TYPE: "bullet",
-            },
-        },
-    ],
-};
-Class.gemDrone = {
-    PARENT: ["drone"],
-    COLOR: "teal",
-    DRAW_HEALTH: true,
-    SHAPE: 6,
-    INDEPENDENT: true,
-    BODY: {
-        PUSHABILITY: 0.3,
-        HEALTH: 0.3*5,
-        DAMAGE: 3.375/5,
-        SPEED: 1,
-        DENSITY: 0.1,
-        RESIST: 3,
-        FOV: 100,
-    },
-}
-let odin = new LayeredBoss(null, "Odin", "eternal", 11, "teal", "baseTrapTurret", 4.5, 3.5);
+let odin = new LayeredBoss(null, "Odin", "eternal", 11, "aqua", "baseTrapTurret", 4.5, 3.5);
 odin.addLayer({gun: {
     POSITION: [2.25, 3.25, -1.6, 9, 0, null, 0],
     PROPERTIES: {
@@ -2208,6 +1329,7 @@ Class.taureonCore = {
     LABEL: "Core Turret",
     SHAPE: 4.5,
     COLOR: '#99D9EA',
+    CONTROLLERS: ["nearestDifferentMaster", "onlyAcceptInArc"],
     INDEPENDENT: true,
     GUNS: [{
         POSITION: [10, 14, -0.5, 14, 0, 0, 0]
@@ -2321,6 +1443,10 @@ Class.taureonBoss = {
     SHAPE: 4.5,
     SIZE: 50,
     FACING_TYPE: "smoothToTarget",
+    UPGRADE_TOOLTIP: "With a powerful Gatling Gun on the front, Rocket Launchers as wings, movable Thrusters on the back, " +
+                    "and equipped with Railgun Turrets, it perfectly excells at terminating those who feel its Wrath.\n" +
+                    "An octahedral carbon robot, exclusively designed to eradicate opponents with sheer brutality alone.\n" +
+                    '"NOW YOU FACE MY ULTIMATE CREATION."',
     VALUE: 9e6,
     BODY: {
         FOV: 1,
@@ -2347,7 +1473,7 @@ Class.taureonBoss = {
         POSITION: [25, 0, 0, 0, 0, 1],
         TYPE: "taureonStar"
     },{
-        POSITION: [5, 0, 0, 0, 0, 1],
+        POSITION: [5, 0, 0, 0, 360, 1],
         TYPE: "taureonCore"
     }],
     GUNS: [...Array(6).fill().map((_, i) => ({
@@ -2477,6 +1603,7 @@ Class.zephiBoss = {
         HEALTH: 15 * base.HEALTH,
         DAMAGE: 5 * base.DAMAGE,
     },
+    UPGRADE_TOOLTIP: "Good luck.",
     GUNS: Array(4).fill().map((_, i) => ([{
         POSITION: [2.5, 3, 1.2, 8, 5, i * 90, 0],
         PROPERTIES: {
@@ -3346,15 +2473,15 @@ Class.frostBossBaseDeco = {
 }
 
 const trebuchetStats = [g.basic, g.sniper, g.predator, g.predator, g.predator, g.predator, {speed: 0.93, maxSpeed: 0.93, reload: 1.7, health: 1.7, damage: 1.4, size: 2}];
-const hielamanStats = [g.trap, g.setTrap, g.hexaTrapper, {reload: 2.4, health: 3.2}];
+const hielamanStats = [g.trap, g.setTrap, g.hexaTrapper, {reload: 2.4, health: 3.2, range: 1.2}];
 Class.frostBoss = {
     PARENT: 'miniboss',
     LABEL: 'Extrasolar',
     NAME: 'Frostbyte',
     FACING_TYPE: 'toTarget',
     SHAPE: 6,
-    COLOR: "teal",
-    UPGRADE_COLOR: "teal",
+    COLOR: "aqua",
+    UPGRADE_COLOR: "aqua",
     SIZE: 31,
 	DANGER: 12,
     VALUE: 888888,
@@ -3370,14 +2497,13 @@ Class.frostBoss = {
         RESIST: base.RESIST * 1.2,
         DENSITY: base.DENSITY * 7.5,
     },
-    GUNS: Array(3).fill().flatMap((_, i) => ([
-            { // Speed
-                POSITION: [7, 13.5, 0.001, 9.5, 0, 120*i, 0],
-                PROPERTIES: {COLOR: 9},
-            }, {
-                POSITION: [7, 13.5, 0.001, 9.5, 0, 120*i+60, 0],
-                PROPERTIES: {COLOR: 9},
-            },
+    GUNS: [
+        ...Array(6).fill().flatMap((_, i) => ({
+            // Speed
+            POSITION: [8, 14.5, 0.001, 9.5, 0, 60*i, 0],
+            PROPERTIES: {COLOR: 9},
+        })),
+        ...Array(3).fill().flatMap((_, i) => ([
             { // Heavy Snipers
                 POSITION: [26.5, 9.5, 1, 0, 0, 120 * i, 0],
                 PROPERTIES: {
@@ -3437,23 +2563,219 @@ Class.frostBoss = {
                 },
             },
         ])),
+    ],
     TURRETS: [
-        {
-			POSITION: [12, 0, 0, 180, 0, 1],
-			TYPE: ["hexagon", {MIRROR_MASTER_ANGLE: true, COLOR: {BASE: -1, BRIGHTNESS_SHIFT: 7.5}}],
-		}, {
-			POSITION: [20, 0, 0, 0, 0, 1],
-			TYPE: ["frostBossBaseDeco"],
-		},
 		...Array(6).fill().flatMap((_, i) => ([
             {
-				POSITION: [2.95, 8.55, 0, 60 * i + 30, 180, 1],
+				POSITION: [2.95, 8.55, 0, 60 * i + 30, 180, 2],
 				TYPE: "frostBossAutoTurret",
 			},
         ])),
 		{
-			POSITION: [8.55, 0, 0, 0, 360, 1],
+			POSITION: [8.55, 0, 0, 0, 360, 2],
 			TYPE: "frostBossBigAura",
 		},
     ],
+    PROPS: [
+        {
+			POSITION: [12, 0, 0, 180, 1],
+			TYPE: ["hexagon", {COLOR: {BASE: -1, BRIGHTNESS_SHIFT: 7.5}}],
+		}, {
+			POSITION: [20, 0, 0, 0, 1],
+			TYPE: ["frostBossBaseDeco"],
+		},
+    ]
 }
+
+const divide = 600;
+const arraySize = 10;
+const colorArray = [];
+for (let i = 0; i < arraySize; i++) {
+    const rgb = Math.round(255 * i / (arraySize - 1));
+    colorArray.push('#' + ((1 << 24) + (rgb << 16) + (rgb << 8) + rgb).toString(16).slice(1));
+}
+Class.toothlessBase = {
+    PARENT: "genericTank",
+    LABEL: "Night Fury",
+	UPGRADE_TOOLTIP: "A power league...",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: 42,
+        ALPHA: 0.3,
+        RECURSION: 6,
+    },
+	BODY: {
+        SPEED: 0.85 * base.SPEED,
+        FOV: 1.4 * base.FOV,
+        HEALTH: 7 * base.HEALTH,
+        DAMAGE: 2.5 * base.DAMAGE,
+    },
+    LEVEL_SKILL_POINT_FUNCTION: level => {
+        if (level < 2) return 0;
+        if (level <= 40) return 1;
+        if (level <= 45 && level & 1 == 1) return 1;
+        if (level % 3 == 1 && level < 280) return 1;
+        return 0;
+    },
+    COLOR: "purple",
+    DANGER: 10,
+	SHAPE: 3,
+	SIZE: 28,
+	SKILL_CAP: Array(10).fill(smshskl + 3),
+    VALUE: 10e+6,
+}
+Class.toothlessBossTurret = {
+    PARENT: "genericTank",
+    LABEL: "",
+    BODY: {
+        FOV: 2,
+    },
+    CONTROLLERS: [[ "nearestDifferentMaster", { lookAtDanger: false, timeout: 10 } ], "onlyAcceptInArc"],
+    COLOR: "grey",
+    INDEPENDENT: true,
+    GUNS: [
+        {
+            POSITION: [32, 8, 1, 0, 0, 0, 0.4],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.assassin, {
+                    reload: 0.8,
+                    recoil: 0,
+                }]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+    ON: [{
+        event: "fire",
+        handler: ({ body }) => {
+            const master = body.master;
+            body._damage ??= [];
+            body._reload ??= [];
+
+            if (!body._loaded) {
+                let _temp = 0;
+                master._maxPower ??= 0;
+
+                body.guns.forEach((gun, i) => {
+                    body._damage[i] = gun.settings.damage;
+                    body._reload[i] = gun.settings.reload;
+
+                    _temp += (body._damage[i] * 3) / body._damage[i];
+                    _temp += body._reload[i] / (body._reload[i] / 3);
+                    _temp /= 2;
+                });
+
+                _temp /= body.guns.length;
+
+                master._maxPower += (_temp - 1) * divide * 2;
+                if (master._maxPower > _temp) master._maxPower /= 2;
+
+                body._loaded = true;
+            }
+
+            if (master._mode) {
+                master._power -= 1;
+                if (master._power < 1) {
+                    master._mode = 0;
+                    master.color.base = 14;
+                }
+            }
+
+            if (!master._oldPower) return;
+            const power = master._oldPower / (divide * 2) + 1;
+
+            body.guns.forEach((gun, i) => {
+                let _1 = body._damage[i] * (master._mode ? power : 1);
+                let _2 = body._reload[i] / (master._mode ? power : 1);
+                let max_damage = body._damage[i] * 3;
+                let min_reload = body._reload[i] / 3;
+
+                gun.settings.damage = _1 > max_damage ? max_damage : _1;
+                gun.settings.reload = _2 < min_reload ? min_reload : _2;
+            });
+        },
+    }],
+};
+Class.toothlessBossDeco = {
+    PARENT: "triangle",
+    LABEL: "",
+    GUNS: [{
+        POSITION: { LENGTH: 0, WIDTH: 0 },
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([ g.basic, {
+                range: 0.1,
+                speed: 0.1,
+                maxSpeed: 0.1,
+                recoil: 0,
+            }]),
+            TYPE: "bullet",
+            AUTOFIRE: true,
+        },
+    }],
+    ON: [{
+        event: "fire",
+        handler: ({ body }) => {
+            const master = body.master;
+            if (master._maxPower)
+                body.color.base = colorArray[
+                    Math.floor(master._power / (master._maxPower / arraySize)) > arraySize - 1
+                        ? arraySize - 1
+                        : Math.floor(master._power / (master._maxPower / arraySize)
+                    )
+                ];
+        },
+    }],
+};
+Class.toothlessBoss = {
+    PARENT: "toothlessBase",
+    UPGRADE_COLOR: "magenta",
+    TURRETS: [{
+        POSITION: { SIZE: 15, LAYER: 1 },
+        TYPE: ["toothlessBossDeco", { MIRROR_MASTER_ANGLE: true }],
+    }, {
+        POSITION: { SIZE: 23 },
+        TYPE: ["triangle", { COLOR: "black", MIRROR_MASTER_ANGLE: true }],
+    }],
+    GUNS: [{
+        POSITION: { LENGTH: 0, WIDTH: 0 },
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([ g.basic, {
+                range: 0.1,
+                speed: 0.1,
+                maxSpeed: 0.1,
+                recoil: 0,
+            }]),
+            TYPE: "bullet",
+            ALT_FIRE: true,
+        },
+    }],
+    ON: [{
+        event: "altFire",
+        handler: ({ body }) => {
+            if (!body._power || body._mode) return;
+            const power = Math.floor(body._power);
+
+            if (power >= 1) {
+                body.sendMessage(`Your power level ${power}`);
+                body._oldPower = body._power;
+                body._mode = 1;
+                body.color.base = 5;
+            }
+        },
+    }, {
+        event: "kill",
+        handler: ({ body, entity }) => {
+            body._power ??= 0;
+            body._mode ??= 0;
+            if (!body._mode) body._power += entity.skill.score / divide;
+        },
+    }],
+}
+for (let b = 0; b < 3; b++)
+    Class.toothlessBoss.TURRETS.push({
+        POSITION: [8, 6, -5.6, 120 * b + 180, 180, 0],
+        TYPE: "toothlessBossTurret",
+    }, {
+        POSITION: [8, 6, 5.6, 120 * b + 180, 180, 0],
+        TYPE: "toothlessBossTurret",
+    });

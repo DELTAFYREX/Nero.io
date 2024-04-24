@@ -1,5 +1,9 @@
 let makeDecoration = defs => new Tile({
     color: "white",
+    data: {
+        allowMazeWallSpawn: false,
+        foodSpawnCooldown: 0, foodCount: 0
+    },
     init: tile => {
         for (let [def, amount] of defs) {
             def = ensureIsClass(def);
@@ -20,7 +24,11 @@ let makeDecoration = defs => new Tile({
     }
 });
 let makeDecorationblack = defs => new Tile({
-    color: 19,
+    color: "black",
+    data: {
+        allowMazeWallSpawn: false,
+        foodSpawnCooldown: 0, foodCount: 0
+    },
     init: tile => {
         for (let [def, amount] of defs) {
             def = ensureIsClass(def);

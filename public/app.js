@@ -6,6 +6,7 @@ import { settings } from "./lib/settings.js";
 import { Canvas } from "./lib/canvas.js";
 import { color } from "./lib/color.js";
 import { gameDraw } from "./lib/gameDraw.js";
+import { tankdescs } from "./lib/tankdesc.js";
 import * as socketStuff from "./lib/socketInit.js";
 (async function (util, global, settings, Canvas, color, gameDraw, socketStuff) {
 
@@ -19,7 +20,6 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
 //         document.getElementById("patchNotes").innerHTML += `<div><b>${changelog[0][0].slice(1).trim()}</b>: ${changelog[0].slice(1).join(":") || "Update lol"}<ul>${changelog.slice(1).map((line) => `<li>${line.slice(1).trim()}</li>`).join("")}</ul><hr></div>`;
 //     }
 // });
-     //just some code to make the sound work
       var playbuttonsound = new Audio();
       playbuttonsound.src =
         "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/op1.wav?v=1675463613542";
@@ -34,14 +34,12 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySound68() {
         slap.play();
       }
-      var clicked = false;
 
       var vsau = new Audio();
       vsau.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/jake-chudnow-edited_y1t8j5q.mp3?v=1706018057534"
       function PlaySound99() {
         vsau.play();
       }
-      var clicked = false;
   
       var clicksound = new Audio();
       clicksound.src =
@@ -49,7 +47,6 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySound210() {
         clicksound.play();
       }
-      var clicked = false;
   
       var trapperclosely = new Audio();
       trapperclosely.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/look_closely.mp3?v=1705291786778");
@@ -136,10 +133,32 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
         smallaudio3.loop = false;
         smallaudio3.play();
       }
+var killvariablenamething = true;
+let metalpipe = new Audio();
+metalpipe.loop = false;
+var randomdeathsound = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/metal-pipe-clang.mp3?v=1710271073637", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/undertakers-bell_2UwFCIe.mp3?v=1710268959839", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/aaaaaaaa-online-audio-converter_r9waVUO.mp3?v=1710271069219", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/vine-boom.mp3?v=1710280969499", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tmp_7901-951678082.mp3?v=1710280974624", 
+                        "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/emotional-damage-meme.mp3?v=1710280979660", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/discord-notification.mp3?v=1710280983356", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/wrong-answer-sound-effect.mp3?v=1710280995813", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/clash-royale-hog-rider.mp3?v=1710280999656", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/goofy-ahh-car-horn-sound-effect.mp3?v=1710281004188", 
+                        "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tf_nemesis.mp3?v=1710281009502", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/chinese-rap-song.mp3?v=1710281015151", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/fire-in-the-hole-geometry-dash.mp3?v=1710281020367", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/water-on-the-hill.mp3?v=1710281027326", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/taco-bell-bong-sfx.mp3?v=1710281032201", 
+                        "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/download.mp3?v=1699142486910", "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/spongebob-fail.mp3?v=1699146799125", "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/62640b13-df2b-47d8-a06e-fb63b7fbb06e.mp3?v=1699272890577", "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/f93f6d33-9dab-4e9d-aebb-917fe2d22982.mp3?v=1700153956047", "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/c647ea60-edf9-4bde-a0af-c49353593c7f.mp3?v=1700153959194",
+                        "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/feet-gd.mp3?v=1710431699794", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/bad-to-the-bone-meme.mp3?v=1710431694343", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/spongebob-boowomp.mp3?v=1710431689245", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/holy-moly-emoji.mp3?v=1710431682780", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/dun_dun_1.mp3?v=1710431679063"];
+function PlaySound420() {
+  if (global.killsoundready) {
+    killvariablenamething = true;
+    getksound();
+  }
+}
+function getksound() {
+  if (global.killsoundready) {
+    if (killvariablenamething) {
+    metalpipe.src = randomdeathsound[Math.floor(Math.random() * randomdeathsound.length)];
+    metalpipe.play();
+    global.killsoundready = false;
+  }
+  }
+}
   var grubhub = new Audio();
 grubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
 function PlaySound169() {
-  grubhub.load();   
    grubhub.play();
 }
   var smallaudio5 = new Audio();
@@ -163,7 +182,7 @@ function PlaySound169() {
 //Music functions:
   //decide the music
   global.music2 = document.getElementById("audio");
-  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download%20(1).mp3?v=1708218475743", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295"];
+  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation%20V2.mp3?v=1713525132474", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download%20(1).mp3?v=1708218475743", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/Apotheosis.wav?v=1713352428783", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Action%20Agenda%20-%20Killa%20DFX%20Edit.mp3?v=1713352244240"];
   var randmusic = pmusic[~~(Math.random() * pmusic.length)];
   global.music2.src = (randmusic);
   //load the play functions for itasdasf meow
@@ -171,14 +190,15 @@ function PlaySound169() {
   global.music2.load();   
   global.music2.play();
 }
+  let musicvolume = 0;
   
 //actually play the audio when the checkbox is clicked on (checked) and stop it when unchecked
-    document.getElementById("optSound").onclick = () => {
+    $("#optSound").on("click", function() {
       if (document.getElementById("optSound").checked === true) {
         songrecog()
            global.music2.play()
-        if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
-        document.getElementById("content").style.opacity = 1
+        //if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
+        document.getElementById("content").style.opacity = 0.5
     //audio.src = randmusic;
     //audio.load();
     //audio.play();
@@ -194,7 +214,7 @@ function PlaySound169() {
     musicsrc.connect(analyser);
     analyser.connect(musiccontext.destination);
 
-    analyser.fftSize = 256;
+    analyser.fftSize = 2048;
 
     var bufferLength = analyser.frequencyBinCount;
     console.log(bufferLength);
@@ -210,7 +230,6 @@ function PlaySound169() {
 
     function renderFrame() {
       
-          resizeEvent();
       let deviscale = window.devicePixelRatio
       
       requestAnimationFrame(renderFrame);
@@ -224,6 +243,7 @@ function PlaySound169() {
 
       for (var i = 0; i < bufferLength; i++) {
         musicbarHeight = dataArray[i];
+        musicvolume = musicbarHeight;
         
         var b = musicbarHeight + (18 * (i/bufferLength));
         var r = 250 * (i/bufferLength);
@@ -237,24 +257,22 @@ function PlaySound169() {
     }
     //audio.play();
     renderFrame();
-    }
+    //}
     global.music2.addEventListener('ended', function() {this.currentTime = 0; global.music2.src = pmusic[~~(Math.random() * pmusic.length)]; this.play(); songrecog();}, false);
      } else if (document.getElementById("optSound").checked === false) {
         document.getElementById("content").style.opacity = 0
        global.music2.pause()
           global.music2.songname = "Not Playing";
             }
-         return; };
+         return; });
   
-  const counterthing = document.querySelector(".displaytest");
-  const skinnamedisplay = document.querySelector(".displayskinname");
-  const rightbutton = document.querySelector("#rightarrowbutton");
-  const leftbutton = document.querySelector("#leftarrowbutton");
-  const myImg = document.querySelector("#skinpreview");
-  const lock = document.querySelector("#lockedskin");
-  const selectimage = document.querySelector("#selectskin");
+  let counterthing = document.querySelector(".displaytest");
+  let skinnamedisplay = document.querySelector(".displayskinname");
+  let myImg = document.querySelector("#skinpreview");
+  let lock = document.querySelector("#lockedskin");
+  let selectimage = document.querySelector("#selectskin");
 
-  rightbutton.addEventListener("click", function() {
+  $("#rightarrowbutton").on("click", function() {
       if (global.skinpage === 12) {
           global.skinpage = 0;  
       } else {
@@ -262,7 +280,7 @@ function PlaySound169() {
       };
       changeskinpreview();
   });
-  leftbutton.addEventListener("click", function() {
+  $("#leftarrowbutton").on("click", function() {
       if (global.skinpage === 0) {
           global.skinpage = 12;  
       } else {
@@ -271,14 +289,14 @@ function PlaySound169() {
       changeskinpreview();
   });
   
-  selectimage.onclick = () => {
+  $("#selectskin").on("click", function() {
       if (global.lockedornot === 0) {
         global.skin = global.selectedskin;
         selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075";
     } else {
       selectimage.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked!.png?v=1708718075601";
     }
-  }
+  })
   
   
   function checkifachieve(ach, lockcolor) {
@@ -420,6 +438,88 @@ function PlaySound169() {
     myImg.src = "https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044";
     }
   };
+    let tanktype = "unfinished",
+        tankdesc = "unfinished",
+        tanktier = "???",
+        tankweap = "???",
+        tankabil = "???",
+        tankweak = "unfinished",
+        tankupto = ["Tier 2: ???", "Tier 3: ???", "Tier 4: ???", "Misc: ???"],
+        tankupfr = "unfinished",
+        tankorgn = "???",
+        tankupad = "???";
+  let tabappearance = document.querySelector(".tabappearance");
+  let taboptions = document.querySelector(".taboptions");
+  let tabcontrols = document.querySelector(".tabcontrols");
+  let tablinks = document.querySelector(".tablinks");
+  let tabappearancebutton = document.querySelector(".tabappearancebutton");
+  let taboptionsbutton = document.querySelector(".taboptionsbutton");
+  let tabcontrolsbutton = document.querySelector(".tabcontrolsbutton");
+  let tablinksbutton = document.querySelector(".tablinksbutton");
+  
+  function changetab(vroomvroomimaracecarreeeroweaweerrrm) {
+    switch(vroomvroomimaracecarreeeroweaweerrrm) {
+      case 0:
+        tabappearance.style.display = 'block';
+        taboptions.style.display = 'none';
+        tabcontrols.style.display = 'none';
+        tablinks.style.display = 'none';
+        tabappearancebutton.classList.add("active");
+        taboptionsbutton.classList.remove("active");
+        tabcontrolsbutton.classList.remove("active");
+        tablinksbutton.classList.remove("active");
+        break;
+      case 1:
+        tabappearance.style.display = 'none';
+        taboptions.style.display = 'block';
+        tabcontrols.style.display = 'none';
+        tablinks.style.display = 'none';
+        tabappearancebutton.classList.remove("active");
+        taboptionsbutton.classList.add("active");
+        tabcontrolsbutton.classList.remove("active");
+        tablinksbutton.classList.remove("active");
+        break;      
+      case 2:
+        tabappearance.style.display = 'none';
+        taboptions.style.display = 'none';
+        tabcontrols.style.display = 'block';
+        tablinks.style.display = 'none';
+        tabappearancebutton.classList.remove("active");
+        taboptionsbutton.classList.remove("active");
+        tabcontrolsbutton.classList.add("active");
+        tablinksbutton.classList.remove("active");
+        break;      
+      case 3:
+        tabappearance.style.display = 'none';
+        taboptions.style.display = 'none';
+        tabcontrols.style.display = 'none';
+        tablinks.style.display = 'block';
+        tabappearancebutton.classList.remove("active");
+        taboptionsbutton.classList.remove("active");
+        tabcontrolsbutton.classList.remove("active");
+        tablinksbutton.classList.add("active");
+        break;
+    }
+  }
+  
+  if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
+
+  $(".tabappearancebutton").on("click", function() {
+      changetab(0);
+  });
+  $(".taboptionsbutton").on("click", function() {
+      changetab(1);
+  });  
+  $(".tabcontrolsbutton").on("click", function() {
+      changetab(2);
+  });  
+  $(".tablinksbutton").on("click", function() {
+      changetab(3);
+  });
+  
+}
+  
+let trollface = null;
 
 function songrecog() {
 //song names for display in the debug menu (may move it to a different place later)
@@ -435,8 +535,8 @@ if (global.music2.src === "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a4
 if (global.music2.src === "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213") {
   global.music2.songname = "Melancholy --- Deltafyrex";
 }
-if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890") {
-  global.music2.songname = "Depredation --- Deltafyrex";
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation%20V2.mp3?v=1713525132474") {
+  global.music2.songname = "Depredation Remastered V2--- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028") {
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
@@ -446,6 +546,12 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295") {
   global.music2.songname = "Longing --- Amaryllis"
+}
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Action%20Agenda%20-%20Killa%20DFX%20Edit.mp3?v=1713352244240") {
+  global.music2.songname = "Killa --- Action Agenda (DFX EDIT)"
+}
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Apotheosis%20(1).mp3?v=1713525419376") {
+  global.music2.songname = "Apotheosis V2 --- Deltafyrex"
 }
 }
 function lagachloop() {
@@ -467,8 +573,10 @@ function lagachloop() {
     util.submitAchievementToLocalStorage("killachievement");
   }
 }*/
+if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
 if (localStorage.getItem("startachievement") !== "YOUDIDIT:D!!!") {
 localStorage.setItem("savedkills", 0);
+}
 }
 function resetAllAchievements() {
   var zeroyeah = 0;
@@ -487,10 +595,10 @@ function resetAllAchievements() {
   util.resetAchievementFromLocalStorage("pissio");
   localStorage.setItem("savedkills", zeroyeah.toString());
 }
-  let nIntervId;
-                     if (!nIntervId) {
+                  let nIntervId;
+                  if (!nIntervId) {
                     nIntervId = setInterval(gettimesince, 1000);
-                   }
+                  }
                 function gettimesince() {
                   const date = new Date()
                   var sec = 0;
@@ -518,7 +626,7 @@ function resetAllAchievements() {
                       daysinm = 31
                     }
                   }
-                if ((date.getSeconds() + 60) - 32 > 59) {
+                if (date.getSeconds() + 28 > 59) {
                     sec = (date.getSeconds() + 60) - 92
                   } else {
                     sec = (date.getSeconds() + 60) - 32
@@ -562,9 +670,13 @@ function resetAllAchievements() {
                     day = (date.getDate() + daysinm) - (24 + daysinm)
                     }
                   };
-                if (date.getMonth() < 3) {
+                if (date.getMonth() < 4) {
                   if (date.getDate() > 23) {
-                    month = (date.getMonth() + 11) - 2
+                    if (date.getMonth() == 3) {
+                      month = (date.getMonth() + 11) - 14
+                    } else {
+                      month = (date.getMonth() + 11) - 2
+                    }
                   } else {
                     month = (date.getMonth() + 11) - 3
                   }
@@ -575,10 +687,10 @@ function resetAllAchievements() {
                     month = (date.getMonth() + 11) - 15
                   }
                 };
-                  if (month > 3 && day > 23 && hour > 10 && min > 44 && sec > 31) {
-                    year = ' | Years: ' + (date.getFullYear() - 2018)
-                  } else {
+                  if (date.getMonth() > 2) {
                     year = ' | Years: ' + (date.getFullYear() - 2019)
+                  } else {
+                    year = ' | Years: ' + (date.getFullYear() - 2020)
                   }
                   if (sec !== 0) {
                     nerosec = ', Seconds: ' + sec
@@ -730,6 +842,7 @@ function getMockups() {
         util.pullJSON("mockups").then(data => {
             global.mockups = data;
             console.log('Mockups loading complete.');
+            console.log("%cWhy are you here Lmfao", "color: #FFFFFF; font-size: 45px; background: #333333; text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;");
             Resolve();
         });
     });
@@ -793,7 +906,10 @@ window.onload = async () => {
     util.retrieveFromLocalStorage("optCustom");
     util.retrieveFromLocalStorage("optNoPointy");
     util.retrieveFromLocalStorage("optBorders");
+    util.retrieveFromLocalStorage("optResolution");
     util.retrieveFromLocalStorage("seperatedHealthbars");
+    util.retrieveFromLocalStorage("optOgIcon");
+    util.retrieveFromLocalStorage("optNoEmojis");
     util.retrieveFromLocalStorage("autoLevelUp");
     // Set default theme
     if (document.getElementById("optColors").value === "") {
@@ -801,6 +917,9 @@ window.onload = async () => {
     }
     if (document.getElementById("optBorders").value === "") {
         document.getElementById("optBorders").value = "nero";
+    }
+    if (document.getElementById("optResolution").value === "") {
+        document.getElementById("optResolution").value = "normal";
     }
     // Achievement Shit
     document.getElementById("resetachievementsbutton").onclick = () => resetAllAchievements();
@@ -810,20 +929,41 @@ window.onload = async () => {
         var key = e.which || e.keyCode;
         if (key === global.KEY_ENTER && (global.dead || !global.gameLoading)) {
             startGame();
-  clearInterval(nIntervId);
-  // release our intervalID from the variable
-  nIntervId = null;        }
+        }
     };
     window.addEventListener("resize", resizeEvent);
     resizeEvent();
 };
+var callofduty = "";
 function resizeEvent() {
+    if (settings.graphical.quality === undefined) {
+      settings.graphical.quality = 1;
+    };
     let scale = window.devicePixelRatio;
     if (!settings.graphical.fancyAnimations) {
         scale *= 0.5;
     }
+    if (typeof settings.graphical.quality === 'string' || settings.graphical.quality instanceof String) {
+    callofduty = new Image(); // Create new img element
+    if (settings.graphical.quality == "cod") {
+    callofduty.src = "https://image.api.playstation.com/cdn/EP0002/CUSA12443_00/VgKYOxWoNSp4mNJ2KvzEFVBWN0idCM5I.png?w=440"
+    }
+    } else {
+    scale *= settings.graphical.quality
+    }
+    if (settings.graphical.quality == "1dim") {
+    global.screenWidth = window.innerWidth * scale;
+    global.screenHeight = 1 * scale;
+    } else if (settings.graphical.quality == "d1dim") {
+    global.screenWidth = 1 * scale;
+    global.screenHeight = window.innerHeight * scale;
+    } else if (settings.graphical.quality == "1pix") {
+    global.screenWidth = 1 * scale;
+    global.screenHeight = 1 * scale;
+    } else {
     global.screenWidth = window.innerWidth * scale;
     global.screenHeight = window.innerHeight * scale;
+    }
     c.resize(global.screenWidth, global.screenHeight);
     global.ratio = scale;
     global.screenSize = Math.min(1920, Math.max(window.innerWidth, 1280));
@@ -924,7 +1064,7 @@ function parseTheme(string){
             lgreen:   colorArray[1],
             orange:   colorArray[2],
             yellow:   colorArray[3],
-            lavender: colorArray[4],
+            aqua:     colorArray[4],
             pink:     colorArray[5],
             vlgrey:   colorArray[6],
             lgrey:    colorArray[7],
@@ -959,7 +1099,7 @@ function parseTheme(string){
             content.lgreen,
             content.orange,
             content.yellow,
-            content.lavender,
+            content.aqua,
             content.pink,
             content.vlgrey,
             content.lgrey,
@@ -989,12 +1129,12 @@ function parseTheme(string){
     
     return null;
 }
-  function goToNeroDotIo() {
-  window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-};
 // This starts the game and sets up the websocket
 function startGame() {
     PlaySound69();
+    clearInterval(nIntervId);
+    // release our intervalID from the variable
+    nIntervId = null;        
     // Set flag
     global.gameLoading = true;
     console.log('Started connecting.')
@@ -1004,7 +1144,10 @@ function startGame() {
     util.submitToLocalStorage("optFancy");
     util.submitToLocalStorage("centerTank");
     util.submitToLocalStorage("optBorders");
+    util.submitToLocalStorage("optResolution");
     util.submitToLocalStorage("optNoPointy");
+    util.submitToLocalStorage("optOgIcon");
+    util.submitToLocalStorage("optNoEmojis");
     util.submitToLocalStorage("autoLevelUp");
     util.submitToLocalStorage("optPredictive");
     util.submitToLocalStorage("optScreenshotMode");
@@ -1014,6 +1157,8 @@ function startGame() {
     settings.graphical.fancyAnimations = !document.getElementById("optFancy").checked;
     settings.graphical.centerTank = document.getElementById("centerTank").checked;
     settings.graphical.pointy = !document.getElementById("optNoPointy").checked;
+    settings.game.optOgIcon = !document.getElementById("optOgIcon").checked;
+    settings.game.optNoEmojis = !document.getElementById("optNoEmojis").checked;
     settings.game.autoLevelUp = document.getElementById("autoLevelUp").checked;
     settings.lag.unresponsive = document.getElementById("optPredictive").checked;
     settings.graphical.screenshotMode = document.getElementById("optScreenshotMode").checked;
@@ -1021,9 +1166,6 @@ function startGame() {
     settings.graphical.seperatedHealthbars = document.getElementById("seperatedHealthbars").checked;
     switch (document.getElementById("optBorders").value) {
         case "normal":
-            settings.graphical.darkBorders = settings.graphical.neon = false;
-            break;
-        case "nero":
             settings.graphical.darkBorders = settings.graphical.neon = false;
             break;
         case "dark":
@@ -1036,6 +1178,47 @@ function startGame() {
             break;
         case "neon":
             settings.graphical.darkBorders = settings.graphical.neon = true;
+            break;
+    }
+    switch (document.getElementById("optResolution").value) {
+        case "normal":
+            settings.graphical.quality = 1;
+            break;
+        case "low":
+            settings.graphical.quality = 0.75;
+            break;
+        case "high":
+            settings.graphical.quality = 1.5;
+            break;
+        case "higher":
+            settings.graphical.quality = 2;
+            break;
+        case "rtx":
+            settings.graphical.quality = 4;
+            break;
+        case "really low":
+            settings.graphical.quality = 0.5;
+            break;
+        case "really really low":
+            settings.graphical.quality = 0.25;
+            break;
+        case "unplayable":
+            settings.graphical.quality = 0.1;
+            break;
+        case "1d":
+            settings.graphical.quality = "1dim";
+            break;
+        case "d1":
+            settings.graphical.quality = "d1dim";
+            break;
+        case "onepixel":
+            settings.graphical.quality = "1pix";
+            break;
+        case "codbo4":
+            settings.graphical.quality = "cod";
+            break;
+        case "drugs":
+            settings.graphical.quality = "trippy";
             break;
     }
     util.submitToLocalStorage("optColors");
@@ -1073,6 +1256,9 @@ function startGame() {
     setInterval(() => moveCompensation.iterate(global.socket.cmd.getMotion()), 1000 / 30);
     document.getElementById("gameCanvas").focus();
     window.onbeforeunload = () => true;
+    if (settings.game.optNoEmojis) {
+      trollface = new Image(); // Create new img element
+    }
 }
 // Background clearing
 function clearScreen(clearColor, alpha) {
@@ -1087,7 +1273,7 @@ function arrayifyText(rawText) {
     // string with double §           txt   col   txt                      txt
     // "...§text§§text§..." => [..., "text", "", "text", ...] => [..., "text§text", ...]
     // this code is balanced on tight threads, holy shit
-    let textArrayRaw = rawText.split('§'),
+    let textArrayRaw = rawText.split(/§|;;/),
         textArray = [];
     if (!(textArrayRaw.length & 1)) {
         textArrayRaw.unshift('');
@@ -1185,6 +1371,162 @@ function drawText(rawText, x, y, size, defaultFillStyle, align = "left", center 
     }
     context.restore();
 }
+
+// Library: mltext.js
+// Desciption: Extends the CanvasRenderingContext2D that adds two functions: mlFillText and mlStrokeText.
+//
+// The prototypes are: 
+//
+// function mlFillText(text,x,y,w,h,vAlign,hAlign,lineheight);
+// function mlStrokeText(text,x,y,w,h,vAlign,hAlign,lineheight);
+// 
+// Where vAlign can be: "top", "center" or "button"
+// And hAlign can be: "left", "center", "right" or "justify"
+// Author: Jordi Baylina. (baylina at uniclau.com)
+// License: GPL
+// Date: 2013-02-21
+
+function mlFunction(text, x, y, w, h, hAlign, vAlign, lineheight, textsize, defaultFillStyle = color.guiwhite, fn = "strokeText") {
+    textsize += settings.graphical.fontSizeBoost;
+    // Get text dimensions and resize/reset the canvas
+    let offset = textsize / 5,
+        ratio = 1;
+    if (ctx.getTransform) {
+        ratio = ctx.getTransform().d;
+        offset *= ratio;
+    }
+    if (ratio !== 1) {
+        textsize *= ratio;
+    }
+    ctx.font = "bold " + textsize + "px Ubuntu";    
+    text = text.replace(/[\n]/g, " \n ");
+    text = text.replace(/\r/g, "");
+    lineheight += settings.graphical.fontSizeBoost;
+    var words = text.split(/[ ]+/);
+    var sp = ctx.measureText(' ').width;
+    var lines = [];
+    var actualline = 0;
+    var actualsize = 0;
+    var wo;
+    lines[actualline] = {};
+    lines[actualline].Words = [];
+    let i = 0;
+    while (i < words.length) {
+        var word = words[i];
+        if (word == "\n") {
+            lines[actualline].EndParagraph = true;
+            actualline++;
+            actualsize = 0;
+            lines[actualline] = {};
+            lines[actualline].Words = [];
+            i++;
+        } else {
+            wo = {};
+            wo.l = ctx.measureText(word).width;
+            if (actualsize === 0) {
+                while (wo.l > w) {
+                    word = word.slice(0, word.length - 1);
+                    wo.l = ctx.measureText(word).width;
+                }
+                if (word === "") return; // I can't fill a single character
+                wo.word = word;
+                lines[actualline].Words.push(wo);
+                actualsize = wo.l;
+                if (word != words[i]) {
+                    words[i] = words[i].slice(word.length, words[i].length);
+                } else {
+                    i++;
+                }
+            } else {
+                if (actualsize + sp + wo.l > w) {
+                    lines[actualline].EndParagraph = false;
+                    actualline++;
+                    actualsize = 0;
+                    lines[actualline] = {};
+                    lines[actualline].Words = [];
+                } else {
+                    wo.word = word;
+                    lines[actualline].Words.push(wo);
+                    actualsize += sp + wo.l;
+                    i++;
+                }
+            }
+        }
+    }
+    if (actualsize === 0) lines[actualline].pop();
+    lines[actualline].EndParagraph = true;
+
+    var totalH = lineheight * lines.length;
+    while (totalH > h) {
+        lines.pop();
+        totalH = lineheight * lines.length;
+    }
+
+    var yy;
+    if (vAlign == "bottom") {
+        yy = y + h - totalH + lineheight;
+    } else if (vAlign == "center") {
+        yy = y + h / 2 - totalH / 2 + lineheight;
+    } else {
+        yy = y + lineheight;
+    }
+
+    var oldTextAlign = ctx.textAlign;
+    ctx.textAlign = "left";
+    ctx.strokeStyle = color.black;
+    ctx.fillStyle = defaultFillStyle;
+    ctx.lineWidth = (textsize + 1) / settings.graphical.fontStrokeRatio;
+
+    for (var li in lines) {
+        var totallen = 0;
+        var xx, usp;
+        for (wo in lines[li].Words) totallen += lines[li].Words[wo].l;
+        if (hAlign == "center") {
+            usp = sp;
+            xx = x + w / 2 - (totallen + sp * (lines[li].Words.length - 1)) / 2;
+        } else if ((hAlign == "justify") && (!lines[li].EndParagraph)) {
+            xx = x;
+            usp = (w - totallen) / (lines[li].Words.length - 1);
+        } else if (hAlign == "right") {
+            xx = x + w - (totallen + sp * (lines[li].Words.length - 1));
+            usp = sp;
+        } else { // left
+            xx = x;
+            usp = sp;
+        }
+        for (wo in lines[li].Words) {
+            if (fn == "fillText") {
+                ctx.fillText(lines[li].Words[wo].word, xx, yy);
+            } else if (fn == "strokeText") {
+                ctx.strokeText(lines[li].Words[wo].word, xx, yy);
+                let textArray = lines[li].Words[wo].word;
+                var Xoffset = 0;
+                for (let i = 0; i < textArray.length; i++) {
+                    let str = textArray[i];
+                        if (i) {
+                            Xoffset += ctx.measureText(textArray[i - 1] + str).width - ctx.measureText(str).width;
+                        }
+                        ctx.fillText(str, xx + Xoffset, yy);
+                }
+            }
+            xx += lines[li].Words[wo].l + usp;
+        }
+        yy += lineheight;
+    }
+    ctx.textAlign = oldTextAlign;
+}
+
+(function mlInit() {
+    CanvasRenderingContext2D.prototype.mlFunction = mlFunction;
+
+    CanvasRenderingContext2D.prototype.mlFillText = function (text, x, y, w, h, vAlign, hAlign, lineheight, textsize, defaultFillStyle) {
+        ctx.mlFunction(text, x, y, w, h, hAlign, vAlign, lineheight, textsize, "fillText");
+    };
+
+    CanvasRenderingContext2D.prototype.mlStrokeText = function (text, x, y, w, h, vAlign, hAlign, lineheight, textsize, defaultFillStyle) {
+        ctx.mlFunction(text, x, y, w, h, hAlign, vAlign, lineheight, textsize, "strokeText");
+        }
+    })();
 // Gui drawing functions
 function drawGuiRect(x, y, length, height, stroke = false) {
     switch (stroke) {
@@ -1456,9 +1798,9 @@ const drawEntity = (baseColor, x, y, instance, ratio, alpha = 1, scale = 1, line
     if (render.expandsWithDeath) drawSize *= 1 + 0.5 * (1 - fade);
     if (settings.graphical.fancyAnimations && assignedContext != ctx2 && (fade !== 1 || alpha !== 1)) {
         context = ctx2;
-        context.canvas.width = context.canvas.height = drawSize * m.position.axis + ratio * 20;
+        context.canvas.width = context.canvas.height = drawSize * m.position.axis / ratio * 2 + initStrokeWidth;
         xx = context.canvas.width / 2 - (drawSize * m.position.axis * m.position.middle.x * Math.cos(rot)) / 4;
-        yy = context.canvas.height / 2 - (drawSize * m.position.axis * m.position.middle.x * Math.sin(rot)) / 4;
+        yy = context.canvas.height / 2 - (drawSize * m.position.axis * m.position.middle.y * Math.sin(rot)) / 4;
     } else {
         if (fade * alpha < 0.5) return;
     }
@@ -1590,10 +1932,7 @@ function drawHealth(x, y, instance, ratio, alpha) {
         let health = instance.render.health.get(),
             shield = instance.render.shield.get();
         if (health < 0.99 || shield < 0.99) {
-            let instanceColor = instance.color.split(' ')[0];
-            let getColor = true;
-            if (instanceColor[0] == '#') getColor = false;
-            let col = settings.graphical.coloredHealthbars ? gameDraw.mixColors(getColor ? gameDraw.getColor(instanceColor) : instanceColor, color.guiwhite, 0.5) : color.lgreen;
+            let col = settings.graphical.coloredHealthbars ? gameDraw.mixColors(gameDraw.modifyColor(instance.color), color.guiwhite, 0.5) : color.blue;
             let yy = y + realSize + 15 * ratio;
             let barWidth = 3 * ratio;
             ctx.globalAlpha = fade * (alpha ** 2);
@@ -1623,31 +1962,53 @@ function drawHealth(x, y, instance, ratio, alpha) {
         ctx.globalAlpha = 1;
     }
 }
+  
+const iconColorOrder = [10, 11, 12, 15, 13, 2, 14, 4, 5, 1, 0, 3];
+function getIconColor(colorIndex) {
+    return iconColorOrder[colorIndex % 12].toString();
+}
 
-function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, colorIndex, upgradeKey) {
+function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, colorIndex, upgradeKey, hover = false) {
     let picture = (typeof model == "object") ? model : util.getEntityImageFromMockup(model, gui.color),
         position = picture.position,
         scale = (0.6 * len) / position.axis,
-        entityX = x + 0.5 * len - scale * position.middle.x * Math.cos(angle),
-        entityY = y + 0.5 * height - scale * position.middle.x * Math.sin(angle),
+        entityX = x + 0.5 * len,
+        entityY = y + 0.5 * height,
         baseColor = picture.color;
-
+        // Find x and y shift for the entity image
+        let xShift = position.middle.x * Math.cos(angle) - position.middle.y * Math.sin(angle),
+        yShift = position.middle.x * Math.sin(angle) + position.middle.y * Math.cos(angle);
+        entityX -= scale * xShift;
+        entityY -= scale * yShift;
+  
+  if (settings.game.optOgIcon) {
     // Draw box
     ctx.strokeStyle = color.black;
     ctx.fillStyle = color.black;
     ctx.lineWidth = 3 * lineWidthMult;
     ctx.globalAlpha = 0.4
     drawGuiRect(x + 8, y + 8, len, height, 2);
-    ctx.globalAlpha = 1;
-    ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex > 18 ? colorIndex - 19 : colorIndex).toString());
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = picture.upgradeColor != null
+        ? gameDraw.modifyColor(picture.upgradeColor)
+        : gameDraw.getColor(getIconColor(colorIndex));
     //drawGuiRect(x + 25, y + 25, len - 50, height - 50, 2);
     drawGuiRect(x, y, len, height, 2);
     ctx.globalAlpha = 0.1;
-    ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex - 9).toString());
     drawGuiRect(x, y, len, height * 0.6, 3);
+    ctx.globalAlpha = 0.25 * alpha;
     ctx.fillStyle = color.black;
     drawGuiRect(x, y + height * 0.6, len, height * 0.4);
+    // Shading for hover
+    if (hover) {
+        ctx.globalAlpha = 0.15 * alpha;
+        ctx.fillStyle = color.guiwhite;
+        drawGuiRect(x, y, len, height, 3);
+    }
     ctx.globalAlpha = 1;
+    if (settings.graphical.quality == "cod") {
+    ctx.drawImage(callofduty, x, y, len, height);
+    }
 
     // Draw Tank
     drawEntity(baseColor, entityX, entityY, picture, 1, 1, scale / picture.size, lineWidthMult, angle, true);
@@ -1657,11 +2018,46 @@ function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, c
 
     // Upgrade key
     if (upgradeKey) {
-        drawText("[" + upgradeKey + "]", x + len - 4, y + height - 6, height / 8 - 3, color.guiwhite, "right");
+        drawText("[" + upgradeKey + "]", x + len - 4, y + height - 6, height / 8 - 5, color.guiwhite, "right");
     }
     ctx.strokeStyle = color.black;
     ctx.lineWidth = 3 * lineWidthMult;
     drawGuiRect(x, y, len, height, 1); // Border
+  } else {
+    // Draw box
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = picture.upgradeColor != null
+        ? gameDraw.modifyColor(picture.upgradeColor)
+        : gameDraw.getColor(getIconColor(colorIndex));
+    drawGuiRect(x, y, len, height);
+    ctx.globalAlpha = 0.25 * alpha;
+    ctx.fillStyle = color.black;
+    drawGuiRect(x, y + height * 0.6, len, height * 0.4);
+    // Shading for hover
+    if (hover) {
+        ctx.globalAlpha = 0.15 * alpha;
+        ctx.fillStyle = color.guiwhite;
+        drawGuiRect(x, y, len, height);
+    }
+    ctx.globalAlpha = 1;
+    if (settings.graphical.quality == "cod") {
+    ctx.drawImage(callofduty, x, y, len, height);
+    }
+
+    // Draw Tank
+    drawEntity(baseColor, entityX, entityY, picture, 1, 1, scale / picture.size, lineWidthMult, angle, true);
+
+    // Tank name
+    drawText(picture.upgradeName ?? picture.name, x + (upgradeKey ? 0.9 * len : len) / 2, y + height * 0.94, height / 10, color.guiwhite, "center");
+
+    // Upgrade key
+    if (upgradeKey) {
+        drawText("[" + upgradeKey + "]", x + len - 4, y + height - 6, height / 8 - 5, color.guiwhite, "right");
+    }
+    ctx.strokeStyle = color.black;
+    ctx.lineWidth = 3 * lineWidthMult;
+    drawGuiRect(x, y, len, height, true); // Border
+  }
 }
 
 // Start animation
@@ -1773,17 +2169,17 @@ let scaleScreenRatio = (by, unset) => {
 var getClassUpgradeKey = function (number) {
     switch (number) {
         case 0:
-            return "y";
+            return "Y";
         case 1:
-            return "u";
+            return "U";
         case 2:
-            return "i";
+            return "I";
         case 3:
-            return "h";
+            return "H";
         case 4:
-            return "j";
+            return "J";
         case 5:
-            return "k";
+            return "K";
         default:
             return null;
     }
@@ -1811,7 +2207,7 @@ let tiles,
         for (let i = 0; i < hasUpgrades.length; i++) {
             let upgrade = hasUpgrades[i],
                 spacing = 2 * Math.max(1, upgrade.tier - tier),
-                measure = measureSize(x, y + spacing, upgrade.upgradeColor ?? 10 + i, upgrade);
+                measure = measureSize(x, y + spacing, upgrade.upgradeColor ?? i, upgrade);
             branches.push([{ x, y: y + Math.sign(i) }, { x, y: y + spacing + 1 }]);
             if (i === hasUpgrades.length - 1 && !noUpgrades.length) {
                 branches.push([{ x: xStart, y: y + 1 }, { x, y: y + 1 }]);
@@ -1824,7 +2220,7 @@ let tiles,
         for (let i = 0; i < noUpgrades.length; i++) {
             let upgrade = noUpgrades[i],
                 height = 2 + upgrades.length;
-            measureSize(x, y + 1 + i + Math.sign(hasUpgrades.length) * 2, upgrade.upgradeColor ?? 10 + i, upgrade);
+            measureSize(x, y + 1 + i + Math.sign(hasUpgrades.length) * 2, upgrade.upgradeColor ?? i, upgrade);
             if (i === noUpgrades.length - 1) {
                 if (hasUpgrades.length > 1) cumulativeWidth++;
                 branches.push([{ x: xStart, y }, { x, y }]);
@@ -1841,10 +2237,10 @@ function generateTankTree(indexes) {
     tiles = [];
     branches = [];
     tankTree = { width: 0, height: 0 };
-    let rightestSoFar = 0;
+    let rightmostSoFar = 0;
     if (!Array.isArray(indexes)) indexes = [indexes];
     for (let index of indexes) {
-        rightestSoFar += 3 + measureSize(rightestSoFar, 0, 10, { index }).width;
+        rightmostSoFar += 3 + measureSize(rightmostSoFar, 0, 0, { index }).width;
     }
     for (let { x, y } of tiles) {
         tankTree.width = Math.max(tankTree.width, x);
@@ -1884,6 +2280,9 @@ function drawFloor(px, py, ratio) {
             ctx.globalAlpha = 0.3;
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : gameDraw.modifyColor(tile);
             ctx.fillRect(left, top, right - left, bottom - top);
+            if (settings.graphical.quality == "cod") {
+              ctx.drawImage(callofduty, left, top, right - left, bottom  - top);
+            }
         }
     }
     ctx.lineWidth = 1.5;
@@ -1902,7 +2301,6 @@ function drawFloor(px, py, ratio) {
     ctx.stroke();
     ctx.globalAlpha = 1;
 }
-const trollface = new Image(); // Create new img element
 
 function drawEntities(px, py, ratio) {
     // Draw things
@@ -1967,20 +2365,24 @@ function drawEntities(px, py, ratio) {
                 msgLengthHalf = measureText(text, 15 * ratioForChat) / 2,
                 alpha = Math.max(0, Math.min(1000, chat.expires - now) / 1000);
             ctx.globalAlpha = 0.5 * alpha;
-            if (text.includes("--troll")) {
-            trollface.addEventListener("load", () => {
-            global.emojiloaded = true;
-            }); 
-            trollface.src = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png"; // Set source path
-            msgLengthHalf = (measureText(text, 15 * ratioForChat) / 2) - 23;
+            if (settings.game.optNoEmojis) {
+              if (text.includes("--troll")) {
+                trollface.addEventListener("load", () => {
+                  global.emojiloaded = true;
+                }); 
+                trollface.src = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png"; // Set source path
+                msgLengthHalf = (measureText(text, 15 * ratioForChat) / 2) - 23;
+              }
             };
             drawBar(x - msgLengthHalf, x + msgLengthHalf, y, 30 * ratioForChat, gameDraw.modifyColor(instance.color));
             ctx.globalAlpha = alpha;
             settings.graphical.fontStrokeRatio *= 1.2;
-            if (global.emojiloaded && text.includes("--troll")) {
-            let wheretrollfaceis = (ratioForChat) - msgLengthHalf;
-            text = text.replace("--troll", "");
-            ctx.drawImage(trollface, x - wheretrollfaceis, y + -1 * ratioForChat, 18 * ratioForChat, 18 * ratioForChat);
+            if (settings.game.optNoEmojis) {
+              if (global.emojiloaded && text.includes("--troll")) {
+                let wheretrollfaceis = (ratioForChat) - msgLengthHalf;
+                text = text.replace("--troll", "");
+                ctx.drawImage(trollface, x - wheretrollfaceis, y + -1 * ratioForChat, 18 * ratioForChat, 18 * ratioForChat);
+              }
             }
             drawText(text, x, y + 7 * ratioForChat, 15 * ratioForChat, color.guiwhite, "center");
             settings.graphical.fontStrokeRatio /= 1.2;
@@ -2110,7 +2512,7 @@ function drawMessages(spacing) {
             msg.alpha += 0.05;
         } else if (
             i === 0 &&
-            (global.messages.length > 5 || Date.now() - msg.time > 10000)
+            (global.messages.length > 5 || Date.now() - msg.time > 0)
         ) {
             msg.status -= 0.05;
             msg.alpha -= 0.05;
@@ -2125,7 +2527,6 @@ function drawMessages(spacing) {
 
 function drawSkillBars(spacing, alcoveSize) {
     // Draw skill bars
-    global.canSkill = !!gui.points;
     statMenu.set(0 + (global.died || global.statHover || (global.canSkill && !gui.skills.every(skill => skill.cap === skill.amount))));
     global.clickables.stat.hide();
     let vspacing = 4;
@@ -2210,7 +2611,7 @@ function drawSelfInfo(spacing, alcoveSize, max) {
     let len = 1.75 * alcoveSize; // * global.screenWidth;
     let height = 23;
     let x = (global.screenWidth - len) / 2;
-    let y = global.screenHeight - spacing - height - 5;
+    let y = global.screenHeight - spacing - height - 1;
     ctx.lineWidth = 1;
 
     // Draw the exp bar
@@ -2260,9 +2661,9 @@ function drawSelfInfo(spacing, alcoveSize, max) {
       PlaySoundbwomp();
                     } else {
                 if (gui.class === "Delta" & key === global.KEY_CHOOSE_3) {
-      PlaySoundnfl();
-                    } 
-                }
+      PlaySoundnfl(); 
+                    }
+                    }
                     }
                     }
                     }
@@ -2346,7 +2747,11 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     ctx.globalAlpha = 1;
     ctx.lineWidth = 3;
     ctx.fillStyle = color.black;
+    if (settings.game.optOgIcon) {
     drawGuiRect(x, y, len, height, 1); // Border    ctx.lineWidth = 1;
+    } else {
+    drawGuiRect(x, y, len, height, true); // Border    ctx.lineWidth = 1;
+    }
     ctx.strokeStyle = color.black;
     ctx.fillStyle = color.black;
     drawGuiCircle(x + (global.player.cx / global.gameWidth) * len - 1, y + (global.player.cy / global.gameHeight) * height - 1, 2, false);
@@ -2361,9 +2766,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero Engine v3.0", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
+        drawText("Nero Engine v3.1", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "v3.015", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "v3.108", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 4 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
@@ -2371,7 +2776,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
-        drawText("Nero.io v3.0", x + len, y - 50 - 2 * 14 - 2, 15, "#2eabe6", "right");
+        drawText("Nero.io v3.1", x + len, y - 50 - 2 * 14 - 2, 15, "#2eabe6", "right");
         drawText((100 * gui.fps).toFixed(2) + "% : " + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, "right");
     }
@@ -2399,27 +2804,24 @@ function drawLeaderboard(spacing, alcoveSize, max) {
         drawText(entry.label + (": " + util.handleLargeNumber(Math.round(entry.score))), x + len / 2, y + height / 2, height - 5, nameColor, "center", true);
         // Mini-image
         let scale = height / entry.position.axis,
-            xx = x - 1.5 * height - scale * entry.position.middle.x * 0.707,
-            yy = y + 0.5 * height + scale * entry.position.middle.x * 0.707,
+            xx = x - 1.5 * height - scale * entry.position.middle.x * Math.SQRT1_2,
+            yy = y + 0.5 * height - scale * entry.position.middle.y * Math.SQRT1_2,
             baseColor = entry.color;
         drawEntity(baseColor, xx, yy, entry.image, 1 / scale, 1, (scale * scale) / entry.image.size, 1, -Math.PI / 4, true);
         // Move down
         y += vspacing + height;
     }
 }
-
 function drawAvailableUpgrades(spacing, alcoveSize) {
     // Draw upgrade menu
-    global.clickables.upgrade.hide();
     if (gui.upgrades.length > 0) {
-        global.canUpgrade = true;
         let internalSpacing = 15;
         let len = alcoveSize / 2;
         let height = len;
       
         // Animation processing
 //      let columnCount = Math.max(Math.ceil(gui.upgrades.length / 5), 3);
-        let columnCount = Math.max(5, Math.ceil(gui.upgrades.length / 4));
+        let columnCount = Math.max(3, Math.ceil(gui.upgrades.length / 3));
         upgradeMenu.set(0);
         if (!global.canUpgrade) {
             upgradeMenu.force(-columnCount * 3)
@@ -2435,9 +2837,10 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let initialY = y;
         let ticker = 0;
         let upgradeNum = 0;
-        let colorIndex = 10;
+        let colorIndex = 0;
         let clickableRatio = global.canvas.height / global.screenHeight / global.ratio;
         let lastBranch = -1;
+        let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
         upgradeSpin += 0.01;
       
         for (let i = 0; i < gui.upgrades.length; i++) {
@@ -2456,7 +2859,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
                         y += 1.5 * internalSpacing;
                     }
                     y += 1.5 * internalSpacing;
-                    colorIndex = 10;
+                    colorIndex = 0;
                 }
                 lastBranch = upgradeBranch;
                 ticker = 0;
@@ -2472,25 +2875,25 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
           let upgradeKey = getClassUpgradeKey(upgradeNum);
           
 //          drawEntityIcon(model, y, x, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
-            drawEntityIcon(model, x, y, len, height, 1, upgradeSpin, 0.5, colorIndex++, upgradeKey);
+            drawEntityIcon(model, x, y, len, height, 1, upgradeSpin, 0.6, colorIndex++, upgradeKey, upgradeNum == upgradeHoverIndex);
 
             ticker++;
             upgradeNum++;
         }
 
         // Draw dont upgrade button
-        let h = 14,
+        let h = 16,
+            textScale = h - 6,
             msg = "Don't Upgrade",
-            m = measureText(msg, h - 3) + 10;
-        let buttonX = initialX + (rowWidth + len + internalSpacing - initialX) / 2,
+            m = measureText(msg, textScale) + 10;
+        let buttonX = initialX + (rowWidth + len - initialX) / 2,
             buttonY = initialY + height + internalSpacing;
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h + settings.graphical.barChunk, color.black);
         drawBar(buttonX - m / 2, buttonX + m / 2, buttonY + h / 2, h, color.white);
-        drawText(msg, buttonX, buttonY + h / 2, h - 2, color.guiwhite, "center", true);
+        drawText(msg, buttonX, buttonY + h / 2, textScale, color.guiwhite, "center", true);
         global.clickables.skipUpgrades.place(0, (buttonX - m / 2) * clickableRatio, buttonY * clickableRatio, m * clickableRatio, h * clickableRatio);
 
         // Upgrade tooltip
-        let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
         if (upgradeHoverIndex > -1 && upgradeHoverIndex < gui.upgrades.length) {
             let picture = gui.upgrades[upgradeHoverIndex][2];
             if (picture.upgradeTooltip.length > 0) {
@@ -2555,6 +2958,7 @@ const gameDrawAlive = (ratio, drawRatio) => {
     gui.__s.update();
     let lb = leaderboard.get();
     let max = lb.max;
+    global.canSkill = !!gui.points && !global.showTree;
     if (global.showTree) {
         drawUpgradeTree(spacing, alcoveSize);
     } else {
@@ -2620,17 +3024,79 @@ const gameDrawDead = () => {
         position = global.mockups[parseInt(gui.type.split("-")[0])].position,
         scale = len / position.axis,
         xx = global.screenWidth / 2 - scale * position.middle.x * 0.707,
-        yy = global.screenHeight / 2 - 35 + scale * position.middle.x * 0.707,
+        yy = global.screenHeight / 2 - 35 + scale * position.middle.y * 0.707,
         picture = util.getEntityImageFromMockup(gui.type, gui.color),
         baseColor = picture.color;
     drawEntity(baseColor, (xx - 190 - len / 2 + 0.5) | 0, (yy - 10 + 0.5) | 0, picture, 1.5, 1, (0.5 * scale) / picture.realSize, 1, -Math.PI / 4, true);
-    drawText("If you need instructions on how to get through the hotels, check out the enclosed instruction book.", x, y - 80, 8, color.guiwhite, "center");
+    drawText("You died!", x, y - 80, 16, color.guiwhite, "center");
     drawText("Level " + gui.__s.getLevel() + " " + picture.name, x - 170, y - 30, 24, color.guiwhite);
     drawText("Final score: " + util.formatLargeNumber(Math.round(global.finalScore.get())), x - 170, y + 25, 50, color.guiwhite);
     drawText("⌚ Survived for " + util.timeForHumans(Math.round(global.finalLifetime.get())), x - 170, y + 55, 16, color.guiwhite);
     drawText(getKills(), x - 170, y + 77, 16, color.guiwhite);
     drawText(getDeath(), x - 170, y + 99, 16, color.guiwhite);
     drawText("(press enter to respawn)", x, y + 125, 16, color.guiwhite, "center");
+    ctx.translate(0, shift * global.screenHeight);
+};
+const gameDrawWiki = () => {
+    clearScreen(color.black, 0.5);
+    let ratio = util.getScreenRatio();
+    scaleScreenRatio(ratio, true);
+    let shift = animations.deathScreen.get();
+    ctx.translate(0, -shift * global.screenHeight);
+    let x = global.screenWidth / 2 - 215,
+        y = global.screenHeight / 2 - 50;
+    let len = 140,
+        position = global.mockups[parseInt(gui.type.split("-")[0])].position,
+        scale = len / position.axis,
+        xx = global.screenWidth / 2 - scale * position.middle.x * 0.707 - 215,
+        yy = global.screenHeight / 2 - 35 + scale * position.middle.y * 0.707,
+        picture = util.getEntityImageFromMockup(global.wikidisplaytank.toString(), color.blue),
+        baseColor = picture.color;
+        if (eval(`tankdescs.${picture.className}`) !== undefined) {
+        tanktype = eval(`tankdescs.${picture.className}.type`);
+        tankdesc = eval(`tankdescs.${picture.className}.desc`);
+        tanktier = eval(`tankdescs.${picture.className}.tier`);
+        tankweap = eval(`tankdescs.${picture.className}.weapons`);
+        tankabil = eval(`tankdescs.${picture.className}.abilities`);
+        tankweak = eval(`tankdescs.${picture.className}.weak`);
+        tankupto = eval(`tankdescs.${picture.className}.upgradesto`);
+        tankupfr = eval(`tankdescs.${picture.className}.upgradesfrom`);
+        tankorgn = eval(`tankdescs.${picture.className}.origin`);
+        tankupad = eval(`tankdescs.${picture.className}.updateadded`);
+        } else {
+        tanktype = "???";
+        tankdesc = "???";
+        tanktier = "???";
+        tankweap = "???";
+        tankabil = "???";
+        tankweak = "???";
+        tankupto = ["Tier 2: ???", "Tier 3: ???", "Tier 4: ???", "Misc: ???"];
+        tankupad = "???";
+        tankupfr = "???";
+        tankorgn = "???";
+        };
+    drawEntity(baseColor, (xx - 190 - len / 2 + 0.5) | 0, (yy - 10 + 0.5) | 0, picture, 1.5, 1, (0.6 * scale) / picture.realSize, 1, -Math.PI / 4, true);
+    drawText(picture.name, (xx - 190 - len / 2 + 0.5) | 0, (yy + 78.5 + 0.5) | 0, 18, color.guiwhite, "center");
+    drawText("Class." + picture.className, (xx - 190 - len / 2 + 0.5) | 0, (yy - 80 + 0.5) | 0, 14, color.guiwhite, "center");
+    drawText(global.wikidisplaytank.toString(), (xx - 190 - len / 2 + 0.5) | 0, (yy - 100 + 0.5) | 0, 16, color.guiwhite, "center");
+    drawText("Description:", x - 185, y - 70, 17, color.guiwhite, "left");
+    ctx.mlStrokeText(tankdesc, x - 185, y - 70, 215, 200, 'top', 'left', 20, 14);
+    drawText("Do yall think this will work?", x + 100, y + 130, 16, color.guiwhite, "center");
+    drawText("[Esc] Exit Entity Debugger", 10, global.screenHeight - 56, 12, color.guiwhite, "left");
+    drawText("[Enter] Search Entity ID", 10, global.screenHeight - 33, 12, color.guiwhite, "left");
+    drawText("[A] Cycle Left || [D] Cycle Right", 10, global.screenHeight - 10, 12, color.guiwhite, "left");
+    drawGuiLine(x + 40, y - 90, x + 40, (yy + 58 + 0.5));
+    drawText("Tier: " + tanktier, x + 60, y - 75, 14, color.guiwhite, "left");
+    drawText("Weapons: " + tankweap, x + 60, y - 52, 14, color.guiwhite, "left");
+    drawText("Abilities: " + tankabil, x + 60, y - 29, 14, color.guiwhite, "left");
+    drawText("Upgrades From: " + tankupfr, x + 60, y - 6, 14, color.guiwhite, "left");
+    drawText("Weak To: " + tankweak, x + 60, y + 17, 14, color.guiwhite, "left");
+    drawText("Type: " + tanktype, x + 60, y + 40, 14, color.guiwhite, "left");
+    drawText("Update: " + tankupad, x + 60, y + 63, 14, color.guiwhite, "left");
+    drawText("Origin: " + tankorgn, x + 60, y + 86, 14, color.guiwhite, "left");
+    drawGuiLine(x + 300, y - 90, x + 300, (yy + 58 + 0.5));
+    drawText("Upgrades To: ", x + 320, y - 75, 14, color.guiwhite, "left");
+    ctx.mlStrokeText(tankupto[0] + " \n " + tankupto[1] + " \n " + tankupto[2] + " \n " + tankupto[3], x + 320, y - 75, 350, 200, 'top', 'left', 16, 11);
     ctx.translate(0, shift * global.screenHeight);
 };
 const gameDrawBeforeStart = () => {
@@ -2702,17 +3168,33 @@ function animloop() {
         }
         if (global.died) {
             gameDrawDead();
+            PlaySound420();
             global.metrics.killcount = 0;
+        } else {
+        if (global.stopthefuckingkillsoundyouprick) {
+            metalpipe.pause();
+            metalpipe.currentTime = 0;
+            global.stopthefuckingkillsoundyouprick = false;
+            console.log("this better be working")
+      }
         }
         if (global.disconnected) {
             gameDrawDisconnected();
         }
+        if (global.wiki) {
+            gameDrawWiki();
+        }
         ctx.translate(-0.5, -0.5);
+    //oh no we need to throw an error!
     } catch (e) {
+      
+        //hold on....
         gameDrawError();
         ctx.translate(-0.5, -0.5);
-        console.log(e);
-        throw Error('Something has gone wrong!');
+      
+        //okay, NOW throw the error!
+        throw e;
+      
     }
 }
 

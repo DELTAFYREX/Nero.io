@@ -121,6 +121,7 @@ Class.genericTank = {
     TURRETS: [],
     PROPS: [],
     ON: [],
+    ARENA_CLOSER: false, // don't remove this, it stops dev basics going through walls
     GIVE_KILL_MESSAGE: true,
     DRAW_HEALTH: true,
     HITS_OWN_TYPE: "hardOnlyTanks"
@@ -131,6 +132,16 @@ Class.genericSmasher = {
     IS_SMASHER: true,
     SKILL_CAP: [smshskl, 0, 0, 0, 0, smshskl, smshskl, smshskl, smshskl, smshskl],
     STAT_NAMES: statnames.smasher,
+    BODY: {
+        FOV: 1.05 * base.FOV,
+        DENSITY: 2 * base.DENSITY
+    }
+}
+Class.genericLancer = {
+    PARENT: "genericTank",
+    DANGER: 6,
+    SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, 0, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
+    STAT_NAMES: statnames.lancer,
     BODY: {
         FOV: 1.05 * base.FOV,
         DENSITY: 2 * base.DENSITY
@@ -168,6 +179,7 @@ Class.food = {
     MOTION_TYPE: "drift",
     FACING_TYPE: "turnWithSpeed",
     VARIES_IN_SIZE: true,
+    LEVEL_CAP: 45,
     BODY: {
         STEALTH: 30,
         PUSHABILITY: 1,
@@ -195,42 +207,6 @@ Class.bullet = {
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
-};
-Class.speedBullet = {
-    PARENT: ["bullet"],
-    MOTION_TYPE: "accel",
-};
-Class.growBullet = {
-    PARENT: ["bullet"],
-    MOTION_TYPE: "grow",
-};
-Class.flare = {
-    PARENT: ["growBullet"],
-    LABEL: "Flare",
-    SHAPE: 4,
-};
-Class.nuke = {
-    PARENT: ["growBullet"],
-    LABEL: "Nuke",
-    MOTION_TYPE: "fuckingnuclearbomb",
-    BODY: {
-        PENETRATION: 100,
-        SPEED: 7,
-        RANGE: 600,
-        DENSITY: 99999999999,
-        HEALTH: 99999,
-        DAMAGE: 999999,
-        PUSHABILITY: -99999999,
-    },
-};
-Class.developerBullet = {
-    PARENT: ["bullet"],
-    SHAPE: [[-1, -1], [1, -1], [2, 0], [1, 1], [-1, 1]],
-};
-Class.casing = {
-    PARENT: ["bullet"],
-    LABEL: "Shell",
-    TYPE: "swarm",
 };
 
 Class.drone = {
@@ -269,7 +245,31 @@ Class.drone = {
     CLEAR_ON_MASTER_UPGRADE: true,
     BUFF_VS_FOOD: true,
 };
-
+Class.swarm = {
+    LABEL: "Swarm Drone",
+    TYPE: "swarm",
+    ACCEPTS_SCORE: false,
+    SHAPE: 3,
+    MOTION_TYPE: "swarm",
+    FACING_TYPE: "smoothWithMotion",
+    CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+    CRAVES_ATTENTION: true,
+    COLOR: 'mirror',
+    BODY: {
+        ACCELERATION: 3,
+        PENETRATION: 1.5,
+        HEALTH: 0.175,
+        DAMAGE: 2.25,
+        SPEED: 4.5,
+        RESIST: 1.6,
+        RANGE: 225,
+        DENSITY: 12,
+        PUSHABILITY: 0.6,
+        FOV: 1.5,
+    },
+    DIE_AT_RANGE: true,
+    BUFF_VS_FOOD: true,
+};
 Class.trap = {
     LABEL: "Thrown Trap",
     TYPE: "trap",
@@ -318,24 +318,6 @@ Class.satellite = {
     MOTION_TYPE: 'motor'
 }
 
-Class.mendersymbol = {
-    PARENT: ["genericTank"],
-    COLOR: "grey",
-    LABEL: "",
-    SHAPE: 3,
-};
-Class.healerBullet = {
-    PARENT: ["bullet"],
-    HEALER: true,
-    HITS_OWN_TYPE: "normal",
-};
-Class.healerSymbol = {
-    PARENT: ["genericEntity"],
-    SHAPE: [[0.3, -0.3],[1,-0.3],[1,0.3],[0.3,0.3],[0.3,1],[-0.3,1],[-0.3,0.3],[-1,0.3],[-1,-0.3],[-0.3,-0.3],[-0.3,-1],[0.3,-1]],
-    SIZE: 13,
-    COLOR: "red",
-};
-
 Class.auraBase = {
     TYPE: "aura",
     ACCEPTS_SCORE: false,
@@ -359,26 +341,33 @@ Class.auraBase = {
     }
 };
 Class.aura = {
-    PARENT: ["auraBase"],
+    PARENT: "auraBase",
     LABEL: "Aura",
     COLOR: "teal",
     BODY: {
-        DAMAGE: 0.5,
+        DAMAGE: 0.15,
     },
 };
 Class.healAura = {
-    PARENT: ["auraBase"],
+    PARENT: "auraBase",
     LABEL: "Heal Aura",
     HEALER: true,
     COLOR: "red",
     BODY: {
-        DAMAGE: 0.1,
+        DAMAGE: 0.05,
     },
 };
 Class.auraSymbol = {
-    PARENT: ["genericTank"],
+    PARENT: "genericTank",
     CONTROLLERS: [["spin", {speed: -0.04}]],
     INDEPENDENT: true,
     COLOR: "teal",
     SHAPE: [[-0.598,-0.7796],[-0.3817,-0.9053],[0.9688,-0.1275],[0.97,0.125],[-0.3732,0.9116],[-0.593,0.785]]
+};
+Class.rangeAuraSymbol = {
+    PARENT: "genericTank",
+    CONTROLLERS: [["spin", {speed: -0.04}]],
+    INDEPENDENT: true,
+    COLOR: "teal",
+    SHAPE: "M -0.7671 0.6521 L -0.7671 -0.6521 L -0.6521 -0.7671 L -0.6521 -0.7671 L 0.6521 -0.7671 L 0.7671 -0.6521 L 0.7671 0.6521 L 0.6521 0.7671 L -0.6521 0.7671 L -0.7671 0.6521"
 };

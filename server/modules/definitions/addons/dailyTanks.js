@@ -2,7 +2,7 @@ const { dereference, combineStats, makeMulti, makeDeco, makeAuto, makeHybrid, ma
 const { base, gunCalcNames, statnames, dfltskl, smshskl } = require('../constants.js');
 const g = require('../gunvals.js');
 
-const addToMain = false
+const addToMain = true
 
 // Bullets
 Class.masterBullet = {
@@ -100,8 +100,8 @@ Class.blizzardDeco2.CONTROLLERS = [["spin", { independent: true, speed: -0.128 }
 Class.dlywhirlwind = {
     PARENT: "genericTank",
     LABEL: "Whirlwind",
-    UPGRADE_TOOLTIP: "Daily Tank!",
-	  UPGRADE_COLOR: "rainbow",
+    //UPGRADE_TOOLTIP: "Daily Tank!",
+	  //UPGRADE_COLOR: "rainbow",
     ANGLE: 60,
     CONTROLLERS: ["whirlwind"],
     HAS_NO_RECOIL: true,
@@ -1051,8 +1051,8 @@ Class.jumpsmasherBody = {
 Class.jumpSmasher = {
     PARENT: "genericSmasher",
     LABEL: "Jump Smasher",
-    UPGRADE_TOOLTIP: "Daily Tank!",
-  	UPGRADE_COLOR: "rainbow",
+    //UPGRADE_TOOLTIP: "Daily Tank!",
+  	//UPGRADE_COLOR: "rainbow",
     DANGER: 7,
     GUNS: [
         {
@@ -1303,27 +1303,20 @@ Class.literallyATank = {
 }
 
 Class.dlylancer = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Lancer",
-  UPGRADE_TOOLTIP: "Daily Tank!",
-	UPGRADE_COLOR: "rainbow",
+  //UPGRADE_TOOLTIP: "Daily Tank!",
+	//UPGRADE_COLOR: "rainbow",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 0.9
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [20, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1337,25 +1330,18 @@ Class.dlylancebrid = makeHybrid(Class.dlylancer, "Lancebrid");
 Class.dlyautolancer = makeAuto(Class.dlylancer, "Auto-Lancer");
 Class.dlyautolancebrid = makeAuto(Class.dlylancebrid, "Auto-Lancebrid");
 Class.dlytrilancer = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Tri-Lancer",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 0.9
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [20, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1366,7 +1352,7 @@ Class.dlytrilancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 120, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1377,7 +1363,7 @@ Class.dlytrilancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 240, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1388,25 +1374,18 @@ Class.dlytrilancer = {
   ]
 }
 Class.dlyhexalancer = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Hexa Lancer",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 0.9
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [20, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1417,7 +1396,7 @@ Class.dlyhexalancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 60, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1428,7 +1407,7 @@ Class.dlyhexalancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 120, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1439,7 +1418,7 @@ Class.dlyhexalancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 180, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1450,7 +1429,7 @@ Class.dlyhexalancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 240, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1461,7 +1440,7 @@ Class.dlyhexalancer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 300, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1472,25 +1451,18 @@ Class.dlyhexalancer = {
   ]
 }
 Class.dlychasseur = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Chasseur",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 1
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true,
       }
@@ -1506,25 +1478,18 @@ Class.dlyautotrilancer = makeAuto(Class.dlytrilancer, "Auto-Trilancer");
 Class.dlychasseubrid = makeHybrid(Class.dlychasseur, "Chasseubrid");
 Class.dlytrilancebrid = makeHybrid(Class.dlytrilancer, "Trilancebrid");
 Class.dlytrichasseur = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Tri-Chasseur",
   BODY: {
     SPEED: base.SPEED * 1.2,
     DAMAGE: base.DAMAGE * 1
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1535,7 +1500,7 @@ Class.dlytrichasseur = {
     {
       POSITION: [25, 15, 0.001, 0, 0, 120, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1546,7 +1511,7 @@ Class.dlytrichasseur = {
     {
       POSITION: [25, 15, 0.001, 0, 0, 240, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1557,25 +1522,18 @@ Class.dlytrichasseur = {
   ]
 }
 Class.dlytripleur = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Tripleur",
   BODY: {
     SPEED: base.SPEED * 1.1,
     DAMAGE: base.DAMAGE * 1
   },
   HAS_NO_RECOIL: true,
-  STAT_NAMES: {
-    BULLET_SPEED: 'Lance Range',
-    BULLET_HEALTH: 'Lance Longevity',
-    BULLET_PEN: 'Lance Sharpness',
-    BULLET_DAMAGE: 'Lance Damage',
-    RELOAD: 'Lance Density'
-  },
   GUNS: [
     {
       POSITION: [25, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1586,7 +1544,7 @@ Class.dlytripleur = {
     {
       POSITION: [20, 15, 0.001, 0, 0, -30, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1597,7 +1555,7 @@ Class.dlytripleur = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 30, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1608,7 +1566,7 @@ Class.dlytripleur = {
   ]
 }
 Class.dlytrailblazer = {
-  PARENT: "genericTank",
+  PARENT: "genericLancer",
   LABEL: "Trailblazer",
   BODY: {
     HEALTH: 0.8 * base.HEALTH,
@@ -1620,7 +1578,7 @@ Class.dlytrailblazer = {
     {
       POSITION: [20, 15, 0.001, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.4, speed: 0.1, maxSpeed: 0.1, range: 0.1 }]),
+        SHOOT_SETTINGS: combineStats([g.basic, g.lance]),
         TYPE: ["bullet", { ALPHA: 0 }],
         AUTOFIRE: true
       }
@@ -1655,6 +1613,7 @@ Class.dlylancer.UPGRADES_TIER_2 = [
 ];
 Class.dlychasseur.UPGRADES_TIER_3 = [
   "dlytripleur", //
+  "flail",
   "dlyautochasseur", //
   "dlytrichasseur", //
   "dlychasseubrid", //
@@ -1714,8 +1673,8 @@ let dlytanks = ["master", "dlywhirlwind", "literallyATank", "jumpSmasher", "dlyl
 dailytank = dlytanks[global.dayofweek];
 
 if (addToMain == true) {
-Class.basic.UPGRADES_TIER_1.push("dlywhirlwind")
-Class.basic.UPGRADES_TIER_2.push("literallyATank")
+Class.basic.UPGRADES_TIER_1.push("dlylancer", "dlywhirlwind")
+Class.smasher.UPGRADES_TIER_3.push("jumpSmasher")
 Class.hexaTank.UPGRADES_TIER_3.push("hexaWhirl")
 Class.artillery.UPGRADES_TIER_3.push("munition")
 Class.auto3.UPGRADES_TIER_3.push("whirl3")
@@ -1723,6 +1682,6 @@ Class.trapGuard.UPGRADES_TIER_3.push("whirlGuard")
 Class.underseer.UPGRADES_TIER_3.push("prophet")
 Class.launcher.UPGRADES_TIER_3.push("vortex")
 } else {
-Class.basic.UPGRADES_TIER_3 = [dailytank]
+//Class.basic.UPGRADES_TIER_3 = [dailytank]
 }
 Class.addons.UPGRADES_TIER_3 = ["dailyTanks"];

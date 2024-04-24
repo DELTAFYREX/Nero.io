@@ -844,6 +844,7 @@ const socketInit = port => {
             case 'info': // info
                 global.message = m[0];
                 console.log(m[0]);
+                break;
           case "achieve":
                 /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
                 let achievementId = get.next() // gets the id of the achievement, dw about this part
@@ -912,15 +913,16 @@ const socketInit = port => {
                         global.gameStart = true;
                         global.entities = [];
                         global.message = '';
+                        global.stopthefuckingkillsoundyouprick = true;
                     });
                 }
                 break;
             case 'm': // message
                 global.messages.push({
-                    text: m[0],
+                    text: m[1],
                     status: 2,
                     alpha: 0,
-                    time: Date.now(),
+                    time: Date.now() + m[0],
                 });
                 break;
             case 'u': // uplink
@@ -1010,7 +1012,6 @@ const socketInit = port => {
                 global.died = true;
                 global.autoSpin = false;
                 window.onbeforeunload = () => false;
-                //global.achievements.kills = (m[2]);
                 break;
             case 'K': // kicked
                 window.onbeforeunload = () => false;
