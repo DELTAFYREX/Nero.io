@@ -148,16 +148,17 @@ function PlaySound420() {
   }
 }
 function getksound() {
-  if (killvariablenamething && global.killsoundready) {
+  if (global.killsoundready) {
+    if (killvariablenamething) {
     metalpipe.src = randomdeathsound[Math.floor(Math.random() * randomdeathsound.length)];
     metalpipe.play();
     global.killsoundready = false;
+  }
   }
 }
   var grubhub = new Audio();
 grubhub.src = ("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/d318bd1e-5162-4fae-a757-5c350b16ccc9.mp3?v=1700153738394");
 function PlaySound169() {
-  grubhub.load();   
    grubhub.play();
 }
   var smallaudio5 = new Audio();
@@ -181,7 +182,7 @@ function PlaySound169() {
 //Music functions:
   //decide the music
   global.music2 = document.getElementById("audio");
-  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213","https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download%20(1).mp3?v=1708218475743", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295"];
+  const pmusic = ["https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/oioioi.mp3?v=1705286830033", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4Miklipi%20(Dejected)%20Preview.mp3?v=1705287022417", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/World's%20End.wav?v=1705286889038", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation%20V2.mp3?v=1713525132474", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download%20(1).mp3?v=1708218475743", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295", "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a470a29/Apotheosis.wav?v=1713352428783", "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Action%20Agenda%20-%20Killa%20DFX%20Edit.mp3?v=1713352244240"];
   var randmusic = pmusic[~~(Math.random() * pmusic.length)];
   global.music2.src = (randmusic);
   //load the play functions for itasdasf meow
@@ -197,7 +198,7 @@ function PlaySound169() {
         songrecog()
            global.music2.play()
         //if (global.ISTHEGODAMNFUCKINGGAMEON !== "yeah") {
-        document.getElementById("content").style.opacity = 1
+        document.getElementById("content").style.opacity = 0.5
     //audio.src = randmusic;
     //audio.load();
     //audio.play();
@@ -213,7 +214,7 @@ function PlaySound169() {
     musicsrc.connect(analyser);
     analyser.connect(musiccontext.destination);
 
-    analyser.fftSize = 256;
+    analyser.fftSize = 2048;
 
     var bufferLength = analyser.frequencyBinCount;
     console.log(bufferLength);
@@ -534,8 +535,8 @@ if (global.music2.src === "https://cdn.glitch.me/5fc7dcb6-aada-495b-828e-66901a4
 if (global.music2.src === "https://cdn.glitch.global/f80d3eec-1e99-4b8c-b120-79a55addacf9/Meloncholy.mp3?v=1675465750213") {
   global.music2.songname = "Melancholy --- Deltafyrex";
 }
-if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation.mp3?v=1705286866890") {
-  global.music2.songname = "Depredation --- Deltafyrex";
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Depredation%20V2.mp3?v=1713525132474") {
+  global.music2.songname = "Depredation Remastered V2--- Deltafyrex";
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp3?v=1705807057028") {
   global.music2.songname = "Anybody can find Love (except You.) --- hkmori"
@@ -545,6 +546,12 @@ if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-669
 }
 if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/download.mp3?v=1708218464295") {
   global.music2.songname = "Longing --- Amaryllis"
+}
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Action%20Agenda%20-%20Killa%20DFX%20Edit.mp3?v=1713352244240") {
+  global.music2.songname = "Killa --- Action Agenda (DFX EDIT)"
+}
+if (global.music2.src === "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Apotheosis%20(1).mp3?v=1713525419376") {
+  global.music2.songname = "Apotheosis V2 --- Deltafyrex"
 }
 }
 function lagachloop() {
@@ -619,7 +626,7 @@ function resetAllAchievements() {
                       daysinm = 31
                     }
                   }
-                if ((date.getSeconds() + 60) - 32 > 59) {
+                if (date.getSeconds() + 28 > 59) {
                     sec = (date.getSeconds() + 60) - 92
                   } else {
                     sec = (date.getSeconds() + 60) - 32
@@ -680,7 +687,7 @@ function resetAllAchievements() {
                     month = (date.getMonth() + 11) - 15
                   }
                 };
-                  if (month > 3 && day > 23 && hour > 10 && min > 44 && sec > 31) {
+                  if (date.getMonth() > 2) {
                     year = ' | Years: ' + (date.getFullYear() - 2019)
                   } else {
                     year = ' | Years: ' + (date.getFullYear() - 2020)
@@ -1981,13 +1988,15 @@ function drawEntityIcon(model, x, y, len, height, lineWidthMult, angle, alpha, c
     ctx.lineWidth = 3 * lineWidthMult;
     ctx.globalAlpha = 0.4
     drawGuiRect(x + 8, y + 8, len, height, 2);
-    ctx.globalAlpha = 1;
-    ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex > 18 ? colorIndex - 19 : colorIndex).toString());
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = picture.upgradeColor != null
+        ? gameDraw.modifyColor(picture.upgradeColor)
+        : gameDraw.getColor(getIconColor(colorIndex));
     //drawGuiRect(x + 25, y + 25, len - 50, height - 50, 2);
     drawGuiRect(x, y, len, height, 2);
     ctx.globalAlpha = 0.1;
-    ctx.fillStyle = picture.upgradeColor != null ? gameDraw.getColor(picture.upgradeColor) : gameDraw.getColor((colorIndex - 9).toString());
     drawGuiRect(x, y, len, height * 0.6, 3);
+    ctx.globalAlpha = 0.25 * alpha;
     ctx.fillStyle = color.black;
     drawGuiRect(x, y + height * 0.6, len, height * 0.4);
     // Shading for hover
@@ -2757,9 +2766,9 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (!global.showDebug) y += 14 * 3;
     // Text
     if (global.showDebug) {
-        drawText("Nero Engine v3.0", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
+        drawText("Nero Engine v3.1", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "v3.039", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "v3.108", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 4 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
@@ -2767,7 +2776,7 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
-        drawText("Nero.io v3.0", x + len, y - 50 - 2 * 14 - 2, 15, "#2eabe6", "right");
+        drawText("Nero.io v3.1", x + len, y - 50 - 2 * 14 - 2, 15, "#2eabe6", "right");
         drawText((100 * gui.fps).toFixed(2) + "% : " + global.metrics.rendertime + " FPS", x + len, y - 50 - 1 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText(global.metrics.latency + " ms : " + global.metrics.updatetime + "Hz", x + len, y - 50, 10, color.guiwhite, "right");
     }
@@ -2812,7 +2821,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
       
         // Animation processing
 //      let columnCount = Math.max(Math.ceil(gui.upgrades.length / 5), 3);
-        let columnCount = Math.max(3, Math.floor(gui.upgrades.length ** 0.55));
+        let columnCount = Math.max(3, Math.ceil(gui.upgrades.length / 3));
         upgradeMenu.set(0);
         if (!global.canUpgrade) {
             upgradeMenu.force(-columnCount * 3)
@@ -2828,7 +2837,7 @@ function drawAvailableUpgrades(spacing, alcoveSize) {
         let initialY = y;
         let ticker = 0;
         let upgradeNum = 0;
-        let colorIndex = 10;
+        let colorIndex = 0;
         let clickableRatio = global.canvas.height / global.screenHeight / global.ratio;
         let lastBranch = -1;
         let upgradeHoverIndex = global.clickables.upgrade.check({x: global.mouse.x, y: global.mouse.y});
@@ -3161,6 +3170,13 @@ function animloop() {
             gameDrawDead();
             PlaySound420();
             global.metrics.killcount = 0;
+        } else {
+        if (global.stopthefuckingkillsoundyouprick) {
+            metalpipe.pause();
+            metalpipe.currentTime = 0;
+            global.stopthefuckingkillsoundyouprick = false;
+            console.log("this better be working")
+      }
         }
         if (global.disconnected) {
             gameDrawDisconnected();

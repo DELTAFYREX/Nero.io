@@ -1,4 +1,4 @@
-const { combineStats, makeDeco } = require('../facilitators.js');
+const { combineStats, makeDeco, addAura } = require('../facilitators.js');
 const { gunCalcNames, base } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -600,6 +600,26 @@ Class.artilleryTurret = { // This one has half the dps of the one above
         },
     ],
 };
+Class.legionaryTwin = {
+    PARENT: ["auto4gun"],
+    COLOR: "grey",
+    INDEPENDENT: true,
+    GUNS: [
+        {
+            POSITION: [17.5, 5, 1, 0, -4.5, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.twin, g.power, { speed: 0.7, maxSpeed: 0.7 }]),
+                TYPE: "bullet",
+            },
+        }, {
+            POSITION: [17.5, 5, 1, 0, 4.5, 0, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.pelleter, g.twin, g.power, { speed: 0.7, maxSpeed: 0.7 }]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
 Class.nailgunTurret = {
     PARENT: ["genericTank"],
     LABEL: "Nailgun",
@@ -1049,6 +1069,56 @@ Class.sanctuaryHealer = {
         TYPE: ['healerSymbol', { CONTROLLERS: [["spin", { startAngle: Math.PI / 2, speed: 0, independent: true }]] }]
     }],
 };
+Class.surgeonPillboxTurret = {
+    PARENT: "genericTank",
+    LABEL: "",
+    COLOR: "grey",
+    BODY: {
+        FOV: 3,
+    },
+    HAS_NO_RECOIL: true,
+    CONTROLLERS: [["spin", { independent: true, speed: 0.08 }]],
+    TURRETS: [
+        {
+            POSITION: [13, 0, 0, 0, 360, 1],
+            TYPE: "healerSymbol",
+        },
+    ],
+    GUNS: [
+        {
+            POSITION: [17, 11, 1, 0, 0, 90, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "healerBullet",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [14, 11, 1, 0, 0, 90, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "healerBullet",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [17, 11, 1, 0, 0, 270, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "healerBullet",
+                AUTOFIRE: true,
+            },
+        },
+        {
+            POSITION: [14, 11, 1, 0, 0, 270, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.minionGun, g.turret, g.power, g.autoTurret, { density: 0.1 }]),
+                TYPE: "healerBullet",
+                AUTOFIRE: true,
+            },
+        },
+    ],
+}
 
 // Miscellaneous
 Class.baseSwarmTurret = {
@@ -1318,9 +1388,7 @@ Class.turretBasenoguns = {
     CONTROLLERS: [["spin", { independent: true }]],
     INDEPENDENT: true,
 };
-Class.grenadeDeco = {
-  SHAPE: 0
-}
+Class.grenadeDeco = makeDeco(0);
 Class.turretBaseKiva = {
     LABEL: "Basethingygygyyasgsdgajskhg",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
@@ -1425,20 +1493,47 @@ Class.revogun = {
     ]
 }
 Class.revosheild = {
-  PARENT: ["moon"],
+  PARENT: "genericTank",
+  DAMAGE_CLASS: 1,
+  TYPE: "shield",
   COLOR: "darkGray",
+  SHAPE: 0,
+  INDEPENDENT: true,
+  BODY: {
+        PUSHABILITY: 0,
+        HEALTH: 10000,
+        SHIELD: 10000,
+        REGEN: 1000,
+        DAMAGE: 1,
+        RESIST: 100,
+        STEALTH: 1,
+        DENSITY: 10000,
+    },
 }
 Class.backshieldturret = {
-  PARENT: ["moon"],
+  PARENT: "genericTank",
+  TYPE: "shield",
+  DAMAGE_CLASS: 1,
   SHAPE: "m -0.702 -0.8099 c 0.2987 0.4922 0.4276 1.0098 0 1.6105 c 0.4606 -0.1615 0.9233 -0.3735 1.3947 -0.8052 C 0.2005 -0.4442 -0.2526 -0.6387 -0.702 -0.8099",
   COLOR: "#FF7F00",
   INDEPENDENT: true,
+  BODY: {
+        HEALTH: 10000,
+        SHIELD: 10000,
+        REGEN: 1000,
+  },
 }
 Class.mirrorDeco = makeDeco("M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -0.9 A 0.001 0.001 0 0 1 0 0.9 A 0.001 0.001 0 0 1 0 -0.9")
 Class.mirrorbackshieldturret = {
-  PARENT: ["moon"],
+  PARENT: "genericTank",
+  TYPE: "shield",
   INDEPENDENT: true,
-  SHAPE: "m -0.702 -0.8099 c 0.2987 0.4922 0.4276 1.0098 0 1.6105 c 0.4606 -0.1615 0.9233 -0.3735 1.3947 -0.8052 C 0.2005 -0.4442 -0.2526 -0.6387 -0.702 -0.8099",
+  BODY: {
+    HEALTH: 10000,
+    SHIELD: 10000,
+    REGEN: 1000,
+  },
+  SHAPE: "m -0.7020 -0.8099 c 0.2987 0.4922 0.4276 1.0098 0 1.6105 c 0.4606 -0.1615 0.9233 -0.3735 1.3947 -0.8052 C 0.2005 -0.4442 -0.2526 -0.6387 -0.702 -0.8099",
   COLOR: "#FF7F00",
   TURRETS: [{
     POSITION: [5.7, 0, 0, 0, 360, 1],
@@ -1494,7 +1589,40 @@ Class.droneturretBase = {
         TYPE: "droneAutoTurret",
     }]
 }
+Class.dualAutoTankGun = {
+      TURRETS: [{
+        POSITION: [11, 0, 0, 0, 190, 0],
+        TYPE: "autoTankGun"
+    }, {
+        POSITION: [11, 0, 0, 180, 190, 0],
+        TYPE: "autoTankGun"
+    }]
+}
+Class.swivelAutoTankGun = {
+    PARENT: "genericTank",
+    LABEL: "",
+    BODY: {
+        FOV: 3,
+    },
+    CONTROLLERS: ["canRepel", "onlyAcceptInArc", "mapAltToFire", "nearestDifferentMaster"],
+    COLOR: "grey",
+    GUNS: [
+        {
+            POSITION: [22, 10, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.flankGuard, g.autoTurret, g.slightlyweaker]),
+                TYPE: "bullet",
+            },
+        },
+    ],
+}
 Class.skaterDeco = makeDeco("M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1");
 Class.skaterDeco.STROKE_WIDTH = 2;
 Class.switcherDeco = makeDeco('M 0 0 M 2 -1 L -2 -1 L -2 8 L -1 8 L 1 8 L 2 8')
 Class.effectBulletDeco = makeDeco(0)
+Class.firecrackerDeco = makeDeco(-6)
+Class.auraDamageGen = addAura(4.5, 1.3, 0.3, "red");
+Class.auraRangeGen = addAura(3, 1.8, 0.3, "teal", "rangeAuraSymbol");
+Class.auraDamageRangeGen = addAura(4.5, 1.8, 0.3, "red", "rangeAuraSymbol");
+Class.auraMoreDamageGen = addAura(6, 1.3, 0.3, "orange");
+Class.auraMoreRangeGen = addAura(3, 2.3, 0.3, "aqua", "rangeAuraSymbol");

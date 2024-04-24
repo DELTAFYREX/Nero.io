@@ -46,6 +46,17 @@ Class.wall = {
     SHAPE: "M 1 1 L -1 1 L -1 -1 L 1 -1 Z",
     VARIES_IN_SIZE: false
 }
+Class.dfxwall = {
+    PARENT: "rock",
+    LABEL: "Wall",
+    SIZE: 25,
+    SHAPE: "M 1 1 L -1 1 L -1 -1 L 1 -1 Z",
+    VARIES_IN_SIZE: false,
+    TURRETS: [{
+        POSITION: [15, -25, -25, 45, 0, 3],
+        TYPE: "dfxskin"
+    },]
+}
 Class.moon = {
     PARENT: "rock",
     LABEL: "Moon",
@@ -173,7 +184,7 @@ for (let tier of sancHealerTiers) {
                 }, {
                     POSITION: { LENGTH: 8, WIDTH: 10, X: 10, ANGLE: (360 / tier) * i },
                     PROPERTIES: {
-                        SHOOT_SETTINGS: combineStats([g.basic, g.healer, {shudder: 0.1, spray: 0.1, speed: 0.8, reload: 0.6}]),
+                        SHOOT_SETTINGS: combineStats([g.basic, g.healer]),
                         TYPE: "healerBullet",
                         AUTOFIRE: true,
                     }

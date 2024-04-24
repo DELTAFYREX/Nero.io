@@ -94,10 +94,10 @@ var gameDraw = {
     //TODO: somehow move the calculation to these in reanimateColors to improve performance
     colorCache: {},
     modifyColor: (color, base = "16 0 1 0 false") => {
-        // Split into array
+      // Split into array
         let colorDetails = color.split(" "),
             baseDetails = base.split(" ");
-
+      
         // Color mirroring
         if (colorDetails[0] == "-1" || colorDetails[0] == "mirror") {
             colorDetails[0] = baseDetails[0];

@@ -82,18 +82,20 @@ Class.missile = {
             POSITION: [14, 6, 1, 0, -2, 130, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { recoil: 1.35 }, { speed: 1.3, maxSpeed: 1.3 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {speed: 1.3, maxSpeed: 1.3}]),
                 TYPE: [ "bullet", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.thruster
+                STAT_CALCULATOR: gunCalcNames.thruster,
+                WAIT_TO_CYCLE: true,
             }
         },
         {
             POSITION: [14, 6, 1, 0, 2, 230, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { recoil: 1.35 }, { speed: 1.3, maxSpeed: 1.3 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {speed: 1.3, maxSpeed: 1.3}]),
                 TYPE: [ "bullet", { PERSISTS_AFTER_DEATH: true } ],
-                STAT_CALCULATOR: gunCalcNames.thruster
+                STAT_CALCULATOR: gunCalcNames.thruster,
+                WAIT_TO_CYCLE: true,
             }
         }
     ]
@@ -145,7 +147,7 @@ Class.minimissile = {
             POSITION: [14, 6, 1, 0, 0, 180, 0],
             PROPERTIES: {
                 AUTOFIRE: true,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { recoil: 1.35 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, { recoil: 0.5 }, g.lowPower]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             },
@@ -154,24 +156,26 @@ Class.minimissile = {
 }
 Class.spinmissile = {
     PARENT: "missile",
-    FACING_TYPE: ["spin", {speed: 0.1}],
+    CONTROLLERS: [["spin2", {speed: 0.1}]],
     GUNS: [
         {
             POSITION: [14, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
+                WAIT_TO_CYCLE: true,
             },
         },
         {
             POSITION: [14, 8, 1, 0, 0, 180, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
+                WAIT_TO_CYCLE: true,
             },
         },
     ],
@@ -183,7 +187,7 @@ Class.hyperspinmissile = {
             POSITION: [14, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             },
@@ -192,7 +196,7 @@ Class.hyperspinmissile = {
             POSITION: [14, 8, 1, 0, 0, 180, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             },
@@ -201,7 +205,7 @@ Class.hyperspinmissile = {
             POSITION: [14, 8, 1, 0, 0, 90, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             },
@@ -210,7 +214,7 @@ Class.hyperspinmissile = {
             POSITION: [14, 8, 1, 0, 0, 270, 0],
             PROPERTIES: {
                 AUTOFIRE: !0,
-                SHOOT_SETTINGS: combineStats([g.basic, g.skimmer, { reload: 0.5 }, g.lowPower, { reload: 0.75 }, { speed: 1.3, maxSpeed: 1.3 }]),
+                SHOOT_SETTINGS: combineStats([g.basic, g.lowPower, {size: 1.1}]),
                 TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
                 STAT_CALCULATOR: gunCalcNames.thruster,
             },
@@ -447,60 +451,9 @@ Class.autoSmasherMissile = {
 
 // Healer Projectiles
 Class.healerBullet = {
-    PARENT: ["bullet"],
+    PARENT: "bullet",
     HEALER: true,
-    HITS_OWN_TYPE: "normal",
 };
-Class.surgeonPillboxTurret = {
-    PARENT: "genericTank",
-    LABEL: "",
-    COLOR: "grey",
-    BODY: {
-        FOV: 3,
-    },
-    HAS_NO_RECOIL: true,
-    CONTROLLERS: [["spin", { independent: true, speed: 0.08 }]],
-    TURRETS: [
-        {
-            POSITION: [13, 0, 0, 0, 360, 1],
-            TYPE: "healerSymbol",
-        },
-    ],
-    GUNS: [
-        {
-            POSITION: [17, 11, 1, 0, 0, 90, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
-                TYPE: "healerBullet",
-                AUTOFIRE: true,
-            },
-        },
-        {
-            POSITION: [14, 11, 1, 0, 0, 90, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
-                TYPE: "healerBullet",
-                AUTOFIRE: true,
-            },
-        },
-        {
-            POSITION: [17, 11, 1, 0, 0, 270, 0],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
-                TYPE: "healerBullet",
-                AUTOFIRE: true,
-            },
-        },
-        {
-            POSITION: [14, 11, 1, 0, 0, 270, 0.5],
-            PROPERTIES: {
-                SHOOT_SETTINGS: combineStats([g.basic, g.healer, g.turret]),
-                TYPE: "healerBullet",
-                AUTOFIRE: true,
-            },
-        },
-    ],
-}
 Class.surgeonPillbox = {
     PARENT: "trap",
     LABEL: "Pillbox",
@@ -875,14 +828,13 @@ Class.shrapnel = {
 Class.grenade = {
     PARENT: "bullet",
     INDEPENDENT: true,
-    BODY: { RANGE: 120 },
+    BODY: { RANGE: 80 },
     GUNS: [{
             POSITION: [1, 8, 1, 0, 0, 0, 0],
             PROPERTIES: {
                 SHOOT_SETTINGS: combineStats([g.basic, g.grenade_explosion]),
-                TYPE: "shrapnel",
+                TYPE: ["shrapnel", { PERSISTS_AFTER_DEATH: true }],
                 SHOOT_ON_DEATH: true,
-                PERSISTS_AFTER_DEATH: true
         }
             }, {
             POSITION: [14, 6, 1, 0, 0, 180, 0],
@@ -900,16 +852,39 @@ Class.grenade = {
     }
   ]
 }
+Class.firecrackerbomb = {
+    PARENT: "bullet",
+    INDEPENDENT: true,
+    BODY: { RANGE: 70 },
+    GUNS: [{
+            POSITION: [1, 8, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.explosion]),
+                TYPE: ["growBullet", { PERSISTS_AFTER_DEATH: true }],
+                SHOOT_ON_DEATH: true,
+        }
+            }, {
+            POSITION: [14, 6, 1, 0, 0, 180, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, { recoil: 0.5 }, g.lowPower]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            },
+        },
+    ],
+    TURRETS: [{
+      POSITION: [10, 0, 0, 0, 0, 1],
+      TYPE: "firecrackerDeco"
+    }]
+}
 Class.baseBullet = {
     PARENT: "boomerang",
     LABEL: "Base",
     SHAPE: 'M 0 -1.1 A 1 1 0 0 0 0 1.1 A 1 1 0 0 0 0 -1.1 Z M 0 -1 A 0.001 0.001 0 0 1 0 1 A 0.001 0.001 0 0 1 0 -1',
     CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     INDEPENDENT: true,
-    COLOR: {
-      BASE: "orange",
-      HUE_SHIFT: 180, // Additive, degrees
-    },
+    COLOR: "orange",
     TURRETS: [{
         POSITION: [4.65, 9.85, 0, 90, 220, 1],
         TYPE: ["revogun", { COLOR: "orange", BODY: { FOV: 2 } }]
@@ -925,6 +900,27 @@ ON: [{
         }
     }
   ]
+};
+Class.brellaShield = {
+    PARENT: "bullet",
+    TYPE: "brella",
+    LABEL: "Base",
+    SIZE: 7,
+  //SHAPE: 'M 1 3.5 L 2 2 L 2 0 L 1 -1.5 L 0 -1.8 L 0 -1 L 2 0.5 L 0 -1 L 0 0 L 2 0.85 L 0 0 L 0 1 L 2 1 L 0 1 L 0 1 L 0 2 L 2 1.15 L 0 2 L 0 3 L 2 1.5 L 0 3 L 0 3.8 L 1 3.5',
+    SHAPE: 'M -0 2.2587 L 0.9 0.905 L 0.9 -0.9 L -0 -2.2537 L -0.9 -2.5245 L -0.9 2.5295 L -0 2.2587',
+    INDEPENDENT: true,
+    COLOR: "grey",
+    GUNS: [
+        {
+            POSITION: [14, 6, 1, 0, 0, 180, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                SHOOT_SETTINGS: combineStats([g.basic, { recoil: 0.35 }, g.lowPower]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+                STAT_CALCULATOR: gunCalcNames.thruster,
+            },
+        },
+    ],
 };
 Class.laser = {
   PARENT: ["bullet"],
@@ -1090,15 +1086,15 @@ const iceOnTick = (body, instance, multiplier, duration, hitsOwnTeam) => {
 };
 Class.poisonbullet = {
     PARENT: "bullet",
-      TURRETS: [{
+    TURRETS: [{
         POSITION: [5.5, 0, 0, 0, 0, 1],
         TYPE: ["effectBulletDeco", { color: "green" }]
-      }],
-      ON: [{
+    }],
+    ON: [{
         event: "damage",
         handler: ({ body, damageTool }) => {
              damageOnTick(body, damageTool[0], 1, 1, 1, true);
-         }
+        }
     }]
 }
 Class.icebullet = {
@@ -1129,3 +1125,17 @@ Class.ceptionistbullet = {
 }
 Class.autoturretswarm = makeAuto('swarm', "AutoturretSwarm", {type: 'droneAutoTurret'})
 Class.hybridclonerprobe = makeHybrid('clonerprobe', "hybrid-cloner-probe")
+Class.nuke = {
+    PARENT: "growBullet",
+    LABEL: "Nuke",
+    MOTION_TYPE: "fuckingnuclearbomb",
+    BODY: {
+        PENETRATION: 100,
+        SPEED: 7,
+        RANGE: 600,
+        DENSITY: 99999999999,
+        HEALTH: 99999,
+        DAMAGE: 999999,
+        PUSHABILITY: -99999999,
+    },
+};

@@ -169,7 +169,7 @@ const global = {
         killcount: 0,
     },
     emojiloaded: false,
-    wikidisplaytank: 1058,
+    wikidisplaytank: 997,
     ISTHEGODAMNFUCKINGGAMEON: "no",
     killsoundready: true,
     skin: "",
@@ -189,5 +189,7 @@ const global = {
       src: "",
       songname: "",
     },
+    stopthefuckingkillsoundyouprick: false,
+
 };
 export { global }

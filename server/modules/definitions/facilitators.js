@@ -851,10 +851,10 @@ exports.makeDeco = (shape = 0, color = 16) => {
         COLOR: color,
     };
 }
-exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) => {
+exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor, symbolType) => {
     let isHeal = damageFactor < 0;
     let auraType = isHeal ? "healAura" : "aura";
-    let symbolType = isHeal ? "healerSymbol" : "auraSymbol";
+    if (symbolType == null) symbolType = isHeal ? "healerSymbol" : "auraSymbol";
     auraColor = auraColor ?? (isHeal ? 12 : 0);
     return {
         PARENT: ["genericTank"],
@@ -880,6 +880,41 @@ exports.addAura = (damageFactor = 1, sizeFactor = 1, opacity = 0.3, auraColor) =
             },
         ]
     };
+}
+exports.makeAura = (type, name = -1, options = {}) => {
+    let turret = {
+        type: "auraBasicGen",
+        size: 14,
+    };
+    if (options.type != null) {
+        turret.type = options.type;
+    }
+    if (options.size != null) {
+        turret.size = options.size;
+    } 
+    let output = exports.dereference(type);
+    let aurathing = {
+        /*********    SIZE                             X             Y         ANGLE        ARC */
+        POSITION: [turret.size, 0, 0, 0, 0, 1],
+        TYPE: [
+            turret.type,
+        ],
+    };
+    if (type.GUNS != null) {
+        output.GUNS = type.GUNS;
+    }
+    if (type.TURRETS == null) {
+        output.TURRETS = [aurathing];
+    } else {
+        output.TURRETS = [...type.TURRETS, aurathing];
+    }
+    if (name == -1) {
+        output.LABEL = "Aura " + type.LABEL;
+    } else {
+        output.LABEL = name;
+    }
+    output.DANGER = type.DANGER + 2;
+    return output;
 }
 
 class LayeredBoss {

@@ -140,7 +140,7 @@ nestNoFood = new Tile({
 }),
 
 wall = new Tile({
-    color: "white",
+    color: "lightGray",
     init: tile => {
 	    let o = new Entity(tile.loc);
 	    o.define("wall");
@@ -153,5 +153,18 @@ wall = new Tile({
     }
 });
 
+dfxwall = new Tile({
+    color: "lightGray",
+    init: tile => {
+	    let o = new Entity(tile.loc);
+	    o.define("dfxwall");
+      o.team = TEAM_ROOM;
+	    o.SIZE = room.tileWidth / 2;
+	    o.protect();
+	    o.life();
+      makeHitbox(o);
+      walls.push(o);
+    }
+});
 
-module.exports = { normal, normalNoFood, nest, nestNoFood, wall, nestNoBoss, blacktile, dancefloor, dancefloor1, dancefloor2, dancefloor3, dancefloor4, dancefloor5 };
+module.exports = { normal, normalNoFood, nest, nestNoFood, wall, nestNoBoss, blacktile, dancefloor, dancefloor1, dancefloor2, dancefloor3, dancefloor4, dancefloor5, dfxwall };

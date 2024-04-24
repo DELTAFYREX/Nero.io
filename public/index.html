@@ -12,7 +12,7 @@
     <meta property="og:image:width" content="54">
     <meta property="og:image:height" content="54">
     <meta property="og:type" content="games">
-    <title>Nero.io 3.0</title>
+    <title>Nero.io 3.1</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700">
     <link rel="stylesheet" href="/main.css" />
     <!-- Favicons -->
@@ -59,6 +59,14 @@ vsau.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/jake-
 function PlaySound99() {
   vsau.load();
     vsau.play();
+}
+  </script>
+  <script>
+var holeymoley = new Audio();
+holeymoley.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/holy-moly-emoji.mp3?v=1710431682780"
+function PlaySoundholeymoley() {
+  holeymoley.load();
+    holeymoley.play();
 }
   </script>
     <script>
@@ -140,7 +148,7 @@ function PlaySound2() {
     <div id="mainWrapper">
         <div id="startMenuWrapper">
           <div class="menuTabs">
-        <a class="menuTab discordbutton" onclick="Discordjoin()" onmouseover="PlaySound1()" title="Join the Nero.io Discord server!" href="https://discord.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Nero.io Discord</a>
+        <a class="menuTab discordbutton" onclick="Discordjoin()" onmouseover="PlaySound1()" title="Join the Nero.io Discord server!" href="https://discorddhsjsj.gg/jeDnGsj4MM" target="_blank" rel="noopener noreferrer">Nero.io Discord</a>
         <a class="menuTab catto" onclick="PlaySound()" onmouseover="PlaySound1()" title="View the game's source code" href="https://glitch.com/edit/#!/neroio2" target="_blank" rel="noopener noreferrer">View Source Code</a>
         <a class="menuTab stat" onclick="PlaySound()" onmouseover="PlaySound1()" title="Old Nero.io (Nero.io 1)" href="https://neroio.glitch.me" target="_blank" rel="noopener noreferrer">Old Nero.io</a>
         <a class="menuTab ach" onclick="displayAchievements()" onmouseover="PlaySound1()" title="View Game Achievements" href="javascript:void(0)">Achievements</a>
@@ -159,14 +167,14 @@ function PlaySound2() {
      this[i] = ' '
    }
  }
- image = new ImageArray(24)
+ image = new ImageArray(25)
  image[0] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/girb.jpg?v=1698237916390' //girb
  image[1] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/othergirb.jpg?v=1698238869623' //girb2
  image[2] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/84812d435b246f4edffe887c5f755008.jpg?v=1698318627584' //girat
  image[3] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/lratio?v=1698318622958' //lratio
  image[4] = 'https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/dancing-rainbow-neon-stickman-rainbow.gif?v=1699014596160' //stickman
  image[5] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/nerd-emoji.gif?v=1701691845734' //nerd
- image[6] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159' //congregation
+ image[6] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(4).mp4?v=1713524199084' //shit piss fuck cock
  image[7] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817' //secret
  image[8] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_08_0g8_Kleki.png?v=1702041313341' //i hate glitch
  image[9] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/devil%20vortex.jpg?v=1698319411448' //devilvortex
@@ -184,6 +192,7 @@ function PlaySound2() {
  image[21] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_02_09_11n_Kleki.png?v=1707530764886' //funnynerolore2
  image[22] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback.mp4?v=1709430353601' //get back to wooooooaahk
  image[23] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Coca_Cola_Espuma.mp4?v=1708895114047' //cocacola
+ image[24] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Screenshot_2024-04-12_at_2.52.02_PM.png?v=1713524085626' //Survive Black Guy
  var rand = 60/image.length
  function randomimage() {
  	currentdate = new Date()
@@ -194,7 +203,7 @@ function PlaySound2() {
 var save = randomimage()
 imgsizething = ' style="width: 100%; height: 88%;" title="the funny"'
 popup = ' onclick="openPopup()"'
-    if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(5).mp4?v=1701374946159') {
+    if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/videoplayback%20(4).mp4?v=1713524199084') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
    } else if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MemeFeedBot_5.mp4?v=1706646351474') {
     document.write("<video src='" + save + "'" + imgsizething + " controls></video>");
@@ -230,9 +239,9 @@ popup = ' onclick="openPopup()"'
                         <div class="slider" id="startMenuSlidingContent">
                           <script>
                     if (save === 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/131107152744-mona-lisa.jpg?v=1698318616817') {
-                      document.write('<center><img width=92 height=92 src="https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044" onmouseover="PlaySound1()" onclick="PlaySound169()" title="Nero.io 2 aaaaabbbbbccccccccddddddd" class="icon animinvert incog" alt="nero icon"></center><h1 onclick="PlaySound170()", onhover="PlaySound1()", id="gameName"> Piss.io 69 </h1><div id="serverName"><h4 class="nopadding">Pissing...</h4></div>');
+                      document.write('<center><img width=112 height=112 src="https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044" onmouseover="PlaySound1()" onclick="PlaySound169()" title="Nero.io 2 aaaaabbbbbccccccccddddddd" class="icon animinvert incog" alt="nero icon"></center><h1 onclick="PlaySound170()", onhover="PlaySound1()", id="gameName"> Piss.io 69 </h1><div id="serverName"><h4 class="nopadding">Pissing...</h4></div>');
                        } else {
-                      document.write('<center><img width=92 height=92 src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0za_Kleki.png?v=1701910145704" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="nero icon"></center><h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 </h1><div id="serverName"><h4 class="nopadding">Loading...</h4></div>');
+                      document.write('<center><img width=125 height=112 src="https://static-00.iconduck.com/assets.00/partying-face-emoji-512x453-281ub1ow.png" onmouseover="PlaySound1()" onclick="PlaySound()" title="Nero.io 2 aaaaabbbbb" class="icon" alt="nero icon"></center><h1 onclick="PlaySound5()", id="gameName"> Nero.io 2 </h1><div id="serverName"><h4 class="nopadding">Loading...</h4></div>');
                       }
                           </script>
                             <table id="serverSelector" style="display:none;"></table>
@@ -398,9 +407,10 @@ popup = ' onclick="openPopup()"'
                 </div>
             </div>
             <div class="achievementsHolder" id="achievementsHolder">
+              <div class="popuptaskbar">
                 <div id="achievementsClose" onclick="document.getElementsByClassName('achievementsHolder')[0].style.display = 'none'"></div>
                 <h1 id="achievementsHeader">Achievements</h1>
-                <hr>
+              </div>
                 <div id="achievementsDisplay" class="shadowScroll">
         <script type="text/javascript">
                 let greenachievementbox = 'class="achievementsItem autoBorder greenachievement"'
@@ -475,9 +485,6 @@ popup = ' onclick="openPopup()"'
         </script>
                   </div>
               <button id="resetachievementsbutton" onmouseover="PlaySound1()" onclick="PlaySound()" title="reset achievements">Reset Achievements</button>
-              <script type="text/javascript">
-                  document.write("Kills: " + localStorage.getItem("savedkills"));
-              </script>
             </div>
   <script defer>
     {
@@ -496,8 +503,10 @@ popup = ' onclick="openPopup()"'
     }
   </script>
               <div class="skinHolder" id="skinHolder">
+                <div class="popuptaskbar2">
                 <div id="skinClose" onclick="document.getElementsByClassName('skinHolder')[0].style.display = 'none'"></div>
                 <h1 id="skinHeader">Skins</h1>
+                </div>
                 <div id="skinDisplay">
                   <h1 class="displayskinname">Default</h1>
                     <div id="skinpdiv">
@@ -507,7 +516,9 @@ popup = ' onclick="openPopup()"'
                       <img id="lockbg" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/58563194-553c-49ae-95db-441b06bf9bef.image.png?v=1698239960463">
                   <div class="displaytest">◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○</div>
                 </div>
+                <asdfdsa class="atthebottom">
                 <img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/arrow2.png?v=1708534840066" id="leftarrowbutton"><img id="selectskin" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075"><img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/arrow.png?v=1708534837425" id="rightarrowbutton">
+                  </asdfdsa>
             </div>
     <!-- JS -->
     <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -533,7 +544,7 @@ popup = ' onclick="openPopup()"'
             if (clicked) {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">close options ▾ ≡</h3>');
-                $(".slider").css({ "top": "-265px" })
+                $(".slider").css({ "top": "-295px" })
             } else {
                 PlaySound3()
                 $(this).html('<h3 class="nopadding" onmouseover="PlaySound1()">view options ▸ ≡</h3>');

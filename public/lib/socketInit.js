@@ -625,7 +625,6 @@ const convert = {
         let index = get.next(),
             // Translate the encoded index
             indices = {
-                wikitank: index & 0x0800,
                 class: index & 0x0400,
                 root: index & 0x0200,
                 topspeed: index & 0x0100,
@@ -659,9 +658,6 @@ const convert = {
                 gui.upgrades.push(get.next().split("\\\\//"));
                 gui.upgrades[i][2] = util.getEntityImageFromMockup(gui.upgrades[i][2], gui.color);
             }
-        }
-        if (indices.wikitank) {
-                gui.wikidisplay = util.getEntityImageFromMockup("1057");
         }
         if (indices.statsdata) {
             for (let i = 9; i >= 0; i--) {
@@ -848,6 +844,7 @@ const socketInit = port => {
             case 'info': // info
                 global.message = m[0];
                 console.log(m[0]);
+                break;
           case "achieve":
                 /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
                 let achievementId = get.next() // gets the id of the achievement, dw about this part
@@ -916,6 +913,7 @@ const socketInit = port => {
                         global.gameStart = true;
                         global.entities = [];
                         global.message = '';
+                        global.stopthefuckingkillsoundyouprick = true;
                     });
                 }
                 break;
@@ -1014,7 +1012,6 @@ const socketInit = port => {
                 global.died = true;
                 global.autoSpin = false;
                 window.onbeforeunload = () => false;
-                //global.achievements.kills = (m[2]);
                 break;
             case 'K': // kicked
                 window.onbeforeunload = () => false;

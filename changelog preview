@@ -1,7 +1,33 @@
-<div>
-    <h1>Update 3.0</h1>
-    <date>[2024]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 3.1</h1>
+    <date class="slider2">[2024]</date>
+    <ul class="slider2">
+        <li>fixed date since counter</li>
+        <li>Added BackShield & Mirror Shield</li>
+        <li>Fixed Tag Gamemode</li>
+        <li>Removed Stats Temporarily</li>
+        <li>Changed Bot Leveling</li>
+        <li>Nerfs & Buffs</li>
+        <li>Reorganized Entities</li>
+        <li>Added New Color System</li>
+        <li>Fixed Color System</li>
+        <li>New DFX Maze Map</li>
+        <li>Added Apotheosis V2 & Depredation Remastered V2 By Deltafyrex and Killa By Action Agenda (DFX Edit) To OST</li>
+        <li>Fixed Siege</li>
+        <li>Fixed Movement System</li>
+        <li>Fixed Death Sounds</li>
+        <li>Revamped Menu Popups</li>
+        <li>Added TwinSniper Branch And More to Acid And Chiller Branch</li>
+        <li>Fixed Music Bug, And Added Aura Basic, Jump Smasher And Whirlwind To The Main game</li>
+        <li>Fixed Shields</li>
+        <li></li>
+        <p style="color:red;">Holay Molay</p>
+    </ul>
+</div>
+<div class="slider2">
+    <h1 class="slider2">Update 3.0</h1>
+    <date class="slider2">[2024]</date>
+    <ul class="slider2">
         <li>Added Clubbin</li>
         <li>Testing Achievements</li>
         <li>Added Reset Achievements Button</li>
@@ -41,14 +67,24 @@
         <li>Added Plenty New Skins, New Achievements And Made Achievements Unlockable</li>
         <li>Added Skater & Hitman</li>
         <li>Added New "Duality" Map</li>
+        <h2>Update 2.93 [2024]</h2>
         <li>David Goggins Event</li>
+        <li>Updated Menu</li>
+        <li>Added Marksman Branch To Sniper And Car Branch To </li>
+        <li>Added Trollface Emote (add --troll to the end of a chat message)</li>
+        <li>Added Waterfall, Acid, Cooler, Rainmaker And New Options Layout</li>
+        <li>Added Notes Tab + Live Counter</li>
+        <li>Added More Customization, Graphics, Helecopter And Fixed Music Bug</li>
+        <li>Added Reverie Branch And Injector</li>
+        <li>Added Debugger Menu</li>
+        <li>You Can Now Color Messages With §</li>
         <p style="color:red;">Niners fucking lost Again Bruh...Fuck Taylor Swift</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.9</h1>
-    <date>[2024]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.9</h1>
+    <date class="slider2">[2024]</date>
+    <ul class="slider2">
         <li>Added Motor</li>
         <li>Added Kivaaharatedas (i did not spell that right)</li>
         <li>Added Equilibrium, Revobrid, Subverter</li>
@@ -93,10 +129,10 @@
         <p style="color:red;" class="vsaucereference" onclick="PlaySound99()" >Hey! vsauce, Michael here. the game is stable and non buggy...or is it?</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.8</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.8</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>Tank Adding Wave Two (ex. hadron, dictator, railgun + more)</li>
         <li>Debug Key Bug Fix (how ironic)</li>
         <li>Fixed Rng Images Bugging Out</li>
@@ -121,10 +157,10 @@
         <p style="color:red;">wahhh... (i forgor why im crying)</p>
     </ul>
 </div>
-<div> <!-- Copy this whole div block to add another changelog -->
-    <h1>Update 2.7</h1> <!-- This is the title -->
-    <date>[2023]</date> <!-- This is the date -->
-    <ul>
+<div class="slider2"> <!-- Copy this whole div block to add another changelog -->
+    <h1 class="slider2">Update 2.7</h1> <!-- This is the title -->
+    <date class="slider2">[2023]</date> <!-- This is the date -->
+    <ul class="slider2">
         <li>Debuffed Many Tanks</li> <!-- Copy <li>Change 1</li> and paste it below the other lis to add another change -->
         <li>Migrated to new host</li>
         <li>Removed all Nero Exclusive Tanks From The Game (for now anyway, dont worry)</li>
@@ -144,10 +180,10 @@
         <p style="color:red;">There are Easter Eggs All Over The Main Menu, You Might Find Something...</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.6</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.6</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>replaced smashers origional upgrade path with the "armoury" tree -added lancer and smasher upgrades to armoury tree</li>
         <li>added "Sword", "Injector" and "Fencer" to lancer upgrades</li>
         <li>buffed drone tanks, twin tanks & tank health</li>
@@ -164,10 +200,10 @@
       <p style="color:red;">Ryerson Loves Burger King</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.5</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.5</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>added new tanks into beta for further testing</li>
         <li>hired new devs</li>
         <li>neroio discord is up</li>
@@ -191,10 +227,10 @@
       <p style="color:red;">Open Na Noor</p>
           </ul>
 </div>
-<div>
-    <h1>Update 2.4</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.4</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>added 2 new admin commands</li>
         <li>added homing auto Basic</li>
         <li>added bosses tab to AIT</li>
@@ -209,10 +245,10 @@
       <p style="color:red;">Oh great red Text of the Changelog, What is your Wisdom?</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.3</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.3</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>added "maleficator", "stalker", "landmine", "jumpsmash", "speedbent", "heavy3", and re-added "twindrive", "interceptioner", the "drive" subtree to autobasic, plus increased map size</li>
         <li>fixed and debuffed jumpsmash</li>
         <li>debuffed speedbent</li>
@@ -224,10 +260,10 @@
 
     </ul>
 </div>
-<div>
-    <h1>Update 2.2</h1>
-    <date>[2023]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.2</h1>
+    <date class="slider2">[2023]</date>
+    <ul class="slider2">
         <li>added more tanks into beta</li>
         <li>added sounds and updated client backround</li>
         <li>Decoration finished</li>
@@ -263,10 +299,10 @@
       <p style="color:red;">I Know Where You Live</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.1</h1>
-    <date>[2022]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.1</h1>
+    <date class="slider2">[2022]</date>
+    <ul class="slider2">
         <li>fixed the 2 game crashing bugs</li>
         <li>tried to migrate to another server host but yet failed due to unknown reasons</li>
         <li>added "speedbent" to beta</li>
@@ -274,10 +310,10 @@
       <p style="color:red;">tbh im sad the 49ers missed the super bowl :/</p>
     </ul>
 </div>
-<div>
-    <h1>Update 2.0</h1>
-    <date>[2021]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 2.0</h1>
+    <date class="slider2">[2021]</date>
+    <ul class="slider2">
         <li>brought the ception tree into beta tanks</li>
         <li>figured out that the "ceptions" arent really ceptions</li>
         <li>forgot to add the actual way to access it LOL, also added a REAL machine ceptionist as a test</li>
@@ -296,10 +332,10 @@
       <p style="color:red;">Whats Up Guys Quandale Dingle Here</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.9</h1>
-    <date>[2021]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.9</h1>
+    <date class="slider2">[2021]</date>
+    <ul class="slider2">
         <li>testing in progress</li>
         <li>approved multiple tanks into the game</li>
         <li>did some stupidity and added random stuff and figured out that there is indeed, 12882 lines of code in this project</li>
@@ -319,10 +355,10 @@
       <p style="color:red;">What A Dumb Fucking Game!</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.8</h1>
-    <date>[2021]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.8</h1>
+    <date class="slider2">[2021]</date>
+    <ul class="slider2">
         <li>completed and put the poison function into the game</li>
         <li>completed and put the freeze function into the game</li>
         <li>created a seprate freeze and poison bullets</li>
@@ -341,10 +377,10 @@
 <p style="color:red;">:skull:</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.7</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.7</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>added an admin logger</li>
         <li>changed the AI color to pink</li>
         <li>changed AI to have twin upgrade instead of basic</li>
@@ -359,10 +395,10 @@
 <p style="color:red;">Share with your friends!</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.6</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.6</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>added the tank "tower mech"</li>
         <li>added the "AIT" category into testbed</li>
         <li>added a way to get back to a basic tank after becoming testbed</li>
@@ -376,10 +412,10 @@
 <p style="color:red;">Yo shout out to Lucas Medeiros</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.5</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.5</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>removed jesus donut</li>
         <li>removed DeltaCannon</li>
         <li>fixed some bugs with AI's</li>
@@ -394,10 +430,10 @@
 <p style="color:red;">come down today and try some corn, or we will sacrifice your newborn</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.4</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.4</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>added Lottery to testbed</li>
         <li>added hellblazer and Rocketer to testbed</li>
         <li>added Nautilus to testbed</li>
@@ -408,10 +444,10 @@
 <p style="color:red;">LMFAO WHAT A BOZO</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.3</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.3</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>added master</li>
         <li>added lilfact</li>
         <li>fixed bug with bots</li>
@@ -425,10 +461,10 @@
 <p style="color:red;">DrUgS aRe BaD fOr YoU1!1!</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.2</h1>
-    <date>[2020]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.2</h1>
+    <date class="slider2">[2020]</date>
+    <ul class="slider2">
         <li>server shutdown due to server problems</li>
         <li>fixed problem</li>
         <li>fixed some more bugs</li>
@@ -442,19 +478,19 @@
 <p style="color:red;">tbh play a better game than this</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.1</h1>
-      <date>[2019]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.1</h1>
+      <date class="slider2">[2019]</date>
+    <ul class="slider2">
         <li>added revix</li>
         <li>added DeltaGunner</li>
 <p style="color:red;">OH BABY A TRIPLE</p>
     </ul>
 </div>
-<div>
-    <h1>Update 1.0</h1>
-    <date>[2019]</date>
-    <ul>
+<div class="slider2">
+    <h1 class="slider2">Update 1.0</h1>
+    <date class="slider2">[2019]</date>
+    <ul class="slider2">
         <li>just opened server</li>
         <li>testing new tanks</li>
 <p style="color:red;">Bwomp</p>

@@ -30,7 +30,6 @@ function close(socket) {
                     if (player.body != null) {
                         player.body.kill();
                     }
-                    //player.body.kill();
                     util.remove(disconnections, disconnections.indexOf(disconnection));
                 }, 60000);
                 let disconnection = {

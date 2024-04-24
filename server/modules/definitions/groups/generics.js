@@ -137,6 +137,16 @@ Class.genericSmasher = {
         DENSITY: 2 * base.DENSITY
     }
 }
+Class.genericLancer = {
+    PARENT: "genericTank",
+    DANGER: 6,
+    SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, 0, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
+    STAT_NAMES: statnames.lancer,
+    BODY: {
+        FOV: 1.05 * base.FOV,
+        DENSITY: 2 * base.DENSITY
+    }
+}
 Class.genericBoss = {
     PARENT: "genericTank",
     TYPE: "miniboss",
@@ -197,42 +207,6 @@ Class.bullet = {
     CAN_GO_OUTSIDE_ROOM: true,
     HITS_OWN_TYPE: "never",
     DIE_AT_RANGE: true,
-};
-Class.speedBullet = {
-    PARENT: ["bullet"],
-    MOTION_TYPE: "accel",
-};
-Class.growBullet = {
-    PARENT: ["bullet"],
-    MOTION_TYPE: "grow",
-};
-Class.flare = {
-    PARENT: ["growBullet"],
-    LABEL: "Flare",
-    SHAPE: 4,
-};
-Class.nuke = {
-    PARENT: ["growBullet"],
-    LABEL: "Nuke",
-    MOTION_TYPE: "fuckingnuclearbomb",
-    BODY: {
-        PENETRATION: 100,
-        SPEED: 7,
-        RANGE: 600,
-        DENSITY: 99999999999,
-        HEALTH: 99999,
-        DAMAGE: 999999,
-        PUSHABILITY: -99999999,
-    },
-};
-Class.developerBullet = {
-    PARENT: ["bullet"],
-    SHAPE: [[-1, -1], [1, -1], [2, 0], [1, 1], [-1, 1]],
-};
-Class.casing = {
-    PARENT: ["bullet"],
-    LABEL: "Shell",
-    TYPE: "swarm",
 };
 
 Class.drone = {
@@ -389,4 +363,11 @@ Class.auraSymbol = {
     INDEPENDENT: true,
     COLOR: "teal",
     SHAPE: [[-0.598,-0.7796],[-0.3817,-0.9053],[0.9688,-0.1275],[0.97,0.125],[-0.3732,0.9116],[-0.593,0.785]]
+};
+Class.rangeAuraSymbol = {
+    PARENT: "genericTank",
+    CONTROLLERS: [["spin", {speed: -0.04}]],
+    INDEPENDENT: true,
+    COLOR: "teal",
+    SHAPE: "M -0.7671 0.6521 L -0.7671 -0.6521 L -0.6521 -0.7671 L -0.6521 -0.7671 L 0.6521 -0.7671 L 0.7671 -0.6521 L 0.7671 0.6521 L 0.6521 0.7671 L -0.6521 0.7671 L -0.7671 0.6521"
 };
