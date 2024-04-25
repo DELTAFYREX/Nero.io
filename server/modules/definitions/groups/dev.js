@@ -1,4 +1,4 @@
-const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto, LayeredBoss } = require('../facilitators.js');
+const { combineStats, menu, addAura, makeDeco, makeHybrid, makeAuto, LayeredBoss, newWeapon, weaponArray } = require('../facilitators.js');
 const { base, gunCalcNames, basePolygonDamage, basePolygonHealth, dfltskl, statnames } = require('../constants.js');
 const g = require('../gunvals.js');
 
@@ -570,43 +570,40 @@ Class.strokeWidthTest = {
 
 Class.onTest = {
     PARENT: 'genericTank',
-    LABEL: "'ON' property",
-    TOOLTIP: [
-        'Refer to Class.onTest to know more ',
-        'On collide is a bit buggy right now, please use other methods until its fixed'
-    ],
+    LABEL: "ON property test",
+    TOOLTIP: "Refer to Class.onTest in dev.js to know more.",
     ON: [{
         event: "fire",
         handler: ({ body, gun }) => {
             switch (gun.identifier) {
                 case 'mainGun':
-                    body.sendMessage('fired main gun')
+                    body.sendMessage(`I fired my main gun.`)
                     break;
                 case 'secondaryGun':
-                    body.sendMessage('fired secondary gun')
+                    body.sendMessage('I fired my secondary gun.')
                     break;
             }
         }
     }, {
         event: "altFire",
         handler: ({ body, gun }) => {
-            body.sendMessage('fired alt gun')
+            body.sendMessage(`I fired my alt gun.`)
         }
     }, {
         event: "death",
         handler: ({ body, killers, killTools }) => {
-            body.sendMessage('you died')
+            const killedOrDied = killers.length == 0 ? 'died.' : 'got killed.'
+            body.sendMessage(`I ${killedOrDied}`)
         }
     }, {
         event: "collide",
         handler: ({ instance, other }) => {
-            instance.sendMessage('collide!')
+            instance.sendMessage(`I collided with ${other.label}.`)
         }
     }, {
         event: "damage",
-        handler: ({ body, damageInflictor, damageTool }) => {
-            body.SIZE += damageInflictor[0].SIZE / 2
-            damageInflictor[0].kill()
+        handler: ({ body, damageInflictor, damageTool }) => { 
+            body.sendMessage(`I got hurt`)
         }
     }],
     GUNS: [{
@@ -2133,6 +2130,28 @@ Class.wallPlacer = {
         },
     ],
 };
+Class.legacysidewinder = {
+    PARENT: "genericTank",
+    LABEL: "Sidewinder",
+    DANGER: 7,
+    BODY: {
+        SPEED: 0.8 * base.SPEED,
+        FOV: 1.3 * base.FOV,
+    },
+    GUNS: [
+        {
+            POSITION: [10, 11, -0.5, 14, 0, 0, 0],
+        },
+        {
+            POSITION: [21, 12, -1.1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.sidewinder]),
+                TYPE: "oldsnake",
+                STAT_CALCULATOR: gunCalcNames.sustained,
+            },
+        },
+    ],
+}
 Class.imagetest = {
     PARENT: "genericTank",
     UPGRADE_COLOR: "black",
@@ -2364,7 +2383,7 @@ Class.developer.UPGRADES_TIER_0 = ["basic", "tanks", "AIT", "utilities", "addons
     Class.tanks.UPGRADES_TIER_0 = ["developer", "overpowered", "testing", "unavailable", "features"]
         Class.AIT.UPGRADES_TIER_0 = ["developer", "bosses", "dominators", "sanctuaries", "mothership", "baseProtector", "antiTankMachineGun", "arenaCloser"]
         Class.utilities.UPGRADES_TIER_0 = ["developer", "levels", "teams", "eggGenerator", "spectator", "wallPlacer"]
-        Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "flail", "doubleFlail", "winsor0"]
+        Class.unavailable.UPGRADES_TIER_0 = ["developer", "healer", "flail", "doubleFlail", "winsor0", "legacysidewinder"]
             //Class.flail.UPGRADES_TIER_2 = ["doubleFlail"]
                 Class.doubleFlail.UPGRADES_TIER_3 = ["tripleFlail"]
         Class.testing.UPGRADES_TIER_0 = ["tanks", "vanquisher", "mummifier", "tracker3", ["grappletest", "basic"], "brella"]

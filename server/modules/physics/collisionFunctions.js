@@ -260,44 +260,16 @@ function advancedcollide(my, n, doDamage, doInelastic, nIsFirmCollide = false) {
             deathFactor._n = (stuff > n.health.amount) ? n.health.amount / stuff : 1;
             reductionFactor = Math.min(deathFactor._me, deathFactor._n);
             // Now apply it
-            // my.damageRecieved += damage._n * deathFactor._n;
-            // n.damageRecieved += damage._me * deathFactor._me;
+            // my.damageReceived += damage._n * deathFactor._n;
+            // n.damageReceived += damage._me * deathFactor._me;
             const __my = damage._n * deathFactor._n;
             const __n = damage._me * deathFactor._me;
-            my.damageRecieved += __my * Number(__my > 0
+            my.damageReceived += __my * Number(__my > 0
                 ? my.team != n.team
                 : n.healer && n.team == my.team && my.type == "tank" && n.master.id != my.id);
-            n.damageRecieved += __n * Number(__n > 0
+            n.damageReceived += __n * Number(__n > 0
                 ? my.team != n.team
                 : my.healer && n.team == my.team && n.type == "tank" && my.master.id != n.id);
-            let finalDmg = {
-                my: damage._n * deathFactor._n,
-                n: damage._me * deathFactor._me
-            }
-                            if (my.onDamaged) {
-                            my.onDamaged(my, n, finalDmg.my);
-                            }
-                            if (my.onDealtDamage) {
-                                my.onDealtDamage(my, n, finalDmg.n);
-                            }
-                            if (my.onDealtDamageUniv) {
-                                my.onDealtDamageUniv(my, n, finalDmg.n);
-                            }
-                            if (my.master && my.master.onDealtDamageUniv) {
-                                my.master.onDealtDamageUniv(my.master, n, finalDmg.n);
-                            }
-                            if (n.onDamaged) {
-                                n.onDamaged(n, my, finalDmg.n);
-                            }
-                            if (n.onDealtDamage) {
-                                n.onDealtDamage(n, my, finalDmg.my);
-                            }
-                            if (n.onDealtDamageUniv) {
-                                n.onDealtDamageUniv(n, my, finalDmg.my);
-                            }
-                            if (n.master && n.master.onDealtDamageUniv) {
-                                n.master.onDealtDamageUniv(n.master, my, finalDmg.my);
-                            }
         }
     }
     // Exit if healer (healers don't push on collide)

@@ -7,7 +7,7 @@ room = [
     [rock,rock,roid,WALL,F___,WALL,F___,roid,WALL,____,F___,WALL,WALL,____,WALL,WALL,WALL,rock,rock],
     [WALL,F___,____,F___,roid,F___,WALL,F___,____,F___,WALL,F___,____,F___,____,F___,____,F___,____],
     [WALL,____,WALL,____,WALL,____,roid,____,WALL,WALL,WALL,____,WALL,roid,F___,____,WALL,rock,WALL],
-    [WALL,F___,____,F___,WALL,WALL,WALL,F___,____,F___,WALL,F___,WALL,WALL,WALL,F___,DWAL,F___,WALL],
+    [WALL,F___,____,F___,WALL,WALL,WALL,F___,____,F___,WALL,F___,WALL,WALL,WALL,F___,WALL,F___,WALL],
     [WALL,WALL,WALL,roid,F___,____,F___,____,WALL,____,roid,____,F___,____,F___,____,F___,____,roid],
     [____,F___,roid,rock,WALL,F___,WALL,F___,WALL,WALL,WALL,F___,WALL,WALL,WALL,F___,WALL,WALL,WALL],
     [F___,WALL,roid,roid,WALL,roid,WALL,nest,nesf,nest,nesf,nest,WALL,roid,F___,____,F___,roid,WALL],
@@ -19,7 +19,7 @@ room = [
     [F___,WALL,F___,WALL,F___,roid,F___,____,F___,roid,F___,____,F___,roid,F___,____,F___,____,F___],
     [roid,WALL,____,WALL,____,F___,WALL,WALL,WALL,F___,WALL,WALL,WALL,F___,____,WALL,WALL,F___,____],
     [F___,WALL,F___,WALL,WALL,____,WALL,____,F___,roid,WALL,roid,F___,____,F___,roid,F___,WALL,F___],
-    [____,WALL,____,F___,____,F___,WALL,F___,WALL,F___,WALL,F___,WALL,WALL,____,F___,____,WALL,roid],
+    [____,WALL,____,F___,____,F___,WALL,F___,WALL,F___,WALL,F___,DWAL,WALL,____,F___,____,WALL,roid],
     [rock,rock,roid,WALL,WALL,WALL,WALL,____,WALL,____,WALL,WALL,F___,____,F___,WALL,WALL,rock,rock],
     [rock,rock,____,F___,____,F___,____,F___,WALL,F___,roid,F___,____,WALL,____,roid,____,rock,rock]
 ];

@@ -1043,7 +1043,7 @@ Class.dailyTanks = {
 // December 19th-20th - Jump Smasher
 Class.jumpsmasherBody = {
     LABEL: "",
-    CONTROLLERS: [["spin", { independent: true }]],
+    CONTROLLERS: [["spin", { independent: true, speed: 0.3 }]],
     COLOR: "black",
     SHAPE: 8,
     INDEPENDENT: true

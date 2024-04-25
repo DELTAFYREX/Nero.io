@@ -181,7 +181,8 @@ function PlaySound2() {
  image[10] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/mqdefault.jpg?v=1698335465241' //spong
  image[11] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/e4b3f8d2-72dd-4995-87ad-633e8c5e5754.image.png?v=1698335568829' //petah
  image[12] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4703606e-9aeb-4893-aad3-b9788cccfc9b.image.png?v=1698335812346' //helloo everybody
- image[13] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_26_0ml_Kleki.png?v=1698336267088' //bulletkisser
+ //image[13] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_10_26_0ml_Kleki.png?v=1698336267088' //bulletkisser
+ image[13] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/fb286e65-331c-42ff-b226-ac5bfc7418b7.image.png?v=1705266607867' //oldnerologo
  image[14] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/freddy.gif?v=1698336453397' //freddy default dance
  image[15] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/asda.gif?v=1698336433205' //synthwave
  image[16] = 'https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Screen_Shot_2021-06-25_at_8.06.28_PM_1400x.webp?v=1701104133660' //avacado
@@ -352,6 +353,7 @@ popup = ' onclick="openPopup()"'
                             <table>
                                 <tr>
                                     <td><div><label><input id="autoLevelUp"         tabindex="-1" class="checkbox" type="checkbox"> Auto-Level Up</label></div></td>
+                                    <td><div><label><input id="disableDeathSounds"         tabindex="-1" class="checkbox" type="checkbox"> Disable Death Sounds</label></div></td>
                                 </tr>
                             </table>
                             </div>
@@ -428,19 +430,19 @@ popup = ' onclick="openPopup()"'
                   document.write("<div " + grayachievementbox + " ><h1>Beep! Offline Beep!</h1><span>Get Disconnected while In game</span></div>");
                 };
                 if (localStorage.getItem("25killsachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + greenachievementbox + " ><h1>K-25</h1><span>Get 25 Kills (okay, okay)</span></div>");
+                  document.write("<div " + greenachievementbox + " ><h1>K-25</h1><span>Get 25 Kills (okay, okay) 100%</span></div>");
                 } else {
-                  document.write("<div " + grayachievementbox + " ><h1>K-25</h1><span>Get 25 Kills</span></div>");
+                  document.write("<div " + grayachievementbox + " ><h1>K-25</h1><span>Get 25 Kills " + 4 * Number(localStorage.getItem("savedkills")) + "% </span></div>");
                 };
                 if (localStorage.getItem("50killsachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + greenachievementbox + " ><h1>K-50</h1><span>Get 25 Kills (alright, bros good)</span></div>");
+                  document.write("<div " + greenachievementbox + " ><h1>K-50</h1><span>Get 50 Kills (alright, bros good) 100%</span></div>");
                 } else {
-                  document.write("<div " + grayachievementbox + " ><h1>K-50</h1><span>Get 50 Kills</span></div>");
+                  document.write("<div " + grayachievementbox + " ><h1>K-50</h1><span>Get 50 Kills " + 2 * Number(localStorage.getItem("savedkills")) + "% </span></div>");
                 };
                 if (localStorage.getItem("100killsachievement") === "YOUDIDIT:D!!!") {
-                  document.write("<div " + greenachievementbox + " ><h1>K-100</h1><span>Get 100 Kills (DAMN...)</span></div>");
+                  document.write("<div " + greenachievementbox + " ><h1>K-100</h1><span>Get 100 Kills (DAMN...) 100%</span></div>");
                 } else {
-                  document.write("<div " + grayachievementbox + " ><h1>K-100</h1><span>Get 100 Kills</span></div>");
+                  document.write("<div " + grayachievementbox + " ><h1>K-100</h1><span>Get 100 Kills " + 1 * Number(localStorage.getItem("savedkills")) + "% </span></div>");
                 };
                 if (localStorage.getItem("killachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>KStreak-5</h1><span>Get A Killstreak of 5 kills while In game</span></div>");
@@ -451,6 +453,31 @@ popup = ' onclick="openPopup()"'
                   document.write("<div " + greenachievementbox + " ><h1>KStreak-10</h1><span>Get A Killstreak of 10 kills while In game (not bad)</span></div>");
                 } else {
                   document.write("<div " + grayachievementbox + " ><h1>KStreak-10</h1><span>Get A Killstreak of 10 kills while In game</span></div>");
+                };
+                if (localStorage.getItem("100shapesachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Planter</h1><span>Kill 100 Shapes 100%</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Planter</h1><span>Kill 100 Shapes " + 1 * Number(localStorage.getItem("savedshapes")) + "% </span></div>");
+                };
+                if (localStorage.getItem("250shapesachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Grower</h1><span>Kill 250 Shapes (k) 100%</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Grower</h1><span>Kill 250 Shapes " + 0.4 * Number(localStorage.getItem("savedshapes")) + "% </span></div>");
+                };
+                if (localStorage.getItem("500shapesachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Cropper</h1><span>Kill 500 Shapes (my man is grinding) 100%</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Cropper</h1><span>Kill 500 Shapes " + 0.2 * Number(localStorage.getItem("savedshapes")) + "% </span></div>");
+                };
+                if (localStorage.getItem("750shapesachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Farmer</h1><span>Kill 750 Shapes (my man is REALLY grinding) 100%</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Farmer</h1><span>Kill 750 Shapes " + Math.round((100/750) * Number(localStorage.getItem("savedshapes"))) + "% </span></div>");
+                };
+                if (localStorage.getItem("1000shapesachievement") === "YOUDIDIT:D!!!") {
+                  document.write("<div " + greenachievementbox + " ><h1>Haymaker</h1><span>Kill 1000 Shapes (do you have anything else better to do?) 100%</span></div>");
+                } else {
+                  document.write("<div " + grayachievementbox + " ><h1>Haymaker</h1><span>Kill 1000 Shapes " + 0.1 * Number(localStorage.getItem("savedshapes")) + "% </span></div>");
                 };
                 if (localStorage.getItem("lagachievement") === "YOUDIDIT:D!!!") {
                   document.write("<div " + greenachievementbox + " ><h1>MUCH LAGS!!!!!!</h1><span>have a shitty computer (and it seems you do...or you intentionally lagged your game)</span></div>");
@@ -514,7 +541,7 @@ popup = ' onclick="openPopup()"'
                       <img id="lockedskin" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/locked2.png?v=1708713794287">
                     </div>
                       <img id="lockbg" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/58563194-553c-49ae-95db-441b06bf9bef.image.png?v=1698239960463">
-                  <div class="displaytest">◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○</div>
+                  <div class="displaytest">◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○</div>
                 </div>
                 <asdfdsa class="atthebottom">
                 <img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/arrow2.png?v=1708534840066" id="leftarrowbutton"><img id="selectskin" src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/selected.png?v=1708718268075"><img src="https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/arrow.png?v=1708534837425" id="rightarrowbutton">

@@ -1,6 +1,6 @@
 module.exports = {
 // Bases
-    basic: { reload: 10.5, recoil: 1.4, shudder: 0.1, damage: 0.75, speed: 4.5, spray: 15 },
+    basic: { reload: 1.5, recoil: 1.4, shudder: 0.1, damage: 0.75, speed: 4.5, spray: 15 },
     drone: { reload: 36, recoil: 0.25, shudder: 0.1, size: 0.6, speed: 2, spray: 0.1 },
     trap: { reload: 23, shudder: 0.25, size: 0.6, damage: 0.75, speed: 5, spray: 15, resist: 3 },
     swarm: { reload: 23, recoil: 0.25, shudder: 0.05, size: 0.4, damage: 0.75, speed: 4, spray: 5 },
@@ -57,7 +57,7 @@ module.exports = {
     overseer: { reload: 1.25, size: 0.85, health: 0.7, damage: 0.8, maxSpeed: 0.9, density: 2 },
     overdrive: { reload: 2.5, health: 0.8, damage: 0.8, pen: 0.8, speed: 0.9, maxSpeed: 0.9, range: 0.9, spray: 1.2 },
     commander: { reload: 1.5, health: 0.4, damage: 0.7 },
-    baseProtector: { reload: 2, recoil: 0.000001, health: 100, range: 0.75, density: 5, resist: 10 },
+    baseProtector: { reload: 2, recoil: 0.000001, health: 100, range: 0.5, density: 5, resist: 10 },
     battleship: { health: 1.25, damage: 1.15, maxSpeed: 0.85, resist: 1.1 },
     carrier: { reload: 1.5, damage: 0.8, speed: 1.3, maxSpeed: 1.2, range: 1.2 },
     bee: { reload: 1.3, size: 1.4, damage: 1.5, pen: 0.5, speed: 3, maxSpeed: 1.5, density: 0.25 },

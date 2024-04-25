@@ -809,6 +809,11 @@ const socketInit = port => {
             if (socket.cmd.check()) socket.cmd.talk();
         });
     };
+      var KillSound = new Audio();
+      function PlaySoundKS() {
+      KillSound.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Voicy_Slap%20Battles%20Killstreak%20Kill.mp3?v=1714045643190");
+      KillSound.play();
+      }
     // Handle incoming messages
     socket.onmessage = async function socketMessage(message) {
         await new Promise(Resolve => setTimeout(Resolve, window.fakeLagMS));
@@ -832,7 +837,7 @@ const socketInit = port => {
                 global.roomSetup = JSON.parse(m[2]);
                 serverStart = JSON.parse(m[3]);
                 settings.roomSpeed = m[4];
-                console.log('Room data recieved. Commencing syncing process.');
+                console.log('Room data received. Commencing syncing process.');
                 // Start the syncing process
                 socket.talk('S', getNow());
                 break;
@@ -846,23 +851,19 @@ const socketInit = port => {
                 console.log(m[0]);
                 break;
           case "achieve":
-                /*const achievementTable = ['killachievement', 'killachievement2'] // lookup table of achievements and their ids
-                let achievementId = get.next() // gets the id of the achievement, dw about this part
-                let achivementGotten = m[0] // uses achievementId as an index into the table to see what it should grant
-                console.log(achivementGotten)
-                util.submitAchievementToLocalStorage(achivementGotten) // whatever code to actually give the player the achievement*/
-                util.submitAchievementToLocalStorage("killachievement")
-                break;
-          case "achieve2":
-                util.submitAchievementToLocalStorage("killachievement2")
-                break;
-          case "achieve3":
-                util.submitAchievementToLocalStorage("tokenachievement")
+                const achievementTable = ['killachievement', 'killachievement2', 'tokenachievement'] // lookup table of achievements and their ids
+                util.submitAchievementToLocalStorage(achievementTable[m[0]]) // whatever code to actually give the player the achievement
                 break;
           case "killgained":
+                PlaySoundKS()
                 global.metrics.killcount += 1;
                 global.savedkillcount = (Number(localStorage.getItem("savedkills")) + 1);
                 localStorage.setItem("savedkills", global.savedkillcount.toString());
+                break;
+          case "shapegained":
+                global.metrics.shapecount += 1;
+                global.savedshapecount = (Number(localStorage.getItem("savedshapes")) + 1);
+                localStorage.setItem("savedshapes", global.savedshapecount.toString());
                 break;
           case "killstreakreset":
                 global.metrics.killcount = 0;
