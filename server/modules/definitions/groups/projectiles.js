@@ -1064,6 +1064,12 @@ const iceOnTick = (body, instance, multiplier, duration, hitsOwnTeam) => {
 };
 Class.poisonbullet = {
     PARENT: "bullet",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     TURRETS: [{
         POSITION: [5.5, 0, 0, 0, 0, 1],
         TYPE: ["effectBulletDeco", { color: "green" }]
@@ -1077,6 +1083,12 @@ Class.poisonbullet = {
 }
 Class.icebullet = {
     PARENT: "bullet",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "#28B1DE",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     TURRETS: [{
         POSITION: [5.5, 0, 0, 0, 0, 1],
         TYPE: ["effectBulletDeco", { color: "#28B1DE" }]
@@ -1093,7 +1105,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload, g.turret]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.slightlyweaker, g.slightlyweaker, g.halfreload, g.halfreload, g.turret]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true

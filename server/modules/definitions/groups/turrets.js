@@ -1568,6 +1568,12 @@ Class.crosshair1 = {
 };
 Class.greenSmasherBody = {
     LABEL: "",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     COLOR: "green",
     SHAPE: 6,

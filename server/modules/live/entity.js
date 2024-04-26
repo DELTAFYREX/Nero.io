@@ -1948,12 +1948,20 @@ class Entity extends EventEmitter {
                 }
                 break;
             case "desmos":
-                this.damp = 0;
+                let save = {
+                    x: this.master.x,
+                    y: this.master.y,
+                };
+                let target = {
+                    x: save.x + this.master.control.target.x,
+                    y: save.y + this.master.control.target.y,
+                };
+                let amount = (util.getDistance(target, save) / 20) | 0;                this.damp = 0;
                 if (this.waveReversed == null) this.waveReversed = this.master.control.alt ? -1 : 1;
                 if (this.waveAngle == null) {
                     this.waveAngle = this.master.facing;
-                    this.velocity.x = this.velocity.length * Math.cos(this.waveAngle);
-                    this.velocity.y = this.velocity.length * Math.sin(this.waveAngle);;
+                    this.velocity.x = this.velocity.length + amount * Math.cos(this.waveAngle);
+                    this.velocity.y = this.velocity.length * Math.sin(this.waveAngle);
                 }
                 let waveX = this.maxSpeed * 5 * Math.cos((this.RANGE - this.range) / (args.period ?? 4) * 2);
                 let waveY = (args.amplitude ?? 15) * Math.cos((this.RANGE - this.range) / (args.period ?? 4)) * this.waveReversed * (args.invert ? -1 : 1);

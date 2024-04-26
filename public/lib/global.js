@@ -96,6 +96,7 @@ const global = {
     KEY_DRAG: 221,
     KEY_SPAWN_WALL: 90,
     KEY_RANDOM_TEST: 81,
+    KEY_CHANGE_SONG: 112,
 
     KEY_UPGRADE_ATK: 49,
     KEY_UPGRADE_HTL: 50,

@@ -4977,6 +4977,12 @@ Class.acid = {
     PARENT: "genericTank",
     LABEL: 'Acid',
     DANGER: 6,
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     BODY: {
         ACCELERATION: base.ACCEL * 0.75,
         SPEED: base.SPEED * 0.85,
@@ -4999,6 +5005,12 @@ Class.disintegrator = {
     PARENT: "genericTank",
     DANGER: 6,
     LABEL: "Disintegrator",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     BODY: {
         ACCELERATION: base.ACCEL * 0.75,
         SPEED: 0.7 * base.SPEED,
@@ -5025,6 +5037,12 @@ Class.chiller = {
     PARENT: "genericTank",
     LABEL: 'Chiller',
     DANGER: 6,
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "#28B1DE",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     BODY: {
         ACCELERATION: base.ACCEL * 0.7,
         FOV: 1.2
@@ -5046,6 +5064,12 @@ Class.freezer = {
     PARENT: "genericTank",
     DANGER: 6,
     LABEL: "Freezer",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "#28B1DE",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     BODY: {
         ACCELERATION: base.ACCEL * 0.75,
         SPEED: 0.7 * base.SPEED,
