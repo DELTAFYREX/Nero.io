@@ -314,29 +314,7 @@ Class.protoHive = {
     ],
 }
 Class.snake = {
-    PARENT: "missile",
-    LABEL: "Snake",
-    GUNS: [
-        {
-            POSITION: [6, 12, 1.4, 8, 0, 180, 0],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                STAT_CALCULATOR: gunCalcNames.thruster,
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.snake, g.snakeskin]),
-                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
-            },
-        },
-        {
-            POSITION: [10, 12, 0.8, 8, 0, 180, 0.5],
-            PROPERTIES: {
-                AUTOFIRE: true,
-                NEGATIVE_RECOIL: true,
-                STAT_CALCULATOR: gunCalcNames.thruster,
-                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.snake]),
-                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
-            },
-        },
-    ],
+    PARENT: "bullet",
 }
 Class.rocketeerMissile = {
     PARENT: "missile",
@@ -353,7 +331,7 @@ Class.rocketeerMissile = {
     ],
 }
 Class.sentinelMissile = {
-    PARENT: ["bullet"],
+    PARENT: "bullet",
     LABEL: "Missile",
     INDEPENDENT: true,
     BODY: {
@@ -389,7 +367,7 @@ Class.sentinelMissile = {
     ],
 }
 Class.kronosMissile = {
-    PARENT: ["missile"],
+    PARENT: "missile",
     GUNS: [
         {
             POSITION: [4, 8, 1.5, 14, 0, 90, 0.5],
@@ -431,7 +409,7 @@ Class.kronosMissile = {
     ],
 }
 Class.autoSmasherMissile = {
-    PARENT: ["missile"],
+    PARENT: "missile",
     LABEL: "Auto-Smasher",
     HITS_OWN_TYPE: "never",
     BODY: {
@@ -537,12 +515,12 @@ Class.summonerDrone = {
     NECRO: false
 }
 Class.trichip = {
-    PARENT: ["sunchip"],
+    PARENT: "sunchip",
     NECRO: [3],
     SHAPE: 3
 }
 Class.dorito = {
-    PARENT: ["sunchip"],
+    PARENT: "sunchip",
     NECRO: false,
     SHAPE: 3
 }
@@ -552,7 +530,7 @@ Class.pentachip = {
     SHAPE: 5
 }
 Class.demonchip = {
-    PARENT: ["sunchip"],
+    PARENT: "sunchip",
     NECRO: false,
     SHAPE: 5
 };
@@ -606,7 +584,7 @@ Class.minion = {
     ],
 }
 Class.tinyMinion = {
-    PARENT: ["minion"],
+    PARENT: "minion",
     LABEL: "Swarm Minion",
     ACCEPTS_SCORE: false,
     SHAPE: 0,
@@ -721,7 +699,7 @@ Class.unsetPillbox = {
     ],
 }
 Class.legionaryPillbox = {
-    PARENT: ["unsetTrap"],
+    PARENT: "unsetTrap",
     LABEL: "Pillbox",
     BODY: {
         SPEED: 1,
@@ -1086,6 +1064,12 @@ const iceOnTick = (body, instance, multiplier, duration, hitsOwnTeam) => {
 };
 Class.poisonbullet = {
     PARENT: "bullet",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     TURRETS: [{
         POSITION: [5.5, 0, 0, 0, 0, 1],
         TYPE: ["effectBulletDeco", { color: "green" }]
@@ -1099,6 +1083,12 @@ Class.poisonbullet = {
 }
 Class.icebullet = {
     PARENT: "bullet",
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "#28B1DE",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
     TURRETS: [{
         POSITION: [5.5, 0, 0, 0, 0, 1],
         TYPE: ["effectBulletDeco", { color: "#28B1DE" }]
@@ -1115,7 +1105,7 @@ Class.ceptionistbullet = {
   GUNS: [{
       POSITION: [18, 8, 1, 0, 0, 0, 0],
       PROPERTIES: {
-          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.minionGun, g.halfreload, g.halfreload, g.turret]),
+          SHOOT_SETTINGS: combineStats([g.basic, g.autoTurret, g.slightlyweaker, g.slightlyweaker, g.halfreload, g.halfreload, g.turret]),
           TYPE: "bullet",
           COLOR: "black",
           AUTOFIRE: true
@@ -1139,3 +1129,28 @@ Class.nuke = {
         PUSHABILITY: -99999999,
     },
 };
+Class.oldsnake = {
+    PARENT: "missile",
+    LABEL: "Snake",
+    GUNS: [
+        {
+            POSITION: [6, 12, 1.4, 8, 0, 180, 0],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                STAT_CALCULATOR: gunCalcNames.thruster,
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.snake, g.snakeskin]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+            },
+        },
+        {
+            POSITION: [10, 12, 0.8, 8, 0, 180, 0.5],
+            PROPERTIES: {
+                AUTOFIRE: true,
+                NEGATIVE_RECOIL: true,
+                STAT_CALCULATOR: gunCalcNames.thruster,
+                SHOOT_SETTINGS: combineStats([g.basic, g.sniper, g.hunter, g.hunterSecondary, g.snake]),
+                TYPE: ["bullet", { PERSISTS_AFTER_DEATH: true }],
+            },
+        },
+    ],
+}

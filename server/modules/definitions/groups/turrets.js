@@ -1247,14 +1247,14 @@ Class.healerSymbol = {
 // Bodies
 Class.smasherBody = {
     LABEL: "",
-    CONTROLLERS: [["spin", { independent: true }]],
+    CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     COLOR: "black",
     SHAPE: 6,
     INDEPENDENT: true
 }
 Class.landmineBody = {
     LABEL: "",
-    CONTROLLERS: [["spin", { independent: true, speed: 0.08 }]],
+    CONTROLLERS: [["spin", { independent: true, speed: 0.2 }]],
     COLOR: 9,
     SHAPE: 6,
     INDEPENDENT: true
@@ -1568,7 +1568,13 @@ Class.crosshair1 = {
 };
 Class.greenSmasherBody = {
     LABEL: "",
-    CONTROLLERS: [["spin", { independent: true }]],
+    GLOW: {
+        RADIUS: 2,
+        COLOR: "green",
+        ALPHA: 1,
+        RECURSION: 4,
+    },
+    CONTROLLERS: [["spin", { independent: true, speed: 0.1 }]],
     COLOR: "green",
     SHAPE: 6,
     INDEPENDENT: true,

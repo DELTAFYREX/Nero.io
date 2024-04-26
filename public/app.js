@@ -97,12 +97,6 @@ let { socketInit, gui, leaderboard, minimap, moveCompensation, lag, getNow } = s
       function PlaySoundnfl() {
       nfl.play();
       }
-  
-      var KillSound = new Audio();
-      KillSound.src = ("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/4%202.wav?v=1706716161860");
-      function PlaySoundKS() {
-      KillSound.play();
-      }
 
       function doSomething() {
         if (clicked) {
@@ -273,7 +267,7 @@ function PlaySound169() {
   let selectimage = document.querySelector("#selectskin");
 
   $("#rightarrowbutton").on("click", function() {
-      if (global.skinpage === 12) {
+      if (global.skinpage === 16) {
           global.skinpage = 0;  
       } else {
           global.skinpage += 1;
@@ -282,7 +276,7 @@ function PlaySound169() {
   });
   $("#leftarrowbutton").on("click", function() {
       if (global.skinpage === 0) {
-          global.skinpage = 12;  
+          global.skinpage = 16;  
       } else {
           global.skinpage -= 1;
       };                 
@@ -346,91 +340,119 @@ function PlaySound169() {
 
   function changeskinpreview() {
     if (global.skinpage === 0) {
-    counterthing.textContent = "◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "";
     skinnamedisplay.textContent = "Default";
     checkifachieve("", "");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/onetransparentsingulardamnfuckingpixel.png?v=1708568179353";
     }
     if (global.skinpage === 1) {
-    counterthing.textContent = "○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "bsignalskin";
     skinnamedisplay.textContent = "Broken Signal";
     checkifachieve("disconnectachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/tv.png?v=1708615075011"
     }
     if (global.skinpage === 2) {
-    counterthing.textContent = "○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "tankcharmskin";
     skinnamedisplay.textContent = "Tank Charm";
     checkifachieve("25killsachievement", "dgrey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
     if (global.skinpage === 3) {
-    counterthing.textContent = "○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "dfxskin";
     skinnamedisplay.textContent = "Deltafyrex";
     checkifachieve("50killsachievement", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-12-14-17-8-14.gif?v=1708618924966";
     }
     if (global.skinpage === 4) {
-    counterthing.textContent = "○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "primalskin";
     skinnamedisplay.textContent = "Ultimate Primal";
     checkifachieve("100killsachievement", "white");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/primal.webp?v=1708602763032";
     }
     if (global.skinpage === 5) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "kangarooskin";
     skinnamedisplay.textContent = "Kangaroo";
     checkifachieve("killachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/image.webp?v=1708623596560";
     }
     if (global.skinpage === 6) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "cswmskin";
     skinnamedisplay.textContent = "ChickenSandwhichMan";
     checkifachieve("killachievement2", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Untitled%20Project%20(22).jpg?v=1708356424097"
     }
     if (global.skinpage === 7) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○ ○";
     global.selectedskin = "cogskin";
     skinnamedisplay.textContent = "Cogwheel";
     checkifachieve("lagachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/Gear-icon-transparent-background.png?v=1705579178381";
     }
     if (global.skinpage === 8) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
-    global.selectedskin = "skypeskin";
-    skinnamedisplay.textContent = "Skype";
-    checkifachieve("skypemoment", "black");
-    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○ ○";
+    global.selectedskin = "eggskin";
+    skinnamedisplay.textContent = "Eggbert";
+    checkifachieve("100shapesachievement", "black");
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_29_0ry_Kleki.png?v=1708536680813";
     }
     if (global.skinpage === 9) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○ ○";
+    global.selectedskin = "squareskin";
+    skinnamedisplay.textContent = "Squarey";
+    checkifachieve("250shapesachievement", "dgrey");
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/MOSHED-2023-12-14-17-8-14.gif?v=1708618924966";
+    }
+    if (global.skinpage === 10) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○ ○";
+    global.selectedskin = "triangleskin";
+    skinnamedisplay.textContent = "Triangleton";
+    checkifachieve("500shapesachievement", "dgrey");
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/primal.webp?v=1708602763032";
+    }
+    if (global.skinpage === 11) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○ ○";
+    global.selectedskin = "pentagonskin";
+    skinnamedisplay.textContent = "Pentogan";
+    checkifachieve("750shapesachievement", "white");
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
+    }
+    if (global.skinpage === 12) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○ ○";
+    global.selectedskin = "gemskin";
+    skinnamedisplay.textContent = "Gemy";
+    checkifachieve("1000shapesachievement", "grey");
+    myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/skype.png?v=1708623594494";
+    }
+    if (global.skinpage === 13) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○ ○";
     global.selectedskin = "coinskin";
     skinnamedisplay.textContent = "Coined";
     checkifachieve("tokenachievement", "black");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196";
     }
-    if (global.skinpage === 10) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
+    if (global.skinpage === 14) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○ ○";
     global.selectedskin = "discordskin";
     skinnamedisplay.textContent = "Sex Update";
     checkifachieve("Getbacktowoooak", "dgrey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293";
     }
-    if (global.skinpage === 11) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○";
+    if (global.skinpage === 15) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉ ○";
     global.selectedskin = "deltaDecoskin";
     skinnamedisplay.textContent = "Cat-Code";
     checkifachieve("creditsachievement", "grey");
     myImg.src = "https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2024_01_15_05q_Kleki.png?v=1705301828958";
     }
-    if (global.skinpage === 12) {
-    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉";
+    if (global.skinpage === 16) {
+    counterthing.textContent = "○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ◉";
     global.selectedskin = "incomskin";
     skinnamedisplay.textContent = "Very Much Incommodiousness";
     checkifachieve("pissio", "grey");
@@ -558,14 +580,29 @@ function lagachloop() {
     if (global.metrics.rendertime <= 45 && global.metrics.rendertime >= 15) {
         util.submitAchievementToLocalStorage("lagachievement");
     }
-    if (global.savedkillcount >= 99) {
+    if (global.savedkillcount >= 100) {
         util.submitAchievementToLocalStorage("100killsachievement");
     }
-    if (global.savedkillcount >= 49) {
+    if (global.savedkillcount >= 50) {
         util.submitAchievementToLocalStorage("50killsachievement");
     }
-    if (global.savedkillcount >= 24) {
+    if (global.savedkillcount >= 25) {
         util.submitAchievementToLocalStorage("25killsachievement");
+    }
+    if (global.savedshapecount >= 100) {
+        util.submitAchievementToLocalStorage("100shapesachievement");
+    }
+    if (global.savedshapecount >= 250) {
+        util.submitAchievementToLocalStorage("250shapesachievement");
+    }
+    if (global.savedshapecount >= 500) {
+        util.submitAchievementToLocalStorage("500shapesachievement");
+    }
+    if (global.savedshapecount >= 750) {
+        util.submitAchievementToLocalStorage("750shapesachievement");
+    }
+    if (global.savedshapecount >= 1000) {
+        util.submitAchievementToLocalStorage("1000shapesachievement");
     }
 }
 /*if (localStorage.getItem("killachievement") !== "YOUDIDIT:D!!!") {
@@ -580,20 +617,7 @@ localStorage.setItem("savedkills", 0);
 }
 function resetAllAchievements() {
   var zeroyeah = 0;
-  util.resetAchievementFromLocalStorage("startachievement");
-  util.resetAchievementFromLocalStorage("disconnectachievement");
-  util.resetAchievementFromLocalStorage("25killsachievement");
-  util.resetAchievementFromLocalStorage("50killsachievement");
-  util.resetAchievementFromLocalStorage("100killsachievement");
   util.resetAchievementFromLocalStorage("killachievement");
-  util.resetAchievementFromLocalStorage("killachievement2");
-  util.resetAchievementFromLocalStorage("lagachievement");
-  util.resetAchievementFromLocalStorage("skypemoment");
-  util.resetAchievementFromLocalStorage("tokenachievement");
-  util.resetAchievementFromLocalStorage("Getbacktowoooak");
-  util.resetAchievementFromLocalStorage("creditsachievement");
-  util.resetAchievementFromLocalStorage("pissio");
-  localStorage.setItem("savedkills", zeroyeah.toString());
 }
                   let nIntervId;
                   if (!nIntervId) {
@@ -909,6 +933,7 @@ window.onload = async () => {
     util.retrieveFromLocalStorage("optResolution");
     util.retrieveFromLocalStorage("seperatedHealthbars");
     util.retrieveFromLocalStorage("optOgIcon");
+    util.retrieveFromLocalStorage("disableDeathSounds");
     util.retrieveFromLocalStorage("optNoEmojis");
     util.retrieveFromLocalStorage("autoLevelUp");
     // Set default theme
@@ -1147,6 +1172,7 @@ function startGame() {
     util.submitToLocalStorage("optResolution");
     util.submitToLocalStorage("optNoPointy");
     util.submitToLocalStorage("optOgIcon");
+    util.submitToLocalStorage("disableDeathSounds");
     util.submitToLocalStorage("optNoEmojis");
     util.submitToLocalStorage("autoLevelUp");
     util.submitToLocalStorage("optPredictive");
@@ -1158,6 +1184,7 @@ function startGame() {
     settings.graphical.centerTank = document.getElementById("centerTank").checked;
     settings.graphical.pointy = !document.getElementById("optNoPointy").checked;
     settings.game.optOgIcon = !document.getElementById("optOgIcon").checked;
+    settings.game.disableDeathSounds = !document.getElementById("disableDeathSounds").checked;
     settings.game.optNoEmojis = !document.getElementById("optNoEmojis").checked;
     settings.game.autoLevelUp = document.getElementById("autoLevelUp").checked;
     settings.lag.unresponsive = document.getElementById("optPredictive").checked;
@@ -2278,14 +2305,18 @@ function drawFloor(px, py, ratio) {
             ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : color.white;
             ctx.fillRect(left, top, right - left, bottom - top);
             ctx.globalAlpha = 0.3;
-            ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : gameDraw.modifyColor(tile);
+            if (settings.graphical.quality === "trippy") {
+                ctx.fillStyle = gameDraw.getColor("animatedepilepsy")
+            } else {
+                ctx.fillStyle = settings.graphical.screenshotMode ? color.guiwhite : gameDraw.modifyColor(tile);
+            }
             ctx.fillRect(left, top, right - left, bottom - top);
             if (settings.graphical.quality == "cod") {
               ctx.drawImage(callofduty, left, top, right - left, bottom  - top);
             }
         }
     }
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 1.25;
     ctx.strokeStyle = settings.graphical.screenshotMode ? color.guiwhite : color.guiblack;
     ctx.globalAlpha = 0.04;
     ctx.beginPath();
@@ -2396,12 +2427,12 @@ global.scrollX = global.scrollY = global.fixedScrollX = global.fixedScrollY = -1
 global.scrollVelocityY = global.scrollVelocityX = 0;
 let lastGuiType = null;
 function drawUpgradeTree(spacing, alcoveSize) {
-    if (global.died) {
+    /*if (global.died) {
         global.showTree = false;
         global.scrollX = global.scrollY = global.fixedScrollX = global.fixedScrollY = global.scrollVelocityY = global.scrollVelocityX = 0;
         global.treeScale = 1;
         return;
-    }
+    }*/ // Hide the tree on death
 
     if (lastGuiType != gui.type) {
         let m = util.getEntityImageFromMockup(gui.type), // The mockup that corresponds to the player's tank
@@ -2768,11 +2799,11 @@ function drawMinimapAndDebug(spacing, alcoveSize) {
     if (global.showDebug) {
         drawText("Nero Engine v3.1", x + len, y - 50 - 7 * 14 - 2, 15, "#6a36e3", "right");
         //drawText("Prediction: " + Math.round(GRAPHDATA) + "ms", x + len, y - 50 - 4 * 14, 10, color.guiwhite, "right");
-        drawText("Update Version: " + "v3.108", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
+        drawText("Update Version: " + "v3.112", x + len, y - 50 - 6 * 14, 10, color.guiwhite, "right");
         drawText("Update Rate: " + global.metrics.updatetime + "Hz", x + len, y - 50 - 5 * 14, 10, color.guiwhite, "right");
         drawText("Client Speed: " + global.metrics.rendertime + " FPS", x + len, y - 50 - 4 * 14, 10, global.metrics.rendertime > 10 ? color.guiwhite : color.orange, "right");
         drawText("Server Speed: " + ((global.metrics.updatetime * global.metrics.rendergap-global.metrics.lag) / 10).toFixed(2) + "%", x + len, y - 50 - 3 * 14, 10, color.guiwhite, "right");
-        drawText("Kills: " + global.metrics.killcount, x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
+        drawText("Kills: " + global.metrics.killcount + "  Shapes: " + global.metrics.shapecount, x + len, y - 50 - 2 * 14, 10, color.guiwhite, "right");
         drawText("Song: " + global.music2.songname, x + len, y - 50 - 1 * 14, 10, color.guiwhite, "right");
         drawText(global.metrics.latency + " ms - neroio2 :FFA:", x + len, y - 50, 10, color.guiwhite, "right");
     } else {
@@ -3168,14 +3199,15 @@ function animloop() {
         }
         if (global.died) {
             gameDrawDead();
-            PlaySound420();
+            if (settings.game.disableDeathSounds) {
+              PlaySound420();
+            }
             global.metrics.killcount = 0;
         } else {
         if (global.stopthefuckingkillsoundyouprick) {
             metalpipe.pause();
             metalpipe.currentTime = 0;
             global.stopthefuckingkillsoundyouprick = false;
-            console.log("this better be working")
       }
         }
         if (global.disconnected) {

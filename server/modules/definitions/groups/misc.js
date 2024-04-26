@@ -53,7 +53,7 @@ Class.dfxwall = {
     SHAPE: "M 1 1 L -1 1 L -1 -1 L 1 -1 Z",
     VARIES_IN_SIZE: false,
     TURRETS: [{
-        POSITION: [15, -25, -25, 45, 0, 3],
+        POSITION: [7, -5, -5, 0, 0, 3],
         TYPE: "dfxskin"
     },]
 }

@@ -17,7 +17,7 @@ Class.genericEntity = {
         ALLOW_BRIGHTNESS_INVERT: true, // Toggles offset invert if exceeding normal color bounds
     },
     INDEPENDENT: false,
-    CONTROLLERS: ["doNothing"],
+    CONTROLLERS: [],
     HAS_NO_MASTER: false,
     MOTION_TYPE: "glide",
     FACING_TYPE: "toTarget",
@@ -124,6 +124,7 @@ Class.genericTank = {
     ARENA_CLOSER: false, // don't remove this, it stops dev basics going through walls
     GIVE_KILL_MESSAGE: true,
     DRAW_HEALTH: true,
+    RESET_EVENTS: true,
     HITS_OWN_TYPE: "hardOnlyTanks"
 }
 Class.genericSmasher = {
@@ -142,10 +143,6 @@ Class.genericLancer = {
     DANGER: 6,
     SKILL_CAP: [dfltskl, dfltskl, dfltskl, dfltskl, 0, dfltskl, dfltskl, dfltskl, dfltskl, dfltskl],
     STAT_NAMES: statnames.lancer,
-    BODY: {
-        FOV: 1.05 * base.FOV,
-        DENSITY: 2 * base.DENSITY
-    }
 }
 Class.genericBoss = {
     PARENT: "genericTank",

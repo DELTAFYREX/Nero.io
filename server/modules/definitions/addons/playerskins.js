@@ -14,9 +14,16 @@ Class.skypecharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-6
 Class.coincharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2e2ccc30-5baf-41a2-aceb-c5456a1cc6dc.image.png?v=1708619146196")
 Class.discordcharm = makeDeco("https://cdn.glitch.global/5fc7dcb6-aada-495b-828e-66901a470a29/2023_12_06_0yl_Kleki.png?v=1701908710293")
 Class.incomcharm = makeDeco("https://cdn.glitch.global/68f0db33-c86d-4aa5-9a35-a6750a92eae7/1200px-Icon-round-Question_mark.svg.png?v=1699273933044")
+Class.eggcharm = makeDeco(0, "veryLightGrey")
+Class.squarecharm = makeDeco(4, "gold")
+Class.trianglecharm = makeDeco(3, "orange")
+Class.pentagoncharm = makeDeco(5, "purple")
+Class.gemcharm = makeDeco(6, "aqua")
 
 Class.bsignalskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "bsignalcharm"
@@ -24,13 +31,17 @@ Class.bsignalskin = {
 };
 Class.tankcharmskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
-        POSITION: [18, 0, 0, 0, 360, 3],
+        POSITION: [10, 6, 5.5, 0, 360, 3],
         TYPE: "tcharm"
     }]
 };
 Class.dfxskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "dfxcharm"
@@ -38,6 +49,8 @@ Class.dfxskin = {
 };
 Class.primalskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [20, 0, 0, 0, 360, 3],
         TYPE: "primalcharm"
@@ -45,6 +58,8 @@ Class.primalskin = {
 };
 Class.kangarooskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "kangaroocharm"
@@ -52,6 +67,8 @@ Class.kangarooskin = {
 };
 Class.cswmskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 0.5],
         TYPE: "sandwichdeco"
@@ -59,6 +76,8 @@ Class.cswmskin = {
 };
 Class.cogskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "cogcharm"
@@ -66,6 +85,8 @@ Class.cogskin = {
 };
 Class.skypeskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "skypecharm"
@@ -73,6 +94,8 @@ Class.skypeskin = {
 };
 Class.coinskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "coincharm"
@@ -80,6 +103,8 @@ Class.coinskin = {
 };
 Class.discordskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "discordcharm"
@@ -87,6 +112,8 @@ Class.discordskin = {
 };
 Class.deltaDecoskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [34, 0, 0, 0, 360, 3],
         TYPE: "deltaDeco"
@@ -94,8 +121,55 @@ Class.deltaDecoskin = {
 };
 Class.incomskin = {
     MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
     TURRETS: [{
         POSITION: [18, 0, 0, 0, 360, 3],
         TYPE: "incomcharm"
+    }]
+};
+Class.eggskin = {
+    MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
+    TURRETS: [{
+        POSITION: [10, -5, 5.5, 0, 360, 3],
+        TYPE: "eggcharm"
+    }]
+};
+Class.squareskin = {
+    MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
+    TURRETS: [{
+        POSITION: [10, -5, 5.5, 0, 360, 3],
+        TYPE: "squarecharm"
+    }]
+};
+Class.triangleskin = {
+    MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
+    TURRETS: [{
+        POSITION: [10, -5, 5.5, 0, 360, 3],
+        TYPE: "trianglecharm"
+    }]
+};
+Class.pentagonskin = {
+    MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
+    TURRETS: [{
+        POSITION: [10, -5, 5.5, 0, 360, 3],
+        TYPE: "pentagoncharm"
+    }]
+};
+Class.gemskin = {
+    MAX_CHILDREN: 1,
+    SKILL_CAP: [12, 12, 12, 12, 12, 12, 12, 12, 12, 12],
+    SKILL: Array(10).fill(12),
+    TURRETS: [{
+        POSITION: [10, -5, 5.5, 0, 360, 3],
+        TYPE: "gemcharm"
     }]
 };
